@@ -1,0 +1,53 @@
+rootproperty: blah
+section:
+  one: 'two'
+  three: four
+  Foo: Bar
+  list:
+    - "{{ as }}"
+    - "asdf"
+    - "asdf2"
+    - "asdf3"
+  empty: ~
+
+image:
+  type: IAImage
+
+
+
+
+IASize:
+  name: menubuttonSize
+  const: {width: 50, height: 50}
+
+IALayout:
+  name: baseLayout
+
+IALayout:
+  name: baseLayout
+  scaling: IALayoutScaling_FIXED_HEIGHT
+  size: {width = 100, height = 200}
+
+  elements:
+    - content: Resources_get("empty")
+      leftTopPoint: IAPoint_make(10, 20)
+      size: IASize_make(20, 20)
+    - content: Resources_get("new")
+      centerPoint: IAPoint_make(20, 30)
+      size: menubuttonSize
+    - content:
+        IAButton:
+          size: IASize_make(40, 40)
+    - content:
+        IAFrameAnimation:
+          name: "asdfe_"
+          number_of_frames: 5
+          offset: 3
+          imageContext: Resources_getImageContext()
+
+
+other:
+- yaml:
+  - (asdf) -> return {}[asdf, asdf + 1]
+  - () -> return Asdf_(,  + - * /)
+  - {it: updates, in: real-time}

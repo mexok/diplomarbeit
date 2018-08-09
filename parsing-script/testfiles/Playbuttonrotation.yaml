@@ -1,0 +1,6 @@
+extend: IAFrameAnimation
+name: asdf_32
+numberOfFrames: 32
+durationOfSingleFrame: 20
+defaultFrame: 3
+shouldRepeatAnimation: false

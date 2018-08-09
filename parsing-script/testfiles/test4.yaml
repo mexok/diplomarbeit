@@ -1,0 +1,39 @@
+- struct: IASize
+  name: menubuttonSize
+  expr: [20, 40]
+
+- type: IAImage
+  name: menuScreen
+  expr: context.asdf_22
+
+- type: IALayout
+  name: baseLayout2
+
+- type:
+  
+  name: baseLayout
+  scaling: IALayoutScaling_FIXED_HEIGHT
+  size: IASize_make(100, 200)
+  elements:
+
+    - content: IALayout_getBaseLayout(baseLayout2)
+      leftTopPoint: IAPoint_make(10, 20)
+      size: IASize_make(20, 20)
+      fadeIn: getMenuFadeInOffset
+      fadeOut: getMenuFadeOutOffset
+    - content: Resources_get("asdf")
+      centerPoint: IAPoint_make(20, 30)
+      size: menubuttonSize
+    - content:
+        type: IAButton
+        size: [40, 40]
+        imageNormal: context.asdf
+    - content:
+        type: IAFrameAnimation
+        name: asdfe_
+        number_of_frames: 5
+        offset: 3
+        imageContext: Resources_getImageContext()
+
+- type: IALabel
+  text: "value1"

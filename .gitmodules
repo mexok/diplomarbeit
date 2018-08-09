@@ -1,0 +1,3 @@
+[submodule "impsengine"]
+	path = impsengine
+	url = git@gitlab.impsapps.com:impsapps-dev/impsengine.git

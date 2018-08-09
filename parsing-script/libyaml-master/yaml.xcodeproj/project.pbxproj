@@ -1,0 +1,4200 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		032046B04F9E4C769F9E08CC /* NightlyMemoryCheck */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FB70016922874F7397B82974 /* Build configuration list for PBXAggregateTarget "NightlyMemoryCheck" */;
+			buildPhases = (
+				F397999C89A647E0A07264DA /* CMake Rules */,
+			);
+			dependencies = (
+				2F74F2B07D284F93A56725BC /* PBXTargetDependency */,
+			);
+			name = NightlyMemoryCheck;
+			productName = NightlyMemoryCheck;
+		};
+		07E0CC5E8975488B90CAD7A8 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6545BF7F5D514ABBB6B88D53 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				DA4FB02925584491933AA933 /* CMake Rules */,
+			);
+			dependencies = (
+				45850FE4E59D420D88D907BC /* PBXTargetDependency */,
+				3BD03AC52ADA4AACB68610F5 /* PBXTargetDependency */,
+				AF3FA0E0B78D4BD68291A1F2 /* PBXTargetDependency */,
+				61B92588EEAE40108390F723 /* PBXTargetDependency */,
+				18AB14EB7995441EA50233C7 /* PBXTargetDependency */,
+				C8C2D839FF8449129C363E51 /* PBXTargetDependency */,
+				DA6397F624FF482B9798B8FD /* PBXTargetDependency */,
+				F2C33FFB11584FF89340BF59 /* PBXTargetDependency */,
+				71DB1CDCD1AF4484BDE6EC32 /* PBXTargetDependency */,
+				DAB5594F644E493AB4169FD9 /* PBXTargetDependency */,
+				0A65571E519D4D7193B3D820 /* PBXTargetDependency */,
+				B560131A05C94F74AB7137CC /* PBXTargetDependency */,
+				94F1D611768F44DEB2B55306 /* PBXTargetDependency */,
+				FEC1B6C822C24B5D828B2E72 /* PBXTargetDependency */,
+				AAE5D969C7744C6199DAF69D /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		1322DD0BF02E4EFBB161132E /* Nightly */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = C06A56D60A89414B8F6C57E7 /* Build configuration list for PBXAggregateTarget "Nightly" */;
+			buildPhases = (
+				2011434C5BFD48658FAE7B0C /* CMake Rules */,
+			);
+			dependencies = (
+				EA1B7E29717C400CA45AA6F4 /* PBXTargetDependency */,
+			);
+			name = Nightly;
+			productName = Nightly;
+		};
+		8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 759C55E9978A40249293E564 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				4C1088A058B5427093EC4BA1 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		9880BE2E6B224478BB183095 /* Continuous */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 33BA0A0409E34AEE9AAE6EB9 /* Build configuration list for PBXAggregateTarget "Continuous" */;
+			buildPhases = (
+				8EB1873B80654BF190D9BBBF /* CMake Rules */,
+			);
+			dependencies = (
+				D35E2F58CA3A40B8A7D1D9B5 /* PBXTargetDependency */,
+			);
+			name = Continuous;
+			productName = Continuous;
+		};
+		D58863F7E3A2462890EAEFC8 /* Experimental */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 52B27A655AA64E0F8D47159A /* Build configuration list for PBXAggregateTarget "Experimental" */;
+			buildPhases = (
+				9E9CDB10613A47ADA2973071 /* CMake Rules */,
+			);
+			dependencies = (
+				450DE4C40D264126BFF3E845 /* PBXTargetDependency */,
+			);
+			name = Experimental;
+			productName = Experimental;
+		};
+		F278631241FD42D09B7CB600 /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 214570B8BFF5463B988740FF /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				52DC5D5BA69D4B308FEA91C8 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				0CC01686E34E499B88DFE478 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		FBF0DD2696834FB6844538B6 /* RUN_TESTS */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 58078D437E96465C89B743A0 /* Build configuration list for PBXAggregateTarget "RUN_TESTS" */;
+			buildPhases = (
+				ABCA36B3888B4ACE8A41105F /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+			);
+			name = RUN_TESTS;
+			productName = RUN_TESTS;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0255D39CEB6148349279CD5A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-dumper.c */ = {isa = PBXBuildFile; fileRef = 356AD48C94084E258BE1E225 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-dumper.c */; };
+		07ACD595D1D344C6B118153D /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = A1F7ACE4E67A46C9BC08A008 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		0A50C517869C41888B9370BD /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = DF7C4372FACF4A11B5D98867 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		1CA6BF5C9D1042158090F73F /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 26310355B945424BB2617428 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		20E91AEFD49E445BB83F998D /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 5E2BEDE98C774B3DB0CC6B67 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		346DB40DBE054AE1AEFACC81 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/loader.c */ = {isa = PBXBuildFile; fileRef = 9D7112378F3045068B30560C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/loader.c */; };
+		369B128A02A84015AAE30E0C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 10CDD7FDBDBF4B8FAAAA333C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		3E38B2FBD0574EA4983EF030 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/dumper.c */ = {isa = PBXBuildFile; fileRef = 8BB29ECEFC8D438AA4F0A4B4 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/dumper.c */; };
+		417A25A710AA493B80311F08 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-reformatter.c */ = {isa = PBXBuildFile; fileRef = CBAF2209017D4A09BE450E71 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-reformatter.c */; };
+		4247129BDA9F4DDC8757B476 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = BBCE93CF13F84C02B0B8080B /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */; };
+		50C9C786B4A24025A657D678 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 0F7A7B7DC222441C87D0B5A1 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		55684E7CFC6D441BB9D9C11D /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 708F6C8E92E245F5ABE47463 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		56CD766A2E6F49DF8D00979A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/test-version.c */ = {isa = PBXBuildFile; fileRef = D2FAD8FF32174767B17CC391 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/test-version.c */; };
+		5739E64718D1405A83EE3252 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-loader.c */ = {isa = PBXBuildFile; fileRef = 2C5BD28E98BA48B995EBD087 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-loader.c */; };
+		670E0AB68D874D43A9038711 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/scanner.c */ = {isa = PBXBuildFile; fileRef = 87880929B3504E68A382CE40 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/scanner.c */; };
+		6CA1EAE90F7B4D1794019439 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/api.c */ = {isa = PBXBuildFile; fileRef = CD5403C081B449F38FDE011E /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/api.c */; };
+		6EEDA35DB05D49519A29DB50 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-deconstructor.c */ = {isa = PBXBuildFile; fileRef = 6BD8E67C80BD4EFEA79DB427 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-deconstructor.c */; };
+		71CC30011AF6415182BECD40 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 3B06FCDA046C4CF4853BD9F5 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		7B05B51FDE2846109498FCA9 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/emitter.c */ = {isa = PBXBuildFile; fileRef = 4415B257836944AA94892C44 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/emitter.c */; };
+		8DD6F20AC65C4ACFA9E78412 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-emitter-test-suite.c */ = {isa = PBXBuildFile; fileRef = B62EDA43291F446F80DB580B /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-emitter-test-suite.c */; };
+		8DE65AE341534863A3D36C94 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = DCBD7FA9BC1F4F4DAA84514D /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		9174804DB9BA4105ABD8133C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-scanner.c */ = {isa = PBXBuildFile; fileRef = 302D832DC5D74C4B821529D2 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-scanner.c */; };
+		976892FF006F410BAB858B16 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-parser-test-suite.c */ = {isa = PBXBuildFile; fileRef = 64E223B495D146718C6F1E45 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-parser-test-suite.c */; };
+		9C939C97CE68461D84F8A77C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = A72EE0289B0A48BAA941533A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		9E1CDFB95C4D47E89969EFB3 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 4A668996874345408CDC6754 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		A9C4EE5782624B6B97B3E781 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-reformatter-alt.c */ = {isa = PBXBuildFile; fileRef = FF76F177DA5A4DA6803F6067 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-reformatter-alt.c */; };
+		A9C9B1940A174D57A4D6F8FF /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/reader.c */ = {isa = PBXBuildFile; fileRef = 3FE2F98313404C1C92C8C03C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/reader.c */; };
+		B7D9A9297E714C5FBBF57901 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-emitter.c */ = {isa = PBXBuildFile; fileRef = DD1B4CBC49234FF8ADDC16BF /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-emitter.c */; };
+		CF738A07939B4FF2BA810B56 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 1373A9C0AA764CF49D3AC101 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		D3A8D5EC9E4E4685BEE5823F /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 74CF8EC40172457E8DC8679A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */; };
+		DB1847130E6047D889430403 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-deconstructor-alt.c */ = {isa = PBXBuildFile; fileRef = 0CCC1A4BB7CB4D0586544B09 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-deconstructor-alt.c */; };
+		E8C595CBFCBA41D4BC6E70CB /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/writer.c */ = {isa = PBXBuildFile; fileRef = 8C2EB07886C84DACAA46971C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/writer.c */; };
+		ED5511FB73E443A6B341FD15 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/parser.c */ = {isa = PBXBuildFile; fileRef = 986A4012A4044FBCB6A4BBFB /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/parser.c */; };
+		EE51E8E1D1CE4021830AB31F /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/test-reader.c */ = {isa = PBXBuildFile; fileRef = 6BAB8610D1C84EE0A9C193AE /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/test-reader.c */; };
+		F9CF31A324B040459B28783A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-parser.c */ = {isa = PBXBuildFile; fileRef = D6FE25AD77754DEF946620FF /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-parser.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		8AA8D1C902F64F76B5295072 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		94DF17511AE94A6090656935 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		B061BF2508AD4839B3809FC4 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		C5A1972FF86F483EA46B8522 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		08D0FFEFE99046AC8F8593A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBFAC800F2C64817A9EE81AC;
+			remoteInfo = "run-parser-test-suite";
+		};
+		11C7EC0F9F684CC489C3072D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		1296E0623D5F4BF1AE31E40F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		13FD655D80E34C4C891E420E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		166D9B1D1F6B4826AA960AFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		1937CC1A3C3145E78BB015B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		1D7DBA86ADE34ABE98685F0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		2265D42688DE4CAC98A0D91C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		2E44B4DED98C4AC7BD1C1711 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		3ACD7661F60640E4AEAF5D9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		3C728EB5D25D426688FB5DEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48F7C015CE084C6BAE8E31B0;
+			remoteInfo = "run-parser";
+		};
+		42F05DA972DB4DA8B34EF4BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D05E7DAFF65D41FEB1FD2F6B;
+			remoteInfo = "example-deconstructor-alt";
+		};
+		4C9D2352497448B49CF4997F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		57D20B32E86447A1ADF199E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		5ED323E8FB0342C1AE71163E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		6CD25EC7317C43DFABA6AE84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		6F452244D7564BA28FF80012 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		723FC565E25A4FFB81C4949B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		793798B0900A440C948E3CC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88A0935332B84113B03173F0;
+			remoteInfo = "run-dumper";
+		};
+		7BFD8AC4D6B64F87B6C1A844 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		7BFE5CB0B1BE4F85897FBB1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D3271C39067498DA4FE4114;
+			remoteInfo = "example-deconstructor";
+		};
+		7CEFDCBFF5C243B8BDDC8D6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14B1BC8C1A814A93825596B2;
+			remoteInfo = "example-reformatter-alt";
+		};
+		853FCAAB5D0A4A0B833EB848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		93D716973D614BF4BB88B7F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		9738D3FE320E4B648BAB7D0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		A0671699B095463DA57CE524 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		A3AFDB889F2D4BE48CD54B2C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EB7AC002207415D8F06D399;
+			remoteInfo = "test-version";
+		};
+		A6D49AF706EA4723AC696666 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		A8678DBC48894D3CBBD8E2B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		A89948AA4841441686AD76F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		A9614CCB8C7142879AC218C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		AA54A9AC22D64CB89F574EA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		AE1171CB329B45C48FE38984 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		BC2BAA8F18F946B4B4361085 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03597E1AC74943A083C73016;
+			remoteInfo = "run-loader";
+		};
+		BC61FE58AAE145BBB62DE9AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		BE483FD1829247E3951285C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07E0CC5E8975488B90CAD7A8;
+			remoteInfo = ALL_BUILD;
+		};
+		C0EDB0730A27401DB7FD7B53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		C14B745A03AD4F4487547BEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		C5375A9BB9AA4A77AC8061B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		CD0DF2F3236B43F0BD51D976 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		CDD7767DF44449C9A83F0D35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D231871FF5E464888EDD08D;
+			remoteInfo = "run-emitter";
+		};
+		CED119F471834FD6B06FC8BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA1D6E4946B04A5296869669;
+			remoteInfo = "example-reformatter";
+		};
+		D39B0D75D8EF4A4DBE4BFC6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CD3E79128834E828BBE0CF1;
+			remoteInfo = "run-scanner";
+		};
+		D60F07FE21C941E883F79852 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A6AFA0B33884873AC3EBDFC;
+			remoteInfo = ZERO_CHECK;
+		};
+		D7A096591952457D80EFCE76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA89117F213F48F39ACDB5A5;
+			remoteInfo = "test-reader";
+		};
+		D8945567247E45DEBF007F7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5C8BC3D845747ABA1FCA005;
+			remoteInfo = yaml;
+		};
+		F340EB56D3444FF48C90B563 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 116C3E3105FC4410AE086FEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CAF6AD9E551E457580B38680;
+			remoteInfo = "run-emitter-test-suite";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0CCC1A4BB7CB4D0586544B09 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-deconstructor-alt.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "example-deconstructor-alt.c"; path = "tests/example-deconstructor-alt.c"; sourceTree = SOURCE_ROOT; };
+		0F7A7B7DC222441C87D0B5A1 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		109C7F4C06A24CAB90044AB1 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		10CDD7FDBDBF4B8FAAAA333C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		1373A9C0AA764CF49D3AC101 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		16B7F2C3A0BA49018D88ADD5 /* test-version */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "test-version"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A50C210E5D748E2AAE81817 /* run-emitter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "run-emitter"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26310355B945424BB2617428 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		2C5BD28E98BA48B995EBD087 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-loader.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "run-loader.c"; path = "tests/run-loader.c"; sourceTree = SOURCE_ROOT; };
+		302D832DC5D74C4B821529D2 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-scanner.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "run-scanner.c"; path = "tests/run-scanner.c"; sourceTree = SOURCE_ROOT; };
+		32DA2DA914434C5CAE5F4D05 /* run-parser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "run-parser"; sourceTree = BUILT_PRODUCTS_DIR; };
+		356AD48C94084E258BE1E225 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-dumper.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "run-dumper.c"; path = "tests/run-dumper.c"; sourceTree = SOURCE_ROOT; };
+		3B06FCDA046C4CF4853BD9F5 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		3FE2F98313404C1C92C8C03C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/reader.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = reader.c; path = src/reader.c; sourceTree = SOURCE_ROOT; };
+		4415B257836944AA94892C44 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/emitter.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = emitter.c; path = src/emitter.c; sourceTree = SOURCE_ROOT; };
+		4A668996874345408CDC6754 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		577FFA583EAC4B2A8A4109FE /* example-deconstructor-alt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "example-deconstructor-alt"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E2BEDE98C774B3DB0CC6B67 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		64E223B495D146718C6F1E45 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-parser-test-suite.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "run-parser-test-suite.c"; path = "tests/run-parser-test-suite.c"; sourceTree = SOURCE_ROOT; };
+		6BAB8610D1C84EE0A9C193AE /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/test-reader.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "test-reader.c"; path = "tests/test-reader.c"; sourceTree = SOURCE_ROOT; };
+		6BD8E67C80BD4EFEA79DB427 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-deconstructor.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "example-deconstructor.c"; path = "tests/example-deconstructor.c"; sourceTree = SOURCE_ROOT; };
+		708F6C8E92E245F5ABE47463 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		74CF8EC40172457E8DC8679A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		846F8A731A7D4C27ACE972AD /* run-loader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "run-loader"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87880929B3504E68A382CE40 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/scanner.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = scanner.c; path = src/scanner.c; sourceTree = SOURCE_ROOT; };
+		8BB29ECEFC8D438AA4F0A4B4 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/dumper.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = dumper.c; path = src/dumper.c; sourceTree = SOURCE_ROOT; };
+		8C2EB07886C84DACAA46971C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/writer.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = writer.c; path = src/writer.c; sourceTree = SOURCE_ROOT; };
+		8CCE87598F9447189ED82629 /* run-emitter-test-suite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "run-emitter-test-suite"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E4282387F6047AEAA5FD0EA /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		8F09E02D47D5466B87512637 /* run-parser-test-suite */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "run-parser-test-suite"; sourceTree = BUILT_PRODUCTS_DIR; };
+		939B0A9613FD4858AA71278B /* example-deconstructor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "example-deconstructor"; sourceTree = BUILT_PRODUCTS_DIR; };
+		986A4012A4044FBCB6A4BBFB /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/parser.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = parser.c; path = src/parser.c; sourceTree = SOURCE_ROOT; };
+		9D7112378F3045068B30560C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/loader.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = loader.c; path = src/loader.c; sourceTree = SOURCE_ROOT; };
+		A1F7ACE4E67A46C9BC08A008 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		A72EE0289B0A48BAA941533A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B41B03192B644E8B8A11E878 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B62EDA43291F446F80DB580B /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-emitter-test-suite.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "run-emitter-test-suite.c"; path = "tests/run-emitter-test-suite.c"; sourceTree = SOURCE_ROOT; };
+		BBCE93CF13F84C02B0B8080B /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C3456367C9AC411DAB265B15 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C52CC337540B4CAFAF0F8980 /* example-reformatter-alt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "example-reformatter-alt"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBAF2209017D4A09BE450E71 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-reformatter.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "example-reformatter.c"; path = "tests/example-reformatter.c"; sourceTree = SOURCE_ROOT; };
+		CD5403C081B449F38FDE011E /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/api.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = api.c; path = src/api.c; sourceTree = SOURCE_ROOT; };
+		CF1116F3576B4851B44A197B /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D2FAD8FF32174767B17CC391 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/test-version.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "test-version.c"; path = "tests/test-version.c"; sourceTree = SOURCE_ROOT; };
+		D52730E504AF4E9D976D4DE6 /* example-reformatter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "example-reformatter"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D56189B9C6474C90927CEC8B /* yaml */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libyaml_static.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6FE25AD77754DEF946620FF /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-parser.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "run-parser.c"; path = "tests/run-parser.c"; sourceTree = SOURCE_ROOT; };
+		DCBD7FA9BC1F4F4DAA84514D /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		DD1B4CBC49234FF8ADDC16BF /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-emitter.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "run-emitter.c"; path = "tests/run-emitter.c"; sourceTree = SOURCE_ROOT; };
+		DE87B8C1E3CF4B868FBD7BCC /* test-reader */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "test-reader"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF7C4372FACF4A11B5D98867 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = tests/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		E5E153EB9E38458D809446EC /* run-scanner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "run-scanner"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF51EA25F450483AAC2F9DCC /* run-dumper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "run-dumper"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF76F177DA5A4DA6803F6067 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-reformatter-alt.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = "example-reformatter-alt.c"; path = "tests/example-reformatter-alt.c"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		01A9B459D33D448FB1BA96F0 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF76F177DA5A4DA6803F6067 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-reformatter-alt.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		0758DDEC05BD470B9CE00ADB /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				B62EDA43291F446F80DB580B /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-emitter-test-suite.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		0A6B8381C2424A88A6E88076 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				6BAB8610D1C84EE0A9C193AE /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/test-reader.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		0DCC018592704E37ADC77E8E /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		14DE2341A1334CAF808C8992 /* run-parser-test-suite */ = {
+			isa = PBXGroup;
+			children = (
+				F12A2A9B590E4C2C8B0EB0FB /* Source Files */,
+				74CF8EC40172457E8DC8679A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "run-parser-test-suite";
+			sourceTree = "<group>";
+		};
+		1DC19192466C41EF8072CE9F /* run-emitter */ = {
+			isa = PBXGroup;
+			children = (
+				2AA627926F1F4908A5B2E4E2 /* Source Files */,
+				DCBD7FA9BC1F4F4DAA84514D /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "run-emitter";
+			sourceTree = "<group>";
+		};
+		25661C319C304EA196A8F7FC /* example-reformatter */ = {
+			isa = PBXGroup;
+			children = (
+				AF58314CF46745DBBCDD5E7F /* Source Files */,
+				A1F7ACE4E67A46C9BC08A008 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "example-reformatter";
+			sourceTree = "<group>";
+		};
+		2AA627926F1F4908A5B2E4E2 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD1B4CBC49234FF8ADDC16BF /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-emitter.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		2BF2876D7DC045B19026DAE6 = {
+			isa = PBXGroup;
+			children = (
+				EEFF8177E49049B9B36ABD48 /* Nightly */,
+				F17F058887D042C6AEDECA24 /* yaml */,
+				859E636A762B4A149F87DC81 /* Continuous */,
+				F7FF2F47EE75496DB255889E /* Experimental */,
+				58155331418B4F73AE5C926E /* NightlyMemoryCheck */,
+				9B8B66A109244031A28AC86E /* ALL_BUILD */,
+				D2C944995C864C538B377491 /* test-version */,
+				6F074B0A381940BB99B9EAE6 /* test-reader */,
+				54482D89F8434157B3C545D7 /* run-scanner */,
+				95A5997C67084DEB866F7382 /* run-parser */,
+				813AAF5A968E4F6D97B0F53B /* run-emitter-test-suite */,
+				14DE2341A1334CAF808C8992 /* run-parser-test-suite */,
+				8312B8D063A944D3B10530FB /* run-loader */,
+				1DC19192466C41EF8072CE9F /* run-emitter */,
+				EDEE84AC2C8D4C2E8012075C /* run-dumper */,
+				DE40F8697DA7448E89BB5072 /* example-reformatter-alt */,
+				25661C319C304EA196A8F7FC /* example-reformatter */,
+				93900C694FA745D5B0AF7F1D /* example-deconstructor-alt */,
+				E9A0C36E92544F86846D463E /* example-deconstructor */,
+				80D1EFDD0E4F4B22852415CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3E724C04976348D2BB1BAC96 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		43951296E41E42C4935F53AE /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD5403C081B449F38FDE011E /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/api.c */,
+				8BB29ECEFC8D438AA4F0A4B4 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/dumper.c */,
+				4415B257836944AA94892C44 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/emitter.c */,
+				9D7112378F3045068B30560C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/loader.c */,
+				986A4012A4044FBCB6A4BBFB /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/parser.c */,
+				3FE2F98313404C1C92C8C03C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/reader.c */,
+				87880929B3504E68A382CE40 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/scanner.c */,
+				8C2EB07886C84DACAA46971C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/writer.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		49CBA3CB7B6F45D0A9405C28 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				302D832DC5D74C4B821529D2 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-scanner.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		54482D89F8434157B3C545D7 /* run-scanner */ = {
+			isa = PBXGroup;
+			children = (
+				49CBA3CB7B6F45D0A9405C28 /* Source Files */,
+				3B06FCDA046C4CF4853BD9F5 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "run-scanner";
+			sourceTree = "<group>";
+		};
+		5687524E9B554C328CA3E318 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				356AD48C94084E258BE1E225 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-dumper.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		58155331418B4F73AE5C926E /* NightlyMemoryCheck */ = {
+			isa = PBXGroup;
+			children = (
+				728B078DA7E24A07803C64F6 /* CMake Rules */,
+				B41B03192B644E8B8A11E878 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */,
+			);
+			name = NightlyMemoryCheck;
+			sourceTree = "<group>";
+		};
+		60D78849EC51471A870D6DA3 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		6F074B0A381940BB99B9EAE6 /* test-reader */ = {
+			isa = PBXGroup;
+			children = (
+				0A6B8381C2424A88A6E88076 /* Source Files */,
+				5E2BEDE98C774B3DB0CC6B67 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "test-reader";
+			sourceTree = "<group>";
+		};
+		728B078DA7E24A07803C64F6 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		80D1EFDD0E4F4B22852415CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D56189B9C6474C90927CEC8B /* yaml */,
+				939B0A9613FD4858AA71278B /* example-deconstructor */,
+				577FFA583EAC4B2A8A4109FE /* example-deconstructor-alt */,
+				D52730E504AF4E9D976D4DE6 /* example-reformatter */,
+				C52CC337540B4CAFAF0F8980 /* example-reformatter-alt */,
+				FF51EA25F450483AAC2F9DCC /* run-dumper */,
+				1A50C210E5D748E2AAE81817 /* run-emitter */,
+				8CCE87598F9447189ED82629 /* run-emitter-test-suite */,
+				846F8A731A7D4C27ACE972AD /* run-loader */,
+				32DA2DA914434C5CAE5F4D05 /* run-parser */,
+				8F09E02D47D5466B87512637 /* run-parser-test-suite */,
+				E5E153EB9E38458D809446EC /* run-scanner */,
+				DE87B8C1E3CF4B868FBD7BCC /* test-reader */,
+				16B7F2C3A0BA49018D88ADD5 /* test-version */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		813AAF5A968E4F6D97B0F53B /* run-emitter-test-suite */ = {
+			isa = PBXGroup;
+			children = (
+				0758DDEC05BD470B9CE00ADB /* Source Files */,
+				26310355B945424BB2617428 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "run-emitter-test-suite";
+			sourceTree = "<group>";
+		};
+		8312B8D063A944D3B10530FB /* run-loader */ = {
+			isa = PBXGroup;
+			children = (
+				AB11D5353EEE47CE9A3EFF49 /* Source Files */,
+				0F7A7B7DC222441C87D0B5A1 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "run-loader";
+			sourceTree = "<group>";
+		};
+		859E636A762B4A149F87DC81 /* Continuous */ = {
+			isa = PBXGroup;
+			children = (
+				C16754D6BA514FA9BF9ADDDB /* CMake Rules */,
+				C3456367C9AC411DAB265B15 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */,
+			);
+			name = Continuous;
+			sourceTree = "<group>";
+		};
+		915E6ED348F44BA7AB7A769C /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				0CCC1A4BB7CB4D0586544B09 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-deconstructor-alt.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		93900C694FA745D5B0AF7F1D /* example-deconstructor-alt */ = {
+			isa = PBXGroup;
+			children = (
+				915E6ED348F44BA7AB7A769C /* Source Files */,
+				4A668996874345408CDC6754 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "example-deconstructor-alt";
+			sourceTree = "<group>";
+		};
+		95A5997C67084DEB866F7382 /* run-parser */ = {
+			isa = PBXGroup;
+			children = (
+				E5BB0109A23F4AA296D43D31 /* Source Files */,
+				A72EE0289B0A48BAA941533A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "run-parser";
+			sourceTree = "<group>";
+		};
+		9B8B66A109244031A28AC86E /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				3E724C04976348D2BB1BAC96 /* CMake Rules */,
+				109C7F4C06A24CAB90044AB1 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		AB11D5353EEE47CE9A3EFF49 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C5BD28E98BA48B995EBD087 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-loader.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		AF58314CF46745DBBCDD5E7F /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBAF2209017D4A09BE450E71 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-reformatter.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		B7A7A8E3937E456BADE38C31 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				6BD8E67C80BD4EFEA79DB427 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-deconstructor.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		C16754D6BA514FA9BF9ADDDB /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		D2C944995C864C538B377491 /* test-version */ = {
+			isa = PBXGroup;
+			children = (
+				D4157F58821F4205A5860AD7 /* Source Files */,
+				1373A9C0AA764CF49D3AC101 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "test-version";
+			sourceTree = "<group>";
+		};
+		D4157F58821F4205A5860AD7 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2FAD8FF32174767B17CC391 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/test-version.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		DE40F8697DA7448E89BB5072 /* example-reformatter-alt */ = {
+			isa = PBXGroup;
+			children = (
+				01A9B459D33D448FB1BA96F0 /* Source Files */,
+				10CDD7FDBDBF4B8FAAAA333C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "example-reformatter-alt";
+			sourceTree = "<group>";
+		};
+		E5BB0109A23F4AA296D43D31 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				D6FE25AD77754DEF946620FF /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-parser.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		E9A0C36E92544F86846D463E /* example-deconstructor */ = {
+			isa = PBXGroup;
+			children = (
+				B7A7A8E3937E456BADE38C31 /* Source Files */,
+				DF7C4372FACF4A11B5D98867 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "example-deconstructor";
+			sourceTree = "<group>";
+		};
+		EDEE84AC2C8D4C2E8012075C /* run-dumper */ = {
+			isa = PBXGroup;
+			children = (
+				5687524E9B554C328CA3E318 /* Source Files */,
+				708F6C8E92E245F5ABE47463 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/CMakeLists.txt */,
+			);
+			name = "run-dumper";
+			sourceTree = "<group>";
+		};
+		EEFF8177E49049B9B36ABD48 /* Nightly */ = {
+			isa = PBXGroup;
+			children = (
+				0DCC018592704E37ADC77E8E /* CMake Rules */,
+				CF1116F3576B4851B44A197B /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */,
+			);
+			name = Nightly;
+			sourceTree = "<group>";
+		};
+		F12A2A9B590E4C2C8B0EB0FB /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				64E223B495D146718C6F1E45 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-parser-test-suite.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		F17F058887D042C6AEDECA24 /* yaml */ = {
+			isa = PBXGroup;
+			children = (
+				43951296E41E42C4935F53AE /* Source Files */,
+				BBCE93CF13F84C02B0B8080B /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */,
+			);
+			name = yaml;
+			sourceTree = "<group>";
+		};
+		F7FF2F47EE75496DB255889E /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				60D78849EC51471A870D6DA3 /* CMake Rules */,
+				8E4282387F6047AEAA5FD0EA /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeLists.txt */,
+			);
+			name = Experimental;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03597E1AC74943A083C73016 /* run-loader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 740561D20D7C4DA59AB12C64 /* Build configuration list for PBXNativeTarget "run-loader" */;
+			buildPhases = (
+				1D0800243EC145ADBE726CD3 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27CDD8B6E8964C97ADE05EFB /* PBXTargetDependency */,
+				6295D7405CED428FA60E1B70 /* PBXTargetDependency */,
+			);
+			name = "run-loader";
+			productName = "run-loader";
+			productReference = 846F8A731A7D4C27ACE972AD /* run-loader */;
+			productType = "com.apple.product-type.tool";
+		};
+		14B1BC8C1A814A93825596B2 /* example-reformatter-alt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 258AB1C9F02440C699219C26 /* Build configuration list for PBXNativeTarget "example-reformatter-alt" */;
+			buildPhases = (
+				2F9BEC475C8841E19081F39F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45B941A1300D462BB40B91E7 /* PBXTargetDependency */,
+				1B23D21D22654C90B1DBAF49 /* PBXTargetDependency */,
+			);
+			name = "example-reformatter-alt";
+			productName = "example-reformatter-alt";
+			productReference = C52CC337540B4CAFAF0F8980 /* example-reformatter-alt */;
+			productType = "com.apple.product-type.tool";
+		};
+		3CD3E79128834E828BBE0CF1 /* run-scanner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AA531F2D302403689BE5ABC /* Build configuration list for PBXNativeTarget "run-scanner" */;
+			buildPhases = (
+				FE4EAFA2AADD4547836DF4E2 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41BD32DB8F7C47BDA91DD439 /* PBXTargetDependency */,
+				3CED5F651F3047439BBC4EC0 /* PBXTargetDependency */,
+			);
+			name = "run-scanner";
+			productName = "run-scanner";
+			productReference = E5E153EB9E38458D809446EC /* run-scanner */;
+			productType = "com.apple.product-type.tool";
+		};
+		3EB7AC002207415D8F06D399 /* test-version */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EF61D04A0AB4DD3BE8A13A0 /* Build configuration list for PBXNativeTarget "test-version" */;
+			buildPhases = (
+				35B703ECEB8749C99597CFB9 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				976BBFE1DDA0483F918140D3 /* PBXTargetDependency */,
+				3D18012250264D9287A2263B /* PBXTargetDependency */,
+			);
+			name = "test-version";
+			productName = "test-version";
+			productReference = 16B7F2C3A0BA49018D88ADD5 /* test-version */;
+			productType = "com.apple.product-type.tool";
+		};
+		48F7C015CE084C6BAE8E31B0 /* run-parser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51AF8CAC3B604FADBA9B5FA3 /* Build configuration list for PBXNativeTarget "run-parser" */;
+			buildPhases = (
+				2D4C54E359D94F00810AA575 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF21E4CBB01046B09A14CD94 /* PBXTargetDependency */,
+				FB86A2BB8AF743ABB2CE7D24 /* PBXTargetDependency */,
+			);
+			name = "run-parser";
+			productName = "run-parser";
+			productReference = 32DA2DA914434C5CAE5F4D05 /* run-parser */;
+			productType = "com.apple.product-type.tool";
+		};
+		88A0935332B84113B03173F0 /* run-dumper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24BA534F0F874432B28B9D3C /* Build configuration list for PBXNativeTarget "run-dumper" */;
+			buildPhases = (
+				F0234E7CB12742BDA34D1C13 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95FD707C56684D409DD257D3 /* PBXTargetDependency */,
+				09709CB11B6D4E208139D882 /* PBXTargetDependency */,
+			);
+			name = "run-dumper";
+			productName = "run-dumper";
+			productReference = FF51EA25F450483AAC2F9DCC /* run-dumper */;
+			productType = "com.apple.product-type.tool";
+		};
+		8D3271C39067498DA4FE4114 /* example-deconstructor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A51AA56AF854958BAA03998 /* Build configuration list for PBXNativeTarget "example-deconstructor" */;
+			buildPhases = (
+				F0B4AC1D7BB9475793CC4C3E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EB028EE6FA54F84BB6BAE97 /* PBXTargetDependency */,
+				5CE1200F0D1349E68691D7C2 /* PBXTargetDependency */,
+			);
+			name = "example-deconstructor";
+			productName = "example-deconstructor";
+			productReference = 939B0A9613FD4858AA71278B /* example-deconstructor */;
+			productType = "com.apple.product-type.tool";
+		};
+		9D231871FF5E464888EDD08D /* run-emitter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B89D4B5604204C97A3F5A839 /* Build configuration list for PBXNativeTarget "run-emitter" */;
+			buildPhases = (
+				71373F94138A4106A1FD4848 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5520AB995FC4D97B8ED6E00 /* PBXTargetDependency */,
+				1450486308A943D78314D4F0 /* PBXTargetDependency */,
+			);
+			name = "run-emitter";
+			productName = "run-emitter";
+			productReference = 1A50C210E5D748E2AAE81817 /* run-emitter */;
+			productType = "com.apple.product-type.tool";
+		};
+		AA89117F213F48F39ACDB5A5 /* test-reader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D7B204050F6433DB3C9FFA8 /* Build configuration list for PBXNativeTarget "test-reader" */;
+			buildPhases = (
+				2149396C7C8744249D6B7F0F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				913FBBC5EEAE4D1D8B380756 /* PBXTargetDependency */,
+				6F9EEE904074475EA0769F8B /* PBXTargetDependency */,
+			);
+			name = "test-reader";
+			productName = "test-reader";
+			productReference = DE87B8C1E3CF4B868FBD7BCC /* test-reader */;
+			productType = "com.apple.product-type.tool";
+		};
+		BA1D6E4946B04A5296869669 /* example-reformatter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 807C3F1C8C6249EB8FCECEA4 /* Build configuration list for PBXNativeTarget "example-reformatter" */;
+			buildPhases = (
+				1AA73394D99D44BF8E7EAD55 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2734C3DB82D43848FF8347D /* PBXTargetDependency */,
+				34AA1F2EC16B4E8481C92502 /* PBXTargetDependency */,
+			);
+			name = "example-reformatter";
+			productName = "example-reformatter";
+			productReference = D52730E504AF4E9D976D4DE6 /* example-reformatter */;
+			productType = "com.apple.product-type.tool";
+		};
+		CAF6AD9E551E457580B38680 /* run-emitter-test-suite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AA263A760164067933F01C0 /* Build configuration list for PBXNativeTarget "run-emitter-test-suite" */;
+			buildPhases = (
+				F9A1FE048A5E4D26909E0E53 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6DD061BB3F2144F6881645A5 /* PBXTargetDependency */,
+				2FEBDB02A5BE49BAB8CE9110 /* PBXTargetDependency */,
+			);
+			name = "run-emitter-test-suite";
+			productName = "run-emitter-test-suite";
+			productReference = 8CCE87598F9447189ED82629 /* run-emitter-test-suite */;
+			productType = "com.apple.product-type.tool";
+		};
+		CBFAC800F2C64817A9EE81AC /* run-parser-test-suite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCBDBAF8880A4E41A28DD6D2 /* Build configuration list for PBXNativeTarget "run-parser-test-suite" */;
+			buildPhases = (
+				CBE9F80995F54A7E8C3A75CF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				106949433C354184B7515E00 /* PBXTargetDependency */,
+				A6CED25864554A7C855BF5E2 /* PBXTargetDependency */,
+			);
+			name = "run-parser-test-suite";
+			productName = "run-parser-test-suite";
+			productReference = 8F09E02D47D5466B87512637 /* run-parser-test-suite */;
+			productType = "com.apple.product-type.tool";
+		};
+		D05E7DAFF65D41FEB1FD2F6B /* example-deconstructor-alt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2470B1F21C1C4C45B4829137 /* Build configuration list for PBXNativeTarget "example-deconstructor-alt" */;
+			buildPhases = (
+				07ACAA4FAB274CD8BCFF518E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2C5963A308B4936AF062BEA /* PBXTargetDependency */,
+				18E5C06E19B2484E9B0B338D /* PBXTargetDependency */,
+			);
+			name = "example-deconstructor-alt";
+			productName = "example-deconstructor-alt";
+			productReference = 577FFA583EAC4B2A8A4109FE /* example-deconstructor-alt */;
+			productType = "com.apple.product-type.tool";
+		};
+		F5C8BC3D845747ABA1FCA005 /* yaml */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4186003E08914BA99A55431F /* Build configuration list for PBXNativeTarget "yaml" */;
+			buildPhases = (
+				6227539B1C7449F9A4168BA9 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				516C1BE5E17F44FC8D99E55E /* PBXTargetDependency */,
+			);
+			name = yaml;
+			productName = yaml;
+			productReference = D56189B9C6474C90927CEC8B /* yaml */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		116C3E3105FC4410AE086FEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0940;
+			};
+			buildConfigurationList = 94EB5C2CC70E4444B0EC5428 /* Build configuration list for PBXProject "yaml" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				8AA8D1C902F64F76B5295072 /* Debug */,
+				94DF17511AE94A6090656935 /* Release */,
+				B061BF2508AD4839B3809FC4 /* MinSizeRel */,
+				C5A1972FF86F483EA46B8522 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 2BF2876D7DC045B19026DAE6;
+			projectDirPath = .;
+			projectRoot = "";
+			targets = (
+				07E0CC5E8975488B90CAD7A8 /* ALL_BUILD */,
+				9880BE2E6B224478BB183095 /* Continuous */,
+				D58863F7E3A2462890EAEFC8 /* Experimental */,
+				1322DD0BF02E4EFBB161132E /* Nightly */,
+				032046B04F9E4C769F9E08CC /* NightlyMemoryCheck */,
+				FBF0DD2696834FB6844538B6 /* RUN_TESTS */,
+				8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */,
+				F278631241FD42D09B7CB600 /* install */,
+				F5C8BC3D845747ABA1FCA005 /* yaml */,
+				8D3271C39067498DA4FE4114 /* example-deconstructor */,
+				D05E7DAFF65D41FEB1FD2F6B /* example-deconstructor-alt */,
+				BA1D6E4946B04A5296869669 /* example-reformatter */,
+				14B1BC8C1A814A93825596B2 /* example-reformatter-alt */,
+				88A0935332B84113B03173F0 /* run-dumper */,
+				9D231871FF5E464888EDD08D /* run-emitter */,
+				CAF6AD9E551E457580B38680 /* run-emitter-test-suite */,
+				03597E1AC74943A083C73016 /* run-loader */,
+				48F7C015CE084C6BAE8E31B0 /* run-parser */,
+				CBFAC800F2C64817A9EE81AC /* run-parser-test-suite */,
+				3CD3E79128834E828BBE0CF1 /* run-scanner */,
+				AA89117F213F48F39ACDB5A5 /* test-reader */,
+				3EB7AC002207415D8F06D399 /* test-version */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0557392BC385487195A3E53F = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		0788C323C34B4A0387C2BD7A = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		0934DAFBE3184BCC90E7FA4B = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		2011434C5BFD48658FAE7B0C /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master -f /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeScripts/Nightly_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		34ABFF31CC6C43CDADC3C625 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		4C1088A058B5427093EC4BA1 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master -f /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		52DC5D5BA69D4B308FEA91C8 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master -f /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		6DD8978FB6944E7BBDE71652 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		84E031F0F3EE41658D1B7F71 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		8EB1873B80654BF190D9BBBF /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master -f /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeScripts/Continuous_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		9B2647EF95DA4A3981E40565 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		9E9CDB10613A47ADA2973071 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master -f /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeScripts/Experimental_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		9F491E5FF8FA451FBCBF444B = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		ABCA36B3888B4ACE8A41105F /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master -f /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeScripts/RUN_TESTS_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		DA4FB02925584491933AA933 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master -f /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		F397999C89A647E0A07264DA /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master -f /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/CMakeScripts/NightlyMemoryCheck_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07ACAA4FAB274CD8BCFF518E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB1847130E6047D889430403 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-deconstructor-alt.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AA73394D99D44BF8E7EAD55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				417A25A710AA493B80311F08 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-reformatter.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D0800243EC145ADBE726CD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5739E64718D1405A83EE3252 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-loader.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2149396C7C8744249D6B7F0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE51E8E1D1CE4021830AB31F /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/test-reader.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D4C54E359D94F00810AA575 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9CF31A324B040459B28783A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-parser.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F9BEC475C8841E19081F39F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C4EE5782624B6B97B3E781 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-reformatter-alt.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35B703ECEB8749C99597CFB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56CD766A2E6F49DF8D00979A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/test-version.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6227539B1C7449F9A4168BA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CA1EAE90F7B4D1794019439 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/api.c */,
+				3E38B2FBD0574EA4983EF030 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/dumper.c */,
+				7B05B51FDE2846109498FCA9 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/emitter.c */,
+				346DB40DBE054AE1AEFACC81 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/loader.c */,
+				ED5511FB73E443A6B341FD15 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/parser.c */,
+				A9C9B1940A174D57A4D6F8FF /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/reader.c */,
+				670E0AB68D874D43A9038711 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/scanner.c */,
+				E8C595CBFCBA41D4BC6E70CB /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/src/writer.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71373F94138A4106A1FD4848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7D9A9297E714C5FBBF57901 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-emitter.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBE9F80995F54A7E8C3A75CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				976892FF006F410BAB858B16 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-parser-test-suite.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0234E7CB12742BDA34D1C13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0255D39CEB6148349279CD5A /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-dumper.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0B4AC1D7BB9475793CC4C3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EEDA35DB05D49519A29DB50 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/example-deconstructor.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9A1FE048A5E4D26909E0E53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD6F20AC65C4ACFA9E78412 /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-emitter-test-suite.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE4EAFA2AADD4547836DF4E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9174804DB9BA4105ABD8133C /* /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests/run-scanner.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		09709CB11B6D4E208139D882 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = 2265D42688DE4CAC98A0D91C /* PBXContainerItemProxy */;
+		};
+		0A65571E519D4D7193B3D820 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88A0935332B84113B03173F0 /* run-dumper */;
+			targetProxy = 793798B0900A440C948E3CC8 /* PBXContainerItemProxy */;
+		};
+		0CC01686E34E499B88DFE478 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07E0CC5E8975488B90CAD7A8 /* ALL_BUILD */;
+			targetProxy = BE483FD1829247E3951285C0 /* PBXContainerItemProxy */;
+		};
+		106949433C354184B7515E00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = A89948AA4841441686AD76F6 /* PBXContainerItemProxy */;
+		};
+		1450486308A943D78314D4F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = C14B745A03AD4F4487547BEA /* PBXContainerItemProxy */;
+		};
+		18AB14EB7995441EA50233C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CD3E79128834E828BBE0CF1 /* run-scanner */;
+			targetProxy = D39B0D75D8EF4A4DBE4BFC6E /* PBXContainerItemProxy */;
+		};
+		18E5C06E19B2484E9B0B338D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = 1937CC1A3C3145E78BB015B2 /* PBXContainerItemProxy */;
+		};
+		1B23D21D22654C90B1DBAF49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = 11C7EC0F9F684CC489C3072D /* PBXContainerItemProxy */;
+		};
+		27CDD8B6E8964C97ADE05EFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = A0671699B095463DA57CE524 /* PBXContainerItemProxy */;
+		};
+		2F74F2B07D284F93A56725BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 6F452244D7564BA28FF80012 /* PBXContainerItemProxy */;
+		};
+		2FEBDB02A5BE49BAB8CE9110 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = C5375A9BB9AA4A77AC8061B0 /* PBXContainerItemProxy */;
+		};
+		34AA1F2EC16B4E8481C92502 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = A9614CCB8C7142879AC218C6 /* PBXContainerItemProxy */;
+		};
+		3BD03AC52ADA4AACB68610F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = 13FD655D80E34C4C891E420E /* PBXContainerItemProxy */;
+		};
+		3CED5F651F3047439BBC4EC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = D8945567247E45DEBF007F7D /* PBXContainerItemProxy */;
+		};
+		3D18012250264D9287A2263B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = BC61FE58AAE145BBB62DE9AF /* PBXContainerItemProxy */;
+		};
+		3EB028EE6FA54F84BB6BAE97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = AE1171CB329B45C48FE38984 /* PBXContainerItemProxy */;
+		};
+		41BD32DB8F7C47BDA91DD439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 93D716973D614BF4BB88B7F3 /* PBXContainerItemProxy */;
+		};
+		450DE4C40D264126BFF3E845 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = C0EDB0730A27401DB7FD7B53 /* PBXContainerItemProxy */;
+		};
+		45850FE4E59D420D88D907BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = AA54A9AC22D64CB89F574EA8 /* PBXContainerItemProxy */;
+		};
+		45B941A1300D462BB40B91E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 2E44B4DED98C4AC7BD1C1711 /* PBXContainerItemProxy */;
+		};
+		516C1BE5E17F44FC8D99E55E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = A8678DBC48894D3CBBD8E2B3 /* PBXContainerItemProxy */;
+		};
+		5CE1200F0D1349E68691D7C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = 5ED323E8FB0342C1AE71163E /* PBXContainerItemProxy */;
+		};
+		61B92588EEAE40108390F723 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA89117F213F48F39ACDB5A5 /* test-reader */;
+			targetProxy = D7A096591952457D80EFCE76 /* PBXContainerItemProxy */;
+		};
+		6295D7405CED428FA60E1B70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = 57D20B32E86447A1ADF199E3 /* PBXContainerItemProxy */;
+		};
+		6DD061BB3F2144F6881645A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 1296E0623D5F4BF1AE31E40F /* PBXContainerItemProxy */;
+		};
+		6F9EEE904074475EA0769F8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = A6D49AF706EA4723AC696666 /* PBXContainerItemProxy */;
+		};
+		71DB1CDCD1AF4484BDE6EC32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03597E1AC74943A083C73016 /* run-loader */;
+			targetProxy = BC2BAA8F18F946B4B4361085 /* PBXContainerItemProxy */;
+		};
+		913FBBC5EEAE4D1D8B380756 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 7BFD8AC4D6B64F87B6C1A844 /* PBXContainerItemProxy */;
+		};
+		94F1D611768F44DEB2B55306 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA1D6E4946B04A5296869669 /* example-reformatter */;
+			targetProxy = CED119F471834FD6B06FC8BC /* PBXContainerItemProxy */;
+		};
+		95FD707C56684D409DD257D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 3ACD7661F60640E4AEAF5D9C /* PBXContainerItemProxy */;
+		};
+		976BBFE1DDA0483F918140D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 9738D3FE320E4B648BAB7D0E /* PBXContainerItemProxy */;
+		};
+		A6CED25864554A7C855BF5E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = 166D9B1D1F6B4826AA960AFC /* PBXContainerItemProxy */;
+		};
+		AAE5D969C7744C6199DAF69D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D3271C39067498DA4FE4114 /* example-deconstructor */;
+			targetProxy = 7BFE5CB0B1BE4F85897FBB1A /* PBXContainerItemProxy */;
+		};
+		AF3FA0E0B78D4BD68291A1F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EB7AC002207415D8F06D399 /* test-version */;
+			targetProxy = A3AFDB889F2D4BE48CD54B2C /* PBXContainerItemProxy */;
+		};
+		B560131A05C94F74AB7137CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14B1BC8C1A814A93825596B2 /* example-reformatter-alt */;
+			targetProxy = 7CEFDCBFF5C243B8BDDC8D6D /* PBXContainerItemProxy */;
+		};
+		C8C2D839FF8449129C363E51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48F7C015CE084C6BAE8E31B0 /* run-parser */;
+			targetProxy = 3C728EB5D25D426688FB5DEB /* PBXContainerItemProxy */;
+		};
+		D35E2F58CA3A40B8A7D1D9B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 4C9D2352497448B49CF4997F /* PBXContainerItemProxy */;
+		};
+		DA6397F624FF482B9798B8FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CAF6AD9E551E457580B38680 /* run-emitter-test-suite */;
+			targetProxy = F340EB56D3444FF48C90B563 /* PBXContainerItemProxy */;
+		};
+		DAB5594F644E493AB4169FD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D231871FF5E464888EDD08D /* run-emitter */;
+			targetProxy = CDD7767DF44449C9A83F0D35 /* PBXContainerItemProxy */;
+		};
+		E2734C3DB82D43848FF8347D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 853FCAAB5D0A4A0B833EB848 /* PBXContainerItemProxy */;
+		};
+		E2C5963A308B4936AF062BEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 1D7DBA86ADE34ABE98685F0E /* PBXContainerItemProxy */;
+		};
+		EA1B7E29717C400CA45AA6F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = D60F07FE21C941E883F79852 /* PBXContainerItemProxy */;
+		};
+		EF21E4CBB01046B09A14CD94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = CD0DF2F3236B43F0BD51D976 /* PBXContainerItemProxy */;
+		};
+		F2C33FFB11584FF89340BF59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBFAC800F2C64817A9EE81AC /* run-parser-test-suite */;
+			targetProxy = 08D0FFEFE99046AC8F8593A1 /* PBXContainerItemProxy */;
+		};
+		F5520AB995FC4D97B8ED6E00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A6AFA0B33884873AC3EBDFC /* ZERO_CHECK */;
+			targetProxy = 6CD25EC7317C43DFABA6AE84 /* PBXContainerItemProxy */;
+		};
+		FB86A2BB8AF743ABB2CE7D24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5C8BC3D845747ABA1FCA005 /* yaml */;
+			targetProxy = 723FC565E25A4FFB81C4949B /* PBXContainerItemProxy */;
+		};
+		FEC1B6C822C24B5D828B2E72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D05E7DAFF65D41FEB1FD2F6B /* example-deconstructor-alt */;
+			targetProxy = 42F05DA972DB4DA8B34EF4BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		02226F8CF8C24552BCB5649E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-version";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		03B18609EEAE4D5B9C4F9162 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-deconstructor";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		04BCAACE44164143B449BDFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-reformatter";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		07CB222007FE421EBC69724F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-dumper";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		08C6365AAB3F4FC9A77ADC97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-loader";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		08E3BBB3B4364A97985DAF42 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Continuous;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		092C6C2A0AB04A2CA8CF856C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-deconstructor-alt";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		0AE96302055048D9A7E03B3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Experimental;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		0CC9E38AFF16473FB6EDDE7F /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-emitter-test-suite";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		0CD448B15735496E9380657E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/build";
+			};
+			name = Debug;
+		};
+		0F5EE174BB8E415F8BDD69A2 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-reformatter-alt";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		0FA9266FCEC84576B8FC6FE7 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-loader";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		1164572613DB40A381ABD328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-emitter-test-suite";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		11EF7E513765422FAAA02011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = NightlyMemoryCheck;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		12436B259C544F588279439A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/build";
+			};
+			name = Release;
+		};
+		12E0307B05A242829BE72DB0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-emitter";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		1675892DABDD4DB89EB764C9 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-parser-test-suite";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		16AE92B021DD4558B9C0D1CC /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-deconstructor";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		18C02F4512E946FE93732CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-parser-test-suite";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		1C89D675672C4E0B86243150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Continuous;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		21F3944BB0AE4F29B262199E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		28695B2F0E434DC4B11B58E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-parser";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		307F3E2AFDD54D6E897AB4B5 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Experimental;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		3415399D89CE415BA98128D6 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Experimental;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		36614CD491404193A3FA2DFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Continuous;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		367080463686441F809AD52E /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		3A890C0003454729A6AA17F7 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-reader";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		3BF7C8846393471AA5DE5290 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Experimental;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		422AA30D2B0744EAA84080B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-reader";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		44C3BDE6BBD94374B197C054 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-reformatter-alt";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		44DF7A32D8684A9984F3CD6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		467CC5A3B8B64675AA0B0760 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-scanner";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		46CB80123E0E4C6A88BBC6E4 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-reformatter";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		46DBE42B701B44F6B6AADA87 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-scanner";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		4A5DB67F90FF4F03B8F1C07B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		4BD3EC68C18D4AB7B5F0343D /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-parser";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		4D5C6C4FB83647D582E4B855 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Nightly;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		4D936390D4384AFEBA79997C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-emitter-test-suite";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		539D8CD6E83B42DC9438358C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",HAVE_CONFIG_H,YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yaml_static;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		53C12DADDF774E02B2652F8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",HAVE_CONFIG_H,YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yaml_static;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		59F34500FD744BEB8E181C6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-emitter";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		60431E6FEE1C4F36A03D3772 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = NightlyMemoryCheck;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		664B68C952E849DA9C35AF68 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",HAVE_CONFIG_H,YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yaml_static;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		6BC260C55F2E4D58A5847E67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-deconstructor";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		72AB64DAEFAE42B88A12FBFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-scanner";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		7D6ED221F99643D8AAAAB96E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-version";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		7F6E775711BB43F98341C43C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-parser";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		892492C295A3424F91BE42C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		8BEC161897864B84B021EB75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-deconstructor";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		8D083CA43C2C4A7B968D8A4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-scanner";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		90FCFCC546B64E8DB39A0E22 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-dumper";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		94B4CAF544A04C6C9D1ACC38 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		96BD6821FAC44C8BA993E874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-reformatter-alt";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		9944E8C78D764B2AA04DB00F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = NightlyMemoryCheck;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		9996965AE0434BE39D196D30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Nightly;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		9D5BACD20B2E44C5AD98F9C1 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-deconstructor-alt";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		A2497A6D29304DBC9D92F85B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-parser-test-suite";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		AC2861ACBD944B6489017726 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-version";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B002911778E046479F9E7043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-reformatter";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		B2DB1F43A994435EBF40A107 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-loader";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B32F516EFE6B4B679A954E60 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		B590181ABAF64953A59AA482 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B6C53D9F61284617AED3C470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-emitter";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		B71A4DCDD07048EBA06F83D9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/build";
+			};
+			name = RelWithDebInfo;
+		};
+		BE165649392C4D67B6CABD73 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk;
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/build";
+			};
+			name = MinSizeRel;
+		};
+		C2A4209B1A2745529C921B33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-dumper";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		C308D5C1561541E991857E01 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C3C7C78FD7DC483294AAC689 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-version";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		C429D898AF214BEA8619A0ED /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-reformatter";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		C5DB47E0F8C549138B160E94 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-reader";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C6D589910E9C433BA4103086 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Continuous;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C9CBE0AD18774B2E88C7E96F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		CC6C300C24D447748FB9CB92 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Nightly;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		CDBF2512FBFD48E39B8C8804 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-deconstructor-alt";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		CE3CD28CFB7643B390EAC4A9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-parser-test-suite";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		D33A688DE0814376B42501F1 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		D5B7BD11426C430FB2FF2AF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		D80A0879430A4501B114965E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-reformatter-alt";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		DA6BC3693EB7453A93D8C9FA /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-emitter-test-suite";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		DAE0BE22D5D94E8EB1F56F1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Nightly;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		DDFB6695FB8E423E86F831DE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-dumper";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		DF88A34DC7E4455C82F95794 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",HAVE_CONFIG_H,YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = yaml_static;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		E3B06FA321014E49A403D054 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		E45E13FDB2994518B3E463CC /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = NightlyMemoryCheck;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		EF20193861624A739779497E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		EF5A3EE5F51444EEAAF26893 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-loader";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		F603BE40963C4FA09CE0C15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Debug/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-reader";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		F781AF534625432896655E98 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "       -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/RelWithDebInfo/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-emitter";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		F840C450E88348B7B5C9448C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/Release/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "run-parser";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		FDD7495C68EF4167918B6F70 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel";
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",YAML_DECLARE_STATIC);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/include");
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "    -DNDEBUG  ";
+				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  /Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/MinSizeRel/libyaml_static.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "example-deconstructor-alt";
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master/tests";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		FE8F27CBA926493AB0DE3489 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		FF1E423BE51C43B6BD01C5EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/konstantin/Desktop/diplomarbeit/parsing-script/libyaml-master";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		214570B8BFF5463B988740FF /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8F27CBA926493AB0DE3489 /* Debug */,
+				D5B7BD11426C430FB2FF2AF4 /* Release */,
+				94B4CAF544A04C6C9D1ACC38 /* MinSizeRel */,
+				B32F516EFE6B4B679A954E60 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2470B1F21C1C4C45B4829137 /* Build configuration list for PBXNativeTarget "example-deconstructor-alt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDBF2512FBFD48E39B8C8804 /* Debug */,
+				092C6C2A0AB04A2CA8CF856C /* Release */,
+				FDD7495C68EF4167918B6F70 /* MinSizeRel */,
+				9D5BACD20B2E44C5AD98F9C1 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		24BA534F0F874432B28B9D3C /* Build configuration list for PBXNativeTarget "run-dumper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07CB222007FE421EBC69724F /* Debug */,
+				C2A4209B1A2745529C921B33 /* Release */,
+				90FCFCC546B64E8DB39A0E22 /* MinSizeRel */,
+				DDFB6695FB8E423E86F831DE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		258AB1C9F02440C699219C26 /* Build configuration list for PBXNativeTarget "example-reformatter-alt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D80A0879430A4501B114965E /* Debug */,
+				96BD6821FAC44C8BA993E874 /* Release */,
+				44C3BDE6BBD94374B197C054 /* MinSizeRel */,
+				0F5EE174BB8E415F8BDD69A2 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		33BA0A0409E34AEE9AAE6EB9 /* Build configuration list for PBXAggregateTarget "Continuous" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36614CD491404193A3FA2DFE /* Debug */,
+				1C89D675672C4E0B86243150 /* Release */,
+				08E3BBB3B4364A97985DAF42 /* MinSizeRel */,
+				C6D589910E9C433BA4103086 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3A51AA56AF854958BAA03998 /* Build configuration list for PBXNativeTarget "example-deconstructor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BEC161897864B84B021EB75 /* Debug */,
+				6BC260C55F2E4D58A5847E67 /* Release */,
+				03B18609EEAE4D5B9C4F9162 /* MinSizeRel */,
+				16AE92B021DD4558B9C0D1CC /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3AA531F2D302403689BE5ABC /* Build configuration list for PBXNativeTarget "run-scanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72AB64DAEFAE42B88A12FBFB /* Debug */,
+				8D083CA43C2C4A7B968D8A4A /* Release */,
+				46DBE42B701B44F6B6AADA87 /* MinSizeRel */,
+				467CC5A3B8B64675AA0B0760 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4186003E08914BA99A55431F /* Build configuration list for PBXNativeTarget "yaml" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53C12DADDF774E02B2652F8B /* Debug */,
+				DF88A34DC7E4455C82F95794 /* Release */,
+				664B68C952E849DA9C35AF68 /* MinSizeRel */,
+				539D8CD6E83B42DC9438358C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4D7B204050F6433DB3C9FFA8 /* Build configuration list for PBXNativeTarget "test-reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F603BE40963C4FA09CE0C15F /* Debug */,
+				422AA30D2B0744EAA84080B6 /* Release */,
+				3A890C0003454729A6AA17F7 /* MinSizeRel */,
+				C5DB47E0F8C549138B160E94 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		51AF8CAC3B604FADBA9B5FA3 /* Build configuration list for PBXNativeTarget "run-parser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28695B2F0E434DC4B11B58E3 /* Debug */,
+				F840C450E88348B7B5C9448C /* Release */,
+				4BD3EC68C18D4AB7B5F0343D /* MinSizeRel */,
+				7F6E775711BB43F98341C43C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		52B27A655AA64E0F8D47159A /* Build configuration list for PBXAggregateTarget "Experimental" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AE96302055048D9A7E03B3B /* Debug */,
+				3BF7C8846393471AA5DE5290 /* Release */,
+				3415399D89CE415BA98128D6 /* MinSizeRel */,
+				307F3E2AFDD54D6E897AB4B5 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		58078D437E96465C89B743A0 /* Build configuration list for PBXAggregateTarget "RUN_TESTS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				892492C295A3424F91BE42C8 /* Debug */,
+				44DF7A32D8684A9984F3CD6E /* Release */,
+				D33A688DE0814376B42501F1 /* MinSizeRel */,
+				C308D5C1561541E991857E01 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5EF61D04A0AB4DD3BE8A13A0 /* Build configuration list for PBXNativeTarget "test-version" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02226F8CF8C24552BCB5649E /* Debug */,
+				7D6ED221F99643D8AAAAB96E /* Release */,
+				C3C7C78FD7DC483294AAC689 /* MinSizeRel */,
+				AC2861ACBD944B6489017726 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6545BF7F5D514ABBB6B88D53 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9CBE0AD18774B2E88C7E96F /* Debug */,
+				4A5DB67F90FF4F03B8F1C07B /* Release */,
+				367080463686441F809AD52E /* MinSizeRel */,
+				EF20193861624A739779497E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		740561D20D7C4DA59AB12C64 /* Build configuration list for PBXNativeTarget "run-loader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF5A3EE5F51444EEAAF26893 /* Debug */,
+				08C6365AAB3F4FC9A77ADC97 /* Release */,
+				B2DB1F43A994435EBF40A107 /* MinSizeRel */,
+				0FA9266FCEC84576B8FC6FE7 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		759C55E9978A40249293E564 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF1E423BE51C43B6BD01C5EF /* Debug */,
+				21F3944BB0AE4F29B262199E /* Release */,
+				B590181ABAF64953A59AA482 /* MinSizeRel */,
+				E3B06FA321014E49A403D054 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		807C3F1C8C6249EB8FCECEA4 /* Build configuration list for PBXNativeTarget "example-reformatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B002911778E046479F9E7043 /* Debug */,
+				04BCAACE44164143B449BDFF /* Release */,
+				C429D898AF214BEA8619A0ED /* MinSizeRel */,
+				46CB80123E0E4C6A88BBC6E4 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8AA263A760164067933F01C0 /* Build configuration list for PBXNativeTarget "run-emitter-test-suite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4D936390D4384AFEBA79997C /* Debug */,
+				1164572613DB40A381ABD328 /* Release */,
+				DA6BC3693EB7453A93D8C9FA /* MinSizeRel */,
+				0CC9E38AFF16473FB6EDDE7F /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		94EB5C2CC70E4444B0EC5428 /* Build configuration list for PBXProject "yaml" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CD448B15735496E9380657E /* Debug */,
+				12436B259C544F588279439A /* Release */,
+				BE165649392C4D67B6CABD73 /* MinSizeRel */,
+				B71A4DCDD07048EBA06F83D9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B89D4B5604204C97A3F5A839 /* Build configuration list for PBXNativeTarget "run-emitter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F34500FD744BEB8E181C6C /* Debug */,
+				B6C53D9F61284617AED3C470 /* Release */,
+				12E0307B05A242829BE72DB0 /* MinSizeRel */,
+				F781AF534625432896655E98 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C06A56D60A89414B8F6C57E7 /* Build configuration list for PBXAggregateTarget "Nightly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9996965AE0434BE39D196D30 /* Debug */,
+				DAE0BE22D5D94E8EB1F56F1C /* Release */,
+				CC6C300C24D447748FB9CB92 /* MinSizeRel */,
+				4D5C6C4FB83647D582E4B855 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CCBDBAF8880A4E41A28DD6D2 /* Build configuration list for PBXNativeTarget "run-parser-test-suite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2497A6D29304DBC9D92F85B /* Debug */,
+				18C02F4512E946FE93732CFC /* Release */,
+				1675892DABDD4DB89EB764C9 /* MinSizeRel */,
+				CE3CD28CFB7643B390EAC4A9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FB70016922874F7397B82974 /* Build configuration list for PBXAggregateTarget "NightlyMemoryCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9944E8C78D764B2AA04DB00F /* Debug */,
+				11EF7E513765422FAAA02011 /* Release */,
+				E45E13FDB2994518B3E463CC /* MinSizeRel */,
+				60431E6FEE1C4F36A03D3772 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 116C3E3105FC4410AE086FEC /* Project object */;
+}

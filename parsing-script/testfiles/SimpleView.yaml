@@ -1,0 +1,7 @@
+extend: IALayout
+elements:
+  - content:
+      Playbuttonrotation:
+        ref: playbutton
+    size: [200, 200]
+    centerPoint: [{{width}} / 2, {{height}} / 2]
