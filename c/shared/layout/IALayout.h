@@ -18,7 +18,7 @@ typedef struct{
 } IALayout;
 
 
-void IALayout_init(IALayout * this);
+void IALayout_init(IALayout * this, const IALayoutAttributes * attr);
 
 
 

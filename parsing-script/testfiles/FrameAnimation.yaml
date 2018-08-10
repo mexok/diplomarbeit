@@ -1,2 +1,2 @@
 __extend__: IAFrameAnimation
-imageContext: "{{ imageContext }}"
+imageContext: $imageContext

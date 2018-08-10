@@ -14,13 +14,14 @@
 #include "IAArray.h"
 
 typedef struct{
-    IASize baseSize;
-    IALayoutScaling scaling;
     IAArray(IALayoutElement) * elements;
 } IALayoutAttributes;
 
 
-void IALayoutAttributes_make(IALayoutAttributes * this);
+void IALayoutAttributes_make(IALayoutAttributes * this, size_t elementCount, IALayoutElement * elements[elementCount]);
+
+
+
 
 #include "IALayoutAttributes+Generated.h"
 

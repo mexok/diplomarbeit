@@ -23,6 +23,7 @@ sub printYaml{
     }
 }
 
-my $array = LoadFile "test2.yaml";
+my $array = LoadFile "SampleLayout2.yaml";
 
 printYaml $array;
+

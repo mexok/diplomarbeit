@@ -12,14 +12,9 @@
 #include "IAImage.h"
 #include "IAImageContext.h"
 
-//@provider(IAFrameAnimation:imageContext)
-IAImageContext * Resources_getImageContext(void);
 
-//@provider(IALayout:content -> image, IAButton:imageNormal, IAButton:imageTouched)
+//@provider(Image)
 IAImage * Resources_get(const char * name);
-
-//@provider(guiString)
-IAString * Resources_get(const char * name);
 
 
 #endif
