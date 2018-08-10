@@ -1,0 +1,56 @@
+Parsing scalar values:
+======================
+context -> behavior
+
+function -> create new function
+int/long/float/double/uint_64 -> evaluate as expr
+string -> string
+boolean -> boolean
+object -> object
+
+
+### Data binding in scalar values:
+expressions of the form {{ variableName }} will get binded. They have to be provided to the yaml view.
+-> They will be provided via one struct, which includes all needed variables.
+
+Parsing arrays:
+===============
+arrayExpected -> as array interpreted (size_t size and Type * buffer[size])
+struct expected -> as struct fields interpreted
+
+
+Parsing dicts:
+===============
+special keys: ref, extend, type
+
+ref: create an attribute inside current class which references it.
+type: explicitly specify the object type
+extend: only allowed at first level. Extends all from this object.
+
+//struct: explicitly specify the struct type -> a dict shall only have type or struct, not both
+//expr: explicitly set value -> a dict which has expression shall not have any custom keys
+
+custom keys: 
+- expand attributes of object for initialisation
+- only use standard init or make function respectively
+- parameters in make/init function of attributes are required, parameters in functions are optional
+
+
+### Resource providers:
+use an annotation to functions @provider.
+
+2 kinds of annotations:
+@provider(type:attribute -> newAttribute) ... use a new attribute to start the function call.
+-> corresponding function has to take exactly one argument (const char *)
+@defaultProvider(type:attribute) .. use the provider as the default value for the attribute
+-> corresponding function has to take no arguments (void)
+
+
+Type safety:
+============
+Check if type matches any super class. Delegates of the class shall not be checked and should result in an error.
+
+
+
+Knackpunkt: provider konzept
+============================

@@ -1,4 +1,4 @@
-extend: IALayout
+__extend__: IALayout
 elements:
   - image: asdf_32                  #needs to call Resources_get("asdf_32")
     leftTopPoint: {x = 10, y = 20}
@@ -13,13 +13,15 @@ elements:
   - image: asdf_32
     centerPoint: [20, 30]
     size: menubuttonSize
-  - Menubutton:
-      ref: myMenubutton
+  - menubutton:
+      __ref__: myMenubutton
       imageNormal: "void5"
       imageTouched: "asdf"
       onClick: menuItemOnClick
-    size: "{{widthOfScreen}} - 20"
-  - frameAnimation:                 #needs to implicitly use Resources_getImageContext()
+    size:
+      width: "{{widthOfView}} - 20"
+      height: "{{heightOfView}}"
+  - frameAnimation:
       number_of_frames: 5
       offset: 3
   - label:

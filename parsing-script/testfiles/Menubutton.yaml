@@ -1,3 +1,5 @@
-extend: IAButton
+__extend__: IAButton
+__provider__:
+  - IALayout:content -> menubutton
 rectTouchedRight: 10
 rectTouchedLeft: 10
