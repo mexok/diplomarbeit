@@ -15,7 +15,7 @@ expressions of the form {{ variableName }} will get binded. They have to be prov
 
 Parsing arrays:
 ===============
-arrayExpected -> as array interpreted (size_t size and Type * buffer[size])
+array expected -> as array interpreted (size_t size and Type * buffer[size])
 struct expected -> as struct fields interpreted
 
 
@@ -24,9 +24,9 @@ Parsing dicts:
 special keys: ref, extend, type
 
 ref: create an attribute inside current class which references it.
-type: explicitly specify the object type
 extend: only allowed at first level. Extends all from this object.
 
+//type: explicitly specify the object type
 //struct: explicitly specify the struct type -> a dict shall only have type or struct, not both
 //expr: explicitly set value -> a dict which has expression shall not have any custom keys
 
@@ -39,11 +39,14 @@ custom keys:
 ### Resource providers:
 use an annotation to functions @provider.
 
-2 kinds of annotations:
-@provider(type:attribute -> newAttribute) ... use a new attribute to start the function call.
+1 kind of annotations:
+@provider(NewType) ... map the function as a type for yaml
 -> corresponding function has to take exactly one argument (const char *)
-@defaultProvider(type:attribute) .. use the provider as the default value for the attribute
--> corresponding function has to take no arguments (void)
+
+// @provider(type:attribute -> newAttribute) ... use a new attribute to start the function call.
+// -> corresponding function has to take exactly one argument (const char *)
+// @defaultProvider(type:attribute) .. use the provider as the default value for the attribute
+// -> corresponding function has to take no arguments (void)
 
 
 Type safety:
