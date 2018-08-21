@@ -1,7 +1,17 @@
+Contexts
+========
+function
+int/long/float/double/uint_64
+string
+boolean
+struct
+object ... always with specific type
+object_array
+
+
+
 Parsing scalar values:
 ======================
-context -> behavior
-
 function -> create new function
 int/long/float/double/uint_64 -> evaluate as expr
 string -> string
@@ -9,26 +19,27 @@ boolean -> boolean
 object -> object
 
 
-### Data binding in scalar values:
-expressions of the form {{ variableName }} will get binded. They have to be provided to the yaml view.
--> They will be provided via one struct, which includes all needed variables.
 
 Parsing arrays:
 ===============
-array expected -> as array interpreted (size_t size and Type * buffer[size])
-struct expected -> as struct fields interpreted
+struct -> as struct fields interpreted
+object_array -> as array interpreted (size_t size and Type * buffer[size])
+
 
 
 Parsing dicts:
-===============
-special keys: ref, extend, type
+==============
+struct
+object
+
+
+
+
+
+special keys: ref, extend
 
 ref: create an attribute inside current class which references it.
 extend: only allowed at first level. Extends all from this object.
-
-//type: explicitly specify the object type
-//struct: explicitly specify the struct type -> a dict shall only have type or struct, not both
-//expr: explicitly set value -> a dict which has expression shall not have any custom keys
 
 custom keys: 
 - expand attributes of object for initialisation
@@ -43,10 +54,12 @@ use an annotation to functions @provider.
 @provider(NewType) ... map the function as a type for yaml
 -> corresponding function has to take exactly one argument (const char *)
 
-// @provider(type:attribute -> newAttribute) ... use a new attribute to start the function call.
-// -> corresponding function has to take exactly one argument (const char *)
-// @defaultProvider(type:attribute) .. use the provider as the default value for the attribute
-// -> corresponding function has to take no arguments (void)
+
+
+Data binding in scalar values:
+==============================
+expressions of the form $variableName will get binded. They have to be provided to the yaml view.
+-> They will be provided via one struct, which includes all needed variables.
 
 
 Type safety:

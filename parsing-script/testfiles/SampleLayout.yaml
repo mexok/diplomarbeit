@@ -12,21 +12,21 @@ elements:
     fadeOutOffset: getMenuFadeOutOffset
   - content->Image: asdf_32
     centerPoint: [20, 30]
-    size: "{{ menubuttonSize }}"
+    size: $menubuttonSize
   - content->Menubutton:
       __ref__: myMenubutton
-      imageNormal->Image: "void5"
-      imageTouched->Image: "asdf"
+      imageNormal->Image: void5
+      imageTouched->Image: asdf
       onClick: menuItemOnClick
     size:
-      width: "{{ widthOfView }} - 20"
-      height: "{{ heightOfView }}"
+      width: $widthOfView - 20
+      height: $heightOfView
   - content->FrameAnimation:
       number_of_frames: 5
       offset: 3
-      name: "frame_images_"
+      name: frame_images_
       durationOfSingleFrame: 20
   - content->Label:
-      text->GuiString: "asdf"
+      text->GuiString: asdf
     size: [200, 300]
     centerPoint: [20, 40]

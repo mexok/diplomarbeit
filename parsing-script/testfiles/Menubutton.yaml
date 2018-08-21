@@ -1,3 +1,4 @@
 __extend__: IAButton
-rectTouchedRight: 10
-rectTouchedLeft: 10
+rectExtensionForTouchBegan: 10
+rectExtensionForTouchMovedOutside: 10
+size: [10, 20]
