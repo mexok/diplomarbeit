@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\key-value-countainer\IAKeyValueElement.c">
+      <Filter>shared\key-value-countainer</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\key-value-countainer\IAKeyValueElementAttributes.c">
+      <Filter>shared\key-value-countainer</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\key-value-countainer\IAKeyValueElementOperations.c">
+      <Filter>shared\key-value-countainer</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\key-value-countainer\IAKeyValueHashMap.c">
+      <Filter>shared\key-value-countainer</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IAAtlasAssets.c">
+      <Filter>shared\main</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IAStorage.c">
+      <Filter>shared\main</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IAString+Assets.c">
+      <Filter>shared\main</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IA_XML_Atlas.c">
+      <Filter>shared\main</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IA_XML_Strings.c">
+      <Filter>shared\main</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\windows\IAInputOutputWinMappings.c">
+      <Filter>windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\key-value-countainer\IAKeyValueElement.h">
+      <Filter>shared\key-value-countainer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\key-value-countainer\IAKeyValueElementAttributes.h">
+      <Filter>shared\key-value-countainer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\key-value-countainer\IAKeyValueElementOperations.h">
+      <Filter>shared\key-value-countainer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\key-value-countainer\IAKeyValueHashMap.h">
+      <Filter>shared\key-value-countainer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\localisation\IALocalisation.h">
+      <Filter>shared\localisation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IAAtlasAssets.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IAAtlasAssetsAttributes.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IAStorage+Native.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IAStorage.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IAString+Assets+Native.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IAString+Assets.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IA_XML_Atlas.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\shared\main\IA_XML_Strings.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\input-output\c\windows\IAInputOutputWinMappings.h">
+      <Filter>windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shared">
+      <UniqueIdentifier>{84A37672-9644-3850-88DC-33E85D49E8F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\key-value-countainer">
+      <UniqueIdentifier>{53646FAF-B123-39D1-9ADE-7460BD6AC746}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\localisation">
+      <UniqueIdentifier>{8A9B4267-9D44-396A-9441-F4FAFE6E5F41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\main">
+      <UniqueIdentifier>{04E0B5B3-0169-3155-9BF1-2DDEFC669125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows">
+      <UniqueIdentifier>{86A57879-B01E-338F-9094-4105DBE03FF1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

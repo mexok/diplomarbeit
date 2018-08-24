@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\IALibrary.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAArray.c">
+      <Filter>shared\container</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAArrayIterator.c">
+      <Filter>shared\container</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAArrayList.c">
+      <Filter>shared\container</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAArrayListIterator.c">
+      <Filter>shared\container</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAAutoExpandingHashMap.c">
+      <Filter>shared\container</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAAutoExpandingHashMapIterator.c">
+      <Filter>shared\container</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAHashMap.c">
+      <Filter>shared\container</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAHashMapIterator.c">
+      <Filter>shared\container</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\IAAutoreleasePool.c">
+      <Filter>shared\memory-management</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\IAMemoryPool.c">
+      <Filter>shared\memory-management</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\IAMemoryPoolElement.c">
+      <Filter>shared\memory-management</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracker.c">
+      <Filter>shared\memory-management\allocation-tracking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTrackerElement.c">
+      <Filter>shared\memory-management\allocation-tracking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracking.c">
+      <Filter>shared\memory-management\allocation-tracking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTrackingElement.c">
+      <Filter>shared\memory-management\allocation-tracking</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IACharArray.c">
+      <Filter>shared\supporting-classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IAHashing.c">
+      <Filter>shared\supporting-classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IAString.c">
+      <Filter>shared\supporting-classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\concurrency\IACondition.c">
+      <Filter>shared\supporting-classes\concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\concurrency\IALock.c">
+      <Filter>shared\supporting-classes\concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\concurrency\IARecursiveLock.c">
+      <Filter>shared\supporting-classes\concurrency</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\clib\c\windows\IACLibWinMappings.c">
+      <Filter>windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\IAAssert.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\IALibrary+SendOnMemoryWarningNotification.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\IALibrary.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\IAObject.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAArray.h">
+      <Filter>shared\container</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAArrayIterator.h">
+      <Filter>shared\container</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAArrayList.h">
+      <Filter>shared\container</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAArrayListIterator.h">
+      <Filter>shared\container</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAAutoExpandingHashMap.h">
+      <Filter>shared\container</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAAutoExpandingHashMapIterator.h">
+      <Filter>shared\container</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAHashMap.h">
+      <Filter>shared\container</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAHashMapIterator.h">
+      <Filter>shared\container</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\container\IAStructArrayList.h">
+      <Filter>shared\container</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\IAAutoreleasePool+Internal.h">
+      <Filter>shared\memory-management</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\IAAutoreleasePool.h">
+      <Filter>shared\memory-management</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\IAMemoryPool.h">
+      <Filter>shared\memory-management</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\IAMemoryPoolElement.h">
+      <Filter>shared\memory-management</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracker.h">
+      <Filter>shared\memory-management\allocation-tracking</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTrackerElement.h">
+      <Filter>shared\memory-management\allocation-tracking</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracking+Internal.h">
+      <Filter>shared\memory-management\allocation-tracking</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracking.h">
+      <Filter>shared\memory-management\allocation-tracking</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTrackingDelegate.h">
+      <Filter>shared\memory-management\allocation-tracking</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTrackingElement.h">
+      <Filter>shared\memory-management\allocation-tracking</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IACharArray+Internal.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IACharArray.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IAHashing.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IANotificationDelegate.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IAOperatingSystem.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IAString.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IATime.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\concurrency\IACondition.h">
+      <Filter>shared\supporting-classes\concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\concurrency\IALock.h">
+      <Filter>shared\supporting-classes\concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\concurrency\IAPosixAvailable.h">
+      <Filter>shared\supporting-classes\concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\concurrency\IARecursiveLock.h">
+      <Filter>shared\supporting-classes\concurrency</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\windows\IACLibWinMappings.h">
+      <Filter>windows</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\windows\IALogger.h">
+      <Filter>windows</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\clib\c\windows\IAOperatingSystem+Native.h">
+      <Filter>windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\diplomarbeit\impsengine\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shared">
+      <UniqueIdentifier>{84A37672-9644-3850-88DC-33E85D49E8F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\container">
+      <UniqueIdentifier>{C3671DE5-44E4-3861-ABE0-5F8B92645632}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\memory-management">
+      <UniqueIdentifier>{42BFC8EC-2DC3-3EE5-9625-7BC7BC93688F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\memory-management\allocation-tracking">
+      <UniqueIdentifier>{415D615B-E2BB-387C-84B7-77F054628702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\supporting-classes">
+      <UniqueIdentifier>{BC24754A-E18E-3EB5-A57B-479B155A7315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\supporting-classes\concurrency">
+      <UniqueIdentifier>{61E58861-5479-33AE-A386-07F4BE6131BB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows">
+      <UniqueIdentifier>{86A57879-B01E-338F-9094-4105DBE03FF1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

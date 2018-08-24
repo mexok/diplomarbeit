@@ -1,0 +1,431 @@
+The system is: Windows - 6.3.9600 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R)-Buildmodul, Version 15.7.179.6572 f�r .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 24.08.2018 10:39:25 gestartet.
+Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\3.12.1\CompilerIdC\CompilerIdC.vcxproj" auf Knoten "1" (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis "Debug\" wird erstellt.
+  Das Verzeichnis "Debug\CompilerIdC.tlog\" wird erstellt.
+InitializeBuildStatus:
+  "Debug\CompilerIdC.tlog\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe -c -fdiagnostics-format=msvc -target "amd64-pc-windows-msvc" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\ClangC2\\14.10.25903\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\atlmfc\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\ucrt" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\um" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\shared" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\winrt" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\cppwinrt" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -o "Debug\\CMakeCCompilerId.obj" -w -O0 -fno-strict-aliasing -fomit-frame-pointer -fexceptions -ffunction-sections -fdata-sections -fstack-protector -fpic -fno-short-enums -D NDEBUG -D NDEBUG -D _MBCS -x c -fno-ms-compatibility -fms-extensions -fno-delayed-template-parsing  -D_DEBUG -D_MT -D_DLL -Xclang --dependent-lib=msvcrtd -Xclang --dependent-lib=oldnames CMakeCCompilerId.c
+  CMakeCCompilerId.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X64 Debug\CMakeCCompilerId.obj
+  CompilerIdC.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\3.12.1\CompilerIdC\.\CompilerIdC.exe
+PostBuildEvent:
+  for %%i in (clang.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_C_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe
+FinalizeBuildStatus:
+  Die Datei "Debug\CompilerIdC.tlog\unsuccessfulbuild" wird gel�scht.
+  Aktualisieren des Timestamps von "Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate".
+Die Erstellung von Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\3.12.1\CompilerIdC\CompilerIdC.vcxproj" ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgef�hrt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:03.61
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+The C compiler identification is Clang, found in "C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/3.12.1/CompilerIdC/CompilerIdC.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft (R)-Buildmodul, Version 15.7.179.6572 f�r .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 24.08.2018 10:39:29 gestartet.
+Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\3.12.1\CompilerIdCXX\CompilerIdCXX.vcxproj" auf Knoten "1" (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis "Debug\" wird erstellt.
+  Das Verzeichnis "Debug\CompilerIdCXX.tlog\" wird erstellt.
+InitializeBuildStatus:
+  "Debug\CompilerIdCXX.tlog\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe -c -fdiagnostics-format=msvc -target "amd64-pc-windows-msvc" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\ClangC2\\14.10.25903\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\atlmfc\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\ucrt" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\um" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\shared" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\winrt" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\cppwinrt" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -o "Debug\\CMakeCXXCompilerId.obj" -w -O0 -fno-strict-aliasing -fomit-frame-pointer -fexceptions -ffunction-sections -fdata-sections -fstack-protector -fpic -fno-short-enums -frtti -D NDEBUG -D NDEBUG -D _MBCS -x c++ -fno-ms-compatibility -fms-extensions -fno-delayed-template-parsing  -D_DEBUG -D_MT -D_DLL -Xclang --dependent-lib=msvcrtd -Xclang --dependent-lib=oldnames CMakeCXXCompilerId.cpp
+  CMakeCXXCompilerId.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X64 Debug\CMakeCXXCompilerId.obj
+  CompilerIdCXX.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\3.12.1\CompilerIdCXX\.\CompilerIdCXX.exe
+PostBuildEvent:
+  for %%i in (clang.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_CXX_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe
+FinalizeBuildStatus:
+  Die Datei "Debug\CompilerIdCXX.tlog\unsuccessfulbuild" wird gel�scht.
+  Aktualisieren des Timestamps von "Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate".
+Die Erstellung von Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\3.12.1\CompilerIdCXX\CompilerIdCXX.vcxproj" ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgef�hrt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:01.04
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+
+The CXX compiler identification is Clang, found in "C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/3.12.1/CompilerIdCXX/CompilerIdCXX.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_a3c5f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R)-Buildmodul, Version 15.7.179.6572 für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 24.08.2018 10:39:30 gestartet.
+Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_a3c5f.vcxproj" auf Knoten "1" (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis "cmTC_a3c5f.dir\Debug\" wird erstellt.
+  Das Verzeichnis "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\" wird erstellt.
+  Das Verzeichnis "cmTC_a3c5f.dir\Debug\cmTC_a3c5f.tlog\" wird erstellt.
+InitializeBuildStatus:
+  "cmTC_a3c5f.dir\Debug\cmTC_a3c5f.tlog\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe -c -fdiagnostics-format=msvc -target "amd64-pc-windows-msvc" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\ClangC2\\14.10.25903\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\atlmfc\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\ucrt" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\um" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\shared" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\winrt" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\cppwinrt" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -o "cmTC_a3c5f.dir\\Debug\\testCCompiler.obj" -Wall -O3 -fno-strict-aliasing -fomit-frame-pointer -ffunction-sections -fdata-sections -fstack-protector -fpic -fno-short-enums -D WIN32 -D _WINDOWS -D "CMAKE_INTDIR=\\"Debug\\"" -D NDEBUG -D NDEBUG -D _MBCS -x c -fno-ms-compatibility -fms-extensions -fno-delayed-template-parsing  -fms-extensions -fms-compatibility -gline-tables-only -fno-inline -O0 -D_DEBUG -D_MT -D_DLL -Xclang --dependent-lib=msvcrtd -Xclang --dependent-lib=oldnames "C:\\diplomarbeit\\visual-studio\\cmake-build\\CMakeFiles\\CMakeTmp\\testCCompiler.c"
+  testCCompiler.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_a3c5f.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_a3c5f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_a3c5f.lib" /MACHINE:X64  /machine:x64 cmTC_a3c5f.dir\Debug\testCCompiler.obj
+  cmTC_a3c5f.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_a3c5f.exe
+FinalizeBuildStatus:
+  Die Datei "cmTC_a3c5f.dir\Debug\cmTC_a3c5f.tlog\unsuccessfulbuild" wird gelöscht.
+  Aktualisieren des Timestamps von "cmTC_a3c5f.dir\Debug\cmTC_a3c5f.tlog\cmTC_a3c5f.lastbuildstate".
+Die Erstellung von Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_a3c5f.vcxproj" ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:01.10
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_41a29.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R)-Buildmodul, Version 15.7.179.6572 für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 24.08.2018 10:39:31 gestartet.
+Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_41a29.vcxproj" auf Knoten "1" (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis "cmTC_41a29.dir\Debug\" wird erstellt.
+  Das Verzeichnis "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\" wird erstellt.
+  Das Verzeichnis "cmTC_41a29.dir\Debug\cmTC_41a29.tlog\" wird erstellt.
+InitializeBuildStatus:
+  "cmTC_41a29.dir\Debug\cmTC_41a29.tlog\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe -c -fdiagnostics-format=msvc -target "amd64-pc-windows-msvc" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\ClangC2\\14.10.25903\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\atlmfc\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\ucrt" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\um" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\shared" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\winrt" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\cppwinrt" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -o "cmTC_41a29.dir\\Debug\\CMakeCCompilerABI.obj" -Wall -O3 -fno-strict-aliasing -fomit-frame-pointer -ffunction-sections -fdata-sections -fstack-protector -fpic -fno-short-enums -D WIN32 -D _WINDOWS -D "CMAKE_INTDIR=\\"Debug\\"" -D NDEBUG -D NDEBUG -D _MBCS -x c -fno-ms-compatibility -fms-extensions -fno-delayed-template-parsing  -fms-extensions -fms-compatibility -gline-tables-only -fno-inline -O0 -D_DEBUG -D_MT -D_DLL -Xclang --dependent-lib=msvcrtd -Xclang --dependent-lib=oldnames "C:\\Program Files\\CMake\\share\\cmake-3.12\\Modules\\CMakeCCompilerABI.c"
+  CMakeCCompilerABI.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_41a29.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_41a29.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_41a29.lib" /MACHINE:X64  /machine:x64 cmTC_41a29.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_41a29.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_41a29.exe
+FinalizeBuildStatus:
+  Die Datei "cmTC_41a29.dir\Debug\cmTC_41a29.tlog\unsuccessfulbuild" wird gelöscht.
+  Aktualisieren des Timestamps von "cmTC_41a29.dir\Debug\cmTC_41a29.tlog\cmTC_41a29.lastbuildstate".
+Die Erstellung von Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_41a29.vcxproj" ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:01.09
+
+
+
+
+Detecting C [] compiler features compiled with the following output:
+Change Dir: C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_ff4d2.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R)-Buildmodul, Version 15.7.179.6572 für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 24.08.2018 10:39:33 gestartet.
+Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_ff4d2.vcxproj" auf Knoten "1" (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis "cmTC_ff4d2.dir\Debug\" wird erstellt.
+  Das Verzeichnis "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\" wird erstellt.
+  Das Verzeichnis "cmTC_ff4d2.dir\Debug\cmTC_ff4d2.tlog\" wird erstellt.
+InitializeBuildStatus:
+  "cmTC_ff4d2.dir\Debug\cmTC_ff4d2.tlog\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe -c -fdiagnostics-format=msvc -target "amd64-pc-windows-msvc" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\ClangC2\\14.10.25903\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\atlmfc\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\ucrt" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\um" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\shared" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\winrt" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\cppwinrt" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -o "cmTC_ff4d2.dir\\Debug\\feature_tests.obj" -Wall -O3 -fno-strict-aliasing -fomit-frame-pointer -ffunction-sections -fdata-sections -fstack-protector -fpic -fno-short-enums -D WIN32 -D _WINDOWS -D "CMAKE_INTDIR=\\"Debug\\"" -D NDEBUG -D NDEBUG -D _MBCS -x c -fno-ms-compatibility -fms-extensions -fno-delayed-template-parsing  -fms-extensions -fms-compatibility -gline-tables-only -fno-inline -O0 -D_DEBUG -D_MT -D_DLL -Xclang --dependent-lib=msvcrtd -Xclang --dependent-lib=oldnames "C:\\diplomarbeit\\visual-studio\\cmake-build\\CMakeFiles\\feature_tests.c"
+  feature_tests.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_ff4d2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_ff4d2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_ff4d2.lib" /MACHINE:X64  /machine:x64 cmTC_ff4d2.dir\Debug\feature_tests.obj
+  cmTC_ff4d2.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_ff4d2.exe
+FinalizeBuildStatus:
+  Die Datei "cmTC_ff4d2.dir\Debug\cmTC_ff4d2.tlog\unsuccessfulbuild" wird gelöscht.
+  Aktualisieren des Timestamps von "cmTC_ff4d2.dir\Debug\cmTC_ff4d2.tlog\cmTC_ff4d2.lastbuildstate".
+Die Erstellung von Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_ff4d2.vcxproj" ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:00.93
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [] compiler features compiled with the following output:
+Change Dir: C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_ef003.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R)-Buildmodul, Version 15.7.179.6572 für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 24.08.2018 10:39:34 gestartet.
+Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_ef003.vcxproj" auf Knoten "1" (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis "cmTC_ef003.dir\Debug\" wird erstellt.
+  Das Verzeichnis "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\" wird erstellt.
+  Das Verzeichnis "cmTC_ef003.dir\Debug\cmTC_ef003.tlog\" wird erstellt.
+InitializeBuildStatus:
+  "cmTC_ef003.dir\Debug\cmTC_ef003.tlog\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe -c -fdiagnostics-format=msvc -target "amd64-pc-windows-msvc" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\ClangC2\\14.10.25903\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\atlmfc\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\ucrt" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\um" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\shared" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\winrt" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\cppwinrt" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -o "cmTC_ef003.dir\\Debug\\feature_tests.obj" -Wall -O3 -fno-strict-aliasing -fomit-frame-pointer -ffunction-sections -fdata-sections -fstack-protector -fpic -fno-short-enums -D WIN32 -D _WINDOWS -D "CMAKE_INTDIR=\\"Debug\\"" -D NDEBUG -D NDEBUG -D _MBCS -x c -fno-ms-compatibility -fms-extensions -fno-delayed-template-parsing  -fms-extensions -fms-compatibility -gline-tables-only -fno-inline -O0 -D_DEBUG -D_MT -D_DLL -Xclang --dependent-lib=msvcrtd -Xclang --dependent-lib=oldnames "C:\\diplomarbeit\\visual-studio\\cmake-build\\CMakeFiles\\feature_tests.c"
+  feature_tests.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_ef003.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_ef003.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_ef003.lib" /MACHINE:X64  /machine:x64 cmTC_ef003.dir\Debug\feature_tests.obj
+  cmTC_ef003.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_ef003.exe
+FinalizeBuildStatus:
+  Die Datei "cmTC_ef003.dir\Debug\cmTC_ef003.tlog\unsuccessfulbuild" wird gelöscht.
+  Aktualisieren des Timestamps von "cmTC_ef003.dir\Debug\cmTC_ef003.tlog\cmTC_ef003.lastbuildstate".
+Die Erstellung von Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_ef003.vcxproj" ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:01.00
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [] compiler features compiled with the following output:
+Change Dir: C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_7ff93.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R)-Buildmodul, Version 15.7.179.6572 für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 24.08.2018 10:39:35 gestartet.
+Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_7ff93.vcxproj" auf Knoten "1" (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis "cmTC_7ff93.dir\Debug\" wird erstellt.
+  Das Verzeichnis "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\" wird erstellt.
+  Das Verzeichnis "cmTC_7ff93.dir\Debug\cmTC_7ff93.tlog\" wird erstellt.
+InitializeBuildStatus:
+  "cmTC_7ff93.dir\Debug\cmTC_7ff93.tlog\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe -c -fdiagnostics-format=msvc -target "amd64-pc-windows-msvc" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\ClangC2\\14.10.25903\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\atlmfc\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\ucrt" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\um" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\shared" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\winrt" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\cppwinrt" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -o "cmTC_7ff93.dir\\Debug\\feature_tests.obj" -Wall -O3 -fno-strict-aliasing -fomit-frame-pointer -ffunction-sections -fdata-sections -fstack-protector -fpic -fno-short-enums -D WIN32 -D _WINDOWS -D "CMAKE_INTDIR=\\"Debug\\"" -D NDEBUG -D NDEBUG -D _MBCS -x c -fno-ms-compatibility -fms-extensions -fno-delayed-template-parsing  -fms-extensions -fms-compatibility -gline-tables-only -fno-inline -O0 -D_DEBUG -D_MT -D_DLL -Xclang --dependent-lib=msvcrtd -Xclang --dependent-lib=oldnames "C:\\diplomarbeit\\visual-studio\\cmake-build\\CMakeFiles\\feature_tests.c"
+  feature_tests.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_7ff93.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_7ff93.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_7ff93.lib" /MACHINE:X64  /machine:x64 cmTC_7ff93.dir\Debug\feature_tests.obj
+  cmTC_7ff93.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_7ff93.exe
+FinalizeBuildStatus:
+  Die Datei "cmTC_7ff93.dir\Debug\cmTC_7ff93.tlog\unsuccessfulbuild" wird gelöscht.
+  Aktualisieren des Timestamps von "cmTC_7ff93.dir\Debug\cmTC_7ff93.tlog\cmTC_7ff93.lastbuildstate".
+Die Erstellung von Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_7ff93.vcxproj" ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:00.96
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_dc9b7.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R)-Buildmodul, Version 15.7.179.6572 für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 24.08.2018 10:39:36 gestartet.
+Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_dc9b7.vcxproj" auf Knoten "1" (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis "cmTC_dc9b7.dir\Debug\" wird erstellt.
+  Das Verzeichnis "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\" wird erstellt.
+  Das Verzeichnis "cmTC_dc9b7.dir\Debug\cmTC_dc9b7.tlog\" wird erstellt.
+InitializeBuildStatus:
+  "cmTC_dc9b7.dir\Debug\cmTC_dc9b7.tlog\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe -c -fdiagnostics-format=msvc -target "amd64-pc-windows-msvc" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\ClangC2\\14.10.25903\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\atlmfc\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\ucrt" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\um" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\shared" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\winrt" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\cppwinrt" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -o "cmTC_dc9b7.dir\\Debug\\testCXXCompiler.obj" -Wall -O3 -fno-strict-aliasing -fomit-frame-pointer -ffunction-sections -fdata-sections -fstack-protector -fpic -fno-short-enums -frtti -D WIN32 -D _WINDOWS -D "CMAKE_INTDIR=\\"Debug\\"" -D NDEBUG -D NDEBUG -D _MBCS -x c++ -fno-ms-compatibility -fms-extensions -fno-delayed-template-parsing  -fms-extensions -fms-compatibility -frtti -fexceptions -gline-tables-only -fno-inline -O0 -D_DEBUG -D_MT -D_DLL -Xclang --dependent-lib=msvcrtd -Xclang --dependent-lib=oldnames "C:\\diplomarbeit\\visual-studio\\cmake-build\\CMakeFiles\\CMakeTmp\\testCXXCompiler.cxx"
+  testCXXCompiler.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_dc9b7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_dc9b7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_dc9b7.lib" /MACHINE:X64  /machine:x64 cmTC_dc9b7.dir\Debug\testCXXCompiler.obj
+  cmTC_dc9b7.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_dc9b7.exe
+FinalizeBuildStatus:
+  Die Datei "cmTC_dc9b7.dir\Debug\cmTC_dc9b7.tlog\unsuccessfulbuild" wird gelöscht.
+  Aktualisieren des Timestamps von "cmTC_dc9b7.dir\Debug\cmTC_dc9b7.tlog\cmTC_dc9b7.lastbuildstate".
+Die Erstellung von Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_dc9b7.vcxproj" ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:01.00
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_83937.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R)-Buildmodul, Version 15.7.179.6572 für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 24.08.2018 10:39:37 gestartet.
+Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_83937.vcxproj" auf Knoten "1" (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis "cmTC_83937.dir\Debug\" wird erstellt.
+  Das Verzeichnis "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\" wird erstellt.
+  Das Verzeichnis "cmTC_83937.dir\Debug\cmTC_83937.tlog\" wird erstellt.
+InitializeBuildStatus:
+  "cmTC_83937.dir\Debug\cmTC_83937.tlog\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe -c -fdiagnostics-format=msvc -target "amd64-pc-windows-msvc" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\ClangC2\\14.10.25903\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\atlmfc\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\ucrt" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\um" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\shared" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\winrt" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\cppwinrt" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -o "cmTC_83937.dir\\Debug\\CMakeCXXCompilerABI.obj" -Wall -O3 -fno-strict-aliasing -fomit-frame-pointer -ffunction-sections -fdata-sections -fstack-protector -fpic -fno-short-enums -frtti -D WIN32 -D _WINDOWS -D "CMAKE_INTDIR=\\"Debug\\"" -D NDEBUG -D NDEBUG -D _MBCS -x c++ -fno-ms-compatibility -fms-extensions -fno-delayed-template-parsing  -fms-extensions -fms-compatibility -frtti -fexceptions -gline-tables-only -fno-inline -O0 -D_DEBUG -D_MT -D_DLL -Xclang --dependent-lib=msvcrtd -Xclang --dependent-lib=oldnames "C:\\Program Files\\CMake\\share\\cmake-3.12\\Modules\\CMakeCXXCompilerABI.cpp"
+  CMakeCXXCompilerABI.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_83937.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_83937.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_83937.lib" /MACHINE:X64  /machine:x64 cmTC_83937.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTC_83937.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_83937.exe
+FinalizeBuildStatus:
+  Die Datei "cmTC_83937.dir\Debug\cmTC_83937.tlog\unsuccessfulbuild" wird gelöscht.
+  Aktualisieren des Timestamps von "cmTC_83937.dir\Debug\cmTC_83937.tlog\cmTC_83937.lastbuildstate".
+Die Erstellung von Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_83937.vcxproj" ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:00.93
+
+
+
+
+Detecting CXX [] compiler features compiled with the following output:
+Change Dir: C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_44b8f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R)-Buildmodul, Version 15.7.179.6572 für .NET Framework
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Der Buildvorgang wurde am 24.08.2018 10:39:38 gestartet.
+Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_44b8f.vcxproj" auf Knoten "1" (Standardziele).
+PrepareForBuild:
+  Das Verzeichnis "cmTC_44b8f.dir\Debug\" wird erstellt.
+  Das Verzeichnis "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\" wird erstellt.
+  Das Verzeichnis "cmTC_44b8f.dir\Debug\cmTC_44b8f.tlog\" wird erstellt.
+InitializeBuildStatus:
+  "cmTC_44b8f.dir\Debug\cmTC_44b8f.tlog\unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\ClangC2\14.10.25903\bin\HostX86\clang.exe -c -fdiagnostics-format=msvc -target "amd64-pc-windows-msvc" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\ClangC2\\14.10.25903\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Tools\\MSVC\\14.14.26428\\atlmfc\\include" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\ucrt" -I "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\um" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\shared" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\winrt" -I "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.17134.0\\cppwinrt" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -I "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.6.1\\Include\\um" -o "cmTC_44b8f.dir\\Debug\\feature_tests.obj" -Wall -O3 -fno-strict-aliasing -fomit-frame-pointer -ffunction-sections -fdata-sections -fstack-protector -fpic -fno-short-enums -frtti -D WIN32 -D _WINDOWS -D "CMAKE_INTDIR=\\"Debug\\"" -D NDEBUG -D NDEBUG -D _MBCS -x c++ -fno-ms-compatibility -fms-extensions -fno-delayed-template-parsing  -fms-extensions -fms-compatibility -frtti -fexceptions -gline-tables-only -fno-inline -O0 -D_DEBUG -D_MT -D_DLL -Xclang --dependent-lib=msvcrtd -Xclang --dependent-lib=oldnames "C:\\diplomarbeit\\visual-studio\\cmake-build\\CMakeFiles\\feature_tests.cxx"
+  feature_tests.cxx
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_44b8f.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_44b8f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/CMakeTmp/Debug/cmTC_44b8f.lib" /MACHINE:X64  /machine:x64 cmTC_44b8f.dir\Debug\feature_tests.obj
+  cmTC_44b8f.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\Debug\cmTC_44b8f.exe
+FinalizeBuildStatus:
+  Die Datei "cmTC_44b8f.dir\Debug\cmTC_44b8f.tlog\unsuccessfulbuild" wird gelöscht.
+  Aktualisieren des Timestamps von "cmTC_44b8f.dir\Debug\cmTC_44b8f.tlog\cmTC_44b8f.lastbuildstate".
+Die Erstellung von Projekt "C:\diplomarbeit\visual-studio\cmake-build\CMakeFiles\CMakeTmp\cmTC_44b8f.vcxproj" ist abgeschlossen (Standardziele).
+
+Der Buildvorgang wurde erfolgreich ausgeführt.
+    0 Warnung(en)
+    0 Fehler
+
+Verstrichene Zeit 00:00:00.99
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates

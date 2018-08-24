@@ -1,0 +1,100 @@
+﻿  Building Custom Rule C:/diplomarbeit/impsengine/CMakeLists.txt
+  CMake does not need to re-run because C:/diplomarbeit/visual-studio/cmake-build/impsengine/CMakeFiles/generate.stamp is up-to-date.
+  IALibrary.c
+  IAArray.c
+  IAArrayIterator.c
+  IAArrayList.c
+  IAArrayListIterator.c
+  IAAutoExpandingHashMap.c
+  IAAutoExpandingHashMapIterator.c
+  IAHashMap.c
+  IAHashMapIterator.c
+  IAAutoreleasePool.c
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\IAAutoreleasePool.c(122,58): warning : cast to 'LPVOID' (aka 'void *') from smaller integer type 'unsigned long' [-Wint-to-void-pointer-cast]
+          BOOL ret = TlsSetValue(shouldReleaseImmediatlyCountKey, (LPVOID)shouldReleaseImmediatlyCount);
+                                                                  ^
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\IAAutoreleasePool.c(131,58): warning : cast to 'LPVOID' (aka 'void *') from smaller integer type 'unsigned long' [-Wint-to-void-pointer-cast]
+          BOOL ret = TlsSetValue(shouldReleaseImmediatlyCountKey, (LPVOID)shouldReleaseImmediatlyCount);
+                                                                  ^
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\IAAutoreleasePool.c(95,13): warning : unused function 'throwShouldRelaseImmediatlyCountNotZeroAssert' [-Wunused-function]
+  static void throwShouldRelaseImmediatlyCountNotZeroAssert(void * count) {
+              ^
+  3 warnings generated.
+  IAMemoryPool.c
+  IAMemoryPoolElement.c
+  IAAllocationTracker.c
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracker.c(150,112): warning : format specifies type 'long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+              logError("%s with %ld allocated objects and a total size of %c%ld.", key, allocationCount, prefix, size);
+                                                                            ~~~                                  ^~~~
+                                                                            %zu
+  C:\diplomarbeit\impsengine\modules\common\clib\c\windows\IALogger.h(14,70) :  note: expanded from macro 'logError'
+  #define logError(...) printf("!!!ERROR!!! %s: ", CLASSNAME); printf (__VA_ARGS__); printf("\n")
+                                                                       ^~~~~~~~~~~
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracker.c(152,115): warning : format specifies type 'long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+              logError("%s with %ld overreleased objects and a total size of %c%ld.", key, allocationCount, prefix, size);
+                                                                               ~~~                                  ^~~~
+                                                                               %zu
+  C:\diplomarbeit\impsengine\modules\common\clib\c\windows\IALogger.h(14,70) :  note: expanded from macro 'logError'
+  #define logError(...) printf("!!!ERROR!!! %s: ", CLASSNAME); printf (__VA_ARGS__); printf("\n")
+                                                                       ^~~~~~~~~~~
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracker.c(154,93): warning : format specifies type 'long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+              logError("%s with 0 allocated objects and a total size of %c%ld.", key, prefix, size);
+                                                                          ~~~                 ^~~~
+                                                                          %zu
+  C:\diplomarbeit\impsengine\modules\common\clib\c\windows\IALogger.h(14,70) :  note: expanded from macro 'logError'
+  #define logError(...) printf("!!!ERROR!!! %s: ", CLASSNAME); printf (__VA_ARGS__); printf("\n")
+                                                                       ^~~~~~~~~~~
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracker.c(172,109): warning : format specifies type 'long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+              logError("%s with %ld allocated data and a total size of %c%ld.", key, allocationCount, prefix, size);
+                                                                         ~~~                                  ^~~~
+                                                                         %zu
+  C:\diplomarbeit\impsengine\modules\common\clib\c\windows\IALogger.h(14,70) :  note: expanded from macro 'logError'
+  #define logError(...) printf("!!!ERROR!!! %s: ", CLASSNAME); printf (__VA_ARGS__); printf("\n")
+                                                                       ^~~~~~~~~~~
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracker.c(174,112): warning : format specifies type 'long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+              logError("%s with %ld overreleased data and a total size of %c%ld.", key, allocationCount, prefix, size);
+                                                                            ~~~                                  ^~~~
+                                                                            %zu
+  C:\diplomarbeit\impsengine\modules\common\clib\c\windows\IALogger.h(14,70) :  note: expanded from macro 'logError'
+  #define logError(...) printf("!!!ERROR!!! %s: ", CLASSNAME); printf (__VA_ARGS__); printf("\n")
+                                                                       ^~~~~~~~~~~
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\memory-management\allocation-tracking\IAAllocationTracker.c(176,90): warning : format specifies type 'long' but the argument has type 'size_t' (aka 'unsigned long long') [-Wformat]
+              logError("%s with 0 allocated data and a total size of %c%ld.", key, prefix, size);
+                                                                       ~~~                 ^~~~
+                                                                       %zu
+  C:\diplomarbeit\impsengine\modules\common\clib\c\windows\IALogger.h(14,70) :  note: expanded from macro 'logError'
+  #define logError(...) printf("!!!ERROR!!! %s: ", CLASSNAME); printf (__VA_ARGS__); printf("\n")
+                                                                       ^~~~~~~~~~~
+  6 warnings generated.
+  IAAllocationTrackerElement.c
+  IAAllocationTracking.c
+  IAAllocationTrackingElement.c
+  IACharArray.c
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IACharArray.c(72,5): warning : 'strcpy' is deprecated: This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+      strcpy(c, str);
+      ^
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\ucrt\string.h(134,51) :  note: 'strcpy' has been explicitly marked deprecated here
+      char*, __RETURN_POLICY_DST, __EMPTY_DECLSPEC, strcpy,
+                                                    ^
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IACharArray.c(148,5): warning : 'vsprintf' is deprecated: This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+      vsprintf(c, format, args);
+      ^
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\ucrt\stdio.h(1802,74) :  note: 'vsprintf' has been explicitly marked deprecated here
+          int, __RETURN_POLICY_SAME, __EMPTY_DECLSPEC, __CRTDECL, sprintf, vsprintf,
+                                                                           ^
+C:\diplomarbeit\impsengine\modules\common\clib\c\shared\supporting-classes\IACharArray.c(248,5): warning : 'vsprintf' is deprecated: This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+      vsprintf(c, format, args);
+      ^
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\ucrt\stdio.h(1802,74) :  note: 'vsprintf' has been explicitly marked deprecated here
+          int, __RETURN_POLICY_SAME, __EMPTY_DECLSPEC, __CRTDECL, sprintf, vsprintf,
+                                                                           ^
+  3 warnings generated.
+  IAHashing.c
+  IAString.c
+  IACondition.c
+  IALock.c
+  IARecursiveLock.c
+  IACLibWinMappings.c
+IALock.obj : warning LNK4221: Die Objektdatei definiert keine zuvor undefinierten ÷ffentlichen Symbole. Sie wird daher von keinem Verkn³pfungsvorgang verwendet, der diese Bibliothek benutzt.
+IACondition.obj : warning LNK4221: Die Objektdatei definiert keine zuvor undefinierten ÷ffentlichen Symbole. Sie wird daher von keinem Verkn³pfungsvorgang verwendet, der diese Bibliothek benutzt.
+  iaclib.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\impsengine\Debug\iaclib.lib

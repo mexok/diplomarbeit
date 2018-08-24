@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\IAOpenGL.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\framebuffers\IACurrentFramebuffer.c">
+      <Filter>shared\framebuffers</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\framebuffers\IADefaultFramebuffer.c">
+      <Filter>shared\framebuffers</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\framebuffers\IAOffscreenFramebuffer.c">
+      <Filter>shared\framebuffers</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IABackgroundColor.c">
+      <Filter>shared\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IAColorRect.c">
+      <Filter>shared\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IADrawable.c">
+      <Filter>shared\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IADrawableRect.c">
+      <Filter>shared\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IAGraphicRect.c">
+      <Filter>shared\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IAImage.c">
+      <Filter>shared\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IAImageAttributes.c">
+      <Filter>shared\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IAImageContext.c">
+      <Filter>shared\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IATrimmedRect.c">
+      <Filter>shared\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAAcceleration.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAAccelerationAnimation.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAAccelerationAnimationAttributes.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IACompositedAnimation.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IACompositedAnimationDelegate.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IACompositedAnimationDelegateAttributes.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAFrameAnimation.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAFrameAnimationAttributes.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAFrameAnimationCalculation.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAFrameAnimationGroup.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAFrameAnimationGroupAttributes.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAPauseAnimation.c">
+      <Filter>shared\graphics\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\buffer\IAArrayBuffer.c">
+      <Filter>shared\graphics\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\buffer\IABuffer.c">
+      <Filter>shared\graphics\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\buffer\IAElementArrayBuffer.c">
+      <Filter>shared\graphics\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAColorableFontAtlas.c">
+      <Filter>shared\graphics\text</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAFontAtlas.c">
+      <Filter>shared\graphics\text</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAFontInformation.c">
+      <Filter>shared\graphics\text</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAFontInformationAttributes.c">
+      <Filter>shared\graphics\text</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAGlyph.c">
+      <Filter>shared\graphics\text</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAKerningAmount.c">
+      <Filter>shared\graphics\text</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAUTF8Helper.c">
+      <Filter>shared\graphics\text</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IABitmap.c">
+      <Filter>shared\graphics\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IABitmapManager.c">
+      <Filter>shared\graphics\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IABitmapManagerSingleton.c">
+      <Filter>shared\graphics\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IATexture.c">
+      <Filter>shared\graphics\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IATextureDelegate.c">
+      <Filter>shared\graphics\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IATextureDelegateAttributes.c">
+      <Filter>shared\graphics\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IATextureSelection.c">
+      <Filter>shared\graphics\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IATextureSelectionData.c">
+      <Filter>shared\graphics\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\helperstructs\IAColor.c">
+      <Filter>shared\helperstructs</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\helperstructs\IAPoint.c">
+      <Filter>shared\helperstructs</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\helperstructs\IAPos.c">
+      <Filter>shared\helperstructs</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\helperstructs\IARect.c">
+      <Filter>shared\helperstructs</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\helperstructs\IASize.c">
+      <Filter>shared\helperstructs</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\layout\IAIntent.c">
+      <Filter>shared\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\layout\IAView.c">
+      <Filter>shared\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\layout\IAViewAttributes.c">
+      <Filter>shared\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\layout\IAViewHolder.c">
+      <Filter>shared\layout</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IACurrentFrame.c">
+      <Filter>shared\main</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IAOpenGLConstants.c">
+      <Filter>shared\main</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IAOpenGLResourceDelegate.c">
+      <Filter>shared\main</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IAOpenGLResourceDelegateAttributes.c">
+      <Filter>shared\main</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IAOpenGLResourceManager.c">
+      <Filter>shared\main</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\matrix\IAMatrix44.c">
+      <Filter>shared\matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAColorRectProgram\IAColorRectProgram.c">
+      <Filter>shared\shaders\IAColorRectProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAColorRectProgram\IAColorRectProgramSingleton.c">
+      <Filter>shared\shaders\IAColorRectProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAImageProgram\IAImageProgram.c">
+      <Filter>shared\shaders\IAImageProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAImageProgram\IAImageProgramSingleton.c">
+      <Filter>shared\shaders\IAImageProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAProgram.c">
+      <Filter>shared\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAShader.c">
+      <Filter>shared\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\supporting-classes\IADrawingBounds.c">
+      <Filter>shared\supporting-classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\supporting-classes\IAMeassure.c">
+      <Filter>shared\supporting-classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\supporting-classes\IAStopwatch.c">
+      <Filter>shared\supporting-classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\supporting-classes\IAViewPort.c">
+      <Filter>shared\supporting-classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\windows\IAOpenGLWinMappings.c">
+      <Filter>windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\IAOpenGL.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\framebuffers\IACurrentFramebuffer.h">
+      <Filter>shared\framebuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\framebuffers\IADefaultFramebuffer+Internal.h">
+      <Filter>shared\framebuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\framebuffers\IADefaultFramebuffer.h">
+      <Filter>shared\framebuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\framebuffers\IAOffscreenFramebuffer.h">
+      <Filter>shared\framebuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IABackgroundColor.h">
+      <Filter>shared\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IAColorRect.h">
+      <Filter>shared\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IADrawable.h">
+      <Filter>shared\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IADrawableRect.h">
+      <Filter>shared\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IAGraphicRect.h">
+      <Filter>shared\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IAImage.h">
+      <Filter>shared\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IAImageAttributes.h">
+      <Filter>shared\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IAImageContext.h">
+      <Filter>shared\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\IATrimmedRect.h">
+      <Filter>shared\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAAcceleration.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAAccelerationAnimation.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAAccelerationAnimationAttributes.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IACompositedAnimation.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IACompositedAnimationDelegate.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IACompositedAnimationDelegateAttributes.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAFrameAnimation.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAFrameAnimationAttributes.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAFrameAnimationCalculation.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAFrameAnimationGroup.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAFrameAnimationGroupAttributes.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\animation\IAPauseAnimation.h">
+      <Filter>shared\graphics\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\buffer\IAArrayBuffer.h">
+      <Filter>shared\graphics\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\buffer\IABuffer.h">
+      <Filter>shared\graphics\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\buffer\IAElementArrayBuffer.h">
+      <Filter>shared\graphics\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAColorableFontAtlas.h">
+      <Filter>shared\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAFontAtlas+IterateOverGlyphList.h">
+      <Filter>shared\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAFontAtlas.h">
+      <Filter>shared\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAFontInformation.h">
+      <Filter>shared\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAFontInformationAttributes.h">
+      <Filter>shared\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAGlyph.h">
+      <Filter>shared\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAGlyphInformation.h">
+      <Filter>shared\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAKerningAmount.h">
+      <Filter>shared\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IATextAlignment.h">
+      <Filter>shared\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\text\IAUTF8Helper.h">
+      <Filter>shared\graphics\text</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IABitmap+Native.h">
+      <Filter>shared\graphics\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IABitmap.h">
+      <Filter>shared\graphics\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IABitmapManager.h">
+      <Filter>shared\graphics\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IABitmapManagerSingleton.h">
+      <Filter>shared\graphics\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IATexture.h">
+      <Filter>shared\graphics\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IATextureDelegate.h">
+      <Filter>shared\graphics\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IATextureDelegateAttributes.h">
+      <Filter>shared\graphics\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IATextureSelection.h">
+      <Filter>shared\graphics\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\graphics\texture\IATextureSelectionData.h">
+      <Filter>shared\graphics\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\helperstructs\IAColor.h">
+      <Filter>shared\helperstructs</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\helperstructs\IAPoint.h">
+      <Filter>shared\helperstructs</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\helperstructs\IAPos.h">
+      <Filter>shared\helperstructs</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\helperstructs\IARect.h">
+      <Filter>shared\helperstructs</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\helperstructs\IASize.h">
+      <Filter>shared\helperstructs</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\layout\IAIntent.h">
+      <Filter>shared\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\layout\IAView.h">
+      <Filter>shared\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\layout\IAViewAttributes.h">
+      <Filter>shared\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\layout\IAViewHolder.h">
+      <Filter>shared\layout</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IACurrentFrame+Private.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IACurrentFrame.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IAOpenGLConstants.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IAOpenGLResourceDelegate.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IAOpenGLResourceDelegateAttributes.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\main\IAOpenGLResourceManager.h">
+      <Filter>shared\main</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\matrix\IAMatrix44.h">
+      <Filter>shared\matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAColorRectProgram\IAColorRectProgram.h">
+      <Filter>shared\shaders\IAColorRectProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAColorRectProgram\IAColorRectProgramSingleton.h">
+      <Filter>shared\shaders\IAColorRectProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAImageProgram\IAImageProgram.h">
+      <Filter>shared\shaders\IAImageProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAImageProgram\IAImageProgramSingleton.h">
+      <Filter>shared\shaders\IAImageProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAProgram.h">
+      <Filter>shared\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\shaders\IAShader.h">
+      <Filter>shared\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\supporting-classes\IADrawingBounds.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\supporting-classes\IAMeassure.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\supporting-classes\IAOpenGLAssert.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\supporting-classes\IAStopwatch.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\supporting-classes\IAViewPort+Internal.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\supporting-classes\IAViewPort.h">
+      <Filter>shared\supporting-classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\windows\IAOpenGLHeaders.h">
+      <Filter>windows</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\opengl\c\windows\IAOpenGLWinMappings.h">
+      <Filter>windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shared">
+      <UniqueIdentifier>{84A37672-9644-3850-88DC-33E85D49E8F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\framebuffers">
+      <UniqueIdentifier>{690252C3-C55D-339E-9F6F-9DF47CBFA83A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\graphics">
+      <UniqueIdentifier>{C2804BD1-EE20-331C-998C-9DA8D2F8F733}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\graphics\animation">
+      <UniqueIdentifier>{78B40183-F900-3518-AAC4-0D729CA34E1B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\graphics\buffer">
+      <UniqueIdentifier>{9EC1A27A-E2CC-3E90-9CC3-2958A610FA04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\graphics\text">
+      <UniqueIdentifier>{65A2125E-B98F-36A7-90B5-6F4DAE4C9D43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\graphics\texture">
+      <UniqueIdentifier>{5DBD4B08-A09F-3949-A8E3-60814780B77C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\helperstructs">
+      <UniqueIdentifier>{827F26F1-A15B-3677-943D-097FA239CED4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\layout">
+      <UniqueIdentifier>{EC8382E5-0BD6-3D67-864C-62F4AE504AAA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\main">
+      <UniqueIdentifier>{04E0B5B3-0169-3155-9BF1-2DDEFC669125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\matrix">
+      <UniqueIdentifier>{7D703241-6B04-37DB-B3DE-10894CA5D61B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\shaders">
+      <UniqueIdentifier>{8FE277F0-7BB8-387E-88A9-4B94F289C021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\shaders\IAColorRectProgram">
+      <UniqueIdentifier>{DF8B8DD5-7A94-303E-BC15-103CFE0A8BF0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\shaders\IAImageProgram">
+      <UniqueIdentifier>{FDD0CBBA-37FD-35FA-B33E-285958C07781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\supporting-classes">
+      <UniqueIdentifier>{BC24754A-E18E-3EB5-A57B-479B155A7315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows">
+      <UniqueIdentifier>{86A57879-B01E-338F-9094-4105DBE03FF1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAButton.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAButtonAttributes.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAMultiTouch.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAOverscrollingHandler.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAScrollView.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAScrollViewAttributes.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAScrollingData.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouch.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouchDelegate.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouchDelegateAttributes.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouchHandler.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouchManager.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\windows\IAWinTouchHandler.c">
+      <Filter>windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAButton.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAButtonAttributes.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAMultiTouch.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAOverscrollingBehavior.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAOverscrollingHandler.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAScrollView.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAScrollViewAttributes.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAScrollingData.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouch+Internal.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouch.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouchDelegate.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouchDelegateAttributes.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouchHandler.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IATouchManager.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\common\multi-touch\c\windows\IAWinTouchHandler.h">
+      <Filter>windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shared">
+      <UniqueIdentifier>{84A37672-9644-3850-88DC-33E85D49E8F9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows">
+      <UniqueIdentifier>{86A57879-B01E-338F-9094-4105DBE03FF1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

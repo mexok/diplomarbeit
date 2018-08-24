@@ -1,0 +1,18 @@
+﻿  IAButton.c
+  IAButtonAttributes.c
+  IAMultiTouch.c
+C:\diplomarbeit\impsengine\modules\common\multi-touch\c\shared\IAMultiTouch.c(21,5): warning : implicit declaration of function 'IATouchManager_terminate' is invalid in C99 [-Wimplicit-function-declaration]
+      IATouchManager_terminate();
+      ^
+  1 warning generated.
+  IAOverscrollingHandler.c
+  IAScrollView.c
+  IAScrollViewAttributes.c
+  IAScrollingData.c
+  IATouch.c
+  IATouchDelegate.c
+  IATouchDelegateAttributes.c
+  IATouchHandler.c
+  IATouchManager.c
+  IAWinTouchHandler.c
+  iamulti_touch.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\impsengine\Debug\iamulti_touch.lib

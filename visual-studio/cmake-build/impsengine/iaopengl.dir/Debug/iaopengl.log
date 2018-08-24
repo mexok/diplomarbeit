@@ -1,0 +1,77 @@
+﻿  IAOpenGL.c
+  IACurrentFramebuffer.c
+  IADefaultFramebuffer.c
+  IAOffscreenFramebuffer.c
+  IABackgroundColor.c
+  IAColorRect.c
+  IADrawable.c
+  IADrawableRect.c
+  IAGraphicRect.c
+  IAImage.c
+  IAImageAttributes.c
+  IAImageContext.c
+  IATrimmedRect.c
+  IAAcceleration.c
+  IAAccelerationAnimation.c
+  IAAccelerationAnimationAttributes.c
+  IACompositedAnimation.c
+  IACompositedAnimationDelegate.c
+  IACompositedAnimationDelegateAttributes.c
+  IAFrameAnimation.c
+  IAFrameAnimationAttributes.c
+  IAFrameAnimationCalculation.c
+  IAFrameAnimationGroup.c
+  IAFrameAnimationGroupAttributes.c
+  IAPauseAnimation.c
+  IAArrayBuffer.c
+  IABuffer.c
+  IAElementArrayBuffer.c
+  IAColorableFontAtlas.c
+  IAFontAtlas.c
+  IAFontInformation.c
+  IAFontInformationAttributes.c
+  IAGlyph.c
+  IAKerningAmount.c
+  IAUTF8Helper.c
+  IABitmap.c
+  IABitmapManager.c
+  IABitmapManagerSingleton.c
+  IATexture.c
+  IATextureDelegate.c
+  IATextureDelegateAttributes.c
+  IATextureSelection.c
+  IATextureSelectionData.c
+  IAColor.c
+  IAPoint.c
+  IAPos.c
+  IARect.c
+  IASize.c
+  IAIntent.c
+  IAView.c
+C:\diplomarbeit\impsengine\modules\common\opengl\c\shared\layout\IAView.c(29,5): warning : 'strncpy' is deprecated: This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+      strncpy(this->viewName, viewName, 20);
+      ^
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\ucrt\string.h(339,43) :  note: 'strncpy' has been explicitly marked deprecated here
+      char*, __RETURN_POLICY_DST, _ACRTIMP, strncpy, strncpy_s,
+                                            ^
+  1 warning generated.
+  IAViewAttributes.c
+  IAViewHolder.c
+  IACurrentFrame.c
+  IAOpenGLConstants.c
+  IAOpenGLResourceDelegate.c
+  IAOpenGLResourceDelegateAttributes.c
+  IAOpenGLResourceManager.c
+  IAMatrix44.c
+  IAColorRectProgram.c
+  IAColorRectProgramSingleton.c
+  IAImageProgram.c
+  IAImageProgramSingleton.c
+  IAProgram.c
+  IAShader.c
+  IADrawingBounds.c
+  IAMeassure.c
+  IAStopwatch.c
+  IAViewPort.c
+  IAOpenGLWinMappings.c
+  iaopengl.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\impsengine\Debug\iaopengl.lib

@@ -1,0 +1,46 @@
+﻿  Building Custom Rule C:/diplomarbeit/CMakeLists.txt
+  CMake does not need to re-run because C:/diplomarbeit/visual-studio/cmake-build/CMakeFiles/generate.stamp is up-to-date.
+  CSrc.c
+C:\diplomarbeit\c\windows\CSrc.c(33,16): warning : 'fopen' is deprecated: This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details. [-Wdeprecated-declarations]
+          FILE * file = fopen(IAString_toCharArray(assetFile), "r");
+                        ^
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\ucrt\stdio.h(208,28) :  note: 'fopen' has been explicitly marked deprecated here
+      _ACRTIMP FILE* __cdecl fopen(
+                             ^
+C:\diplomarbeit\c\windows\CSrc.c(38,15): warning : using the result of an assignment as a condition without parentheses [-Wparentheses]
+                  while (read = fread(buffer, 1, 4096, file)) {
+                         ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  C:\diplomarbeit\c\windows\CSrc.c(38,15) :  note: place parentheses around the assignment to silence this warning
+                  while (read = fread(buffer, 1, 4096, file)) {
+                              ^
+                         (                                  )
+  C:\diplomarbeit\c\windows\CSrc.c(38,15) :  note: use '==' to turn this assignment into an equality comparison
+                  while (read = fread(buffer, 1, 4096, file)) {
+                              ^
+                              ==
+C:\diplomarbeit\c\windows\CSrc.c(73,2): warning : implicit declaration of function 'IAOpenGL_commence' is invalid in C99 [-Wimplicit-function-declaration]
+          IAOpenGL_commence();
+          ^
+C:\diplomarbeit\c\windows\CSrc.c(75,2): warning : implicit declaration of function 'IATouchManager_commence' is invalid in C99 [-Wimplicit-function-declaration]
+          IATouchManager_commence();
+          ^
+C:\diplomarbeit\c\windows\CSrc.c(77,2): warning : implicit declaration of function 'IAOpenGL_onSurfaceCreated' is invalid in C99 [-Wimplicit-function-declaration]
+          IAOpenGL_onSurfaceCreated();
+          ^
+C:\diplomarbeit\c\windows\CSrc.c(80,2): warning : implicit declaration of function 'IAOpenGL_onSurfaceChanged' is invalid in C99 [-Wimplicit-function-declaration]
+          IAOpenGL_onSurfaceChanged(surfaceSize);
+          ^
+C:\diplomarbeit\c\windows\CSrc.c(91,2): warning : implicit declaration of function 'IAOpenGL_onRenderBegin' is invalid in C99 [-Wimplicit-function-declaration]
+          IAOpenGL_onRenderBegin();
+          ^
+C:\diplomarbeit\c\windows\CSrc.c(95,2): warning : implicit declaration of function 'IAOpenGL_onRenderEnd' is invalid in C99 [-Wimplicit-function-declaration]
+          IAOpenGL_onRenderEnd();
+          ^
+C:\diplomarbeit\c\windows\CSrc.c(104,8): warning : unused variable 'dwWaitResult' [-Wunused-variable]
+          DWORD dwWaitResult = WaitForSingleObject(
+                ^
+  9 warnings generated.
+  dllmain.c
+     Bibliothek "C:/diplomarbeit/visual-studio/cmake-build/Debug/CSrc.lib" und Objekt "C:/diplomarbeit/visual-studio/cmake-build/Debug/CSrc.exp" werden erstellt.
+glew32sd.lib(glew.obj) : warning LNK4099: PDB "glew_static.pdb" wurde nicht mit "glew32sd.lib(glew.obj)" oder an "C:\diplomarbeit\visual-studio\cmake-build\Debug\glew_static.pdb" gefunden; Objekt wird verknüpft, als ob keine Debuginformationen vorhanden wären.
+  CSrc.vcxproj -> C:\diplomarbeit\visual-studio\cmake-build\Debug\CSrc.dll

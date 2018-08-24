@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\diplomarbeit\impsengine\modules\advanced-math\random-number-generator\c\shared\IARandomNumberGenerator.c">
+      <Filter>shared</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\diplomarbeit\impsengine\modules\advanced-math\random-number-generator\c\shared\IARandomNumberGenerator.h">
+      <Filter>shared</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shared">
+      <UniqueIdentifier>{84A37672-9644-3850-88DC-33E85D49E8F9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
