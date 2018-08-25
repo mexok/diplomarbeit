@@ -147,7 +147,6 @@ namespace OpenTK.WPF
                 {
                     mSize = framebuffersize;
                     CreateFramebuffer();
-                    GL.Viewport(0, 0, (int)ActualWidth, (int)ActualHeight);
                 }
 
                 int imageSizeWidth = (int)Math.Ceiling(mSize.Width);

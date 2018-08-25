@@ -58,6 +58,7 @@ namespace YamlGuiWPF
                 CreateResources((int)s.Width, (int)s.Height, (int)SystemParameters.PrimaryScreenWidth, (int)SystemParameters.PrimaryScreenHeight);
             }
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+            GL.ClearColor(1.0f, 0.0f, 1.0f, 1.0f);
             Render();
         }
 

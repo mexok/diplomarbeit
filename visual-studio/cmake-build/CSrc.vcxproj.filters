@@ -7,10 +7,22 @@
     <ClCompile Include="C:\diplomarbeit\c\windows\dllmain.c">
       <Filter>windows</Filter>
     </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\c\windows\ViewManager.c">
+      <Filter>windows</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\diplomarbeit\c\windows\views\flow-layout-sample\FlowLayoutView.c">
+      <Filter>windows\views\flow-layout-sample</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\diplomarbeit\c\windows\CSrc.h">
       <Filter>windows</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\c\windows\ViewManager.h">
+      <Filter>windows</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\diplomarbeit\c\windows\views\flow-layout-sample\FlowLayoutView.h">
+      <Filter>windows\views\flow-layout-sample</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -19,6 +31,12 @@
   <ItemGroup>
     <Filter Include="windows">
       <UniqueIdentifier>{86A57879-B01E-338F-9094-4105DBE03FF1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\views">
+      <UniqueIdentifier>{1B5A5DD4-DDA6-336D-A059-25F721022446}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="windows\views\flow-layout-sample">
+      <UniqueIdentifier>{B963FD6E-1F58-3E86-B993-C5D346026D74}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

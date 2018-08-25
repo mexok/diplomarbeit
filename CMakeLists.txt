@@ -22,15 +22,23 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG -UNDEBUG")
 add_subdirectory(impsengine)
 
 list(APPEND sources
-	c/windows/CSrc.h 
-	c/windows/CSrc.c 
+	c/windows/CSrc.h
+	c/windows/CSrc.c
 	c/windows/dllmain.c
+	c/windows/ViewManager.h
+	c/windows/ViewManager.c
+	c/windows/views/flow-layout-sample/FlowLayoutView.h
+	c/windows/views/flow-layout-sample/FlowLayoutView.c
 )
 
 add_library(CSrc SHARED ${sources})
+
+target_include_directories(CSrc PUBLIC c/windows c/windows/views/flow-layout-sample generated)
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/c FILES ${sources})
 
 target_link_libraries(CSrc iaopengl iaclib iamulti_touch GLEW_CUSTOM)
 
 target_link_libraries(CSrc opengl32.lib glu32.lib)
+
+target_generate_generics(CSrc generated)

@@ -10,6 +10,7 @@
 #include "IACLibWinMappings.h"
 #include "IAInputOutputWinMappings.h"
 #include "IAWinTouchHandler.h"
+#include "ViewManager.h"
 
 #undef in
 
@@ -79,9 +80,11 @@ CSrc_API void createResources(int realWidthOfScreen, int realHeightOfScreen, int
 	IASize surfaceSize = IASize_make(frameBufferWidth, frameBufferHeight);
 	IAOpenGL_onSurfaceChanged(surfaceSize);
 
-	IAViewPort_modifySize(IASize_make(3840, 2160));
+	//IAViewPort_modifySize(IASize_make(3840, 2160));
 
 	debugOnly(tracker = IAAllocationTracker_new());
+
+	ViewManager_commence();
 
 	IAWinTouchHandler_start(realWidthOfScreen, realHeightOfScreen, acquireApplicationLock, releaseApplicationLock);
 }
@@ -90,7 +93,7 @@ CSrc_API void render(void){
 	acquireApplicationLock();
 	IAOpenGL_onRenderBegin();
 
-	//ViewManager_draw(IACurrentFrame_getTime());
+	ViewManager_draw();
 
 	IAOpenGL_onRenderEnd();
 	releaseApplicationLock();
