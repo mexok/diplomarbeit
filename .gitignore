@@ -50,5 +50,6 @@ desktop.ini
 images/screen_retry/screen_share.png
 
 cmake-build-*/
-visual-studio/cmake-build/
+
+visual-studio/cmake-build/*
 !visual-studio/cmake-build/README.txt
