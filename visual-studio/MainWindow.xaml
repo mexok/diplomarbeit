@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="GridLayout">
-        <otkwpf:OtkWpfControl x:Name="OtkWpfCtrl" VersionMajor="3" VersionMinor="1"
+        <otkwpf:OtkWpfControl x:Name="OpenGLView" VersionMajor="3" VersionMinor="1"
                                         Initialized="OpenGLView_Initialized"
 									    Resized="OpenGLView_Resized"
 									    OpenGLDraw="OpenGLView_Draw">

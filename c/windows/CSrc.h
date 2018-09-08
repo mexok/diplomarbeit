@@ -19,6 +19,8 @@
 
 CSrc_API void createResources(int realWidthOfScreen, int realHeightOfScreen, int frameBufferWidth, int frameBufferHeight);
 
+CSrc_API void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight);
+
 CSrc_API void render(void);
 
 CSrc_API void setOpenGLWinMappings(IAOpenGLWinMappings mappings);

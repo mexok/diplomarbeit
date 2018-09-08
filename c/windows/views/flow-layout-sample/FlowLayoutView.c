@@ -4,6 +4,7 @@
 
 #include "IALibrary.h"
 #include "FlowLayoutView.h"
+#include "IAViewPort.h"
 
 #define CLASSNAME "FlowLayoutView"
 
@@ -42,7 +43,7 @@ void FlowLayoutView_onFadeInFinished(FlowLayoutView * this, uint64_t startTime, 
 }
 
 void FlowLayoutView_draw(FlowLayoutView * this, uint64_t currentTime) {
-	IAColorRect_setRect(this->rect, IARect_make(-1000, -1000, 2000, 2000));
+	IAColorRect_setRect(this->rect, IARect_make(40, 40, 500, 500));
 	IAColorRect_draw(this->rect);
 }
 

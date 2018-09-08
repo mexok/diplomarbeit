@@ -29,11 +29,17 @@ list(APPEND sources
 	c/windows/ViewManager.c
 	c/windows/views/flow-layout-sample/FlowLayoutView.h
 	c/windows/views/flow-layout-sample/FlowLayoutView.c
+	c/windows/views/layouts/IAFlowLayout.h
+	c/windows/views/layouts/IAFlowLayout.c
+	c/windows/views/layouts/IAFlowLayoutAttributes.h
+	c/windows/views/layouts/IAFlowLayoutAttributes.c
+	c/windows/views/layouts/IAFlowLayoutElement.h
+	c/windows/views/layouts/IAFlowLayoutElement.c
 )
 
 add_library(CSrc SHARED ${sources})
 
-target_include_directories(CSrc PUBLIC c/windows c/windows/views/flow-layout-sample generated)
+target_include_directories(CSrc PUBLIC c/windows c/windows/views/flow-layout-sample c/windows/views/layouts generated)
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/c FILES ${sources})
 

@@ -1,12 +1,12 @@
 Contexts
 ========
-function
-int/long/float/double/uint_64
-string
-boolean
-struct
-object ... always with specific type
-object_array
+function -> expression  and YamlClassFunction
+int/long/float/double/uint_64 -> expression
+string -> expression
+boolean -> expression
+struct -> expression
+object -> expression and YamlClassAttribute ... always with specific type
+object_array -> expression
 
 
 
@@ -23,14 +23,15 @@ object -> object
 Parsing arrays:
 ===============
 struct -> as struct fields interpreted
-object_array -> as array interpreted (size_t size and Type * buffer[size])
+object_array -> as array interpreted (size_t size and Type buffer[size]) -> objects are flat and interpreted as structs
 
 
 
 Parsing dicts:
 ==============
-struct
-object
+struct -> via make function -> check functions from up to bottom
+object -> via init or make + via optional attributes -> check constructors from up to bottom
+	the optional attributes must take no parameters in the constructor except one optional paramater "correspondingObject"
 
 
 
@@ -41,7 +42,7 @@ special keys: ref, extend
 ref: create an attribute inside current class which references it.
 extend: only allowed at first level. Extends all from this object.
 
-custom keys: 
+custom keys:
 - expand attributes of object for initialisation
 - only use standard init or make function respectively
 - parameters in make/init function of attributes are required, parameters in functions are optional

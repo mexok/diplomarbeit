@@ -80,13 +80,16 @@ CSrc_API void createResources(int realWidthOfScreen, int realHeightOfScreen, int
 	IASize surfaceSize = IASize_make(frameBufferWidth, frameBufferHeight);
 	IAOpenGL_onSurfaceChanged(surfaceSize);
 
-	//IAViewPort_modifySize(IASize_make(3840, 2160));
-
 	debugOnly(tracker = IAAllocationTracker_new());
 
 	ViewManager_commence();
 
 	IAWinTouchHandler_start(realWidthOfScreen, realHeightOfScreen, acquireApplicationLock, releaseApplicationLock);
+}
+
+CSrc_API void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight) {
+	IASize surfaceSize = IASize_make(frameBufferWidth, frameBufferHeight);
+	IAOpenGL_onSurfaceChanged(surfaceSize);
 }
 
 CSrc_API void render(void){

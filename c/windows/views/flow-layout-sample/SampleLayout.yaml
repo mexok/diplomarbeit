@@ -1,0 +1,7 @@
+__generate__: IAFlowLayout
+elements:
+  - content->IAColorRect:
+      color: red
+  - content->IAColorRect:
+      color: [0, 255, 0, 255]
+spacing: 20

@@ -52,13 +52,12 @@ namespace YamlGuiWPF
 
                 PresentationSource _presentationSource = PresentationSource.FromVisual(Application.Current.MainWindow);
                 Matrix matix = _presentationSource.CompositionTarget.TransformToDevice;
-                Size s = new Size(SystemParameters.PrimaryScreenWidth * matix.M11, SystemParameters.PrimaryScreenHeight * matix.M22);
-                int WidthOfScreen = (int)SystemParameters.PrimaryScreenWidth;
-                int HeightOfScreen = (int)SystemParameters.PrimaryScreenHeight;
-                CreateResources((int)s.Width, (int)s.Height, (int)SystemParameters.PrimaryScreenWidth, (int)SystemParameters.PrimaryScreenHeight);
+                int widthOfScreen = (int)(SystemParameters.PrimaryScreenWidth * matix.M11);
+                int heightOfScreen = (int)(SystemParameters.PrimaryScreenHeight * matix.M22);
+                CreateResources(widthOfScreen, heightOfScreen, (int)OpenGLView.ActualWidth, (int)OpenGLView.ActualHeight);
             }
+            UpdateFramebufferSize((int)OpenGLView.ActualWidth, (int)OpenGLView.ActualHeight);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-            GL.ClearColor(1.0f, 0.0f, 1.0f, 1.0f);
             Render();
         }
 
@@ -67,6 +66,9 @@ namespace YamlGuiWPF
 
         [DllImport("CSrc.dll", EntryPoint = "createResources", CallingConvention = CallingConvention.Cdecl)]
         public static extern void CreateResources(int realWidthOfScreen, int realHeightOfScreen, int frameBufferWidth, int frameBufferHeight);
+
+        [DllImport("CSrc.dll", EntryPoint = "updateFramebufferSize", CallingConvention = CallingConvention.Cdecl)]
+        public static extern void UpdateFramebufferSize(int frameBufferWidth, int frameBufferHeight);
 
         [DllImport("CSrc.dll", EntryPoint = "render", CallingConvention = CallingConvention.Cdecl)]
         public static extern void Render();

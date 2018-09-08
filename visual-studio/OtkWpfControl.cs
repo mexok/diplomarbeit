@@ -143,6 +143,11 @@ namespace OpenTK.WPF
                 }
 
                 var framebuffersize = new Size(ActualWidth, ActualHeight);
+                if (framebuffersize.Width == 0 || framebuffersize.Height == 0)
+                {
+                    return;
+                }
+
                 if (framebuffersize != mSize || mLoaded == false)
                 {
                     mSize = framebuffersize;
