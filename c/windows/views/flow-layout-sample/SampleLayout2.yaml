@@ -3,7 +3,4 @@ elements:
 - content:
     __type__: IAColorRect
     color: red
-- content:
-    __type__: MenuButton
-    __ref__: digitButton
 spacing: 20
