@@ -1,0 +1,34 @@
+__extend__: IALayout
+elements:
+  - content->Image: asdf_32
+    leftTopPoint: {x = 10, y = 20}
+    size: {width = 20, height = 20}
+    fadeInOffset: getMenuFadeInOffset
+    fadeOutOffset: getMenuFadeOutOffset
+  - content->Image: asdf
+    leftTopPoint: {x = 10, y = 20}
+    size: {width = 20, height = 20}
+    fadeInOffset: getMenuFadeInOffset
+    fadeOutOffset: getMenuFadeOutOffset
+  - content->Image: asdf_32
+    centerPoint: [20, 30]
+    size: $menubuttonSize
+  - content->IAButton:
+      __ref__: myMenubutton
+      attr->MenuButtonAttr:
+        imageNormal->Image: void5
+        imageTouched->Image: asdf
+        onClick: menuItemOnClick
+    size:
+      width: $widthOfView - 20
+      height: $heightOfView
+  - content->IAFrameAnimation:
+      attr->MyFrameAnimationAttr:
+        number_of_frames: 5
+        offset: 3
+        name: frame_images_
+        durationOfSingleFrame: 20
+  - content->Label:
+      text->GuiString: asdf
+    size: [200, 300]
+    centerPoint: [20, 40]

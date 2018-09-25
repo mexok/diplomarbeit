@@ -13,6 +13,10 @@ typedef struct{
 	size_t elementCount;
 	//@getAsConst
 	IAFlowLayoutElement * elements;
+	//@set+get
+	float spacing;
+	//@set+get
+	bool isVertical;
 } IAFlowLayoutAttributes;
 
 

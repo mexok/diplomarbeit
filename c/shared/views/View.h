@@ -12,9 +12,7 @@
 typedef struct{
     //@extend
     IAObject base;
-    
-    
-#include "View+GeneratedYaml.h"
+
 } View;
 
 

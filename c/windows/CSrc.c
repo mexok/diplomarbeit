@@ -4,11 +4,13 @@
 
 #include <time.h>
 #include "CSrc.h"
+#include "IAOpenGL.h"
 #include "IAViewPort.h"
 #include "IAAllocationTracker.h"
 #include "IAString.h"
 #include "IACLibWinMappings.h"
 #include "IAInputOutputWinMappings.h"
+#include "IATouchManager.h"
 #include "IAWinTouchHandler.h"
 #include "ViewManager.h"
 
@@ -49,7 +51,7 @@ const char * CSrc_getLocaleId(void) {
 	return localeId;
 }
 
-CSrc_API void createResources(int realWidthOfScreen, int realHeightOfScreen, int frameBufferWidth, int frameBufferHeight){
+void createResources(int realWidthOfScreen, int realHeightOfScreen, int frameBufferWidth, int frameBufferHeight){
 	ghMutex = CreateMutex(
 		NULL,              // default security attributes
 		FALSE,             // initially not owned
@@ -87,12 +89,14 @@ CSrc_API void createResources(int realWidthOfScreen, int realHeightOfScreen, int
 	IAWinTouchHandler_start(realWidthOfScreen, realHeightOfScreen, acquireApplicationLock, releaseApplicationLock);
 }
 
-CSrc_API void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight) {
+void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight) {
+	acquireApplicationLock();
 	IASize surfaceSize = IASize_make(frameBufferWidth, frameBufferHeight);
 	IAOpenGL_onSurfaceChanged(surfaceSize);
+	releaseApplicationLock();
 }
 
-CSrc_API void render(void){
+void render(void){
 	acquireApplicationLock();
 	IAOpenGL_onRenderBegin();
 
@@ -102,7 +106,7 @@ CSrc_API void render(void){
 	releaseApplicationLock();
 }
 
-CSrc_API void setOpenGLWinMappings(IAOpenGLWinMappings mappings) {
+void setOpenGLWinMappings(IAOpenGLWinMappings mappings) {
 	IAOpenGLWinMappings_setMappings(mappings);
 }
 

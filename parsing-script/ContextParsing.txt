@@ -71,3 +71,7 @@ Check if type matches any super class. Delegates of the class shall not be check
 
 Knackpunkt: provider konzept
 ============================
+
+
+keys:
+generate, template, type, resource, ref

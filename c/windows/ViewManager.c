@@ -7,16 +7,19 @@
 #include "IACurrentFrame.h"
 #include "ViewManager.h"
 #include "FlowLayoutView.h"
+#include "SampleView.h"
 
 #define CLASSNAME "ViewManager"
 
 static IAViewHolder * viewHolder;
 static FlowLayoutView * flowLayoutView;
+static SampleView * sampleView;
 
 void ViewManager_commence(){
 	flowLayoutView = FlowLayoutView_new();
 	viewHolder = IAViewHolder_new();
-	IAViewHolder_start(viewHolder, FlowLayoutView_getView(flowLayoutView), IACurrentFrame_getTime(), NULL);
+	sampleView = SampleView_new();
+	IAViewHolder_start(viewHolder, SampleView_getView(sampleView), IACurrentFrame_getTime(), NULL);
 }
 
 void ViewManager_draw() {

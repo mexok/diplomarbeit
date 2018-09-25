@@ -15,6 +15,7 @@ typedef struct{
 	//@getAsConstRef
 	IAView view;
 	IAColorRect * rect;
+	int posx;
 } FlowLayoutView;
 
 

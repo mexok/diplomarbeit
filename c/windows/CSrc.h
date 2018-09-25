@@ -11,19 +11,13 @@
 
 //@disableFunctionNameCheck
 
-#ifdef CSrc_EXPORTS
-#define CSrc_API __declspec(dllexport)
-#else
-#define CSrc_API __declspec(dllimport)
-#endif
+void createResources(int realWidthOfScreen, int realHeightOfScreen, int frameBufferWidth, int frameBufferHeight);
 
-CSrc_API void createResources(int realWidthOfScreen, int realHeightOfScreen, int frameBufferWidth, int frameBufferHeight);
+void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight);
 
-CSrc_API void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight);
+void render(void);
 
-CSrc_API void render(void);
-
-CSrc_API void setOpenGLWinMappings(IAOpenGLWinMappings mappings);
+void setOpenGLWinMappings(IAOpenGLWinMappings mappings);
 
 void acquireApplicationLock();
 void releaseApplicationLock();

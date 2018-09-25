@@ -13,6 +13,8 @@ typedef struct{
 	IADrawableRect drawableRect;
 	size_t elementCount;
 	IAFlowLayoutElement * elements;
+	float spacing;
+	bool isVertical;
 } IAFlowLayout;
 
 

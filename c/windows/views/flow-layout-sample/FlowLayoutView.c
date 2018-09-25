@@ -5,6 +5,7 @@
 #include "IALibrary.h"
 #include "FlowLayoutView.h"
 #include "IAViewPort.h"
+#include "IACurrentFrame.h"
 
 #define CLASSNAME "FlowLayoutView"
 
@@ -22,7 +23,8 @@ void FlowLayoutView_init(FlowLayoutView * this) {
 	IAViewAttributes_setDrawFadeOutFunction(&attr, FlowLayoutView_drawFadeOut);
 	IAViewAttributes_setOnFadeOutFinishedFunction(&attr, FlowLayoutView_onFadeOutFinished);
 	IAView_make(&this->view, "flow layout view", &attr);
-	this->rect = IAColorRect_new(IAColor_RED);
+	this->rect = IAColorRect_new(IAColor_red);
+	this->posx = 0;
 	IA_incrementInitCount();
 }
 
@@ -43,7 +45,8 @@ void FlowLayoutView_onFadeInFinished(FlowLayoutView * this, uint64_t startTime, 
 }
 
 void FlowLayoutView_draw(FlowLayoutView * this, uint64_t currentTime) {
-	IAColorRect_setRect(this->rect, IARect_make(40, 40, 500, 500));
+	this->posx += IACurrentFrame_getDeltaTimeSinceLastFrame();
+	IAColorRect_setRect(this->rect, IARect_make(/*this->posx % 500*/ 1, 1, 200, 200));
 	IAColorRect_draw(this->rect);
 }
 

@@ -13,8 +13,10 @@ typedef struct{
 } IAFlowLayoutElement;
 
 
-void IAFlowLayoutElement_make(IAFlowLayoutElement *, IADrawableRect * content);
-void IAFlowLayoutElement_makeCopy(IAFlowLayoutElement *, const IAFlowLayoutElement * toCopy);
+void IAFlowLayoutElement_init(IAFlowLayoutElement *, IADrawableRect * content);
+void IAFlowLayoutElement_initCopy(IAFlowLayoutElement *, const IAFlowLayoutElement * toCopy);
+
+void IAFlowLayoutElement_deinit(IAFlowLayoutElement *);
 
 #include "IAFlowLayoutElement+Generated.h"
 
