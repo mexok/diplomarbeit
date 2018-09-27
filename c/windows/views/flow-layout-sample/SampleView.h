@@ -13,6 +13,7 @@ typedef struct {
 	//@extend
 	IAObject base;
 	IAFlowLayout * sampleLayout;
+	IAButton * myButton;
 	//@getAsRef
 	IAView view;
 } SampleView;

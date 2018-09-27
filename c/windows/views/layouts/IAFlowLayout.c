@@ -12,6 +12,8 @@ static void draw(const IAFlowLayout * this);
 static void setRect(IAFlowLayout * this, IARect rect);
 static IASize getMinSizeNeeded(IAFlowLayout * this);
 
+
+
 void IAFlowLayout_init(IAFlowLayout * this, const IAFlowLayoutAttributes * attr){
 	IADrawableRect_make((IADrawableRect *) this, (void (*)(const IADrawable *)) draw, (void (*)(IADrawableRect *, IARect)) setRect, (IASize (*)(IADrawableRect *)) getMinSizeNeeded);
 	this->elementCount = IAFlowLayoutAttributes_getElementCount(attr);
@@ -49,24 +51,32 @@ static void getMinLengthAndMaxOtherLength(IAFlowLayout * this, float * minLength
 	*maxOtherLengthOut = maxOtherLength;
 }
 
-static void getScaleFactorAndSpacing(IAFlowLayout * this, float totalLength, float * scaleFactorOut, float * spacingOut){
+static void getScaleFactorAndSpacing(IAFlowLayout * this, float totalLength, float * scaleFactorOut, float * additionalLengthOut, float * spacingOut){
 	float minLength, maxOtherLength;
 	getMinLengthAndMaxOtherLength(this, &minLength, &maxOtherLength);
+	size_t numberOfSpaces = (this->elementCount - 1);
 
-	float scaleFactor = 1.0f;
-	float spacing = 0.0f;
+	float scaleFactor;
+	float additionalLength;
+	float spacing;
 	if (totalLength < minLength){
 		scaleFactor = totalLength / minLength;
+		spacing = 0.0f;
+		additionalLength = 0.0f;
 	}else{
-		float totalSpacing = (this->elementCount - 1) * this->spacing;
-		if (totalLength < minLength - totalSpacing){
-			scaleFactor = (minLength - totalSpacing) / totalLength;
+		float totalSpacing = numberOfSpaces * this->spacing;
+		if (totalLength < totalSpacing){
+			scaleFactor = 0.0f;
+			spacing = totalLength / numberOfSpaces;
+			additionalLength = 0.0f;
 		}else{
-			assert(this->elementCount > 1);
-			spacing = (minLength - totalLength) / (this->elementCount - 1);
+			scaleFactor = 1.0f;
+			spacing = this->spacing;
+			additionalLength = (totalLength - totalSpacing - minLength) / this->elementCount;
 		}
 	}
 	*scaleFactorOut = scaleFactor;
+	*additionalLengthOut = additionalLength;
 	*spacingOut = spacing;
 }
 
@@ -77,20 +87,21 @@ static void setRect(IAFlowLayout * this, IARect rect) {
 
 	float totalLength = this->isVertical ? rect.size.height : rect.size.width;
 
-	float scaleFactor, spacing;
-	getScaleFactorAndSpacing(this, totalLength, &scaleFactor, &spacing);
+	float scaleFactor, additionalLength, spacing;
+	getScaleFactorAndSpacing(this, totalLength, &scaleFactor, &additionalLength, &spacing);
 
 	float offset = 0.0f;
 	for (size_t i = 0; i < this->elementCount; ++i) {
 		IADrawableRect * content = IAFlowLayoutElement_getContent(&this->elements[i]);
+		IASize size = IADrawableRect_getMinSizeNeeded(content);
 		IARect contentRect = {
 				.origin = {
-						.x = this->isVertical ? rect.origin.x + offset : rect.origin.x,
-						.y = this->isVertical ? rect.origin.y : rect.origin.y + offset,
+						.x = this->isVertical ? rect.origin.x : rect.origin.x + offset,
+						.y = this->isVertical ? rect.origin.y + offset : rect.origin.y,
 				},
 				.size = {
-						.width = this->isVertical ? rect.size.width : rect.size.width * scaleFactor,
-						.height = this->isVertical ? rect.size.height * scaleFactor : rect.size.height,
+						.width = this->isVertical ? rect.size.width : size.width * scaleFactor + additionalLength,
+						.height = this->isVertical ? size.height * scaleFactor + additionalLength : rect.size.height,
 				}
 		};
 		IADrawableRect_setRect(content, contentRect);

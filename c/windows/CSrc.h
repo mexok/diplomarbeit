@@ -11,7 +11,7 @@
 
 //@disableFunctionNameCheck
 
-void createResources(int realWidthOfScreen, int realHeightOfScreen, int frameBufferWidth, int frameBufferHeight);
+void createResources(int frameBufferWidth, int frameBufferHeight);
 
 void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight);
 

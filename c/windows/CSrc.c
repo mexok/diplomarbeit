@@ -51,7 +51,7 @@ const char * CSrc_getLocaleId(void) {
 	return localeId;
 }
 
-void createResources(int realWidthOfScreen, int realHeightOfScreen, int frameBufferWidth, int frameBufferHeight){
+void createResources(int frameBufferWidth, int frameBufferHeight){
 	ghMutex = CreateMutex(
 		NULL,              // default security attributes
 		FALSE,             // initially not owned
@@ -86,7 +86,7 @@ void createResources(int realWidthOfScreen, int realHeightOfScreen, int frameBuf
 
 	ViewManager_commence();
 
-	IAWinTouchHandler_start(realWidthOfScreen, realHeightOfScreen, acquireApplicationLock, releaseApplicationLock);
+	IAWinTouchHandler_start(acquireApplicationLock, releaseApplicationLock);
 }
 
 void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight) {

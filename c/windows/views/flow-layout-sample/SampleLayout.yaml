@@ -1,13 +1,28 @@
 __generate__: IAFlowLayout
 elements:
 - content:
-    __type__: IAColorRect
-    color: red
+    __type__: IAFlowLayout
+    elements:
+        - content:
+            __type__: IAColorRect
+            color: red
+        - content:
+            __type__: IAButton
+            __ref__: myButton
+            normal:
+              __type__: IAColorRect
+              color: yellow
+            touched:
+              __type__: IAColorRect
+              color: blue
+        - content:
+            __type__: IAColorRect
+            color: magenta
+    spacing: 20
+    isVertical: true
 - content:
     __type__: IAColorRect
+    __ref__: myColorRect
     color: [0, 255, 0, 255]
-- content:
-    __resource__: Image
-    name: "test"
-spacing: 20
+spacing: 200
 

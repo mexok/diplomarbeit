@@ -9,6 +9,7 @@
 
 #include <IAOpenGL.h>
 #include "CSrc.h"
+#include "IAWinTouchHandler.h"
 
 LONG WINAPI WndProc(HWND,UINT,WPARAM,LPARAM);
 void CreateOpenGLContext(HWND hwnd);
@@ -73,16 +74,18 @@ LONG WINAPI WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 			int framebufferHeight = clientRect.bottom - clientRect.top;
 
 			if (areResourcesCreated == false) {
-				HWND hDesktop = GetDesktopWindow();
-				RECT rect;
-				GetWindowRect(hDesktop, &rect);
-				int realWidthOfScreen = rect.right;
-				int realHeightOfScreen = rect.bottom;
-				createResources(realWidthOfScreen, realHeightOfScreen, framebufferWidth, framebufferHeight);
+				createResources(framebufferWidth, framebufferHeight);
 				areResourcesCreated = true;
 			}else{
 				updateFramebufferSize(framebufferWidth, framebufferHeight);
 			}
+			RECT windowRect;
+			GetWindowRect(hwnd, &windowRect);
+			long border = ((windowRect.right - windowRect.left) - framebufferWidth) / 2;
+			float offsetX = windowRect.left + border;
+			float offsetY = windowRect.bottom - border - framebufferHeight;
+			IAWinTouchHandler_setWindowOffset(offsetX, offsetY);
+
 			glClear(GL_COLOR_BUFFER_BIT);
 			glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
 			render();
