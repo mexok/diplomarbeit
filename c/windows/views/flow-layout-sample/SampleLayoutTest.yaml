@@ -7,7 +7,7 @@ elements:
         - content(IAButton):
             __ref__: myButton
             normal(IAColorRect):
-              
+
               color: yellow
             touched(IAColorRect):
               color: blue

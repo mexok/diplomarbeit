@@ -4,9 +4,6 @@ elements:
     __type__: IAFlowLayout
     elements:
         - content:
-            __type__: IAColorRect
-            color: red
-        - content:
             __type__: IAButton
             __ref__: myButton
             normal:
@@ -18,6 +15,9 @@ elements:
         - content:
             __type__: IAColorRect
             color: magenta
+        - content:
+            __resource__: Image
+            name: "asdf"
     spacing: 20
     isVertical: true
 - content:
