@@ -18,6 +18,8 @@
 
 #include "IAOpenGLHeaders.h"
 
+#define CLASSNAME "CSrc"
+
 static HANDLE ghMutex;
 
 debugOnly(static IAAllocationTracker * tracker);
@@ -57,7 +59,7 @@ void createResources(int frameBufferWidth, int frameBufferHeight){
 		FALSE,             // initially not owned
 		NULL);             // unnamed mute
 	assert(ghMutex && "mutex could not be created");
-	
+
 	IACLibWinMappings clibMappings = {
 		.IATime_getTimeInMilliseconds = CSrcs_getTimeInMilliseconds,
 		.IATime_getTimeInNanoSeconds = CSrcs_getTimeInMilliseconds
@@ -99,9 +101,7 @@ void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight) {
 void render(void){
 	acquireApplicationLock();
 	IAOpenGL_onRenderBegin();
-
 	ViewManager_draw();
-
 	IAOpenGL_onRenderEnd();
 	releaseApplicationLock();
 }

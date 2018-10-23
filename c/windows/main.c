@@ -10,6 +10,9 @@
 #include <IAOpenGL.h>
 #include "CSrc.h"
 #include "IAWinTouchHandler.h"
+#include "IALibrary.h"
+
+#define CLASSNAME "main"
 
 LONG WINAPI WndProc(HWND,UINT,WPARAM,LPARAM);
 void CreateOpenGLContext(HWND hwnd);
