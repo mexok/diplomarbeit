@@ -1,6 +1,4 @@
 
-#define CLASSNAME "main.c"
-
 #include <windows.h>
 #include <GL/glew.h>
 #include <GL/gl.h>

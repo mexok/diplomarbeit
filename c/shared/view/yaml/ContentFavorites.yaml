@@ -1,0 +1,31 @@
+__generate__: IAScrollLayout
+contentLength: 1000
+content:
+  __type__: IAGridLayout
+  gridWidth: 2
+  gridHeight: 2
+  elements:
+    - content:
+        __type__: IAFlowLayout
+        backgroundColor: green
+        spacing: 20
+        elements:
+          - content:
+              __type__: IAButton
+              __ref__: myButton
+              normal:
+                __type__: IAColorRect
+                color: yellow
+              touched:
+                __type__: IAColorRect
+                color: blue
+          - content:
+              __type__: IAColorRect
+              color: magenta
+          - content:
+              __resource__: Image
+              name: Koala
+              
+    - content:
+        __resource__: Image
+        name: Koala

@@ -1,0 +1,37 @@
+__generate__: IAFlowLayout
+backgroundColor: blue
+isVertical: true
+elements:
+
+  - fixedLength: 100
+    content:
+      __type__: IAFlowLayout
+      spacing: 50
+      padding: 10
+      elements:
+        - fixedLength: 80
+          content:
+            __type__: IAColorRect
+            color: magenta
+      
+        - content:
+            __type__: IAColorRect
+            color: [0, 255, 0, 255]
+  
+  - content:
+      __type__: IAFlowLayout
+      elements:
+        - fixedLength: 100
+          content:
+            __type__: IAFlowLayout
+            backgroundColor: green
+            spacing: 10
+            padding: 10
+            elements:
+              - content:
+                  __type__: IAColorRect
+                  color: [255, 255, 0, 255]
+      
+        - content:
+            __type__: IAFlowLayout
+            __ref__: content

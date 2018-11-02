@@ -13,61 +13,122 @@ set_target_properties(glew PROPERTIES
 		INTERFACE_COMPILE_DEFINITIONS GLEW_STATIC
 		INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/deps/glew-2.1.0/include)
 
-add_library(opencv_core STATIC IMPORTED)
-set_target_properties(opencv_core PROPERTIES
-		IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/deps/opencv-3.4.3/x64/mingw/lib/libopencv_core343.dll.a)
-target_include_directories(opencv_core INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/deps/opencv-3.4.3/include)
+add_library(opencv INTERFACE)
+target_include_directories(opencv INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/deps/opencv-3.4.3/include)
+
+target_link_libraries(opencv
+		INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/deps/opencv-3.4.3/x64/mingw/bin/libopencv_core343.dll
+		INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/deps/opencv-3.4.3/x64/mingw/bin/libopencv_highgui343.dll
+		INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/deps/opencv-3.4.3/x64/mingw/bin/libopencv_imgcodecs343.dll
+		INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/deps/opencv-3.4.3/x64/mingw/bin/libopencv_imgproc343.dll)
+
+file(COPY
+		deps/opencv-3.4.3/x64/mingw/bin/libopencv_core343.dll
+		deps/opencv-3.4.3/x64/mingw/bin/libopencv_highgui343.dll
+		deps/opencv-3.4.3/x64/mingw/bin/libopencv_imgcodecs343.dll
+		deps/opencv-3.4.3/x64/mingw/bin/libopencv_imgproc343.dll
+		DESTINATION ${EXECUTABLE_OUTPUT_PATH})
 
 add_subdirectory(impsengine)
 
-set(FREEGLUT_BUILD_STATIC_LIBS ON)
-add_subdirectory(deps/freeglut-3.0.0)
-target_compile_definitions(freeglut_static PUBLIC FREEGLUT_STATIC)
-target_include_directories(freeglut_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/deps/freeglut-3.0.0/include)
+add_library(opencv_glue STATIC
+		deps/opencv-glue/OpenGLWinMappings.h
+		deps/opencv-glue/OpenGLWinMappings.cpp)
+target_link_libraries(opencv_glue opencv)
+target_link_libraries(opencv_glue iaopengl iaclib)
+target_link_libraries(opencv_glue glew)
+target_link_libraries(opencv_glue opengl32.lib glu32.lib)
+target_include_directories(opencv_glue PUBLIC deps/opencv-glue)
 
 list(APPEND sources
 		c/windows/CSrc.h
 		c/windows/CSrc.c
 		c/windows/main.c
-		c/windows/OpenGLWinMappings.h
-		c/windows/OpenGLWinMappings.c
 		c/windows/Resources.h
 		c/windows/Resources.c
-		c/windows/ViewManager.h
-		c/windows/ViewManager.c
-		c/shared/views/flow-layout-sample/FlowLayoutView.h
-		c/shared/views/flow-layout-sample/FlowLayoutView.c
-		c/shared/views/flow-layout-sample/SampleView.h
-		c/shared/views/flow-layout-sample/SampleView.c
-		c/shared/views/layouts/flow-layout/IAFlowLayout.h
-		c/shared/views/layouts/flow-layout/IAFlowLayout.c
-		c/shared/views/layouts/flow-layout/IAFlowLayoutAttributes.h
-		c/shared/views/layouts/flow-layout/IAFlowLayoutAttributes.c
-		c/shared/views/layouts/flow-layout/IAFlowLayoutElement.h
-		c/shared/views/layouts/flow-layout/IAFlowLayoutElement.c
-		c/shared/views/layouts/grid-layout/IAGridLayout.h
-		c/shared/views/layouts/grid-layout/IAGridLayout.c
-		c/shared/views/layouts/grid-layout/IAGridLayoutAttributes.h
-		c/shared/views/layouts/grid-layout/IAGridLayoutAttributes.c
-		c/shared/views/layouts/grid-layout/IAGridLayoutElement.h
-		c/shared/views/layouts/grid-layout/IAGridLayoutElement.c
-		c/shared/views/layouts/grid-layout/IAGridLayoutElementAttributes.h
-		c/shared/views/layouts/grid-layout/IAGridLayoutElementAttributes.c)
+		c/windows/AppManager.h
+		c/windows/AppManager.c
+
+		c/shared/model/HomeState.h
+		c/shared/model/HomeState.c
+
+		c/shared/presenter/Presenter.h
+		c/shared/presenter/Presenter.c
+
+		c/shared/view/MainView.h
+		c/shared/view/MainView.c
+
+		c/shared/view/custom-elements/OnOffSwitch.h
+		c/shared/view/custom-elements/OnOffSwitch.c
+		c/shared/view/custom-elements/OnOffSwitchAttributes.h
+		c/shared/view/custom-elements/OnOffSwitchAttributes.c
+
+		c/shared/view/elements/label/IALabel.h
+		c/shared/view/elements/label/IALabel.c
+		c/shared/view/elements/label/IALabelAttributes.h
+		c/shared/view/elements/label/IALabelAttributes.c
+
+		c/shared/view/elements/slider/IASlider.h
+		c/shared/view/elements/slider/IASlider.c
+		c/shared/view/elements/slider/IASliderAttributes.h
+		c/shared/view/elements/slider/IASliderAttributes.c
+
+		c/shared/view/layouts/IALayout.h
+		c/shared/view/layouts/IALayout.c
+		c/shared/view/layouts/IALayoutAttributes.h
+		c/shared/view/layouts/IALayoutAttributes.c
+		c/shared/view/layouts/scroll-layout/IAScrollLayout.h
+		c/shared/view/layouts/scroll-layout/IAScrollLayout.c
+		c/shared/view/layouts/scroll-layout/IAScrollLayoutAttributes.h
+		c/shared/view/layouts/scroll-layout/IAScrollLayoutAttributes.c
+		c/shared/view/layouts/card-layout/IACardLayout.h
+		c/shared/view/layouts/card-layout/IACardLayout.c
+		c/shared/view/layouts/card-layout/IACardLayoutAttributes.h
+		c/shared/view/layouts/card-layout/IACardLayoutAttributes.c
+		c/shared/view/layouts/card-layout/IACardLayoutElement.h
+		c/shared/view/layouts/card-layout/IACardLayoutElement.c
+		c/shared/view/layouts/card-layout/IACardLayoutElementAttributes.h
+		c/shared/view/layouts/card-layout/IACardLayoutElementAttributes.c
+		c/shared/view/layouts/flow-layout/IAFlowLayout.h
+		c/shared/view/layouts/flow-layout/IAFlowLayout.c
+		c/shared/view/layouts/flow-layout/IAFlowLayoutAttributes.h
+		c/shared/view/layouts/flow-layout/IAFlowLayoutAttributes.c
+		c/shared/view/layouts/flow-layout/IAFlowLayoutElement.h
+		c/shared/view/layouts/flow-layout/IAFlowLayoutElement.c
+		c/shared/view/layouts/flow-layout/IAFlowLayoutElementAttributes.h
+		c/shared/view/layouts/flow-layout/IAFlowLayoutElementAttributes.c
+		c/shared/view/layouts/grid-layout/IAGridLayout.h
+		c/shared/view/layouts/grid-layout/IAGridLayout.c
+		c/shared/view/layouts/grid-layout/IAGridLayoutAttributes.h
+		c/shared/view/layouts/grid-layout/IAGridLayoutAttributes.c
+		c/shared/view/layouts/grid-layout/IAGridLayoutElement.h
+		c/shared/view/layouts/grid-layout/IAGridLayoutElement.c
+		c/shared/view/layouts/grid-layout/IAGridLayoutElementAttributes.h
+		c/shared/view/layouts/grid-layout/IAGridLayoutElementAttributes.c)
+
 
 add_executable(YamlGuiPrototyp ${sources})
 target_include_directories(YamlGuiPrototyp PUBLIC
 		c/windows
-		c/shared/views/flow-layout-sample
-		c/shared/views/layouts
-		c/shared/views/layouts/flow-layout
-		c/shared/views/layouts/grid-layout
-		generated)
+		c/shared/model
+		c/shared/presenter
+		c/shared/view
+		c/shared/view/layouts
+		c/shared/view/custom-elements
+		c/shared/view/elements/label
+		c/shared/view/elements/slider
+		c/shared/view/layouts/card-layout
+		c/shared/view/layouts/flow-layout
+		c/shared/view/layouts/grid-layout
+		c/shared/view/layouts/scroll-layout
+		generated
+		deps/opencv-glue)
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/c FILES ${sources})
 target_link_libraries(YamlGuiPrototyp iaopengl iaclib iamulti_touch)
 target_link_libraries(YamlGuiPrototyp glew)
-target_link_libraries(YamlGuiPrototyp opencv_core)
+target_link_libraries(YamlGuiPrototyp opencv opencv_glue)
 target_link_libraries(YamlGuiPrototyp opengl32.lib glu32.lib)
 target_generate_generics(YamlGuiPrototyp generated)
 target_add_yaml_sources(YamlGuiPrototyp generated
-		c/shared/views/flow-layout-sample/SampleLayout.yaml
-		c/shared/views/flow-layout-sample/SampleLayout2.yaml)
+		c/shared/view/yaml/ContentFavorites.yaml
+		c/shared/view/yaml/OverlayLayout.yaml)

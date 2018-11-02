@@ -1,6 +1,0 @@
-__generate__: IAFlowLayout
-elements:
-- content:
-    __type__: IAColorRect
-    color: red
-spacing: 20

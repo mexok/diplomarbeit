@@ -12,6 +12,4 @@ void Resources_commence(void);
 //@resourceProvider(Image)
 IAImage * Resources_getImage(const char * name);
 
-void Resources_terminate(void);
-
 #endif

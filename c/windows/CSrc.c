@@ -12,11 +12,13 @@
 #include "IAInputOutputWinMappings.h"
 #include "IATouchManager.h"
 #include "IAWinTouchHandler.h"
-#include "ViewManager.h"
+#include "AppManager.h"
+#include "Resources.h"
 
 #undef in
 
 #include "IAOpenGLHeaders.h"
+#include "OpenGLWinMappings.h"
 
 #define CLASSNAME "CSrc"
 
@@ -45,7 +47,6 @@ static void CSrcs_nativeInitWithAsset(IAString * this, const char * assetName, c
 		}
 		fclose(file);
 	}
-	
 }
 
 const char * CSrc_getLocaleId(void) {
@@ -72,12 +73,18 @@ void createResources(int frameBufferWidth, int frameBufferHeight){
 	};
 	IAInputOutputWinMappings_setMappings(ioMappings);
 
+	OpenGLWinMappings_setMappings();
+
 	glewInit();
 
 	IALibrary_commenceIfNeeded();
 	IAOpenGL_commence();
 
+	IAAutoreleasePool_begin();
+
 	IATouchManager_commence();
+
+	Resources_commence();
 
 	IAOpenGL_onSurfaceCreated();
 
@@ -86,7 +93,7 @@ void createResources(int frameBufferWidth, int frameBufferHeight){
 
 	debugOnly(tracker = IAAllocationTracker_new());
 
-	ViewManager_commence();
+	AppManager_commence();
 
 	IAWinTouchHandler_start(acquireApplicationLock, releaseApplicationLock);
 }
@@ -101,13 +108,10 @@ void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight) {
 void render(void){
 	acquireApplicationLock();
 	IAOpenGL_onRenderBegin();
-	ViewManager_draw();
+	AppManager_draw();
 	IAOpenGL_onRenderEnd();
+	IAAutoreleasePool_run();
 	releaseApplicationLock();
-}
-
-void setOpenGLWinMappings(IAOpenGLWinMappings mappings) {
-	IAOpenGLWinMappings_setMappings(mappings);
 }
 
 void acquireApplicationLock() {

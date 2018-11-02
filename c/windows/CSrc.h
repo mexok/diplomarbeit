@@ -17,7 +17,5 @@ void updateFramebufferSize(int frameBufferWidth, int frameBufferHeight);
 
 void render(void);
 
-void setOpenGLWinMappings(IAOpenGLWinMappings mappings);
-
 void acquireApplicationLock();
 void releaseApplicationLock();

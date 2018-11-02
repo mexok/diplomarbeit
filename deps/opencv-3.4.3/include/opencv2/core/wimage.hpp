@@ -446,7 +446,7 @@ public:
     typedef typename WImage<T>::BaseType BaseType;
     enum { kChannels = C };
 
-    // Default constructor needed for vectors of views.
+    // Default constructor needed for vectors of view.
     WImageViewC();
 
     virtual ~WImageViewC() {}
@@ -463,7 +463,7 @@ public:
     // of the supplied IplImage.
     WImageViewC(IplImage* img) : WImageC<T, C>(img) {}
 
-    // Copy constructor which does a shallow copy to allow multiple views
+    // Copy constructor which does a shallow copy to allow multiple view
     // of same data.  gcc-4.1.1 gets confused if both versions of
     // the constructor and assignment operator are not provided.
     WImageViewC(const WImageC<T, C>& img) : WImageC<T, C>(0) {

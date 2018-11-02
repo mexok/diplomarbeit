@@ -250,7 +250,7 @@ CVAPI(void) cvDrawChessboardCorners( CvArr* image, CvSize pattern_size,
 #define CV_CALIB_NINTRINSIC 18
 
 /* Finds intrinsic and extrinsic camera parameters
-   from a few views of known calibration pattern */
+   from a few view of known calibration pattern */
 CVAPI(double) cvCalibrateCamera2( const CvMat* object_points,
                                 const CvMat* image_points,
                                 const CvMat* point_counts,
@@ -279,7 +279,7 @@ CVAPI(void) cvCalibrationMatrixValues( const CvMat *camera_matrix,
 #define CV_CALIB_SAME_FOCAL_LENGTH 512
 
 /* Computes the transformation from one camera coordinate system to another one
-   from a few correspondent views of the same calibration target. Optionally, calibrates
+   from a few correspondent view of the same calibration target. Optionally, calibrates
    both cameras */
 CVAPI(double) cvStereoCalibrate( const CvMat* object_points, const CvMat* image_points1,
                                const CvMat* image_points2, const CvMat* npoints,
@@ -294,7 +294,7 @@ CVAPI(double) cvStereoCalibrate( const CvMat* object_points, const CvMat* image_
 #define CV_CALIB_ZERO_DISPARITY 1024
 
 /* Computes 3D rotations (+ optional shift) for each camera coordinate system to make both
-   views parallel (=> to make all the epipolar lines horizontal or vertical) */
+   view parallel (=> to make all the epipolar lines horizontal or vertical) */
 CVAPI(void) cvStereoRectify( const CvMat* camera_matrix1, const CvMat* camera_matrix2,
                              const CvMat* dist_coeffs1, const CvMat* dist_coeffs2,
                              CvSize image_size, const CvMat* R, const CvMat* T,
