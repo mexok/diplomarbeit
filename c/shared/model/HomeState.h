@@ -15,6 +15,8 @@ typedef struct {
 	float currentRoomTemperature;
 	//@set+get
 	float targetRoomTemperature;
+	//@set+get
+	bool isRightWindowOpen;
 	//@register
 	IANotificationEvent onTemperatureChanged;
 } HomeState;

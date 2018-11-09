@@ -1,38 +1,44 @@
 //
-//  IAFlowLayoutElement.c
+//  IACardLayoutElement.c
 //
 
 #include "IALibrary.h"
-#include "IAFlowLayoutElement.h"
+#include "IACardLayoutElement.h"
 
-#define CLASSNAME "IAFlowLayoutElement"
+#define CLASSNAME "IACardLayoutElement"
 
 
-void IAFlowLayoutElement_init(IAFlowLayoutElement * this, const IAFlowLayoutElementAttributes * attr){
-	this->base = IAObject_make(this);
-	this->content = IAFlowLayoutElementAttributes_getContent(attr);
-	this->fixedLength = IAFlowLayoutElementAttributes_getFixedLength(attr);
-	this->hasFixedLength = IAFlowLayoutElementAttributes_hasFixedLength(attr);
+void IACardLayoutElement_init(IACardLayoutElement * this, const IACardLayoutElementAttributes * attr){
+	*this = (IACardLayoutElement){
+		.base = IAObject_make(this),
+		.content = IACardLayoutElementAttributes_getContent(attr),
+		.marginLeft = IACardLayoutElementAttributes_getMarginLeft(attr),
+		.marginTop = IACardLayoutElementAttributes_getMarginTop(attr),
+		.marginRight = IACardLayoutElementAttributes_getMarginRight(attr),
+		.marginBottom = IACardLayoutElementAttributes_getMarginBottom(attr),
+		.marginLeftRelative = IACardLayoutElementAttributes_getMarginLeftRelative(attr),
+		.marginTopRelative = IACardLayoutElementAttributes_getMarginTopRelative(attr),
+		.marginRightRelative = IACardLayoutElementAttributes_getMarginRightRelative(attr),
+		.marginBottomRelative = IACardLayoutElementAttributes_getMarginBottomRelative(attr)
+	};
 	IADrawableRect_retain(this->content);
 	IA_incrementInitCount();
 }
 
-void IAFlowLayoutElement_initWithContent(IAFlowLayoutElement * this, IADrawableRect * content){
-	IAFlowLayoutElementAttributes attr;
-	IAFlowLayoutElementAttributes_make(&attr, content);
-	IAFlowLayoutElement_init(this, &attr);
+void IACardLayoutElement_initWithContent(IACardLayoutElement * this, IADrawableRect * content){
+	IACardLayoutElementAttributes attr;
+	IACardLayoutElementAttributes_make(&attr, content);
+	IACardLayoutElement_init(this, &attr);
 }
 
-void IAFlowLayoutElement_initCopy(IAFlowLayoutElement * this, const IAFlowLayoutElement * toCopy) {
+void IACardLayoutElement_initCopy(IACardLayoutElement * this, const IACardLayoutElement * toCopy) {
+	*this = *toCopy;
 	this->base = IAObject_make(this);
-	this->content = toCopy->content;
-	this->fixedLength = toCopy->fixedLength;
-	this->hasFixedLength = toCopy->hasFixedLength;
 	IADrawableRect_retain(this->content);
 	IA_incrementInitCount();
 }
 
-void IAFlowLayoutElement_deinit(IAFlowLayoutElement * this){
+void IACardLayoutElement_deinit(IACardLayoutElement * this){
 	IADrawableRect_release(this->content);
 	IA_decrementInitCount();
 }

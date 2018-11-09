@@ -1,9 +1,9 @@
 //
-//  IAFlowLayoutElementAttributes.h
+//  IACardLayoutElementAttributes.h
 //
 
-#ifndef IAFlowLayoutElementAttributes_h
-#define IAFlowLayoutElementAttributes_h
+#ifndef IACardLayoutElementAttributes_h
+#define IACardLayoutElementAttributes_h
 
 #include "IAObject.h"
 #include "IADrawableRect.h"
@@ -13,17 +13,30 @@ typedef struct {
 	IAObject base;
 	//@get
 	IADrawableRect * content;
-	//@get
-	float fixedLength;
-	//@get
-	bool hasFixedLength;
-} IAFlowLayoutElementAttributes;
+	//@set+get
+	float marginLeft;
+	//@set+get
+	float marginTop;
+	//@set+get
+	float marginRight;
+	//@set+get
+	float marginBottom;
+	//@set+get
+	float marginLeftRelative;
+	//@set+get
+	float marginTopRelative;
+	//@set+get
+	float marginRightRelative;
+	//@set+get
+	float marginBottomRelative;
+} IACardLayoutElementAttributes;
 
 
-void IAFlowLayoutElementAttributes_make(IAFlowLayoutElementAttributes *, IADrawableRect * content);
+void IACardLayoutElementAttributes_make(IACardLayoutElementAttributes *, IADrawableRect * content);
 
-void IAFlowLayoutElementAttributes_setFixedLength(IAFlowLayoutElementAttributes *, float fixedLength);
+void IACardLayoutElementAttributes_setMargins(IACardLayoutElementAttributes *, float margins);
+void IACardLayoutElementAttributes_setMarginsRelative(IACardLayoutElementAttributes *, float marginsRelative);
 
-#include "IAFlowLayoutElementAttributes+Generated.h"
+#include "IACardLayoutElementAttributes+Generated.h"
 
 #endif

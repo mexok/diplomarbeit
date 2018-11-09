@@ -1,21 +1,30 @@
 //
-//  IAFlowLayoutElementAttributes.c
+//  IACardLayoutElementAttributes.c
 //
 
 #include "IALibrary.h"
-#include "IAFlowLayoutElementAttributes.h"
+#include "IACardLayoutElementAttributes.h"
 
-#define CLASSNAME "IAFlowLayoutElementAttributes"
+#define CLASSNAME "IACardLayoutElementAttributes"
 
 
-void IAFlowLayoutElementAttributes_make(IAFlowLayoutElementAttributes *this, IADrawableRect * content) {
-	*this = (IAFlowLayoutElementAttributes){
+void IACardLayoutElementAttributes_make(IACardLayoutElementAttributes *this, IADrawableRect * content) {
+	*this = (IACardLayoutElementAttributes){
 		.base = IAObject_make(this),
 		.content = content
 	};
 }
 
-void IAFlowLayoutElementAttributes_setFixedLength(IAFlowLayoutElementAttributes *this, float fixedLength){
-	this->fixedLength = fixedLength;
-	this->hasFixedLength = true;
+void IACardLayoutElementAttributes_setMargins(IACardLayoutElementAttributes * this, float margins){
+	this->marginLeft = margins;
+	this->marginTop = margins;
+	this->marginRight = margins;
+	this->marginBottom = margins;
+}
+
+void IACardLayoutElementAttributes_setMarginsRelative(IACardLayoutElementAttributes * this, float marginsRelative){
+	this->marginLeftRelative = marginsRelative;
+	this->marginTopRelative = marginsRelative;
+	this->marginRightRelative = marginsRelative;
+	this->marginBottomRelative = marginsRelative;
 }

@@ -1,31 +1,43 @@
 //
-//  IAFlowLayoutElement.h
+//  IACardLayoutElement.h
 //
 
-#ifndef IAFlowLayoutElement_h
-#define IAFlowLayoutElement_h
+#ifndef IACardLayoutElement_h
+#define IACardLayoutElement_h
 
 #include "IADrawableRect.h"
-#include "IAFlowLayoutElementAttributes.h"
+#include "IACardLayoutElementAttributes.h"
 
 typedef struct{
 	//@extend
 	IAObject base;
 	//@get
 	IADrawableRect * content;
-	//@get
-	float fixedLength;
-	//@get
-	bool hasFixedLength;
-} IAFlowLayoutElement;
+	//@set+get
+	float marginLeft;
+	//@set+get
+	float marginTop;
+	//@set+get
+	float marginRight;
+	//@set+get
+	float marginBottom;
+	//@set+get
+	float marginLeftRelative;
+	//@set+get
+	float marginTopRelative;
+	//@set+get
+	float marginRightRelative;
+	//@set+get
+	float marginBottomRelative;
+} IACardLayoutElement;
 
 
-void IAFlowLayoutElement_init(IAFlowLayoutElement *, const IAFlowLayoutElementAttributes * attr);
-void IAFlowLayoutElement_initWithContent(IAFlowLayoutElement *, IADrawableRect * content);
-void IAFlowLayoutElement_initCopy(IAFlowLayoutElement *, const IAFlowLayoutElement * toCopy);
+void IACardLayoutElement_init(IACardLayoutElement *, const IACardLayoutElementAttributes * attr);
+void IACardLayoutElement_initWithContent(IACardLayoutElement *, IADrawableRect * content);
+void IACardLayoutElement_initCopy(IACardLayoutElement *, const IACardLayoutElement * toCopy);
 
-void IAFlowLayoutElement_deinit(IAFlowLayoutElement *);
+void IACardLayoutElement_deinit(IACardLayoutElement *);
 
-#include "IAFlowLayoutElement+Generated.h"
+#include "IACardLayoutElement+Generated.h"
 
 #endif

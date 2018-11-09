@@ -8,6 +8,7 @@
 #include "IADrawableRect.h"
 #include "IAButton.h"
 #include "OnOffSwitchAttributes.h"
+#include "OnOffSwitchEvent.h"
 
 typedef struct OnOffSwitch OnOffSwitch;
 
@@ -15,14 +16,16 @@ struct OnOffSwitch{
 	//@extend
 	IADrawableRect rect;
 	IAButton * buttonForStateOn;
+	IAButtonDelegate buttonForStateOnDelegate;
 	IAButton * buttonForStateOff;
+	IAButtonDelegate buttonForStateOffDelegate;
 	//@get
 	bool isOn;
 	//@get
 	bool isClickable;
 
-	void * correspondingObject;
-	void (*onStateChange)(void * correspondingObject, OnOffSwitch *);
+	//@register
+	OnOffSwitchEvent events;
 };
 
 

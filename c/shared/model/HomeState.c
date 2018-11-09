@@ -21,7 +21,8 @@ void HomeState_init(HomeState * this, float currentRoomTemperature, float target
 }
 
 void HomeState_updateTime(HomeState * this, uint64_t timeDiff){
-	float temperatureDiff = 0.0005f / timeDiff;
+	float temperatureDiff = 0.0005f * timeDiff;
+	float oldTemperature = this->currentRoomTemperature;
 	if (temperatureDiff >= fabsf(this->currentRoomTemperature - this->targetRoomTemperature)){
 		this->currentRoomTemperature = this->targetRoomTemperature;
 	}else{
@@ -31,7 +32,9 @@ void HomeState_updateTime(HomeState * this, uint64_t timeDiff){
 			this->currentRoomTemperature -= temperatureDiff;
 		}
 	}
-	IANotificationEvent_notify(&this->onTemperatureChanged);
+	if (this->currentRoomTemperature != oldTemperature){
+		IANotificationEvent_notify(&this->onTemperatureChanged);
+	}
 }
 
 void HomeState_deinit(HomeState * this) {

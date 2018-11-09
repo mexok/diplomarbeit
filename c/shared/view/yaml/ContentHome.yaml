@@ -1,0 +1,6 @@
+__generate__: IACardLayout
+elements:
+  - marginRightRelative: 0.60f
+    content:
+      __type__: IAColorRect
+      color: red

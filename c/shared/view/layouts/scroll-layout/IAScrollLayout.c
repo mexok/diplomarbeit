@@ -64,15 +64,12 @@ void IAScrollLayout_init(IAScrollLayout * this, const IAScrollLayoutAttributes *
 	float decelerationForScrollingInPixelPerTimeUnitSquared = IAScrollLayoutAttributes_getDecelerationForScrollingInPixelPerTimeUnitSquared(attr);
 	*this = (IAScrollLayout) {
 			.base = IAObject_make(this),
-			.correspondingObject = IAScrollLayoutAttributes_getCorrespondingObject(attr),
 			.content = IAScrollLayoutAttributes_getContent(attr),
 			.contentLength = IAScrollLayoutAttributes_getContentLength(attr),
 			.isHorizontal = IAScrollLayoutAttributes_isHorizontal(attr),
 			.scrollingData = IAScrollingData_new(decelerationForScrollingInPixelPerTimeUnitSquared),
 			.overscrollingHandler = IAOverscrollingHandler_new(behavior),
 			.thresholdInPixelForOnScrollBeginCall = IAScrollLayoutAttributes_getThresholdInPixelForOnScrollBeginCall(attr),
-			.onScrollBegin = IAScrollLayoutAttributes_getOnScrollBeginFunction(attr),
-			.onScrollEnd = IAScrollLayoutAttributes_getOnScrollEndFunction(attr),
 			.getTime = IAScrollLayoutAttributes_getGetTimeFunction(attr)
 	};
 	IADrawableRect_retain(this->content);
@@ -88,6 +85,8 @@ void IAScrollLayout_init(IAScrollLayout * this, const IAScrollLayoutAttributes *
 	IATouchDelegateAttributes_setOnTouchCanceledFunction(&touchDelegateAttr, (void(*)(void *)) IAScrollLayout_onTouchCanceled);
 	IATouchDelegateAttributes_setZOrder(&touchDelegateAttr, IAScrollLayoutAttributes_getZOrder(attr));
 	IATouchDelegate_init(&this->touchDelegate, &touchDelegateAttr);
+
+	IAScrollLayoutEvent_init(&this->scrollEvents);
 	IA_incrementInitCount();
 }
 
@@ -147,9 +146,7 @@ static void IAScrollLayout_doScroll(IAScrollLayout * this, IATouch touch) {
 	if (this->onScrollBeginCalled == false &&
 	    fabsf(this->currentScrollPos - this->startScrollPos) > this->thresholdInPixelForOnScrollBeginCall) {
 		this->onScrollBeginCalled = true;
-		if (this->onScrollBegin) {
-			this->onScrollBegin(this->correspondingObject, this);
-		}
+		IAScrollLayoutEvent_onScrollBegin(&this->scrollEvents, this);
 	}
 }
 
@@ -160,9 +157,7 @@ static void IAScrollLayout_endCurrentScolling(IAScrollLayout * this) {
 
 	if (this->onScrollBeginCalled) {
 		this->onScrollBeginCalled = false;
-		if (this->onScrollEnd) {
-			this->onScrollEnd(this->correspondingObject, this);
-		}
+		IAScrollLayoutEvent_onScrollEnd(&this->scrollEvents, this);
 	}
 	this->startTime = this->getTime();
 	this->currentTime = this->startTime;
@@ -230,6 +225,7 @@ void IAScrollLayout_deinit(IAScrollLayout * this) {
 	IAScrollingData_release(this->scrollingData);
 	IAOverscrollingHandler_release(this->overscrollingHandler);
 	IATouchDelegate_deinit(&this->touchDelegate);
+	IAScrollLayoutEvent_deinit(&this->scrollEvents);
 	IALayout_deinit((IALayout *) this);
 	IA_decrementInitCount();
 }

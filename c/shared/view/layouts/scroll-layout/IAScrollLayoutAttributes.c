@@ -6,9 +6,8 @@
 #define CLASSNAME "IAScrollLayoutAttributes"
 
 
-void IAScrollLayoutAttributes_make(IAScrollLayoutAttributes * this, void * correspondingObject, IADrawableRect * content){
+void IAScrollLayoutAttributes_make(IAScrollLayoutAttributes * this, IADrawableRect * content){
 	*this = (IAScrollLayoutAttributes) {
-			.correspondingObject = correspondingObject,
 			.content = content,
 			.getTime = IATime_getTimeInMilliseconds
 	};

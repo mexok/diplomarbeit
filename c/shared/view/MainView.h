@@ -7,22 +7,29 @@
 
 #include "IAObject.h"
 #include "OverlayLayout.h"
+#include "ContentFavorites.h"
 #include "IAView.h"
-#include "IAButton.h"
 #include "IAScrollLayout.h"
 
 typedef struct {
 	//@extend
 	IAView view;
 	IAFlowLayout * overlay;
-	IAFlowLayout * content;
+	IACardLayout * content;
 	IAScrollLayout * contentFavorites;
+	IACardLayout * contentHome;
 	IAButton * tabs[3];
+	IAButtonDelegate tabDelegates[3];
+	//@get
+	IASlider * temperatureSlider;
+	//@get
+	OnOffSwitch * rightKitchenWindow;
 } MainView;
 
 
 void MainView_init(MainView *);
 
+void MainView_setRealTemperature(MainView *, float temperature);
 
 void MainView_deinit(MainView *);
 

@@ -8,8 +8,11 @@
 #include "IADrawableRect.h"
 #include "IASliderAttributes.h"
 #include "IATouchDelegate.h"
+#include "IASliderEvent.h"
 
-typedef struct {
+typedef struct IASlider IASlider;
+
+struct IASlider{
 	//@extend
 	IADrawableRect rect;
 	IADrawableRect * background;
@@ -22,7 +25,10 @@ typedef struct {
 
 	bool isClickable;
 	IATouchDelegate touchDelegate;
-} IASlider;
+
+	//@register
+	IASliderEvent sliderEvents;
+} ;
 
 
 void IASlider_init(IASlider *, const IASliderAttributes * attr);

@@ -10,8 +10,6 @@
 typedef struct OnOffSwitch OnOffSwitch;
 
 typedef struct {
-	//@get
-	void * correspondingObject;
 	//@set+get
 	IADrawableRect * stateOnNormal;
 	//@set+get
@@ -21,13 +19,11 @@ typedef struct {
 	//@set+get
 	IADrawableRect * stateOffTouched;
 	//@set+get
-	void (*onStateChange)(void * correspondingObject, OnOffSwitch *);
-	//@set+get
 	bool initialIsOn;
 } OnOffSwitchAttributes;
 
 
-void OnOffSwitchAttributes_make(OnOffSwitchAttributes *, void * correspondingObject);
+void OnOffSwitchAttributes_make(OnOffSwitchAttributes *);
 
 #include "OnOffSwitchAttributes+Generated.h"
 

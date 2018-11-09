@@ -15,8 +15,6 @@ typedef struct{
 	//@extend
 	IALayoutAttributes layoutAttributes;
 	//@get
-	void * correspondingObject;
-	//@get
 	IADrawableRect * content;
 	//@set+get
 	float contentLength;
@@ -31,17 +29,13 @@ typedef struct{
 	//@set+get
 	float thresholdInPixelForOnScrollBeginCall;
 	//@set+get
-	void(*onScrollBegin)(void * correspondingObject, IAScrollLayout * scrollView);
-	//@set+get
-	void(*onScrollEnd)(void * correspondingObject, IAScrollLayout * scrollView);
-	//@set+get
 	uint64_t(*getTime)();
 	//@set+get
 	int zOrder;
 } IAScrollLayoutAttributes;
 
 
-void IAScrollLayoutAttributes_make(IAScrollLayoutAttributes * this, void * correspondingObject, IADrawableRect * content);
+void IAScrollLayoutAttributes_make(IAScrollLayoutAttributes * this, IADrawableRect * content);
 
 #include "IAScrollLayoutAttributes+Generated.h"
 

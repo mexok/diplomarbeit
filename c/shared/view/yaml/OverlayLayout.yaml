@@ -6,6 +6,7 @@ elements:
   - fixedLength: 100
     content:
       __type__: IAFlowLayout
+      __ref__: titleBar
       spacing: 50
       padding: 10
       elements:
@@ -20,18 +21,45 @@ elements:
   
   - content:
       __type__: IAFlowLayout
+      __ref__: bottomScreen
       elements:
         - fixedLength: 100
           content:
             __type__: IAFlowLayout
+            __ref__: tabBar
+            isVertical: true
             backgroundColor: green
             spacing: 10
             padding: 10
             elements:
               - content:
-                  __type__: IAColorRect
-                  color: [255, 255, 0, 255]
+                  __type__: IAButton
+                  __ref__: favoritesButton
+                  normal:
+                    __type__: IAColorRect
+                    color: red
+                  touched:
+                    __type__: IAColorRect
+                    color: black
+              - content:
+                  __type__: IAButton
+                  __ref__: homeButton
+                  normal:
+                    __type__: IAColorRect
+                    color: red
+                  touched:
+                    __type__: IAColorRect
+                    color: black
+              - content:
+                  __type__: IAButton
+                  __ref__: alertsButton
+                  normal:
+                    __type__: IAColorRect
+                    color: red
+                  touched:
+                    __type__: IAColorRect
+                    color: black
       
         - content:
-            __type__: IAFlowLayout
+            __type__: IACardLayout
             __ref__: content

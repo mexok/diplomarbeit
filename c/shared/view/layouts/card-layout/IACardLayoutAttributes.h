@@ -1,13 +1,13 @@
 //
-//  IAFlowLayoutAttributes.h
+//  IACardLayoutAttributes.h
 //
 
-#ifndef IAFlowLayoutAttributes_h
-#define IAFlowLayoutAttributes_h
+#ifndef IACardLayoutAttributes_h
+#define IACardLayoutAttributes_h
 
 
 #include "IALayoutAttributes.h"
-#include "IAFlowLayoutElement.h"
+#include "IACardLayoutElement.h"
 
 typedef struct{
 	//@extend
@@ -15,18 +15,14 @@ typedef struct{
 	//@get
 	size_t elementCount;
 	//@getAsConst
-	IAFlowLayoutElement * elements;
-	//@set+get
-	float spacing;
-	//@set+get
-	bool isVertical;
-} IAFlowLayoutAttributes;
+	IACardLayoutElement * elements;
+} IACardLayoutAttributes;
 
 
-void IAFlowLayoutAttributes_make(IAFlowLayoutAttributes *);
+void IACardLayoutAttributes_make(IACardLayoutAttributes *);
 
-void IAFlowLayoutAttributes_setElements(IAFlowLayoutAttributes *, size_t elementCount, IAFlowLayoutElement elements[elementCount]);
+void IACardLayoutAttributes_setElements(IACardLayoutAttributes *, size_t elementCount, IACardLayoutElement elements[elementCount]);
 
-#include "IAFlowLayoutAttributes+Generated.h"
+#include "IACardLayoutAttributes+Generated.h"
 
 #endif

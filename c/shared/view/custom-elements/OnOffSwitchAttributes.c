@@ -8,8 +8,7 @@
 #define CLASSNAME "OnOffSwitchAttributes"
 
 
-void OnOffSwitchAttributes_make(OnOffSwitchAttributes * this, void * correspondingObject) {
+void OnOffSwitchAttributes_make(OnOffSwitchAttributes * this) {
 	*this = (OnOffSwitchAttributes){
-		.correspondingObject = correspondingObject
 	};
 }

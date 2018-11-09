@@ -46,6 +46,7 @@ void IASlider_init(IASlider * this, const IASliderAttributes * attr) {
 	if (this->handle != NULL){
 		IADrawableRect_retain(this->handle);
 	}
+	IASliderEvent_init(&this->sliderEvents);
 	IA_incrementInitCount();
 }
 
@@ -69,7 +70,7 @@ static IARect IASlider_getRectOfHandle(IASlider * this){
 	IARect end = begin;
 	end.origin.x += IASlider_getSlidingLength(this);
 	float value = IASlider_getValue(this);
-	IARect current = IAAcceleration_calculateCurrentRect(begin, end, value, IAAcceleration_normalAccelerationFunction);
+	IARect current = IAAcceleration_calculateCurrentRect(begin, end, value, IAAcceleration_linearMovementFunction);
 	return current;
 }
 
@@ -101,12 +102,17 @@ static void onTouchMoved(IASlider * this, size_t numTouches, IATouch touches[num
 	if (this->isCurrentTouch) {
 		float slidingLength = IASlider_getSlidingLength(this);
 		if(slidingLength > 0.0f){
+			float oldValue = IASlider_getValue(this);
 			for (size_t i = 0; i < numTouches; i++) {
 				if (IATouch_hasSameIdentifier(this->currentTouch, touches[i])) {
 					float diff = (touches[i].location.x - this->currentTouch.location.x) / slidingLength;
 					this->artificialHandlePosition += diff;
 					this->currentTouch = touches[i];
 				}
+			}
+			float newValue = IASlider_getValue(this);
+			if (newValue != oldValue){
+				IASliderEvent_onValueChanged(&this->sliderEvents, newValue, this);
 			}
 		}
 	}
@@ -151,6 +157,7 @@ static void draw(IASlider * this){
 
 void IASlider_setIsClickable(IASlider * this, bool isClickable){
 	if (this->isClickable != isClickable){
+		this->isClickable = isClickable;
 		if (this->isClickable) {
 			IATouchManager_registerTouchDelegate(&this->touchDelegate);
 		}else{
@@ -167,6 +174,7 @@ void IASlider_deinit(IASlider * this) {
 	if (this->handle != NULL){
 		IADrawableRect_release(this->handle);
 	}
+	IASliderEvent_deinit(&this->sliderEvents);
 	IATouchDelegate_deinit(&this->touchDelegate);
 	IA_decrementInitCount();
 }

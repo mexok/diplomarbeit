@@ -14,14 +14,13 @@ typedef struct {
 	IAObject base;
 	HomeState * homeState;
 	MainView * mainView;
-	IANotificationDelegate onTemperatureChangedDelegate;
+	OnOffSwitchDelegate rightKitchenWindowDelegate;
+	IASliderDelegate onViewTemperatureChangedDelegate;
+	IANotificationDelegate onModelTemperatureChangedDelegate;
 } Presenter;
 
 
 void Presenter_init(Presenter *, HomeState * homeState, MainView * mainView);
-
-void Presenter_registerDelegates(Presenter *);
-void Presenter_unregisterDelegates(Presenter *);
 
 void Presenter_deinit(Presenter *);
 

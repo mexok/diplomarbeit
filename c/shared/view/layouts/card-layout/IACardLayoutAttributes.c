@@ -1,20 +1,20 @@
 //
-//  IAFlowLayoutAttributes.c
+//  IACardLayoutAttributes.c
 //
 
 #include "IALibrary.h"
-#include "IAFlowLayoutAttributes.h"
+#include "IACardLayoutAttributes.h"
 
-#define CLASSNAME "IAFlowLayoutAttributes"
+#define CLASSNAME "IACardLayoutAttributes"
 
 
-void IAFlowLayoutAttributes_make(IAFlowLayoutAttributes * this){
-	*this = (IAFlowLayoutAttributes){
+void IACardLayoutAttributes_make(IACardLayoutAttributes * this){
+	*this = (IACardLayoutAttributes){
 	};
 	IALayoutAttributes_make((IALayoutAttributes *) this);
 }
 
-void IAFlowLayoutAttributes_setElements(IAFlowLayoutAttributes * this, size_t elementCount, IAFlowLayoutElement elements[elementCount]) {
+void IACardLayoutAttributes_setElements(IACardLayoutAttributes * this, size_t elementCount, IACardLayoutElement elements[elementCount]) {
 	this->elementCount = elementCount;
 	this->elements = elements;
 }

@@ -8,14 +8,13 @@
 #include "IAScrollingData.h"
 #include "IAOverscrollingHandler.h"
 #include "IALayout.h"
-
+#include "IAScrollLayoutEvent.h"
 
 typedef struct IAScrollLayout IAScrollLayout;
 
 struct IAScrollLayout{
 	//@extend
 	IALayout base;
-	void * correspondingObject;
 	IADrawableRect * content;
 	float contentLength;
 	bool isHorizontal;
@@ -35,9 +34,9 @@ struct IAScrollLayout{
 
 	float thresholdInPixelForOnScrollBeginCall;
 	bool onScrollBeginCalled;
-	void(*onScrollBegin)(void * correspondingObject, IAScrollLayout * scrollView);
-	void(*onScrollEnd)(void * correspondingObject, IAScrollLayout * scrollView);
 	uint64_t(*getTime)();
+
+	IAScrollLayoutEvent scrollEvents;
 };
 
 

@@ -26,30 +26,41 @@ static void draw(OnOffSwitch * this){
 static void onButtonStateOnClicked(OnOffSwitch * this, IAButton * button){
 	this->isOn = false;
 	OnOffSwitch_updateButtons(this);
+	OnOffSwitchEvent_onStateChanged(&this->events, this->isOn, this);
 }
 
 static void onButtonStateOffClicked(OnOffSwitch * this, IAButton * button){
 	this->isOn = true;
 	OnOffSwitch_updateButtons(this);
+	OnOffSwitchEvent_onStateChanged(&this->events, this->isOn, this);
 }
 
 void OnOffSwitch_init(OnOffSwitch * this, const OnOffSwitchAttributes * attr) {
 	*this = (OnOffSwitch){
-		.correspondingObject = OnOffSwitchAttributes_getCorrespondingObject(attr),
-		.onStateChange = OnOffSwitchAttributes_getOnStateChangeFunction(attr)
     };
 	IADrawableRect_make((IADrawableRect *) this, (IADrawable_drawFunction) draw, (IADrawableRect_setRectFunction) setRect);
 
+	this->buttonForStateOnDelegate = (IAButtonDelegate){
+		.correspondingObject = this,
+		.onClick = (void (*)(void *, IAButton *)) onButtonStateOnClicked
+	};
+	this->buttonForStateOffDelegate = (IAButtonDelegate){
+			.correspondingObject = this,
+			.onClick = (void (*)(void *, IAButton *)) onButtonStateOffClicked
+	};
+
 	IAButtonAttributes buttonAttributes;
-	IAButtonAttributes_make(&buttonAttributes, this);
+	IAButtonAttributes_make(&buttonAttributes);
 	IAButtonAttributes_setNormal(&buttonAttributes, OnOffSwitchAttributes_getStateOnNormal(attr));
 	IAButtonAttributes_setTouched(&buttonAttributes, OnOffSwitchAttributes_getStateOnTouched(attr));
-	IAButtonAttributes_setOnClickFunction(&buttonAttributes, (void (*)(void *, IAButton *)) onButtonStateOnClicked);
 	this->buttonForStateOn = IAButton_new(&buttonAttributes);
+	IAButton_registerForTouchEvents(this->buttonForStateOn, &this->buttonForStateOffDelegate);
 	IAButtonAttributes_setNormal(&buttonAttributes, OnOffSwitchAttributes_getStateOffNormal(attr));
 	IAButtonAttributes_setTouched(&buttonAttributes, OnOffSwitchAttributes_getStateOffTouched(attr));
-	IAButtonAttributes_setOnClickFunction(&buttonAttributes, (void (*)(void *, IAButton *)) onButtonStateOffClicked);
 	this->buttonForStateOff = IAButton_new(&buttonAttributes);
+	IAButton_registerForTouchEvents(this->buttonForStateOff, &this->buttonForStateOffDelegate);
+
+	OnOffSwitchEvent_init(&this->events);
 
 	IA_incrementInitCount();
 }
@@ -77,6 +88,7 @@ static void OnOffSwitch_updateButtons(OnOffSwitch * this){
 }
 
 void OnOffSwitch_deinit(OnOffSwitch * this) {
+	OnOffSwitchEvent_deinit(&this->events);
 	IAButton_release(this->buttonForStateOn);
 	IAButton_release(this->buttonForStateOff);
 	IA_decrementInitCount();

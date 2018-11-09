@@ -62,6 +62,7 @@ list(APPEND sources
 		c/shared/view/custom-elements/OnOffSwitch.c
 		c/shared/view/custom-elements/OnOffSwitchAttributes.h
 		c/shared/view/custom-elements/OnOffSwitchAttributes.c
+		c/shared/view/custom-elements/OnOffSwitchDelegate.h
 
 		c/shared/view/elements/label/IALabel.h
 		c/shared/view/elements/label/IALabel.c
@@ -81,6 +82,7 @@ list(APPEND sources
 		c/shared/view/layouts/scroll-layout/IAScrollLayout.c
 		c/shared/view/layouts/scroll-layout/IAScrollLayoutAttributes.h
 		c/shared/view/layouts/scroll-layout/IAScrollLayoutAttributes.c
+		c/shared/view/layouts/scroll-layout/IAScrollLayoutDelegate.h
 		c/shared/view/layouts/card-layout/IACardLayout.h
 		c/shared/view/layouts/card-layout/IACardLayout.c
 		c/shared/view/layouts/card-layout/IACardLayoutAttributes.h
@@ -131,4 +133,5 @@ target_link_libraries(YamlGuiPrototyp opengl32.lib glu32.lib)
 target_generate_generics(YamlGuiPrototyp generated)
 target_add_yaml_sources(YamlGuiPrototyp generated
 		c/shared/view/yaml/ContentFavorites.yaml
+		c/shared/view/yaml/ContentHome.yaml
 		c/shared/view/yaml/OverlayLayout.yaml)
