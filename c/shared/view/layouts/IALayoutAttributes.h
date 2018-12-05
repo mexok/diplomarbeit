@@ -28,6 +28,14 @@ typedef struct {
 	float paddingRight;
 	//@set+get
 	float paddingBottom;
+	//@set+get
+	float paddingLeftRelative;
+	//@set+get
+	float paddingTopRelative;
+	//@set+get
+	float paddingRightRelative;
+	//@set+get
+	float paddingBottomRelative;
 } IALayoutAttributes;
 
 
@@ -36,6 +44,7 @@ void IALayoutAttributes_make(IALayoutAttributes *);
 void IALayoutAttributes_setBackgroundDrawable(IALayoutAttributes *, IADrawableRect * backgroundDrawable);
 void IALayoutAttributes_setBackgroundColor(IALayoutAttributes *, IAColor backgroundColor);
 void IALayoutAttributes_setPadding(IALayoutAttributes *, float padding);
+void IALayoutAttributes_setPaddingRelative(IALayoutAttributes *, float paddingRelative);
 
 #include "IALayoutAttributes+Generated.h"
 

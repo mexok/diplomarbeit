@@ -32,6 +32,7 @@ void IAFlowLayout_init(IAFlowLayout * this, const IAFlowLayoutAttributes * attr)
 	}
 	this->spacing = IAFlowLayoutAttributes_getSpacing(attr);
 	this->isVertical = IAFlowLayoutAttributes_isVertical(attr);
+	this->alignment = IAFlowLayoutAttributes_getAlignment(attr);
 	IA_incrementInitCount();
 }
 
@@ -43,7 +44,17 @@ static void draw(const IAFlowLayout * this) {
 	}
 }
 
-static float getLengthPerVariableElement(IAFlowLayout * this, float totalLength){
+static bool areOnlyDefinedElementsInLayout(IAFlowLayout * this){
+	for (int i = 0; i < IAArrayList_getCurrentSize(this->elements); ++i) {
+		IAFlowLayoutElement * element = IAArrayList_get(this->elements, i);
+		if (IAFlowLayoutElement_hasDefinedLength(element) == false){
+			return false;
+		}
+	}
+	return true;
+}
+
+static float getLengthPerVariableElement(IAFlowLayout * this, float totalLength, float otherLength){
 	size_t elementCount = IAArrayList_getCurrentSize(this->elements);
 	size_t numberOfSpaces = (elementCount - 1);
 	size_t numberOfDefinedElements = 0;
@@ -52,7 +63,7 @@ static float getLengthPerVariableElement(IAFlowLayout * this, float totalLength)
 	for (size_t i = 0; i < elementCount; i++) {
 		IAFlowLayoutElement * element = IAArrayList_get(this->elements, i);
 		if (IAFlowLayoutElement_hasDefinedLength(element)){
-			spaceLeft -= IAFlowLayoutElement_getDefinedLength(element, totalLength);
+			spaceLeft -= IAFlowLayoutElement_getDefinedLength(element, totalLength, otherLength);
 			numberOfDefinedElements++;
 		}
 	}
@@ -71,14 +82,41 @@ static void setRect(IAFlowLayout * this, IARect rect) {
 	}
 
 	float totalLength = this->isVertical ? rect.size.height : rect.size.width;
-	float lengthPerVariableElement = getLengthPerVariableElement(this, totalLength);
-
+	float otherLength = this->isVertical ? rect.size.width : rect.size.height;
+	float lengthPerVariableElement = getLengthPerVariableElement(this, totalLength, otherLength);
 	float offset = 0.0f;
+	float spacing = this->spacing;
+
+	if (areOnlyDefinedElementsInLayout(this)){
+		float lengthOfDefinedElements = 0.0f;
+		for (size_t i = 0; i < IAArrayList_getCurrentSize(this->elements); ++i) {
+			IAFlowLayoutElement * element = IAArrayList_get(this->elements, i);
+			lengthOfDefinedElements += IAFlowLayoutElement_getDefinedLength(element, totalLength, otherLength);
+		}
+		if (this->alignment == IAFlowLayoutAlignment_stretched){
+			spacing = totalLength - lengthOfDefinedElements;
+			if (elementCount > 1){
+				spacing /= (elementCount - 1);
+			}
+		}else{
+			float totalLengthOfContent = lengthOfDefinedElements;
+			if (elementCount > 1){
+				totalLengthOfContent += (elementCount - 1) * spacing;
+			}
+			if (this->alignment == IAFlowLayoutAlignment_rear){
+				offset = offset + totalLength - totalLengthOfContent;
+			}else if (this->alignment == IAFlowLayoutAlignment_centered){
+				offset = offset + totalLength - totalLengthOfContent;
+				offset /= 2.0f;
+			}
+		}
+	}
+
 	for (size_t i = 0; i < elementCount; i++) {
 		IAFlowLayoutElement * element = IAArrayList_get(this->elements, i);
 		IADrawableRect * content = IAFlowLayoutElement_getContent(element);
 
-		float widthOfElement = IAFlowLayoutElement_hasDefinedLength(element) ? IAFlowLayoutElement_getDefinedLength(element, totalLength) : lengthPerVariableElement;
+		float widthOfElement = IAFlowLayoutElement_hasDefinedLength(element) ? IAFlowLayoutElement_getDefinedLength(element, totalLength, otherLength) : lengthPerVariableElement;
 
 		IARect contentRect = {
 				.origin = {
@@ -92,7 +130,7 @@ static void setRect(IAFlowLayout * this, IARect rect) {
 		};
 		IADrawableRect_setRect(content, contentRect);
 		offset += this->isVertical ? contentRect.size.height : contentRect.size.width;
-		offset += this->spacing;
+		offset += spacing;
 	}
 }
 

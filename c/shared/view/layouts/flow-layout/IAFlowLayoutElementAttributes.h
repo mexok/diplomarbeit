@@ -21,6 +21,10 @@ typedef struct {
 	float relativeLength;
 	//@get
 	bool hasRelativeLength;
+	//@get
+	float fixedProportion;
+	//@get
+	bool hasFixedProportion;
 } IAFlowLayoutElementAttributes;
 
 
@@ -28,6 +32,7 @@ void IAFlowLayoutElementAttributes_make(IAFlowLayoutElementAttributes *, IADrawa
 
 void IAFlowLayoutElementAttributes_setFixedLength(IAFlowLayoutElementAttributes *, float fixedLength);
 void IAFlowLayoutElementAttributes_setRelativeLength(IAFlowLayoutElementAttributes *, float relativeLength);
+void IAFlowLayoutElementAttributes_setFixedProportion(IAFlowLayoutElementAttributes *, float fixedProportion);
 
 #include "IAFlowLayoutElementAttributes+Generated.h"
 

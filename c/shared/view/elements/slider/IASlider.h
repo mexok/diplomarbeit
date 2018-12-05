@@ -34,6 +34,7 @@ struct IASlider{
 void IASlider_init(IASlider *, const IASliderAttributes * attr);
 
 float IASlider_getValue(IASlider *);
+void IASlider_setValue(IASlider *, float value);
 
 void IASlider_setIsClickable(IASlider *, bool isClickable);
 

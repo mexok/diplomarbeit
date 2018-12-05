@@ -10,6 +10,7 @@
 
 void IAFlowLayoutAttributes_make(IAFlowLayoutAttributes * this){
 	*this = (IAFlowLayoutAttributes){
+		.alignment = IAFlowLayoutAlignment_front
 	};
 	IALayoutAttributes_make((IALayoutAttributes *) this);
 }

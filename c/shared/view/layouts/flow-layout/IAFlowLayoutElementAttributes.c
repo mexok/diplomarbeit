@@ -24,3 +24,8 @@ void IAFlowLayoutElementAttributes_setRelativeLength(IAFlowLayoutElementAttribut
 	this->relativeLength = relativeLength;
 	this->hasRelativeLength = true;
 }
+
+void IAFlowLayoutElementAttributes_setFixedProportion(IAFlowLayoutElementAttributes *this, float fixedProportion){
+	this->fixedProportion = fixedProportion;
+	this->hasFixedProportion = true;
+}

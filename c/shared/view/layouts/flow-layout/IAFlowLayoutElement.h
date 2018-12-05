@@ -17,6 +17,8 @@ typedef struct{
 	bool hasFixedLength;
 	float relativeLength;
 	bool hasRelativeLength;
+	float fixedProportion;
+	bool hasFixedProportion;
 } IAFlowLayoutElement;
 
 
@@ -25,7 +27,7 @@ void IAFlowLayoutElement_initWithContent(IAFlowLayoutElement *, IADrawableRect *
 void IAFlowLayoutElement_initCopy(IAFlowLayoutElement *, const IAFlowLayoutElement * toCopy);
 
 bool IAFlowLayoutElement_hasDefinedLength(IAFlowLayoutElement *);
-float IAFlowLayoutElement_getDefinedLength(IAFlowLayoutElement *, float totalLength);
+float IAFlowLayoutElement_getDefinedLength(IAFlowLayoutElement *, float totalLength, float otherLength);
 
 void IAFlowLayoutElement_deinit(IAFlowLayoutElement *);
 

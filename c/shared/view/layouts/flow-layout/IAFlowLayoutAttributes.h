@@ -8,6 +8,7 @@
 
 #include "IALayoutAttributes.h"
 #include "IAFlowLayoutElement.h"
+#include "IAFlowLayoutAlignment.h"
 
 typedef struct{
 	//@extend
@@ -20,6 +21,9 @@ typedef struct{
 	float spacing;
 	//@set+get
 	bool isVertical;
+	// Alignment is only considered, if the flow layout consists entirely of elements, which have a defined length.
+	//@set+get
+	IAFlowLayoutAlignment alignment;
 } IAFlowLayoutAttributes;
 
 

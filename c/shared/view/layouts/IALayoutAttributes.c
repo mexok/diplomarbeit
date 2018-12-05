@@ -30,3 +30,10 @@ void IALayoutAttributes_setPadding(IALayoutAttributes * this, float padding){
 	this->paddingRight = padding;
 	this->paddingBottom = padding;
 }
+
+void IALayoutAttributes_setPaddingRelative(IALayoutAttributes * this, float paddingRelative){
+	this->paddingLeftRelative = paddingRelative;
+	this->paddingTopRelative = paddingRelative;
+	this->paddingRightRelative = paddingRelative;
+	this->paddingBottomRelative = paddingRelative;
+}

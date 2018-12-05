@@ -20,7 +20,7 @@ static Presenter * presenter;
 void AppManager_commence(){
 	viewHolder = IAViewHolder_new();
 	mainView = MainView_new();
-	homeState = HomeState_new(22.0f, 22.0f);
+	homeState = HomeState_new(22.3f, 22.3f, 4, 0.6f);
 	presenter = Presenter_new(homeState, mainView);
 	IAViewHolder_start(viewHolder, (IAView *) mainView, IACurrentFrame_getTime(), NULL);
 }

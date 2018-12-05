@@ -32,6 +32,15 @@ typedef struct {
 	float paddingRight;
 	//@get
 	float paddingBottom;
+
+	//@get
+	float paddingLeftRelative;
+	//@get
+	float paddingTopRelative;
+	//@get
+	float paddingRightRelative;
+	//@get
+	float paddingBottomRelative;
 } IALayout;
 
 

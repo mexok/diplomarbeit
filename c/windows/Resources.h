@@ -17,8 +17,11 @@ IAImage * Resources_getImage(const char * name);
 IAColor Resources_getLampColor(int index);
 IAImage * Resources_getLampColorImage(int index);
 
-//@resourceProvider(RegularFont)
-IAColorableFontAtlas * Resources_getRegularFontAtlas(void);
+//@resourceProvider(RegularFont30)
+IAColorableFontAtlas * Resources_getRegularFont30Atlas(void);
+
+//@resourceProvider(RegularFont70)
+IAColorableFontAtlas * Resources_getRegularFont70Atlas(void);
 
 
 #endif

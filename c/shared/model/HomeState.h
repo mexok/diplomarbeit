@@ -18,7 +18,7 @@ typedef struct {
 	float targetRoomTemperature;
 
 	//@get
-	IAColor livingRoomLampColor;
+	int livingRoomLampColorIndex;
 	//@get
 	float livingRoomLampDimmedPercentage;
 
@@ -37,10 +37,14 @@ typedef struct {
 } HomeState;
 
 
-void HomeState_init(HomeState *, float currentRoomTemperature, float targetRoomTemperature);
+void HomeState_init(HomeState *,
+		float currentRoomTemperature,
+		float targetRoomTemperature,
+		int livingRoomLampColorIndex,
+		float livingRoomLampDimmedPercentage);
 
 void HomeState_setTargetRoomTemperature(HomeState *, float targetRoomTemperature);
-void HomeState_setLivingRoomLampColor(HomeState *, IAColor livingRoomLampColor);
+void HomeState_setLivingRoomLampColorIndex(HomeState * this, int livingRoomLampColorIndex);
 void HomeState_setLivingRoomLampDimmedPercentage(HomeState *, float livingRoomLampDimmedPercentage);
 void HomeState_setIsTvLivingRoomOn(HomeState *, bool isTvLivingRoomOn);
 void HomeState_setIsTvKitchenOn(HomeState *, bool isTvKitchenOn);

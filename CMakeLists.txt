@@ -58,6 +58,9 @@ list(APPEND sources
 		c/shared/view/MainView.h
 		c/shared/view/MainView.c
 
+		c/shared/view/Colors.h
+		c/shared/view/Constants.h
+
 		c/shared/view/custom-elements/small-tile/SmallTile.h
 		c/shared/view/custom-elements/small-tile/SmallTile.c
 		c/shared/view/custom-elements/small-tile/SmallTileAttributes.h

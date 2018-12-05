@@ -38,6 +38,11 @@ void IALayout_init(
 	this->paddingTop = IALayoutAttributes_getPaddingTop(attr);
 	this->paddingRight = IALayoutAttributes_getPaddingRight(attr);
 	this->paddingBottom = IALayoutAttributes_getPaddingBottom(attr);
+
+	this->paddingLeftRelative = IALayoutAttributes_getPaddingLeftRelative(attr);
+	this->paddingTopRelative = IALayoutAttributes_getPaddingTopRelative(attr);
+	this->paddingRightRelative = IALayoutAttributes_getPaddingRightRelative(attr);
+	this->paddingBottomRelative = IALayoutAttributes_getPaddingBottomRelative(attr);
 	IA_incrementInitCount();
 }
 
@@ -61,10 +66,15 @@ static void staticSetRectFn(IALayout * this, IARect rect){
 	if (this->hasBackgroundDrawable){
 		IADrawableRect_setRect(this->backgroundDrawable, rect);
 	}
-	rect.origin.x += this->paddingLeft;
-	rect.origin.y += this->paddingTop;
-	rect.size.width -= this->paddingLeft + this->paddingRight;
-	rect.size.height -= this->paddingTop + this->paddingBottom;
+	IASize originalSize = rect.size;
+	float totalPaddingLeft = this->paddingLeft + originalSize.width * this->paddingLeftRelative;
+	float totalPaddingTop = this->paddingTop + originalSize.height * this->paddingTopRelative;
+	float totalPaddingRight = this->paddingRight + originalSize.width * this->paddingRightRelative;
+	float totalPaddingBottom = this->paddingBottom + originalSize.height * this->paddingBottomRelative;
+	rect.origin.x += totalPaddingLeft;
+	rect.origin.y += totalPaddingTop;
+	rect.size.width -= totalPaddingLeft + totalPaddingRight;
+	rect.size.height -= totalPaddingTop + totalPaddingBottom;
 	this->overwrittenSetRectFn((IADrawableRect *) this, rect);
 }
 

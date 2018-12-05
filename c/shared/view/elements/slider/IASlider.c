@@ -57,6 +57,10 @@ float IASlider_getValue(IASlider * this){
 	return value;
 }
 
+void IASlider_setValue(IASlider * this, float value){
+	this->artificialHandlePosition = value;
+}
+
 static float IASlider_getSlidingLength(IASlider * this){
 	IARect total = IASlider_getRect(this);
 	float slidingLength = total.size.width - this->lengthOfHandle;

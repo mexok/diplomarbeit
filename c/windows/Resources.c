@@ -16,7 +16,8 @@
 
 
 static IAImageContext * context;
-static IAColorableFontAtlas * atlas;
+static IAColorableFontAtlas * atlas30;
+static IAColorableFontAtlas * atlas70;
 
 
 static bool isImage(struct dirent * entry){
@@ -54,14 +55,16 @@ void Resources_commence() {
 		}
 	}
 	closedir(assets_dir);
-	atlas = IAColorableFontAtlas_new(bitmapManager);
-	IAColorableFontAtlas_addGlyphsFromFnt(atlas, "roboto_regular_100", true);
+	atlas30 = IAColorableFontAtlas_new(bitmapManager);
+	IAColorableFontAtlas_addGlyphsFromFnt(atlas30, "roboto_regular_30", true);
+	atlas70 = IAColorableFontAtlas_new(bitmapManager);
+	IAColorableFontAtlas_addGlyphsFromFnt(atlas70, "roboto_regular_70", true);
 }
 
 IAImage * Resources_getImage(const char * name){
 	IAImage * image = IAImageContext_getImage(context, name);
-	if (strcmp(name, "slider_handle")
-		|| strcmp(name, "tile_big_untouched")){
+	if (strcmp(name, "slider_handle") == 0
+		|| strcmp(name, "tile_big_untouched") == 0){
 		return IAImage_copy(image);
 	}else{
 		return image;
@@ -100,6 +103,10 @@ IAImage * Resources_getLampColorImage(int index){
 	return Resources_getImage(lamp_color);
 }
 
-IAColorableFontAtlas * Resources_getRegularFontAtlas(){
-	return atlas;
+IAColorableFontAtlas * Resources_getRegularFont30Atlas(void){
+	return atlas30;
+}
+
+IAColorableFontAtlas * Resources_getRegularFont70Atlas(void){
+	return atlas70;
 }

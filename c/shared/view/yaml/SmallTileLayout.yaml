@@ -1,33 +1,42 @@
 __generate__: IACardLayout
 elements:
-  - content:
+  - marginsRelative: 0.08f
+    content:
       __type__: IAFlowLayout
       isVertical: true
       elements:
-        - relativeLength: 0.2f
+        - relativeLength: Constants_titleRelativeLength
           content:
             __type__: IALabel
             __ref__: title
             text: "title"
             font:
-              __resource__: RegularFont
-            fontSize: 26
+              __resource__: RegularFont30
+            fontSize: Constants_titleFontSize
+            fontColor: Colors_fontColorTitle
             textAlignment: center
-        - relativeLength: 0.2f
+        - relativeLength: Constants_subtitleRelativeLength
           content:
             __type__: IALabel
             __ref__: subtitle
             text: "subtitle"
             font:
-              __resource__: RegularFont
-            fontSize: 22
+              __resource__: RegularFont30
+            fontSize: Constants_subtitleFontSize
+            fontColor: Colors_fontColorSubtitle
             textAlignment: center
         - content:
             __type__: IACardLayout
             elements:
-              - marginsRelative: 0.15f
+              - marginTopRelative: Constants_smallTileIconMarginsUpAndDown
+                marginBottomRelative: Constants_smallTileIconMarginsUpAndDown
                 content:
-                  __type__: IACardLayout
-                  __ref__: imageHolder
+                  __type__: IAFlowLayout
+                  alignment: centered
+                  elements:
+                    - fixedProportion: 1.0f
+                      content:
+                        __type__: IACardLayout
+                        __ref__: imageHolder
 
             

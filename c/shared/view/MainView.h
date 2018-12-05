@@ -52,8 +52,11 @@ typedef struct {
 
 void MainView_init(MainView *);
 
+IAButton * MainView_getLampColorButton(MainView *, int index);
+
 void MainView_setRealTemperature(MainView *, float temperature);
 void MainView_setLampColorImage(MainView *, IAImage * image);
+void MainView_setLampDimmedPercentage(MainView *, float percentage);
 
 void MainView_deinit(MainView *);
 

@@ -68,14 +68,22 @@ void MainView_init(MainView *this) {
 		IAButtonAttributes_make(&lampColorButtonAttr);
 		IAImage * normal = Resources_getLampColorImage(i);
 		IAButtonAttributes_setNormal(&lampColorButtonAttr, (IADrawableRect *) IAImage_copy(normal));
-		this->lampColorButtons[i] = IAButton_new(&lampColorButtonAttr);
-		IAFlowLayoutElement * element = IAFlowLayoutElement_newWithContent((IADrawableRect *) this->lampColorButtons[i]);
+		IAButtonAttributes_setTag(&lampColorButtonAttr, i);
+		this->lampColorButtons[i] = IAButton_with(&lampColorButtonAttr);
+		IAFlowLayoutElementAttributes elementAttributes;
+		IAFlowLayoutElementAttributes_make(&elementAttributes, (IADrawableRect *) this->lampColorButtons[i]);
+		IAFlowLayoutElementAttributes_setFixedProportion(&elementAttributes, 1.0f);
+		IAFlowLayoutElement * element = IAFlowLayoutElement_with(&elementAttributes);
 		IAFlowLayout_addElement(this->lampColorButtonsLayout, element);
 	}
 
 	IACardLayoutElement * element = IACardLayoutElement_withContent((IADrawableRect *) this->contentFavorites);
 	IACardLayout_addElement(this->content, element);
 	IA_incrementInitCount();
+}
+
+IAButton * MainView_getLampColorButton(MainView * this, int index){
+	return this->lampColorButtons[index];
 }
 
 void MainView_setRealTemperature(MainView * this, float temperature){
@@ -88,6 +96,12 @@ void MainView_setLampColorImage(MainView * this, IAImage * image){
 	IACardLayout_removeLastElement(this->lampColorImageHolder);
 	IACardLayoutElement * element = IACardLayoutElement_withContent((IADrawableRect *) image);
 	IACardLayout_addElement(this->lampColorImageHolder, element);
+}
+
+void MainView_setLampDimmedPercentage(MainView * this, float percentage){
+	char text[30];
+	sprintf(text, "%.1f%%", percentage * 100.0f);
+	IALabel_setText(this->lampLabel, text);
 }
 
 static void onFadeInStart(MainView * this, uint64_t startTime, uint64_t duration){

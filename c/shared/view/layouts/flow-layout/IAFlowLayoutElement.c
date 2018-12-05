@@ -9,15 +9,28 @@
 
 
 void IAFlowLayoutElement_init(IAFlowLayoutElement * this, const IAFlowLayoutElementAttributes * attr){
-	debugAssert((IAFlowLayoutElementAttributes_hasFixedLength(attr) == false
-			|| IAFlowLayoutElementAttributes_hasRelativeLength(attr) == false)
-			&& "A flow layout element cannot have both: A fixed and a relative length.");
+#ifdef DEBUG
+	int definedLengthCount = 0;
+	if (IAFlowLayoutElementAttributes_hasFixedLength(attr)){
+		definedLengthCount++;
+	}
+	if (IAFlowLayoutElementAttributes_hasRelativeLength(attr)){
+		definedLengthCount++;
+	}
+	if (IAFlowLayoutElementAttributes_hasFixedProportion(attr)){
+		definedLengthCount++;
+	}
+	assert(definedLengthCount <= 1 && "A flow layout element length can only be defined once.");
+#endif
+
 	this->base = IAObject_make(this);
 	this->content = IAFlowLayoutElementAttributes_getContent(attr);
 	this->fixedLength = IAFlowLayoutElementAttributes_getFixedLength(attr);
 	this->hasFixedLength = IAFlowLayoutElementAttributes_hasFixedLength(attr);
 	this->relativeLength = IAFlowLayoutElementAttributes_getRelativeLength(attr);
 	this->hasRelativeLength = IAFlowLayoutElementAttributes_hasRelativeLength(attr);
+	this->fixedProportion = IAFlowLayoutElementAttributes_getFixedProportion(attr);
+	this->hasFixedProportion = IAFlowLayoutElementAttributes_hasFixedProportion(attr);
 	IADrawableRect_retain(this->content);
 	IA_incrementInitCount();
 }
@@ -35,23 +48,29 @@ void IAFlowLayoutElement_initCopy(IAFlowLayoutElement * this, const IAFlowLayout
 	this->hasFixedLength = toCopy->hasFixedLength;
 	this->relativeLength = toCopy->relativeLength;
 	this->hasRelativeLength = toCopy->hasRelativeLength;
+	this->fixedProportion = toCopy->fixedProportion;
+	this->hasFixedProportion = toCopy->hasFixedProportion;
 	IADrawableRect_retain(this->content);
 	IA_incrementInitCount();
 }
 
 bool IAFlowLayoutElement_hasDefinedLength(IAFlowLayoutElement * this){
-	if (this->hasFixedLength == true || this->hasRelativeLength == true){
+	if (this->hasFixedLength == true
+	    || this->hasRelativeLength == true
+        || this->hasFixedProportion == true){
 		return true;
 	}else{
 		return false;
 	}
 }
 
-float IAFlowLayoutElement_getDefinedLength(IAFlowLayoutElement * this, float totalLength){
+float IAFlowLayoutElement_getDefinedLength(IAFlowLayoutElement * this, float totalLength, float otherLength){
 	if (this->hasFixedLength){
 		return this->fixedLength;
 	}else if (this->hasRelativeLength){
 		return this->relativeLength * totalLength;
+	}else if (this->hasFixedProportion){
+		return otherLength * this->fixedProportion;
 	}else{
 		logError("IAFlowLayoutElement_getDefinedLength called but objekt has not a defined length.");
 		assert(0);

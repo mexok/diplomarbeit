@@ -54,11 +54,6 @@ void SmallTile_init(SmallTile *this, const SmallTileAttributes * attr) {
 	SmallTileLayoutAttributes_setSubtitleRef(&tileAttr, &this->subtitleLabelTouched);
 	this->tileTouched = SmallTileLayout_newFromYaml(&tileAttr);
 
-	IALabel_setFontColor(this->titleLabel, IAColor_makeWithHex("#7a7a7a"));
-	IALabel_setFontColor(this->titleLabelTouched, IAColor_makeWithHex("#7a7a7a"));
-	IALabel_setFontColor(this->subtitleLabel, IAColor_makeWithHex("#7a7a7a"));
-	IALabel_setFontColor(this->subtitleLabelTouched, IAColor_makeWithHex("#7a7a7a"));
-
 	IAButtonAttributes buttonAttributes;
 	IAButtonAttributes_make(&buttonAttributes);
 	IAButtonAttributes_setNormal(&buttonAttributes, (IADrawableRect *) this->tile);

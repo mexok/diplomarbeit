@@ -6,15 +6,22 @@
 
 #include "IALibrary.h"
 #include "HomeState.h"
+#include "Resources.h"
 
 #define CLASSNAME "HomeState"
 
 
-void HomeState_init(HomeState * this, float currentRoomTemperature, float targetRoomTemperature) {
+void HomeState_init(HomeState * this,
+                    float currentRoomTemperature,
+                    float targetRoomTemperature,
+                    int livingRoomLampColorIndex,
+                    float livingRoomLampDimmedPercentage) {
 	*this = (HomeState){
 		.base = IAObject_make(this),
 		.currentRoomTemperature = currentRoomTemperature,
-		.targetRoomTemperature = targetRoomTemperature
+		.targetRoomTemperature = targetRoomTemperature,
+		.livingRoomLampColorIndex = livingRoomLampColorIndex,
+		.livingRoomLampDimmedPercentage = livingRoomLampDimmedPercentage
 	};
 	IANotificationEvent_init(&this->onTemperatureChanged);
 	IA_incrementInitCount();
@@ -25,9 +32,10 @@ void HomeState_setTargetRoomTemperature(HomeState * this, float targetRoomTemper
 	logInfo("TargetRoomTemperature has been set to %.2f", targetRoomTemperature);
 }
 
-void HomeState_setLivingRoomLampColor(HomeState * this, IAColor livingRoomLampColor){
-	this->livingRoomLampColor = livingRoomLampColor;
-	logInfo("LivingRoomLampColor has been set. Red: %d, Green: %d, Blue %d", livingRoomLampColor.red, livingRoomLampColor.green, livingRoomLampColor.blue);
+void HomeState_setLivingRoomLampColorIndex(HomeState * this, int livingRoomLampColorIndex){
+	this->livingRoomLampColorIndex = livingRoomLampColorIndex;
+	IAColor color = Resources_getLampColor(livingRoomLampColorIndex);
+	logInfo("LivingRoomLampColorIndex has been set. New color is: Red - %d, Green - %d, Blue - %d", color.red, color.green, color.blue);
 }
 
 void HomeState_setLivingRoomLampDimmedPercentage(HomeState * this, float livingRoomLampDimmedPercentage){

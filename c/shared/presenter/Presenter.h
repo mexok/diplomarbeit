@@ -14,7 +14,18 @@ typedef struct {
 	IAObject base;
 	HomeState * homeState;
 	MainView * mainView;
+
+	IAButtonDelegate leavingHomeDelegate;
+	IAButtonDelegate tvLivingRoomDelegate;
 	IAButtonDelegate leftKitchenWindowDelegate;
+	IAButtonDelegate tvKitchenDelegate;
+	IAButtonDelegate alarmSystemDelegate;
+	IAButtonDelegate dinnerDelegate;
+	IAButtonDelegate addFavoritesDelegate;
+
+	IAButtonDelegate livingRoomLampColorDelegate;
+	IASliderDelegate livingRoomLampDimmedPercentageChangedDelegate;
+
 	IASliderDelegate onViewTemperatureChangedDelegate;
 	IANotificationDelegate onModelTemperatureChangedDelegate;
 } Presenter;

@@ -17,50 +17,62 @@ content:
         
     - width: 2
       content:
-        __type__: IAFlowLayout
-        isVertical: true
+        __type__: IACardLayout
         backgroundDrawable:
           __resource__: Image
           name: tile_big_untouched
         elements:
-          - fixedLength: 50
+          - marginTopRelative: 0.08f
+            marginBottomRelative: 0.08f
+            marginLeftRelative: 0.04f
+            marginRightRelative: 0.04f
             content:
-              __type__: IALabel
-              text: "Room temperature"
-              font:
-                __resource__: RegularFont
-              fontSize: 26
-              textAlignment: center
-          - fixedLength: 50
-            content:
-              __type__: IALabel
-              text: "Living room"
-              font:
-                __resource__: RegularFont
-              fontSize: 22
-              textAlignment: center
-          - content:
-              __type__: IACardLayout
+              __type__: IAFlowLayout
+              isVertical: true
               elements:
-                - margins: 20.0f
-                  content:
-                    __type__: IASlider
-                    __ref__: temperatureSlider
-                    background:
-                      __resource__: Image
-                      name: temperature_slider
-                    handle:
-                      __resource__: Image
-                      name: slider_handle
-                - margins: 20.0f
+                - relativeLength: Constants_titleRelativeLength
                   content:
                     __type__: IALabel
-                    __ref__: temperatureLabel
-                    text: "XX%"
-                    textAlignment: right
-                    fontSize: 20
+                    text: "Room temperature"
                     font:
-                      __resource__: RegularFont
+                      __resource__: RegularFont30
+                    fontSize: Constants_titleFontSize
+                    fontColor: Colors_fontColorTitle
+                    textAlignment: center
+                - relativeLength: Constants_subtitleRelativeLength
+                  content:
+                    __type__: IALabel
+                    text: "Living room"
+                    font:
+                      __resource__: RegularFont30
+                    fontSize: Constants_subtitleFontSize
+                    fontColor: Colors_fontColorSubtitle
+                    textAlignment: center
+                - content:
+                    __type__: IACardLayout
+                    paddingBottomRelative: 0.35f
+                    paddingTopRelative: 0.35f
+                    elements:
+                      - content:
+                          __type__: IASlider
+                          __ref__: temperatureSlider
+                          background:
+                            __resource__: Image
+                            name: temperature_slider
+                          handle:
+                            __resource__: Image
+                            name: slider_handle
+                      - marginRightRelative: 0.03f
+                        content:
+                          __type__: IALabel
+                          __ref__: temperatureLabel
+                          text: "XX%"
+                          textAlignment: right
+                          fontSize: 20
+                          fontColor:
+                            hex: "#fff"
+                          font:
+                            __resource__: RegularFont30
 
     - content:
         __type__: SmallTile
@@ -73,67 +85,89 @@ content:
     - width: 2
       content:
         __type__: IACardLayout
+        backgroundDrawable:
+          __resource__: Image
+          name: tile_big_untouched
         elements:
-          - content:
-              __resource__: Image
-              name: tile_big_untouched
-          - content:
+          - marginTopRelative: 0.08f
+            marginBottomRelative: 0.67f
+            marginRightRelative: 0.04f
+            content:
+              __type__: IAFlowLayout
+              alignment: rear
+              elements:
+                - fixedProportion: 1.0f
+                  content:
+                    __type__: IACardLayout
+                    __ref__: lampColorImageHolder
+          
+          - marginTopRelative: 0.08f
+            marginBottomRelative: 0.08f
+            marginLeftRelative: 0.04f
+            marginRightRelative: 0.04f
+            content:
               __type__: IAFlowLayout
               isVertical: true
               elements:
-                - fixedLength: 50
+                - relativeLength: Constants_titleRelativeLength
                   content:
                     __type__: IALabel
                     text: "Lamp"
                     font:
-                      __resource__: RegularFont
-                    fontSize: 26
+                      __resource__: RegularFont30
+                    fontSize: Constants_titleFontSize
+                    fontColor: Colors_fontColorTitle
                     textAlignment: center
-                - fixedLength: 50
+                - relativeLength: Constants_subtitleRelativeLength
                   content:
                     __type__: IALabel
                     text: "Living room"
                     font:
-                      __resource__: RegularFont
-                    fontSize: 22
+                      __resource__: RegularFont30
+                    fontSize: Constants_subtitleFontSize
+                    fontColor: Colors_fontColorSubtitle
                     textAlignment: center
                 - content:
                     __type__: IACardLayout
                     elements:
                       - content:
-                          __type__: IASlider
-                          __ref__: lampSlider
-                          background:
-                            __resource__: Image
-                            name: lamp_slider
-                          handle:
-                            __resource__: Image
-                            name: slider_handle
+                          __type__: IACardLayout
+                          paddingTopRelative: 0.18f
+                          paddingBottomRelative: 0.52f
+                          elements:
+                            - content:
+                                __type__: IASlider
+                                __ref__: lampSlider
+                                background:
+                                  __resource__: Image
+                                  name: lamp_slider
+                                handle:
+                                  __resource__: Image
+                                  name: slider_handle
+                            - marginRightRelative: 0.03f
+                              content:
+                                __type__: IALabel
+                                __ref__: lampLabel
+                                text: "XX%"
+                                textAlignment: right
+                                fontSize: 20
+                                fontColor:
+                                  hex: "#7a7a7a"
+                                font:
+                                  __resource__: RegularFont30
                       - content:
-                          __type__: IALabel
-                          __ref__: lampLabel
-                          text: "XX%"
-                          textAlignment: right
-                          fontSize: 20
-                          font:
-                            __resource__: RegularFont
-                          
-                - content:
-                    __type__: IAFlowLayout
-                    __ref__: lampColorButtonsLayout
-                    spacing: 20
+                          __type__: IAFlowLayout
+                          __ref__: lampColorButtonsLayout
+                          paddingTopRelative: 0.6f
+                          alignment: stretched
                     
-          - content:
-              __type__: IACardLayout
-              __ref__: lampColorImageHolder
-        
 
     - content:
         __type__: SmallTile
         __ref__: leftKitchenWindow
-        title: "Left kitchen window"
-        subtitleActive: "Window open"
-        subtitleInactive: "Window closed"
+        title: "Left Window"
+        subtitleActive: "Kitchen - open"
+        subtitleInactive: "Kitchen - closed"
         imageSet: lock
         
     - content:

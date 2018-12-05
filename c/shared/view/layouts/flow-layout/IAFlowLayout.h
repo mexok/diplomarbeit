@@ -16,6 +16,7 @@ typedef struct{
 	IAArrayList * elements;
 	float spacing;
 	bool isVertical;
+	IAFlowLayoutAlignment alignment;
 } IAFlowLayout;
 
 

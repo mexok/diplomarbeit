@@ -8,7 +8,7 @@ elements:
     content:
       __type__: IAFlowLayout
       __ref__: titleBar
-      paddingLeft: 70
+      paddingLeft: 200
       backgroundDrawable:
         __resource__: Image
         name: background_titelbar
@@ -18,7 +18,7 @@ elements:
             __ref__: title
             text: Favorites
             font:
-              __resource__: RegularFont
+              __resource__: RegularFont70
             fontSize: 56
             fontColor:
               hex: "#848484"
