@@ -2,61 +2,166 @@ __generate__: IAScrollLayout
 contentLength: 1000
 content:
   __type__: IAGridLayout
+  __ref__: contentGrid
   gridWidth: 4
   gridHeight: 3
+  spacing: 20
+  padding: 20
   elements:
     - content:
+        __type__: SmallTile
+        __ref__: scenarioHome
+        title: "Leaving home"
+        subtitle: "Scenario"
+        imageSet: home
+        
+    - width: 2
+      content:
         __type__: IAFlowLayout
-        backgroundColor: green
-        spacing: 20
+        isVertical: true
+        backgroundDrawable:
+          __resource__: Image
+          name: tile_big_untouched
         elements:
+          - fixedLength: 50
+            content:
+              __type__: IALabel
+              text: "Room temperature"
+              font:
+                __resource__: RegularFont
+              fontSize: 26
+              textAlignment: center
+          - fixedLength: 50
+            content:
+              __type__: IALabel
+              text: "Living room"
+              font:
+                __resource__: RegularFont
+              fontSize: 22
+              textAlignment: center
           - content:
-              __type__: IAButton
-              __ref__: myButton
-              normal:
-                __type__: IAColorRect
-                color: yellow
-              touched:
-                __type__: IAColorRect
-                color: blue
-          - content:
-              __type__: IAColorRect
-              color: magenta
-          - content:
-              __resource__: Image
-              name: Koala
-              
+              __type__: IACardLayout
+              elements:
+                - margins: 20.0f
+                  content:
+                    __type__: IASlider
+                    __ref__: temperatureSlider
+                    background:
+                      __resource__: Image
+                      name: temperature_slider
+                    handle:
+                      __resource__: Image
+                      name: slider_handle
+                - margins: 20.0f
+                  content:
+                    __type__: IALabel
+                    __ref__: temperatureLabel
+                    text: "XX%"
+                    textAlignment: right
+                    fontSize: 20
+                    font:
+                      __resource__: RegularFont
+
     - content:
-        __resource__: Image
-        name: Koala
+        __type__: SmallTile
+        __ref__: tvLivingRoom
+        title: "TV"
+        subtitleActive: "Living room - on"
+        subtitleInactive: "Living room - off"
+        imageSet: tv
         
     - width: 2
       content:
         __type__: IACardLayout
         elements:
-          - margins: 20.0f
-            content:
-              __type__: IASlider
-              __ref__: temperatureSlider
-              background:
-                __type__: IAColorRect
-                color: blue
-              handle:
-                __type__: IAColorRect
-                color: yellow
-                
+          - content:
+              __resource__: Image
+              name: tile_big_untouched
+          - content:
+              __type__: IAFlowLayout
+              isVertical: true
+              elements:
+                - fixedLength: 50
+                  content:
+                    __type__: IALabel
+                    text: "Lamp"
+                    font:
+                      __resource__: RegularFont
+                    fontSize: 26
+                    textAlignment: center
+                - fixedLength: 50
+                  content:
+                    __type__: IALabel
+                    text: "Living room"
+                    font:
+                      __resource__: RegularFont
+                    fontSize: 22
+                    textAlignment: center
+                - content:
+                    __type__: IACardLayout
+                    elements:
+                      - content:
+                          __type__: IASlider
+                          __ref__: lampSlider
+                          background:
+                            __resource__: Image
+                            name: lamp_slider
+                          handle:
+                            __resource__: Image
+                            name: slider_handle
+                      - content:
+                          __type__: IALabel
+                          __ref__: lampLabel
+                          text: "XX%"
+                          textAlignment: right
+                          fontSize: 20
+                          font:
+                            __resource__: RegularFont
+                          
+                - content:
+                    __type__: IAFlowLayout
+                    __ref__: lampColorButtonsLayout
+                    spacing: 20
+                    
+          - content:
+              __type__: IACardLayout
+              __ref__: lampColorImageHolder
+        
+
     - content:
-        __type__: OnOffSwitch
-        __ref__: rightKitchenWindow
-        stateOnNormal:
-          __type__: IAColorRect
-          color: green
-        stateOnTouched:
-          __type__: IAColorRect
-          color: green
-        stateOffNormal:
-          __type__: IAColorRect
-          color: red
-        stateOffTouched:
-          __type__: IAColorRect
-          color: red
+        __type__: SmallTile
+        __ref__: leftKitchenWindow
+        title: "Left kitchen window"
+        subtitleActive: "Window open"
+        subtitleInactive: "Window closed"
+        imageSet: lock
+        
+    - content:
+        __type__: SmallTile
+        __ref__: tvKitchen
+        title: "TV"
+        subtitleActive: "Kitchen - on"
+        subtitleInactive: "Kitchen - off"
+        imageSet: tv
+        
+    - content:
+        __type__: SmallTile
+        __ref__: alarmService
+        title: "Alarm system"
+        subtitleActive: "Service - on"
+        subtitleInactive: "Service - off"
+        imageSet: lock
+        
+    - content:
+        __type__: SmallTile
+        __ref__: dinner
+        title: "Dinner"
+        subtitle: "Scenario"
+        imageSet: home
+        
+    - content:
+        __type__: SmallTile
+        __ref__: addFavorites
+        title: "Favorites"
+        subtitle: "Add"
+        imageSet: plus

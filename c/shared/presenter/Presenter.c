@@ -8,7 +8,7 @@
 #define CLASSNAME "Presenter"
 
 
-static void onRightKitchenWindowChanged(Presenter * this, bool isOn, OnOffSwitch * onOffSwitch);
+static void onLeftKitchenWindowClick(Presenter * this, SmallTile * kitchenWindow);
 static void onViewTemperatureChanged(Presenter * this, float value, IASlider * slider);
 static void onModelTemperatureChanged(Presenter * this);
 
@@ -21,9 +21,9 @@ void Presenter_init(Presenter * this, HomeState * homeState, MainView * mainView
 	MainView_retain(this->mainView);
 	HomeState_retain(this->homeState);
 
-	this->rightKitchenWindowDelegate = (OnOffSwitchDelegate){
+	this->leftKitchenWindowDelegate = (IAButtonDelegate){
 		.correspondingObject = this,
-		.onStateChanged = (void (*)(void *, bool, OnOffSwitch *)) onRightKitchenWindowChanged
+		.onClick = (void (*)(void *, IAButton *)) onLeftKitchenWindowClick
 	};
 	this->onViewTemperatureChangedDelegate = (IASliderDelegate) {
 			.correspondingObject = this,
@@ -34,8 +34,8 @@ void Presenter_init(Presenter * this, HomeState * homeState, MainView * mainView
 			.notify = (void (*)(void *)) onModelTemperatureChanged
 	};
 
-	OnOffSwitch * rightKitchenWindow = MainView_getRightKitchenWindow(mainView);
-	OnOffSwitch_registerForEvents(rightKitchenWindow, &this->rightKitchenWindowDelegate);
+	SmallTile * leftKitchenWindow = MainView_getLeftKitchenWindow(mainView);
+	SmallTile_registerForTouchEvents(leftKitchenWindow, &this->leftKitchenWindowDelegate);
 	IASlider * temperatureSlider = MainView_getTemperatureSlider(mainView);
 	IASlider_registerForSliderEvents(temperatureSlider, &this->onViewTemperatureChangedDelegate);
 	HomeState_registerForOnTemperatureChanged(this->homeState, &this->onModelTemperatureChangedDelegate);
@@ -43,8 +43,9 @@ void Presenter_init(Presenter * this, HomeState * homeState, MainView * mainView
 }
 
 
-static void onRightKitchenWindowChanged(Presenter * this, bool isOn, OnOffSwitch * onOffSwitch){
-	HomeState_setIsRightWindowOpen(this->homeState, isOn);
+static void onLeftKitchenWindowClick(Presenter * this, SmallTile * kitchenWindow){
+	bool isActive = SmallTile_isActive(kitchenWindow);
+	HomeState_setIsLeftKitchenWindowOpen(this->homeState, isActive);
 }
 
 static float convertSliderValueToTemperature(float value){

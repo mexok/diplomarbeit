@@ -1,21 +1,21 @@
 //
-//  OnOffSwitch.c
+//  TabBarButton.c
 //
 
 #include "IALibrary.h"
-#include "OnOffSwitch.h"
+#include "TabBarButton.h"
 
-#define CLASSNAME "OnOffSwitch"
+#define CLASSNAME "TabBarButton"
 
 
-static void OnOffSwitch_updateButtons(OnOffSwitch * this);
+static void TabBarButton_updateButtons(TabBarButton * this);
 
-static void setRect(OnOffSwitch * this, IARect rect){
+static void setRect(TabBarButton * this, IARect rect){
 	IAButton_setRect(this->buttonForStateOn, rect);
 	IAButton_setRect(this->buttonForStateOff, rect);
 }
 
-static void draw(OnOffSwitch * this){
+static void draw(TabBarButton * this){
 	if (this->isOn){
 		IAButton_draw(this->buttonForStateOn);
 	}else{
@@ -23,20 +23,21 @@ static void draw(OnOffSwitch * this){
 	}
 }
 
-static void onButtonStateOnClicked(OnOffSwitch * this, IAButton * button){
+static void onButtonStateOnClicked(TabBarButton * this, IAButton * button){
 	this->isOn = false;
-	OnOffSwitch_updateButtons(this);
-	OnOffSwitchEvent_onStateChanged(&this->events, this->isOn, this);
+	TabBarButton_updateButtons(this);
+	TabBarButtonEvent_onStateChanged(&this->events, this->isOn, this);
 }
 
-static void onButtonStateOffClicked(OnOffSwitch * this, IAButton * button){
+static void onButtonStateOffClicked(TabBarButton * this, IAButton * button){
 	this->isOn = true;
-	OnOffSwitch_updateButtons(this);
-	OnOffSwitchEvent_onStateChanged(&this->events, this->isOn, this);
+	TabBarButton_updateButtons(this);
+	TabBarButtonEvent_onStateChanged(&this->events, this->isOn, this);
 }
 
-void OnOffSwitch_init(OnOffSwitch * this, const OnOffSwitchAttributes * attr) {
-	*this = (OnOffSwitch){
+void TabBarButton_init(TabBarButton * this, const TabBarButtonAttributes * attr) {
+	*this = (TabBarButton){
+		.tag = TabBarButtonAttributes_getTag(attr)
     };
 	IADrawableRect_make((IADrawableRect *) this, (IADrawable_drawFunction) draw, (IADrawableRect_setRectFunction) setRect);
 
@@ -51,28 +52,36 @@ void OnOffSwitch_init(OnOffSwitch * this, const OnOffSwitchAttributes * attr) {
 
 	IAButtonAttributes buttonAttributes;
 	IAButtonAttributes_make(&buttonAttributes);
-	IAButtonAttributes_setNormal(&buttonAttributes, OnOffSwitchAttributes_getStateOnNormal(attr));
-	IAButtonAttributes_setTouched(&buttonAttributes, OnOffSwitchAttributes_getStateOnTouched(attr));
+	IAButtonAttributes_setNormal(&buttonAttributes, TabBarButtonAttributes_getStateOnNormal(attr));
+	IAButtonAttributes_setTouched(&buttonAttributes, TabBarButtonAttributes_getStateOnTouched(attr));
 	this->buttonForStateOn = IAButton_new(&buttonAttributes);
 	IAButton_registerForTouchEvents(this->buttonForStateOn, &this->buttonForStateOffDelegate);
-	IAButtonAttributes_setNormal(&buttonAttributes, OnOffSwitchAttributes_getStateOffNormal(attr));
-	IAButtonAttributes_setTouched(&buttonAttributes, OnOffSwitchAttributes_getStateOffTouched(attr));
+	IAButtonAttributes_setNormal(&buttonAttributes, TabBarButtonAttributes_getStateOffNormal(attr));
+	IAButtonAttributes_setTouched(&buttonAttributes, TabBarButtonAttributes_getStateOffTouched(attr));
 	this->buttonForStateOff = IAButton_new(&buttonAttributes);
 	IAButton_registerForTouchEvents(this->buttonForStateOff, &this->buttonForStateOffDelegate);
 
-	OnOffSwitchEvent_init(&this->events);
+	TabBarButtonEvent_init(&this->events);
 
 	IA_incrementInitCount();
 }
 
-void OnOffSwitch_setIsClickable(OnOffSwitch * this, bool isClickable){
-	if (this->isClickable != isClickable){
-		this->isClickable = isClickable;
-		OnOffSwitch_updateButtons(this);
+void TabBarButton_setIsOn(TabBarButton *this, bool isOn){
+	if (this->isOn != isOn){
+		this->isOn = isOn;
+		TabBarButton_updateButtons(this);
+		//We do not want to throw a state change event in this case
 	}
 }
 
-static void OnOffSwitch_updateButtons(OnOffSwitch * this){
+void TabBarButton_setIsClickable(TabBarButton * this, bool isClickable){
+	if (this->isClickable != isClickable){
+		this->isClickable = isClickable;
+		TabBarButton_updateButtons(this);
+	}
+}
+
+static void TabBarButton_updateButtons(TabBarButton * this){
 	if (this->isClickable){
 		if (this->isOn){
 			IAButton_setIsClickable(this->buttonForStateOn, true);
@@ -87,8 +96,8 @@ static void OnOffSwitch_updateButtons(OnOffSwitch * this){
 	}
 }
 
-void OnOffSwitch_deinit(OnOffSwitch * this) {
-	OnOffSwitchEvent_deinit(&this->events);
+void TabBarButton_deinit(TabBarButton * this) {
+	TabBarButtonEvent_deinit(&this->events);
 	IAButton_release(this->buttonForStateOn);
 	IAButton_release(this->buttonForStateOff);
 	IA_decrementInitCount();

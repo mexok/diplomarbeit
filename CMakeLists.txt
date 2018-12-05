@@ -58,11 +58,16 @@ list(APPEND sources
 		c/shared/view/MainView.h
 		c/shared/view/MainView.c
 
-		c/shared/view/custom-elements/OnOffSwitch.h
-		c/shared/view/custom-elements/OnOffSwitch.c
-		c/shared/view/custom-elements/OnOffSwitchAttributes.h
-		c/shared/view/custom-elements/OnOffSwitchAttributes.c
-		c/shared/view/custom-elements/OnOffSwitchDelegate.h
+		c/shared/view/custom-elements/small-tile/SmallTile.h
+		c/shared/view/custom-elements/small-tile/SmallTile.c
+		c/shared/view/custom-elements/small-tile/SmallTileAttributes.h
+		c/shared/view/custom-elements/small-tile/SmallTileAttributes.c
+
+		c/shared/view/custom-elements/tab-bar-button/TabBarButton.h
+		c/shared/view/custom-elements/tab-bar-button/TabBarButton.c
+		c/shared/view/custom-elements/tab-bar-button/TabBarButtonAttributes.h
+		c/shared/view/custom-elements/tab-bar-button/TabBarButtonAttributes.c
+		c/shared/view/custom-elements/tab-bar-button/TabBarButtonDelegate.h
 
 		c/shared/view/elements/label/IALabel.h
 		c/shared/view/elements/label/IALabel.c
@@ -117,6 +122,8 @@ target_include_directories(YamlGuiPrototyp PUBLIC
 		c/shared/view
 		c/shared/view/layouts
 		c/shared/view/custom-elements
+		c/shared/view/custom-elements/small-tile
+		c/shared/view/custom-elements/tab-bar-button
 		c/shared/view/elements/label
 		c/shared/view/elements/slider
 		c/shared/view/layouts/card-layout
@@ -133,5 +140,5 @@ target_link_libraries(YamlGuiPrototyp opengl32.lib glu32.lib)
 target_generate_generics(YamlGuiPrototyp generated)
 target_add_yaml_sources(YamlGuiPrototyp generated
 		c/shared/view/yaml/ContentFavorites.yaml
-		c/shared/view/yaml/ContentHome.yaml
-		c/shared/view/yaml/OverlayLayout.yaml)
+		c/shared/view/yaml/OverlayLayout.yaml
+		c/shared/view/yaml/SmallTileLayout.yaml)

@@ -124,6 +124,20 @@ static void setRect(IAGridLayout * this, IARect rect){
 	}
 }
 
+float IAGridLayout_getNeededHeight(IAGridLayout * this, float width, float heightToWidthProportionOfSingleCell){
+	width -= IAGridLayout_getPaddingLeft(this);
+	width -= IAGridLayout_getPaddingRight(this);
+	width -= (this->gridWidth - 1) * this->spacing;
+	if (width < 0.0f){
+		return 0.0f;
+	}
+	float neededHeight = width * heightToWidthProportionOfSingleCell * this->gridHeight / this->gridWidth;
+	neededHeight += IAGridLayout_getPaddingTop(this);
+	neededHeight += IAGridLayout_getPaddingBottom(this);
+	neededHeight += (this->gridHeight - 1) * this->spacing;
+	return neededHeight;
+}
+
 void IAGridLayout_deinit(IAGridLayout *this) {
 	for (size_t i = 0; i < this->elementCount; i++) {
 		IAGridLayoutElement_deinit(this->elements + i);

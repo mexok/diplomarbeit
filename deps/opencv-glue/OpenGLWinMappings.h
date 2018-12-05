@@ -9,6 +9,9 @@
 extern "C" {
 #endif
 
+
+const char * OpenGLWinMappings_getAssetDirName(void);
+
 void OpenGLWinMappings_setMappings(void);
 
 #ifdef __cplusplus

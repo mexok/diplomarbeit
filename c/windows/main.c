@@ -63,7 +63,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance, LPSTR lpCmdLine,
 }
 
 LONG WINAPI WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
-	static areResourcesCreated = false;
+	static bool areResourcesCreated = false;
 	HDC hDC;
 	switch (msg) {
 		case WM_SIZE:
@@ -135,6 +135,7 @@ void CreateOpenGLContext(HWND hwnd){
 	openGLContextHandle = wglCreateContext(hDC);
 	wglMakeCurrent(hDC, openGLContextHandle);
 	glewInit();
+	glEnable(GL_MULTISAMPLE);
 	ReleaseDC(hwnd, hDC);
 }
 

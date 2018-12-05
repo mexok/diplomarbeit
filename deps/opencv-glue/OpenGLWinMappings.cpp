@@ -26,6 +26,13 @@ static IASize nativeGetSourceSize(void * bitmapRef);
 static void nativeBind(void * bitmapRef);
 static void nativeDestroyBitmapRef(void * bitmapRef);
 
+static const char * assets_dir_name = "C:/diplomarbeit/assets/";
+
+
+const char * OpenGLWinMappings_getAssetDirName(){
+	return assets_dir_name;
+}
+
 void OpenGLWinMappings_setMappings() {
 	IAOpenGLWinMappings mappings = {
 			.IABitmap_nativeCreateRefFromAsset = nativeCreateRefFromAsset,
@@ -38,8 +45,16 @@ void OpenGLWinMappings_setMappings() {
 }
 
 static void * nativeCreateRefFromAsset(const char * assetName){
-	String string = String(assetName);
-	Mat image = imread(string, CV_LOAD_IMAGE_COLOR);
+	String string = String(assets_dir_name) + String(assetName);
+	Mat image = imread(string, IMREAD_UNCHANGED);
+	//premultiply alpha
+	size_t data_len = image.rows * image.cols * 4;
+	for (size_t i = 0; i < data_len; i+=4) {
+		float alpha = image.data[i+3] / 255.0f;
+		image.data[i] *= alpha;
+		image.data[i+1] *= alpha;
+		image.data[i+2] *= alpha;
+	}
 	Mat * result = new Mat(image);
 	return result;
 }
@@ -71,7 +86,7 @@ static void nativeBind(void * bitmapRef){
 	             temp.cols,
 	             temp.rows,
 	             0,
-	             GL_BGR,
+	             GL_BGRA,
 	             GL_UNSIGNED_BYTE,
 	             temp.ptr());
 }

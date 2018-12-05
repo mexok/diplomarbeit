@@ -22,7 +22,7 @@
 
 #define CLASSNAME "CSrc"
 
-static HANDLE ghMutex;
+static CRITICAL_SECTION applicationLock;
 
 debugOnly(static IAAllocationTracker * tracker);
 
@@ -32,7 +32,7 @@ static uint64_t CSrcs_getTimeInMilliseconds(){
 }
 
 static void CSrcs_nativeInitWithAsset(IAString * this, const char * assetName, const char * assetFileExtension){
-	IAString * assetFile = IAString_new("..\\\\Assets\\\\");
+	IAString * assetFile = IAString_new(OpenGLWinMappings_getAssetDirName());
 	IAString_concat(assetFile, assetName);
 	IAString_concat(assetFile, ".");
 	IAString_concat(assetFile, assetFileExtension);
@@ -55,11 +55,7 @@ const char * CSrc_getLocaleId(void) {
 }
 
 void createResources(int frameBufferWidth, int frameBufferHeight){
-	ghMutex = CreateMutex(
-		NULL,              // default security attributes
-		FALSE,             // initially not owned
-		NULL);             // unnamed mute
-	assert(ghMutex && "mutex could not be created");
+	InitializeCriticalSection(&applicationLock);
 
 	IACLibWinMappings clibMappings = {
 		.IATime_getTimeInMilliseconds = CSrcs_getTimeInMilliseconds,
@@ -74,8 +70,6 @@ void createResources(int frameBufferWidth, int frameBufferHeight){
 	IAInputOutputWinMappings_setMappings(ioMappings);
 
 	OpenGLWinMappings_setMappings();
-
-	glewInit();
 
 	IALibrary_commenceIfNeeded();
 	IAOpenGL_commence();
@@ -115,9 +109,7 @@ void render(void){
 }
 
 void acquireApplicationLock() {
-	DWORD dwWaitResult = WaitForSingleObject(
-		ghMutex,    // handle to mutex
-		INFINITE);  // no time-out interval
+	EnterCriticalSection(&applicationLock);
 	IAAutoreleasePool_begin();
 #ifdef DEBUG
 	IAAllocationTracker_start(tracker);
@@ -131,6 +123,6 @@ void releaseApplicationLock() {
 	//IAAllocationTracker_assert(tracker);
 #endif
 	IAAutoreleasePool_end();
-	ReleaseMutex(ghMutex);
+	LeaveCriticalSection(&applicationLock);
 }
 

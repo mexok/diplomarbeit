@@ -90,6 +90,10 @@ void IAScrollLayout_init(IAScrollLayout * this, const IAScrollLayoutAttributes *
 	IA_incrementInitCount();
 }
 
+void IAScrollLayout_updateContentLength(IAScrollLayout * this, float contentLength){
+	this->contentLength = contentLength;
+};
+
 static float IAScrollLayout_getScrollLength(const IAScrollLayout * this){
 	IARect currentViewRect = IAScrollLayout_getRect(this);
 	float viewLength = this->isHorizontal ? currentViewRect.size.width : currentViewRect.size.height;

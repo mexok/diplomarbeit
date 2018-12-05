@@ -5,17 +5,25 @@
 #ifndef IALabel_h
 #define IALabel_h
 
-#include "IAObject.h"
+#include "IADrawableRect.h"
+#include "IALabelAttributes.h"
 
 typedef struct {
 	//@extend
-	IAObject base;
-
-
+	IADrawableRect base;
+	//@setAsCharArray+getAsCharArray
+	IAString text;
+	IAColorableFontAtlas * font;
+	//@set+get
+	IATextAlignment textAlignment;
+	//@set+get
+	float fontSize;
+	//@set+get
+	IAColor fontColor;
 } IALabel;
 
 
-void IALabel_init(IALabel *);
+void IALabel_init(IALabel *, const IALabelAttributes * attr);
 
 
 void IALabel_deinit(IALabel *);

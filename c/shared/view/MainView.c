@@ -8,7 +8,6 @@
 #include "IABackgroundColor.h"
 #include "ContentFavorites.h"
 #include "IACurrentFrame.h"
-#include "ContentHome.h"
 
 #define CLASSNAME "MainView"
 
@@ -16,9 +15,7 @@
 static void onFadeInStart(MainView *, uint64_t startTime, uint64_t duration);
 static void draw(MainView *);
 
-static void onClickFavoritesButton(MainView *this, IAButton *button);
-static void onClickHomeButton(MainView *this, IAButton *button);
-static void onClickAlertsButton(MainView *this, IAButton *button);
+static void onTabStateChanged(MainView * correspondingObject, bool isOn, TabBarButton * TabBarButton);
 
 void MainView_init(MainView *this) {
 	IAViewAttributes viewAttr;
@@ -31,32 +28,50 @@ void MainView_init(MainView *this) {
 	OverlayLayoutAttributes_make(&attr, this);
 	OverlayLayoutAttributes_setContentRef(&attr, &this->content);
 	OverlayLayoutAttributes_setFavoritesButtonRef(&attr, &this->tabs[0]);
-	OverlayLayoutAttributes_setHomeButtonRef(&attr, &this->tabs[1]);
-	OverlayLayoutAttributes_setAlertsButtonRef(&attr, &this->tabs[2]);
+	OverlayLayoutAttributes_setProfileButtonRef(&attr, &this->tabs[1]);
+	OverlayLayoutAttributes_setNotificationsButtonRef(&attr, &this->tabs[2]);
+	OverlayLayoutAttributes_setTitleRef(&attr, &this->title);
 	this->overlay = OverlayLayout_newFromYaml(&attr);
 
-	this->tabDelegates[0] = (IAButtonDelegate){
+	this->tabDelegate = (TabBarButtonDelegate){
 			.correspondingObject = this,
-			.onClick = (void (*)(void *, IAButton *)) onClickFavoritesButton
-	};
-	this->tabDelegates[1] = (IAButtonDelegate){
-			.correspondingObject = this,
-			.onClick = (void (*)(void *, IAButton *)) onClickHomeButton
-	};
-	this->tabDelegates[2] = (IAButtonDelegate){
-			.correspondingObject = this,
-			.onClick = (void (*)(void *, IAButton *)) onClickAlertsButton
+			.onStateChanged = (void (*)(void *, bool, TabBarButton *)) onTabStateChanged
 	};
 	for (size_t i = 0; i < 3; i++){
-		IAButton_registerForTouchEvents(this->tabs[i], &this->tabDelegates[i]);
+		TabBarButton_registerForEvents(this->tabs[i], &this->tabDelegate);
 	}
 
 	ContentFavoritesAttributes favoritesAttr;
 	ContentFavoritesAttributes_make(&favoritesAttr, this);
+	ContentFavoritesAttributes_setContentGridRef(&favoritesAttr, &this->contentGrid);
+
+	ContentFavoritesAttributes_setScenarioHomeRef(&favoritesAttr, &this->scenarioHome);
+	ContentFavoritesAttributes_setTvLivingRoomRef(&favoritesAttr, &this->tvLivingRoom);
+	ContentFavoritesAttributes_setLeftKitchenWindowRef(&favoritesAttr, &this->leftKitchenWindow);
+	ContentFavoritesAttributes_setTvKitchenRef(&favoritesAttr, &this->tvKitchen);
+	ContentFavoritesAttributes_setAlarmServiceRef(&favoritesAttr, &this->alarmService);
+	ContentFavoritesAttributes_setDinnerRef(&favoritesAttr, &this->dinner);
+	ContentFavoritesAttributes_setAddFavoritesRef(&favoritesAttr, &this->addFavorites);
+
 	ContentFavoritesAttributes_setTemperatureSliderRef(&favoritesAttr, &this->temperatureSlider);
-	ContentFavoritesAttributes_setRightKitchenWindowRef(&favoritesAttr, &this->rightKitchenWindow);
+	ContentFavoritesAttributes_setTemperatureLabelRef(&favoritesAttr, &this->temperatureLabel);
+
+	ContentFavoritesAttributes_setLampSliderRef(&favoritesAttr, &this->lampSlider);
+	ContentFavoritesAttributes_setLampLabelRef(&favoritesAttr, &this->lampLabel);
+	ContentFavoritesAttributes_setLampColorButtonsLayoutRef(&favoritesAttr, &this->lampColorButtonsLayout);
+	ContentFavoritesAttributes_setLampColorImageHolderRef(&favoritesAttr, &this->lampColorImageHolder);
+
 	this->contentFavorites = ContentFavorites_newFromYaml(&favoritesAttr);
-	this->contentHome = ContentHome_newFromYaml();
+
+	for (int i = 0; i < 7; i++) {
+		IAButtonAttributes lampColorButtonAttr;
+		IAButtonAttributes_make(&lampColorButtonAttr);
+		IAImage * normal = Resources_getLampColorImage(i);
+		IAButtonAttributes_setNormal(&lampColorButtonAttr, (IADrawableRect *) IAImage_copy(normal));
+		this->lampColorButtons[i] = IAButton_new(&lampColorButtonAttr);
+		IAFlowLayoutElement * element = IAFlowLayoutElement_newWithContent((IADrawableRect *) this->lampColorButtons[i]);
+		IAFlowLayout_addElement(this->lampColorButtonsLayout, element);
+	}
 
 	IACardLayoutElement * element = IACardLayoutElement_withContent((IADrawableRect *) this->contentFavorites);
 	IACardLayout_addElement(this->content, element);
@@ -64,15 +79,40 @@ void MainView_init(MainView *this) {
 }
 
 void MainView_setRealTemperature(MainView * this, float temperature){
-	logInfo("Real Temperature: %f", temperature);
+	char text[30];
+	sprintf(text, "%.1f %c%cC", temperature, 0xC2, 0xB0);
+	IALabel_setText(this->temperatureLabel, text);
+}
+
+void MainView_setLampColorImage(MainView * this, IAImage * image){
+	IACardLayout_removeLastElement(this->lampColorImageHolder);
+	IACardLayoutElement * element = IACardLayoutElement_withContent((IADrawableRect *) image);
+	IACardLayout_addElement(this->lampColorImageHolder, element);
 }
 
 static void onFadeInStart(MainView * this, uint64_t startTime, uint64_t duration){
 	IAScrollLayout_enableScrolling(this->contentFavorites, startTime);
 	for (size_t i = 0; i < 3; i++) {
-		IAButton_setIsClickable(this->tabs[i], true);
+		TabBarButton_setIsClickable(this->tabs[i], true);
+		TabBarButton_setIsOn(this->tabs[i], false);
 	}
+	TabBarButton_setIsClickable(this->tabs[0], false);
+	TabBarButton_setIsOn(this->tabs[0], true);
+
+	SmallTile_setIsClickable(this->scenarioHome, true);
+	SmallTile_setIsClickable(this->tvLivingRoom, true);
+	SmallTile_setIsClickable(this->leftKitchenWindow, true);
+	SmallTile_setIsClickable(this->tvKitchen, true);
+	SmallTile_setIsClickable(this->alarmService, true);
+	SmallTile_setIsClickable(this->dinner, true);
+	SmallTile_setIsClickable(this->addFavorites, true);
+
+	for (int i = 0; i < 7; i++) {
+		IAButton_setIsClickable(this->lampColorButtons[i], true);
+	}
+
 	IASlider_setIsClickable(this->temperatureSlider, true);
+	IASlider_setIsClickable(this->lampSlider, true);
 }
 
 static void draw(MainView * this){
@@ -83,25 +123,33 @@ static void draw(MainView * this){
 			.origin = IAPoint_zero,
 			.size = IAViewPort_getSize()
 	};
+	float scrollViewContentLength = IAGridLayout_getNeededHeight(this->contentGrid, rect.size.width - 120.0f, 1.0f);
+	IAScrollLayout_updateContentLength(this->contentFavorites, scrollViewContentLength);
+
 	IAFlowLayout_setRect(this->overlay, rect);
 	IAFlowLayout_draw(this->overlay);
 };
 
-static void onClickFavoritesButton(MainView *this, IAButton *button){
-	if (IACardLayout_hasElements(this->content) == false){
+static void onTabStateChanged(MainView * this, bool isOn, TabBarButton * tabBarButton){
+	debugAssert(isOn && "tabs should not be deactivateable");
+	IACardLayout_removeLastElement(this->content);
+
+	for (size_t i = 0; i < 3; i++) {
+		TabBarButton_setIsClickable(this->tabs[i], true);
+		TabBarButton_setIsOn(this->tabs[i], false);
+	}
+	TabBarButton_setIsClickable(tabBarButton, false);
+	TabBarButton_setIsOn(tabBarButton, true);
+
+	if (tabBarButton == this->tabs[0]){
 		IACardLayoutElement * element = IACardLayoutElement_withContent((IADrawableRect *) this->contentFavorites);
 		IACardLayout_addElement(this->content, element);
+		IALabel_setText(this->title, "Favorites");
+	}else if (tabBarButton == this->tabs[1]){
+		IALabel_setText(this->title, "Profile");
+	}else{
+		IALabel_setText(this->title, "Notifications");
 	}
-}
-
-static void onClickHomeButton(MainView *this, IAButton *button){
-	IACardLayout_removeLastElement(this->content);
-	IACardLayoutElement * element = IACardLayoutElement_withContent((IADrawableRect *) this->contentHome);
-	IACardLayout_addElement(this->content, element);
-}
-
-static void onClickAlertsButton(MainView *this, IAButton *button){
-	IACardLayout_removeLastElement(this->content);
 }
 
 void MainView_deinit(MainView *this) {

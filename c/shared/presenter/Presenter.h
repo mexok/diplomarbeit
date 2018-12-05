@@ -14,7 +14,7 @@ typedef struct {
 	IAObject base;
 	HomeState * homeState;
 	MainView * mainView;
-	OnOffSwitchDelegate rightKitchenWindowDelegate;
+	IAButtonDelegate leftKitchenWindowDelegate;
 	IASliderDelegate onViewTemperatureChangedDelegate;
 	IANotificationDelegate onModelTemperatureChangedDelegate;
 } Presenter;

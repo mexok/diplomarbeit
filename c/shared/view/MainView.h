@@ -15,21 +15,45 @@ typedef struct {
 	//@extend
 	IAView view;
 	IAFlowLayout * overlay;
+	IALabel * title;
 	IACardLayout * content;
 	IAScrollLayout * contentFavorites;
-	IACardLayout * contentHome;
-	IAButton * tabs[3];
-	IAButtonDelegate tabDelegates[3];
+	IAGridLayout * contentGrid;
+	TabBarButton * tabs[3];
+	TabBarButtonDelegate tabDelegate;
+
+	//@get
+	SmallTile * scenarioHome;
+	//@get
+	SmallTile * tvLivingRoom;
+	//@get
+	SmallTile * leftKitchenWindow;
+	//@get
+	SmallTile * tvKitchen;
+	//@get
+	SmallTile * alarmService;
+	//@get
+	SmallTile * dinner;
+	//@get
+	SmallTile * addFavorites;
+
 	//@get
 	IASlider * temperatureSlider;
+	IALabel * temperatureLabel;
+
 	//@get
-	OnOffSwitch * rightKitchenWindow;
+	IASlider * lampSlider;
+	IALabel * lampLabel;
+	IAFlowLayout * lampColorButtonsLayout;
+	IAButton * lampColorButtons[7];
+	IACardLayout * lampColorImageHolder;
 } MainView;
 
 
 void MainView_init(MainView *);
 
 void MainView_setRealTemperature(MainView *, float temperature);
+void MainView_setLampColorImage(MainView *, IAImage * image);
 
 void MainView_deinit(MainView *);
 

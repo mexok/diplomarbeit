@@ -1,0 +1,33 @@
+__generate__: IACardLayout
+elements:
+  - content:
+      __type__: IAFlowLayout
+      isVertical: true
+      elements:
+        - relativeLength: 0.2f
+          content:
+            __type__: IALabel
+            __ref__: title
+            text: "title"
+            font:
+              __resource__: RegularFont
+            fontSize: 26
+            textAlignment: center
+        - relativeLength: 0.2f
+          content:
+            __type__: IALabel
+            __ref__: subtitle
+            text: "subtitle"
+            font:
+              __resource__: RegularFont
+            fontSize: 22
+            textAlignment: center
+        - content:
+            __type__: IACardLayout
+            elements:
+              - marginsRelative: 0.15f
+                content:
+                  __type__: IACardLayout
+                  __ref__: imageHolder
+
+            

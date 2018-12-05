@@ -46,20 +46,20 @@ static void draw(const IAFlowLayout * this) {
 static float getLengthPerVariableElement(IAFlowLayout * this, float totalLength){
 	size_t elementCount = IAArrayList_getCurrentSize(this->elements);
 	size_t numberOfSpaces = (elementCount - 1);
-	size_t numberOfFixedElements = 0;
+	size_t numberOfDefinedElements = 0;
 	float spaceLeft = totalLength - (numberOfSpaces * this->spacing);
 
 	for (size_t i = 0; i < elementCount; i++) {
 		IAFlowLayoutElement * element = IAArrayList_get(this->elements, i);
-		if (IAFlowLayoutElement_hasFixedLength(element)){
-			spaceLeft -= IAFlowLayoutElement_getFixedLength(element);
-			numberOfFixedElements++;
+		if (IAFlowLayoutElement_hasDefinedLength(element)){
+			spaceLeft -= IAFlowLayoutElement_getDefinedLength(element, totalLength);
+			numberOfDefinedElements++;
 		}
 	}
 
 	float variableLength = 0.0f;
-	if (spaceLeft > 0.0f && elementCount > numberOfFixedElements){
-		variableLength = spaceLeft / (elementCount - numberOfFixedElements);
+	if (spaceLeft > 0.0f && elementCount > numberOfDefinedElements){
+		variableLength = spaceLeft / (elementCount - numberOfDefinedElements);
 	}
 	return variableLength;
 }
@@ -78,7 +78,7 @@ static void setRect(IAFlowLayout * this, IARect rect) {
 		IAFlowLayoutElement * element = IAArrayList_get(this->elements, i);
 		IADrawableRect * content = IAFlowLayoutElement_getContent(element);
 
-		float widthOfElement = IAFlowLayoutElement_hasFixedLength(element) ? IAFlowLayoutElement_getFixedLength(element) : lengthPerVariableElement;
+		float widthOfElement = IAFlowLayoutElement_hasDefinedLength(element) ? IAFlowLayoutElement_getDefinedLength(element, totalLength) : lengthPerVariableElement;
 
 		IARect contentRect = {
 				.origin = {

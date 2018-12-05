@@ -14,6 +14,11 @@ void IALayoutAttributes_make(IALayoutAttributes * this) {
 	};
 }
 
+void IALayoutAttributes_setBackgroundDrawable(IALayoutAttributes * this, IADrawableRect * backgroundDrawable){
+	this->backgroundDrawable = backgroundDrawable;
+	this->hasBackgroundDrawable = true;
+}
+
 void IALayoutAttributes_setBackgroundColor(IALayoutAttributes * this, IAColor backgroundColor){
 	this->backgroundColor = backgroundColor;
 	this->hasBackgroundColor = true;

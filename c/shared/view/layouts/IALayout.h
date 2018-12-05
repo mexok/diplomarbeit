@@ -21,6 +21,10 @@ typedef struct {
 	IAColorRect * backgroundColorRect;
 
 	//@get
+	bool hasBackgroundDrawable;
+	IADrawableRect * backgroundDrawable;
+
+	//@get
 	float paddingLeft;
 	//@get
 	float paddingTop;

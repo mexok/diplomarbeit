@@ -17,12 +17,17 @@ typedef struct {
 	float fixedLength;
 	//@get
 	bool hasFixedLength;
+	//@get
+	float relativeLength;
+	//@get
+	bool hasRelativeLength;
 } IAFlowLayoutElementAttributes;
 
 
 void IAFlowLayoutElementAttributes_make(IAFlowLayoutElementAttributes *, IADrawableRect * content);
 
 void IAFlowLayoutElementAttributes_setFixedLength(IAFlowLayoutElementAttributes *, float fixedLength);
+void IAFlowLayoutElementAttributes_setRelativeLength(IAFlowLayoutElementAttributes *, float relativeLength);
 
 #include "IAFlowLayoutElementAttributes+Generated.h"
 

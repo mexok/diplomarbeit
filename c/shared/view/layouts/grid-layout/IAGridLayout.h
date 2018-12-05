@@ -22,6 +22,7 @@ typedef struct {
 
 void IAGridLayout_init(IAGridLayout *, const IAGridLayoutAttributes * attr);
 
+float IAGridLayout_getNeededHeight(IAGridLayout *, float width, float heightToWidthProportionOfSingleCell);
 
 void IAGridLayout_deinit(IAGridLayout *);
 

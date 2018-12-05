@@ -19,3 +19,8 @@ void IAFlowLayoutElementAttributes_setFixedLength(IAFlowLayoutElementAttributes 
 	this->fixedLength = fixedLength;
 	this->hasFixedLength = true;
 }
+
+void IAFlowLayoutElementAttributes_setRelativeLength(IAFlowLayoutElementAttributes *this, float relativeLength){
+	this->relativeLength = relativeLength;
+	this->hasRelativeLength = true;
+}

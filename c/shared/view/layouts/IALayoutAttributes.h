@@ -7,10 +7,15 @@
 
 #include "IAObject.h"
 #include "IAColor.h"
+#include "IADrawableRect.h"
 
 typedef struct {
 	//@extend
 	IAObject base;
+	//@get
+	IADrawableRect * backgroundDrawable;
+	//@get
+	bool hasBackgroundDrawable;
 	//@get
 	IAColor backgroundColor;
 	//@get
@@ -28,6 +33,7 @@ typedef struct {
 
 void IALayoutAttributes_make(IALayoutAttributes *);
 
+void IALayoutAttributes_setBackgroundDrawable(IALayoutAttributes *, IADrawableRect * backgroundDrawable);
 void IALayoutAttributes_setBackgroundColor(IALayoutAttributes *, IAColor backgroundColor);
 void IALayoutAttributes_setPadding(IALayoutAttributes *, float padding);
 

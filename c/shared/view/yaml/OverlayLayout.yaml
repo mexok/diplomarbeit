@@ -1,5 +1,6 @@
 __generate__: IAFlowLayout
-backgroundColor: blue
+backgroundColor:
+  hex: "#e2e2e2"
 isVertical: true
 elements:
 
@@ -7,58 +8,63 @@ elements:
     content:
       __type__: IAFlowLayout
       __ref__: titleBar
-      spacing: 50
-      padding: 10
+      paddingLeft: 70
+      backgroundDrawable:
+        __resource__: Image
+        name: background_titelbar
       elements:
-        - fixedLength: 80
-          content:
-            __type__: IAColorRect
-            color: magenta
-      
         - content:
-            __type__: IAColorRect
-            color: [0, 255, 0, 255]
+            __type__: IALabel
+            __ref__: title
+            text: Favorites
+            font:
+              __resource__: RegularFont
+            fontSize: 56
+            fontColor:
+              hex: "#848484"
   
   - content:
       __type__: IAFlowLayout
       __ref__: bottomScreen
       elements:
-        - fixedLength: 100
+        - fixedLength: 120
           content:
             __type__: IAFlowLayout
             __ref__: tabBar
             isVertical: true
-            backgroundColor: green
-            spacing: 10
-            padding: 10
+            backgroundColor:
+              hex: "#898989"
             elements:
-              - content:
-                  __type__: IAButton
+              - fixedLength: 152
+                content:
+                  __type__: TabBarButton
                   __ref__: favoritesButton
-                  normal:
-                    __type__: IAColorRect
-                    color: red
-                  touched:
-                    __type__: IAColorRect
-                    color: black
-              - content:
-                  __type__: IAButton
-                  __ref__: homeButton
-                  normal:
-                    __type__: IAColorRect
-                    color: red
-                  touched:
-                    __type__: IAColorRect
-                    color: black
-              - content:
-                  __type__: IAButton
-                  __ref__: alertsButton
-                  normal:
-                    __type__: IAColorRect
-                    color: red
-                  touched:
-                    __type__: IAColorRect
-                    color: black
+                  stateOnNormal:
+                    __resource__: Image
+                    name: menu_favo_active
+                  stateOffNormal:
+                    __resource__: Image
+                    name: menu_favo_passive
+              - fixedLength: 152
+                content:
+                  __type__: TabBarButton
+                  __ref__: profileButton
+                  stateOnNormal:
+                    __resource__: Image
+                    name: menu_profile_active
+                  stateOffNormal:
+                    __resource__: Image
+                    name: menu_profile_passive
+              - fixedLength: 152
+                content:
+                  __type__: TabBarButton
+                  __ref__: notificationsButton
+                  stateOnNormal:
+                    __resource__: Image
+                    name: menu_notifications_active
+                  stateOffNormal:
+                    __resource__: Image
+                    name: menu_notifications_passive
       
         - content:
             __type__: IACardLayout

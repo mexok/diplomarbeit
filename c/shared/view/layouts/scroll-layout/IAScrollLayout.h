@@ -42,6 +42,8 @@ struct IAScrollLayout{
 
 void IAScrollLayout_init(IAScrollLayout *, const IAScrollLayoutAttributes * attr);
 
+void IAScrollLayout_updateContentLength(IAScrollLayout *, float contentLength);
+
 bool IAScrollLayout_isScrollable(const IAScrollLayout *);
 bool IAScrollLayout_isScrolling(const IAScrollLayout *);
 
