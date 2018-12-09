@@ -18,8 +18,8 @@ void CreateOpenGLContext(HWND hwnd);
 static HGLRC openGLContextHandle;
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance, LPSTR lpCmdLine,int nCmdShow) {
-	static char szAppName[] = "GuiYaml";
-	static char szTitle[]="GuiYaml Title";
+	static char szAppName[] = "Flower";
+	static char szTitle[]="Flower";
 	WNDCLASS windowClass = (WNDCLASS){
 			.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC,
 			.lpfnWndProc = (WNDPROC)WndProc,

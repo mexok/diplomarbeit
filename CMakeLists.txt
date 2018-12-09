@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12.1)
 
-project(YamlGui)
+project(Flower)
 
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DDEBUG -UNDEBUG")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG -UNDEBUG")
@@ -117,8 +117,8 @@ list(APPEND sources
 		c/shared/view/layouts/grid-layout/IAGridLayoutElementAttributes.c)
 
 
-add_executable(YamlGuiPrototyp ${sources})
-target_include_directories(YamlGuiPrototyp PUBLIC
+add_executable(Flower ${sources})
+target_include_directories(Flower PUBLIC
 		c/windows
 		c/shared/model
 		c/shared/presenter
@@ -136,12 +136,12 @@ target_include_directories(YamlGuiPrototyp PUBLIC
 		generated
 		deps/opencv-glue)
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/c FILES ${sources})
-target_link_libraries(YamlGuiPrototyp iaopengl iaclib iamulti_touch)
-target_link_libraries(YamlGuiPrototyp glew)
-target_link_libraries(YamlGuiPrototyp opencv opencv_glue)
-target_link_libraries(YamlGuiPrototyp opengl32.lib glu32.lib)
-target_generate_generics(YamlGuiPrototyp generated)
-target_add_yaml_sources(YamlGuiPrototyp generated
+target_link_libraries(Flower iaopengl iaclib iamulti_touch)
+target_link_libraries(Flower glew)
+target_link_libraries(Flower opencv opencv_glue)
+target_link_libraries(Flower opengl32.lib glu32.lib)
+target_generate_generics(Flower generated)
+target_add_yaml_sources(Flower generated
 		c/shared/view/yaml/ContentFavorites.yaml
 		c/shared/view/yaml/OverlayLayout.yaml
 		c/shared/view/yaml/SmallTileLayout.yaml)
