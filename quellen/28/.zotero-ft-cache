@@ -1,0 +1,873 @@
+Aufbau von XMLDokumenten
+
+© K. Schild, 2006 / M. Mochol 2007
+
+1
+
+Organisatorisches
+
+© K. Schild, 2006 / M. Mochol 2007
+
+2
+
+News
+ Alle angemeldeten können teilnehmen
+ Übung: Æ Di., 12:15-13:45, Hörsaal 028 Æ Mo., 8:15-9:45, Hörsaal 028
+ Start Æ Mo. – 07. Mai 2007 Æ Di. – 08. Mai 2007
+
+© K. Schild, 2006 / M. Mochol 2007
+
+3
+
+Aufbau von XMLDokumenten
+
+© K. Schild, 2006 / M. Mochol 2007
+
+4
+
+Heutige Vorlesung
+ XML-Syntax  Elemente  Attribute  Deklaration …
+ Namensräume
+
+© K. Schild, 2006 / M. Mochol 2007
+
+5
+
+Wiederholung: Was ist XML?
+
+ XML ist eine Methode, um strukturierte Daten in einer Textdatei darzustellen.
+ XML sieht ein wenig wie HTML aus.  XML ist Text, aber nicht zum Lesen.  XML ist eine Familie von Techniken.  XML ist neu, aber nicht so neu.  XML überführt HTML in XHTML  XML ist modular  XML ist lizenzfrei und plattformunabhängig.
+
+Quelle: http://www.w3c.de/Misc/XML-in-10-points.html
+
+© K. Schild, 2006 / M. Mochol 2007
+
+6
+
+XML-Syntax:
+XML-Dokumente
+
+© K. Schild, 2006 / M. Mochol 2007
+
+7
+
+Was ist ein XML-Dokument?
+
+Inhalt: Text oder Daten
+XML-Dokument
+XML-Datei
+© K. Schild, 2006 / M. Mochol 2007
+
+kodiert als
+Objekt, das Syntaxregeln von XML entspricht (wohlgeformt ist)
+gespeichert in
+8
+
+Grundbausteine von XML
+
+ Elemente: strukturieren das XML-Dokument  Attribute: Zusatzinformationen zu Elementen  XML-Deklaration: Informationen für Parser
+
+<?xml version="1.0" encoding="UTF-8"?> <name id="1232345">
+<first>John</first> <middle>Fitzgerald Johansen</middle> <last>Doe</last> </name>
+ Namensräume: lösen Namenskonflikte auf und geben Elemente eine Bedeutung
+
+© K. Schild, 2006 / M. Mochol 2007
+
+9
+
+XML-Syntax
+Grundbausteine: XML-Elemente
+
+© K. Schild, 2006 / M. Mochol 2007
+
+10
+
+Grundbausteine: XML-Elemente
+ Beispiel: <first>John</first>  besteht aus:
+- einem Anfangs-Tag (engl. start tag): hier <first> - einem dazugehörigen Ende-Tag (engl. end tag): hier
+</first> - einem Inhalt: hier „John“  alles zusammen bildet ein Element  haben einen Namen: hier „first“
+
+© K. Schild, 2006 / M. Mochol 2007
+
+11
+
+Inhalt von Elementen
+1. unstrukturierter Inhalt: einfacher Text ohne Kind-Elemente
+2. strukturierter Inhalt: Sequenz von > Ø Kind-Elementen
+3. gemischter Inhalt: enthält Text mit mind. einem Kind-Element
+4. leerer Inhalt
+
+© K. Schild, 2006 / M. Mochol 2007
+
+12
+
+1. Unstrukturierter Inhalt
+
+ Beispiel:
+
+<first>John</first>
+
+ einfacher Text ohne Kind-Elemente
+
+Kind-Element: Element, das im Inhalt eines Elementes vorkommt
+ unstrukturierter Inhalt auch als Parsed Character Data (PCDATA) bezeichnet:
+
+- character data: einfache Zeichenkette
+
+- parsed: Zeichenkette wird vom Parser analysiert, um Ende-Tag zu identifizieren.
+- Normalisierung: u.a. Zeilenumbruch (CR+LF) Î #xA
+
+© K. Schild, 2006 / M. Mochol 2007
+
+Anmerkung: Auf den Folien schreibe ich der besseren Lesbarkeit wegen Kind-Element statt Kindelement !
+13
+
+PCDATA
+
+ Reservierte Symbole < und & in PCDATA nicht erlaubt.
+
+ Symbole wie >, /, (, ), {, }, [, ], % allerdings erlaubt
+
+ statt < und & Entity References &amp; bzw. &lt; benutzen
+
+ Entity References in XML:
+
+&amp; Ö &
+
+&lt;
+
+Ö<
+
+&gt;
+
+Ö>
+
+&apos; Ö '
+
+&quot; Ö "
+
+© K. Schild, 2006 / M. Mochol 2007
+
+14
+
+CDATA
+ Unstrukturierten Inhalt mit vielen reservierten Symbolen besser als Character Data (CDATA) darstellen.
+ Beispiel: <formula> <![CDATA[ X < Y & Y < Z ]]>
+</formula>
+ Inhalt: String zwischen inneren Klammern [ ] hier: X < Y & Y < Z
+ XML-Parser sucht in CDATA lediglich ]]>, analysiert den Inhalt aber ansonsten nicht.
+ “]]>“ als Inhalt von CDATA nicht erlaubt
+
+© K. Schild, 2006 / M. Mochol 2007
+
+15
+
+2. Strukturierter Inhalt
+
+ Beispiel:
+
+<name> <first>John</first> <last>Doe</last>
+</name>
+
+ Sequenz von > 0 Kind-Elementen: hier: <first>John</first> und <last>Doe</last>
+ kein Text vor, nach oder zwischen den Kind-Elementen  Kind-Elemente immer geordnet:
+Reihenfolge, so wie sie im XML-Dokument erscheinen  Elemente können beliebig tief geschachtelt werden.
+
+© K. Schild, 2006 / M. Mochol 2007
+
+16
+
+Baumstruktur von XML
+<name> <first>John</first> <middle>Fitzgerald Johansen </middle> <last>Doe</last>
+</name>
+
+nnaammee
+
+ffiirrsstt
+
+mmiiddddllee
+
+llaasstt
+
+„„JJoohhnn““
+© K. Schild, 2006 / M. Mochol 2007
+
+„„FFiittzzggeerraallddJJoohhaannsseenn““
+
+„„DDooee““
+17
+
+3. Gemischter Inhalt
+
+ Englisch: mixed content
+
+ enthält Text mit mindestens einem Kind-Element
+
+ Beispiel:
+
+<section>
+
+Text
+
+<subsection> … </subsection>
+
+Text
+
+</section>
+
+ Wie unterscheidet ein Parser strukturierten und gemischten Inhalt, wenn Text = leerer String?
+ Antwort: Nur mit zugehöriger DTD oder XML-Schema möglich!
+
+© K. Schild, 2006 / M. Mochol 2007
+
+18
+
+Baumstruktur von XML
+<name> <first>John</first> <middle>Fitzgerald Johansen </middle> Text
+</name>
+nnaammee
+
+ffiirrsstt
+
+mmiiddddllee
+
+llaasstt
+
+„„JJoohhnn““
+© K. Schild, 2006 / M. Mochol 2007
+
+„„FFiittzzggeerraallddJJoohhaannsseenn““
+
+„„TTeexxtt““
+19
+
+4. Leerer Inhalt
+
+ Beispiel:
+
+<name>
+
+<first>John</first>
+
+<middle></middle>
+
+<last>Doe</last>
+
+</name>
+
+ weder Text noch Kind-Element
+
+ <middle></middle> auch leeres Element genannt
+
+ Abkürzung: selbstschließendes Tag (engl.: self-closing tag) <middle/> :
+
+<name> <first>John</first> <middle/> <last>Doe</last>
+</name>
+
+© K. Schild, 2006 / M. Mochol 2007
+
+20
+
+Warum leere Elemente?
+
+<name> <first>John</first> <last>Doe</last>
+</name>
+
+<name>
+
+<first>John</first>
+
+vs.
+
+<middle/>
+
+<last>Doe</last>
+
+</name>
+
+ leeres Element evtl. von DTD oder XML-Schema vorgeschrieben
+ einfacher später mit Inhalt zu füllen  leeres Element kann Attribute haben:
+<middle status=''unknown''></middle> oder
+<middle status=''unknown''/>
+
+© K. Schild, 2006 / M. Mochol 2007
+
+21
+
+XML-Syntax
+Grundbausteine: XML-Attribute
+
+© K. Schild, 2006 / M. Mochol 2007
+
+22
+
+Grundbausteine: XML-Attribute
+
+<name id="1232345" nickname="Shiny John"> <first>John</first> <last>Doe</last> </name>
+ Attribut: Name-Wert-Paar  name="wert" oder name='wert' aber name= "wert'
+ Attribut-Wert:
+- immer PCDATA: keine Kind-Elemente, kein < und &
+- "we"rt" und 'we'rt' ebenfalls nicht erlaubt - Normalisierung: u.a. Zeilenumbruch Î #xA  Beachte: Reihenfolge der Attribute belanglos
+
+© K. Schild, 2006 / M. Mochol 2007
+
+23
+
+Attribut statt Element
+
+ Jedes Attribut auch als Kind-Element darstellbar:
+
+<name id="12345"> <first>John</first> <middle>Fitzgerald</middle> <last>Doe</last> </name>
+
+<name> <id>12345</id> <first>John</first> <middle>Fitzgerald</middle> <last>Doe</last>
+</name>
+
+id als Attribut
+
+id als Kind-Element
+
+© K. Schild, 2006 / M. Mochol 2007
+
+24
+
+Element statt Attribut
+
+ Jedes Kind-Element mit unstrukturiertem Inhalt auch als Attribut darstellbar:
+
+<name> <id>12345</id> <first>John</first> <middle>Fitzgerald</middle> <last>Doe</last>
+</name>
+id, first, middle und last als Kind-Elemente
+
+<name id="12345" first="John" middle="Fitzgerald" last="Doe" />
+id, first, middle und last als Attribute
+Resultat: leeres Element
+
+© K. Schild, 2006 / M. Mochol 2007
+
+25
+
+Attribut oder Element?
+ Attribut kann nur einfachen String (PCDATA) als Wert haben, Element kann beliebig strukturiert sein
+ <![CDATA[ … ]]> in Element-Inhalten erlaubt, nicht aber in Attribut-Werten
+ Reihenfolge der Attribute belanglos, diejenige von Elementen nicht
+ einheitliche Darstellung mit Elementen eleganter, Darstellung mit Attributen kompakter
+Fazit: Attribute für einfache, unstrukturierte Zusatzinformationen (Metadaten) geeignet.
+
+© K. Schild, 2006 / M. Mochol 2007
+
+26
+
+Beispiel
+
+<name creation-date=''21.05.2003''> <first>John</first> <middle>Fitzgerald Johansen</middle> <last>Doe</last> </name>
+ Erstellungsdatum creation-date ist Zusatzinformation  falls noch andere Attribute vorhanden: Reihenfolge egal Ö Repräsentation als Attribut  Nachteil: Datum "21.05.2003" unstrukturiert
+
+© K. Schild, 2006 / M. Mochol 2007
+
+27
+
+Reservierte Attribute
+ xml:lang  Sprache des Inhalts  Beispiel: <p xml:lang="de">Übung 1</p>
+ xml:space  Leerräume im Inhalt  Beispiel: <p xml:space="default">Übung 1</p>
+
+© K. Schild, 2006 / M. Mochol 2007
+
+28
+
+XML-Syntax
+Grundbausteine: XMLDeklaration
+
+© K. Schild, 2006 / M. Mochol 2007
+
+29
+
+Grundbausteine: XML-Deklaration
+
+<?xml version="1.0" encoding="UTF-8"?> <name id="1232345"> <first>John</first> <middle>Fitzgerald Johansen</middle> <last>Doe</last> </name>
+ enthält Informationen für Parser: z.B. verwendete XMLVersion und Kodierung
+ wenn vorhanden, dann immer am Anfang der Datei  in XML 1.0 optional, in XML 1.1 obligatorisch
+
+© K. Schild, 2006 / M. Mochol 2007
+
+30
+
+XML-Deklaration
+
+Attribut version
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+ verwendete XML-Version: "1.0" oder "1.1"
+
+ obligatorisch
+
+Attribut encoding  Kodierung der XML-Datei  optional
+
+Attribut standalone  Gibt an, ob es eine zugehörige DTD oder ein XML-
+Schema gibt ("no") oder nicht ("yes").  optional
+
+Beachte: immer in dieser Reihenfolge!
+
+© K. Schild, 2006 / M. Mochol 2007
+
+31
+
+XML-Deklaration: Kodierung
+
+XML-Dokument
+
+XML-Datei
+
+gespeichert in
+Unicode
+(UTF-8) windows- …
+1252
+
+© K. Schild, 2006 / M. Mochol 2007
+
+32
+
+XML-Deklaration: Kodierung
+
+XML-Parser  müssen intern mit Unicode (UTF-8 oder UTF-16)
+arbeiten
+
+Unicode  kann alle nationalen Zeichen darstellen: insgesamt ca.
+65.000 Zeichen
+
+encoding-Attribut  Zeichenkodierung der XML-Datei  Fehlt das Attribut, dann wird Kodierung in Unicode
+angenommen.  Beachte: XML-Parser müssen nur Unicode verarbeiten
+können!
+
+© K. Schild, 2006 / M. Mochol 2007
+
+33
+
+XML-Syntax
+Andere Grundbausteine
+
+© K. Schild, 2006 / M. Mochol 2007
+
+34
+
+Weitere Grundbausteine von XML
+Kommentare  <!-- Kommentar -->  -- in Kommentaren nicht erlaubt
+Prozessorinstruktionen  Beispiel: <?mysql SELECT * FROM PO?>  selten benutzt
+
+© K. Schild, 2006 / M. Mochol 2007
+
+35
+
+XML-Syntax
+Wohlgeformte XML-Dokumente
+
+© K. Schild, 2006 / M. Mochol 2007
+
+36
+
+Wohlgeformte XML-Dokumente
+1. Jedes Anfangs-Tag muss ein zugehöriges Ende-Tag haben.
+2. Elemente dürfen sich nicht überlappen. 3. XML-DokumenteWhaiebeknangnenaauus ediennWurzel-Element. 4. Element-NamenGmruünsdsbenaubsetsetiinmenmeteinn
+Namenskownovehnlgteiofonremn teenstXspMreLc-hDeonk. ument 5. XML beachtet grugnedbsiäldtzelticwheGrdreonß?- und Kleinschreibung. 6. XML belässt White Space im Text. 7. Ein Element darf niemals zwei Attribute mit dem selben
+Namen haben.
+
+© K. Schild, 2006 / M. Mochol 2007
+
+37
+
+Regel 1: Anfangs- und Ende-Tags
+Jedes Anfangs-Tag muss zugehöriges Ende-Tag haben.  In HTML gilt diese Regel nicht:
+<HTML> <BODY> <P>Text
+<BR>More text in the same paragraph. <P>Some text in another paragraph.</P> </BODY> </HTML>
+ Wo endet das erste P-Element? Ö HTML mehrdeutig
+
+© K. Schild, 2006 / M. Mochol 2007
+
+38
+
+Regel 2: Überlappung von Elementen
+
+Elemente dürfen sich nicht überlappen.
+ In HTML gilt diese Regel nicht:
+<HTML> <BODY> <P>Some <STRONG>formatted <EM>text </STRONG>, but </EM> no grammar no good! </p> </BODY> </HTML>
+Ö HTML unstrukturiert
+
+© K. Schild, 2006 / M. Mochol 2007
+
+39
+
+Regel 3: Wurzel-Elemente
+Jedes XML-Dokument hat genau ein Wurzel-Element.  Also z.B. statt zweier Wurzel-Elemente
+<?xml version="1.0"?> <name>John</name> <name>Jane</name>
+zusätzliches Eltern-Element einführen:
+<?xml version="1.0"?> <names>
+<name>John</name> <name>Jane</name> </names>
+
+© K. Schild, 2006 / M. Mochol 2007
+
+40
+
+Regel 4: Namenskonventionen
+Element- und Attribut-Namen:  beginnen entweder mit Buchstaben oder _ aber nie mit
+Zahlen: z.B. first, First oder _First  nach erstem Zeichen zusätzlich Zahlen sowie - und Punkt erlaubt: z.B. _1st-name oder _1st.name  enthalten keine Leerzeichen  enthalten kein Doppelpunkt  beginnen nicht mit xml, unabhängig davon, ob die einzelnen Buchstaben groß- oder kleingeschrieben sind
+
+© K. Schild, 2006 / M. Mochol 2007
+
+41
+
+Namenskonvention: Beispiele
+
+ <résumé>  <xml-tag>  <123>  <fun=xml>
+ <first name>
+
+9 nicht korrekt: beginnt mit „xml“ nicht korrekt: beginnt mit Zahl nicht korrekt: enthält „=“ erlaubt wären: _, - und Punkt nicht korrekt: enthält Leerzeichen
+
+© K. Schild, 2006 / M. Mochol 2007
+
+42
+
+Regel 5: Groß- und Kleinschreibung
+XML beachtet Groß- und Kleinschreibung.  Im Gegensatz zu HTML unterscheidet XML also z.B.
+zwischen <P> und <p>.
+Dennoch möglichst nicht gleichzeitig <First> und <first> verwenden!
+Hinweis: eine Schriebweise im gesamten Dokument verwenden z.B. <FirstName>
+
+© K. Schild, 2006 / M. Mochol 2007
+
+43
+
+Regel 6: White Space
+
+XML belässt White Space im Text.  Beispiel:
+
+<?xml version="1.0" encoding="UTF-8">
+
+<P>This is a paragraph.
+
+It has a whole bunch
+
+of space.</P>
+
+ Inhalt des P-Elementes:
+
+This is a paragraph. of space.
+
+It has a whole bunch
+
+© K. Schild, 2006 / M. Mochol 2007
+
+44
+
+Regel 6: White Space
+ Beachte: Von Browsern wird White Space allerdings nicht angezeigt:
+
+ Grund:
+
+- XML-Dokumente werden zur Darstellung im Browser in HTML umgewandelt
+
+- HTML reduziert White Space auf ein Leerzeichen.
+
+© K. Schild, 2006 / M. Mochol 2007
+
+45
+
+XML-Versionen
+
+XML-Deklaration Zeilenende (EoL)
+Unicode in Namen
+
+XML 1.0
+optional LF, CR
+exklusive Strategie: alle Zeichen verboten, die nicht ausdrücklich erlaubt
+
+XML 1.1
+obligatorisch
+LF, CR NEL (IBM-Mainframe)
+inklusive Strategie: alle Zeichen erlaubt, die nicht ausdrücklich verboten
+
+Ö XML 1.1 interoperabel mit IBM-Mainframes Ö XML 1.1 aufwärtskompatibel bzgl. zukünftiger
+Unicode-Versionen Ö XML 1.1 nicht abwärtskompatibel!
+
+© K. Schild, 2006 / M. Mochol 2007
+
+46
+
+Viel Lärm um XML 1.1!
+
+ XML 1.0, 3rd Edition zeitgleich mit XML 1.1 veröffentlicht!
+ 3rd Edition = 2nd Edition + Errata zur 2nd Edition  Änderungen von XML 1.1 nur für IBM-Mainframes und
+Nicht-ASCII-Zeichen relevant  XML 1.1 verlangt von Parsern, dass beide Versionen
+erkannt werden:  wenn keine XML-Deklaration oder explizit Version 1.0:
+Wohlgeformtheit gemäß XML 1.0  in allen anderen Fällen:
+Wohlgeformtheit gemäß XML 1.1
+
+© K. Schild, 2006 / M. Mochol 2007
+
+47
+
+Was gibt es noch?
+
+XML Information Set (Infoset)  beschreibt das XML-Datenmodell unabhängig von der
+konkreten XML-Syntax  allerdings ziemlich umständlich:
+
+“Rather than saying “‘foo’ has a ‘quantity’ of ‘3’” you have to say “the element information item with the [local name] property ‘foo’ has an attribute information item in its [attributes] property with the [local name] property ‘quantity’ and the [normalized value] property
+‘3’.” (Nottingham, 2004)
+
+Ö http://www.w3.org/TR/2004/REC-xml-infoset-20040204/
+
+© K. Schild, 2006 / M. Mochol 2007
+
+48
+
+Kleiner Online-Test zu XML
+
+ W3 Schools: kostenlose Online-Tutorials zu XMLTechnologien
+Ö Online-Test
+http://www.w3schools.com/xml/xml_quiz.asp
+
+© K. Schild, 2006 / M. Mochol 2007
+
+49
+
+XML-Editoren
+ XML-Dokumente werden normalerweise mit speziellen Editoren erstellt und modifiziert.
+ meistbenutzte XML-Editor: XMLSpy von Altova  steht in den PC-Pools zur Verfügung  Home Edition kostenlos  Enterprise Edition als vierwöchige Testlizenz kostenlos Î www.xmlspy.com
+
+© K. Schild, 2006 / M. Mochol 2007
+
+50
+
+Namensräume
+
+© K. Schild, 2006 / M. Mochol 2007
+
+51
+
+Namenskonflikte
+
+<course>
+
+<title>Semantic Web</title>
+
+<lecturers>
+
+<name>
+
+<title>Priv.-Doz. Dr. M.S.E</title>
+
+<first>Steffen</first> <last>Staab</last> </name> </lecturers> <date>12/11/2004</date> <abstract>...</abstract> </course>
+
+ Namenskonflikt: gleicher Name, aber unterschiedliche Bedeutung
+ z.B. Titel einer Veranstaltung vs. Titel einer Person
+ in einem Dokument unterschiedliche Vokabularien
+
+© K. Schild, 2006 / M. Mochol 2007
+
+52
+
+Auflösung durch Präfixe
+
+<course:course>
+
+<course:title>Semantic Web</course:title>
+
+<course:lecturers>
+
+<pers:name>
+
+<pers:title>Priv.-Doz. Dr. M.S.E</pers:title>
+
+<pers:first>Steffen</pers:first>  Präfixe geben Kontext an:
+
+<pers:last>Staab</pers:last>
+
+Aus welchem Bereich
+
+</pers:name>
+
+stammt der Name?
+
+</course:lecturers>
+
+ z.B. pers:title vs. course:title
+
+<course:date>12/11/2004</course:date> <course:abstract>...</course:abstract>
+
+
+
+ähnliches Vorgehen in
+
+</course:course>
+
+Programmiersprachen:  z.B. java.applet.Applet
+
+© K. Schild, 2006 / M. Mochol 2007
+
+53
+
+Namensräume
+
+course:course course:title course:abstract
+course:lecturers course:date
+pers:name pers:title pers:first
+pers:last
+
+Namensraum (namespace):
+ alle Bezeichner mit identischen Anwendungskontext
+ Namensräume müssen eindeutig identifizierbar sein.
+
+© K. Schild, 2006 / M. Mochol 2007
+
+54
+
+Namensräume in XML
+ WWW: Namensräume müssen global eindeutig sein.  In XML wird Namensraum mit URI identifiziert.  Zuerst wird Präfix bestimmter Namensraum zugeordnet,
+z.B.:
+
+xmlns:pers="http://www.w3.org/2004/pers"
+
+Namensraum-Präfix Namensraum-Bezeichner (URI)
+
+ Anschließend kann das Namensraum-Präfix einem Namen vorangestellt werden: z.B. pers:title
+ Beachte: Wahl des Präfixes egal!
+
+© K. Schild, 2006 / M. Mochol 2007
+
+55
+
+Beispiel
+
+<course:course xmlns:course="http://www.w3.org/2004/course"> <course:title>Semantic Web</course:title> <course:lecturers> <pers:name xmlns:pers="http://www.w3.org/2004/pers"> <pers:title>Priv.-Doz. Dr. M.S.E</pers:title> <pers:first>Steffen</pers:first> <pers:last>Staab</pers:last> </pers:name> </course:lecturers> <course:date>12/11/2004</course:date> <course:abstract>...</course:abstract>
+</course:course>
+
+© K. Schild, 2006 / M. Mochol 2007
+
+56
+
+Standard-Namensraum
+ xmlns="URI" statt xmlns:prefix="URI"  Namensraum-Präfix kann weggelassen werden.
+ Standard-Namensraum gilt für das Element, wo er definiert ist.
+ Kind-Elemente erben Standard-Namensraum von ihrem Eltern-Element.
+ Ausnahme: Standard-Namensraum wird überschrieben  Beachte: Standardnamensräume gelten nicht für
+Attribute
+
+© K. Schild, 2006 / M. Mochol 2007
+
+57
+
+Beispiel
+
+<course:course xmlns:course="http://www.w3.org/2004/course"> <course:title>Semantic Web</course:title> <course:lecturers> <pers:name xmlns:pers="http://www.w3.org/2004/pers"> <pers:title>Priv.-Doz. Dr. M.S.E</pers:title> <pers:first>Steffen</pers:first> <pers:last>Staab</pers:last> </pers:name> </course:lecturers> <course:date>12/11/2004</course:date> <course:abstract>...</course:abstract>
+</course:course>
+
+© K. Schild, 2006 / M. Mochol 2007
+
+58
+
+Beispiel
+
+<course xmlns="http://www.w3.org/2004/course"> <title>Semantic Web</title> <lecturers> <pers:name xmlns:pers="http://www.w3.org/2004/pers"> <pers:title>Priv.-Doz. Dr. M.S.E</pers:title> <pers:first>Steffen</pers:first> <pers:last>Staab</pers:last> </pers:name> </lecturers> <date>12/11/2004</date> <abstract>...</abstract>
+</course>
+
+© K. Schild, 2006 / M. Mochol 2007
+
+59
+
+Beispiel
+
+<course xmlns="http://www.w3.org/2004/course"> <title>Semantic Web</title> <lecturers> <name xmlns:pers="http://www.w3.org/2004/pers"> <title>Priv.-Doz. Dr. M.S.E</title> <first>Steffen</first> <last>Staab</last> </name> </lecturers> <date>12/11/2004</date> <abstract>...</abstract>
+</course>
+
+© K. Schild, 2006 / M. Mochol 2007
+
+60
+
+Standard-Namensräume: Gültigkeit
+<course xmlns="http://www.w3.org/2004/course"> <title>Semantic Web</title> <lecturers> <name xmlns="http://www.w3.org/2004/pers"> <title>Priv.-Doz. Dr. M.S.E</title> <first>Steffen</first> <last>Staab</last> </name> </lecturers> <date>12/11/2004</date> <abstract>...</abstract>
+</course>
+
+© K. Schild, 2006 / M. Mochol 2007
+
+61
+
+Exkurs: Uniform Resource Identifier
+ eindeutige Bezeichner für Ressourcen im WWW  URI kann den physischen Aufenthaltsort einer Resource
+beschreiben: http://www.w3.org/1999/xhtml
+ Solche URIs werden auch Uniform Resource Locators (URLs) genannt.
+
+© K. Schild, 2006 / M. Mochol 2007
+
+62
+
+URIs als Namensraum-Bezeichner
+ Beispiel: http://www.w3.org/1999/xhtml bezeichnet den Namensraum für XHTML
+
+© K. Schild, 2006 / M. Mochol 2007
+
+63
+
+URIs als Namensraum-Bezeichner
+ URI kann (muss aber nicht) Beschreibung des Namensraumes enthalten: z.B. XML-Schema oder Spezifikationen
+ URI muss nicht einmal existieren!  Allerdings ist nur bei existierenden URIs Eindeutigkeit
+sichergestellt.
+
+© K. Schild, 2006 / M. Mochol 2007
+
+64
+
+Beispiel
+
+<Book xmlns="http://www.books-ns.org"> …
+</Book>
+
+ http://www.book-ns.org existiert (noch) nicht  keine Fehlermeldung, keine Warnung von XML-Parser
+oder XML–Editor  dennoch Eindeutigkeit nicht sichergestellt:
+jemand anderes kann gleiche URL für anderen Namensraum verwenden Öneue Namensräume nur mit URIs bezeichnen, die man selbst besitzt
+
+© K. Schild, 2006 / M. Mochol 2007
+
+65
+
+Qualified vs. Unqualified
+ Element- oder Attribut-Name heißt namensraumeingeschränkt (qualified), wenn er einem Namensraum zugeordnet ist.
+ Einschränkung vom Element-Namensraum: 1. Standard-Namensraum festlegen 2. Namensraum-Präfix voranstellen
+ Einschränkung vom Attribut-Namensraum: 1. Namensraum-Präfix voranstellen
+
+© K. Schild, 2006 / M. Mochol 2007
+
+66
+
+Was bedeutet <p>…</p>?
+
+HTML:  Bedeutung festgelegt (p = Absatz)
+XML:  Bedeutung offen  kann aber mit Namensraum festlegt werden  Beispiel: p stammt aus dem Namensraum für XHTML.
+
+xhtml Abkürzung für Namensraum
+
+<xht<mpl:pxmxmlnlsn:sx:xhhtmtml=l=""hht<tttpp:>//…wwww<w/wp..>ww33.o.orgrg/1/919999/9x/hxthmtlm">l"…><…/x<h/tpm>l:p>
+
+Namensraum: u.a. p = Absatz
+
+© K. Schild, 2006 / M. Mochol 2007
+
+67
+
+Und das war es schon?
+ Ja!  Syntax wohlgeformter XML-Dokumente (fast) vollständig
+vorgestellt
+ XML-Syntax also sehr einfach  gleichzeitig ist XML beliebig erweiterbar
+ Und das ist genau die Stärke von XML: einfach und flexibel!
+
+© K. Schild, 2006 / M. Mochol 2007
+
+68
+
+Wie geht es weiter?
+; XML-Syntax ; Namensräume  Definition von XML-Sprachen mit DTDs und XML-
+Schema
+ 1. Übungsblatt
+
+© K. Schild, 2006 / M. Mochol 2007
+
+69
+

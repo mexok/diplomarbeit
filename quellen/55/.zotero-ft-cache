@@ -1,0 +1,152 @@
+
+Homepage
+We Talk IT
+Follow
+Sign in Get started
+
+    Home
+    Experience
+    Latest Tech
+    All stories
+    How to contribute?
+
+Go to the profile of Blagoja Evkoski
+Blagoja Evkoski Blocked Unblock Follow Following
+Technical Coordinator and Sr. Software Engineer at Netcetera
+Jun 12, 2017
+React Native: What it is and how it works
+
+The trend of using React Native for developing iOS and Android apps is growing. But what exactly is React Native and how does it work under the hood? To understand this, we must first know a bit about React.
+What is React?
+
+React is a JavaScript library for building user interfaces. A key concept in React is that of a component. A component is a particular piece of the user interface, such as this Facebook input field.
+An example of a UI component
+
+To display this component using React, our code should look something like this:
+
+ render() {
+   return <WriteComment />;
+ }
+
+Components in React are composable and reusable. A component can consist of other components and of primitives. In the case of a web component, examples of a primitive would be HTML elements such as div and span .
+
+ render() {
+   return (
+     <div>
+       <ProfilePicture />
+       <CommentInput />
+     </div>
+   );
+ }
+
+React is smart. It detects which components need to be re-rendered based on the changes in the data, and which not. This makes it fast and powerful, and that’s why it’s a popular choice for development of web applications.
+
+But React is not bound to the document object model (DOM) of the browser. With React, we can also build other types of user interfaces, such as mobile apps.
+What is React Native?
+
+React Native offers a way to build mobile applications using React and JavaScript.
+
+Instead of the span primitive, which we have on the web, React Native offers the Text primitive. If we are building an iOS app, React Native will make sure that the Text results with a native iOS UIView containing the text. If we are building an Android application, it will result with a native TextView .
+
+This is very important. Even though we are building our app using JavaScript, we do not get a web app embedded inside the shell of a mobile one. The result is a real native iOS or Android app.
+How does it work?
+
+There are two important threads running in each React Native application.
+
+One of them is the main thread, which also runs in each standard native app. It handles displaying the elements of the user interface and processes user gestures.
+
+The other one is specific to React Native. Its task is to execute the JavaScript code in a separate JavaScript engine. The JavaScript deals with the business logic of the application. It also defines the structure and the functionalities of the user interface.
+
+These two threads never communicate directly and never block each other.
+How do threads interact?
+
+Between these two threads is the so-called bridge, which is the core of React Native. The bridge has three important characteristics.
+
+Asynchronous. It enables asynchronous communication between the threads. This ensures that they never block each other.
+
+Batched. It transfers messages from one thread to the other in an optimised way.
+
+Serializable. The two threads never share or operate with the same data. Instead, they exchange serialized messages.
+The React Native architecture
+How does the development process look like?
+
+Now we understand the basics of React Native’s architecture. It would be interesting to check out how the development process looks like.
+
+We first open our project using our favorite editor. Let’s say that we have a component named Greeting , which only displays some text that says “Hi!”
+A very simple React Native component
+
+To start the iOS application, we need to execute react-native run-ios from the command line. This will start the app on a simulator or on a real device, if we have one connected to the computer. The result will look like this:
+Our simple iOS app
+
+If we change our mind and want our app to say “Hello!” instead of “Hi!”, we can open our editor and change the text. Then, in the simulator, we can press Command + R , like we do when reloading a web page. The change will immediately be visible! Instead of waiting on a build process which can take a minute or so, we have instant feedback. This makes the development quite fast.
+Instant reload, like working on a web app
+
+To start our Android app, we need to execute react-native run-android . For it, we can completely reuse our Greeting component. This is because the component does not contain any platform-specific code. React Native will make sure that it provides an Android TextView instead of an iOS UIView . This potential for code reuse is one of the strongest sides of this technology.
+Our Android app, which utilises the same “Greeting” component
+
+But for me, the most interesting feature is the way we can debug our application. From the device’s developer menu, we can choose to “Debug JS Remotely.” This will launch Google Chrome and run our JavaScript in the browser instead of running it on the device. React Native will set up a web socket connection between the device and the browser. That will enable us to use Chrome’s powerful developer console. With it, debugging is easy, especially if you are coming from a web development background.
+Debugging a React Native app with Chrome’s developer console
+
+That’s that! If you want to have a closer look at React Native, I would recommend the following presentations:
+
+    Learn Once, Write Anywhere: Intro to React Native — Aaron Greenwald
+    React Native: Under the Hood — Alexander Kotliarskyi
+    React Native Architecture Overview — Tadeu Zagallo
+    Under The Hood of React Native — Martin Konicek
+    A Deep Dive into React Native — Christopher Chedeau
+
+    React Native
+    React
+    JavaScript
+    Mobile App Development
+    Software Development
+
+1.1K
+3
+Blocked Unblock Follow Following
+Go to the profile of Blagoja Evkoski
+Blagoja Evkoski
+
+Technical Coordinator and Sr. Software Engineer at Netcetera
+Follow
+We Talk IT
+We Talk IT
+
+A bunch of techies who educate each other by sharing ideas and experiences that make a difference in our cool nerdy lives.
+Responses
+Write a response…
+Applause from Blagoja Evkoski (author)
+Go to the profile of Vojtěch Novák
+Vojtěch Novák
+Aug 1, 2017
+
+If you read the source code you’ll see that Text on iOS does not use `UITextView` but UIView
+10
+Conversation with Blagoja Evkoski .
+Go to the profile of Rajat Gupta
+Rajat Gupta
+Feb 19
+
+React is not bound to the DOM of the browser. 
+Can you please explain this line . 
+I have this doubt that what is the use of “react ” in react-native apart from 
+React.createElement() ?
+5
+1 response
+Go to the profile of Blagoja Evkoski
+Blagoja Evkoski
+Feb 24
+
+“React is not bound to the document object model (DOM) of the browser” means that React is a standalone library for building user interfaces, regardless of their type (web, mobile, desktop etc.).
+
+When building a web app you need ReactDOM in order to render your components in the browser.
+Read more…
+1
+Show all responses
+
+    1.1K
+
+We Talk IT
+Never miss a story from We Talk IT , when you sign up for Medium. Learn more
+Never miss a story from We Talk IT
+Get updates Get updates

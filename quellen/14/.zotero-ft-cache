@@ -1,0 +1,345 @@
+
+
+    Home
+    Agile Training
+    About
+
+Agile Methodology Understanding Agile Methodology
+Recent Posts
+
+    The Pioneers of DevOps Software
+    Want To Be Agile? Stop Doing “Projects.”
+    Effort Estimation and Story Points Demystified
+    Scrum Reference Card now available in English and Spanish
+    Playing it SAFe, Can a Large Organization Become Agile Without Changing Anything?
+    Community Development – A coding community
+    Video – Introduction to Scrum
+    Agile and PPM – Q&A
+    ScrumMaster Checklist and Scrum Reference Card
+    Scrum Coaching for Agile Success
+
+The Pioneers of DevOps Software
+
+The software development industry has no shortage of “DevOps” tools that position themselves as the end-all solution for application lifecycle management. Everything from release management tools to automated testing software is being coined a “DevOps necessity for the forward looking enterprise.” With so many product categories competing for a slice of the pie, what constitutes a breakthrough DevOps product? This article sets out highlight pioneer products on the market, while bucketing them under the three ways of DevOps, as defined by Gene Kim in The Phoenix Project and The DevOps Handbook.
+
+The first way is concerned with performance and flow of the entire system. It involves creating efficient value streams within the business through synergy between development and operations. The ultimate goal is to create faster delivery through automation, earlier collaboration between operations and development, and building quality in through testing and quality control measures.
+First Way Pioneers:
+
+Docker
+Docker is a breakthrough container application that allows for deployment automation. It packages software with all code, tools, libraries, etc. that are needed to properly install on a server.
+
+Chef/Puppet
+Chef and Puppet are configuration management tools that aid in the configuration and maintenance of enterprise servers.
+
+Cucumber/Selenium
+
+Cucumber allows for custom automated tests built in a BDD style. Selenium is a record/playback tool for creating custom tests without learning a test scripting language.
+
+The second way is the completion of the DevOps loop through feedback from operations to development. The goal is to not only create, but shorten and amplify the feedback loop so that the process is swift and seamless. The feedback loop should inevitably lead to an increase in efficiency with the first way.
+Second Way Pioneers:
+
+Clarive
+Clarive is an application release automation platform that provides a combination of automated modeling, workflow management, and deployment. All of this is achieved with incredible visibility that helps manage and regulate the way that deployments and releases are performed.
+
+Jira
+Jira is an issue tracker that provides bug tracking, issue tracking, and general project management.
+
+Splunk
+Splunk is a searchable database of real-time big data. It was originally developed to provide executives outside of the IT department, actionable reporting.
+
+The third way is to foster a culture of experimentation and learning within your company. This is the stage that you must push the capabilities of your system to the max through rigorous testing and experimentation. A company must foster a culture that accepts failure, as long as a lesson can be learned. As Henry Ford put it, “The only real mistake is the one from which we learn nothing.”
+Third Way Pioneers:
+
+CollabNet DevOps Lifecycle Manager
+CollabNet DLM is a product that integrates with every industry-leading tool to create a rule based execution system between applications. It facilitates the cross platform integration, while providing a unified reporting dashboard on customizable KPI’s.
+
+Jenkins
+Jenkins is an open-source continuous integration software that allows for trigger based automation of testing and builds.
+
+Keep in mind that these tools, individual or combined, will not elevate your company to the status of DevOps elite. It takes a paradigm shift to properly adopt DevOps within your business operations. These tools are a means to enhancement, once you outgrow your SMB solutions. However, when considering the market and the software available within it, these tools lead the pack.
+
+Posted under Uncategorized
+
+This post was written by admin on January 18, 2017
+
+Want To Be Agile? Stop Doing “Projects.”
+
+On Feb 9, 2013, at 9:57 PM, someone wrote:
+
+    Now….did you agree that there is ‘some stuff’ that needs to be done before sprinting?
+
+No, I didn’t agree with that. Give me a product vision, a small cross-functional self-organizing team , a team room, some Post It notes, and a MacBook and we’ll get you some kind of working, tested product in two weeks . Actually we can borrow the Post Its and MacBook from somewhere. The other stuff (a fully-refined Product Backlog , complete environment set up, release plan , budget projections, market analysis, etc.) is nice to have, but not essential to start learning through empirical feedback. This is true even for “big” products — we’ll learn more about how many teams we might eventually need by starting with one team. Start small does not equal end small , though it’s also possible we’ll learn our one good team in one room gets more done than 20 mediocre geographically dispersed teams would have anyway.
+
+This is unconventional, probably offends PMBOK* enthusiasts. The organizations that learn it sooner will be the quicker ones to discover their users’ real needs.
+
+The organization may say it needs all kinds of project initiation activities, to accommodate people’s comfort, just as my daughter may need me to check under her bed for monsters.** So as a practical matter we may need to appease those people. This doesn’t mean there really were monsters under the bed.
+
+“Project” and “project execution” are 20th Century concepts, perhaps useful for building skyscrapers and stuff with huge startup costs and exponential cost of change curves. But an impediment when it comes to Agile product development.
+
+ 
+
+* The “Guide to the Project Manager’s Body of Knowledge” is a compendium of obsolete management techniques, updated every year by the Project Management Institute with more obsolete techniques.  Agilists know there are really only two misconceptions in “Project Management”: projects , and management .
+
+** Hypothetical analogy. She doesn’t actually have me do this.
+
+Posted under Agile Methodology , Uncategorized
+
+This post was written by admin on February 10, 2013
+
+Effort Estimation and Story Points Demystified
+
+I recently worked with some teams in India that were obsessed with effort estimation.  It turned out their real problem wasn’t estimation, it was keeping the product in a properly tested, shippable state all the time — the basic requirement of Scrum.  If the product is always shippable, and the user stories are always small, and the Product Owner is always prioritizing, we can always ship a product with the important stuff in it.  If we get some estimates wrong, it just means we’ll omit the less important features.  This isn’t a perfect situation, but it’s much better than what most companies do: ship late, or ship untested.
+
+Agile teams generally use relative estimation approaches such as story points, sometimes a Fibonacci scale, sometimes an exponential scale.  To learn how, watch this example of a Backlog Grooming Meeting .  Note that the Scrum team does not  pay much attention to the points during the example Sprint Planning Meeting .  They are mostly to help the Product Owner make forecasts.
+
+ 
+
+Posted under Agile Methodology , Scrum , Uncategorized
+
+This post was written by admin on January 9, 2013
+
+Scrum Reference Card now available in English and Spanish
+
+The English version of CollabNet’s famous Scrum Reference Card has been downloaded over 20,000 times.  A Spanish Scrum Reference Card is now also available, thanks to Martin Alaimo.   Reference Card de Scrum ahora también en español!
+
+
+Spanish Scrum Reference Card Flag of Spain
+
+Posted under Uncategorized
+
+This post was written by admin on January 8, 2013
+
+Playing it SAFe, Can a Large Organization Become Agile Without Changing Anything?
+We’ve noticed someone selling a prescriptive approach to large scale Agile that actually appears to be 80% waterfall.  An 80/20 waterfall/agile hybrid approach may be a positive step, but we’re concerned that this scaled agile framework confuses people about what a truly Agile approach to large scale development would be.
+Let’s examine some principles from the Agile Manifesto :
+
+    Business people and developers must work together daily throughout the project.
+    Simplicity–the art of maximizing the amount of work not done–is essential.
+    The best architectures, requirements, and designs emerge from self-organizing teams.
+
+On the other hand, the easy, safe prescription for scaling seems to deliberately institutionalize some bad ideas we usually call impediments :
+
+    A three layer stack with proxy Product Owners in the bottom layer, enmeshed in coding teams.  Somewhere above the pseudo-Product Owners, other silos contain the stuff we usually consider Product Owner work: vision, product management, release management, portfolio management.  In our experience it’s better for self-organizing teams to work directly with the *real* decision makers responsible for the vision as it emerges.  The Scrum Product Owner was never supposed to be an artificially elevated middle manager .  According to Kent Beck, the first known XP project failed because the “Goal Donor” was not the “Gold Owner.” We want regular face to face contact between business decision makers and development teams so all learn from each other.
+    Teams contain “Developers & Testers” but UX, architecture, integration (by the “System Team”), and “release train engineering” occur elsewhere.  In Scrum, these are team responsibilities, so we want truly cross-functional teams, usually with business requirements experts, UI/UX designers, etc. right on the teams.  Scrum encourages a rigorous definition of done.  Teams will be more Agile if they learn to integrate their work with other teams. This will be difficult at scale, but coordination roles only make this worse.
+    Somewhere up in the whipped cream layer of this cake we find czars such as the “Enterprise Architect” working on “Architectural Epics” guaranteed to lead to architectural bloat.  I assume this was created to appease senior technical guys who have grown rusty at everything but PowerPoint.  One place I worked with found their (waterfall era) Architecture Center Of Excellence ivory tower to be such a huge impediment they disbanded it and put the architects right on Scrum development teams, right in the team rooms.  An assigned “architect” role is utterly incompatible with the Agile principle “The best architectures, requirements, and designs emerge from self-organizing teams.”  Scrum teams are responsible for the design of the software they build.  If we must use multiple teams on one product/portfolio and we believe in team self organization, ScrumMasters must create environments that encourage teams to coordinate with each other through communities of practice, not implementation czars.
+
+The 20% of this that’s Agile is the stuff that’s relatively easy to change in an organization: putting testers on the teams (except not integration testers evidently), working in iterations, acknowledging that architecture will evolve, and co-opting (occasionally abusing) Agile jargon.  Maybe a couple steps forward for some orgs, but far from ideal.  I think it will appeal to companies that are concerned with keeping cozy spots for everyone, avoiding the uncomfortable ambiguity and uncertainty where real breakthroughs occur.
+
+Posted under Agile Methodology , Scrum , Uncategorized
+
+This post was written by admin on January 2, 2013
+
+Community Development – A coding community
+
+I work mostly with software teams in large organizations. One things I’ve noticed is that the vast majority (all?) tend to work in a very siloed manner. Whether by design or default, the good news is that this serves to insulate each of the teams from unwanted changes to the systems and infrastructure. But it also cause issues, because it is highly inefficient. Not only are the administrative overheads impacted, IP is not shared and expertise is not leveraged. Centralizing and consolidating IT software assets is the foundation upon which organizations can implement a robust coding community that promotes collaboration and sharing across enterprise teams.
+
+A coding community relies upon the implementation of a community architecture to provide the facilities for data sharing, structured data, and enabling communities to work together in the development and delivery of software applications. Key aspects of the Community include the following:
+
+• The Community must include social forums for ad-hoc collaboration between distributed team members. Such forums might include wiki-based knowledgebase containing a central and searchable repository of comments, code snippets, libraries and other valuable assets
+• Team members from any part of the organization can benefit from enhanced visibility and search across the enterprise. Subject to the security constraints of the specific business, the more visibility given to developers, the more access to those valuable IT assets is provided, the more productive those developers can be. Sharing in a safe and controlled environment is a huge boost to productivity.
+• Just like any other part of an enterprises’ IT environment, comprehensive governance is a necessity. The community architecture that is put in place to foster re-use must also reflect the governance and security mandates of the individual enterprise.
+• To the degree possible, it is often useful to enhance third-party collaboration in the coding community. This extends re-use and cooperation beyond the firewall.
+
+Done well, a development community can help a disparate, fractured and distributed staff in the development organization find common architectural foundations, share best practices, communicate more effectively. Outside of the development organization, a Community Architecture can break down the barriers and bridge the gaps between non-technical business people and the developer community.
+
+Here’s an interesting White Paper on Social Coding .
+
+Posted under Uncategorized
+
+This post was written by admin on January 3, 2012
+
+Video – Introduction to Scrum
+
+A colleague of mine, Michael James, just posted his Introduction to Scrum video on YouTube I think is the right length and depth for an overview – it’s not so short as to be trite (or worse, incorrect), but it’s not an exhaustive examination of Scrum either. This video is good prep for people who are planning to enter a CSM class and don’t want to go in cold. It is also good for stakeholders around the company who want an understanding of Scrum so that they can work better with their development teams.
+
+I’d be very interested in hearing your views of this video.
+
+The complete series is also available , providing most of the information you need to pass the Certified Scrum Master or Professional Scrum Master exams:
+
+    Introduction to Scrum
+    Backlog Refinement (Grooming) Meeting
+    Sprint Planning Meeting
+    Daily Scrum (standup) Meeting
+    Sprint Review Meeting
+    Sprint Retrospective Meeting
+
+Here’s a lower-quality version of the first one:
+
+ 
+
+Posted under Scrum , Scrum Coaching , Scrum training
+
+This post was written by admin on December 20, 2011
+
+Tags: agile , Agile Development Methodologies , Scrum
+Agile and PPM – Q&A
+
+On October 27th, I co-presented the webinar, “A Marriage Made in Heaven: Agile and Project Portfolio Management” , with Russ King, Vice President, Product Development, Results Positive, Inc . and Caleb Brown, Systems Engineer at CollabNet . We explored the benefits of marrying Agile Project Management and PPM and we did a live demo showing this using HP’s PPM solution and CollabNet’s ScrumWorks Pro to demonstrate the powerful capabilities of managing a resource constrained project portfolio.
+
+Judging by the number of questions, the audience was clearly heavily engaged. We had a 15 minute Q&A and did not come close to answering all of the questions, so I’ve listed most of them here and provided a response. I also encourage you to try ScrumWorks Pro for free.
+
+As promised, here’s the follow up to the live audience questions.
+
+Q: How feasible is Agile on Projects & Programs?
+A: Agile is typically thought of in the context of individual projects. Companies sometimes fail to scale that paradigm to a program level, where the program is a superset of multiple projects, each running its own lifecycle and release plan. The trick is to weave those separate lines of development (projects) into a coherent and seamless deliverable (program). The complexity comes in gathering meaningful metrics and planning releases that thread the elements together. This is exceedingly difficult to do manually. CollabNet’s ScrumWorks Pro is a tool that can make this manageable. It supports the planning of complex releases that weave in multiple development threads.
+
+Q: Will this process will be feasible for maintenance related projects (Incident handling, less than 8 hours development works, etc.,)?
+A: From the PPM perspective, an individual defect is not in and of itself a project and as such, would not be tracked. What might be tracked is a larger group of maintenance items in the form of an Epic. From an Agile perspective, a bug report or defect is just another piece of deliverable business value, like a User Story or any other Product Backlog Item. From a bug report, the product owner and team would create a Product Backlog Item (PBI), along with success criteria (definition of done). It is prioritized against all of the other Product Backlog Item by the product owner. Again, multiple bugs/defects are often grouped in an Epic.
+
+Q: It seems the PPM is geared toward a waterfall process. It appears there is only visibility into the Development phase, but with agile, you could potentially address all phases within a single sprint. Is that just because of the way this implementation was set up or is it there isn’t a true marriage of the agile within PPM?
+A: PPM in this scenario is focused on evaluating the ROI of different projects and deciding where to make investments. Agile is focused on execution of the projects that are chosen. That said, the scenario we propose makes the entire organization more Agile, in that the feedback loop is instantaneous. This allows those that are making the investment decisions to adapt and make course corrections that are indicated by that feedback loop. The integration gives all team members the ability to work in a more Agile fashion, and gives Stakeholders and Project managers the ability to benefit from the faster feedback and data generated by the team working this way.
+
+Q: Can the tasks in Scrum WorksPro be connected to tasks, timelines in Source forge?
+A: Not with Sourceforge. However this is possible with Collabnet Teamforge, the current commercial version of Sourceforge.
+
+Q: Can you clarify what part of Agile PPM can be done in scrum works pro without need for HP PPM?
+A: ScrumWorks Pro is focused on project execution and project management. As such ScrumWorks does a number of things not accomplished in HP PPM. These include PBI tracking and prioritization, Task management sprint planning, release planning, team velocity, forecasting, and many other functions related to the management of an Agile project.
+
+Q: So are you proposing (in the demo) to combine a phase/waterfall planning and design phase, but then execute in an agile framework?
+A: Combining HP PPM and ScrumWorks Pro adds to the agility of the entire organization. Feedback loops between the development team and the PMO are enhanced allowing the PMO to make course corrections required. I would not say that as a result the entire enterprise has become agile – only that they’ve become more agile. Generally, we do not see many organizations that practice a pure version of ANY methodology –be it Agile or otherwise. The reality is that organizations have a mix of methodologies, like Scrum, Kanban, Waterfall, hybrids, etc. Different teams in large organizations will often build software differently, so the challenge is to roll up the data from those disparate teams. Despite their differences, there are a number of common metrics you can track regardless of project type. These include actual cost versus budgeted cost, scope change, personnel/resource change, delivery dates, and others. Tools like ScrumWorks and HP PPM do a good job in tracking these kinds of numbers.
+
+Q: Continuing from the first question, from a portfolio perspective, having “”open-ended”” project budgets within the Agile/SDLC process is not in the best interest of my customer. How does budget planning and Agile development work together while still having some control over costs?
+A: Project prioritization and the associated budgeting/funding are is under the purview of the PPM tools. The agile project management tool tracks the amount of time individuals spend on the project. The integration between the HP PPM tool and the Agile Project Management tool, allows you to easily compare budgets against actuals.
+
+Q: In agile, what are the differences between being adaptive to late changes in requirements within a sprint and scope change?
+A: Scope change refers to any added or subtracted scope, typically measured in some form of relative effort unit like Story Points. As such, scope may be added as a team discovers more about an existing requirement. In other words, if the team finds out that a requirement is more complex than was originally envisioned, they may re-estimate the number of story points and this might add scope to a sprint. The opposite could also be true. Whether this occurs because of a discovery inside a sprint or outside of it doesn’t change the nature of how it is tracked or reported upon.
+
+Q: When a committed backlog item could not be completed in a sprint, naturally it holds the top most priority in the following sprint. How does ScrumWorks helps in tracking this item from the beginning to end?
+A: An unfinished PBI may or may not be a high enough priority in a future sprint. The determination is made by the product owners. In any event, any activity against that PBI is tracked. Tasks completed that relate to that PBI are tracked, as are those that were uncompleted.
+
+Q: What certification do CollabNet-trained scrum masters receive?
+A: Those who attend one of our Certified Scrum Master or Certified Product Owner training are eligible to take the exam deliver by the Scrum Alliance. It should be noted that CollabNet is one of the leaders in ScrumMaster product Owner training . We have more Certified Scrum Trainers on staff than any other vendor, and we’ve trained more than 12,000 ScrumMasters.  We also give away free online Scrum Master training to supplement the certified training .
+
+Q: If an organization wants to be able to report a metric of time to resolution for individual PBIs, what settings are available in this integration to include/exclude a PBI from the current active lists so that a countdown starts appropriately?
+A: Forecast reports in ScrumWorks can be filtered on any number of aspects, allowing a user to deliver estimates on individual tasks, Stories, Epics or Themes. By the way, you can try out ScrumWorks Pro either in a hosted environment or as a free download.
+
+Posted under Agile Coaching , Agile Methodology , PPM , Scrum , Scrum Coaching , Scrum training
+
+This post was written by admin on November 15, 2011
+
+Tags: agile , Agile Development Methodologies , Agile Development Methodology , agile engineering practices , Agile Methodologies , Agile Methodology , CollabNet , Lean , PPM , product owner attend daily scrums , Results POsitive
+ScrumMaster Checklist and Scrum Reference Card
+
+An adequate ScrumMaster can handle two or three teams at a time. If you’re content to limit your role to organizing meetings, enforcing timeboxes, and responding to the impediments people explicitly report, you can get by with part time attention to this role. The team will probably still exceed the baseline, pre-Scrum expectation at your organization, and probably nothing catastrophic will happen.
+
+But if you can envision a team that has a great time accomplishing things you didn’t previously consider possible, within a transformed organization — consider being a great ScrumMaster.
+
+Check out the ScrumMaster Checklist written by Michael James. It will help you gauge the progress of your agile teams and help you answer questions like:
+• How is my Product Owner doing?
+• How is my team doing?
+• How are our engineering practices doing?
+• How is the organization doing?
+
+To learn about Scrum from entertaining cartoon characters, see the Scrum Training Series .
+
+Michael has also written the Scrum Reference Card , a valuable reference document for anyone practicing Scrum or other Agile disciplines.
+
+Posted under Uncategorized
+
+This post was written by admin on November 19, 2010
+
+Scrum Coaching for Agile Success
+
+The Scrum Alliance has published a new whitepaper called “Coaching is Key for Scrum Success” which outlines some of the problems organizations face when implementing Scrum, how Scrum coaching can help, and what to look for in a Scrum coach. Most organizations run into issues when first implementing Scrum. Rather than let these problems continue to plague the Agile implementation and jeopardize the risk of success, many organizations find that working with a Scrum coach early in the process helps to avoid “Scrum-But” and reverting to old ways of doing things. Scrum coaches can also help to minimize learning curves, resolve organizational impediments and identify potential stumbling blocks early on. Scrum coaches help to streamline agile transformation by bringing an outside view of the organization to remove intrinsic bias and taking the time pressure off the product line managers by providing guidance and management of the Scrum implementation.
+
+What should you look for in a good Scrum coach? First, a good Scrum coach should be experienced, accredited and an active and respected member of the Scrum community. They should be knowledgeable about Scrum and organizational cultures and exhibit strong leadership, collaboration and communication skills. Lastly they should be inspirational and able to inspire teams to change and try ways of doing things. If you are interested in reading this whitepaper you can download it for free on the Scrum Alliance website: http://www.scrumalliance.org/resources/1879
+If you are interested in learning more about private coaching and what it can do for your organization, we invite you to talk to one of our Scrum trainers and coaches. Visit http://www.danube.com/company/bios
+
+Posted under Agile Coaching , Agile Methodology , Scrum , Scrum Coaching , Scrum training
+
+This post was written by admin on September 15, 2010
+
+« Previous Entries
+Search
+Agile Training Courses
+
+    CSM in Boston, MA on November 26-27, 2018 w/ Eric Tucker, CST ,
+    Burlington 01803 United States
+
+
+    CSM in Morristown, NJ on November 26-27, 2018 w/ Jimi Fosdick, CST ,
+    Morristown 07960 United States
+
+
+    CSM in Denver, CO on November 29-30, 2018 w/ Tamara Runyon, CST ,
+    Denver 80202 United States
+
+
+Scrum Training Series
+
+
+Introduction to Scrum
+
+Introduction to Scrum
+
+
+Backlog Refinement Meeting (Backlog Grooming)
+
+Backlog Refinement Meeting
+
+
+Sprint Planning Meeting
+
+Sprint Planning Meeting
+
+
+Daily Scrum Meeting
+
+Daily Scrum Meeting
+
+
+Sprint Review Meeting
+
+Sprint Review Meeting
+
+
+Sprint Retrospective Meeting
+
+Sprint Retrospective Meeting
+
+
+Popular Tags
+
+    agile Scrum Lean Agile Development Methodologies Agile Methodology agile manifesto agile engineering practices Re-reading the Agile Manifesto product owner attend daily scrums Agile Methodologies Agile Development Methodology Agile In Two Years scrum in practice What Is Agile Methodology The Auto Industry and Agile QA and Agile agile management agile impediments Demystifying Agile estimation scrum tool sprint planning agile transformation Organizational Resistance 3 Keys to Effective Product Ownership Do You Know Agile as Well as You Think You Do Enterprise Agile Is Agile the Only Path to Success? scrum refcard agile works 
+
+Archives
+
+    January 2017
+    February 2013
+    January 2013
+    January 2012
+    December 2011
+    November 2011
+    November 2010
+    September 2010
+    April 2010
+    March 2010
+    December 2009
+    November 2009
+    October 2009
+    September 2009
+    August 2009
+    July 2009
+    June 2009
+    May 2009
+    April 2009
+    March 2009
+    February 2009
+    January 2009
+    December 2008
+    November 2008
+    October 2008
+    August 2008
+
+Categories
+
+    Agile Coaching (2)
+    Agile Methodology (29)
+    PPM (1)
+    Scrum (17)
+    Scrum Coaching (3)
+    Scrum training (3)
+    Uncategorized (13)
+
+Bookmark
+| Agile Methodology | Agile Tools | Agile Training | Agile Conference |

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html class="js hasSidebar hasPageActions hasBreadcrumb conceptual noTouch" dir="ltr" data-authenticated="false" data-target="docs" lang="en-us"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="a6-1fffa6.css"><link rel="stylesheet" href="override.css"><meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Getting Started (WPF)">
+	<meta property="og:image" content="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/microsoft-header.png">
+
+
+		<meta name="ms.devlang" content="dotnet">
+<meta name="author" content="dotnet-bot">
+<meta name="ms.author" content="dotnetcontent">
+<meta name="breadcrumb_path" content="/dotnet/breadcrumb/toc.json">
+<meta name="apiPlatform" content="dotnet">
+<meta name="ms.topic" content="conceptual">
+<meta name="ms.technology" content="dotnet-wpf">
+<meta name="ms.prod" content="dotnet-framework">
+<meta name="uhfHeaderId" content="MSDocsHeader-DotNet">
+<meta name="ms.assetid" content="04f91da8-708c-46c7-8172-f1695ec847cd">
+<meta name="ms.date" content="01/26/2018">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="core-docs">
+<meta name="locale" content="en-us">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="VS">
+<meta name="depot_name" content="VS.core-docs">
+<meta name="updated_at" content="2018-08-11 02:14 AM">
+<meta name="gitcommit" content="https://github.com/dotnet/docs/blob/63f0f6ecebca6dfd96b3a1a73587d82b43c607bc/docs/framework/wpf/getting-started/index.md">
+<meta name="original_content_git_url" content="https://github.com/dotnet/docs/blob/live/docs/framework/wpf/getting-started/index.md">
+<meta name="document_id" content="c3fe6858-69e2-8a57-b910-0ba807c93301">
+<meta name="document_version_independent_id" content="9f2c2324-9c5f-6283-5046-5cf6ce013bd2">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="toc.json">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/en-us/VS.core-docs/{branchName}{pdfName}">
+<meta name="search.mshattr.devlang" content="csharp">
+<meta name="word_count" content="191">
+
+	<meta name="scope" content=".NET">
+<link href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/" rel="canonical">
+	<title>Getting Started (WPF) | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="f81e8b30.css">
+
+	<link rel="stylesheet" href="fbd113ac.css">
+
+
+	<script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+	var msDocs = {
+		data:{
+			azureHeaderLocale: 'en-us',
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasComments: true,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'dotnet/docs',
+			feedbackProductUrl: 'https://developercommunity.visualstudio.com/spaces/61/index.html',
+			contentGitUrl: 'https://github.com/dotnet/docs/blob/master/docs/framework/wpf/getting-started/index.md',
+			forceVersionPicker:false		},
+		functions:{},
+		settings:{
+			extendBreadcrumb: false,
+			enableUHFPPE: true
+		}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/6ee34c01.bluebird.min.js"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/d9fc435c.fetch.min.js"><\/script>');
+	}
+	</script>
+
+	<script src="jquery-3.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+	<script src="83a4c963.js"></script><style></style><script src="jsll-4.js" async="" defer="defer"></script>
+
+<script src="bf-d3d307" defer="defer"></script><style>
+			.c-uhfh input[type="search"],
+			.c-uhfh.c-sgl-stck .c-uhfh-actions .c-search input[type="search"] {
+				padding-left: 69px !important;
+			}</style><script async="" src="https://web.vortex.data.microsoft.com/collect/v1/t.js?ver=%272.1%27&amp;name=%27Ms.Webi.PageView%27&amp;time=%272018-11-21T21%3A31%3A18.044Z%27&amp;os=%27Windows%27&amp;appId=%27JS%3ADocs%27&amp;-ver=%271.0%27&amp;-impressionGuid=%27704875a9-f05c-482a-9722-6a952316f699%27&amp;-pageName=%27c3fe6858-69e2-8a57-b910-0ba807c93301%27&amp;-uri=%27https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fgetting-started%2F%27&amp;-market=%27en-us%27&amp;-pageType=%27conceptual%27&amp;-resHeight=1080&amp;-resWidth=1920&amp;-pageTags=%27%7B%22pgdevlng%22%3A%22dotnet%22%2C%22author%22%3A%22dotnet-bot%22%2C%22pgauth%22%3A%22dotnetcontent%22%2C%22pgtop%22%3A%22conceptual%22%2C%22technology%22%3A%22dotnet-wpf%22%2C%22product%22%3A%22dotnet-framework%22%2C%22asst%22%3A%2204f91da8-708c-46c7-8172-f1695ec847cd%22%2C%22date%22%3A%2201%2F26%2F2018%22%2C%22depotname%22%3A%22VS.core-docs%22%2C%22publishtime%22%3A%222018-08-11%2002%3A14%20AM%22%2C%22gitcommit%22%3A%22https%3A%2F%2Fgithub.com%2Fdotnet%2Fdocs%2Fblob%2F63f0f6ecebca6dfd96b3a1a73587d82b43c607bc%2Fdocs%2Fframework%2Fwpf%2Fgetting-started%2Findex.md%22%2C%22giturl%22%3A%22https%3A%2F%2Fgithub.com%2Fdotnet%2Fdocs%2Fblob%2Flive%2Fdocs%2Fframework%2Fwpf%2Fgetting-started%2Findex.md%22%2C%22document_version_independent_id%22%3A%229f2c2324-9c5f-6283-5046-5cf6ce013bd2%22%2C%22contentlocale%22%3A%22en-us%22%2C%22highContrast%22%3A%22false%22%2C%22metaTags%22%3A%7B%7D%7D%27&amp;-behavior=0&amp;*baseType=%27Ms.Content.PageView%27&amp;*cookieEnabled=true&amp;*isJs=true&amp;*title=%27Getting%20Started%20%28WPF%29%20%7C%20Microsoft%20Docs%27&amp;*isLoggedIn=false&amp;*flashInstalled=false&amp;ext-javascript-ver=%271.1%27&amp;ext-javascript-libVer=%274.2.11%27&amp;ext-javascript-domain=%27docs.microsoft.com%27&amp;ext-javascript-msfpc=%27GUID%3D3afe5698936fba4f87c33d6ba7fd1db8%26HASH%3D3afe%26LV%3D201706%26V%3D4%26LU%3D1496484743074%27&amp;ext-javascript-userConsent=false&amp;$mscomCookies=false"></script></head>
+
+<body dir="ltr" lang="en-us">
+<div class="header-holder">
+		<div id="headerAreaHolder" data-bi-name="header">    <div id="headerArea" class="uhf" data-m="{&quot;cN&quot;:&quot;headerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a1Body&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;Body&quot;}">
+                <div id="headerRegion" data-region-key="headerregion" data-m="{&quot;cN&quot;:&quot;headerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a1&quot;}">
+
+    <div id="headerUniversalHeader" data-m="{&quot;cN&quot;:&quot;headerUniversalHeader&quot;,&quot;cT&quot;:&quot;Module_coreui-universalheader&quot;,&quot;id&quot;:&quot;m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a1&quot;}" data-module-id="Category|headerRegion|coreui-region|headerUniversalHeader|coreui-universalheader">
+        
+
+
+
+
+
+		<a id="uhfSkipToMain" class="m-skip-to-main" href="#main" tabindex="1" style="z-index:3000002" data-m="{&quot;cN&quot;:&quot;Skip to content_nonnav&quot;,&quot;id&quot;:&quot;nn1m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;m1r1a1&quot;}">Skip to main content</a>
+
+
+<header role="banner" class="c-uhfh context-uhf c-sgl-stck c-category-header js" itemscope="itemscope" data-header-footprint="/MSDocs/MSDocsHeader-DotNet, fromService: True" data-ckrate="1" data-magict="true" itemtype="http://schema.org/Organization">
+	<div class="theme-light js-global-head f-closed  global-head-cont" data-m="{&quot;cN&quot;:&quot;Universal Header_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;m1r1a1&quot;}">
+		<div class="c-uhfh-gcontainer-st">
+			<button type="button" class="c-action-trigger c-glyph glyph-global-nav-button" aria-label="Header navigation menu" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Mobile menu button_nonnav&quot;,&quot;id&quot;:&quot;nn1c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2m1r1a1&quot;}" tabindex="2"></button>
+			<button type="button" class="c-action-trigger c-glyph glyph-arrow-htmllegacy" aria-label="Close search" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Close Search_nonnav&quot;,&quot;id&quot;:&quot;nn2c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2m1r1a1&quot;}" tabindex="6"></button>
+					<a id="uhfLogo" class="c-logo c-sgl-stk-uhfLogo" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft" data-m="{&quot;cN&quot;:&quot;GlobalNav_Logo_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2m1r1a1&quot;}" tabindex="6">
+						<img alt="" itemprop="logo" itemscope="itemscope" class="c-image" src="RE1Mu3b.png" role="presentation" aria-hidden="true">
+						<span role="presentation" aria-hidden="true">Microsoft</span>
+					</a>
+			<div class="f-mobile-title">
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-left" aria-label="See more menu options" data-m="{&quot;cN&quot;:&quot;Mobile back button_nonnav&quot;,&quot;id&quot;:&quot;nn4c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+				<span data-global-title="Microsoft home" class="js-mobile-title">.NET</span>
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-right" aria-label="See more menu options" data-m="{&quot;cN&quot;:&quot;Mobile forward button_nonnav&quot;,&quot;id&quot;:&quot;nn5c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2m1r1a1&quot;}" style="display: none;"></button>
+			</div>
+					<div class="c-show-pipe x-hidden-vp-mobile-st">
+						<a id="uhfCatLogo" class="c-logo c-cat-logo" href="https://docs.microsoft.com/dotnet" aria-label=".NET" itemprop="url" data-m="{&quot;cN&quot;:&quot;CatNav_.NET_nav&quot;,&quot;id&quot;:&quot;n6c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+								<span>.NET</span>
+						</a>
+					</div>
+				<div class="cat-logo-button-cont x-hidden">
+						<button type="button" id="uhfCatLogoButton" class="c-cat-logo-button x-hidden" aria-expanded="false" aria-label=".NET" data-m="{&quot;cN&quot;:&quot;.NET_nonnav&quot;,&quot;id&quot;:&quot;nn7c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2m1r1a1&quot;}" tabindex="3">
+							.NET
+						</button>
+				</div>
+
+
+
+			        <nav id="uhf-g-nav" aria-label="Contextual menu" class="c-uhfh-gnav" data-m="{&quot;cN&quot;:&quot;Category nav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2m1r1a1&quot;}" style="display: none;">
+            <ul class="js-paddle-items">
+                    <li class="single-link js-nav-menu x-hidden-none-mobile-vp">
+                        <a class="c-uhf-nav-link" href="https://docs.microsoft.com/dotnet" data-m="{&quot;cN&quot;:&quot;CatNav_Home_nav&quot;,&quot;id&quot;:&quot;n1c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}"> Home </a>
+                    </li>
+                                        <li class="single-link js-nav-menu">
+                            <a id="c-shellmenu_0" class="c-uhf-nav-link" href="https://docs.microsoft.com/dotnet/api/" data-m="{&quot;cN&quot;:&quot;CatNav_APIs_nav&quot;,&quot;id&quot;:&quot;n2c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">APIs</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id=".NET Core" class="c-uhf-nav-link" href="https://docs.microsoft.com/dotnet/articles/core" data-m="{&quot;cN&quot;:&quot;CatNav_.NET Core_nav&quot;,&quot;id&quot;:&quot;n3c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">.NET Core</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id=".NET Framework" class="c-uhf-nav-link" href="https://docs.microsoft.com/dotnet/articles/framework" data-m="{&quot;cN&quot;:&quot;CatNav_.NET Framework_nav&quot;,&quot;id&quot;:&quot;n4c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">.NET Framework</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id="ASP.NET" class="c-uhf-nav-link" href="https://docs.microsoft.com/aspnet" data-m="{&quot;cN&quot;:&quot;CatNav_ASP.NET_nav&quot;,&quot;id&quot;:&quot;n5c8c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">ASP.NET</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id="Xamarin" class="c-uhf-nav-link" href="https://developer.xamarin.com/guides/" data-m="{&quot;cN&quot;:&quot;CatNav_Xamarin_nav&quot;,&quot;id&quot;:&quot;n6c8c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Xamarin</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id="Azure" class="c-uhf-nav-link" href="https://docs.microsoft.com/azure" data-m="{&quot;cN&quot;:&quot;CatNav_Azure_nav&quot;,&quot;id&quot;:&quot;n7c8c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Azure</a>
+                        </li>
+
+
+                <li id="overflow-menu" class="overflow-menu x-hidden">
+                        <div class="c-uhf-menu js-nav-menu">
+        <button data-m="{&quot;pid&quot;:&quot;More&quot;,&quot;id&quot;:&quot;nn8c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" type="button" aria-label="More" aria-expanded="false" style="white-space:nowrap">More</button>
+        <ul id="overflow-menu-list" aria-hidden="true" class="overflow-menu-list">
+        </ul>
+    </div>
+
+                </li>
+                            </ul>
+            
+        </nav>
+
+
+			<div class="c-uhfh-actions" data-m="{&quot;cN&quot;:&quot;Header actions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+				<div class="wf-menu">        <nav id="uhf-c-nav" aria-label="All microsoft menu" data-m="{&quot;cN&quot;:&quot;GlobalNav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2m1r1a1&quot;}" style="display: none;">
+            <ul class="js-paddle-items">
+                <li>
+                    <div class="c-uhf-menu js-nav-menu">
+                        <button type="button" class="c-button-logo all-ms-nav" aria-label="All Microsoft expand to see list of Microsoft products and services" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_nonnav&quot;,&quot;id&quot;:&quot;nn1c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" style="white-space: nowrap"> <span>All Microsoft</span></button>
+                        <ul class="f-multi-column f-multi-column-6" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;More_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}">
+                                    <li class="c-w0-contr">
+            <ul class="c-w0">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Office_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_6" class="js-subm-uhf-nav-link" href="https://products.office.com/en-us/home" data-m="{&quot;cN&quot;:&quot;W0Nav_Office_nav&quot;,&quot;id&quot;:&quot;n1c1c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c2c1c9c2m1r1a1&quot;}">Office</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Windows_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_7" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/" data-m="{&quot;cN&quot;:&quot;W0Nav_Windows_nav&quot;,&quot;id&quot;:&quot;n1c2c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c2c1c9c2m1r1a1&quot;}">Windows</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Surface_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_8" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/surface" data-m="{&quot;cN&quot;:&quot;W0Nav_Surface_nav&quot;,&quot;id&quot;:&quot;n1c3c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c2c1c9c2m1r1a1&quot;}">Surface</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Xbox_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_9" class="js-subm-uhf-nav-link" href="https://www.xbox.com/" data-m="{&quot;cN&quot;:&quot;W0Nav_Xbox_nav&quot;,&quot;id&quot;:&quot;n1c4c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c2c1c9c2m1r1a1&quot;}">Xbox</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Deals_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_10" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/sale?icid=gm_nav_L0_salepage" data-m="{&quot;cN&quot;:&quot;W0Nav_Deals_nav&quot;,&quot;id&quot;:&quot;n1c5c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c2c1c9c2m1r1a1&quot;}">Deals</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Support_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="l1_support" class="js-subm-uhf-nav-link" href="https://support.microsoft.com/en-us" data-m="{&quot;cN&quot;:&quot;W0Nav_Support_nav&quot;,&quot;id&quot;:&quot;n1c6c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c2c1c9c2m1r1a1&quot;}">Support</a>
+            
+        </li>
+            </ul>
+        </li>
+
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">Software</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_WindowsApps_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_14" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/windows-10-apps" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_WindowsApps_nav&quot;,&quot;id&quot;:&quot;n1c2c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c7c2c1c9c2m1r1a1&quot;}">Windows apps</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneDrive_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_15" class="js-subm-uhf-nav-link" href="https://onedrive.live.com/about/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneDrive_nav&quot;,&quot;id&quot;:&quot;n1c3c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c7c2c1c9c2m1r1a1&quot;}">OneDrive</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Outlook_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_16" class="js-subm-uhf-nav-link" href="https://outlook.live.com/owa/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Outlook_nav&quot;,&quot;id&quot;:&quot;n1c4c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c7c2c1c9c2m1r1a1&quot;}">Outlook</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Skype_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_17" class="js-subm-uhf-nav-link" href="https://www.skype.com/en/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Skype_nav&quot;,&quot;id&quot;:&quot;n1c5c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c7c2c1c9c2m1r1a1&quot;}">Skype</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneNote_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_18" class="js-subm-uhf-nav-link" href="https://www.onenote.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneNote_nav&quot;,&quot;id&quot;:&quot;n1c6c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c7c2c1c9c2m1r1a1&quot;}">OneNote</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cN&quot;:&quot;PCsAndDevices_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" f-multi-parent="true" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_PCsAndDevices_nonnav&quot;,&quot;id&quot;:&quot;nn1c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">PCs &amp; Devices  </button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCsAndDevices_PCsAndTablets_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_20" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/devices" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCsAndDevices_PCsAndTablets_nav&quot;,&quot;id&quot;:&quot;n1c2c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c8c2c1c9c2m1r1a1&quot;}">PCs &amp; tablets</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCAndDevices_Accessories_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_21" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/accessories/en-us" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCAndDevices_Accessories_nav&quot;,&quot;id&quot;:&quot;n1c3c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c8c2c1c9c2m1r1a1&quot;}">Accessories</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">Entertainment</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_DevicesAndXbox_XboxAndGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_23" class="js-subm-uhf-nav-link" href="https://www.xbox.com/en-us/games/xbox-one?xr=shellnav" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_DevicesAndXbox_XboxAndGames_nav&quot;,&quot;id&quot;:&quot;n1c2c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c9c2c1c9c2m1r1a1&quot;}">Xbox games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Entertainment_PCGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_24" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/windows-10-games" data-m="{&quot;cN&quot;:&quot;GlobalNav_Entertainment_PCGames_nav&quot;,&quot;id&quot;:&quot;n1c3c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c9c2c1c9c2m1r1a1&quot;}">PC games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_WindowsDigitalGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_25" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/games/windows?icid=TopNavWindowsGames" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_WindowsDigitalGames_nav&quot;,&quot;id&quot;:&quot;n1c4c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c9c2c1c9c2m1r1a1&quot;}">Windows digital games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_MoviesAndTV_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_26" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/movies-and-tv?icid=TopNavMoviesAndTv" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_MoviesAndTV_nav&quot;,&quot;id&quot;:&quot;n1c5c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c9c2c1c9c2m1r1a1&quot;}">Movies &amp; TV</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_Books_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_27" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/books" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_Books_nav&quot;,&quot;id&quot;:&quot;n1c6c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c9c2c1c9c2m1r1a1&quot;}">Books</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:10,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">Business</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftAzure_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_29" class="js-subm-uhf-nav-link" href="https://azure.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftAzure_nav&quot;,&quot;id&quot;:&quot;n1c2c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c10c2c1c9c2m1r1a1&quot;}">Microsoft Azure</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftDynamics365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_30" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/dynamics365/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftDynamics365_nav&quot;,&quot;id&quot;:&quot;n1c3c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c10c2c1c9c2m1r1a1&quot;}">Microsoft Dynamics 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Business_Microsoft365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_31" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/microsoft-365/?omkt=en-US" data-m="{&quot;cN&quot;:&quot;GlobalNav_Business_Microsoft365_nav&quot;,&quot;id&quot;:&quot;n1c4c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c10c2c1c9c2m1r1a1&quot;}">Microsoft 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_Enterprise_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_32" class="js-subm-uhf-nav-link" href="https://enterprise.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_Enterprise_nav&quot;,&quot;id&quot;:&quot;n1c5c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c10c2c1c9c2m1r1a1&quot;}">Enterprise</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_DataPlatform_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_33" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/sql-server/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_DataPlatform_nav&quot;,&quot;id&quot;:&quot;n1c6c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c10c2c1c9c2m1r1a1&quot;}">Data platform</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_MicrosoftAdvertising_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_34" class="js-subm-uhf-nav-link" href="https://go.microsoft.com/fwlink/?linkid=2026638" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_MicrosoftAdvertising_nav&quot;,&quot;id&quot;:&quot;n1c7c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c10c2c1c9c2m1r1a1&quot;}">Microsoft Advertising</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:11,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">Developer &amp; IT  </button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_.Net_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_36" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/net/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_.Net_nav&quot;,&quot;id&quot;:&quot;n1c2c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c11c2c1c9c2m1r1a1&quot;}">.NET</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DevelopersAndIT_VisualStudio_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_37" class="js-subm-uhf-nav-link" href="https://visualstudio.microsoft.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DevelopersAndIT_VisualStudio_nav&quot;,&quot;id&quot;:&quot;n1c3c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c11c2c1c9c2m1r1a1&quot;}">Visual Studio</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_ProductsandServices_WindowsServer_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_38" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/cloud-platform/windows-server" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_ProductsandServices_WindowsServer_nav&quot;,&quot;id&quot;:&quot;n1c4c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c11c2c1c9c2m1r1a1&quot;}">Windows Server</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_WindowsDevCenter_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_39" class="js-subm-uhf-nav-link" href="https://developer.microsoft.com/en-us/windows" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_WindowsDevCenter_nav&quot;,&quot;id&quot;:&quot;n1c5c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c11c2c1c9c2m1r1a1&quot;}">Windows Dev Center</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_Docs.microsoft.com_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_40" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_Docs.microsoft.com_nav&quot;,&quot;id&quot;:&quot;n1c6c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c11c2c1c9c2m1r1a1&quot;}">Docs</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:12,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">Other</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Other_MicrosoftStore_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_42" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_Other_MicrosoftStore_nav&quot;,&quot;id&quot;:&quot;n1c2c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c12c2c1c9c2m1r1a1&quot;}">Microsoft Store</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Microsoft Rewards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_43" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/rewards" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Microsoft Rewards_nav&quot;,&quot;id&quot;:&quot;n1c3c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c12c2c1c9c2m1r1a1&quot;}">Microsoft Rewards </a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_SoftwareAndServices_FreeDownloadsAndSecurity_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_44" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/download/default.aspx" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_SoftwareAndServices_FreeDownloadsAndSecurity_nav&quot;,&quot;id&quot;:&quot;n1c4c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c12c2c1c9c2m1r1a1&quot;}">Free downloads &amp; security</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_ForStudentsAndEducators_Education_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_45" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/education?icid=CNavMSCOML0_Studentsandeducation" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_ForStudentsAndEducators_Education_nav&quot;,&quot;id&quot;:&quot;n1c5c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c12c2c1c9c2m1r1a1&quot;}">Education</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Store_Locations_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_46" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/locations/find-a-store?icid=TopNavStoreLocations" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Store_Locations_nav&quot;,&quot;id&quot;:&quot;n1c6c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c12c2c1c9c2m1r1a1&quot;}">Store locations</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Store_More_GiftCards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_47" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/gift-cards" data-m="{&quot;cN&quot;:&quot;GlobalNav_Store_More_GiftCards_nav&quot;,&quot;id&quot;:&quot;n1c7c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c12c2c1c9c2m1r1a1&quot;}">Gift cards</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+                                                            <li class="f-multi-column-info">
+                                    <a data-m="{&quot;cN&quot;:&quot;View Sitemap_nav&quot;,&quot;id&quot;:&quot;n13c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:13,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}" href="https://www.microsoft.com/en-us/sitemap.aspx" aria-label="View Sitemap" class="c-glyph">View all</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+</div>
+		<form class="c-search" autocomplete="off" id="searchForm" name="searchForm" role="search" action="https://docs.microsoft.com/en-us/search/index" method="GET" title="Search" data-seautosuggest="{&quot;queryParams&quot;:{&quot;market&quot;:&quot;en-us&quot;,&quot;clientId&quot;:&quot;7F27B536-CF6B-4C65-8638-A0F8CBDFCA65&quot;,&quot;sources&quot;:&quot;Microsoft-Terms,Iris-Products,DCatAll-Products&quot;,&quot;filter&quot;:&quot;+ClientType:StoreWeb&quot;,&quot;counts&quot;:&quot;5,1,5&quot;},&quot;familyNames&quot;:{&quot;Apps&quot;:&quot;App&quot;,&quot;Books&quot;:&quot;Book&quot;,&quot;Bundles&quot;:&quot;Bundle&quot;,&quot;Devices&quot;:&quot;Device&quot;,&quot;Fees&quot;:&quot;Fee&quot;,&quot;Games&quot;:&quot;Game&quot;,&quot;MusicAlbums&quot;:&quot;Album&quot;,&quot;MusicTracks&quot;:&quot;Song&quot;,&quot;MusicVideos&quot;:&quot;Video&quot;,&quot;MusicArtists&quot;:&quot;Artist&quot;,&quot;OperatingSystem&quot;:&quot;Operating System&quot;,&quot;Software&quot;:&quot;Software&quot;,&quot;Movies&quot;:&quot;Movie&quot;,&quot;TV&quot;:&quot;TV&quot;,&quot;CSV&quot;:&quot;Gift Card&quot;,&quot;VideoActor&quot;:&quot;Actor&quot;}}" data-seautosuggestapi="https://www.microsoft.com/services/api/v3/suggest" data-m="{&quot;cN&quot;:&quot;GlobalNav_Search_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" aria-expanded="false">
+			<input id="cli_shellHeaderSearchInput" aria-label="Search" aria-autocomplete="list" aria-controls="universal-header-search-auto-suggest-transparent" aria-owns="universal-header-search-auto-suggest-ul" name="search" placeholder="Search" data-m="{&quot;cN&quot;:&quot;SearchBox_nav&quot;,&quot;id&quot;:&quot;n1c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}" tabindex="4" type="search"><div class="x-screen-reader" aria-live="assertive"></div>
+			<button id="search" aria-label="Search" class="c-glyph" data-m="{&quot;cN&quot;:&quot;Search_nav&quot;,&quot;id&quot;:&quot;n2c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}" data-bi-dnt="true" data-bi-mto="true" aria-expanded="false" tabindex="5">
+				<span role="presentation">Search</span>
+			</button>
+			<div class="m-auto-suggest" id="universal-header-search-auto-suggest-transparent" role="group">
+				<ul class="c-menu" id="universal-header-search-auto-suggest-ul" aria-hidden="true" data-bi-dnt="true" data-bi-mto="true" data-js-auto-suggest-position="default" role="listbox" data-tel="jsll" data-m="{&quot;cN&quot;:&quot;search suggestions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}"></ul>
+			</div>
+			
+		<input name="scope" value=".NET" hidden=""><a class="search-scope" href="#" role="button" title="Search filter is &quot;.NET&quot;. Tap to remove." style=""><span class="search-scope-text">.NET</span> <span class="docon docon-navigate-close"></span></a></form>
+		<button data-m="{&quot;cN&quot;:&quot;cancel-search&quot;,&quot;pid&quot;:&quot;Cancel Search&quot;,&quot;id&quot;:&quot;nn4c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" id="cancel-search" class="cancel-search" aria-label="Cancel Search">
+			<span>Cancel</span>
+		</button>
+				
+			<div class="auth-control" aria-busy="true" aria-label="Loading..."></div></div>
+		</div>
+		
+		
+	</div>
+	
+</header>
+
+
+
+
+    </div>
+        </div>
+
+    </div>
+</div>
+	<div class="content-header uhf-container has-padding has-default-focus" data-bi-name="content-header">
+		<nav class="has-padding-none-mobile" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+		<ul class="breadcrumbs"><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://docs.microsoft.com/en-us/">Docs</a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://docs.microsoft.com/en-us/dotnet/index">.NET</a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://docs.microsoft.com/en-us/dotnet/framework/index">.NET Framework</a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="mobile-breadcrumb"><a itemprop="item" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/index">Windows Presentation Foundation</a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">Getting Started (WPF)</span></li></ul>
+		</nav>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse">
+				<span class="icon"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit focus mode</span>
+			</button>
+			
+		</div>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand">
+				<span class="icon"><span class="docon docon-menu"></span></span>
+				<span>Contents</span>
+			</button>
+		</div>
+		<div class="action-bar">
+			<ul class="action-list">
+						<li>
+							<a href="#feedback" class="button is-text is-size-7 is-icon-only-touch" data-bi-name="comments">
+								<span class="icon">
+									<span class="docon docon-comment-lines" aria-hidden="true"></span>
+								</span>
+								<span class="action-item-text">Feedback</span>
+							</a>
+						</li>
+							<li id="contenteditbtn">
+									<a href="https://github.com/dotnet/docs/blob/master/docs/framework/wpf/getting-started/index.md" class="button is-text is-icon-only-touch is-size-7" title="Edit This Document" data-bi-name="edit" data-original_content_git_url="https://github.com/dotnet/docs/blob/live/docs/framework/wpf/getting-started/index.md">
+									<span class="icon"> 
+										<span class="docon docon-edit-outline" aria-hidden="true"></span>
+									</span>
+									<span class="action-item-text">Edit</span>
+								</a>
+							</li>
+				<li>
+					<div class="sharing dropdown has-caret" auto-align="">
+						<a href="#" class="dropdown-trigger button is-text is-size-7 is-icon-only-touch" aria-haspopup="true" aria-controls="sharing-menu" aria-expanded="false" title="Share This Document" data-bi-name="share">
+							<span class="icon">
+								<span class="docon docon-sharing" aria-hidden="true"></span>
+							</span>
+							<span class="action-item-text">Share</span>
+						</a>
+						<div class="dropdown-menu" id="sharing-menu" role="menu">
+							<ul data-bi-name="share-links">
+								<li><a class="share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fgetting-started%2F%3FWT.mc_id%3Dtwitter&amp;text=Getting%20Started%20%28WPF%29%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fgetting-started%2F%3FWT.mc_id%3Dtwitter">
+									<span class="icon">
+										<span class="docon docon-brand-twitter" aria-hidden="true"></span>
+									</span>
+									<span>Twitter</span></a></li>
+								<li><a class="share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fgetting-started%2F%3FWT.mc_id%3Dlinkedin">
+									<span class="icon">
+										<span class="docon docon-brand-linkedin" aria-hidden="true"></span>
+									</span>
+									<span>LinkedIn</span></a></li>
+								<li><a class="share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fgetting-started%2F%3FWT.mc_id%3Dfacebook">
+									<span class="icon">
+										<span class="docon docon-brand-facebook" aria-hidden="true"></span>
+									</span>
+									<span>Facebook</span></a></li>
+								<li><a class="share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20Getting%20Started%20%28WPF%29%20%7C%20Microsoft%20Docs&amp;body=Getting%20Started%20%28WPF%29%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fgetting-started%2F%3FWT.mc_id%3Demail">
+									<span class="icon">
+										<span class="docon docon-mail-message-fill" aria-hidden="true"></span>
+									</span>
+									<span>Email</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button class="toggle-theme button is-text is-size-7 is-icon-only-touch" aria-label="toggle-theme" data-bi-name="select-theme">
+						<span class="icon">
+							<span class="docon docon-clear-night"></span>
+						</span>
+						<span class="action-item-text">Dark</span>
+					</button>
+				</li>
+				<li class="is-unstyled-action-list-item">
+					<a class="docs-sign-in not-authenticated button is-text has-text-primary is-size-7" href="#">Sign in</a>
+					<div class="dropdown has-caret authenticated" auto-align="">
+						<button class="dropdown-trigger button is-text is-size-7 is-icon-only-touch has-inner-focus" aria-label="Your Account" aria-haspopup="true" aria-controls="user-menu" aria-expanded="false">
+							<span class="image icon" aria-hidden="true">
+								<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+							</span>
+							<span class="is-truncated" data-profile-property="userName"></span>
+						</button>
+						<div class="dropdown-menu box" id="user-menu" role="menu">
+							<div class="media is-user-dir">
+								<div class="media-left">
+									<span class="image is-64x64" aria-hidden="true">
+										<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+									</span>
+								</div>
+								<div class="media-content">
+									<p class="title has-margin-top-small">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="userName"></span>
+									</p>
+									<p class="subtitle">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="upn"></span>
+									</p>
+								</div>
+							</div>
+							<ul class="is-unstyled has-margin-none">
+								<li><a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl">Profile</a></li>
+								<li><a class="docs-sign-out" href="#">Sign out</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="contents-button" aria-label="Contents" data-bi-name="contents-expand-">
+				<span class="docon docon-editor-list-bullet"></span><span>Contents</span>
+			</button>
+		</div>
+	</div>
+	<div id="disclaimer-holder" class="disclaimer-holder"></div>
+	</div>
+
+	<div class="mainContainer uhf-container  has-top-padding  has-default-focus" data-bi-name="body">
+		
+		<div class="columns ">
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns ">
+
+					<div id="page-actions" class="right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Page Actions">
+							<nav id="side-doc-outline" class="doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="On page navigation" style="top: 185px; bottom: 24px;">
+								<h3>In this article</h3>
+							<ol><li class="selected"><a href="#where-should-i-start">Where Should I Start?</a></li><li><a href="#see-also">See Also</a></li></ol></nav>
+					</div>
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+					
+					<main id="main" role="main" class="content" data-bi-name="content" dir="ltr" lang="en-us">
+
+
+
+						<h1 id="getting-started-wpf" sourcefile="docs/framework/wpf/getting-started/index.md" sourcestartlinenumber="10">Getting Started (WPF)</h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" dir="ltr" lang="en-us">
+							<li class="displayDate">
+								<span aria-hidden="true" class="docon docon-calendar"></span>
+								<time role="presentation" datetime="2018-01-26T00:00:00.000Z" data-article-date-source="ms.date">01/26/2018</time>
+							</li>
+								<li class="readingTime">
+									<span aria-hidden="true" class="docon docon-clock"></span>
+									2 minutes to read
+								</li>
+							<li class="contributors-holder">
+								<span class="contributors-text">Contributors</span>
+								<ul class="contributors" data-bi-name="contributors">
+											<li><a href="https://github.com/dotnet-bot" title="dotnet bot" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/dotnet-bot.png?size=32" alt="dotnet bot"></a></li>
+											<li><a href="https://github.com/mikeblome" title="Mike B" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/mikeblome.png?size=32" alt="Mike B"></a></li>
+											<li><a href="https://github.com/mairaw" title="Maira Wenzel" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/mairaw.png?size=32" alt="Maira Wenzel"></a></li>
+											<li><a href="https://github.com/pkulikov" title="pkulikov" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/pkulikov.png?size=32" alt="pkulikov"></a></li>
+											<li><a href="https://github.com/Mikejo5000" title="Mike Jones" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/Mikejo5000.png?size=32" alt="Mike Jones"></a></li>
+											<li><a href="https://github.com/dotnet/docs/blob/master/docs/framework/wpf/getting-started/index.md" title="all 9 contributors" data-bi-name="contributorshowall"><span aria-hidden="true">all</span></a></li>
+								</ul>
+							</li>
+
+						</ul>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="On page navigation">
+							<h3>In this article</h3>
+						<ol><li><a href="#where-should-i-start">Where Should I Start?</a></li><li><a href="#see-also">See Also</a></li></ol></nav>
+
+
+
+						<!-- <content> -->
+							
+<p>Windows Presentation Foundation (WPF) is a UI framework that creates 
+desktop client applications. The WPF development platform supports a 
+broad set of application development features, including an application 
+model, resources, controls, graphics, layout, data binding, documents, 
+and security. It is a subset of the .NET Framework, so if you have 
+previously built applications with the .NET Framework using ASP.NET or 
+Windows Forms, the programming experience should be familiar. WPF uses 
+the Extensible Application Markup Language (XAML) to provide a 
+declarative model for application programming. This section has topics 
+that introduce and help you get started with WPF.</p>
+<h2 id="where-should-i-start" class="heading-with-anchor">Where Should I Start?<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#where-should-i-start"></a></h2>
+<div class="table-scroll-wrapper"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I want to jump right in…</td>
+<td><a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application" data-linktype="relative-path">Walkthrough: My first WPF desktop application</a></td>
+</tr>
+<tr>
+<td>How do I design the application UI?</td>
+<td><a href="https://docs.microsoft.com/en-us/visualstudio/designers/designing-xaml-in-visual-studio" data-linktype="absolute-path">Designing XAML in Visual Studio</a></td>
+</tr>
+<tr>
+<td>New to .NET?</td>
+<td><a href="https://msdn.microsoft.com/library/zw4w595w%28v=vs.140%29.aspx" data-linktype="external">Overview of the .NET Framework</a><br><br> <a href="https://docs.microsoft.com/en-us/dotnet/standard/application-essentials" data-linktype="relative-path">.NET Framework Application Essentials</a><br><br> <a href="https://docs.microsoft.com/en-us/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic" data-linktype="absolute-path">Getting Started with Visual C# and Visual Basic</a></td>
+</tr>
+<tr>
+<td>Tell me more about WPF…</td>
+<td><a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/introduction-to-wpf-in-vs" data-linktype="relative-path">Introduction to WPF in Visual Studio</a><br><br> <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-overview-wpf" data-linktype="relative-path">XAML Overview (WPF)</a><br><br> <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/index" data-linktype="relative-path">Controls</a><br><br> <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/data-binding-overview" data-linktype="relative-path">Data Binding Overview</a></td>
+</tr>
+<tr>
+<td>Are you a Windows Forms developer?</td>
+<td><a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/windows-forms-controls-and-equivalent-wpf-controls" data-linktype="relative-path">Windows Forms Controls and Equivalent WPF Controls</a><br><br> <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-and-windows-forms-interoperation" data-linktype="relative-path">WPF and Windows Forms Interoperation</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="see-also" class="heading-with-anchor">See Also<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#see-also"></a></h2>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/class-library-wpf" data-linktype="relative-path">Class Library</a><br>
+<a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/app-development/index" data-linktype="relative-path">Application Development</a><br>
+<a href="https://www.microsoft.com/net" data-linktype="external">.NET Framework Developer Center</a></p>
+
+						<!-- </content> -->
+							
+						</main>
+
+						<!-- feedback section -->
+
+
+				
+<section class="feedback-section" data-bi-name="feedback-section">
+	<h2 id="feedback">Feedback</h2>
+
+	<div class="alert choose-feedback-type">
+		<p>
+We'd love to hear your thoughts. Choose the type you'd like to provide:		</p>
+
+		<div class="choose-feedback-buttons">
+			<a class="button feedback-type-product has-margin-bottom-small" href="https://developercommunity.visualstudio.com/spaces/61/index.html" data-bi-name="product-feedback">
+				<span>Product feedback</span>
+				<span class="icon docon docon-navigate-external" aria-hidden="true"></span>
+			</a>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-sign-in-button has-text-wrap" data-bi-name="feedback-sign-in">
+						<span class="icon docon docon-brand-github" aria-hidden="true"></span>
+						<span>
+							Sign in to give documentation feedback						</span>
+					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger has-text-wrap" aria-haspopup="true" aria-expanded="false" aria-controls="fbm0" aria-label="Expand documentation feedback menu" data-bi-name="documentation-feedback-menu">
+						<span class="icon docon docon-chevron-down-light" aria-hidden="true"></span>
+					</button>
+					<div class="dropdown-menu documentation-feedback-menu" id="fbm0" role="menu">
+						You may also leave feedback <a data-bi-name="create-issue-on-github" href="https://github.com/dotnet/docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20c3fe6858-69e2-8a57-b910-0ba807c93301%0A*%20Version%20Independent%20ID%3A%209f2c2324-9c5f-6283-5046-5cf6ce013bd2%0A*%20Content%3A%20%5BGetting%20Started%20%28WPF%29%5D%28https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fgetting-started%2F%29%0A*%20Content%20Source%3A%20%5Bdocs%2Fframework%2Fwpf%2Fgetting-started%2Findex.md%5D%28https%3A%2F%2Fgithub.com%2Fdotnet%2Fdocs%2Fblob%2Fmaster%2Fdocs%2Fframework%2Fwpf%2Fgetting-started%2Findex.md%29%0A*%20Product%3A%20**dotnet-framework**%0A*%20GitHub%20Login%3A%20%40dotnet-bot%0A*%20Microsoft%20Alias%3A%20**dotnetcontent**">directly on GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small" hidden="">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-form-toggle" aria-expanded="false" aria-controls="feedback-form" data-bi-name="documentation-feedback">
+Content feedback					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="fbm1" aria-label="Expand documentation feedback menu" data-bi-name="documentation-feedback-menu">
+						<span class="icon docon docon-chevron-down-light" aria-hidden="true"></span>
+					</button>
+					<div class="dropdown-menu documentation-feedback-menu" id="fbm1" role="menu">
+						You may also leave feedback <a data-bi-name="create-issue-on-github" href="https://github.com/dotnet/docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20c3fe6858-69e2-8a57-b910-0ba807c93301%0A*%20Version%20Independent%20ID%3A%209f2c2324-9c5f-6283-5046-5cf6ce013bd2%0A*%20Content%3A%20%5BGetting%20Started%20%28WPF%29%5D%28https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fgetting-started%2F%29%0A*%20Content%20Source%3A%20%5Bdocs%2Fframework%2Fwpf%2Fgetting-started%2Findex.md%5D%28https%3A%2F%2Fgithub.com%2Fdotnet%2Fdocs%2Fblob%2Fmaster%2Fdocs%2Fframework%2Fwpf%2Fgetting-started%2Findex.md%29%0A*%20Product%3A%20**dotnet-framework**%0A*%20GitHub%20Login%3A%20%40dotnet-bot%0A*%20Microsoft%20Alias%3A%20**dotnetcontent**">directly on GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+		</div>
+		<p class="has-margin-top-none"><small>Our new feedback system is built on GitHub Issues. Read about this change in <a href="https://docs.microsoft.com/teamblog/a-new-feedback-system-is-coming-to-docs">our blog post</a>.</small></p>
+	</div>
+
+	<form class="feedback-form" id="feedback-form" accept-charset="UTF-8" autocomplete="off" action="javascript:" hidden="">
+		<h3 class="feedback-form-heading current-user">
+			<img class="avatar" alt="Avatar" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9InRyYW5zcGFyZW50IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==" width="36" height="36">
+			<span class="username" aria-hidden="true"></span>
+			<span class="visually-hidden">Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.</span>
+		</h3>
+
+		<label>
+			<span class="visually-hidden">Issue Title</span>
+			<input class="input is-radiusless has-margin-bottom-small" name="title" placeholder="Issue Title" required="" pattern=".*\w.*" type="text">
+		</label>
+		<label>
+			<span class="visually-hidden">Leave a comment</span>
+			<textarea name="body" placeholder="Leave a comment" class="textarea is-radiusless" required=""></textarea>
+		</label>
+
+		<div class="action-container">
+			<button class="button is-primary" type="submit" name="submit">Submit feedback</button>
+		</div>
+	</form>
+
+	<div class="feedback-status alert is-loading" role="alert">
+		<p>Loading feedback...</p>
+	</div>
+
+	<div class="feedback-tab-group tabGroup" data-tab-group-independent="" data-bi-name="tab-group" hidden="">
+		<ul role="tablist">
+			<li role="presentation">
+				<a href="#tabpanel-issues-open" role="tab" aria-controls="tabpanel-issues-open" data-tab="issues-open" aria-label="Open Issues" data-bi-name="tab" aria-selected="true" tabindex="0"></a>
+			</li>
+			<li role="presentation">
+				<a href="#tabpanel-issues-closed" role="tab" aria-controls="tabpanel-issues-closed" data-tab="issues-closed" aria-label="Closed Issues" data-bi-name="tab" aria-selected="false" tabindex="-1"></a>
+			</li>
+		</ul>
+		<section id="tabpanel-issues-open" role="tabpanel" data-tab="issues-open">
+			<div class="no-issues-placeholder">There are no open issues</div>
+			<ul class="github-issues-list" aria-label="Open Issues"></ul>
+		</section>
+		<section id="tabpanel-issues-closed" role="tabpanel" data-tab="issues-closed" aria-hidden="true" hidden="hidden">
+			<div class="no-issues-placeholder">There are no closed issues</div>
+			<ul class="github-issues-list" aria-label="Closed Issues"></ul>
+		</section>
+	</div>
+	<div class="action-container">
+		<a class="view-on-github" href="https://github.com/dotnet/docs/issues?utf8=%E2%9C%93&amp;q=%229f2c2324-9c5f-6283-5046-5cf6ce013bd2%22&amp;in=body" data-bi-name="view-on-github" hidden="">
+			<span class="docon docon-brand-github" aria-hidden="true"></span>
+			<span>View on GitHub</span>
+			<span class="docon docon-navigate-external" aria-hidden="true"></span>
+		</a>
+	</div>
+</section>						<!-- end feedback section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>						</div>
+					</div>
+
+					<!--end of div.columns -->
+
+				</div>
+			
+			<!--end of .primary-holder -->
+			</section>
+
+				<div id="left-container" class="left-container column is-one-third-tablet is-one-quarter-desktop">
+					<nav class="sidebar" id="sidebar" data-bi-name="left toc" role="navigation" aria-label="Main Navigation" style="width: 236.983px; top: 185px; bottom: 24px;">
+						<button class="sidebar-header" type="button" aria-label="Close" data-bi-name="contents-collapse">
+							<span>Contents</span>
+							<span class="docon docon-navigate-close" aria-hidden="true"></span>
+						</button>
+						<div id="sidebarContent">
+							<div class="filterHolder">
+							<form class="tocFilter" aria-label="Filter Table of Contents"><input class="input is-size-7" placeholder="Filter by title" aria-label="Filter" data-bi-name="toc-filter" id="toc-filter" aria-controls="filterResults" type="search"><a href="#" title="Clear Filter" class="clearInput"><span class="visually-hidden">Clear Filter</span></a></form><div class="emptyFilterMessage">No results</div></div>
+							<nav class="toc" role="application" aria-label="Table of Contents" id="filterResults"><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")' class="noSibs"><li role="group" aria-expanded="true" aria-label="getting started " onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs selectedHolder"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" class="selected" aria-current="page" data-showme="true" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/" data-text="getting started ">Getting Started</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/introduction-to-wpf-in-vs" data-text="introduction to wpf in visual studio ">Introduction to WPF in Visual Studio</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/whats-new" data-text="what&amp;#39;s new in wpf version 4.5 ">What's New in WPF Version 4.5</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application" data-text="walkthrough: my first wpf desktop application ">Walkthrough: My first WPF desktop application</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/wpf-walkthroughs" data-text="wpf walkthroughs ">WPF Walkthroughs</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/community-feedback" data-text="wpf community feedback ">WPF Community Feedback</a></li></ul></li></ul></nav>
+							<div class="pdf-download-holder">
+		<a href="https://docs.microsoft.com/en-us/dotnet/opbuildpdf/framework/wpf/getting-started/toc.pdf?branch=live" class="pdf-download-link has-inner-focus" data-bi-name="downloadPdf">
+			<span class="icon">
+				<span class="docon docon-arrow-down" aria-hidden="true"></span>
+			</span>
+			<span class="pdf-download-text">Download PDF</span>
+		</a>
+	</div>
+						</div>
+					</nav>
+				</div>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container">
+		<form class="rating has-default-focus rating-mobile-feedback-active" action="javascript:" data-bi-name="rating">
+			<button class="rating-close has-inner-focus docon docon-navigate-close" type="button" aria-label="Close" data-bi-name="rating-close"></button>
+			<button class="button is-primary rating-mobile-feedback" type="button" data-bi-name="rating-mobile-feedback">Feedback</button>
+			<div class="rating-helpful">
+				<label>Is this page helpful?</label>
+				<div class="buttons">
+					<button class="button is-primary" type="button" data-bi-name="rating-yes" data-bi-sat="1">Yes</button>
+					<button class="button is-primary" type="button" data-bi-name="rating-no" data-bi-sat="0">No</button>
+				</div>
+			</div>
+			<div class="rating-verbatim">
+				<label for="rating-0">How can we improve?</label>
+				<textarea class="rating-textarea" id="rating-0" placeholder="Please share your ideas. We welcome feedback in any language."></textarea>
+				<button class="button is-primary" type="submit" data-bi-name="rating-verbatim" disabled="disabled">Submit</button>
+			</div>
+			<div class="rating-thanks1">
+				<p>Thanks for the feedback!</p>
+				<p>Comments or suggestions? <a href="#" data-bi-name="rating-verbatim-link">Tell us here</a>.</p>
+			</div>
+			<div class="rating-thanks2">
+				<span>Thanks for the feedback!</span>
+			</div>
+		</form></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/dotnet/framework/wpf/getting-started/" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>	</div>
+
+	<div class="action-panel has-default-focus"></div>
+
+</body></html>

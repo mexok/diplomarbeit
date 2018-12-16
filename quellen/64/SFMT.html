@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta name="keywords" content="Mersenne Twister,SIMD,SSE2,AltiVec,SFMT" />
+    <title>SIMD-oriented Fast Mersenne Twister (SFMT)</title>
+    <style type="text/css">
+      H2 {text-align:center}
+      .news {color:yellow}
+      IMG.gaku {float:right;vertical-align:middle}
+      IMG.counter {float:right}
+    </style>
+  </head>
+  <body>
+    <img class="gaku" src="logo.jpg" alt="gakushin logo" height="150"
+    width="150" />
+    <div align="center">
+      <img src="sfmt.png" alt="SFMT logo" width="167" height="55" />
+    </div>
+    <h2>
+      SIMD-oriented Fast Mersenne Twister (SFMT):<br/>
+      twice faster than Mersenne Twister<sup><a href="#footer">*1</a></sup>.
+    </h2>
+    <a href="index-jp.html">Japanese Version</a>
+    <h3>News</h3>
+    <ul>
+      <li><a href="#SFMT">SFMT ver1.5.1</a> is released.(2017/2/22)</li>
+      <li><a href="#SFMT">SFMT ver1.5</a> is released.
+        Bug fix: 53-bit double precision output. (2017/2/7)</li>
+      <li><a href="../ARTICLES/earticles.html#sfmt">Errata of SFMT</a> is added. (2015/9/1)</li>
+      <li><a href="#dSFMT">dSFMT ver2.2.3</a> is released. (2013/9/19)</li>
+      <li><a href="#SFMT">SFMT ver1.4.1</a> is released. (2013/12/19)</li>
+      <li><a href="#dSFMT">dSFMT ver2.2.1</a> is released. (2013/2/21)</li>
+      <li><a href="JUMP/dsfmt-jump.html">
+	  dSFMT jump</a> is released. (2012/7/3)</li>
+      <li><a href="#dSFMT">dSFMT ver2.2</a> is released. (2012/6/29)</li>
+      <li><a href="JUMP/index.html">SFMT Jump</a> is released. (2012/6/29)</li>
+      <li><a href="../TINYMT/index.html">
+	  Tiny Mersenne Twister (TinyMT)</a> is released.
+	(2011/06/20)</li>
+    </ul>
+    <h3>LINK</h3>
+    <ul>
+      <li><a href="JUMP/index.html">SFMT Jump</a></li>
+      <li><a href="QandA.html">Questions and Answers</a></li>
+      <li><a href="./VERSIONS/versions.html">Various implementations by
+	  volunteers</a></li>
+    </ul>
+    <h3>What is SFMT?</h3>
+    <p>
+      SFMT is a new variant of Mersenne Twister (MT) introduced by
+      <a href="http://home.hiroshima-u.ac.jp/d073872/index-en.html">Mutsuo
+	Saito</a> and
+      <a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/eindex.html">Makoto
+	Matsumoto</a> in 2006. The algorithm was
+      reported
+      at <a href="http://mcqmc.uni-ulm.de/">MCQMC 2006.</a>
+      The article published in the proceedings of MCQMC2006.
+      (see Prof. Matsumoto's <a href="../ARTICLES/earticles.html#sfmt">
+	Papers on random number generation.</a>)
+      SFMT is a Linear Feedbacked Shift Register (LFSR) generator
+      that generates a 128-bit pseudorandom integer at one step.
+      SFMT is designed with recent parallelism of modern CPUs,
+      such as multi-stage pipelining and SIMD (e.g. 128-bit integer)
+      instructions. It supports 32-bit and 64-bit integers, as well as
+      double precision floating point as output.
+    </p>
+    <p>
+      SFMT is much faster than MT, in most platforms.  Not only the
+      speed, but also the dimensions of equidistributions at v-bit
+      precision are improved. In addition, recovery from 0-excess
+      initial state is much faster. See <a href="M062821.pdf">
+      Master's Thesis of Mutsuo Saito </a> for detail.
+    </p>
+    <p>
+      The following implementation SFMT19937 can be compiled in
+      three possible platforms:</p>
+      <ol>
+	<li> Standard C without SIMD instructions</li>
+	<li> CPUs with Intel's SSE2 instructions + C compiler
+	  which supports these feature</li>
+	<li> CPUs with PowerPC's AltiVec instructions + C compiler
+	  which supports these feature</li>
+      </ol>
+    <p>
+      In each platform, SFMT has better performance than MT:
+      see <a href="speed.html"> comparison of speed. </a>
+    </p>
+    <p> We put tables of equidistribution of SFMT. They are
+      <a href="sfmt-d32.html">32bit</a>
+      and <a href="sfmt-d64.html">64bit</a>.</p>
+
+    <h3><a id="SFMT">Download SFMT which supports various periods
+      from 2<sup>607</sup>-1 to 2<sup>216091</sup>-1</a></h3>
+    <p>
+      This code is released on January 31st in 2007, so it may contain
+    some bugs.  Any feedback is welcome (send an email to Mutsuo
+    Saito, saito <strong>"at sign"</strong> math.sci.hiroshima-u.ac.jp
+    and m-mat <strong>"at sign"</strong> math.sci.hiroshima-u.ac.jp)
+    </p>
+    <table border="1">
+      <tr>
+	<th>version</th><th>archive</th><th>changes</th>
+      </tr>
+      <tr>
+	<td><strong class="news">new!</strong> 1.5.1</td>
+	<td><a href="SFMT-src-1.5.1.zip">
+	    SFMT-src-1.5.1.zip</a><br/>
+	<a href="SFMT-src-1.5.1.tar.gz">
+	  SFMT-src-1.5.1.tar.gz</a></td>
+	<td>fix potiential bug in period certification and
+          SFMT-common.h include guard, reported by Kouhei Saitou.
+	  (2017/2/22)</td>
+      </tr>
+      <tr>
+	<td>1.5</td>
+	<td><a href="SFMT-src-1.5.zip">
+	    SFMT-src-1.5.zip</a><br/>
+	<a href="SFMT-src-1.5.tar.gz">
+	  SFMT-src-1.5.tar.gz</a></td>
+	<td>fix bug double precision output function sfmt_res53
+          reported by Akio Takahashi.
+          It should return a nunmber in the range [0, 1), but
+          sometime it returned 1.0.
+	  (2017/2/7)</td>
+      </tr>
+      <tr>
+	<td>1.4.1</td>
+	<td><a href="SFMT-src-1.4.1.zip">
+	    SFMT-src-1.4.1.zip</a><br/>
+	<a href="SFMT-src-1.4.1.tar.gz">
+	  SFMT-src-1.4.1.tar.gz</a></td>
+	<td>fix MSC compile error reported by Dirk Steenpass.
+	  (2013/12/19)</td>
+      </tr>
+      <tr>
+	<td>1.4</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.4.zip">
+	    SFMT-src-1.4.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.4.tar.gz">
+	  SFMT-src-1.4.tar.gz</a></td>
+	<td>
+	  internal state of SFMT is kept in structure.
+	  function and macro names are changed to have sfmt_ prefix.
+	  This version can work with SFMT-jump.
+	  <strong>ALTIVEC OR BIGENDIAN ARE NOT TESTED AT ALL.</strong>
+	  (2012/6/28)
+	</td>
+      </tr>
+      <tr>
+	<td>1.3.3</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.3.3.zip">
+	    SFMT-src-1.3.3.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.3.3.tar.gz">
+	  SFMT-src-1.3.3.tar.gz</a></td>
+	<td>change not to compile do_recursion function when SSE2 or
+	  ALTIVEC is specified. This is to avoid compiler warning.
+	  (2007/10/6)</td>
+      </tr>
+      <tr>
+	<td>1.3.2</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.3.2.zip">
+	    SFMT-src-1.3.2.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.3.2.tar.gz">
+	  SFMT-src-1.3.2.tar.gz</a></td>
+	<td>Fix bug about to_res53_mix() and genrand_res53_mix().
+	  (2007/8/20)</td>
+      </tr>
+      <tr>
+	<td>1.3.1</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.3.1.zip">
+	    SFMT-src-1.3.1.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.3.1.tar.gz">
+	  SFMT-src-1.3.1.tar.gz</a></td>
+	<td>Fix bug about compile error in MSC.
+	  Add two functions to_res53_mix() and genrand_res53_mix().
+	  Change optimization option of gcc from -O9 to -O3.
+	  Add MSC __forceinline option.
+	  (2007/8/12)</td>
+      </tr>
+      <tr>
+	<td>1.3</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.3.zip">
+	    SFMT-src-1.3.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.3.tar.gz">
+	  SFMT-src-1.3.tar.gz</a></td>
+	<td>Add support for the period 2<sup>216091</sup>-1.
+	  BUG fixed about BIG ENDIAN.
+	  Add parameter data for parallel generation.
+	  Support AltiVec on OSs which are not osx.
+	 (2007/6/2)</td>
+      </tr>
+      <tr>
+	<td>1.2</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.2.zip">
+	    SFMT-src-1.2.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:SFMT-src-1.2.tar.gz">
+	  SFMT-src-1.2.tar.gz</a></td>
+	<td>Now, various periods form 2<sup>607</sup>-1 to
+	  2<sup>132049</sup>-1 are supported. The source code is combined.
+	  The second argument of vec_perm function is casted.
+	 (2007/3/1)</td>
+      </tr>
+      <tr>
+	<td>1.1</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:sfmt19937src-1.1.zip">
+	    sfmt19937src-1.1.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:sfmt19937src-1.1.tar.gz">
+	  sfmt19937src-1.1.tar.gz</a></td>
+	<td>The period certification method is changed from constant
+	to function. Makefile and documents changed. (2007/1/31)</td>
+      </tr>
+      <tr>
+	<td>1.0</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:sfmt19937src-1.0.zip">
+	    sfmt19937src-1.0.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:sfmt19937src-1.0.tar.gz">
+	  sfmt19937src-1.0.tar.gz</a></td>
+	<td>First version.</td>
+      </tr>
+    </table>
+    <p>
+      If you have some trouble to download, try <a href="error-dl.html">
+	this page.</a>
+    </p>
+
+    <h3><a id="dSFMT">Double precision SIMD-oriented Fast Mersenne
+    Twister (dSFMT)</a></h3>
+    <p>
+      The purpose of dSFMT is to speed up the generation by avoiding
+      the expensive conversion of integer to double (floating point).
+      dSFMT directly generates double precision floating point
+      pseudorandom numbers which have the IEEE Standard for Binary
+      Floating-Point Arithmetic (ANSI/IEEE Std 754-1985) format.
+      dSFMT is only available on the CPUs which use IEEE 754 format
+      double precision floating point numbers.
+    </p>
+    <p>
+      dSFMT doesn't support integer outputs. dSFMT supports the output
+      of double precision floating point pseudorandom numbers which
+      distribute in the range of [1, 2), [0, 1), (0, 1] and (0, 1).
+      And it also supports the various periods form 2<sup>607</sup>-1
+      to 2<sup>132049</sup>-1. (dSFMT ver. 2.1 supports the periods
+      from 2<sup>521</sup>-1 to 2<sup>216091</sup>-1.)</p>
+    <p>
+      This code is released on March 12th in 2007, so it may contain
+    some bugs.  Any feedback is welcome (send an email to Mutsuo
+    Saito, saito <strong>"at sign"</strong> math.sci.hiroshima-u.ac.jp
+    and m-mat <strong>"at sign"</strong> math.sci.hiroshima-u.ac.jp)
+    </p>
+    <p>
+      The algorithm was reported
+      at <a href="http://www.crm.math.ca/mcqmc08/index_e.shtml">MCQMC
+      2008.</a>  This is <a href="dSFMT-slide-e.pdf">the slide PDF
+      file</a> we used for the talk.<br/>
+      The article published in the proceedings of MCQMC2008.
+      (see Prof. Matsumoto's <a href="../ARTICLES/earticles.html#dsfmt">
+	Papers on random number generation.</a>)    </p>
+    <table border="1">
+      <tr>
+	<th>version</th><th>archive</th><th>changes</th>
+      </tr>
+      <tr>
+	<td><strong class="news">new!</strong> 2.2.3</td>
+	<td><a href="dSFMT-src-2.2.3.zip">
+	    dSFMT-src-2.2.3.zip</a><br/>
+	<a href="dSFMT-src-2.2.3.tar.gz">
+	  dSFMT-src-2.2.3.tar.gz</a></td>
+	<td>
+	  change Makefile for nmake.
+	  (2013/12/19)</td>
+      </tr>
+      <tr>
+	<td>2.2.2</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-2.2.2.zip">
+	    dSFMT-src-2.2.2.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-2.2.2.tar.gz">
+	  dSFMT-src-2.2.2.tar.gz</a></td>
+	<td>
+	  Fix compile error on Visual C++ 2012.
+	  (2013/9/17)</td>
+      </tr>
+      <tr>
+	<td>2.2.1</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-2.2.1.zip">
+	    dSFMT-src-2.2.1.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-2.2.1.tar.gz">
+	  dSFMT-src-2.2.1.tar.gz</a></td>
+	<td>
+	  Definitions of Shift constant in AltiVec were changed.
+	  They had not been fit to the instruction set architecture
+	  of AltiVec. (2013/2/21)</td>
+      </tr>
+      <tr>
+	<td>2.2</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-2.2.zip">
+	    dSFMT-src-2.2.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-2.2.tar.gz">
+	  dSFMT-src-2.2.tar.gz</a></td>
+	<td>
+	  The initialization of the constants for sse2 is changed.
+	  dSFMT-common.h is created. This version can work with
+	  dSFMT Jump function.
+	  (2012/6/29)</td>
+	<td>
+      </tr>
+      <tr>
+	<td>2.1</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-2.1.zip">
+	    dSFMT-src-2.1.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-2.1.tar.gz">
+	  dSFMT-src-2.1.tar.gz</a></td>
+	<td>This version supports the periods from 2<sup>521</sup>-1
+	  to 2<sup>216091</sup>-1.
+	  We added new function dsfmt_genrand_uint32, which returns
+	  32-bit unsigned integer. If you need many floating point
+	  pseudo random numbers and a few integers, you don't need to
+	  use another integer generator.
+	  (2009/4/18)</td>
+      </tr>
+      <tr>
+	<td>2.0</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-2.0.zip">
+	    dSFMT-src-2.0.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-2.0.tar.gz">
+	  dSFMT-src-2.0.tar.gz</a></td>
+	<td> The recursion formula of dSFMT is changed.  The supported
+	  periods are changed.  The output sequences are completely
+	  changed.  The generation speed is improved.  The variable
+	  for initialization check is removed, because it causes an
+	  execution error in cygwin.  dSFMT ver. 2.0 supports the
+	  periods from 2<sup>521</sup>-1 to 2<sup>19937</sup>-1
+	  currently.
+	  dSFMT ver. 2.0 is developed for higher speed. No serious problems
+	  are reported for dSFMT ver. 1.xx. (2008/8/26)</td>
+      </tr>
+      <tr>
+	<td>1.3</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-1.3.zip">
+	    dSFMT-src-1.3.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-1.3.tar.gz">
+	  dSFMT-src-1.3.tar.gz</a></td>
+	<td>use <strong>structure</strong> of C language.
+	  bug fix about checking BIG_ENDIAN.
+	  Function names are changed to have the prefix <strong>dsfmt_</strong>,
+	  but old names are also available.
+	  (2008/2/28)</td>
+      </tr>
+      <tr>
+	<td>1.2.1</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-1.2.1.zip">
+	    dSFMT-src-1.2.1.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-1.2.1.tar.gz">
+	  dSFMT-src-1.2.1.tar.gz</a></td>
+	<td>add #include &lt;altivec.h&gt; to dSFMT.c.
+	  (2007/8/29)</td>
+      </tr>
+      <tr>
+	<td>1.2</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-1.2.zip">
+	    dSFMT-src-1.2.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-1.2.tar.gz">
+	  dSFMT-src-1.2.tar.gz</a></td>
+	<td>CAUTION: dSFMT.xxx.out.txt is changed.
+	  Bug fixed in test.c about printf precision specifier.
+	  Larger period 2<sup>216091</sup>-1 is supported.
+	  gcc compile option changed form -O9 to -O3.
+	  Add AltiVec parameter format for systems which are not OSX.
+	  Change Makefile for systems which are not OSX and support AltiVec.
+	  Change sample2 of howto-compile for Free BSD.
+	  Change period certification code more smart.
+	  Change source files for BORLANDC and Visual Studio.
+	  (2007/8/22)</td>
+      </tr>
+      <tr>
+	<td>1.1</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-1.1.zip">
+	    dSFMT-src-1.1.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-1.1.tar.gz">
+	  dSFMT-src-1.1.tar.gz</a></td>
+	<td>Larger period 2<sup>132049</sup>-1 is supported.  A bug
+	  about BIG ENDIAN machine is fixed.  Some important bugs are
+	  fixed, but there is no influence to the outputs.
+	  Source codes were refactored. (2007/3/22)</td>
+      </tr>
+      <tr>
+	<td>1.0</td>
+	<td><a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-1.0.zip">
+	    dSFMT-src-1.0.zip</a><br/>
+	<a href="../../bin/dl/dl.cgi?SFMT:dSFMT-src-1.0.tar.gz">
+	  dSFMT-src-1.0.tar.gz</a></td>
+	<td>The first version. (2007/3/12)</td>
+      </tr>
+    </table>
+    <p>
+      If you have some trouble to download, try <a href="error-dl.html#dSFMT">
+	this page.</a>
+    </p>
+
+    <h3>CPUs and compilers for SFMT optimized for SIMD</h3>
+    <table border="1">
+      <tr>
+	<th>SIMD type</th><th>CPUs</th><th>gcc option</th><th>gcc version</th>
+      </tr>
+      <tr>
+	<th>SSE2</th><td>Intel: Pentium M, Pentium 4, core, core 2, etc<br/>
+	  AMD: Athlon 64, Sempron, Turion 64, etc<br/>
+	  see <a href="http://en.wikipedia.org/wiki/SSE2#CPUs_supporting_SSE2">
+	    Wikipedia SSE2:CPUs supporting SSE2</a></td>
+	<td> -msse2 </td><td>3.4 or later</td>
+      </tr>
+      <tr>
+	<th>AltiVec</th><td>PowerPC G4,
+	G5</td><td>-faltivec</td><td>3.3 or later</td>
+      </tr>
+      </table>
+
+    <p>See also <a href="howto-compile.html">How to compile SFMT.</a></p>
+    <h3>License</h3>
+    <p>
+      SFMT, as well as MT, can be used freely for any purpose, including
+    commercial use. See <a href="LICENSE.txt">LICENSE.txt</a> for detail.
+    </p>
+      <img class="counter"
+      src="../../bin/counter/count.cgi?gif+name+encnt" width="55"
+      height="11" alt="."/>
+    <p>
+      Back to <a href="../emt.html"> Mersenne Twister Home Page</a>
+    </p>
+
+    <hr />
+    <p>
+    <a href="#footer" id="footer">*1</a>
+    This work is supported in part by JSPS Core-to-Core Program No. 18005:
+    <a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/JSPS-CoreToCore/index.html">
+      "New Developments of Arithmetic Geometry, Motive, Galois Theory, and
+      Their Practical Applications."
+    </a><br />
+    This work is also partially supported by JSPS Grant-in-Aid for
+    Scientific Research No. 16204002, No. 19204002 and No. 18654021.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html class="js hasSidebar hasPageActions hasBreadcrumb conceptual noTouch" dir="ltr" data-authenticated="false" data-target="docs" lang="en-us"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="a6-1fffa6.css"><link rel="stylesheet" href="override.css"><meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Inline Styles and Templates">
+	<meta property="og:image" content="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/microsoft-header.png">
+
+
+		<meta name="ms.devlang" content="dotnet">
+<meta name="author" content="dotnet-bot">
+<meta name="ms.author" content="dotnetcontent">
+<meta name="breadcrumb_path" content="/dotnet/breadcrumb/toc.json">
+<meta name="apiPlatform" content="dotnet">
+<meta name="ms.topic" content="conceptual">
+<meta name="ms.technology" content="dotnet-wpf">
+<meta name="ms.prod" content="dotnet-framework">
+<meta name="uhfHeaderId" content="MSDocsHeader-DotNet">
+<meta name="ms.assetid" content="69a1a3f9-acb5-4e2c-9c43-2e376c055ac4">
+<meta name="ms.date" content="03/30/2017">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="core-docs">
+<meta name="locale" content="en-us">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="VS">
+<meta name="depot_name" content="VS.core-docs">
+<meta name="updated_at" content="2018-05-04 04:36 AM">
+<meta name="gitcommit" content="https://github.com/dotnet/docs/blob/10de0a293347bd518f1f1253bc26e465d7108feb/docs/framework/wpf/advanced/inline-styles-and-templates.md">
+<meta name="original_content_git_url" content="https://github.com/dotnet/docs/blob/live/docs/framework/wpf/advanced/inline-styles-and-templates.md">
+<meta name="document_id" content="392ba31b-8e37-ce58-e15d-97357827f37d">
+<meta name="document_version_independent_id" content="246fac8f-33fe-0df2-6511-4b20294bf03e">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="toc.json">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/en-us/VS.core-docs/{branchName}{pdfName}">
+<meta name="search.mshattr.devlang" content="csharp">
+<meta name="word_count" content="327">
+
+	<meta name="scope" content=".NET">
+<link href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/inline-styles-and-templates" rel="canonical">
+	<title>Inline Styles and Templates | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="f81e8b30.css">
+
+	<link rel="stylesheet" href="fbd113ac.css">
+
+
+	<script async="" src="analytics.js"></script><script>
+	var msDocs = {
+		data:{
+			azureHeaderLocale: 'en-us',
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasComments: true,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'dotnet/docs',
+			feedbackProductUrl: 'https://developercommunity.visualstudio.com/spaces/61/index.html',
+			contentGitUrl: 'https://github.com/dotnet/docs/blob/master/docs/framework/wpf/advanced/inline-styles-and-templates.md',
+			forceVersionPicker:false		},
+		functions:{},
+		settings:{
+			extendBreadcrumb: false,
+			enableUHFPPE: true
+		}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/6ee34c01.bluebird.min.js"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/d9fc435c.fetch.min.js"><\/script>');
+	}
+	</script>
+
+	<script src="jquery-3.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+	<script src="83a4c963.js"></script><style></style><script src="jsll-4.js" async="" defer="defer"></script>
+
+<script src="bf-d3d307" defer="defer"></script><style>
+			.c-uhfh input[type="search"],
+			.c-uhfh.c-sgl-stck .c-uhfh-actions .c-search input[type="search"] {
+				padding-left: 69px !important;
+			}</style><script async="" src="t.js"></script></head>
+
+<body dir="ltr" lang="en-us">
+<div class="header-holder">
+		<div id="headerAreaHolder" data-bi-name="header">    <div id="headerArea" class="uhf" data-m="{&quot;cN&quot;:&quot;headerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a1Body&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;Body&quot;}">
+                <div id="headerRegion" data-region-key="headerregion" data-m="{&quot;cN&quot;:&quot;headerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a1&quot;}">
+
+    <div id="headerUniversalHeader" data-m="{&quot;cN&quot;:&quot;headerUniversalHeader&quot;,&quot;cT&quot;:&quot;Module_coreui-universalheader&quot;,&quot;id&quot;:&quot;m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a1&quot;}" data-module-id="Category|headerRegion|coreui-region|headerUniversalHeader|coreui-universalheader">
+        
+
+
+
+
+
+		<a id="uhfSkipToMain" class="m-skip-to-main" href="#main" tabindex="0" style="z-index:3000002" data-m="{&quot;cN&quot;:&quot;Skip to content_nonnav&quot;,&quot;id&quot;:&quot;nn1m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;m1r1a1&quot;}">Skip to main content</a>
+
+
+<header role="banner" class="c-uhfh context-uhf no-js c-sgl-stck c-category-header " itemscope="itemscope" data-header-footprint="/MSDocs/MSDocsHeader-DotNet, fromService: True" data-ckrate="1" data-magict="true" itemtype="http://schema.org/Organization">
+	<div class="theme-light js-global-head f-closed  global-head-cont" data-m="{&quot;cN&quot;:&quot;Universal Header_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;m1r1a1&quot;}">
+		<div class="c-uhfh-gcontainer-st">
+			<button type="button" class="c-action-trigger c-glyph glyph-global-nav-button" aria-label="Header navigation menu" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Mobile menu button_nonnav&quot;,&quot;id&quot;:&quot;nn1c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+			<button type="button" class="c-action-trigger c-glyph glyph-arrow-htmllegacy" aria-label="Close search" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Close Search_nonnav&quot;,&quot;id&quot;:&quot;nn2c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+					<a id="uhfLogo" class="c-logo c-sgl-stk-uhfLogo" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft" data-m="{&quot;cN&quot;:&quot;GlobalNav_Logo_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+						<img alt="" itemprop="logo" itemscope="itemscope" class="c-image" src="RE1Mu3b.png" role="presentation" aria-hidden="true">
+						<span role="presentation" aria-hidden="true">Microsoft</span>
+					</a>
+			<div class="f-mobile-title">
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-left" aria-label="See more menu options" data-m="{&quot;cN&quot;:&quot;Mobile back button_nonnav&quot;,&quot;id&quot;:&quot;nn4c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+				<span data-global-title="Microsoft home" class="js-mobile-title">.NET</span>
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-right" aria-label="See more menu options" data-m="{&quot;cN&quot;:&quot;Mobile forward button_nonnav&quot;,&quot;id&quot;:&quot;nn5c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+			</div>
+					<div class="c-show-pipe x-hidden-vp-mobile-st">
+						<a id="uhfCatLogo" class="c-logo c-cat-logo" href="https://docs.microsoft.com/dotnet" aria-label=".NET" itemprop="url" data-m="{&quot;cN&quot;:&quot;CatNav_.NET_nav&quot;,&quot;id&quot;:&quot;n6c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+								<span>.NET</span>
+						</a>
+					</div>
+				<div class="cat-logo-button-cont x-hidden">
+						<button type="button" id="uhfCatLogoButton" class="c-cat-logo-button x-hidden" aria-expanded="false" aria-label=".NET" data-m="{&quot;cN&quot;:&quot;.NET_nonnav&quot;,&quot;id&quot;:&quot;nn7c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+							.NET
+						</button>
+				</div>
+
+
+
+			        <nav id="uhf-g-nav" aria-label="Contextual menu" class="c-uhfh-gnav" data-m="{&quot;cN&quot;:&quot;Category nav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+            <ul class="js-paddle-items">
+                    <li class="single-link js-nav-menu x-hidden-none-mobile-vp">
+                        <a class="c-uhf-nav-link" href="https://docs.microsoft.com/dotnet" data-m="{&quot;cN&quot;:&quot;CatNav_Home_nav&quot;,&quot;id&quot;:&quot;n1c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}"> Home </a>
+                    </li>
+                                        <li class="single-link js-nav-menu">
+                            <a id="c-shellmenu_0" class="c-uhf-nav-link" href="https://docs.microsoft.com/dotnet/api/" data-m="{&quot;cN&quot;:&quot;CatNav_APIs_nav&quot;,&quot;id&quot;:&quot;n2c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">APIs</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id=".NET Core" class="c-uhf-nav-link" href="https://docs.microsoft.com/dotnet/articles/core" data-m="{&quot;cN&quot;:&quot;CatNav_.NET Core_nav&quot;,&quot;id&quot;:&quot;n3c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">.NET Core</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id=".NET Framework" class="c-uhf-nav-link" href="https://docs.microsoft.com/dotnet/articles/framework" data-m="{&quot;cN&quot;:&quot;CatNav_.NET Framework_nav&quot;,&quot;id&quot;:&quot;n4c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">.NET Framework</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id="ASP.NET" class="c-uhf-nav-link" href="https://docs.microsoft.com/aspnet" data-m="{&quot;cN&quot;:&quot;CatNav_ASP.NET_nav&quot;,&quot;id&quot;:&quot;n5c8c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">ASP.NET</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id="Xamarin" class="c-uhf-nav-link" href="https://developer.xamarin.com/guides/" data-m="{&quot;cN&quot;:&quot;CatNav_Xamarin_nav&quot;,&quot;id&quot;:&quot;n6c8c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Xamarin</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id="Azure" class="c-uhf-nav-link" href="https://docs.microsoft.com/azure" data-m="{&quot;cN&quot;:&quot;CatNav_Azure_nav&quot;,&quot;id&quot;:&quot;n7c8c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Azure</a>
+                        </li>
+
+
+                <li id="overflow-menu" class="overflow-menu x-hidden">
+                        <div class="c-uhf-menu js-nav-menu">
+        <button data-m="{&quot;pid&quot;:&quot;More&quot;,&quot;id&quot;:&quot;nn8c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" type="button" aria-label="More" aria-expanded="false" style="white-space:nowrap">More</button>
+        <ul id="overflow-menu-list" aria-hidden="true" class="overflow-menu-list">
+        </ul>
+    </div>
+
+                </li>
+                            </ul>
+            
+        </nav>
+
+
+			<div class="c-uhfh-actions" data-m="{&quot;cN&quot;:&quot;Header actions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+				<div class="wf-menu">        <nav id="uhf-c-nav" aria-label="All microsoft menu" data-m="{&quot;cN&quot;:&quot;GlobalNav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2m1r1a1&quot;}">
+            <ul class="js-paddle-items">
+                <li>
+                    <div class="c-uhf-menu js-nav-menu">
+                        <button type="button" class="c-button-logo all-ms-nav" aria-label="All Microsoft expand to see list of Microsoft products and services" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_nonnav&quot;,&quot;id&quot;:&quot;nn1c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" style="white-space: nowrap"> <span>All Microsoft</span></button>
+                        <ul class="f-multi-column f-multi-column-6" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;More_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}">
+                                    <li class="c-w0-contr">
+            <ul class="c-w0">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Office_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_6" class="js-subm-uhf-nav-link" href="https://products.office.com/en-us/home" data-m="{&quot;cN&quot;:&quot;W0Nav_Office_nav&quot;,&quot;id&quot;:&quot;n1c1c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c2c1c9c2m1r1a1&quot;}">Office</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Windows_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_7" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/" data-m="{&quot;cN&quot;:&quot;W0Nav_Windows_nav&quot;,&quot;id&quot;:&quot;n1c2c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c2c1c9c2m1r1a1&quot;}">Windows</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Surface_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_8" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/surface" data-m="{&quot;cN&quot;:&quot;W0Nav_Surface_nav&quot;,&quot;id&quot;:&quot;n1c3c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c2c1c9c2m1r1a1&quot;}">Surface</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Xbox_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_9" class="js-subm-uhf-nav-link" href="https://www.xbox.com/" data-m="{&quot;cN&quot;:&quot;W0Nav_Xbox_nav&quot;,&quot;id&quot;:&quot;n1c4c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c2c1c9c2m1r1a1&quot;}">Xbox</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Deals_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_10" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/sale?icid=gm_nav_L0_salepage" data-m="{&quot;cN&quot;:&quot;W0Nav_Deals_nav&quot;,&quot;id&quot;:&quot;n1c5c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c2c1c9c2m1r1a1&quot;}">Deals</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Support_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="l1_support" class="js-subm-uhf-nav-link" href="https://support.microsoft.com/en-us" data-m="{&quot;cN&quot;:&quot;W0Nav_Support_nav&quot;,&quot;id&quot;:&quot;n1c6c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c2c1c9c2m1r1a1&quot;}">Support</a>
+            
+        </li>
+            </ul>
+        </li>
+
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">Software</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_WindowsApps_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_14" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/windows-10-apps" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_WindowsApps_nav&quot;,&quot;id&quot;:&quot;n1c2c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c7c2c1c9c2m1r1a1&quot;}">Windows apps</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneDrive_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_15" class="js-subm-uhf-nav-link" href="https://onedrive.live.com/about/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneDrive_nav&quot;,&quot;id&quot;:&quot;n1c3c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c7c2c1c9c2m1r1a1&quot;}">OneDrive</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Outlook_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_16" class="js-subm-uhf-nav-link" href="https://outlook.live.com/owa/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Outlook_nav&quot;,&quot;id&quot;:&quot;n1c4c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c7c2c1c9c2m1r1a1&quot;}">Outlook</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Skype_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_17" class="js-subm-uhf-nav-link" href="https://www.skype.com/en/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Skype_nav&quot;,&quot;id&quot;:&quot;n1c5c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c7c2c1c9c2m1r1a1&quot;}">Skype</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneNote_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_18" class="js-subm-uhf-nav-link" href="https://www.onenote.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneNote_nav&quot;,&quot;id&quot;:&quot;n1c6c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c7c2c1c9c2m1r1a1&quot;}">OneNote</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cN&quot;:&quot;PCsAndDevices_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_PCsAndDevices_nonnav&quot;,&quot;id&quot;:&quot;nn1c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">PCs &amp; Devices  </button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCsAndDevices_PCsAndTablets_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_20" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/devices" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCsAndDevices_PCsAndTablets_nav&quot;,&quot;id&quot;:&quot;n1c2c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c8c2c1c9c2m1r1a1&quot;}">PCs &amp; tablets</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCAndDevices_Accessories_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_21" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/accessories/en-us" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCAndDevices_Accessories_nav&quot;,&quot;id&quot;:&quot;n1c3c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c8c2c1c9c2m1r1a1&quot;}">Accessories</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">Entertainment</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_DevicesAndXbox_XboxAndGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_23" class="js-subm-uhf-nav-link" href="https://www.xbox.com/en-us/games/xbox-one?xr=shellnav" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_DevicesAndXbox_XboxAndGames_nav&quot;,&quot;id&quot;:&quot;n1c2c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c9c2c1c9c2m1r1a1&quot;}">Xbox games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Entertainment_PCGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_24" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/windows-10-games" data-m="{&quot;cN&quot;:&quot;GlobalNav_Entertainment_PCGames_nav&quot;,&quot;id&quot;:&quot;n1c3c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c9c2c1c9c2m1r1a1&quot;}">PC games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_WindowsDigitalGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_25" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/games/windows?icid=TopNavWindowsGames" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_WindowsDigitalGames_nav&quot;,&quot;id&quot;:&quot;n1c4c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c9c2c1c9c2m1r1a1&quot;}">Windows digital games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_MoviesAndTV_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_26" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/movies-and-tv?icid=TopNavMoviesAndTv" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_MoviesAndTV_nav&quot;,&quot;id&quot;:&quot;n1c5c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c9c2c1c9c2m1r1a1&quot;}">Movies &amp; TV</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_Books_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_27" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/books" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_Books_nav&quot;,&quot;id&quot;:&quot;n1c6c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c9c2c1c9c2m1r1a1&quot;}">Books</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:10,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">Business</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftAzure_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_29" class="js-subm-uhf-nav-link" href="https://azure.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftAzure_nav&quot;,&quot;id&quot;:&quot;n1c2c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c10c2c1c9c2m1r1a1&quot;}">Microsoft Azure</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftDynamics365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_30" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/dynamics365/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftDynamics365_nav&quot;,&quot;id&quot;:&quot;n1c3c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c10c2c1c9c2m1r1a1&quot;}">Microsoft Dynamics 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Business_Microsoft365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_31" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/microsoft-365/?omkt=en-US" data-m="{&quot;cN&quot;:&quot;GlobalNav_Business_Microsoft365_nav&quot;,&quot;id&quot;:&quot;n1c4c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c10c2c1c9c2m1r1a1&quot;}">Microsoft 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_Enterprise_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_32" class="js-subm-uhf-nav-link" href="https://enterprise.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_Enterprise_nav&quot;,&quot;id&quot;:&quot;n1c5c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c10c2c1c9c2m1r1a1&quot;}">Enterprise</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_DataPlatform_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_33" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/sql-server/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_DataPlatform_nav&quot;,&quot;id&quot;:&quot;n1c6c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c10c2c1c9c2m1r1a1&quot;}">Data platform</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_MicrosoftAdvertising_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_34" class="js-subm-uhf-nav-link" href="https://go.microsoft.com/fwlink/?linkid=2026638" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_MicrosoftAdvertising_nav&quot;,&quot;id&quot;:&quot;n1c7c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c10c2c1c9c2m1r1a1&quot;}">Microsoft Advertising</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:11,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">Developer &amp; IT  </button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_.Net_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_36" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/net/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_.Net_nav&quot;,&quot;id&quot;:&quot;n1c2c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c11c2c1c9c2m1r1a1&quot;}">.NET</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DevelopersAndIT_VisualStudio_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_37" class="js-subm-uhf-nav-link" href="https://visualstudio.microsoft.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DevelopersAndIT_VisualStudio_nav&quot;,&quot;id&quot;:&quot;n1c3c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c11c2c1c9c2m1r1a1&quot;}">Visual Studio</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_ProductsandServices_WindowsServer_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_38" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/cloud-platform/windows-server" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_ProductsandServices_WindowsServer_nav&quot;,&quot;id&quot;:&quot;n1c4c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c11c2c1c9c2m1r1a1&quot;}">Windows Server</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_WindowsDevCenter_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_39" class="js-subm-uhf-nav-link" href="https://developer.microsoft.com/en-us/windows" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_WindowsDevCenter_nav&quot;,&quot;id&quot;:&quot;n1c5c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c11c2c1c9c2m1r1a1&quot;}">Windows Dev Center</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_Docs.microsoft.com_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_40" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_Docs.microsoft.com_nav&quot;,&quot;id&quot;:&quot;n1c6c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c11c2c1c9c2m1r1a1&quot;}">Docs</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:12,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">Other</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Other_MicrosoftStore_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_42" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_Other_MicrosoftStore_nav&quot;,&quot;id&quot;:&quot;n1c2c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c12c2c1c9c2m1r1a1&quot;}">Microsoft Store</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Microsoft Rewards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_43" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/rewards" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Microsoft Rewards_nav&quot;,&quot;id&quot;:&quot;n1c3c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c12c2c1c9c2m1r1a1&quot;}">Microsoft Rewards </a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_SoftwareAndServices_FreeDownloadsAndSecurity_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_44" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/download/default.aspx" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_SoftwareAndServices_FreeDownloadsAndSecurity_nav&quot;,&quot;id&quot;:&quot;n1c4c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c12c2c1c9c2m1r1a1&quot;}">Free downloads &amp; security</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_ForStudentsAndEducators_Education_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_45" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/education?icid=CNavMSCOML0_Studentsandeducation" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_ForStudentsAndEducators_Education_nav&quot;,&quot;id&quot;:&quot;n1c5c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c12c2c1c9c2m1r1a1&quot;}">Education</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Store_Locations_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_46" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/locations/find-a-store?icid=TopNavStoreLocations" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Store_Locations_nav&quot;,&quot;id&quot;:&quot;n1c6c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c12c2c1c9c2m1r1a1&quot;}">Store locations</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Store_More_GiftCards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_47" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/gift-cards" data-m="{&quot;cN&quot;:&quot;GlobalNav_Store_More_GiftCards_nav&quot;,&quot;id&quot;:&quot;n1c7c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c12c2c1c9c2m1r1a1&quot;}">Gift cards</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+                                                            <li class="f-multi-column-info">
+                                    <a data-m="{&quot;cN&quot;:&quot;View Sitemap_nav&quot;,&quot;id&quot;:&quot;n13c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:13,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}" href="https://www.microsoft.com/en-us/sitemap.aspx" aria-label="View Sitemap" class="c-glyph">View all</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+</div>
+		<form class="c-search" autocomplete="off" id="searchForm" name="searchForm" role="search" action="https://docs.microsoft.com/en-us/search/index" method="GET" title="Search" data-seautosuggest="{&quot;queryParams&quot;:{&quot;market&quot;:&quot;en-us&quot;,&quot;clientId&quot;:&quot;7F27B536-CF6B-4C65-8638-A0F8CBDFCA65&quot;,&quot;sources&quot;:&quot;Microsoft-Terms,Iris-Products,DCatAll-Products&quot;,&quot;filter&quot;:&quot;+ClientType:StoreWeb&quot;,&quot;counts&quot;:&quot;5,1,5&quot;},&quot;familyNames&quot;:{&quot;Apps&quot;:&quot;App&quot;,&quot;Books&quot;:&quot;Book&quot;,&quot;Bundles&quot;:&quot;Bundle&quot;,&quot;Devices&quot;:&quot;Device&quot;,&quot;Fees&quot;:&quot;Fee&quot;,&quot;Games&quot;:&quot;Game&quot;,&quot;MusicAlbums&quot;:&quot;Album&quot;,&quot;MusicTracks&quot;:&quot;Song&quot;,&quot;MusicVideos&quot;:&quot;Video&quot;,&quot;MusicArtists&quot;:&quot;Artist&quot;,&quot;OperatingSystem&quot;:&quot;Operating System&quot;,&quot;Software&quot;:&quot;Software&quot;,&quot;Movies&quot;:&quot;Movie&quot;,&quot;TV&quot;:&quot;TV&quot;,&quot;CSV&quot;:&quot;Gift Card&quot;,&quot;VideoActor&quot;:&quot;Actor&quot;}}" data-seautosuggestapi="https://www.microsoft.com/services/api/v3/suggest" data-m="{&quot;cN&quot;:&quot;GlobalNav_Search_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" aria-expanded="false">
+			<input id="cli_shellHeaderSearchInput" aria-label="Search" aria-autocomplete="list" aria-controls="universal-header-search-auto-suggest-transparent" aria-owns="universal-header-search-auto-suggest-ul" name="search" placeholder="Search" data-m="{&quot;cN&quot;:&quot;SearchBox_nav&quot;,&quot;id&quot;:&quot;n1c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}" type="search">
+			<button id="search" aria-label="Search" class="c-glyph" data-m="{&quot;cN&quot;:&quot;Search_nav&quot;,&quot;id&quot;:&quot;n2c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}" data-bi-dnt="true" data-bi-mto="true" aria-expanded="false">
+				<span role="presentation">Search</span>
+			</button>
+			<div class="m-auto-suggest" id="universal-header-search-auto-suggest-transparent" role="group">
+				<ul class="c-menu" id="universal-header-search-auto-suggest-ul" aria-hidden="true" data-bi-dnt="true" data-bi-mto="true" data-js-auto-suggest-position="default" role="listbox" data-tel="jsll" data-m="{&quot;cN&quot;:&quot;search suggestions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}"></ul>
+			</div>
+			
+		<input name="scope" value=".NET" hidden=""><a class="search-scope" href="#" role="button" title="Search filter is &quot;.NET&quot;. Tap to remove." style=""><span class="search-scope-text">.NET</span> <span class="docon docon-navigate-close"></span></a></form>
+		<button data-m="{&quot;cN&quot;:&quot;cancel-search&quot;,&quot;pid&quot;:&quot;Cancel Search&quot;,&quot;id&quot;:&quot;nn4c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" id="cancel-search" class="cancel-search" aria-label="Cancel Search">
+			<span>Cancel</span>
+		</button>
+				
+			<div class="auth-control" aria-busy="true" aria-label="Loading..."></div></div>
+		</div>
+		
+		
+	</div>
+	
+</header>
+
+
+
+
+    </div>
+        </div>
+
+    </div>
+</div>
+	<div class="content-header uhf-container has-padding has-default-focus" data-bi-name="content-header">
+		<nav class="has-padding-none-mobile" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+		<ul class="breadcrumbs"><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://docs.microsoft.com/en-us/">Docs</a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://docs.microsoft.com/en-us/dotnet/index">.NET</a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://docs.microsoft.com/en-us/dotnet/framework/index">.NET Framework</a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/index">Windows Presentation Foundation</a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="mobile-breadcrumb"><a itemprop="item" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/index">Advanced (Windows Presentation Foundation)</a></li></ul>
+		</nav>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse">
+				<span class="icon"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit focus mode</span>
+			</button>
+			
+		</div>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand">
+				<span class="icon"><span class="docon docon-menu"></span></span>
+				<span>Contents</span>
+			</button>
+		</div>
+		<div class="action-bar">
+			<ul class="action-list">
+						<li>
+							<a href="#feedback" class="button is-text is-size-7 is-icon-only-touch" data-bi-name="comments">
+								<span class="icon">
+									<span class="docon docon-comment-lines" aria-hidden="true"></span>
+								</span>
+								<span class="action-item-text">Feedback</span>
+							</a>
+						</li>
+							<li id="contenteditbtn">
+									<a href="https://github.com/dotnet/docs/blob/master/docs/framework/wpf/advanced/inline-styles-and-templates.md" class="button is-text is-icon-only-touch is-size-7" title="Edit This Document" data-bi-name="edit" data-original_content_git_url="https://github.com/dotnet/docs/blob/live/docs/framework/wpf/advanced/inline-styles-and-templates.md">
+									<span class="icon"> 
+										<span class="docon docon-edit-outline" aria-hidden="true"></span>
+									</span>
+									<span class="action-item-text">Edit</span>
+								</a>
+							</li>
+				<li>
+					<div class="sharing dropdown has-caret" auto-align="">
+						<a href="#" class="dropdown-trigger button is-text is-size-7 is-icon-only-touch" aria-haspopup="true" aria-controls="sharing-menu" aria-expanded="false" title="Share This Document" data-bi-name="share">
+							<span class="icon">
+								<span class="docon docon-sharing" aria-hidden="true"></span>
+							</span>
+							<span class="action-item-text">Share</span>
+						</a>
+						<div class="dropdown-menu" id="sharing-menu" role="menu">
+							<ul data-bi-name="share-links">
+								<li><a class="share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates%3FWT.mc_id%3Dtwitter&amp;text=Inline%20Styles%20and%20Templates%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates%3FWT.mc_id%3Dtwitter">
+									<span class="icon">
+										<span class="docon docon-brand-twitter" aria-hidden="true"></span>
+									</span>
+									<span>Twitter</span></a></li>
+								<li><a class="share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates%3FWT.mc_id%3Dlinkedin">
+									<span class="icon">
+										<span class="docon docon-brand-linkedin" aria-hidden="true"></span>
+									</span>
+									<span>LinkedIn</span></a></li>
+								<li><a class="share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates%3FWT.mc_id%3Dfacebook">
+									<span class="icon">
+										<span class="docon docon-brand-facebook" aria-hidden="true"></span>
+									</span>
+									<span>Facebook</span></a></li>
+								<li><a class="share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20Inline%20Styles%20and%20Templates%20%7C%20Microsoft%20Docs&amp;body=Inline%20Styles%20and%20Templates%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates%3FWT.mc_id%3Demail">
+									<span class="icon">
+										<span class="docon docon-mail-message-fill" aria-hidden="true"></span>
+									</span>
+									<span>Email</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button class="toggle-theme button is-text is-size-7 is-icon-only-touch" aria-label="toggle-theme" data-bi-name="select-theme">
+						<span class="icon">
+							<span class="docon docon-clear-night"></span>
+						</span>
+						<span class="action-item-text">Dark</span>
+					</button>
+				</li>
+				<li class="is-unstyled-action-list-item">
+					<a class="docs-sign-in not-authenticated button is-text has-text-primary is-size-7" href="#">Sign in</a>
+					<div class="dropdown has-caret authenticated" auto-align="">
+						<button class="dropdown-trigger button is-text is-size-7 is-icon-only-touch has-inner-focus" aria-label="Your Account" aria-haspopup="true" aria-controls="user-menu" aria-expanded="false">
+							<span class="image icon" aria-hidden="true">
+								<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+							</span>
+							<span class="is-truncated" data-profile-property="userName"></span>
+						</button>
+						<div class="dropdown-menu box" id="user-menu" role="menu">
+							<div class="media is-user-dir">
+								<div class="media-left">
+									<span class="image is-64x64" aria-hidden="true">
+										<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+									</span>
+								</div>
+								<div class="media-content">
+									<p class="title has-margin-top-small">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="userName"></span>
+									</p>
+									<p class="subtitle">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="upn"></span>
+									</p>
+								</div>
+							</div>
+							<ul class="is-unstyled has-margin-none">
+								<li><a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl">Profile</a></li>
+								<li><a class="docs-sign-out" href="#">Sign out</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="contents-button" aria-label="Contents" data-bi-name="contents-expand-">
+				<span class="docon docon-editor-list-bullet"></span><span>Contents</span>
+			</button>
+		</div>
+	</div>
+	<div id="disclaimer-holder" class="disclaimer-holder"></div>
+	</div>
+
+	<div class="mainContainer uhf-container  has-top-padding  has-default-focus" data-bi-name="body">
+		
+		<div class="columns ">
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns ">
+
+					<div id="page-actions" class="right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Page Actions">
+							<nav id="side-doc-outline" class="doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="On page navigation" style="width: 114.567px; top: 151px; bottom: 24px;">
+								<h3>In this article</h3>
+							<ol><li class="selected"><a href="#limitations-of-inline-styles-and-templates">Limitations of Inline Styles and Templates</a></li><li><a href="#see-also">See Also</a></li></ol></nav>
+					</div>
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+					
+					<main id="main" role="main" class="content" data-bi-name="content" dir="ltr" lang="en-us">
+
+
+
+						<h1 id="inline-styles-and-templates" sourcefile="docs/framework/wpf/advanced/inline-styles-and-templates.md" sourcestartlinenumber="11">Inline Styles and Templates</h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" dir="ltr" lang="en-us">
+							<li class="displayDate">
+								<span aria-hidden="true" class="docon docon-calendar"></span>
+								<time role="presentation" datetime="2017-03-30T00:00:00.000Z" data-article-date-source="ms.date">03/30/2017</time>
+							</li>
+								<li class="readingTime">
+									<span aria-hidden="true" class="docon docon-clock"></span>
+									2 minutes to read
+								</li>
+							<li class="contributors-holder">
+								<span class="contributors-text">Contributors</span>
+								<ul class="contributors" data-bi-name="contributors">
+											<li><a href="https://github.com/dotnet-bot" title="dotnet bot" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/dotnet-bot.png?size=32" alt="dotnet bot"></a></li>
+											<li><a href="https://github.com/mairaw" title="Maira Wenzel" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/mairaw.png?size=32" alt="Maira Wenzel"></a></li>
+											<li><a href="https://github.com/Mikejo5000" title="Mike Jones" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/Mikejo5000.png?size=32" alt="Mike Jones"></a></li>
+											<li><a href="https://github.com/mikeblome" title="Mike B" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/mikeblome.png?size=32" alt="Mike B"></a></li>
+											<li><a href="https://github.com/guardrex" title="Luke Latham" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/guardrex.png?size=32" alt="Luke Latham"></a></li>
+											<li><a href="https://github.com/dotnet/docs/blob/master/docs/framework/wpf/advanced/inline-styles-and-templates.md" title="all 7 contributors" data-bi-name="contributorshowall"><span aria-hidden="true">all</span></a></li>
+								</ul>
+							</li>
+
+						</ul>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="On page navigation">
+							<h3>In this article</h3>
+						<ol><li><a href="#limitations-of-inline-styles-and-templates">Limitations of Inline Styles and Templates</a></li><li><a href="#see-also">See Also</a></li></ol></nav>
+
+
+
+						<!-- <content> -->
+							
+<p>Windows Presentation Foundation (WPF) provides <a class="xref" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.style" data-linktype="absolute-path">Style</a> objects and template objects (<a class="xref" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.frameworktemplate" data-linktype="absolute-path">FrameworkTemplate</a>
+ subclasses) as a way to define the visual appearance of an element in 
+resources, so that they can be used multiple times. For this reason, 
+attributes in XAML that take the types <a class="xref" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.style" data-linktype="absolute-path">Style</a> and <a class="xref" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.frameworktemplate" data-linktype="absolute-path">FrameworkTemplate</a> almost always make resource references to existing styles and templates rather than define new ones inline.</p>
+<h2 id="limitations-of-inline-styles-and-templates" class="heading-with-anchor">Limitations of Inline Styles and Templates<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#limitations-of-inline-styles-and-templates"></a></h2>
+<p>In Extensible Application Markup Language (XAML), style and template 
+properties can technically be set in one of two ways. You can use 
+attribute syntax to reference a style that was defined within a 
+resource, for example <code>&lt;</code><em>object</em><code>Style="{StaticResource</code><em>myResourceKey</em><code>}" .../&gt;</code>. Or you can use property element syntax to define a style inline, for instance:</p>
+<p><code>&lt;</code> <em>object</em> <code>&gt;</code></p>
+<p><code>&lt;</code> <em>object</em> <code>.Style&gt;</code></p>
+<p><code>&lt;</code> <code>Style</code>  <code>.../&gt;</code></p>
+<p><code>&lt;/</code> <em>object</em> <code>.Style&gt;</code></p>
+<p><code>&lt;/</code> <em>object</em> <code>&gt;</code></p>
+<p>The attribute usage is much more common. A style that is defined 
+inline and not defined in resources is necessarily scoped to the 
+containing element only, and cannot be re-used as easily because it has 
+no resource key. In general a resource-defined style is more versatile 
+and useful, and is more in keeping with the general Windows Presentation
+ Foundation (WPF) programming model principle of separating program 
+logic in code from design in markup.</p>
+<p>Usually there is no reason to set a style or template inline, even if
+ you only intend to use that style or template in that location. Most 
+elements that can take a style or template also support a content 
+property and a content model. If you are only using whatever logical 
+tree you create through styling or templating once, it would be even 
+easier to just fill that content property with the equivalent child 
+elements in direct markup. This would bypass the style and template 
+mechanisms altogether.</p>
+<p>Other syntaxes enabled by markup extensions that return an object are
+ also possible for styles and templates. Two such extensions that have 
+possible scenarios include <a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/templatebinding-markup-extension" data-linktype="relative-path">TemplateBinding</a> and <a class="xref" href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.data.binding" data-linktype="absolute-path">Binding</a>.</p>
+<h2 id="see-also" class="heading-with-anchor">See Also<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#see-also"></a></h2>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/controls/styling-and-templating" data-linktype="relative-path">Styling and Templating</a></p>
+
+						<!-- </content> -->
+							
+						</main>
+
+						<!-- feedback section -->
+
+
+				
+<section class="feedback-section" data-bi-name="feedback-section">
+	<h2 id="feedback">Feedback</h2>
+
+	<div class="alert choose-feedback-type">
+		<p>
+We'd love to hear your thoughts. Choose the type you'd like to provide:		</p>
+
+		<div class="choose-feedback-buttons">
+			<a class="button feedback-type-product has-margin-bottom-small" href="https://developercommunity.visualstudio.com/spaces/61/index.html" data-bi-name="product-feedback">
+				<span>Product feedback</span>
+				<span class="icon docon docon-navigate-external" aria-hidden="true"></span>
+			</a>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-sign-in-button has-text-wrap" data-bi-name="feedback-sign-in">
+						<span class="icon docon docon-brand-github" aria-hidden="true"></span>
+						<span>
+							Sign in to give documentation feedback						</span>
+					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger has-text-wrap" aria-haspopup="true" aria-expanded="false" aria-controls="fbm0" aria-label="Expand documentation feedback menu" data-bi-name="documentation-feedback-menu">
+						<span class="icon docon docon-chevron-down-light" aria-hidden="true"></span>
+					</button>
+					<div class="dropdown-menu documentation-feedback-menu" id="fbm0" role="menu">
+						You may also leave feedback <a data-bi-name="create-issue-on-github" href="https://github.com/dotnet/docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20392ba31b-8e37-ce58-e15d-97357827f37d%0A*%20Version%20Independent%20ID%3A%20246fac8f-33fe-0df2-6511-4b20294bf03e%0A*%20Content%3A%20%5BInline%20Styles%20and%20Templates%5D%28https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates%29%0A*%20Content%20Source%3A%20%5Bdocs%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates.md%5D%28https%3A%2F%2Fgithub.com%2Fdotnet%2Fdocs%2Fblob%2Fmaster%2Fdocs%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates.md%29%0A*%20Product%3A%20**dotnet-framework**%0A*%20GitHub%20Login%3A%20%40dotnet-bot%0A*%20Microsoft%20Alias%3A%20**dotnetcontent**">directly on GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small" hidden="">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-form-toggle" aria-expanded="false" aria-controls="feedback-form" data-bi-name="documentation-feedback">
+Content feedback					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="fbm1" aria-label="Expand documentation feedback menu" data-bi-name="documentation-feedback-menu">
+						<span class="icon docon docon-chevron-down-light" aria-hidden="true"></span>
+					</button>
+					<div class="dropdown-menu documentation-feedback-menu" id="fbm1" role="menu">
+						You may also leave feedback <a data-bi-name="create-issue-on-github" href="https://github.com/dotnet/docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20392ba31b-8e37-ce58-e15d-97357827f37d%0A*%20Version%20Independent%20ID%3A%20246fac8f-33fe-0df2-6511-4b20294bf03e%0A*%20Content%3A%20%5BInline%20Styles%20and%20Templates%5D%28https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fdotnet%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates%29%0A*%20Content%20Source%3A%20%5Bdocs%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates.md%5D%28https%3A%2F%2Fgithub.com%2Fdotnet%2Fdocs%2Fblob%2Fmaster%2Fdocs%2Fframework%2Fwpf%2Fadvanced%2Finline-styles-and-templates.md%29%0A*%20Product%3A%20**dotnet-framework**%0A*%20GitHub%20Login%3A%20%40dotnet-bot%0A*%20Microsoft%20Alias%3A%20**dotnetcontent**">directly on GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+		</div>
+		<p class="has-margin-top-none"><small>Our new feedback system is built on GitHub Issues. Read about this change in <a href="https://docs.microsoft.com/teamblog/a-new-feedback-system-is-coming-to-docs">our blog post</a>.</small></p>
+	</div>
+
+	<form class="feedback-form" id="feedback-form" accept-charset="UTF-8" autocomplete="off" action="javascript:" hidden="">
+		<h3 class="feedback-form-heading current-user">
+			<img class="avatar" alt="Avatar" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9InRyYW5zcGFyZW50IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==" width="36" height="36">
+			<span class="username" aria-hidden="true"></span>
+			<span class="visually-hidden">Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.</span>
+		</h3>
+
+		<label>
+			<span class="visually-hidden">Issue Title</span>
+			<input class="input is-radiusless has-margin-bottom-small" name="title" placeholder="Issue Title" required="" pattern=".*\w.*" type="text">
+		</label>
+		<label>
+			<span class="visually-hidden">Leave a comment</span>
+			<textarea name="body" placeholder="Leave a comment" class="textarea is-radiusless" required=""></textarea>
+		</label>
+
+		<div class="action-container">
+			<button class="button is-primary" type="submit" name="submit">Submit feedback</button>
+		</div>
+	</form>
+
+	<div class="feedback-status alert is-loading" role="alert">
+		<p>Loading feedback...</p>
+	</div>
+
+	<div class="feedback-tab-group tabGroup" data-tab-group-independent="" data-bi-name="tab-group" hidden="">
+		<ul role="tablist">
+			<li role="presentation">
+				<a href="#tabpanel-issues-open" role="tab" aria-controls="tabpanel-issues-open" data-tab="issues-open" aria-label="Open Issues" data-bi-name="tab" aria-selected="true" tabindex="0"></a>
+			</li>
+			<li role="presentation">
+				<a href="#tabpanel-issues-closed" role="tab" aria-controls="tabpanel-issues-closed" data-tab="issues-closed" aria-label="Closed Issues" data-bi-name="tab" aria-selected="false" tabindex="-1"></a>
+			</li>
+		</ul>
+		<section id="tabpanel-issues-open" role="tabpanel" data-tab="issues-open">
+			<div class="no-issues-placeholder">There are no open issues</div>
+			<ul class="github-issues-list" aria-label="Open Issues"></ul>
+		</section>
+		<section id="tabpanel-issues-closed" role="tabpanel" data-tab="issues-closed" aria-hidden="true" hidden="hidden">
+			<div class="no-issues-placeholder">There are no closed issues</div>
+			<ul class="github-issues-list" aria-label="Closed Issues"></ul>
+		</section>
+	</div>
+	<div class="action-container">
+		<a class="view-on-github" href="https://github.com/dotnet/docs/issues?utf8=%E2%9C%93&amp;q=%22246fac8f-33fe-0df2-6511-4b20294bf03e%22&amp;in=body" data-bi-name="view-on-github" hidden="">
+			<span class="docon docon-brand-github" aria-hidden="true"></span>
+			<span>View on GitHub</span>
+			<span class="docon docon-navigate-external" aria-hidden="true"></span>
+		</a>
+	</div>
+</section>						<!-- end feedback section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/inline-styles-and-templates" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>						</div>
+					</div>
+
+					<!--end of div.columns -->
+
+				</div>
+			
+			<!--end of .primary-holder -->
+			</section>
+
+				<div id="left-container" class="left-container column is-one-third-tablet is-one-quarter-desktop">
+					<nav class="sidebar" id="sidebar" data-bi-name="left toc" role="navigation" aria-label="Main Navigation" style="width: 222.95px; top: 151px; bottom: 24px;">
+						<button class="sidebar-header" type="button" aria-label="Close" data-bi-name="contents-collapse">
+							<span>Contents</span>
+							<span class="docon docon-navigate-close" aria-hidden="true"></span>
+						</button>
+						<div id="sidebarContent">
+							<div class="filterHolder">
+							<form class="tocFilter" aria-label="Filter Table of Contents"><input class="input is-size-7" placeholder="Filter by title" aria-label="Filter" data-bi-name="toc-filter" id="toc-filter" aria-controls="filterResults" type="search"><a href="#" title="Clear Filter" class="clearInput"><span class="visually-hidden">Clear Filter</span></a></form><div class="emptyFilterMessage">No results</div></div>
+							<nav class="toc" role="application" aria-label="Table of Contents" id="filterResults"><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")' class="noSibs"><li role="group" aria-expanded="true" aria-label="advanced " onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/" data-text="advanced ">Advanced</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-architecture" data-text="wpf architecture ">WPF Architecture</a></li><li role="group" aria-expanded="true" aria-label="xaml in wpf " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-in-wpf" data-text="xaml in wpf ">XAML in WPF</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-overview-wpf" data-text="xaml overview (wpf) ">XAML Overview (WPF)</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-syntax-in-detail" data-text="xaml syntax in detail ">XAML Syntax In Detail</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/code-behind-and-xaml-in-wpf" data-text="code-behind and xaml in wpf ">Code-Behind and XAML in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-and-custom-classes-for-wpf" data-text="xaml and custom classes for wpf ">XAML and Custom Classes for WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/markup-extensions-and-wpf-xaml" data-text="markup extensions and wpf xaml ">Markup Extensions and WPF XAML</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml" data-text="xaml namespaces and namespace mapping for wpf xaml ">XAML Namespaces and Namespace Mapping for WPF XAML</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-xaml-namescopes" data-text="wpf xaml namescopes ">WPF XAML Namescopes</a></li><li role="treeitem" class="selectedHolder"><a tabindex="0" class="selected" aria-current="page" data-showme="true" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/inline-styles-and-templates" data-text="inline styles and templates ">Inline Styles and Templates</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/typeconverters-and-xaml" data-text="typeconverters and xaml ">Type<wbr>Converters and XAML</a></li><li role="group" aria-expanded="false" aria-label="wpf xaml extensions " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-xaml-extensions" data-text="wpf xaml extensions ">WPF XAML Extensions</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/binding-markup-extension" data-text="binding markup extension ">Binding Markup Extension</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/colorconvertedbitmap-markup-extension" data-text="colorconvertedbitmap markup extension ">Color<wbr>Converted<wbr>Bitmap Markup Extension</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/componentresourcekey-markup-extension" data-text="componentresourcekey markup extension ">Component<wbr>Resource<wbr>Key Markup Extension</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/datetime-xaml-syntax" data-text="datetime xaml syntax ">Date<wbr>Time XAML Syntax</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dynamicresource-markup-extension" data-text="dynamicresource markup extension ">Dynamic<wbr>Resource Markup Extension</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/relativesource-markupextension" data-text="relativesource markupextension ">Relative<wbr>Source Markup<wbr>Extension</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/staticresource-markup-extension" data-text="staticresource markup extension ">Static<wbr>Resource Markup Extension</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/templatebinding-markup-extension" data-text="templatebinding markup extension ">Template<wbr>Binding Markup Extension</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/themedictionary-markup-extension" data-text="themedictionary markup extension ">Theme<wbr>Dictionary Markup Extension</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/propertypath-xaml-syntax" data-text="propertypath xaml syntax ">Property<wbr>Path XAML Syntax</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/presentationoptions-freeze-attribute" data-text="presentationoptions:freeze attribute ">Presentation<wbr>Options:Freeze Attribute</a></li></ul></li><li role="group" aria-expanded="false" aria-label="markup compatibility (mc:) language features " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/markup-compatibility-mc-language-features" data-text="markup compatibility (mc:) language features ">Markup Compatibility (mc:) Language Features</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/mc-ignorable-attribute" data-text="mc:ignorable attribute ">mc:Ignorable Attribute</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/mc-processcontent-attribute" data-text="mc:processcontent attribute ">mc:Process<wbr>Content Attribute</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="base elements " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/base-elements" data-text="base elements ">Base Elements</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/base-elements-overview" data-text="base elements overview ">Base Elements Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/freezable-objects-overview" data-text="freezable objects overview ">Freezable Objects Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/alignment-margins-and-padding-overview" data-text="alignment, margins, and padding overview ">Alignment, Margins, and Padding Overview</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/base-elements-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-make-a-uielement-transparent-or-semi-transparent" data-text="make a uielement transparent or semi-transparent ">Make a UIElement Transparent or Semi-Transparent</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-animate-the-size-of-a-frameworkelement" data-text="animate the size of a frameworkelement ">Animate the Size of a Framework<wbr>Element</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-determine-whether-a-freezable-is-frozen" data-text="determine whether a freezable is frozen ">Determine Whether a Freezable Is Frozen</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-handle-a-loaded-event" data-text="handle a loaded event ">Handle a Loaded Event</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-set-margins-of-elements-and-controls" data-text="set margins of elements and controls ">Set Margins of Elements and Controls</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-make-a-freezable-read-only" data-text="make a freezable read-only ">Make a Freezable Read-Only</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-obtain-a-writable-copy-of-a-read-only-freezable" data-text="obtain a writable copy of a read-only freezable ">Obtain a Writable Copy of a Read-Only Freezable</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-flip-a-uielement-horizontally-or-vertically" data-text="flip a uielement horizontally or vertically ">Flip a UIElement Horizontally or Vertically</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-a-thicknessconverter-object" data-text="use a thicknessconverter object ">Use a Thickness<wbr>Converter Object</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-handle-the-contextmenuopening-event" data-text="handle the contextmenuopening event ">Handle the Context<wbr>Menu<wbr>Opening Event</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="element tree and serialization " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/element-tree-and-serialization" data-text="element tree and serialization ">Element Tree and Serialization</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/trees-in-wpf" data-text="trees in wpf ">Trees in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/serialization-limitations-of-xamlwriter-save" data-text="serialization limitations of xamlwriter.save ">Serialization Limitations of Xaml<wbr>Writer.<wbr>Save</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/initialization-for-object-elements-not-in-an-object-tree" data-text="initialization for object elements not in an object tree ">Initialization for Object Elements Not in an Object Tree</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/element-tree-and-serialization-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-find-an-element-by-its-name" data-text="find an element by its name ">Find an Element by Its Name</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-override-the-logical-tree" data-text="override the logical tree ">Override the Logical Tree</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="properties " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/properties-wpf" data-text="properties ">Properties</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dependency-properties-overview" data-text="dependency properties overview ">Dependency Properties Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/attached-properties-overview" data-text="attached properties overview ">Attached Properties Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dependency-property-callbacks-and-validation" data-text="dependency property callbacks and validation ">Dependency Property Callbacks and Validation</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/custom-dependency-properties" data-text="custom dependency properties ">Custom Dependency Properties</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dependency-property-metadata" data-text="dependency property metadata ">Dependency Property Metadata</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/framework-property-metadata" data-text="framework property metadata ">Framework Property Metadata</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dependency-property-value-precedence" data-text="dependency property value precedence ">Dependency Property Value Precedence</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/read-only-dependency-properties" data-text="read-only dependency properties ">Read-Only Dependency Properties</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/property-value-inheritance" data-text="property value inheritance ">Property Value Inheritance</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/dependency-property-security" data-text="dependency property security ">Dependency Property Security</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/safe-constructor-patterns-for-dependencyobjects" data-text="safe constructor patterns for dependencyobjects ">Safe Constructor Patterns for Dependency<wbr>Objects</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/collection-type-dependency-properties" data-text="collection-type dependency properties ">Collection-Type Dependency Properties</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-loading-and-dependency-properties" data-text="xaml loading and dependency properties ">XAML Loading and Dependency Properties</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/properties-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-implement-a-dependency-property" data-text="implement a dependency property ">Implement a Dependency Property</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-add-an-owner-type-for-a-dependency-property" data-text="add an owner type for a dependency property ">Add an Owner Type for a Dependency Property</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-register-an-attached-property" data-text="register an attached property ">Register an Attached Property</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-override-metadata-for-a-dependency-property" data-text="override metadata for a dependency property ">Override Metadata for a Dependency Property</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="events " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/events-wpf" data-text="events ">Events</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/routed-events-overview" data-text="routed events overview ">Routed Events Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/attached-events-overview" data-text="attached events overview ">Attached Events Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/object-lifetime-events" data-text="object lifetime events ">Object Lifetime Events</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/marking-routed-events-as-handled-and-class-handling" data-text="marking routed events as handled, and class handling ">Marking Routed Events as Handled, and Class Handling</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/preview-events" data-text="preview events ">Preview Events</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/property-change-events" data-text="property change events ">Property Change Events</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/visual-basic-and-wpf-event-handling" data-text="visual basic and wpf event handling ">Visual Basic and WPF Event Handling</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/weak-event-patterns" data-text="weak event patterns ">Weak Event Patterns</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/events-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-add-an-event-handler-using-code" data-text="add an event handler using code ">Add an Event Handler Using Code</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-handle-a-routed-event" data-text="handle a routed event ">Handle a Routed Event</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-create-a-custom-routed-event" data-text="create a custom routed event ">Create a Custom Routed Event</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-find-the-source-element-in-an-event-handler" data-text="find the source element in an event handler ">Find the Source Element in an Event Handler</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-add-class-handling-for-a-routed-event" data-text="add class handling for a routed event ">Add Class Handling for a Routed Event</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="input " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/input-wpf" data-text="input ">Input</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/input-overview" data-text="input overview ">Input Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/commanding-overview" data-text="commanding overview ">Commanding Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/focus-overview" data-text="focus overview ">Focus Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/styling-for-focus-in-controls-and-focusvisualstyle" data-text="styling for focus in controls, and focusvisualstyle ">Styling for Focus in Controls, and Focus<wbr>Visual<wbr>Style</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-creating-your-first-touch-application" data-text="walkthrough: creating your first touch application ">Walkthrough: Creating Your First Touch Application</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/input-and-commands-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-enable-a-command" data-text="enable a command ">Enable a Command</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-change-the-cursor-type" data-text="change the cursor type ">Change the Cursor Type</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-change-the-color-of-an-element-using-focus-events" data-text="change the color of an element using focus events ">Change the Color of an Element Using Focus Events</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-apply-a-focusvisualstyle-to-a-control" data-text="apply a focusvisualstyle to a control ">Apply a Focus<wbr>Visual<wbr>Style to a Control</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-detect-when-the-enter-key-pressed" data-text="detect when the enter key is pressed ">Detect When the Enter Key is Pressed</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-create-a-rollover-effect-using-events" data-text="create a rollover effect using events ">Create a Rollover Effect Using Events</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-make-an-object-follow-the-mouse-pointer" data-text="make an object follow the mouse pointer ">Make an Object Follow the Mouse Pointer</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-create-a-routedcommand" data-text="create a routedcommand ">Create a Routed<wbr>Command</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-implement-icommandsource" data-text="implement icommandsource ">Implement ICommand<wbr>Source</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-no-command-support" data-text="hook up a command to a control with no command support ">Hook Up a Command to a Control with No Command Support</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-hook-up-a-command-to-a-control-with-command-support" data-text="hook up a command to a control with command support ">Hook Up a Command to a Control with Command Support</a></li></ul></li><li role="group" aria-expanded="false" aria-label="digital ink " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/digital-ink" data-text="digital ink ">Digital Ink</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="group" aria-expanded="false" aria-label="overviews " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/digital-ink-overviews" data-text="overviews ">Overviews</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/getting-started-with-ink" data-text="getting started with ink ">Getting Started with Ink</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/collecting-ink" data-text="collecting ink ">Collecting Ink</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/handwriting-recognition" data-text="handwriting recognition ">Handwriting Recognition</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/storing-ink" data-text="storing ink ">Storing Ink</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/the-ink-object-model-windows-forms-and-com-versus-wpf" data-text="the ink object model: windows forms and com versus wpf ">The Ink Object Model: Windows Forms and COM versus WPF</a></li><li role="group" aria-expanded="false" aria-label="advanced ink handling " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/advanced-ink-handling" data-text="advanced ink handling ">Advanced Ink Handling</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/custom-rendering-ink" data-text="custom rendering ink ">Custom Rendering Ink</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/intercepting-input-from-the-stylus" data-text="intercepting input from the stylus ">Intercepting Input from the Stylus</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/creating-an-ink-input-control" data-text="creating an ink input control ">Creating an Ink Input Control</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/the-ink-threading-model" data-text="the ink threading model ">The Ink Threading Model</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/digital-ink-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-select-ink-from-a-custom-control" data-text="select ink from a custom control ">Select Ink from a Custom Control</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-add-custom-data-to-ink-data" data-text="add custom data to ink data ">Add Custom Data to Ink Data</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control" data-text="erase ink on a custom control ">Erase Ink on a Custom Control</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-recognize-application-gestures" data-text="recognize application gestures ">Recognize Application Gestures</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-drag-and-drop-ink" data-text="drag and drop ink ">Drag and Drop Ink</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-data-bind-to-an-inkcanvas" data-text="data bind to an inkcanvas ">Data Bind to an Ink<wbr>Canvas</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-analyze-ink-with-analysis-hints" data-text="analyze ink with analysis hints ">Analyze Ink with Analysis Hints</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-rotate-ink" data-text="rotate ink ">Rotate Ink</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/disable-the-realtimestylus-for-wpf-applications" data-text="disable the realtimestylus for wpf applications ">Disable the Real<wbr>Time<wbr>Stylus for WPF Applications</a></li></ul></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="drag and drop " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/drag-and-drop" data-text="drag and drop ">Drag and Drop</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/drag-and-drop-overview" data-text="drag and drop overview ">Drag and Drop Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/data-and-data-objects" data-text="data and data objects ">Data and Data Objects</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-enabling-drag-and-drop-on-a-user-control" data-text="walkthrough: enabling drag and drop on a user control ">Walkthrough: Enabling Drag and Drop on a User Control</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/drag-and-drop-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-open-a-file-that-is-dropped-on-a-richtextbox-control" data-text="open a file that is dropped on a richtextbox control ">Open a File That is Dropped on a Rich<wbr>Text<wbr>Box Control</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-create-a-data-object" data-text="create a data object ">Create a Data Object</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-determine-if-a-data-format-is-present-in-a-data-object" data-text="determine if a data format is present in a data object ">Determine if a Data Format is Present in a Data Object</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-list-the-data-formats-in-a-data-object" data-text="list the data formats in a data object ">List the Data Formats in a Data Object</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-retrieve-data-in-a-particular-data-format" data-text="retrieve data in a particular data format ">Retrieve Data in a Particular Data Format</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-store-multiple-data-formats-in-a-data-object" data-text="store multiple data formats in a data object ">Store Multiple Data Formats in a Data Object</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="resources " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/resources-wpf" data-text="resources ">Resources</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="group" aria-expanded="false" aria-label="xaml resources " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/xaml-resources" data-text="xaml resources ">XAML Resources</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/resources-and-code" data-text="resources and code ">Resources and Code</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/merged-resource-dictionaries" data-text="merged resource dictionaries ">Merged Resource Dictionaries</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/resources-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-define-and-reference-a-resource" data-text="define and reference a resource ">Define and Reference a Resource</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-application-resources" data-text="use application resources ">Use Application Resources</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-systemfonts" data-text="use systemfonts ">Use System<wbr>Fonts</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-system-fonts-keys" data-text="use system fonts keys ">Use System Fonts Keys</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-systemparameters" data-text="use systemparameters ">Use System<wbr>Parameters</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-system-parameters-keys" data-text="use system parameters keys ">Use System Parameters Keys</a></li></ul></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="documents " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/documents" data-text="documents ">Documents</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/documents-in-wpf" data-text="documents in wpf ">Documents in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/document-serialization-and-storage" data-text="document serialization and storage ">Document Serialization and Storage</a></li><li role="group" aria-expanded="false" aria-label="annotations " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/annotations" data-text="annotations ">Annotations</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/annotations-overview" data-text="annotations overview ">Annotations Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/annotations-schema" data-text="annotations schema ">Annotations Schema</a></li></ul></li><li role="group" aria-expanded="false" aria-label="flow content " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/flow-content" data-text="flow content ">Flow Content</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/flow-document-overview" data-text="flow document overview ">Flow Document Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/textelement-content-model-overview" data-text="textelement content model overview ">Text<wbr>Element Content Model Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/table-overview" data-text="table overview ">Table Overview</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/flow-content-elements-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-adjust-spacing-between-paragraphs" data-text="adjust spacing between paragraphs ">Adjust Spacing Between Paragraphs</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-build-a-table-programmatically" data-text="build a table programmatically ">Build a Table Programmatically</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-change-the-flowdirection-of-content-programmatically" data-text="change the flowdirection of content programmatically ">Change the Flow<wbr>Direction of Content Programmatically</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-change-the-textwrapping-property-programmatically" data-text="change the textwrapping property programmatically ">Change the Text<wbr>Wrapping Property Programmatically</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-define-a-table-with-xaml" data-text="define a table with xaml ">Define a Table with XAML</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-alter-the-typography-of-text" data-text="alter the typography of text ">Alter the Typography of Text</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-enable-text-trimming" data-text="enable text trimming ">Enable Text Trimming</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-insert-an-element-into-text-programmatically" data-text="insert an element into text programmatically ">Insert an Element Into Text Programmatically</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-blocks-property" data-text="manipulate flow content elements through the blocks property ">Manipulate Flow Content Elements through the Blocks Property</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-manipulate-flow-content-elements-through-the-inlines-property" data-text="manipulate flow content elements through the inlines property ">Manipulate Flow Content Elements through the Inlines Property</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-manipulate-a-flowdocument-through-the-blocks-property" data-text="manipulate a flowdocument through the blocks property ">Manipulate a Flow<wbr>Document through the Blocks Property</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-manipulate-table-columns-through-the-columns-property" data-text="manipulate a table&amp;#39;s columns through the columns property ">Manipulate a Table's Columns through the Columns Property</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-manipulate-table-row-groups-through-the-rowgroups-property" data-text="manipulate a table&amp;#39;s row groups through the rowgroups property ">Manipulate a Table's Row Groups through the Row<wbr>Groups Property</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-flow-content-elements" data-text="use flow content elements ">Use Flow Content Elements</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-flowdocument-column-separating-attributes" data-text="use flowdocument column-separating attributes ">Use Flow<wbr>Document Column-Separating Attributes</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="typography " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/typography" data-text="typography ">Typography</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/typography-in-wpf" data-text="typography in wpf ">Typography in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/cleartype-overview" data-text="cleartype overview ">Clear<wbr>Type Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/cleartype-registry-settings" data-text="cleartype registry settings ">Clear<wbr>Type Registry Settings</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/drawing-formatted-text" data-text="drawing formatted text ">Drawing Formatted Text</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/advanced-text-formatting" data-text="advanced text formatting ">Advanced Text Formatting</a></li><li role="group" aria-expanded="false" aria-label="fonts " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/fonts-wpf" data-text="fonts ">Fonts</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/opentype-font-features" data-text="opentype font features ">Open<wbr>Type Font Features</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/packaging-fonts-with-applications" data-text="packaging fonts with applications ">Packaging Fonts with Applications</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/sample-opentype-font-pack" data-text="sample opentype font pack ">Sample Open<wbr>Type Font Pack</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/fonts-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-enumerate-system-fonts" data-text="enumerate system fonts ">Enumerate System Fonts</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-the-fontsizeconverter-class" data-text="use the fontsizeconverter class ">Use the Font<wbr>Size<wbr>Converter Class</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="glyphs " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/glyphs" data-text="glyphs ">Glyphs</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/introduction-to-the-glyphrun-object-and-glyphs-element" data-text="introduction to the glyphrun object and glyphs element ">Introduction to the Glyph<wbr>Run Object and Glyphs Element</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/draw-text-using-glyphs" data-text="how to: draw text using glyphs ">How to: Draw Text Using Glyphs</a></li></ul></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/typography-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-create-a-text-decoration" data-text="create a text decoration ">Create a Text Decoration</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-specify-whether-a-hyperlink-is-underlined" data-text="specify whether a hyperlink is underlined ">Specify Whether a Hyperlink is Underlined</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-apply-transforms-to-text" data-text="apply transforms to text ">Apply Transforms to Text</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-apply-animations-to-text" data-text="apply animations to text ">Apply Animations to Text</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-create-text-with-a-shadow" data-text="create text with a shadow ">Create Text with a Shadow</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-create-outlined-text" data-text="create outlined text ">Create Outlined Text</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-draw-text-to-a-control-background" data-text="draw text to a control&amp;#39;s background ">Draw Text to a Control's Background</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-draw-text-to-a-visual" data-text="draw text to a visual ">Draw Text to a Visual</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-special-characters-in-xaml" data-text="use special characters in xaml ">Use Special Characters in XAML</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="printing and print system management " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/printing-and-print-system-management" data-text="printing and print system management ">Printing and Print System Management</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/printing-overview" data-text="printing overview ">Printing Overview</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/printing-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-invoke-a-print-dialog" data-text="invoke a print dialog ">Invoke a Print Dialog</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-clone-a-printer" data-text="clone a printer ">Clone a Printer</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-diagnose-problematic-print-job" data-text="diagnose problematic print job ">Diagnose Problematic Print Job</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day" data-text="discover whether a print job can be printed at this time of day ">Discover Whether a Print Job Can Be Printed At This Time of Day</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-enumerate-a-subset-of-print-queues" data-text="enumerate a subset of print queues ">Enumerate a Subset of Print Queues</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-get-print-system-object-properties-without-reflection" data-text="get print system object properties without reflection ">Get Print System Object Properties Without Reflection</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-programmatically-print-xps-files" data-text="programmatically print xps files ">Programmatically Print XPS Files</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-remotely-survey-the-status-of-printers" data-text="remotely survey the status of printers ">Remotely Survey the Status of Printers</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-validate-and-merge-printtickets" data-text="validate and merge printtickets ">Validate and Merge Print<wbr>Tickets</a></li></ul></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="globalization and localization " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/globalization-and-localization" data-text="globalization and localization ">Globalization and Localization</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-globalization-and-localization-overview" data-text="wpf globalization and localization overview ">WPF Globalization and Localization Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/globalization-for-wpf" data-text="globalization for wpf ">Globalization for WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/use-automatic-layout-overview" data-text="use automatic layout overview ">Use Automatic Layout Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/localization-attributes-and-comments" data-text="localization attributes and comments ">Localization Attributes and Comments</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/bidirectional-features-in-wpf-overview" data-text="bidirectional features in wpf overview ">Bidirectional Features in WPF Overview</a></li><li role="group" aria-expanded="false" aria-label="how-to topics " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/globalization-and-localization-how-to-topics" data-text="how-to topics ">How-to Topics</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-localize-an-application" data-text="localize an application ">Localize an Application</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-automatic-layout-to-create-a-button" data-text="use automatic layout to create a button ">Use Automatic Layout to Create a Button</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-a-grid-for-automatic-layout" data-text="use a grid for automatic layout ">Use a Grid for Automatic Layout</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-a-resourcedictionary-to-manage-localizable-string-resources" data-text="use a resourcedictionary to manage localizable string resources ">Use a Resource<wbr>Dictionary to Manage Localizable String Resources</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-use-resources-in-localizable-applications" data-text="use resources in localizable applications ">Use Resources in Localizable Applications</a></li></ul></li></ul></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/layout" data-text="layout ">Layout</a></li><li role="group" aria-expanded="false" aria-label="migration and interoperability " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/migration-and-interoperability" data-text="migration and interoperability ">Migration and Interoperability</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="group" aria-expanded="false" aria-label="wpf and windows forms interoperation " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-and-windows-forms-interoperation" data-text="wpf and windows forms interoperation ">WPF and Windows Forms Interoperation</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/windows-forms-and-wpf-interoperability-input-architecture" data-text="windows forms and wpf interoperability input architecture ">Windows Forms and WPF Interoperability Input Architecture</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/layout-considerations-for-the-windowsformshost-element" data-text="layout considerations for the windowsformshost element ">Layout Considerations for the Windows<wbr>Forms<wbr>Host Element</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/windows-forms-controls-and-equivalent-wpf-controls" data-text="windows forms controls and equivalent wpf controls ">Windows Forms Controls and Equivalent WPF Controls</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/windows-forms-and-wpf-property-mapping" data-text="windows forms and wpf property mapping ">Windows Forms and WPF Property Mapping</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/troubleshooting-hybrid-applications" data-text="troubleshooting hybrid applications ">Troubleshooting Hybrid Applications</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf" data-text="walkthrough: hosting a windows forms control in wpf ">Walkthrough: Hosting a Windows Forms Control in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf-by-using-xaml" data-text="walkthrough: hosting a windows forms control in wpf by using xaml ">Walkthrough: Hosting a Windows Forms Control in WPF by Using XAML</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf" data-text="walkthrough: hosting a windows forms composite control in wpf ">Walkthrough: Hosting a Windows Forms Composite Control in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-an-activex-control-in-wpf" data-text="walkthrough: hosting an activex control in wpf ">Walkthrough: Hosting an ActiveX Control in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/how-to-enable-visual-styles-in-a-hybrid-application" data-text="how to: enable visual styles in a hybrid application ">How to: Enable Visual Styles in a Hybrid Application</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-arranging-windows-forms-controls-in-wpf" data-text="walkthrough: arranging windows forms controls in wpf ">Walkthrough: Arranging Windows Forms Controls in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-binding-to-data-in-hybrid-applications" data-text="walkthrough: binding to data in hybrid applications ">Walkthrough: Binding to Data in Hybrid Applications</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-a-3-d-wpf-composite-control-in-windows-forms" data-text="walkthrough: hosting a 3-d wpf composite control in windows forms ">Walkthrough: Hosting a 3-D WPF Composite Control in Windows Forms</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms" data-text="walkthrough: hosting a wpf composite control in windows forms ">Walkthrough: Hosting a WPF Composite Control in Windows Forms</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-mapping-properties-using-the-elementhost-control" data-text="walkthrough: mapping properties using the elementhost control ">Walkthrough: Mapping Properties Using the Element<wbr>Host Control</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-mapping-properties-using-the-windowsformshost-element" data-text="walkthrough: mapping properties using the windowsformshost element ">Walkthrough: Mapping Properties Using the Windows<wbr>Forms<wbr>Host Element</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-localizing-a-hybrid-application" data-text="walkthrough: localizing a hybrid application ">Walkthrough: Localizing a Hybrid Application</a></li></ul></li><li role="group" aria-expanded="false" aria-label="wpf and win32 interoperation " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-and-win32-interoperation" data-text="wpf and win32 interoperation ">WPF and Win32 Interoperation</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/technology-regions-overview" data-text="technology regions overview ">Technology Regions Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/sharing-message-loops-between-win32-and-wpf" data-text="sharing message loops between win32 and wpf ">Sharing Message Loops Between Win32 and WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/hosting-win32-content-in-wpf" data-text="hosting win32 content in wpf ">Hosting Win32 Content in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-a-win32-control-in-wpf" data-text="walkthrough: hosting a win32 control in wpf ">Walkthrough: Hosting a Win32 Control in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-wpf-content-in-win32" data-text="walkthrough: hosting wpf content in win32 ">Walkthrough: Hosting WPF Content in Win32</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-a-wpf-clock-in-win32" data-text="walkthrough: hosting a wpf clock in win32 ">Walkthrough: Hosting a WPF Clock in Win32</a></li></ul></li><li role="group" aria-expanded="false" aria-label="wpf and direct3d9 interoperation " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-and-direct3d9-interoperation" data-text="wpf and direct3d9 interoperation ">WPF and Direct3D9 Interoperation</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/performance-considerations-for-direct3d9-and-wpf-interoperability" data-text="performance considerations for direct3d9 and wpf interoperability ">Performance Considerations for Direct3D9 and WPF Interoperability</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-creating-direct3d9-content-for-hosting-in-wpf" data-text="walkthrough: creating direct3d9 content for hosting in wpf ">Walkthrough: Creating Direct3D9 Content for Hosting in WPF</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-hosting-direct3d9-content-in-wpf" data-text="walkthrough: hosting direct3d9 content in wpf ">Walkthrough: Hosting Direct3D9 Content in WPF</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="performance " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/performance" data-text="performance ">Performance</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/graphics-rendering-tiers" data-text="graphics rendering tiers ">Graphics Rendering Tiers</a></li><li role="group" aria-expanded="false" aria-label="optimizing wpf application performance " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/optimizing-wpf-application-performance" data-text="optimizing wpf application performance ">Optimizing WPF Application Performance</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/planning-for-application-performance" data-text="planning for application performance ">Planning for Application Performance</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/optimizing-performance-taking-advantage-of-hardware" data-text="taking advantage of hardware ">Taking Advantage of Hardware</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/optimizing-performance-layout-and-design" data-text="layout and design ">Layout and Design</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/optimizing-performance-2d-graphics-and-imaging" data-text="2d graphics and imaging ">2D Graphics and Imaging</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/optimizing-performance-object-behavior" data-text="object behavior ">Object Behavior</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/optimizing-performance-application-resources" data-text="application resources ">Application Resources</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/optimizing-performance-text" data-text="text ">Text</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/optimizing-performance-data-binding" data-text="data binding ">Data Binding</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/optimizing-performance-controls" data-text="controls ">Controls</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/optimizing-performance-other-recommendations" data-text="other performance recommendations ">Other Performance Recommendations</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/application-startup-time" data-text="application startup time ">Application Startup Time</a></li></ul></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/walkthrough-caching-application-data-in-a-wpf-application" data-text="walkthrough: caching application data in a wpf application ">Walkthrough: Caching Application Data in a WPF Application</a></li></ul></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/threading-model" data-text="threading model ">Threading Model</a></li><li role="group" aria-expanded="false" aria-label="wpf unmanaged api reference " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/wpf-unmanaged-api-reference" data-text="wpf unmanaged api reference ">WPF Unmanaged API Reference</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/activate-function-wpf-unmanaged-api-reference" data-text="activate function ">Activate Function</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/createidispatchstaforwarder-function-wpf-unmanaged-api-reference" data-text="createidispatchstaforwarder function ">Create<wbr>IDispatch<wbr>STAForwarder Function</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/deactivate-function-wpf-unmanaged-api-reference" data-text="deactivate function ">Deactivate Function</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/forwardtranslateaccelerator-function-wpf-unmanaged-api-reference" data-text="forwardtranslateaccelerator function ">Forward<wbr>Translate<wbr>Accelerator Function</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/loadfromhistory-function-wpf-unmanaged-api-reference" data-text="loadfromhistory function ">Load<wbr>From<wbr>History Function</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/processunhandledexception-function-wpf-unmanaged-api-reference" data-text="processunhandledexception function ">Process<wbr>Unhandled<wbr>Exception Function</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/savetohistory-function-wpf-unmanaged-api-reference" data-text="savetohistory function ">Save<wbr>ToHistory Function</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/setfakeactivewindow-function-wpf-unmanaged-api-reference" data-text="setfakeactivewindow function ">Set<wbr>Fake<wbr>Active<wbr>Window Function</a></li></ul></li></ul></li></ul></nav>
+							<div class="pdf-download-holder">
+		<a href="https://docs.microsoft.com/en-us/dotnet/opbuildpdf/framework/wpf/advanced/toc.pdf?branch=live" class="pdf-download-link has-inner-focus" data-bi-name="downloadPdf">
+			<span class="icon">
+				<span class="docon docon-arrow-down" aria-hidden="true"></span>
+			</span>
+			<span class="pdf-download-text">Download PDF</span>
+		</a>
+	</div>
+						</div>
+					</nav>
+				</div>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container">
+		<form class="rating has-default-focus rating-helpful-active" action="javascript:" data-bi-name="rating">
+			<button class="rating-close has-inner-focus docon docon-navigate-close" type="button" aria-label="Close" data-bi-name="rating-close"></button>
+			<button class="button is-primary rating-mobile-feedback" type="button" data-bi-name="rating-mobile-feedback">Feedback</button>
+			<div class="rating-helpful">
+				<label>Is this page helpful?</label>
+				<div class="buttons">
+					<button class="button is-primary" type="button" data-bi-name="rating-yes" data-bi-sat="1">Yes</button>
+					<button class="button is-primary" type="button" data-bi-name="rating-no" data-bi-sat="0">No</button>
+				</div>
+			</div>
+			<div class="rating-verbatim">
+				<label for="rating-0">How can we improve?</label>
+				<textarea class="rating-textarea" id="rating-0" placeholder="Please share your ideas. We welcome feedback in any language."></textarea>
+				<button class="button is-primary" type="submit" data-bi-name="rating-verbatim" disabled="disabled">Submit</button>
+			</div>
+			<div class="rating-thanks1">
+				<p>Thanks for the feedback!</p>
+				<p>Comments or suggestions? <a href="#" data-bi-name="rating-verbatim-link">Tell us here</a>.</p>
+			</div>
+			<div class="rating-thanks2">
+				<span>Thanks for the feedback!</span>
+			</div>
+		</form></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/inline-styles-and-templates" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>	</div>
+
+	<div class="action-panel has-default-focus"></div>
+
+</body></html>

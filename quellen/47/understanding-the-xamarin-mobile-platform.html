@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html class="js hasSidebar hasPageActions hasBreadcrumb conceptual noTouch" dir="ltr" data-authenticated="false" data-target="docs" lang="en-us"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="a6-1fffa6.css"><link rel="stylesheet" href="override.css"><meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Part 1 – Understanding the Xamarin Mobile Platform - Xamarin">
+	<meta property="og:image" content="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/microsoft-header.png">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@docsmsft">
+	<meta name="twitter:title" content="Part 1 – Understanding the Xamarin Mobile Platform - Xamarin">
+	<meta name="twitter:description" content="This document describes the Xamarin platform at a high level, looking at the compilation process, platform SDK access, code sharing, user interface creation, visual designers, and more.">
+	<meta name="twitter:image" content="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/microsoft-header.png">
+	<meta name="twitter:image:alt" content="Microsoft Logo">
+
+		<meta name="audience" content="developer">
+<meta name="manager" content="crdun">
+<meta name="breadcrumb_path" content="/xamarin/breadcrumb/toc.json">
+<meta name="ms.topic" content="conceptual">
+<meta name="ms.technology" content="xamarin-crossplatform">
+<meta name="ms.prod" content="xamarin">
+<meta name="uhfHeaderId" content="MSDocsHeader-Xamarin">
+<meta name="ms.assetid" content="FBCEF258-D3D8-A420-79ED-3AAB4A7308E4">
+<meta name="author" content="asb3993">
+<meta name="description" content="This document describes the Xamarin platform at a high level, looking at the compilation process, platform SDK access, code sharing, user interface creation, visual designers, and more.">
+<meta name="ms.author" content="amburns">
+<meta name="ms.date" content="03/23/2017">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="xamarin-docs">
+<meta name="locale" content="en-us">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="MSDN">
+<meta name="depot_name" content="MSDN.xamarin-docs">
+<meta name="updated_at" content="2018-06-05 06:33 PM">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/xamarin-docs-pr/blob/d60a5c3e5837a879a9d845497ca9521b2ead90cb/docs/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/xamarin-docs-pr/blob/live/docs/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md">
+<meta name="document_id" content="ece47ffd-3a58-e324-d96c-484f0c5fc0a2">
+<meta name="document_version_independent_id" content="49f01e11-ef79-59ad-75e4-8993e9d3d006">
+<meta name="page_type" content="conceptual">
+<meta name="toc_rel" content="../../TOC.json">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/en-us/MSDN.xamarin-docs/{branchName}{pdfName}">
+<meta name="word_count" content="1823">
+
+	<meta name="scope" content="Xamarin">
+<link href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform" rel="canonical">
+	<title>Part 1 – Understanding the Xamarin Mobile Platform - Xamarin | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="4b04b02d.css">
+
+	<link rel="stylesheet" href="fbd113ac.css">
+
+
+	<script>
+	var msDocs = {
+		data:{
+			azureHeaderLocale: 'en-us',
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+
+			},
+			hasComments: true,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/xamarin-docs',
+			feedbackProductUrl: 'https://developercommunity.visualstudio.com/',
+			contentGitUrl: 'https://github.com/MicrosoftDocs/xamarin-docs/blob/live/docs/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md',
+			forceVersionPicker:false		},
+		functions:{},
+		settings:{
+			extendBreadcrumb: true,
+			enableUHFPPE: false
+		}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/6ee34c01.bluebird.min.js"><\/script>');
+	}
+	if (typeof fetch !== 'function') {
+		document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/d9fc435c.fetch.min.js"><\/script>');
+	}
+	</script>
+
+	<script src="jquery-3.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+	<script src="83a4c963.js"></script><style></style><script src="jsll-4.js" async="" defer="defer"></script>
+
+<script src="bf-d3d307" defer="defer"></script></head>
+
+<body dir="ltr" lang="en-us">
+<div class="header-holder">
+		<div id="headerAreaHolder" data-bi-name="header">    <div id="headerArea" class="uhf" data-m="{&quot;cN&quot;:&quot;headerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a1Body&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;Body&quot;}">
+                <div id="headerRegion" data-region-key="headerregion" data-m="{&quot;cN&quot;:&quot;headerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a1&quot;}">
+
+    <div id="headerUniversalHeader" data-m="{&quot;cN&quot;:&quot;headerUniversalHeader&quot;,&quot;cT&quot;:&quot;Module_coreui-universalheader&quot;,&quot;id&quot;:&quot;m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a1&quot;}" data-module-id="Category|headerRegion|coreui-region|headerUniversalHeader|coreui-universalheader">
+        
+
+
+
+
+
+		<a id="uhfSkipToMain" class="m-skip-to-main" href="#main" tabindex="0" style="z-index:3000002" data-m="{&quot;cN&quot;:&quot;Skip to content_nonnav&quot;,&quot;id&quot;:&quot;nn1m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;m1r1a1&quot;}">Skip to main content</a>
+
+
+<header role="banner" class="c-uhfh context-uhf no-js c-sgl-stck c-category-header " itemscope="itemscope" data-header-footprint="/MSDocs/MSDocsHeader-Xamarin, fromService: True" data-ckrate="1" data-magict="true" itemtype="http://schema.org/Organization">
+	<div class="theme-light js-global-head f-closed  global-head-cont" data-m="{&quot;cN&quot;:&quot;Universal Header_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;m1r1a1&quot;}">
+		<div class="c-uhfh-gcontainer-st">
+			<button type="button" class="c-action-trigger c-glyph glyph-global-nav-button" aria-label="Header navigation menu" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Mobile menu button_nonnav&quot;,&quot;id&quot;:&quot;nn1c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+			<button type="button" class="c-action-trigger c-glyph glyph-arrow-htmllegacy" aria-label="Close search" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;Close Search_nonnav&quot;,&quot;id&quot;:&quot;nn2c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+					<a id="uhfLogo" class="c-logo c-sgl-stk-uhfLogo" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft" data-m="{&quot;cN&quot;:&quot;GlobalNav_Logo_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+						<img alt="" itemprop="logo" itemscope="itemscope" class="c-image" src="RE1Mu3b.png" role="presentation" aria-hidden="true">
+						<span role="presentation" aria-hidden="true">Microsoft</span>
+					</a>
+			<div class="f-mobile-title">
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-left" aria-label="See more menu options" data-m="{&quot;cN&quot;:&quot;Mobile back button_nonnav&quot;,&quot;id&quot;:&quot;nn4c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+				<span data-global-title="Microsoft home" class="js-mobile-title">Xamarin</span>
+				<button type="button" class="c-action-trigger c-glyph glyph-chevron-right" aria-label="See more menu options" data-m="{&quot;cN&quot;:&quot;Mobile forward button_nonnav&quot;,&quot;id&quot;:&quot;nn5c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2m1r1a1&quot;}"></button>
+			</div>
+					<div class="c-show-pipe x-hidden-vp-mobile-st">
+						<a id="uhfCatLogo" class="c-logo c-cat-logo" href="https://docs.microsoft.com/xamarin" aria-label="Xamarin" itemprop="url" data-m="{&quot;cN&quot;:&quot;CatNav_Xamarin_nav&quot;,&quot;id&quot;:&quot;n6c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+								<span>Xamarin</span>
+						</a>
+					</div>
+				<div class="cat-logo-button-cont x-hidden">
+						<button type="button" id="uhfCatLogoButton" class="c-cat-logo-button x-hidden" aria-expanded="false" aria-label="Xamarin" data-m="{&quot;cN&quot;:&quot;Xamarin_nonnav&quot;,&quot;id&quot;:&quot;nn7c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+							Xamarin
+						</button>
+				</div>
+
+
+
+			        <nav id="uhf-g-nav" aria-label="Contextual menu" class="c-uhfh-gnav" data-m="{&quot;cN&quot;:&quot;Category nav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+            <ul class="js-paddle-items">
+                    <li class="single-link js-nav-menu x-hidden-none-mobile-vp">
+                        <a class="c-uhf-nav-link" href="https://docs.microsoft.com/xamarin" data-m="{&quot;cN&quot;:&quot;CatNav_Home_nav&quot;,&quot;id&quot;:&quot;n1c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}"> Home </a>
+                    </li>
+                                        <li class="single-link js-nav-menu">
+                            <a id="c-shellmenu_0" class="c-uhf-nav-link" href="https://docs.microsoft.com/xamarin/cross-platform/getting-started/" data-m="{&quot;cN&quot;:&quot;CatNav_C1_1-GettingStartedCategoryMenu_nav&quot;,&quot;id&quot;:&quot;n2c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Getting Started</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id="c-shellmenu_1" class="c-uhf-nav-link" href="https://docs.microsoft.com/xamarin/android/" data-m="{&quot;cN&quot;:&quot;CatNav_C1_2-AndroidCategoryMenu_nav&quot;,&quot;id&quot;:&quot;n3c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Android</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id="c-shellmenu_2" class="c-uhf-nav-link" href="https://docs.microsoft.com/xamarin/ios/" data-m="{&quot;cN&quot;:&quot;CatNav_C1_3-iOSCategoryMenu_nav&quot;,&quot;id&quot;:&quot;n4c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">iOS</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id="c-shellmenu_3" class="c-uhf-nav-link" href="https://docs.microsoft.com/xamarin/mac/" data-m="{&quot;cN&quot;:&quot;CatNav_C1_4-MacCategoryMenu_nav&quot;,&quot;id&quot;:&quot;n5c8c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Mac</a>
+                        </li>
+                        <li class="single-link js-nav-menu">
+                            <a id="c-shellmenu_4" class="c-uhf-nav-link" href="https://docs.microsoft.com/xamarin/xamarin-forms/" data-m="{&quot;cN&quot;:&quot;CatNav_C1_5-XamarinFormsCategoryMenu_nav&quot;,&quot;id&quot;:&quot;n6c8c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">Xamarin.Forms</a>
+                        </li>
+                        <li class="nested-menu">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_5" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_C1_6-SamplesCategoryMenu_nonnav&quot;,&quot;id&quot;:&quot;nn7c8c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" style="white-space:nowrap">Samples</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;C1_6-SamplesCategoryMenu_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c8c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;C2_1-AndroidSamples_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c8c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_6" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/xamarin/android/samples/" data-m="{&quot;cN&quot;:&quot;CatNav_C2_1-AndroidSamples_nav&quot;,&quot;id&quot;:&quot;n1c1c8c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c8c8c2m1r1a1&quot;}">Android Samples</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;C2_2-iOSSamples_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c8c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_7" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/xamarin/ios/samples/" data-m="{&quot;cN&quot;:&quot;CatNav_C2_2-iOSSamples_nav&quot;,&quot;id&quot;:&quot;n1c2c8c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c8c8c2m1r1a1&quot;}">iOS Samples</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;C2_3-MacSamples_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c8c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_8" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/xamarin/mac/samples/" data-m="{&quot;cN&quot;:&quot;CatNav_C2_3-MacSamples_nav&quot;,&quot;id&quot;:&quot;n1c3c8c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c8c8c2m1r1a1&quot;}">Mac Samples</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;C2_4-Xamarin.FormsSamples_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c8c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c8c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_9" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/xamarin/xamarin-forms/samples/" data-m="{&quot;cN&quot;:&quot;CatNav_C2_4-Xamarin.FormsSamples_nav&quot;,&quot;id&quot;:&quot;n1c4c8c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c8c8c2m1r1a1&quot;}">Xamarin.Forms Samples</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>                        <li class="nested-menu">
+                            <div class="c-uhf-menu js-nav-menu">
+                                <button type="button" id="c-shellmenu_10" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;CatNav_C1_7-APIsCategoryMenu_nonnav&quot;,&quot;id&quot;:&quot;nn9c8c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" style="white-space:nowrap">APIs</button>
+
+                                <ul class="" data-class-idn="" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;C1_7-APIsCategoryMenu_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c10c8c2m1r1a1&quot;,&quot;sN&quot;:10,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;C2_1-AndroidAPIs_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c10c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c10c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_11" class="js-subm-uhf-nav-link" href="https://developer.xamarin.com/api/root/MonoAndroid-lib" data-m="{&quot;cN&quot;:&quot;CatNav_C2_1-AndroidAPIs_nav&quot;,&quot;id&quot;:&quot;n1c1c10c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c10c8c2m1r1a1&quot;}">Android APIs</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;C2_2-iOSAPIs_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c10c8c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c10c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_12" class="js-subm-uhf-nav-link" href="https://developer.xamarin.com/api/root/ios-unified" data-m="{&quot;cN&quot;:&quot;CatNav_C2_2-iOSAPIs_nav&quot;,&quot;id&quot;:&quot;n1c2c10c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c10c8c2m1r1a1&quot;}">iOS APIs</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;C2_3-MacAPIs_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c10c8c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c10c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_13" class="js-subm-uhf-nav-link" href="https://developer.xamarin.com/api/root/monomac-lib" data-m="{&quot;cN&quot;:&quot;CatNav_C2_3-MacAPIs_nav&quot;,&quot;id&quot;:&quot;n1c3c10c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c10c8c2m1r1a1&quot;}">Mac APIs</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;C2_4-Xamarin.FormsAPIs_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c10c8c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c10c8c2m1r1a1&quot;}">
+            <a id="c-shellmenu_14" class="js-subm-uhf-nav-link" href="https://developer.xamarin.com/api/root/Xamarin.Forms" data-m="{&quot;cN&quot;:&quot;CatNav_C2_4-Xamarin.FormsAPIs_nav&quot;,&quot;id&quot;:&quot;n1c4c10c8c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c10c8c2m1r1a1&quot;}">Xamarin.Forms APIs</a>
+            
+        </li>
+                                                    
+                                </ul>
+                            </div>
+                        </li>
+
+                <li id="overflow-menu" class="overflow-menu x-hidden">
+                        <div class="c-uhf-menu js-nav-menu">
+        <button data-m="{&quot;pid&quot;:&quot;More&quot;,&quot;id&quot;:&quot;nn11c8c2m1r1a1&quot;,&quot;sN&quot;:11,&quot;aN&quot;:&quot;c8c2m1r1a1&quot;}" type="button" aria-label="More" aria-expanded="false" style="white-space:nowrap">More</button>
+        <ul id="overflow-menu-list" aria-hidden="true" class="overflow-menu-list">
+        </ul>
+    </div>
+
+                </li>
+                            </ul>
+            
+        </nav>
+
+
+			<div class="c-uhfh-actions" data-m="{&quot;cN&quot;:&quot;Header actions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2m1r1a1&quot;}">
+				<div class="wf-menu">        <nav id="uhf-c-nav" aria-label="All microsoft menu" data-m="{&quot;cN&quot;:&quot;GlobalNav_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2m1r1a1&quot;}">
+            <ul class="js-paddle-items">
+                <li>
+                    <div class="c-uhf-menu js-nav-menu">
+                        <button type="button" class="c-button-logo all-ms-nav" aria-label="All Microsoft expand to see list of Microsoft products and services" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_nonnav&quot;,&quot;id&quot;:&quot;nn1c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" style="white-space: nowrap"> <span>All Microsoft</span></button>
+                        <ul class="f-multi-column f-multi-column-6" aria-hidden="true" data-m="{&quot;cN&quot;:&quot;More_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}">
+                                    <li class="c-w0-contr">
+            <ul class="c-w0">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Office_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c1c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_15" class="js-subm-uhf-nav-link" href="https://products.office.com/en-us/home" data-m="{&quot;cN&quot;:&quot;W0Nav_Office_nav&quot;,&quot;id&quot;:&quot;n1c1c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c1c2c1c9c2m1r1a1&quot;}">Office</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Windows_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_16" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/" data-m="{&quot;cN&quot;:&quot;W0Nav_Windows_nav&quot;,&quot;id&quot;:&quot;n1c2c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c2c1c9c2m1r1a1&quot;}">Windows</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Surface_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_17" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/surface" data-m="{&quot;cN&quot;:&quot;W0Nav_Surface_nav&quot;,&quot;id&quot;:&quot;n1c3c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c2c1c9c2m1r1a1&quot;}">Surface</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Xbox_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_18" class="js-subm-uhf-nav-link" href="https://www.xbox.com/" data-m="{&quot;cN&quot;:&quot;W0Nav_Xbox_nav&quot;,&quot;id&quot;:&quot;n1c4c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c2c1c9c2m1r1a1&quot;}">Xbox</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Deals_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_19" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/sale?icid=gm_nav_L0_salepage" data-m="{&quot;cN&quot;:&quot;W0Nav_Deals_nav&quot;,&quot;id&quot;:&quot;n1c5c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c2c1c9c2m1r1a1&quot;}">Deals</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Support_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+            <a id="l1_support" class="js-subm-uhf-nav-link" href="https://support.microsoft.com/en-us" data-m="{&quot;cN&quot;:&quot;W0Nav_Support_nav&quot;,&quot;id&quot;:&quot;n1c6c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c2c1c9c2m1r1a1&quot;}">Support</a>
+            
+        </li>
+            </ul>
+        </li>
+
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">Software</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_WindowsApps_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_23" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/windows-10-apps" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_WindowsApps_nav&quot;,&quot;id&quot;:&quot;n1c2c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c7c2c1c9c2m1r1a1&quot;}">Windows apps</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneDrive_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_24" class="js-subm-uhf-nav-link" href="https://onedrive.live.com/about/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneDrive_nav&quot;,&quot;id&quot;:&quot;n1c3c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c7c2c1c9c2m1r1a1&quot;}">OneDrive</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Outlook_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_25" class="js-subm-uhf-nav-link" href="https://outlook.live.com/owa/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Outlook_nav&quot;,&quot;id&quot;:&quot;n1c4c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c7c2c1c9c2m1r1a1&quot;}">Outlook</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_Skype_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_26" class="js-subm-uhf-nav-link" href="https://www.skype.com/en/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_Skype_nav&quot;,&quot;id&quot;:&quot;n1c5c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c7c2c1c9c2m1r1a1&quot;}">Skype</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Software_OneNote_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c7c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_27" class="js-subm-uhf-nav-link" href="https://www.onenote.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Software_OneNote_nav&quot;,&quot;id&quot;:&quot;n1c6c7c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c7c2c1c9c2m1r1a1&quot;}">OneNote</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cN&quot;:&quot;PCsAndDevices_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:8,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;cN&quot;:&quot;GlobalNav_PCsAndDevices_nonnav&quot;,&quot;id&quot;:&quot;nn1c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">PCs &amp; Devices  </button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCsAndDevices_PCsAndTablets_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_29" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/devices" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCsAndDevices_PCsAndTablets_nav&quot;,&quot;id&quot;:&quot;n1c2c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c8c2c1c9c2m1r1a1&quot;}">PCs &amp; tablets</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_PCAndDevices_Accessories_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c8c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_30" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/accessories/en-us" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_PCAndDevices_Accessories_nav&quot;,&quot;id&quot;:&quot;n1c3c8c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c8c2c1c9c2m1r1a1&quot;}">Accessories</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:9,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">Entertainment</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_DevicesAndXbox_XboxAndGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_32" class="js-subm-uhf-nav-link" href="https://www.xbox.com/en-us/games/xbox-one?xr=shellnav" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_DevicesAndXbox_XboxAndGames_nav&quot;,&quot;id&quot;:&quot;n1c2c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c9c2c1c9c2m1r1a1&quot;}">Xbox games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Entertainment_PCGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_33" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/windows/windows-10-games" data-m="{&quot;cN&quot;:&quot;GlobalNav_Entertainment_PCGames_nav&quot;,&quot;id&quot;:&quot;n1c3c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c9c2c1c9c2m1r1a1&quot;}">PC games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_WindowsDigitalGames_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_34" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/games/windows?icid=TopNavWindowsGames" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_WindowsDigitalGames_nav&quot;,&quot;id&quot;:&quot;n1c4c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c9c2c1c9c2m1r1a1&quot;}">Windows digital games</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_MoviesAndTV_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_35" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/movies-and-tv?icid=TopNavMoviesAndTv" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_MoviesAndTV_nav&quot;,&quot;id&quot;:&quot;n1c5c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c9c2c1c9c2m1r1a1&quot;}">Movies &amp; TV</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Entertainment_Books_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c9c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_36" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/books" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Entertainment_Books_nav&quot;,&quot;id&quot;:&quot;n1c6c9c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c9c2c1c9c2m1r1a1&quot;}">Books</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:10,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">Business</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftAzure_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_38" class="js-subm-uhf-nav-link" href="https://azure.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftAzure_nav&quot;,&quot;id&quot;:&quot;n1c2c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c10c2c1c9c2m1r1a1&quot;}">Microsoft Azure</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_MicrosoftDynamics365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_39" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/dynamics365/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_MicrosoftDynamics365_nav&quot;,&quot;id&quot;:&quot;n1c3c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c10c2c1c9c2m1r1a1&quot;}">Microsoft Dynamics 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Business_Microsoft365_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_40" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/microsoft-365/?omkt=en-US" data-m="{&quot;cN&quot;:&quot;GlobalNav_Business_Microsoft365_nav&quot;,&quot;id&quot;:&quot;n1c4c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c10c2c1c9c2m1r1a1&quot;}">Microsoft 365</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_Enterprise_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_41" class="js-subm-uhf-nav-link" href="https://enterprise.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_Enterprise_nav&quot;,&quot;id&quot;:&quot;n1c5c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c10c2c1c9c2m1r1a1&quot;}">Enterprise</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Business_DataPlatform_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_42" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/sql-server/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Business_DataPlatform_nav&quot;,&quot;id&quot;:&quot;n1c6c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c10c2c1c9c2m1r1a1&quot;}">Data platform</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_MicrosoftAdvertising_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c10c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_43" class="js-subm-uhf-nav-link" href="https://go.microsoft.com/fwlink/?linkid=2026638" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_MicrosoftAdvertising_nav&quot;,&quot;id&quot;:&quot;n1c7c10c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c10c2c1c9c2m1r1a1&quot;}">Microsoft Advertising</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:11,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">Developer &amp; IT  </button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_.Net_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_45" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/net/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_.Net_nav&quot;,&quot;id&quot;:&quot;n1c2c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c11c2c1c9c2m1r1a1&quot;}">.NET</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DevelopersAndIT_VisualStudio_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_46" class="js-subm-uhf-nav-link" href="https://visualstudio.microsoft.com/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DevelopersAndIT_VisualStudio_nav&quot;,&quot;id&quot;:&quot;n1c3c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c11c2c1c9c2m1r1a1&quot;}">Visual Studio</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_ProductsandServices_WindowsServer_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_47" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/cloud-platform/windows-server" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_ProductsandServices_WindowsServer_nav&quot;,&quot;id&quot;:&quot;n1c4c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c11c2c1c9c2m1r1a1&quot;}">Windows Server</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_WindowsDevCenter_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_48" class="js-subm-uhf-nav-link" href="https://developer.microsoft.com/en-us/windows" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_WindowsDevCenter_nav&quot;,&quot;id&quot;:&quot;n1c5c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c11c2c1c9c2m1r1a1&quot;}">Windows Dev Center</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_DeveloperAndIT_Docs.microsoft.com_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c11c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_49" class="js-subm-uhf-nav-link" href="https://docs.microsoft.com/en-us/" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_DeveloperAndIT_Docs.microsoft.com_nav&quot;,&quot;id&quot;:&quot;n1c6c11c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c11c2c1c9c2m1r1a1&quot;}">Docs</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+        <li class="f-sub-menu js-nav-menu nested-menu" data-m="{&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:12,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}">
+
+            <button type="button" role="presentation" f-multi-parent="true" aria-expanded="false" data-m="{&quot;id&quot;:&quot;nn1c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">Other</button>
+            <ul aria-hidden="true" role="presentation">
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Other_MicrosoftStore_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c2c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_51" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/home" data-m="{&quot;cN&quot;:&quot;GlobalNav_Other_MicrosoftStore_nav&quot;,&quot;id&quot;:&quot;n1c2c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c2c12c2c1c9c2m1r1a1&quot;}">Microsoft Store</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Microsoft Rewards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_52" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/rewards" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Microsoft Rewards_nav&quot;,&quot;id&quot;:&quot;n1c3c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c12c2c1c9c2m1r1a1&quot;}">Microsoft Rewards </a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_SoftwareAndServices_FreeDownloadsAndSecurity_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c4c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_53" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/download/default.aspx" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_SoftwareAndServices_FreeDownloadsAndSecurity_nav&quot;,&quot;id&quot;:&quot;n1c4c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c4c12c2c1c9c2m1r1a1&quot;}">Free downloads &amp; security</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Products_ForStudentsAndEducators_Education_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c5c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:5,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_54" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/education?icid=CNavMSCOML0_Studentsandeducation" data-m="{&quot;cN&quot;:&quot;GlobalNav_Products_ForStudentsAndEducators_Education_nav&quot;,&quot;id&quot;:&quot;n1c5c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c5c12c2c1c9c2m1r1a1&quot;}">Education</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;More_Other_Store_Locations_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c6c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:6,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_55" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/locations/find-a-store?icid=TopNavStoreLocations" data-m="{&quot;cN&quot;:&quot;GlobalNav_More_Other_Store_Locations_nav&quot;,&quot;id&quot;:&quot;n1c6c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c6c12c2c1c9c2m1r1a1&quot;}">Store locations</a>
+            
+        </li>
+        <li class="js-nav-menu single-link" data-m="{&quot;cN&quot;:&quot;Store_More_GiftCards_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c7c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:7,&quot;aN&quot;:&quot;c12c2c1c9c2m1r1a1&quot;}">
+            <a id="shellmenu_56" class="js-subm-uhf-nav-link" href="https://www.microsoft.com/en-us/store/b/gift-cards" data-m="{&quot;cN&quot;:&quot;GlobalNav_Store_More_GiftCards_nav&quot;,&quot;id&quot;:&quot;n1c7c12c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c7c12c2c1c9c2m1r1a1&quot;}">Gift cards</a>
+            
+        </li>
+            </ul>
+            
+        </li>
+                                                            <li class="f-multi-column-info">
+                                    <a data-m="{&quot;cN&quot;:&quot;View Sitemap_nav&quot;,&quot;id&quot;:&quot;n13c2c1c9c2m1r1a1&quot;,&quot;sN&quot;:13,&quot;aN&quot;:&quot;c2c1c9c2m1r1a1&quot;}" href="https://www.microsoft.com/en-us/sitemap.aspx" aria-label="View Sitemap" class="c-glyph">View all</a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+</div>
+		<form class="c-search" autocomplete="off" id="searchForm" name="searchForm" role="search" action="https://docs.microsoft.com/search" method="GET" title="Search" data-seautosuggest="{&quot;queryParams&quot;:{&quot;market&quot;:&quot;en-us&quot;,&quot;clientId&quot;:&quot;7F27B536-CF6B-4C65-8638-A0F8CBDFCA65&quot;,&quot;sources&quot;:&quot;Microsoft-Terms,Iris-Products,DCatAll-Products&quot;,&quot;filter&quot;:&quot;+ClientType:StoreWeb&quot;,&quot;counts&quot;:&quot;5,1,5&quot;},&quot;familyNames&quot;:{&quot;Apps&quot;:&quot;App&quot;,&quot;Books&quot;:&quot;Book&quot;,&quot;Bundles&quot;:&quot;Bundle&quot;,&quot;Devices&quot;:&quot;Device&quot;,&quot;Fees&quot;:&quot;Fee&quot;,&quot;Games&quot;:&quot;Game&quot;,&quot;MusicAlbums&quot;:&quot;Album&quot;,&quot;MusicTracks&quot;:&quot;Song&quot;,&quot;MusicVideos&quot;:&quot;Video&quot;,&quot;MusicArtists&quot;:&quot;Artist&quot;,&quot;OperatingSystem&quot;:&quot;Operating System&quot;,&quot;Software&quot;:&quot;Software&quot;,&quot;Movies&quot;:&quot;Movie&quot;,&quot;TV&quot;:&quot;TV&quot;,&quot;CSV&quot;:&quot;Gift Card&quot;,&quot;VideoActor&quot;:&quot;Actor&quot;}}" data-seautosuggestapi="https://www.microsoft.com/services/api/v3/suggest" data-m="{&quot;cN&quot;:&quot;GlobalNav_Search_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" aria-expanded="false">
+			<input id="cli_shellHeaderSearchInput" aria-label="Search" aria-autocomplete="list" aria-controls="universal-header-search-auto-suggest-transparent" aria-owns="universal-header-search-auto-suggest-ul" name="search" placeholder="Search" data-m="{&quot;cN&quot;:&quot;SearchBox_nav&quot;,&quot;id&quot;:&quot;n1c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}" type="search">
+			<button id="search" aria-label="Search" class="c-glyph" data-m="{&quot;cN&quot;:&quot;Search_nav&quot;,&quot;id&quot;:&quot;n2c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:2,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}" data-bi-dnt="true" data-bi-mto="true" aria-expanded="false">
+				<span role="presentation">Search</span>
+			</button>
+			<div class="m-auto-suggest" id="universal-header-search-auto-suggest-transparent" role="group">
+				<ul class="c-menu" id="universal-header-search-auto-suggest-ul" aria-hidden="true" data-bi-dnt="true" data-bi-mto="true" data-js-auto-suggest-position="default" role="listbox" data-tel="jsll" data-m="{&quot;cN&quot;:&quot;search suggestions_cont&quot;,&quot;cT&quot;:&quot;Container&quot;,&quot;id&quot;:&quot;c3c3c1c9c2m1r1a1&quot;,&quot;sN&quot;:3,&quot;aN&quot;:&quot;c3c1c9c2m1r1a1&quot;}"></ul>
+			</div>
+			
+		</form>
+		<button data-m="{&quot;cN&quot;:&quot;cancel-search&quot;,&quot;pid&quot;:&quot;Cancel Search&quot;,&quot;id&quot;:&quot;nn4c1c9c2m1r1a1&quot;,&quot;sN&quot;:4,&quot;aN&quot;:&quot;c1c9c2m1r1a1&quot;}" id="cancel-search" class="cancel-search" aria-label="Cancel Search">
+			<span>Cancel</span>
+		</button>
+				
+			<div class="auth-control" aria-busy="true" aria-label="Loading..."></div></div>
+		</div>
+		
+		
+	</div>
+	
+</header>
+
+
+
+
+    </div>
+        </div>
+
+    </div>
+</div>
+	<div class="content-header uhf-container has-padding has-default-focus" data-bi-name="content-header">
+		<nav class="has-padding-none-mobile" data-bi-name="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+		<ul class="breadcrumbs"><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://docs.microsoft.com/en-us/">Docs</a></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a itemprop="item" href="https://docs.microsoft.com/en-us/xamarin">Xamarin</a></li><li><a href="https://docs.microsoft.com/en-us/xamarin/cross-platform/">Cross-Platform</a></li><li><a href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/">Get Started</a></li><li class="mobile-breadcrumb"><a href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/">Building Cross-Platform Applications</a></li><li>Part 1 - Understanding the Xamarin Mobile Platform</li></ul>
+		</nav>
+		<div class="content-header-controls exit-focus">
+			<button type="button" class="ap-collapse-behavior ap-expanded button" data-bi-name="ap-collapse">
+				<span class="icon"><span class="docon docon-exit-mode"></span></span>
+				<span>Exit focus mode</span>
+			</button>
+			
+		</div>
+		<div class="content-header-controls">
+			<button type="button" class="contents-button button" data-bi-name="contents-expand">
+				<span class="icon"><span class="docon docon-menu"></span></span>
+				<span>Contents</span>
+			</button>
+		</div>
+		<div class="action-bar">
+			<ul class="action-list">
+						<li>
+							<a href="#feedback" class="button is-text is-size-7 is-icon-only-touch" data-bi-name="comments">
+								<span class="icon">
+									<span class="docon docon-comment-lines" aria-hidden="true"></span>
+								</span>
+								<span class="action-item-text">Feedback</span>
+							</a>
+						</li>
+							<li id="contenteditbtn">
+									<a href="https://github.com/MicrosoftDocs/xamarin-docs/blob/live/docs/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md" class="button is-text is-icon-only-touch is-size-7" title="Edit This Document" data-bi-name="edit" data-original_content_git_url="https://github.com/MicrosoftDocs/xamarin-docs-pr/blob/live/docs/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md">
+									<span class="icon"> 
+										<span class="docon docon-edit-outline" aria-hidden="true"></span>
+									</span>
+									<span class="action-item-text">Edit</span>
+								</a>
+							</li>
+				<li>
+					<div class="sharing dropdown has-caret" auto-align="">
+						<a href="#" class="dropdown-trigger button is-text is-size-7 is-icon-only-touch" aria-haspopup="true" aria-controls="sharing-menu" aria-expanded="false" title="Share This Document" data-bi-name="share">
+							<span class="icon">
+								<span class="docon docon-sharing" aria-hidden="true"></span>
+							</span>
+							<span class="action-item-text">Share</span>
+						</a>
+						<div class="dropdown-menu" id="sharing-menu" role="menu">
+							<ul data-bi-name="share-links">
+								<li><a class="share-twitter" data-bi-name="twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform%3FWT.mc_id%3Dtwitter&amp;text=Part%201%20%E2%80%93%20Understanding%20the%20Xamarin%20Mobile%20Platform%20-%20Xamarin%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform%3FWT.mc_id%3Dtwitter">
+									<span class="icon">
+										<span class="docon docon-brand-twitter" aria-hidden="true"></span>
+									</span>
+									<span>Twitter</span></a></li>
+								<li><a class="share-linkedin" data-bi-name="linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform%3FWT.mc_id%3Dlinkedin">
+									<span class="icon">
+										<span class="docon docon-brand-linkedin" aria-hidden="true"></span>
+									</span>
+									<span>LinkedIn</span></a></li>
+								<li><a class="share-facebook" data-bi-name="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform%3FWT.mc_id%3Dfacebook">
+									<span class="icon">
+										<span class="docon docon-brand-facebook" aria-hidden="true"></span>
+									</span>
+									<span>Facebook</span></a></li>
+								<li><a class="share-email" data-bi-name="email" href="mailto:?subject=%5BShared%20Article%5D%20Part%201%20%E2%80%93%20Understanding%20the%20Xamarin%20Mobile%20Platform%20-%20Xamarin%20%7C%20Microsoft%20Docs&amp;body=Part%201%20%E2%80%93%20Understanding%20the%20Xamarin%20Mobile%20Platform%20-%20Xamarin%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform%3FWT.mc_id%3Demail">
+									<span class="icon">
+										<span class="docon docon-mail-message-fill" aria-hidden="true"></span>
+									</span>
+									<span>Email</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li>
+					<button class="toggle-theme button is-text is-size-7 is-icon-only-touch" aria-label="toggle-theme" data-bi-name="select-theme">
+						<span class="icon">
+							<span class="docon docon-clear-night"></span>
+						</span>
+						<span class="action-item-text">Dark</span>
+					</button>
+				</li>
+				<li class="is-unstyled-action-list-item">
+					<a class="docs-sign-in not-authenticated button is-text has-text-primary is-size-7" href="#">Sign in</a>
+					<div class="dropdown has-caret authenticated" auto-align="">
+						<button class="dropdown-trigger button is-text is-size-7 is-icon-only-touch has-inner-focus" aria-label="Your Account" aria-haspopup="true" aria-controls="user-menu" aria-expanded="false">
+							<span class="image icon" aria-hidden="true">
+								<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+							</span>
+							<span class="is-truncated" data-profile-property="userName"></span>
+						</button>
+						<div class="dropdown-menu box" id="user-menu" role="menu">
+							<div class="media is-user-dir">
+								<div class="media-left">
+									<span class="image is-64x64" aria-hidden="true">
+										<img class="has-body-background-medium is-rounded" data-profile-property="avatarUrl">
+									</span>
+								</div>
+								<div class="media-content">
+									<p class="title has-margin-top-small">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="userName"></span>
+									</p>
+									<p class="subtitle">
+										<span class="is-truncated" style="max-width: 200px" data-profile-property="upn"></span>
+									</p>
+								</div>
+							</div>
+							<ul class="is-unstyled has-margin-none">
+								<li><a href="https://docs.microsoft.com/profile" data-profile-property="profileUrl">Profile</a></li>
+								<li><a class="docs-sign-out" href="#">Sign out</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button type="button" class="contents-button" aria-label="Contents" data-bi-name="contents-expand-">
+				<span class="docon docon-editor-list-bullet"></span><span>Contents</span>
+			</button>
+		</div>
+	</div>
+	<div id="disclaimer-holder" class="disclaimer-holder"></div>
+	</div>
+
+	<div class="mainContainer uhf-container  has-top-padding  has-default-focus" data-bi-name="body">
+		
+		<div class="columns ">
+
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<div class="columns ">
+
+					<div id="page-actions" class="right-container column is-one-quarter is-one-fifth-desktop is-hidden-mobile is-hidden-tablet-only" data-bi-name="pageactions" role="complementary" aria-label="Page Actions">
+							<nav id="side-doc-outline" class="doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="On page navigation" style="width: 114.567px; top: 151px; bottom: 24px;">
+								<h3>In this article</h3>
+							<ol><li class="selected"><a href="#under-the-hood">Under the Hood</a></li><li><a href="#compilation">Compilation</a></li><li><a href="#platform-sdk-access">Platform SDK Access</a></li><li><a href="#seamless-integration-for-developers">Seamless Integration for Developers</a></li><li><a href="#integrated-development-environment-ide-availability">Integrated Development Environment (IDE) Availability</a></li><li><a href="#creating-the-user-interface-ui">Creating the User Interface (UI)</a></li><li><a href="#library-and-code-re-use">Library and Code Re-Use</a></li></ol></nav>
+					</div>
+
+
+				<div id="main-column" class="column  is-full is-four-fifths-desktop ">
+					
+					<main id="main" role="main" class="content" data-bi-name="content" dir="ltr" lang="en-us">
+
+
+
+						<h1 id="part-1--understanding-the-xamarin-mobile-platform" sourcefile="cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform.md" sourcestartlinenumber="11">Part 1 – Understanding the Xamarin Mobile Platform</h1>
+
+						<ul class="metadata page-metadata" data-bi-name="page info" dir="ltr" lang="en-us">
+							<li class="displayDate">
+								<span aria-hidden="true" class="docon docon-calendar"></span>
+								<time role="presentation" datetime="2017-03-23T00:00:00.000Z" data-article-date-source="ms.date">03/23/2017</time>
+							</li>
+								<li class="readingTime">
+									<span aria-hidden="true" class="docon docon-clock"></span>
+									9 minutes to read
+								</li>
+							<li class="contributors-holder">
+								<span class="contributors-text">Contributors</span>
+								<ul class="contributors" data-bi-name="contributors">
+											<li><a href="https://github.com/asb3993" title="Amy Burns" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/asb3993.png?size=32" alt="Amy Burns"></a></li>
+											<li><a href="https://github.com/bradumbaugh" title="Brad Umbaugh" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/bradumbaugh.png?size=32" alt="Brad Umbaugh"></a></li>
+											<li><a href="https://github.com/conceptdev" title="Craig Dunn" data-bi-name="contributorprofile"><img src="contributor.svg" data-src="https://github.com/conceptdev.png?size=32" alt="Craig Dunn"></a></li>
+								</ul>
+							</li>
+
+						</ul>
+
+						<nav id="center-doc-outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" role="navigation" aria-label="On page navigation">
+							<h3>In this article</h3>
+						<ol><li><a href="#under-the-hood">Under the Hood</a></li><li><a href="#compilation">Compilation</a></li><li><a href="#platform-sdk-access">Platform SDK Access</a></li><li><a href="#seamless-integration-for-developers">Seamless Integration for Developers</a></li><li><a href="#integrated-development-environment-ide-availability">Integrated Development Environment (IDE) Availability</a></li><li><a href="#creating-the-user-interface-ui">Creating the User Interface (UI)</a></li><li><a href="#library-and-code-re-use">Library and Code Re-Use</a></li></ol></nav>
+
+
+
+						<!-- <content> -->
+							
+<p>The Xamarin platform consists of a number of elements that allow you to
+develop applications for iOS and Android:</p>
+<ul>
+<li><strong>C# language</strong> – Allows you to use a familiar syntax and sophisticated features like Generics, LINQ and the Parallel Task Library.</li>
+<li><strong>Mono .NET framework</strong> – Provides a cross-platform implementation of the extensive features in Microsoft’s .NET framework.</li>
+<li><strong>Compiler</strong> – Depending on the platform, produces a 
+native app (eg. iOS) or an integrated .NET application and runtime (eg. 
+Android). The compiler also performs many optimizations for mobile 
+deployment such as linking away un-used code.</li>
+<li><strong>IDE tools</strong> – The Visual Studio on Mac and Windows allows you to create, build, and deploy Xamarin projects.</li>
+</ul>
+<p>In addition, because the underlying language is C# with the .NET framework,
+projects can be structured to share code that can also be deployed to Windows
+Phone.</p>
+ <a name="Under_the_Hood"></a>
+<h2 id="under-the-hood" class="heading-with-anchor">Under the Hood<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#under-the-hood"></a></h2>
+<p>Although Xamarin allows you to write apps in C#, and share the same code
+across multiple platforms, the actual implementation on each system is very
+different.</p>
+ <a name="Compilation"></a>
+<h2 id="compilation" class="heading-with-anchor">Compilation<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#compilation"></a></h2>
+<p>The C# source makes its way into a native app in very different ways on each
+platform:</p>
+<ul>
+<li><strong>iOS</strong> – C# is ahead-of-time (AOT) compiled to ARM 
+assembly language. The .NET framework is included, with unused classes 
+being stripped out during linking to reduce the application size. Apple 
+does not allow runtime code generation on iOS, so some language features
+ are not available (see  <a href="https://docs.microsoft.com/en-us/xamarin/ios/internals/limitations" data-linktype="relative-path">Xamarin.iOS Limitations</a> ).</li>
+<li><strong>Android</strong> – C# is compiled to IL and packaged with 
+MonoVM + JIT’ing. Unused classes in the framework are stripped out 
+during linking. The application runs side-by-side with Java/ART (Android
+ runtime) and interacts with the native types via JNI (see  <a href="https://docs.microsoft.com/en-us/xamarin/android/internals/limitations" data-linktype="relative-path">Xamarin.Android Limitations</a> ).</li>
+<li><strong>Windows</strong> – C# is compiled to IL and executed by the 
+built-in runtime, and does not require Xamarin tools. Designing Windows 
+applications following Xamarin’s guidance makes it simpler to re-use the
+ code on iOS and Android.
+Note that the Universal Windows Platform also has a <strong>.NET Native</strong> option which behaves similarly to Xamarin.iOS' AOT compilation.</li>
+</ul>
+<p>The linker documentation for <a href="https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/linker" data-linktype="relative-path">Xamarin.iOS</a> and <a href="https://docs.microsoft.com/en-us/xamarin/android/deploy-test/linker" data-linktype="relative-path">Xamarin.Android</a> provides more
+information about this part of the compilation process.</p>
+<p>Runtime 'compilation' – generating code dynamically with <code>System.Reflection.Emit</code> – should be avoided.</p>
+<p>Apple’s kernel prevents dynamic code generation on iOS devices, 
+therefore emitting code on-the-fly will not work in Xamarin.iOS. 
+Likewise, the Dynamic Language Runtime features cannot be used with 
+Xamarin tools.</p>
+<p>Some reflection features do work (eg. MonoTouch.Dialog uses it for the Reflection API), just not code generation.</p>
+ <a name="Platform_SDK_Access"></a>
+<h2 id="platform-sdk-access" class="heading-with-anchor">Platform SDK Access<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#platform-sdk-access"></a></h2>
+<p>Xamarin makes the features provided by the platform-specific SDK easily accessible with familiar C# syntax:</p>
+<ul>
+<li><strong>iOS</strong> – Xamarin.iOS exposes Apple’s CocoaTouch SDK 
+frameworks as namespaces that you can reference from C#. For example the
+ UIKit framework that contains all the user interface controls can be 
+included with a simple  <code>using UIKit;</code> statement.</li>
+<li><strong>Android</strong> – Xamarin.Android exposes Google’s Android 
+SDK as namespaces, so you can reference any part of the supported SDK 
+with a using statement, such as  <code>using Android.Views;</code> to access the user interface controls.</li>
+<li><strong>Windows</strong> – Windows apps are built using Visual 
+Studio on Windows. Project types include Windows Forms, WPF, WinRT, and 
+the Universal Windows Platform (UWP).</li>
+</ul>
+ <a name="Seamless_Integration_for_Developers"></a>
+<h2 id="seamless-integration-for-developers" class="heading-with-anchor">Seamless Integration for Developers<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#seamless-integration-for-developers"></a></h2>
+<p>The beauty of Xamarin is that despite the differences under the hood,
+Xamarin.iOS and Xamarin.Android (coupled with Microsoft’s Windows SDKs)
+offer a seamless experience for writing C# code that can be re-used across all
+three platforms.</p>
+<p>Business logic, database usage, network access, and other common functions can
+be written once and re-used on each platform, providing a foundation for
+platform-specific user interfaces that look and perform as  native applications.</p>
+ <a name="Integrated_Development_Environment_(IDE)_Availability"></a>
+<h2 id="integrated-development-environment-ide-availability" class="heading-with-anchor">Integrated Development Environment (IDE) Availability<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#integrated-development-environment-ide-availability"></a></h2>
+<p>Xamarin development can be done in Visual Studio on either Mac or Windows. The
+IDE you choose will be determined by the platforms you wish to target.</p>
+<p>Because Windows apps can
+only be developed on Windows, to build for iOS, Android, <em>and</em> Windows requires
+Visual Studio for Windows. However it's possible to share projects and files
+between Windows and Mac computers, so iOS and Android apps can be built on
+a Mac and shared code could later be added to a Windows project.</p>
+<p>The development requirements for each platform are discussed in more detail
+in the <a href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/requirements" data-linktype="relative-path">Requirement</a> guide.</p>
+<a name="iOS"></a>
+<h3 id="ios" class="heading-with-anchor">iOS<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#ios"></a></h3>
+<p>Developing iOS applications requires a Mac computer, running macOS. 
+You can also use Visual Studio to write and deploy iOS applications with
+ Xamarin in Visual Studio. However, a Mac is still needed for build and 
+licensing purposes.</p>
+<p>Apple’s Xcode IDE must be installed to provide the compiler and simulator
+for testing. You can test on your own devices <a href="https://docs.microsoft.com/en-us/xamarin/ios/get-started/installation/device-provisioning/free-provisioning" data-linktype="relative-path">for free</a>,
+but to build applications for distribution (eg. the App Store)
+you must join Apple’s Developer Program ($99 USD per year). Each time you
+submit or update an application, it must be reviewed and approved by Apple before
+it is made available for customers to download.</p>
+<p>Code is written with the Visual Studio IDE
+and screen layouts can be built
+programmatically or edited with Xamarin's iOS Designer in either IDE.</p>
+<p>Refer to the <a href="https://docs.microsoft.com/en-us/xamarin/ios/get-started/installation/index" data-linktype="relative-path">Xamarin.iOS Installation Guide</a> for
+detailed instructions on getting set up.</p>
+<a name="Android"></a>
+<h3 id="android" class="heading-with-anchor">Android<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#android"></a></h3>
+<p>Android application development requires the Java and Android SDKs to be
+installed. These provide the compiler, emulator and other tools required for
+building, deployment and testing. Java, Google’s Android SDK and Xamarin’s
+tools can all be installed and run on the following configurations:</p>
+<ul>
+<li>Mac OS X El Capitan and above (10.11+) with Visual Studio for Mac</li>
+<li>Windows 7 &amp; above with  Visual Studio 2015 or 2017</li>
+</ul>
+<p>Xamarin provides a unified installer that will configure your system with the
+pre-requisite Java, Android and Xamarin tools (including a visual designer for
+screen layouts). Refer to the <a href="https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/index" data-linktype="relative-path">Xamarin.Android Installation Guide</a> for detailed instructions.</p>
+<p>You can build and test applications on a real device without any license from
+Google, however to distribute your application through a store (such as Google
+Play, Amazon or Barnes &amp; Noble) a registration fee may be payable to the
+operator. Google Play will publish your app instantly, while the other stores
+have an approval process similar to Apple’s.</p>
+ <a name="Windows_Phone"></a>
+<h3 id="windows" class="heading-with-anchor">Windows<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#windows"></a></h3>
+<p>Windows apps (WinForms, WPF, or UWP) are built with Visual Studio. They do not use Xamarin directly. However, C# code can
+be shared across Windows, iOS and Android.
+Visit Microsoft’s <a href="https://developer.microsoft.com/" data-linktype="external">Dev Center</a> to learn about the tools required for Windows development.</p>
+ <a name="Creating_the_User_Interface_(UI)"></a>
+<h2 id="creating-the-user-interface-ui" class="heading-with-anchor">Creating the User Interface (UI)<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#creating-the-user-interface-ui"></a></h2>
+<p>A key benefit of using Xamarin is that the application user interface uses
+native controls on each platform, creating apps that are indistinguishable from an
+application written in Objective-C or Java (for iOS and Android
+respectively).</p>
+<p>When building screens in your app, you can either lay out the controls in
+code or create complete screens using the design tools available for each
+platform.</p>
+ <a name="Programmatically_Create_Controls"></a>
+<h3 id="create-controls-programmatically" class="heading-with-anchor">Create Controls Programmatically<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#create-controls-programmatically"></a></h3>
+<p>Each platform allows user interface controls to be added to a screen using
+code. This can be very time-consuming as it can be difficult to visualize the
+finished design when hard-coding pixel coordinates for control positions and
+sizes.</p>
+<p>Programmatically creating controls does have benefits though, particularly on
+iOS for building views that resize or render differently across the iPhone and
+iPad screen sizes.</p>
+ <a name="Visual_Designer"></a>
+<h3 id="visual-designer" class="heading-with-anchor">Visual Designer<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#visual-designer"></a></h3>
+<p>Each platform has a different method for visually laying out screens:</p>
+<ul>
+<li><strong>iOS</strong> – Xamarin's iOS Designer facilitates building 
+Views using drag-and-drop functionality and property fields. 
+Collectively these Views make up a Storyboard, and can be accessed in 
+the <strong>.Storyboard</strong> file that is included in your project.</li>
+<li><strong>Android</strong> – Xamarin provides an Android drag-and-drop UI designer for Visual Studio. Android screen layouts are saved as <strong>.AXML</strong> files when using Xamarin tools.</li>
+<li><strong>Windows</strong> – Microsoft provides a drag-and-drop UI designer in Visual Studio and Blend. The screen layouts are stored as .XAML files.</li>
+</ul>
+<p>These screenshots show the visual screen designers available on each
+platform:</p>
+<p><a href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox" data-linktype="relative-path" class="lightbox-enabled" data-bi-name="lightbox"> <img src="designer-all1.png" alt="" title="These screenshots show the visual screen designers available on each platform" data-linktype="relative-path"></a></p>
+<p>In all cases the elements that you create visually can be referenced in your
+code.</p>
+ <a name="User_Interface_Considerations"></a>
+<h3 id="user-interface-considerations" class="heading-with-anchor">User Interface Considerations<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#user-interface-considerations"></a></h3>
+<p>A key benefit of using Xamarin to build cross platform applications is that
+they can take advantage of native UI toolkits to present a familiar interface to
+the user. The UI will also perform as fast as any other native application.</p>
+<p>Some UI metaphors work across multiple platforms (for example, all three
+platforms use a similar scrolling-list control) but in order for your
+application to ‘feel’ right the UI should take advantage of
+platform-specific user interface elements when appropriate. Examples of
+platform-specific UI metaphors include:</p>
+<ul>
+<li><strong>iOS</strong> – hierarchical navigation with soft back button, tabs on the bottom of the screen.</li>
+<li><strong>Android</strong> – hardware/system-software back button, action menu, tabs on the top of the screen.</li>
+<li><strong>Windows</strong> – Windows apps can run on desktops, tablets
+ (such as Microsoft Surface) and phones. Windows 10 devices may have 
+hardware back button and live tiles, for example.</li>
+</ul>
+<p>It is recommended that you read the design guidelines relevant to the
+platforms you are targeting:</p>
+<ul>
+<li><strong>iOS</strong> –  <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html" data-linktype="external">Apple's Human Interface Guidelines</a></li>
+<li><strong>Android</strong> –  <a href="http://developer.android.com/guide/practices/ui_guidelines/index.html" data-linktype="external">Google's User Interface Guidelines</a></li>
+<li><strong>Windows</strong> –  <a href="https://developer.microsoft.com/windows/design" data-linktype="external">User Experience Design Guidelines for Windows</a></li>
+</ul>
+ <a name="Library_and_Code_Re-use"></a>
+<h2 id="library-and-code-re-use" class="heading-with-anchor">Library and Code Re-Use<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#library-and-code-re-use"></a></h2>
+<p>The Xamarin platform allows re-use of existing C# code across all platforms
+as well as the integration of libraries written natively for each platform.</p>
+ <a name="C#_Source_and_Libraries"></a>
+<h3 id="c-source-and-libraries" class="heading-with-anchor">C# Source and Libraries<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#c-source-and-libraries"></a></h3>
+<p>Because Xamarin products use C# and the .NET framework, lots of existing
+source code (both open source and in-house projects) can be re-used in Xamarin.iOS
+or Xamarin.Android projects. Often the source can simply be added to a Xamarin
+solution and it will work immediately. If an unsupported .NET framework feature
+has been used, some tweaks may be required.</p>
+<p>Examples of C# source that can be used in Xamarin.iOS or Xamarin.Android
+include: SQLite-NET, NewtonSoft.JSON and SharpZipLib.</p>
+ <a name="Objective-C_Bindings_+_Binding_Projects"></a>
+<h3 id="objective-c-bindings--binding-projects" class="heading-with-anchor">Objective-C Bindings + Binding Projects<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#objective-c-bindings--binding-projects"></a></h3>
+<p>Xamarin provides a tool called <em>btouch</em> that helps create bindings
+that allow Objective-C libraries to be used in Xamarin.iOS projects. Refer to the <a href="https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/binding/binding-types-reference" data-linktype="relative-path">Binding Objective-C Types documentation</a> for details on how this is done.</p>
+<p>Examples of Objective-C libraries that can be used in Xamarin.iOS include: RedLaser
+barcode scanning, Google Analytics and PayPal integration. Open-source Xamarin.iOS
+bindings are available on <a href="https://github.com/mono/monotouch-bindings" data-linktype="external">github</a>.</p>
+ <a name=".jar_Bindings_+_Binding_Projects"></a>
+<h3 id="jar-bindings--binding-projects" class="heading-with-anchor">.jar Bindings + Binding Projects<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#jar-bindings--binding-projects"></a></h3>
+<p>Xamarin supports using existing Java libraries in Xamarin.Android. Refer to
+the <a href="https://docs.microsoft.com/en-us/xamarin/android/platform/binding-java-library/index" data-linktype="relative-path">Binding a Java Library documentation</a> for details on how to use a .JAR file
+from Xamarin.Android.</p>
+<p>Open-source Xamarin.Android bindings are available on <a href="https://github.com/mono/monodroid-bindings" data-linktype="external">github</a>.</p>
+ <a name="C_via_PInvoke"></a>
+<h3 id="c-via-pinvoke" class="heading-with-anchor">C via PInvoke<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#c-via-pinvoke"></a></h3>
+<p>"Platform Invoke" technology (P/Invoke) allows managed code (C#) to call
+methods in native libraries as well as support for native libraries to call back
+into managed code.</p>
+<p>For example, the <a href="https://github.com/praeclarum/sqlite-net" data-linktype="external">SQLite-NET</a> library uses statements like this:</p>
+<pre><code class="lang-csharp">[DllImport("sqlite3", EntryPoint = "sqlite3_open", CallingConvention=CallingConvention.Cdecl)]
+public static extern Result Open (string filename, out IntPtr db);
+</code></pre>
+<p>This binds to the native C-language SQLite implementation in iOS and Android.
+Developers familiar with an existing C API can construct a set of C# classes to
+map to the native API and utilize the existing platform code. There is
+documentation for <a href="https://docs.microsoft.com/en-us/xamarin/ios/platform/native-interop" data-linktype="relative-path">linking native libraries</a> in Xamarin.iOS, similar principles apply to Xamarin.Android.</p>
+ <a name="C++_via_Cxxi"></a>
+<h3 id="c-via-cppsharp" class="heading-with-anchor">C++ via CppSharp<a class="docon docon-link heading-anchor" tabindex="-1" aria-hidden="true" href="#c-via-cppsharp"></a></h3>
+<p>Miguel explains CXXI (now called <a href="https://github.com/mono/CppSharp" data-linktype="external">CppSharp</a>) on his <a href="http://tirania.org/blog/archive/2011/Dec-19.html" data-linktype="external">blog</a>. An
+alternative to binding to a C++ library directly is to create a C wrapper and
+bind to that via P/Invoke.</p>
+
+						<!-- </content> -->
+							
+						</main>
+
+						<!-- feedback section -->
+
+
+				
+<section class="feedback-section" data-bi-name="feedback-section">
+	<h2 id="feedback">Feedback</h2>
+
+	<div class="alert choose-feedback-type">
+		<p>
+We'd love to hear your thoughts. Choose the type you'd like to provide:		</p>
+
+		<div class="choose-feedback-buttons">
+			<a class="button feedback-type-product has-margin-bottom-small" href="https://developercommunity.visualstudio.com/" data-bi-name="product-feedback">
+				<span>Product feedback</span>
+				<span class="icon docon docon-navigate-external" aria-hidden="true"></span>
+			</a>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-sign-in-button has-text-wrap" data-bi-name="feedback-sign-in">
+						<span class="icon docon docon-brand-github" aria-hidden="true"></span>
+						<span>
+							Sign in to give documentation feedback						</span>
+					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger has-text-wrap" aria-haspopup="true" aria-expanded="false" aria-controls="fbm0" aria-label="Expand documentation feedback menu" data-bi-name="documentation-feedback-menu">
+						<span class="icon docon docon-chevron-down-light" aria-hidden="true"></span>
+					</button>
+					<div class="dropdown-menu documentation-feedback-menu" id="fbm0" role="menu">
+						You may also leave feedback <a data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20ece47ffd-3a58-e324-d96c-484f0c5fc0a2%0A*%20Version%20Independent%20ID%3A%2049f01e11-ef79-59ad-75e4-8993e9d3d006%0A*%20Content%3A%20%5BPart%201%20%E2%80%93%20Understanding%20the%20Xamarin%20Mobile%20Platform%20-%20Xamarin%5D%28https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform%29%0A*%20Content%20Source%3A%20%5Bdocs%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform.md%5D%28https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fxamarin-docs%2Fblob%2Flive%2Fdocs%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform.md%29%0A*%20Product%3A%20**xamarin**%0A*%20GitHub%20Login%3A%20%40asb3993%0A*%20Microsoft%20Alias%3A%20**amburns**">directly on GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+
+			<div class="field has-addons is-inline-flex has-margin-bottom-small" hidden="">
+				<div class="control has-margin-top-none has-margin-bottom-none">
+					<button class="button feedback-form-toggle" aria-expanded="false" aria-controls="feedback-form" data-bi-name="documentation-feedback">
+Content feedback					</button>
+				</div>
+				<div class="control dropdown has-caret has-margin-top-none has-margin-bottom-none" auto-align="">
+					<button class="button dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="fbm1" aria-label="Expand documentation feedback menu" data-bi-name="documentation-feedback-menu">
+						<span class="icon docon docon-chevron-down-light" aria-hidden="true"></span>
+					</button>
+					<div class="dropdown-menu documentation-feedback-menu" id="fbm1" role="menu">
+						You may also leave feedback <a data-bi-name="create-issue-on-github" href="https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=&amp;body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20docs.microsoft.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20ID%3A%20ece47ffd-3a58-e324-d96c-484f0c5fc0a2%0A*%20Version%20Independent%20ID%3A%2049f01e11-ef79-59ad-75e4-8993e9d3d006%0A*%20Content%3A%20%5BPart%201%20%E2%80%93%20Understanding%20the%20Xamarin%20Mobile%20Platform%20-%20Xamarin%5D%28https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fxamarin%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform%29%0A*%20Content%20Source%3A%20%5Bdocs%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform.md%5D%28https%3A%2F%2Fgithub.com%2FMicrosoftDocs%2Fxamarin-docs%2Fblob%2Flive%2Fdocs%2Fcross-platform%2Fapp-fundamentals%2Fbuilding-cross-platform-applications%2Funderstanding-the-xamarin-mobile-platform.md%29%0A*%20Product%3A%20**xamarin**%0A*%20GitHub%20Login%3A%20%40asb3993%0A*%20Microsoft%20Alias%3A%20**amburns**">directly on GitHub <span class="docon docon-navigate-external" aria-hidden="true"></span></a>.					</div>
+				</div>
+			</div>
+		</div>
+		<p class="has-margin-top-none"><small>Our new feedback system is built on GitHub Issues. Read about this change in <a href="https://docs.microsoft.com/teamblog/a-new-feedback-system-is-coming-to-docs">our blog post</a>.</small></p>
+	</div>
+
+	<form class="feedback-form" id="feedback-form" accept-charset="UTF-8" autocomplete="off" action="javascript:" hidden="">
+		<h3 class="feedback-form-heading current-user">
+			<img class="avatar" alt="Avatar" aria-hidden="true" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9InRyYW5zcGFyZW50IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==" width="36" height="36">
+			<span class="username" aria-hidden="true"></span>
+			<span class="visually-hidden">Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.</span>
+		</h3>
+
+		<label>
+			<span class="visually-hidden">Issue Title</span>
+			<input class="input is-radiusless has-margin-bottom-small" name="title" placeholder="Issue Title" required="" pattern=".*\w.*" type="text">
+		</label>
+		<label>
+			<span class="visually-hidden">Leave a comment</span>
+			<textarea name="body" placeholder="Leave a comment" class="textarea is-radiusless" required=""></textarea>
+		</label>
+
+		<div class="action-container">
+			<button class="button is-primary" type="submit" name="submit">Submit feedback</button>
+		</div>
+	</form>
+
+	<div class="feedback-status alert is-loading" role="alert">
+		<p>Loading feedback...</p>
+	</div>
+
+	<div class="feedback-tab-group tabGroup" data-tab-group-independent="" data-bi-name="tab-group" hidden="">
+		<ul role="tablist">
+			<li role="presentation">
+				<a href="#tabpanel-issues-open" role="tab" aria-controls="tabpanel-issues-open" data-tab="issues-open" aria-label="Open Issues" data-bi-name="tab" aria-selected="true" tabindex="0"></a>
+			</li>
+			<li role="presentation">
+				<a href="#tabpanel-issues-closed" role="tab" aria-controls="tabpanel-issues-closed" data-tab="issues-closed" aria-label="Closed Issues" data-bi-name="tab" aria-selected="false" tabindex="-1"></a>
+			</li>
+		</ul>
+		<section id="tabpanel-issues-open" role="tabpanel" data-tab="issues-open">
+			<div class="no-issues-placeholder">There are no open issues</div>
+			<ul class="github-issues-list" aria-label="Open Issues"></ul>
+		</section>
+		<section id="tabpanel-issues-closed" role="tabpanel" data-tab="issues-closed" aria-hidden="true" hidden="hidden">
+			<div class="no-issues-placeholder">There are no closed issues</div>
+			<ul class="github-issues-list" aria-label="Closed Issues"></ul>
+		</section>
+	</div>
+	<div class="action-container">
+		<a class="view-on-github" href="https://github.com/MicrosoftDocs/xamarin-docs/issues?utf8=%E2%9C%93&amp;q=%2249f01e11-ef79-59ad-75e4-8993e9d3d006%22&amp;in=body" data-bi-name="view-on-github" hidden="">
+			<span class="docon docon-brand-github" aria-hidden="true"></span>
+			<span>View on GitHub</span>
+			<span class="docon docon-navigate-external" aria-hidden="true"></span>
+		</a>
+	</div>
+</section>						<!-- end feedback section -->
+
+						<div class="footerContainer is-visible-interactive has-default-focus ">
+<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>						</div>
+					</div>
+
+					<!--end of div.columns -->
+
+				</div>
+			
+			<!--end of .primary-holder -->
+			</section>
+
+				<div id="left-container" class="left-container column is-one-third-tablet is-one-quarter-desktop">
+					<nav class="sidebar" id="sidebar" data-bi-name="left toc" role="navigation" aria-label="Main Navigation" style="width: 222.95px; top: 151px; bottom: 24px;">
+						<button class="sidebar-header" type="button" aria-label="Close" data-bi-name="contents-collapse">
+							<span>Contents</span>
+							<span class="docon docon-navigate-close" aria-hidden="true"></span>
+						</button>
+						<div id="sidebarContent">
+							<div class="filterHolder">
+							<form class="tocFilter" aria-label="Filter Table of Contents"><input class="input is-size-7" placeholder="Filter by title" aria-label="Filter" data-bi-name="toc-filter" id="toc-filter" aria-controls="filterResults" type="search"><a href="#" title="Clear Filter" class="clearInput"><span class="visually-hidden">Clear Filter</span></a></form><div class="emptyFilterMessage">No results</div></div>
+							<nav class="toc" role="application" aria-label="Table of Contents" id="filterResults"><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")' class="noSibs"><li role="group" aria-expanded="true" aria-label="cross-platform " onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/" data-showme="true" data-text="cross-platform ">Cross-Platform</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="group" aria-expanded="true" aria-label="get started " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/" data-showme="true" data-text="get started ">Get Started</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/requirements" data-text="requirements system requirements">Requirements</a></li><li role="group" aria-expanded="false" aria-label="installation " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/installation/" data-text="installation ">Installation</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="group" aria-expanded="false" aria-label="installing xamarin on windows " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/installation/windows" data-text="installing xamarin on windows ">Installing Xamarin on Windows</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/installation/windows-preview" data-text="installing xamarin previews (windows) ">Installing Xamarin Previews (Windows)</a></li></ul></li><li role="group" aria-expanded="false" aria-label="installing visual studio for mac " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/visualstudio/mac/installation/" data-text="installing visual studio for mac ">Installing Visual Studio for Mac</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/visualstudio/mac/update/" data-text="installing xamarin previews (mac) ">Installing Xamarin Previews (Mac)</a></li></ul></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/installation/firewall" data-text="xamarin firewall configuration instructions ">Xamarin Firewall Configuration Instructions</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/installation/uninstalling-xamarin" data-text="uninstalling xamarin ">Uninstalling Xamarin</a></li></ul></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/introduction-to-mobile-development" data-text="introduction to mobile development ">Introduction to Mobile Development</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/get-started/introduction-to-mobile-sdlc" data-text="introduction to the mobile sdlc ">Introduction to the Mobile SDLC</a></li><li role="group" aria-expanded="true" aria-label="building cross-platform applications " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/" data-text="building cross-platform applications ">Building Cross-Platform Applications</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/overview" data-text="overview ">Overview</a></li><li role="treeitem" class="selectedHolder"><a tabindex="0" class="selected" aria-current="page" data-showme="true" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform" data-text="part 1 - understanding the xamarin mobile platform ">Part 1 - Understanding the Xamarin Mobile Platform</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/architecture" data-text="part 2 - architecture ">Part 2 - Architecture</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/setting-up-a-xamarin-cross-platform-solution" data-text="part 3 - setting up a xamarin cross platform solution ">Part 3 - Setting Up A Xamarin Cross Platform Solution</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/platform-divergence-abstraction-divergent-implementation" data-text="part 4 - dealing with multiple platforms ">Part 4 - Dealing with Multiple Platforms</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies" data-text="part 5 - practical code sharing strategies ">Part 5 - Practical Code Sharing Strategies</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals" data-text="part 6 - testing and app store approvals ">Part 6 - Testing and App Store Approvals</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky" data-text="case study: tasky ">Case Study: Tasky</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="sharing code " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/" data-text="sharing code ">Sharing Code</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/code-sharing" data-text="overview ">Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/net-standard" data-text=".net standard ">.NET Standard</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/shared-projects" data-text="shared projects ">Shared Projects</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/pcl" data-text="portable class libraries (pcl) ">Portable Class Libraries (PCL)</a></li><li role="group" aria-expanded="false" aria-label="nuget multiplatform library projects nugetizer 3000" tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/" data-text="nuget multiplatform library projects nugetizer 3000">Nu<wbr>Get Multiplatform Library Projects</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/existing-library" data-text="existing library projects ">Existing Library Projects</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/single-codebase" data-text="new multiplatform library ">New Multiplatform Library</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific" data-text="new platform-specific libraries ">New Platform-Specific Libraries</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/nuget-multiplatform-libraries/metadata" data-text="metadata guide ">Metadata Guide</a></li></ul></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/nuget-manual" data-text="nuget packages (manual) ">Nu<wbr>Get Packages (Manual)</a></li></ul></li><li role="group" aria-expanded="false" aria-label="language support " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/" data-text="language support ">Language Support</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="group" aria-expanded="false" aria-label="c# " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><span aria-hidden="true" data-text="c# ">C#</span><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/async" data-text="async support overview ">Async Support Overview</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/csharp-six" data-text="c# 6 language features ">C# 6 Language Features</a></li></ul></li><li role="group" aria-expanded="false" aria-label="f# " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/fsharp/" data-text="f# ">F#</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/fsharp/overview" data-text="getting started ">Getting Started</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/fsharp/samples" data-text="f# samples ">F# Samples</a></li></ul></li><li role="group" aria-expanded="false" aria-label="visual basic.net " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/visual-basic/" data-text="visual basic.net ">Visual Basic.<wbr>NET</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/visual-basic/native-apps" data-text="xamarin ios and android ">Xamarin iOS and Android</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/visual-basic/xamarin-forms" data-text="xamarin.forms ">Xamarin.<wbr>Forms</a></li></ul></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/platform/razor-html-templates/" data-text="razor html templates ">Razor HTML Templates</a></li></ul></li><li role="group" aria-expanded="false" aria-label="performance &amp;amp; security " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/deploy-test/performance" data-text="performance &amp;amp; security ">Performance &amp; Security</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="group" aria-expanded="false" aria-label="performance " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/deploy-test/memory-perf-best-practices" data-text="performance ">Performance</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/android/deploy-test/performance?context=xamarin/cross-platform" data-text="android performance ">Android Performance</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/performance?context=xamarin/cross-platform" data-text="ios performance ">iOS Performance</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/mac/deploy-test/performance?context=xamarin/cross-platform" data-text="mac performance ">Mac Performance</a></li></ul></li><li role="group" aria-expanded="false" aria-label="transport layer security (tls) " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/transport-layer-security" data-text="transport layer security (tls) ">Transport Layer Security (TLS)</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/http-stack?context=xamarin/cross-platform" data-text="android ">Android</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/http-stack?context=xamarin/cross-platform" data-text="ios and mac ">iOS and Mac</a></li></ul></li></ul></li><li role="group" aria-expanded="false" aria-label="deployment &amp;amp; debugging " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/deploy-test/" data-text="deployment &amp;amp; debugging ">Deployment &amp; Debugging</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/deploy-test/linker" data-text="custom linker configuration ">Custom Linker Configuration</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/deploy-test/installing-nunit-using-nuget" data-text="installing nunit 2.6.4 using nuget ">Installing NUnit 2.6.4 using Nu<wbr>Get</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/deploy-test/multi-process-debugging" data-text="multi process debugging ">Multi Process Debugging</a></li></ul></li><li role="group" aria-expanded="false" aria-label="desktop developers windows forms (winforms), windows presentation foundation (wpf), and uwp developers" tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/desktop/" data-text="desktop developers windows forms (winforms), windows presentation foundation (wpf), and uwp developers">Desktop Developers</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/desktop/lifecycle" data-text="app lifecycle comparison ">App lifecycle comparison</a></li><li role="group" aria-expanded="false" aria-label="ui controls comparison " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/desktop/controls/" data-text="ui controls comparison ">UI controls comparison</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/desktop/controls/wpf" data-text="wpf vs xamarin.forms ">WPF vs Xamarin.<wbr>Forms</a></li></ul></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/desktop/porting" data-text="porting guidance ">Porting guidance</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/desktop/samples" data-text="samples ">Samples</a></li></ul></li><li role="group" aria-expanded="false" aria-label="troubleshooting " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/" data-text="troubleshooting ">Troubleshooting</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="group" aria-expanded="false" aria-label="frequently asked questions faq" tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/" data-text="frequently asked questions faq">Frequently Asked Questions</a><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/pcl-support-libraries" data-text="how can i view what libraries are supported in a pcl? ">How can I view what libraries are supported in a PCL?</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/pcl-reflection" data-text="pcl reflection api ">PCL Reflection API</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/pcl-case-study" data-text="pcl case study: how can i resolve problems related to system.diagnostics.tracing for the microsoft tpl dataflow nuget package? ">PCL case study: How can I resolve problems related to System.<wbr>Diagnostics.<wbr>Tracing for the Microsoft TPL Dataflow Nu<wbr>Get package?</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/nuget-update" data-text="how can i update nuget? ">How can I update Nu<wbr>Get?</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/nuget-package-downgrade" data-text="how do i downgrade a nuget package? ">How do I downgrade a Nu<wbr>Get package?</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/nuget-packages-missing" data-text="missing packages error after updating nuget packages ">Missing packages error after updating Nuget packages</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/gps-components-nuget" data-text="unifying google play services components and nuget ">Unifying Google Play Services Components and Nu<wbr>Get</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/component-storage" data-text="where are the components stored on my machine? ">Where are the components stored on my machine?</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/version-logs" data-text="where can i find my version information and logs? ">Where can I find my version information and logs?</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/howto-file-bug" data-text="when and how should i file a bug report? ">When and how should I file a bug report?</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/xamarin-jenkins" data-text="why isn&amp;#39;t jenkins supported by xamarin? ">Why isn't Jenkins supported by Xamarin?</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/debugger-settings" data-text="what project settings are required for the debugger? ">What project settings are required for the debugger?</a></li></ul></li><li role="group" aria-expanded="false" aria-label="visual studio questions " tabindex="0" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><span aria-hidden="true" data-text="visual studio questions ">Visual Studio Questions</span><ul role="tree" onclick='msDocs.functions.stopSomePropagation(event, "top")'><li role="treeitem"><a onclick='msDocs.functions.stopSomePropagation(event, "left")' tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/deploy-checkboxes" data-text="deploy checkboxes disabled in configuration manager ">Deploy checkboxes disabled in Configuration Manager</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/missing-vs-extensions" data-text="missing visual studio extensions after installation ">Missing Visual Studio extensions after installation</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/uninstall-xamarin-vs" data-text="how do i perform a thorough uninstall for xamarin for visual studio? ">How do I perform a thorough uninstall for Xamarin for Visual Studio?</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/vs-callstack" data-text="how do i collect the current call stacks of the visual studio process? ">How do I collect the current call stacks of the Visual Studio process?</a></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/questions/vs-config-manager" data-text="why doesn&amp;#39;t visual studio include my referenced library project in my build? ">Why doesn't Visual Studio include my referenced library project in my build?</a></li></ul></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/troubleshooting/component-nuget" data-text="updating component references to nuget ">Updating Component References to Nu<wbr>Get</a></li></ul></li><li role="treeitem"><a tabindex="0" href="https://docs.microsoft.com/en-us/xamarin/cross-platform/samples/" data-text="samples ">Samples</a></li></ul></li></ul></nav>
+							<div class="pdf-download-holder">
+		<a href="https://docs.microsoft.com/en-us/xamarin/opbuildpdf/cross-platform/TOC.pdf?branch=live" class="pdf-download-link has-inner-focus" data-bi-name="downloadPdf">
+			<span class="icon">
+				<span class="docon docon-arrow-down" aria-hidden="true"></span>
+			</span>
+			<span class="pdf-download-text">Download PDF</span>
+		</a>
+	</div>
+						</div>
+					</nav>
+				</div>
+
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+		</div>
+
+		<!--end of .mainContainer -->
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container">
+		<form class="rating has-default-focus rating-helpful-active" action="javascript:" data-bi-name="rating">
+			<button class="rating-close has-inner-focus docon docon-navigate-close" type="button" aria-label="Close" data-bi-name="rating-close"></button>
+			<button class="button is-primary rating-mobile-feedback" type="button" data-bi-name="rating-mobile-feedback">Feedback</button>
+			<div class="rating-helpful">
+				<label>Is this page helpful?</label>
+				<div class="buttons">
+					<button class="button is-primary" type="button" data-bi-name="rating-yes" data-bi-sat="1">Yes</button>
+					<button class="button is-primary" type="button" data-bi-name="rating-no" data-bi-sat="0">No</button>
+				</div>
+			</div>
+			<div class="rating-verbatim">
+				<label for="rating-0">How can we improve?</label>
+				<textarea class="rating-textarea" id="rating-0" placeholder="Please share your ideas. We welcome feedback in any language."></textarea>
+				<button class="button is-primary" type="submit" data-bi-name="rating-verbatim" disabled="disabled">Submit</button>
+			</div>
+			<div class="rating-thanks1">
+				<p>Thanks for the feedback!</p>
+				<p>Comments or suggestions? <a href="#" data-bi-name="rating-verbatim-link">Tell us here</a>.</p>
+			</div>
+			<div class="rating-thanks2">
+				<span>Thanks for the feedback!</span>
+			</div>
+		</form></div>
+
+	<div class="footerContainer has-default-focus is-hidden-interactive ">
+<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+
+    <a data-mscc-ic="false" class="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=https://docs.microsoft.com/en-us/xamarin/cross-platform/app-fundamentals/building-cross-platform-applications/understanding-the-xamarin-mobile-platform" data-bi-name="select-locale"><span class="icon docon docon-world is-size-4 has-margin-right-small"></span><span class="local-selector-link-text">English (United States)</span></a>
+
+    <ul class="links" data-bi-name="footerlinks">
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/previous-versions/" data-bi-name="archivelink">Previous Version Docs</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/teamblog" data-bi-name="bloglink">Blog</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/contribute" data-bi-name="contributorGuide">Contribute</a></li>
+			<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+		<li><a data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+		<li><a data-mscc-ic="false" href="https://aka.ms/sitefeedback" data-bi-name="feedback">Site Feedback</a></li>
+		<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+</footer>	</div>
+
+	<div class="action-panel has-default-focus"></div>
+
+</body></html>

@@ -1,0 +1,239 @@
+
+Skip to content
+Please note that GitHub no longer supports old versions of Firefox.
+
+We recommend upgrading to the latest Safari , Google Chrome , or Firefox .
+Ignore
+Learn more
+
+    Why GitHub?
+    Features →
+        Code review
+        Project management
+        Integrations
+        Team management
+        Social coding
+        Documentation
+        Code hosting
+        Case Studies →
+        Security →
+    Business
+    Explore
+        Explore GitHub →
+    Learn & contribute
+        Topics
+        Collections
+        Trending
+        Learning Lab
+        Open source guides
+    Connect with others
+        Events
+        Community forum
+        GitHub Education
+    Marketplace
+    Pricing
+    Plans →
+        Compare plans
+        Contact Sales
+        Nonprofit →
+        Education →
+
+    In this repository All GitHub ↵
+    Jump to ↵
+
+    No suggested jump to results
+
+    In this repository All GitHub ↵
+    Jump to ↵
+    In this repository All GitHub ↵
+    Jump to ↵
+
+Sign in Sign up
+
+    Watch 8
+    Star 41
+    Fork 11
+
+MersenneTwister-Lab / SFMT
+Code Issues 0 Pull requests 0 Projects 0 Insights
+Dismiss
+Join GitHub today
+
+GitHub is home to over 28 million developers working together to host and review code, manage projects, and build software together.
+Sign up
+SIMD-oriented Fast Mersenne Twister
+
+    43 commits
+    2 branches
+    3 releases
+    4 contributors
+    View license
+
+    C 56.4%
+    HTML 14.5%
+    C++ 13.9%
+    Makefile 9.5%
+    Awk 2.4%
+    Ruby 1.3%
+    Other 2.0%
+
+C HTML C++ Makefile Awk Ruby Other
+Branch: master
+Switch branches/tags
+
+    Branches
+    Tags
+
+majiang-32to64 master
+Nothing to show
+1.5.1 1.5 1.4
+Nothing to show
+New pull request
+Find file
+Clone or download
+Clone with HTTPS
+
+Use Git or checkout with SVN using the web URL.
+Open in Desktop Download ZIP
+Launching GitHub Desktop ...
+
+If nothing happens, download GitHub Desktop and try again.
+
+Go back
+Launching GitHub Desktop ...
+
+If nothing happens, download GitHub Desktop and try again.
+
+Go back
+Launching Xcode ...
+
+If nothing happens, download Xcode and try again.
+
+Go back
+Launching Visual Studio ...
+
+If nothing happens, download the GitHub extension for Visual Studio and try again.
+
+Go back
+@MSaito
+MSaito add archive 1.5.2
+Latest commit 73bcba2 Oct 4, 2017
+Permalink
+Type 	Name 	Latest commit message 	Commit time
+	Failed to load latest commit information.
+	jump 	fix MSC compile error 	Dec 19, 2013
+	params 	version 1.3.2 release 	Aug 20, 2007
+	.gitattributes 	bug fix sfmt_to_res53, and add .gitattributes 	Feb 7, 2017
+	.gitignore 	add 64 bit output data 	Oct 4, 2017
+	CHANGE-LOG.txt 	bug fix sfmt_to_res53, and add .gitattributes 	Feb 7, 2017
+	FILES.txt 	some comment changed 	Mar 10, 2016
+	LICENSE.txt 	some comment changed 	Mar 10, 2016
+	Makefile 	fix MSC compile error 	Dec 19, 2013
+	Makefile.aarch64 	some comments 	Mar 10, 2016
+	Makefile.armv7a 	some comments 	Mar 10, 2016
+	Makefile.me 	add archive 1.5.2 	Oct 4, 2017
+	README.txt 	bug fix sfmt_to_res53, and add .gitattributes 	Feb 7, 2017
+	SFMT-alti.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-common.h 	fix by bug report from k.saito 	Feb 22, 2017
+	SFMT-neon.h 	some comments 	Mar 10, 2016
+	SFMT-params.h 	fix by bug report from k.saito 	Feb 22, 2017
+	SFMT-params11213.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-params1279.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-params132049.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-params19937.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-params216091.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-params2281.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-params4253.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-params44497.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-params607.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-params86243.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT-src-1.4.tar.gz 	ver 1.4 release 	Jun 28, 2012
+	SFMT-src-1.4.zip 	ver 1.4 release 	Jun 28, 2012
+	SFMT-src-1.5.1.tar.gz 	add tarfiles 	Feb 22, 2017
+	SFMT-src-1.5.1.zip 	add tarfiles 	Feb 22, 2017
+	SFMT-src-1.5.2.tar.gz 	add archive 1.5.2 	Oct 4, 2017
+	SFMT-src-1.5.2.zip 	add archive 1.5.2 	Oct 4, 2017
+	SFMT-src-1.5.tar.gz 	bug fix sfmt_to_res53, and add .gitattributes 	Feb 7, 2017
+	SFMT-src-1.5.zip 	bug fix sfmt_to_res53, and add .gitattributes 	Feb 7, 2017
+	SFMT-sse2-msc.h 	fix MSC compile error 	Dec 19, 2013
+	SFMT-sse2.h 	ver 1.4 release 	Jun 28, 2012
+	SFMT.11213.64.out.txt 	add 64 bit output data 	Oct 4, 2017
+	SFMT.11213.out.txt 	toriaezu 	Feb 28, 2007
+	SFMT.1279.64.out.txt 	add 64 bit output data 	Oct 4, 2017
+	SFMT.1279.out.txt 	toriaezu 	Feb 28, 2007
+	SFMT.132049.64.out.txt 	add 64 bit output data 	Oct 4, 2017
+	SFMT.132049.out.txt 	toriaezu 	Feb 28, 2007
+	SFMT.19937.64.out.txt 	add 64 bit output data 	Oct 4, 2017
+	SFMT.19937.out.txt 	toriaezu 	Feb 28, 2007
+	SFMT.216091.64.out.txt 	add 64 bit output data 	Oct 4, 2017
+	SFMT.216091.out.txt 	out of concentration 	May 30, 2007
+	SFMT.2281.64.out.txt 	add 64 bit output data 	Oct 4, 2017
+	SFMT.2281.out.txt 	toriaezu 	Feb 28, 2007
+	SFMT.4253.64.out.txt 	add 64 bit output data 	Oct 4, 2017
+	SFMT.4253.out.txt 	toriaezu 	Feb 28, 2007
+	SFMT.44497.64.out.txt 	add 64 bit output data 	Oct 4, 2017
+	SFMT.44497.out.txt 	toriaezu 	Feb 28, 2007
+	SFMT.607.64.out.txt 	add 64 bit output data 	Oct 4, 2017
+	SFMT.607.out.txt 	toriaezu 	Feb 28, 2007
+	SFMT.86243.64.out.txt 	add 64 bit output data 	Oct 4, 2017
+	SFMT.86243.out.txt 	toriaezu 	Feb 28, 2007
+	SFMT.c 	fix by bug report from k.saito 	Feb 22, 2017
+	SFMT.h 	bug fix sfmt_to_res53, and add .gitattributes 	Feb 7, 2017
+	check.sh 	add 64 bit output data 	Oct 4, 2017
+	doxygen.cfg 	ver 1.4 release 	Jun 28, 2012
+	howto-compile.html 	ver 1.4 release 	Jun 28, 2012
+	mainpage.txt 	Fix type typo 	Sep 29, 2017
+	make_params.rb 	toriaezu 	Feb 27, 2007
+	mexp.txt 	toriaezu 	Feb 28, 2007
+	sample1.c 	ver 1.4 release 	Jun 28, 2012
+	sample2.c 	ver 1.4 release 	Jun 28, 2012
+	sample3.c 	ver 1.4 release 	Jun 28, 2012
+	sample4.c 	ver 1.4 release 	Jun 28, 2012
+	test.c 	ver 1.4 release 	Jun 28, 2012
+README.txt
+
+  =================================================================
+ SFMT ver. 1.5
+ SIMD oriented Fast Mersenne Twister(SFMT)
+
+ Mutsuo Saito (Hiroshima University) and
+ Makoto Matsumoto (The University of Tokyo)
+
+ Copyright (C) 2006, 2007 Mutsuo Saito, Makoto Matsumoto and Hiroshima
+ University.
+ Copyright (c) 2012 Mutsuo Saito, Makoto Matsumoto, Hiroshima University
+ and The University of Tokyo.
+ All rights reserved.
+
+ The (modified) BSD License is applied to this software, see LICENSE.txt
+ =================================================================
+ CAUTION:
+ BIGENDIAN OR ALTIVEC FEATURES ARE NOT TESTED AT ALL.
+
+ To see documents, see html/index.html.
+
+ To make test program, see html/howto-compile.html
+
+ If you want to redistribute and/or change source files, see LICENSE.txt.
+
+ When you change these files and redistribute them, PLEASE write your
+ e-mail address in redistribution and write to contact YOU first if
+ users of your changed source encounter troubles.
+
+    © 2018 GitHub , Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+You can’t perform that action at this time.
+You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session.
+Press h to open a hovercard with more details.

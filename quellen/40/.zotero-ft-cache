@@ -1,0 +1,205 @@
+
+
+We bake cookies in your browser for a better experience. Using this site means that you consent. Read More
+Menu
+
+    Partners
+    Blog
+
+    Download
+    Device Creation
+    Application Development
+    Services
+    Developers
+
+    EN
+    RU
+    ZH
+
+    Wiki
+    Documentation
+    Forum
+    Bug Reports
+    Code Review
+
+Qt Documentation
+
+    Qt 5.11
+    QML Applications
+
+Contents
+
+    What is QML?
+    What is Qt Quick?
+    QML User Interfaces
+    Buttons, Menus, and other Controls
+    Special Effects
+    Viewing Web Content in QML Applications
+    Sensors, Gestures, and Touch Interfaces
+    Multimedia Content
+    Mobile Devices
+    Code Samples and Demos
+    Advanced Application Development Topics
+    Other QML Modules
+    Related Topics
+
+QML Applications
+
+QML is a declarative language that allows user interfaces to be described in terms of their visual components and how they interact and relate with one another. It is a highly readable language that was designed to enable components to be interconnected in a dynamic manner, and it allows components to be easily reused and customized within a user interface. Using the QtQuick module, designers and developers can easily build fluid animated user interfaces in QML, and have the option of connecting these user interfaces to any back-end C++ libraries.
+What is QML?
+
+QML is a user interface specification and programming language. It allows developers and designers alike to create highly performant, fluidly animated and visually appealing applications. QML offers a highly readable, declarative, JSON-like syntax with support for imperative JavaScript expressions combined with dynamic property bindings.
+
+The QML language and engine infrastructure is provided by the Qt QML module. For in-depth information about the QML language, please see the Qt QML module documentation.
+
+The following pages contain more information about QML:
+
+    First Steps with QML - begin using QML with these examples
+    Creating Qt Quick Projects in Qt Creator
+    The QML Reference - reference about the QML constructs and features
+    QML Coding Conventions
+    Glossary of QML Terms
+
+What is Qt Quick?
+
+Qt Quick is the standard library of types and functionality for QML. It includes visual types, interactive types, animations, models and views, particle effects and shader effects. A QML application developer can get access to all of that functionality with a single import statement.
+
+The QtQuick QML library is provided by the Qt Quick module. For in-depth information about the various QML types and other functionality provided by Qt Quick, please see the Qt Quick module documentation.
+QML User Interfaces
+
+For creating or customizing graphical user interfaces, Qt Quick adds visual types, animation types, and other QML types in addition to the standard QML types from Qt QML. Qt Quick Designer is integrated within Qt Creator and supports QtQuick 2 from Qt Creator version 2.7 and onwards.
+
+    Visual types in QML
+    Responding to User Input in QML
+    Animations in QML
+    Displaying Text in QML
+    Layouts in QML
+    Style and Theme Support
+    Integrating JavaScript in QML
+    Scalability
+
+Buttons, Menus, and other Controls
+
+For a set of basic UI controls, the Qt Quick Controls module implements several controls such as buttons, menus, and views. These controls mimic the native behavior found in different platforms such as Windows, macOS, and Linux.
+
+    Qt Quick Controls Overview
+    Styles
+    Dialogs
+    Layouts
+    Extras
+
+A second set of UI controls, Qt Quick Controls 2 , was designed for use on embedded systems, where the hardware has limited resources. For a comparison of the two sets of controls, see Differences between Qt Quick Controls .
+
+    Qt Quick Controls 2 Guidelines
+    Qt Quick Templates 2
+
+Special Effects
+
+Several Qt modules provide types for creating special effects in applications. Their respective pages contain more information about specific uses.
+
+    Particle Effects
+    Graphical Effects - for creating image composition effects.
+
+Viewing Web Content in QML Applications
+
+The QML types, WebEngineView and WebView , render and display dynamic web content. The only difference between the two is that the latter uses a native web view if available. Both these types can load a URL or an HTML string. To read more about them and view code samples, see Qt WebEngine and Qt WebView .
+Sensors, Gestures, and Touch Interfaces
+
+The Qt Sensors module allows applications to read information from sensors such as accelerometers and tilt sensors. There is a common QML API for different platforms and can be extended in C++.
+
+    Qt Sensors QML Types
+    Qt Sensors Examples
+    Compatibility Map - lists support level for different mobile platforms
+
+Multimedia Content
+
+The Qt Multimedia module enables applications to handle various media content with a convenient set of QML types. These QML types can be extended in C++.
+
+    Multimedia
+        Audio Overview
+        Video Overview
+        Camera Overview
+        Radio Overview
+        Qt Audio Engine - for 3D positional audio playback and content management.
+
+Mobile Devices
+
+Several Qt modules provide QML APIs for networked and mobile devices. The QML types provide access to the Bluetooth, Near-Field Communications (NFC), and GPS-enabled devices.
+
+    Qt Positioning
+    Qt Location
+    Qt Bluetooth
+    Qt NFC
+
+For more information, visit the Networking and Connectivity and Mobile APIs pages.
+Code Samples and Demos
+
+To learn more about uses of QML code, there are several code samples which show how QML types are used. In addition, there are several demos which show how QML code is used in applications.
+
+    Getting Started Programming with Qt Quick - a tutorial showing the creation of a simple QML text editor.
+    Qt Quick Examples and Tutorials
+
+Advanced Application Development Topics
+
+    Integrating QML and C++
+    Deploying QML Applications
+    Best Practices for QML and Qt Quick
+    Performance Considerations and Suggestions
+    Internationalization and Localization
+    Testing and Debugging
+        Prototyping with qmlscene
+        Debugging QML Applications
+        Qt Quick Test: QML Unit Testing Framework
+
+Other QML Modules
+
+Qt Quick only provides basic visual types and much of Qt's functionality is exposed to QML through other modules. If you require the functionality of those modules, you should browse their QML documentation.
+
+The All QML APIs by Module contains a list of all QML modules in Qt 5.
+Related Topics
+
+    Porting QML Applications to Qt 5
+
+© 2018 The Qt Company Ltd. Documentation contributions included herein are the copyrights of their respective owners. The documentation provided herein is licensed under the terms of the GNU Free Documentation License version 1.3 as published by the Free Software Foundation. Qt and respective logos are trademarks of The Qt Company Ltd. in Finland and/or other countries worldwide. All other trademarks are property of their respective owners.
+
+    Download
+        Start for Free
+        Qt for Application Development
+        Qt for Device Creation
+        Qt Open Source
+        Terms & Conditions
+        Licensing FAQ
+    Product
+        Qt in Use
+        Qt for Application Development
+        Qt for Device Creation
+        Commercial Features
+        Qt Creator IDE
+        Qt Quick
+    Services
+        Technology Evaluation
+        Proof of Concept
+        Design & Implementation
+        Productization
+        Qt Training
+        Partner Network
+    Developers
+        Documentation
+        Examples & Tutorials
+        Development Tools
+        Wiki
+        Forums
+        Contribute to Qt
+    About us
+        Training & Events
+        Resource Center
+        News
+        Careers
+        Locations
+        Contact Us
+
+    Sign In
+    Feedback
+    Contact us
+    © 2018 The Qt Company
+

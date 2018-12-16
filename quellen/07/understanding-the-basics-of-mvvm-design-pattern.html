@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="pingback" href="https://blogs.msdn.microsoft.com/msgulfcommunity/xmlrpc.php">
+		<!--[if lt IE 9]>
+	<script src="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/themes/microsoft/js/html5.js"></script>
+	<![endif]-->
+	    <link rel="shortcut icon" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/themes/microsoft-msdn/images/favicon-msdn.png">
+<title>Understanding the basics of MVVM design pattern &#8211; Microsoft Gulf Technical Community </title>
+<link rel='dns-prefetch' href='//ajax.aspnetcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Microsoft Gulf Technical Community  &raquo; Understanding the basics of MVVM design pattern Comments Feed" href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blogs.msdn.microsoft.com\/msgulfcommunity\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.7"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wds-ratings-css'  href='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/plugins/wds-ratings/wds-ratings.css?ver=20161014' type='text/css' media='all' />
+<link rel='stylesheet' id='microsoft-parent-style-css'  href='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/themes/microsoft/style.css?ver=02092017' type='text/css' media='all' />
+<link rel='stylesheet' id='microsoft-child-style-css'  href='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/themes/microsoft-msdn/style.css?ver=04152016' type='text/css' media='all' />
+<script type='text/javascript' src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.1.min.js'></script>
+<script type='text/javascript' src='https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js'></script>
+<script type='text/javascript' src='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/themes/microsoft/js/single.js?ver=02092017'></script>
+<link rel='https://api.w.org/' href='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blogs.msdn.microsoft.com/msgulfcommunity/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-includes/wlwmanifest.xml" /> 
+
+<link rel="canonical" href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/" />
+<link rel='shortlink' href='https://blogs.msdn.microsoft.com/msgulfcommunity/?p=1493' />
+<link rel="alternate" type="application/json+oembed" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F&#038;format=xml" />
+	<script>
+		if(window.document.referrer.indexOf('login.live.com') !== -1) {
+			// redefine ga function to prevent referrer data collected by google analytics
+			window.ga = function(){};
+		}
+	</script>
+	<div id='msccBanner' dir='ltr' data-site-name='uhf-MSDNBlogs' data-mscc-version='0.4.1' data-nver='aspnet-3.1.3' data-sver='0.1.2' class='cc-banner' role='alert' aria-labelledby='msccMessage'><div class='cc-container'><svg class='cc-icon cc-v-center' x='0px' y='0px' viewBox='0 0 44 44' height='30px' fill='none' stroke='currentColor'><circle cx='22' cy='22' r='20' stroke-width='2'></circle><line x1='22' x2='22' y1='18' y2='33' stroke-width='3'></line><line x1='22' x2='22' y1='12' y2='15' stroke-width='3'></line></svg> <span id='msccMessage' class='cc-v-center cc-text' tabindex='0'>This site uses cookies for analytics, personalized content and ads. By continuing to browse this site, you agree to this use.</span> <a href='https://go.microsoft.com/fwlink/?linkid=845480' target='_top' aria-label='Learn more about Microsoft&#39;s Cookie Policy' id='msccLearnMore' class='cc-link cc-v-center cc-float-right' data-mscc-ic='false'>Learn more</a></div></div><script type="text/javascript">
+jQuery( window ).load( function() {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    if (typeof mscc === 'undefined' || (!mscc || mscc.hasConsent())) {
+                ga('require', 'linkid');
+                ga('create', 'UA-65691138-1', 'auto');
+                ga('send', 'pageview');
+                ga('set', 'anonymizeIp', true);
+            }
+} );
+</script>
+			<!-- Begin Custom CSS --><style type="text/css" id="wds-custom-css">
+						</style><!-- End Custom CSS -->
+			<meta property="og:type" content="article" />
+<meta property="og:title" content="Understanding the basics of MVVM design pattern" />
+<meta property="og:url" content="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/" />
+<meta property="og:site_name" content="Microsoft Gulf Technical Community " />
+<meta property="og:description" content="This article is dedicated for beginners who would like to know more about Model-View-ViewModel (MVVM) design pattern and why MVVM has to be used. Why use MVVM? In traditional UI development &#8211; developer used to create a View using window or user control or page and then write all logical code (Event handling, initialization and..." />
+<meta property="og:image" content="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/35/09/metablogapi/1854.mvvm_thumb_74094632.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Understanding the basics of MVVM design pattern" />
+<meta name="twitter:url" content="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/" />
+<meta name="twitter:description" content="This article is dedicated for beginners who would like to know more about Model-View-ViewModel (MVVM) design pattern and why MVVM has to be used. Why use MVVM? In traditional UI development &#8211; developer used to create a View using window or user control or page and then write all logical code (Event handling, initialization and..." />
+<meta name="twitter:image" content="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/35/09/metablogapi/1854.mvvm_thumb_74094632.jpg" />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+</head>
+
+<body class="post-template-default single single-post postid-1493 single-format-standard">
+<div id="page" class="site container-fluid">
+
+	<header id="site-header" class="site-header row" role="banner">
+		<div id="site-header-global-wrapper" class="site-header-global-wrapper">
+			<div id="site-header-global" class="site-header-global">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-profile-menu" aria-label="toggle menu" tabindex="0" aria-expanded="false">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div id="site-logo" class="col-sm-5 row navbar-header">
+					<div id="header-microsoft-logo">
+						<a id="home-link" href="https://www.microsoft.com/" tabindex="1" aria-label="Microsoft logo">
+							<img id="header-microsoft-logo-svg" src="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/themes/microsoft/images/ms-logo-gray.svg" alt="Microsoft logo">
+							<span id="brand">
+								<span id="brand-separator">|</span>
+								<span id="brand-name"></span>
+							</span>
+						</a>
+					</div>
+				</div>
+				<div id="site-header-global-right" class="col-sm-7">
+					<div id="site-profile-menu" class="navbar-collapse collapse">
+						<div id="search-form-wrapper">
+														<form id="search-form" role="search" action="https://social.msdn.microsoft.com/search/en-US" home-url="https://blogs.msdn.microsoft.com/msgulfcommunity" autocomplete="off">
+								<div class="input-group">
+																			<input name="rq" value="site:blogs.msdn.microsoft.com/msgulfcommunity" type="hidden">
+										<input name="rn" value="msgulfcommunity" type="hidden">
+																		<input type="hidden" name="ral" value="1">
+									<input type="text" class="form-control" placeholder="Search" name="query" id="srch-term" tabindex="0" aria-label="Search box with search options">
+									<div class="input-group-btn">
+										<button aria-label="Search" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+									</div>
+								</div>
+							</form>
+							<div id="search-option">
+								<div class="search-filter" id="search-filter-site" tabindex="0" aria-label="Search MSDN">
+									<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+									<span class="search-text">Search MSDN</span>
+								</div>
+								<div class="search-filter" tabindex="0" aria-label="Search all blogs" id="search-filter-all-blogs">
+									<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+									<span class="search-text">Search all blogs</span>
+								</div>
+																	<div class="search-filter selected" tabindex="0" aria-label="Search this blog" id="search-filter-this-blog">
+										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+										<span class="search-text">Search this blog</span>
+									</div>
+															</div>
+						</div>
+						<div id="me-control">
+															<a href="https://blogs.msdn.microsoft.com/wp-login.php?aadsso_action=login">Sign in</a>
+													</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div id="site-header-blog-wrapper" class="site-header-blog-wrapper ms-blog-header clear-both">
+			<div id="site-header-blog" class="site-header-blog">
+				<nav class="navbar navbar-inverse">
+					<div id="blog-logo-area" class="navbar-header">
+						<div id="blog-logo" data-toggle="collapse" data-target="#blog-menu" tabindex="0" aria-label="blog logo">
+														<div id="blog-logo-text">
+				<h1 class="site-title ms-blog-title">
+					<a href="https://blogs.msdn.microsoft.com/msgulfcommunity" class="for-desktop">
+						Microsoft Gulf Technical Community 					</a>
+					<a href="https://blogs.msdn.microsoft.com/msgulfcommunity" class="for-mobile">
+						Microsoft Gulf Technical Community 					</a>
+				</h1>
+				<p class="site-description ms-blog-description">The communication portal for the Gulf technical audience</p>
+			</div>
+									</div>
+					</div>
+									</nav>
+			</div>
+		</div>
+		<div id="site-header-image-wrapper" class="ms-blog-banner">
+			<div id="site-header-image">
+											</div>
+		</div>
+	</header>
+
+	<div id="site-content" class="site-content row">
+
+	<div id="primary" class="content-area col-sm-9">
+		<div id="single-content" class="div-content">
+
+			
+				
+<article id="post-1493" class="post-1493 post type-post status-publish format-standard hentry category-uncategorized tag-beginner-mvvm-tutorial tag-mvvm-basics tag-mvvm-design-pattern">
+
+	<header class="entry-header single">
+		<h1 class="entry-title">Understanding the basics of MVVM design pattern</h1>		<div class="rating-wrap">
+		<div id="star-rating-1493" class="wds-ratings" data-rating="4" data-userrating="0" data-postid="1493" data-container="body" data-toggle="tooltip" title="10 user(s) rated">
+			<div class="wds-ratings-inner-wrap">
+				<div>
+					<div aria-label="Select 5 star, this article is 4 star rated" tabindex="0" class="wds-ratings-stars wds-ratings-stars-enable-editing" data-stars="5"><span aria-hidden="true" class="star-1"><span>&#x2605;</span></span><span aria-hidden="true" class="star-2"><span>&#x2605;</span></span><span aria-hidden="true" class="star-3"><span>&#x2605;</span></span><span aria-hidden="true" class="star-4"><span>&#x2605;</span></span><span aria-hidden="true" class="star-5"><span>&#x2605;</span></span></div><div aria-label="Select 4 star, this article is 4 star rated" tabindex="0" class="wds-ratings-stars wds-ratings-stars-enable-editing" data-stars="4"><span aria-hidden="true" class="star-1"><span>&#x2605;</span></span><span aria-hidden="true" class="star-2"><span>&#x2605;</span></span><span aria-hidden="true" class="star-3"><span>&#x2605;</span></span><span aria-hidden="true" class="star-4"><span>&#x2605;</span></span></div><div aria-label="Select 3 star, this article is 4 star rated" tabindex="0" class="wds-ratings-stars wds-ratings-stars-enable-editing" data-stars="3"><span aria-hidden="true" class="star-1"><span>&#x2605;</span></span><span aria-hidden="true" class="star-2"><span>&#x2605;</span></span><span aria-hidden="true" class="star-3"><span>&#x2605;</span></span></div><div aria-label="Select 2 star, this article is 4 star rated" tabindex="0" class="wds-ratings-stars wds-ratings-stars-enable-editing" data-stars="2"><span aria-hidden="true" class="star-1"><span>&#x2605;</span></span><span aria-hidden="true" class="star-2"><span>&#x2605;</span></span></div><div aria-label="Select 1 star, this article is 4 star rated" tabindex="0" class="wds-ratings-stars wds-ratings-stars-enable-editing" data-stars="1"><span aria-hidden="true" class="star-1"><span>&#x2605;</span></span></div>
+				</div>
+			</div>
+		</div>
+		</div>		<div class="clear-both"></div>
+		<div class="entry-meta">
+			<img alt='avatar of shamlialive-com' src='https://i1.social.s-msft.com/profile/u/avatar.jpg?displayname=Shamlia&size=extralarge&version=2a9c4545-a1b1-4605-9b4c-1eaed51df416'  class='avatar avatar-22 photo' height='22' width='22' /><span class="byline"><span class="author vcard"><a class="url fn n profile-usercard-hover" data-profile-userid="0d695939de8342af966f66e398a04242" href="https://social.msdn.microsoft.com/profile/Shamlia">Shamlia</a></span></span><span class="posted-on posted-on-margin"><span class="screen-reader-text"></span><time class="entry-date published updated" datetime="2013-03-13T05:06:00+00:00">March 13, 2013</time></span><span class="comments-link"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comments">16</a></span>				<span class="social-icons-wrap">
+		<ul class="social-icons">
+			<li><div class="fb-share-button" data-href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/&amp;src=sdkpreparse">Share</a></div></li>
+			<div id="fb-root" style="display:none"></div>
+
+			<li class="social-icon twitter"><a data-social='{"type":"twitter", "url":"https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/", "text": "Understanding the basics of MVVM design pattern"}' href="#" id="post_tweet_count">0</a></li>
+			<li class="social-icon linkedin"><a data-social='{"type":"linkedin", "url":"https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/", "text": "Understanding the basics of MVVM design pattern"}' href="#" id="get_post_linkedin_count">0</a></li>
+		</ul>
+	</span><!-- .social-icons-wrap -->
+	<script type="text/javascript">
+		// Get social counts
+		jQuery( window ).load(function () {
+			jQuery.getScript('https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/themes/microsoft/js/social-counts.js?ver=02092017')
+				.done(function(script,textStatus) {
+					window.msdnsocial.ajax('https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/');
+				});
+		});
+	</script>
+		</div>
+		<hr>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content single">
+		<p>This article is dedicated for beginners who would like to know more about Model-View-ViewModel (MVVM) design pattern and why MVVM has to be used.</p>
+<h3>Why use MVVM?</h3>
+<p>In traditional UI development - developer used to create a View using window or user control or page and then write all logical code (Event handling, initialization and data model, etc.) in the code behind and hence they were basically making code as a part of view definition class itself. This approach increased the size of the View class and created a very strong dependency between my UI and data binding logic and business operations. In this situation, no two developers can work simultaneously on the same view and also one developer's changes might break the other code. So everything is in one place is always a bad idea for maintainability, extendibility and testability prospective. So if you look at the big picture, you can feel that all these problems exist because there is a very tight coupling between the following items.</p>
+<ol>
+<li>View (UI)</li>
+<li>Model (Data displayed in UI)</li>
+<li>Glue code (Event handling, binding, business logic)</li>
+</ol>
+<p>In MVVM the Glue code is View Model. So it basically focuses on separation of concerns to make the implementation of an application structure a lot more simpler to create as well as maintain.</p>
+<p>If property values in the <code>ViewModel </code>change, those new values automatically propagate to the view via data binding and via notification. When the user performs some action in the view for example clicking on save button, a command on the <code>ViewModel </code>executes to perform the requested action. In this process, it&rsquo;s the <code>ViewModel </code>which modifies <code>model </code>data, <code>View </code>never modifies it. The <code>view </code>classes have no idea that the <code>model </code>classes exist, while the <code>ViewModel </code>and model are unaware of the <code>view</code>. In fact, the <code>model </code>doesn&rsquo;t have any idea about <code>ViewModel </code>and <code>view </code>exists.</p>
+<h3>What is MVVM?</h3>
+<table style="width: 665px;" border="0" cellspacing="0" cellpadding="2">
+<tbody>
+<tr>
+<td valign="top" width="559">
+<p>The MVVM pattern includes three key parts:</p>
+<ol>
+<li><code>Model </code>(Business rule, data access, model classes)</li>
+<li><code>View </code>(User interface (XAML))</li>
+<li><code>ViewModel </code>(Agent or middle man between view and model)</li>
+</ol>
+<p>&nbsp;</p>
+<p>The <code>ViewModel </code>acts as an interface between <code>Model </code>and <code>View. </code>It provides data binding between <code>View </code>and <code>model </code>data as well as handles all UI actions by using command.</p>
+<p>The <code>View </code>binds its control value to properties on a <code>ViewModel</code>, which, in turn, exposes data contained in <code>Model</code> objects.</p>
+</td>
+<td valign="top" width="104"><a href="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/35/09/metablogapi/1854.mvvm_1568EBCF.jpg" original-url="http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-35-09-metablogapi/1854.mvvm_5F00_1568EBCF.jpg"><img style="border-width: 0px; display: inline;" title="mvvm" src="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/35/09/metablogapi/1854.mvvm_thumb_74094632.jpg" original-url="http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-35-09-metablogapi/1854.mvvm_5F00_thumb_5F00_74094632.jpg" alt="mvvm" width="127" height="236" border="0" /></a></td>
+</tr>
+</tbody>
+</table>
+<h3>A simple representation of MVVM design pattern for a news reader application</h3>
+<p><a href="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/35/09/metablogapi/7536.newsreader_76CEFB25.jpg" original-url="http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-35-09-metablogapi/7536.newsreader_5F00_76CEFB25.jpg"><img style="border-width: 0px; display: inline;" title="news-reader" src="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/35/09/metablogapi/6622.newsreader_thumb_7BD138D4.jpg" original-url="http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-35-09-metablogapi/6622.newsreader_5F00_thumb_5F00_7BD138D4.jpg" alt="news-reader" width="612" height="456" border="0" /></a>&nbsp;</p>
+<h3>A simple MVVM implementation example in C#</h3>
+<p>Here is a simple code implementation example in C#:</p>
+<h4><em>Model:</em></h4>
+<pre class="csharpcode"><span class="kwrd">public</span> <span class="kwrd">class</span> Book   
+{
+        <span class="kwrd">public</span> <span class="kwrd">string</span> Title { get; set; }
+        <span class="kwrd">public</span> <span class="kwrd">string</span> Author { get; set; }
+        <span class="kwrd">public</span> <span class="kwrd">string</span> Category { get; set; }
+        <span class="kwrd">public</span> <span class="kwrd">string</span> Language { get; set; }
+}</pre>
+<h4><em>View Model:</em></h4>
+<pre class="csharpcode"><span class="kwrd">public</span> <span class="kwrd">class</span> MainPageViewModel : BindableBase
+   {
+       <span class="kwrd">private</span> List&lt;Book&gt; books;
+       <span class="kwrd">public</span> List&lt;Book&gt; Books         
+      { 
+           get
+           {
+            <span class="kwrd">return</span> books;
+           } 
+           set
+           {
+            SetProperty(<span class="kwrd">ref</span> books, <span class="kwrd">value</span>);
+           } 
+       <span class="kwrd">public</span> MainPageViewModel()
+       {
+           Books = <span class="kwrd">new</span> List&lt;Book&gt;();
+           Books.Add(<span class="kwrd">new</span> Book
+               {
+                   Title = &ldquo;Harry Potter&rdquo;, 
+                   Author = &ldquo;J. K. Rowling&rdquo;,
+                   Category = &ldquo;Young-adult fiction&rdquo;,
+                   Language = &ldquo;English&rdquo;
+               });
+           Books.Add(<span class="kwrd">new</span> Book
+           {
+                   Title = &ldquo;Written Lives&rdquo;, 
+                   Author = &ldquo;Javier Marias&rdquo;,
+                   Category = &ldquo;Biography&rdquo;,
+                   Language = &ldquo;Spanish&rdquo;
+           });
+   }
+}</pre>
+<h4><em>BindableBase Class:</em></h4>
+<pre class="csharpcode">public class BindableBase : INotifyPropertyChanged
+    {
+          ///
+        /// Multicast event for property change notifications.
+        ///
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        ///
+        /// Checks if a property already matches a desired value.  Sets the property and
+        /// notifies listeners only when necessary.
+        ///
+        ///Type of the property.
+        ///Reference to a property with both getter and setter.
+        ///Desired value for the property.
+        ///Name of the property used to notify listeners.  This
+        /// value is optional and can be provided automatically when invoked from compilers that
+        /// support CallerMemberName.
+        ///True if the value was changed, false if the existing value matched the
+        /// desired value.
+        protected bool SetProperty(ref T storage, T value, [CallerMemberName] String propertyName = null)
+        {
+            if (object.Equals(storage, value)) return false;
+
+            storage = value;
+            this.OnPropertyChanged(propertyName);
+            return true;
+        }
+
+        ///
+        /// Notifies listeners that a property value has changed.
+        ///
+        ///Name of the property used to notify listeners.  This
+        /// value is optional and can be provided automatically when invoked from compilers
+        /// that support .
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var eventHandler = this.PropertyChanged;
+            if (eventHandler != null)
+            {
+                eventHandler(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+</pre>
+<h4><em>View:</em></h4>
+<pre class="csharpcode"><span class="kwrd">&lt;</span><span class="html">TextBlock</span> <span class="attr">x:Name</span><span class="kwrd">="bookTitle&rdquo; HorizontalAlignment="</span><span class="attr">Left</span><span class="kwrd">" TextWrapping="</span><span class="attr">Wrap</span><span class="kwrd">"</span></pre>
+<pre class="csharpcode"><span class="kwrd">Text="</span>{<span class="attr">Binding</span> <span class="attr">Title</span>}<span class="kwrd">" </span><span class="kwrd">VerticalAlignment="</span><span class="attr">Top</span>"<span class="kwrd">/&gt;</span>
+
+<span class="kwrd">&lt;</span><span class="html">TextBlock</span> <span class="attr">x:Name</span><span class="kwrd">="bookAuthor&rdquo; HorizontalAlignment="</span><span class="attr">Left</span><span class="kwrd">" TextWrapping="</span><span class="attr">Wrap</span><span class="kwrd">"</span></pre>
+<pre class="csharpcode"><span class="kwrd">Text="</span>{<span class="attr">Binding</span> <span class="attr">Author</span>}<span class="kwrd">" V</span><span class="kwrd">erticalAlignment="</span><span class="attr">Top</span><span class="kwrd">" Margin="</span><span class="attr">0</span>,<span class="attr">142</span>,<span class="attr">0</span>,<span class="attr">0</span>"<span class="kwrd">/&gt;</span>
+
+<span class="kwrd">&lt;</span><span class="html">TextBlock</span> <span class="attr">x:Name</span><span class="kwrd">="bookCategory&rdquo; HorizontalAlignment="</span><span class="attr">Left</span><span class="kwrd">" TextWrapping="</span><span class="attr">Wrap</span><span class="kwrd">"</span></pre>
+<pre class="csharpcode"><span class="kwrd">Text="</span>{<span class="attr">Binding</span> <span class="attr">Category</span>}<span class="kwrd">" </span><span class="kwrd">VerticalAlignment="</span><span class="attr">Top</span><span class="kwrd">" Margin="</span><span class="attr">0</span>,<span class="attr">242</span>,<span class="attr">0</span>,<span class="attr">0</span>"<span class="kwrd">/&gt;</span> 
+
+<span class="kwrd">&lt;</span><span class="html">TextBlock</span> <span class="attr">x:Name</span><span class="kwrd">="bookLanguage&rdquo; HorizontalAlignment="</span><span class="attr">Left</span><span class="kwrd">" TextWrapping="</span><span class="attr">Wrap</span><span class="kwrd">" </span></pre>
+<pre class="csharpcode"><span class="kwrd">Text="</span>{<span class="attr">Binding</span> <span class="attr">Language</span>}<span class="kwrd">" </span><span class="kwrd">VerticalAlignment="</span><span class="attr">Top</span><span class="kwrd">" Margin="</span><span class="attr">0</span>,<span class="attr">342</span>,<span class="attr">0</span>,<span class="attr">0</span>"<span class="kwrd">/&gt;</span> </pre>
+<pre class="csharpcode">&nbsp;</pre>
+<p>If property values in the <code>ViewModel </code>change, those new values automatically propagate to the view via data binding and via notification. When the user performs some action in the view for example clicking on save button, a command on the <code>ViewModel </code>executes to perform the requested action. In this process, it&rsquo;s the <code>ViewModel </code>which modifies <code>Model </code>data, <code>View </code>never modifies it. The <code>View </code>classes have no idea that the <code>Model </code>classes exist, while the <code>ViewModel </code>and model are unaware of the <code>View</code>. In fact, the <code>Model </code>doesn&rsquo;t have any idea about <code>ViewModel </code>and <code>View </code>exists.</p>
+<h3>References:</h3>
+<p><a title="http://www.codeproject.com/Articles/186705/A-Totally-Simple-Introduction-to-the-MVVM-Concept" href="http://www.codeproject.com/Articles/186705/A-Totally-Simple-Introduction-to-the-MVVM-Concept">http://www.codeproject.com/Articles/186705/A-Totally-Simple-Introduction-to-the-MVVM-Concept</a></p>
+<p><a title="http://russelleast.wordpress.com/2008/08/09/overview-of-the-modelview-viewmodel-mvvm-pattern-and-data-binding/" href="http://russelleast.wordpress.com/2008/08/09/overview-of-the-modelview-viewmodel-mvvm-pattern-and-data-binding/">http://russelleast.wordpress.com/2008/08/09/overview-of-the-modelview-viewmodel-mvvm-pattern-and-data-binding/</a></p>
+<p><a title="http://msdn.microsoft.com/en-us/magazine/dd419663.aspx" href="http://msdn.microsoft.com/en-us/magazine/dd419663.aspx">http://msdn.microsoft.com/en-us/magazine/dd419663.aspx</a></p>
+<p>&nbsp;</p>
+	</div><!-- .entry-content -->
+
+
+	<footer class="entry-footer single">
+					<div class="tags">
+				<span>Tags </span>
+				<span>
+					<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/beginner-mvvm-tutorial/" rel="tag">Beginner MVVM tutorial</a> <a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/mvvm-basics/" rel="tag">MVVM basics</a> <a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/mvvm-design-pattern/" rel="tag">MVVM design pattern</a>				</span>
+			</div>
+				<hr>
+	</footer><!-- .entry-footer -->
+
+</article><!-- #post-## -->
+
+			
+		</div><!-- #single-content -->
+
+		
+<div id="comments" class="comments-area">
+	<div class="comments-title">
+		Comments (16)	</div>
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+	
+			<div class="navigation pagination clear-both">
+					</div>
+
+		<ol class="comment-list">
+					<li class="comment even thread-even depth-1" id="comment-5882">
+				<div id="div-comment-5882" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/494dae39f3fd3c1e00518c4153e6a955?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/494dae39f3fd3c1e00518c4153e6a955?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn"><a href='http://blogs.msdn.com/holder.h_4000_hotmail.com/ProfileUrlRedirect.ashx' rel='external nofollow' class='url'>holder.h@hotmail.com</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5882">
+			March 13, 2013 at 9:59 am</a>		</div>
+
+		<p>This post and Jason Dolinger&#39;s video (<a rel="nofollow" target="_new" href="http://blog.lab49.com/archives/2650">blog.lab49.com/&#8230;/2650</a>) have really helped me to wrap my head around MVVM.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5872">
+				<div id="div-comment-5872" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Phani Kumar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5872">
+			March 15, 2013 at 2:12 am</a>		</div>
+
+		<p>Your post helped me more&#8230; no words to say. Thank You verymuch</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-5862">
+				<div id="div-comment-5862" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Mario Berthely</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5862">
+			August 20, 2013 at 12:55 pm</a>		</div>
+
+		<p>How would be an implementation of a CRUD operations using MVVM, EF, WPF and WCF?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5852">
+				<div id="div-comment-5852" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Vijay</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5852">
+			October 30, 2013 at 12:21 am</a>		</div>
+
+		<p>I am scared about MVVM, since unable to understand MVVM with any article, from this post understand the MVVM easily, Thank you very much.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-5842">
+				<div id="div-comment-5842" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Ajay</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5842">
+			January 7, 2014 at 4:59 am</a>		</div>
+
+		<p>very nice and simple article on mvvm. thanks</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5832">
+				<div id="div-comment-5832" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">DFD</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5832">
+			January 8, 2014 at 10:27 pm</a>		</div>
+
+		<p>How does the view know which &quot;Title&quot; to retrieve since you have created 2 books in MainPageViewModel?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-5822">
+				<div id="div-comment-5822" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Alex</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5822">
+			January 24, 2014 at 7:40 am</a>		</div>
+
+		<p>Could you provide the code of your MVVM tutorial. I get some errors. Thanks!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5812">
+				<div id="div-comment-5812" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">MVVM Rocks</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5812">
+			July 22, 2014 at 9:15 am</a>		</div>
+
+		<p>Easy explanation, easy to understand. thanks!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-5802">
+				<div id="div-comment-5802" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">saravanan </cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5802">
+			August 1, 2014 at 10:32 pm</a>		</div>
+
+		<p>very easy to understand&#8230;.thank you!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5792">
+				<div id="div-comment-5792" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Nitin</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5792">
+			August 26, 2014 at 4:56 am</a>		</div>
+
+		<p>The post is good. But I am not clear how should I open a Child Form on button click in MVVM.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-5782">
+				<div id="div-comment-5782" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">WPF Admin</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5782">
+			October 6, 2014 at 8:26 am</a>		</div>
+
+		<p>Hi,</p>
+<p>here is the link for implementation of the MVVM pattern in WPF with Example</p>
+<p><a rel="nofollow" target="_new" href="http://wpftutorial.co/WPF-MVVM-Patern">wpftutorial.co/WPF-MVVM-Patern</a></p>
+<p>Thanks</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5772">
+				<div id="div-comment-5772" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Shiva</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5772">
+			November 4, 2014 at 6:37 am</a>		</div>
+
+		<p>Awesome. Simple and cleaner&#8230;. thank you very much Shamlia.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-5762">
+				<div id="div-comment-5762" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Jetx</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5762">
+			December 4, 2014 at 9:46 pm</a>		</div>
+
+		<p>How is this any different from MVC? The ViewModel does what the Controller does in MVC, and the other two are the same?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5752">
+				<div id="div-comment-5752" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Ignacio Soler</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5752">
+			April 23, 2015 at 2:58 am</a>		</div>
+
+		<p>You can find a step by step tutorial here: <a rel="nofollow" target="_new" href="http://www.learnmvvm.com">http://www.learnmvvm.com</a></p>
+<p>Hope it helps!</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-5742">
+				<div id="div-comment-5742" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Andrea Loubier</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5742">
+			July 8, 2015 at 3:42 pm</a>		</div>
+
+		<p>Hi guys, use MVVM for Mailbird &#8211; just wanted to share that we launched Unified Inbox Plus.</p>
+<p>Details: <a rel="nofollow" target="_new" href="http://www.getmailbird.com/mailbird-introduces-unified-inbox/">http://www.getmailbird.com/mailbird-introduces-unified-inbox</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5732">
+				<div id="div-comment-5732" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/3651e719491c63d4424134d66fe53db9?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />			<cite class="fn">Abdurahman Almatrodi</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/#comment-5732">
+			July 17, 2015 at 9:41 pm</a>		</div>
+
+		<p>Thanks is not enough for you. This is a concise short description for MVVM, better than many ugly long essays.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-login" href="https://blogs.msdn.microsoft.com/msgulfcommunity/wp-login.php?redirect_to=https%3A%2F%2Fblogs.msdn.microsoft.com%2Fmsgulfcommunity%2F2013%2F03%2F13%2Funderstanding-the-basics-of-mvvm-design-pattern%2F">Log in to Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		<div class="navigation pagination">
+					</div>
+
+	
+	
+</div><!-- .comments-area -->
+	</div><!-- #primary -->
+	<a class="screen-reader-shortcut" href="#primary" tabindex="1">Skip to main content</a>
+
+<div id="secondary" class="sidebar col-sm-3">
+	<div id="sidebar-widget-area" class="sidebar-widget-area" role="complementary">
+		<div class="widget sfmsb_widget"><div class="sfmsb-follow-social-buttons sfmsb-under sfmsb-circle 40 sfmsb-horizontal"><h2 class="widget-title">Follow Us</h2><a title="RSS Feed" aria-label="RSS Feed" target="_blank" href="https://blogs.msdn.microsoft.com/msgulfcommunity/feed/"><span class="sfmsb-icon-feed sfmsb-circle" style="color:#ffa500;font-size:40px;" data-color="#ffa500"></span></a><div class="sfmsb-clearfix"></div></div></div><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h2 class="widget-title">Popular Tags</h2><div class="tagcloud"><a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/microsoft/" class="tag-cloud-link tag-link-23 tag-link-position-1" style="font-size: 14px;">Microsoft</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/developers/" class="tag-cloud-link tag-link-53 tag-link-position-2" style="font-size: 14px;">developers</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/technology/" class="tag-cloud-link tag-link-843 tag-link-position-3" style="font-size: 14px;">Technology</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/gulf-developer-community/" class="tag-cloud-link tag-link-323 tag-link-position-4" style="font-size: 14px;">Gulf developer community</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/visual-studio/" class="tag-cloud-link tag-link-33 tag-link-position-5" style="font-size: 14px;">Visual Studio</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/windows-8/" class="tag-cloud-link tag-link-953 tag-link-position-6" style="font-size: 14px;">Windows 8</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/windows-phone/" class="tag-cloud-link tag-link-43 tag-link-position-7" style="font-size: 14px;">Windows Phone</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/development/" class="tag-cloud-link tag-link-123 tag-link-position-8" style="font-size: 14px;">Development</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/applications/" class="tag-cloud-link tag-link-513 tag-link-position-9" style="font-size: 14px;">applications</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/academia/" class="tag-cloud-link tag-link-183 tag-link-position-10" style="font-size: 14px;">Academia</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/azure/" class="tag-cloud-link tag-link-263 tag-link-position-11" style="font-size: 14px;">Azure</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/events/" class="tag-cloud-link tag-link-363 tag-link-position-12" style="font-size: 14px;">events</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/windows-phone-7/" class="tag-cloud-link tag-link-2353 tag-link-position-13" style="font-size: 14px;">Windows Phone 7</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/cloud/" class="tag-cloud-link tag-link-303 tag-link-position-14" style="font-size: 14px;">Cloud</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/apps/" class="tag-cloud-link tag-link-583 tag-link-position-15" style="font-size: 14px;">Apps</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/windows-phone-8/" class="tag-cloud-link tag-link-963 tag-link-position-16" style="font-size: 14px;">Windows Phone 8</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/microsoft-event/" class="tag-cloud-link tag-link-503 tag-link-position-17" style="font-size: 14px;">Microsoft Event</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/windows-azure/" class="tag-cloud-link tag-link-923 tag-link-position-18" style="font-size: 14px;">Windows Azure</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/students/" class="tag-cloud-link tag-link-3133 tag-link-position-19" style="font-size: 14px;">students</a>
+<a href="https://blogs.msdn.microsoft.com/msgulfcommunity/tag/visual-studio-2010/" class="tag-cloud-link tag-link-3063 tag-link-position-20" style="font-size: 14px;">Visual Studio 2010</a></div>
+</aside><aside id="msdn-archive-widget-2" class="widget msdn-archive-widget"><h2 class="widget-title">Archives</h2>	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2017/08/'>August 2017</a>&nbsp;(1)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2016/02/'>February 2016</a>&nbsp;(1)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2016/01/'>January 2016</a>&nbsp;(1)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2015/12/'>December 2015</a>&nbsp;(1)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2015/11/'>November 2015</a>&nbsp;(5)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2015/10/'>October 2015</a>&nbsp;(5)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2015/09/'>September 2015</a>&nbsp;(7)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2015/08/'>August 2015</a>&nbsp;(10)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2015/07/'>July 2015</a>&nbsp;(6)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2015/06/'>June 2015</a>&nbsp;(22)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2015/05/'>May 2015</a>&nbsp;(8)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2017/'>All of 2017</a>&nbsp;(1)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2016/'>All of 2016</a>&nbsp;(2)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2015/'>All of 2015</a>&nbsp;(101)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2014/'>All of 2014</a>&nbsp;(55)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2013/'>All of 2013</a>&nbsp;(139)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2012/'>All of 2012</a>&nbsp;(187)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2011/'>All of 2011</a>&nbsp;(224)</li>
+	<li><a href='https://blogs.msdn.microsoft.com/msgulfcommunity/2010/'>All of 2010</a>&nbsp;(59)</li>
+</aside>	</div>
+</div><!-- #secondary -->
+</div><!-- .site-content -->
+
+<footer id="site-footer" class="site-footer row" role="contentinfo">
+	<div id="site-info" class="site-info">
+		<div id="footer-text" class="col-sm-4 col-sm-offset-6">
+			<span>
+				<a href="https://privacy.microsoft.com" data-mscc-ic="false">Privacy</a>
+			</span>
+			<span>
+				<a href="https://msdn.microsoft.com/cc300389" data-mscc-ic="false">Terms of Use</a>
+			</span>
+			<span>
+				<a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-mscc-ic="false">Trademarks</a>
+			</span>
+		</div>
+		<div id="footer-far" class="col-sm-2">
+			<div id="footer-microsoft-logo">
+				<a href="https://www.microsoft.com" aria-label="Microsoft Logo">
+					<svg id="footer-microsoft-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 347 70.5" enable-background="new 0 0 347 70.5"><g fill="#fff"><path d="M39.5 44.6l-2.8 7.9h-.2c-.5-1.8-1.3-4.5-2.7-7.8l-15-37.7h-14.7v60h9.7v-37c0-2.3 0-5-.1-8.2-.1-1.6-.2-2.9-.3-3.8h.2c.5 2.3 1 4 1.4 5.1l18 43.8h6.8l17.9-44.2c.4-1 .8-3 1.2-4.7h.2c-.2 4.4-.4 8.4-.5 10.8v38.1h10.4v-60h-14.1l-15.4 37.7zM78.8 23.9h10.1v43h-10.1zM83.9 5.7c-1.7 0-3.1.6-4.3 1.7-1.2 1.1-1.8 2.5-1.8 4.2 0 1.6.6 3 1.8 4.1 1.2 1.1 2.6 1.6 4.3 1.6 1.7 0 3.2-.6 4.3-1.6 1.2-1.1 1.8-2.5 1.8-4.1 0-1.6-.6-3-1.8-4.2-1-1.2-2.5-1.7-4.3-1.7M124.7 23.5c-1.9-.4-3.8-.6-5.7-.6-4.6 0-8.8 1-12.3 3s-6.3 4.8-8.1 8.3c-1.9 3.6-2.8 7.7-2.8 12.4 0 4.1.9 7.8 2.7 11.1 1.8 3.3 4.3 5.9 7.6 7.7 3.2 1.8 6.9 2.7 11.1 2.7 4.8 0 8.9-1 12.2-2.9l.1-.1v-9.3l-.4.3c-1.5 1.1-3.2 2-4.9 2.6-1.8.6-3.4.9-4.8.9-4 0-7.2-1.2-9.5-3.7s-3.5-5.9-3.5-10.2c0-4.4 1.2-7.9 3.6-10.5 2.4-2.6 5.6-3.9 9.5-3.9 3.3 0 6.6 1.1 9.6 3.3l.4.3v-9.8l-.1-.1c-1.2-.6-2.8-1.1-4.7-1.5M158 23.2c-2.5 0-4.8.8-6.8 2.4-1.7 1.4-2.9 3.4-3.9 5.8h-.1v-7.4h-10.1v43h10.1v-22c0-3.7.8-6.8 2.5-9.1s3.9-3.5 6.5-3.5c.9 0 1.9.2 3 .4 1.1.3 1.9.6 2.4 1l.4.3v-10.2l-.2-.1c-.8-.4-2.1-.6-3.8-.6M185.5 22.9c-7.1 0-12.7 2.1-16.7 6.2s-6 9.8-6 16.9c0 6.7 2 12.1 5.9 16.1 3.9 3.9 9.2 5.9 15.8 5.9 6.9 0 12.4-2.1 16.4-6.3 4-4.2 6-9.8 6-16.7 0-6.8-1.9-12.3-5.7-16.2-3.7-3.9-9-5.9-15.7-5.9m8 33.1c-1.9 2.4-4.8 3.6-8.5 3.6s-6.6-1.2-8.7-3.7c-2.1-2.4-3.1-5.9-3.1-10.3 0-4.6 1.1-8.1 3.1-10.6 2.1-2.5 5-3.7 8.6-3.7 3.6 0 6.4 1.2 8.4 3.6 2 2.4 3.1 5.9 3.1 10.5s-1 8.2-2.9 10.6M229.3 41.7c-3.2-1.3-5.2-2.3-6.1-3.2-.8-.8-1.2-1.9-1.2-3.3 0-1.2.5-2.3 1.6-3.1 1.1-.8 2.5-1.2 4.4-1.2 1.7 0 3.5.3 5.2.8 1.7.5 3.3 1.2 4.5 2.1l.4.3v-9.4l-.2-.1c-1.2-.5-2.7-.9-4.6-1.3-1.9-.3-3.6-.5-5-.5-4.8 0-8.8 1.2-11.9 3.7-3.1 2.4-4.6 5.7-4.6 9.5 0 2 .3 3.8 1 5.3s1.7 2.9 3.1 4c1.4 1.1 3.4 2.3 6.2 3.5 2.3 1 4.1 1.8 5.2 2.4 1.1.6 1.8 1.3 2.3 1.9.4.6.6 1.4.6 2.4 0 2.9-2.2 4.3-6.6 4.3-1.7 0-3.5-.3-5.6-1-2.1-.7-4-1.7-5.7-2.9l-.4-.3v9.9l.2.1c1.5.7 3.3 1.2 5.4 1.7 2.2.4 4.1.7 5.8.7 5.2 0 9.5-1.2 12.5-3.7 3.1-2.5 4.7-5.7 4.7-9.8 0-2.9-.8-5.4-2.5-7.4-1.8-2-4.7-3.8-8.7-5.4M267.6 22.9c-7.1 0-12.7 2.1-16.7 6.2s-6 9.8-6 16.9c0 6.7 2 12.1 5.9 16.1 3.9 3.9 9.2 5.9 15.8 5.9 6.9 0 12.4-2.1 16.4-6.3 4-4.2 6-9.8 6-16.7 0-6.8-1.9-12.3-5.7-16.2-3.8-3.9-9.1-5.9-15.7-5.9m8 33.1c-1.9 2.4-4.8 3.6-8.5 3.6s-6.6-1.2-8.7-3.7c-2.1-2.4-3.1-5.9-3.1-10.3 0-4.6 1.1-8.1 3.1-10.6 2.1-2.5 5-3.7 8.6-3.7 3.5 0 6.4 1.2 8.4 3.6 2 2.4 3.1 5.9 3.1 10.5s-1 8.2-2.9 10.6"/><path d="M342.9 32.2v-8.2h-10.2v-12.9l-.3.1-9.6 2.9-.2.1v9.7h-15.2v-5.4c0-2.5.6-4.4 1.7-5.7 1.1-1.3 2.7-1.9 4.7-1.9 1.4 0 2.9.3 4.5 1l.4.2v-8.7l-.2-.1c-1.4-.5-3.3-.8-5.7-.8-3 0-5.7.7-8.1 1.9-2.4 1.3-4.2 3.1-5.5 5.5-1.3 2.3-2 5-2 8v6h-7.2v8.2h7.1v34.8h10.2v-34.7h15.2v22.1c0 9.1 4.3 13.7 12.8 13.7 1.4 0 2.9-.2 4.3-.5 1.5-.3 2.6-.7 3.2-1l.1-.1v-8.3l-.4.3c-.6.4-1.2.7-2.1.9-.8.2-1.5.3-2 .3-2 0-3.4-.5-4.4-1.6-.9-1.1-1.4-2.9-1.4-5.5v-20.3h10.3z"/></g></svg>
+				</a>
+			</div>
+			<div id="copyright">
+				© 2018 Microsoft
+			</div>
+		</div>
+	</div><!-- .site-info -->
+</footer><!-- .site-footer -->
+
+</div><!-- .site -->
+
+	<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$login_link = $( 'a[href*="wp-login.php?"]' );
+				$login_link.on( 'click', function( evt ) {
+			// evt.preventDefault();
+						// console.log( 'cookie-set', '/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/' );
+			$.cookie( 'aadsso-redirect', '/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/', { expires: 1, path: '/' });
+		});
+	});
+	</script>
+		<script>
+		jQuery(window).load(function () {
+			// Fix Bug #644092:MAS36: Page number
+			jQuery('div.nav-links>a.page-numbers').each(function(){
+				jQuery(this).attr('aria-label', 'Page ' + jQuery(this).html());
+			});
+
+			// Fix Bug #633981:MAS20B:  Talkback: Talkback announces link for Number of Comments as 'Number link'
+			jQuery('span.comments-link>a').each(function () {
+				var num = parseInt(jQuery(this).html());
+				if (isNaN(num)) {
+					return false;
+				}
+				var content = num + (num === 1 ? ' comment' : ' comments');
+				jQuery(this).attr({
+					'aria-label': content,
+					'title': content
+				});
+			});
+
+
+			jQuery('#search-option>div').each(function () {
+				jQuery(this).attr('aria-label',jQuery('span.search-text',this).html());
+			});
+
+			// Fix Bug #671896:MAS40B :Inspect: Header: "Name" property is not descriptive for  "Microsoft | TechNet" link (logo).
+			var currentHost = location.hostname;
+			if (currentHost.indexOf('msdn') !== -1) {
+				jQuery('#home-link').attr('aria-label','Microsoft Developer');
+			} else if (currentHost.indexOf('technet') !== -1) {
+				jQuery('#home-link').attr('aria-label','Microsoft Technet');
+			}
+
+			// Detect High Contrast Mode in non IE/Edge Browsers
+			jQuery('html').css('background-image', 'url("data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==")');
+			if (jQuery('html').css('background-image') === 'none') {
+				jQuery('html').attr('data-high-contrast', 'true');
+			}
+
+			// Fix Bug #670327:MAS40B: Inspect: Header: "Localized control type" property is incorrect for the header elements.
+			// Fix Bug #683788:MAS40B: TalkBack: Header: For menu items in technet link menu bar, expand/collapse pattern available, is not announced by TalkBack 
+			jQuery('#site-navigation>div>ul>li>a').attr('role', 'button').attr('aria-expanded', 'false').click(function () {
+				if (jQuery(this).attr('aria-expanded') === 'true') {
+					jQuery(this).attr('aria-expanded', 'false');
+				} else {
+					jQuery(this).attr('aria-expanded', 'true');
+				}
+			});
+
+		});
+	</script>
+		<!--ADD WEDCS SCRIPT-->
+	<div id="_WEDCSInsertedData" style="display: none;"></div>
+	<script type="text/javascript">
+		jQuery( window ).load(
+			function() {
+				window.varSegmentation = 0;
+				window.varClickTracking = 1;
+				window.varCustomerTracking = 1;
+				window.varAutoFirePV = 1;
+				window.Route = ""; // was 23470 in the windows theme framework
+				window.Ctrl = "";
+
+								var blogPost = {};
+
+								blogPost.permalink = 'https://blogs.msdn.microsoft.com/msgulfcommunity/2013/03/13/understanding-the-basics-of-mvvm-design-pattern/';
+				blogPost.title = 'Understanding the basics of MVVM design pattern';
+				blogPost.author = 'Shamlia';
+				blogPost.post_date = '2013-03-13 05:06:00';
+				blogPost.category = 'Uncategorized';
+				blogPost.tag = 'Beginner MVVM tutorial,MVVM basics,MVVM design pattern';
+				blogPost.comment_number = '16';
+								window.blogPost = blogPost;
+
+                var wedcs_script = document.createElement('script');
+                wedcs_script.type = 'text/javascript';
+                wedcs_script.async = true;
+                wedcs_script.src = 'https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/mu-plugins/wedcs-script/ms2_blogs.js';
+                if (typeof mscc === 'undefined' || (!mscc || mscc.hasConsent())) {
+                    document.getElementsByTagName('body')[0].appendChild(wedcs_script);
+                }
+
+				var script_jsll = document.createElement("script");
+				script_jsll.type = "text/javascript";
+				script_jsll.src = "//az725175.vo.msecnd.net/scripts/jsll-4.2.1.js";
+				script_jsll.onload = function () {
+					var domainAppIdDic = {
+						"blogs.msdn.microsoft.com": "blogsmsdn",
+						"blogs.technet.microsoft.com": "blogstechnet"
+					};
+					var domain = document.domain;
+					var appId = "blogsmsdn";
+					if (domainAppIdDic[domain]) {
+						appId = domainAppIdDic[domain];
+					}
+					var config = {
+						coreData: {
+							appId: appId
+						}
+					};
+					awa.init(config);
+				};
+				if (document.getElementsByTagName("head") && document.getElementsByTagName("head").length > 0) {
+					document.getElementsByTagName("head")[0].appendChild(script_jsll);
+				}
+			});
+	</script>
+	<!--
+	<script src="//c.microsoft.com/ms.js" type="text/javascript"></script>
+	<noscript><img alt="" width="1" height="1" src="http://c.microsoft.com/trans_pixel.aspx"/></noscript>
+	-->
+		<script type="text/javascript">
+			jQuery( window ).load(
+				function () {
+					var stylesheet = document.createElement('link');
+					stylesheet.href = 'https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/plugins/simple-follow-me-social-buttons-widget/assets/css/style.css?ver=3.3.3';
+					stylesheet.rel = 'stylesheet';
+					stylesheet.type = 'text/css';
+					document.getElementsByTagName('head')[0].appendChild(stylesheet);
+				});
+		</script>
+				<script type="text/javascript">
+			jQuery( window ).load(
+				function () {
+					var stylesheet = document.createElement('link');
+					stylesheet.href = 'https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/plugins/simple-follow-me-social-buttons-widget/assets/css/icons.css?ver=3.3.3';
+					stylesheet.rel = 'stylesheet';
+					stylesheet.type = 'text/css';
+					document.getElementsByTagName('head')[0].appendChild(stylesheet);
+				});
+		</script>
+				<script type="text/javascript">
+			jQuery( window ).load(
+				function () {
+					var script = document.createElement('script');
+					script.src = 'https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/plugins/simple-follow-me-social-buttons-widget/assets/js/front-widget.js?ver=3.3.3';
+					script.type = 'text/javascript';
+					script.async = true;
+					document.getElementsByTagName('body')[0].appendChild(script);
+				});
+		</script>
+		
+		<span id='page-view-tracking-info' blog-id='61093' post-id='1493'></span>
+		<script type="text/javascript">
+			// Check for compatibility before IE8
+			if (!Date.now) {
+ 				 Date.now = function() { return new Date().getTime(); };
+			}
+			jQuery( window ).load( function() {
+				jQuery.ajax({
+					url: 'https://blogs.msdn.microsoft.com/msgulfcommunity/wp-admin/admin-ajax.php',
+					type: 'get',
+					data: {
+						action: 'track_page_view',
+						track_page_view_post_id: jQuery('#page-view-tracking-info').attr('post-id'),
+						track_page_view_blog_id: jQuery('#page-view-tracking-info').attr('blog-id'),
+						track_page_view_post_url: window.location.href.split('?')[0],
+						timestamp: Date.now()
+						}
+				});
+			});
+		</script>
+<script>
+dataLayer = [[]];
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PLR87W" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>jQuery(window).load(function(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLR87W')});
+</script>
+<!-- End Google Tag Manager -->
+	<script type="text/javascript">
+		jQuery( window ).load(
+			function(i) {
+				var n = window,
+					t = document,
+					e = n.console,
+					f, u, r, o;
+				typeof e == "undefined" && (f = function() {}, e = {
+					log: f,
+					warn: f,
+					assert: f,
+					clear: f,
+					dir: f,
+					error: f,
+					info: f,
+					profile: f,
+					profileEnd: f
+				}), u = {
+					appendToHead: function(n) {
+						if (t.getElementsByTagName("head").length > 0) t.getElementsByTagName("head")[0].appendChild(n);
+						else throw "bootstrapper: no head element found.";
+					},
+					appendToBody: function(n) {
+						if (t.getElementsByTagName("body").length > 0) t.getElementsByTagName("body")[0].appendChild(n);
+						else throw "bootstrapper: no body element found.";
+					},
+					addStyleElement: function(n) {
+						var i = t.createElement("link");
+						i.setAttribute("href", n), i.setAttribute("rel", "stylesheet"), i.setAttribute("type", "text/css"), u.appendToHead(i)
+					},
+					loadFiles: function(n, t) {
+						if (t !== i && u.recursiveScriptLoad(0, t), n !== i)
+							for (var r = 0, r = 0; r < n.length; r++) u.addStyleElement(n[r])
+					},
+					recursiveScriptLoad: function(n, t) {
+						t[n] && u.addScriptElement(t[n], function() {
+							u.recursiveScriptLoad(n + 1, t)
+						})
+					},
+					isCompatible: function(n, t) {
+						var r, u, i;
+						return (r = n.split("."), u = t.split("."), i = function(n) {
+							return isNaN(n) ? 0 : n
+						}, i(r[0]) > i(u[0]) || i(r[0]) === i(u[0]) && i(r[1]) > i(u[1]) || i(r[0]) === i(u[0]) && i(r[1]) === i(u[1]) && i(r[2]) >= i(u[2])) ? !0 : !1
+					},
+					addScriptElement: function(i, r) {
+						var f, e;
+						f = t.createElement("script"), f.setAttribute("type", "text/javascript"), f.async = true, f.setAttribute("src", i), f.attachEvent ? (e = function() {
+							setTimeout(function() {
+								typeof n.jQuery != "undefined" && r ? r() : e()
+							}, 10)
+						}, e()) : f.onload = r, u.appendToBody(f)
+					},
+					load: function(n, t) {
+						setTimeout(function() {
+							if (typeof n == "undefined") try {
+								u.addScriptElement(t.defaultPath, function() {
+									u.loadFiles(t.cssFiles, t.jsFiles)
+								});
+								return
+							} catch (i) {
+								e.warn("bootstrapper: failed to load default jQuery")
+							} else if (!u.isCompatible(n.fn.jquery, t.minimumVersion)) {
+								e.warn("bootstrapper: jQuery version is too old to load UserCard. Use v1.4.2 or later.");
+								return
+							}
+							u.loadFiles(t.cssFiles, t.jsFiles)
+						}, 0)
+					}
+				}, r = {
+					host: n.location.host,
+					search: "",
+					protocol: "https"
+				}, r.host = "widgets.services.microsoft.com", r.search = "?brand=msdn&lang=en&ver=4.9.0.0", r.protocol = "https:", o = {
+					minimumVersion: "1.1.2",
+					defaultPath: "https://code.jquery.com/jquery-1.4.2.min.js",
+					cssFiles: [r.protocol + "//" + r.host + "/v1/UnifiedBaseballCard.css" + r.search, r.protocol + "//" + r.host + "/v1/usercard.css" + r.search],
+					jsFiles: ["https://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js", r.protocol + "//" + r.host + "/v1/jquery.timeago.js" + r.search, r.protocol + "//" + r.host + "/v1/jquery.textfill.js" + r.search, r.protocol + "//" + r.host + "/v1/widgets.js" + r.search]
+				}, typeof n.jQuery == "undefined" ? u.load(i, o) : u.load(n.jQuery, o)
+			}
+		);
+	</script>
+<link rel='stylesheet' id='eucookielaw-css-css'  href='https://c.s-microsoft.com/mscc/statics/mscc-0.4.1.min.css?ver=4.9.7' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpAjax = {"noPerm":"Sorry, you are not allowed to do that.","broken":"Something went wrong."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-includes/js/wp-ajax-response.min.js?ver=4.9.7'></script>
+<script type='text/javascript' src='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/plugins/msdn-delete-comment/msdn-delete-comment-script.js?ver=20180311'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wds_ratings_config = {"ajaxurl":"https:\/\/blogs.msdn.microsoft.com\/msgulfcommunity\/wp-admin\/admin-ajax.php","user_id":"0","nonce":"d29b77f61a","debug":"","no_auth_alert":"You must be logged in to rate this article.","repeatedly_vote_alert":"You can not vote repeatedly in a short time","allow_anonymous_rating":"","blog_id":"61093","rating_limit_login_user":"1","rating_limit_anonymous":"1","hide_rating_post_ids":""};
+var wds_ratings_config = {"ajaxurl":"https:\/\/blogs.msdn.microsoft.com\/msgulfcommunity\/wp-admin\/admin-ajax.php","user_id":"0","nonce":"d29b77f61a","debug":"","no_auth_alert":"You must be logged in to rate this article.","repeatedly_vote_alert":"You can not vote repeatedly in a short time","allow_anonymous_rating":"","blog_id":"61093","rating_limit_login_user":"1","rating_limit_anonymous":"1","hide_rating_post_ids":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/plugins/wds-ratings/wds-ratings.js?ver=20161014'></script>
+<script type='text/javascript' src='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/themes/microsoft/js/theme-merged.js?ver=02092017'></script>
+<script type='text/javascript' src='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-includes/js/wp-embed.min.js?ver=4.9.7'></script>
+<script type='text/javascript' src='https://c.s-microsoft.com/mscc/statics/mscc-0.4.1.min.js?ver=4.9.7'></script>
+<script type='text/javascript' src='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/plugins/eu-cookie-law/eucookielaw-searchbox-script.js?ver=4.9.7'></script>
+<script type='text/javascript' src='https://blogs.msdn.microsoft.com/msgulfcommunity/wp-content/themes/microsoft/js/vendor/jquery.cookie.js?ver=11092015'></script>
+
+</body>
+</html>

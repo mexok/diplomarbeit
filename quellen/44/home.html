@@ -1,0 +1,5395 @@
+<!DOCTYPE html>
+<html id="docs" class="fa-events-icons-ready flip-nav" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+
+<script id="pd-rating-js" src="rating.js"></script><script type="text/javascript" async="" src="analytics.js"></script><script async="" src="js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-36037335-10');
+</script>
+<meta charset="utf-8">
+<title>Kubernetes Documentation - Kubernetes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="https://kubernetes.io/images/favicon.png">
+<link rel="stylesheet" href="base_fonts.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="jquery-ui.css">
+<link rel="stylesheet" href="sweetalert.css">
+<link rel="stylesheet" href="callouts.css">
+<link rel="stylesheet" href="tags.css">
+<link rel="stylesheet" href="style_user_journeys.css">
+
+
+
+<meta name="description" content="">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
+<meta property="og:url" content="https://kubernetes.io/docs/home/">
+<meta property="og:title" content="Kubernetes Documentation">
+<meta name="twitter:title" content="Kubernetes Documentation">
+
+<meta name="twitter:image:alt" content="Kubernetes">
+
+<meta property="og:image" content="/images/kubernetes-horizontal-color.png">
+
+<meta property="og:type" content="article">
+<script src="anchor-4.js"></script>
+<script src="jquery-3.js"></script>
+<script src="jquery-ui-1.js"></script>
+<script src="bootstrap-3.js"></script>
+<script src="sweetalert-1.js"></script>
+<script src="script.js"></script>
+<script src="tags.js"></script>
+<script src="home.js"></script>
+<script src="4bcc658a89.js"></script><link href="4bcc658a89.css" media="all" rel="stylesheet">
+
+
+	</head>
+	<body>
+		<div id="cellophane" onclick="kub.toggleMenu()"></div>
+
+<header>
+    <a href="https://kubernetes.io/" class="logo"></a>
+
+    <div class="nav-buttons" data-auto-burger="primary">
+        <ul class="global-nav">
+            
+            
+            <li><a href="https://kubernetes.io/docs/" class="active">Documentation</a></li>
+            
+            <li><a href="https://kubernetes.io/blog/">Blog</a></li>
+            
+            <li><a href="https://kubernetes.io/partners/">Partners</a></li>
+            
+            <li><a href="https://kubernetes.io/community/">Community</a></li>
+            
+            <li><a href="https://kubernetes.io/case-studies/">Case Studies</a></li>
+            
+            
+            
+             <li>
+                <a href="#">
+                    English <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io/zh/docs/home/">中文 Chinese</a></li>
+                
+                    <li><a href="https://kubernetes.io/ko/docs/home/">한국어 Korean</a></li>
+                
+                </ul>
+            </li>
+         
+            <li>
+                <a href="#">
+                    v1.12 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a>
+                <ul>
+                
+                    <li><a href="https://kubernetes.io/">v1.12</a></li>
+                
+                    <li><a href="https://v1-11.docs.kubernetes.io/">v1.11</a></li>
+                
+                    <li><a href="https://v1-10.docs.kubernetes.io/">v1.10</a></li>
+                
+                    <li><a href="https://v1-9.docs.kubernetes.io/">v1.9</a></li>
+                
+                    <li><a href="https://v1-8.docs.kubernetes.io/">v1.8</a></li>
+                
+                </ul>
+            </li>
+        </ul>
+        
+        <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/" class="button" id="tryKubernetes" data-auto-burger-exclude="">Learn Kubernetes Basics</a>
+        
+
+        <button id="hamburger" onclick="kub.toggleMenu()" data-auto-burger-exclude=""><div></div></button>
+    </div>
+
+    <nav id="mainNav">
+        <main data-auto-burger="primary">
+         
+           <div class="nav-box">
+            <h3><a href="https://kubernetes.io/docs/tutorials/hello-minikube/">Get Started</a></h3>
+           <p>Ready to get your hands dirty? Build a simple Kubernetes cluster that runs "Hello World" for Node.js.</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="https://kubernetes.io/docs/home/">Documentation</a></h3>
+           <p>Learn how to use Kubernetes with the use of walkthroughs, samples, and reference documentation. You can even <a href="https://kubernetes.io/editdocs/" data-auto-burger-exclude="">help contribute to the docs</a>!</p>
+
+        </div>
+         
+           <div class="nav-box">
+            <h3><a href="https://kubernetes.io/blog/">Blog</a></h3>
+           <p>Read the latest news for Kubernetes and the containers space in general, and get technical how-tos hot off the presses.</p>
+
+        </div>
+         
+        </main>
+        <main data-auto-burger="primary">
+        <div class="left">
+            <h5 class="github-invite">Interested in hacking on the core Kubernetes code base?</h5>
+            <a href="https://github.com/kubernetes/kubernetes" class="button" data-auto-burger-exclude="">View On Github</a>
+        </div>
+
+        <div class="right">
+            <h5 class="github-invite">Explore the community</h5>
+            <div class="social">
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack Slack</span></a>
+                <a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io/" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+        </div>
+        <div class="clear" style="clear: both"></div>
+        </main>
+    </nav>
+</header>
+
+		
+		
+		<section id="hero" class="light-text no-sub">
+			
+
+
+
+
+
+<h1></h1>
+<h5></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="vendorStrip" class="light-text">
+	<ul>
+		
+		
+		<li><a href="https://kubernetes.io/docs/home/" class="YAH">HOME</a></li>
+		
+		
+		<li><a href="https://kubernetes.io/docs/setup/">SETUP</a></li>
+		
+		
+		<li><a href="https://kubernetes.io/docs/concepts/">CONCEPTS</a></li>
+		
+		
+		<li><a href="https://kubernetes.io/docs/tasks/">TASKS</a></li>
+		
+		
+		<li><a href="https://kubernetes.io/docs/tutorials/">TUTORIALS</a></li>
+		
+		
+		<li><a href="https://kubernetes.io/docs/reference/">REFERENCE</a></li>
+		
+		
+		<li><a href="https://kubernetes.io/docs/contribute/">CONTRIBUTE</a></li>
+		
+	</ul>
+	<form id="searchBox" action="/docs/search/">
+		<input id="search" name="q" placeholder="Search" aria-label="Search" type="text">
+	</form>
+</div>
+
+		</section>
+		
+		
+
+		<section id="encyclopedia">
+			<div id="docsToc" style="display:none;"></div>
+			<div id="content">
+        
+    
+	 <h1>Kubernetes Documentation</h1>
+    
+    
+    
+
+<div id="user-persona-data" class="hide">
+  
+  
+{"contributors":{"code-contributor":{"advanced":[{"icon":"fa-code-fork","label":"Learn
+ about the release 
+process","url":"https://github.com/kubernetes/release/blob/master/README.md"}],"foundational":[{"icon":"fa-book","label":"Read
+ the Developer 
+Guide","url":"https://github.com/kubernetes/community/blob/master/contributors/devel/README.md"}],"glossary_id":"code-contributor","id":"code-contributor","index":0,"intermediate":[{"icon":"fa-upload","label":"Learn
+ about the Kubernetes Enhancement Proposal (KEP) 
+process","url":"https://github.com/kubernetes/community/blob/master/keps/0001-kubernetes-enhancement-proposal-process.md"},{"icon":"fa-map-o","label":"Understand
+ the API 
+conventions","url":"https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md"}],"name":"Code
+ 
+Contributor"},"community-contributor":{"advanced":[{"icon":"fa-gavel","label":"Learn
+ about Kubernetes community 
+governance","url":"https://github.com/kubernetes/community/blob/master/governance.md"}],"foundational":[{"icon":"fa-users","label":"Contribute
+ to the Kubernetes OSS 
+project","url":"https://github.com/kubernetes/community/blob/master/contributors/guide/README.md"},{"icon":"fa-graduation-cap","label":"Find
+ out about mentoring 
+initiatives","url":"https://github.com/kubernetes/community/blob/master/mentoring/README.md"}],"id":"community-contributor","index":1,"intermediate":[{"icon":"fa-user-plus","label":"Apply
+ for community membership as a member, reviewer, approver, owner, or 
+maintainer","url":"https://github.com/kubernetes/community/blob/master/community-membership.md"}],"name":"Community
+ Contributor","short_desc":"A person who works to build the Kubernetes 
+community (e.g. by organizing 
+meetups)."},"docs-contributor":{"advanced":[{"icon":"fa-tag","label":"Add
+ feature state 
+tags","url":"/docs/home/contribute/includes/#feature-state"},{"icon":"fa-folder-o","label":"Add
+ tabs to display multiple flavors of 
+content","url":"/docs/home/contribute/includes/#tabs"}],"foundational":[{"icon":"fa-users","label":"Contribute
+ to the Kubernetes 
+documentation","url":"/editdocs/"},{"icon":"fa-book","label":"Learn 
+about documentation 
+style","url":"/docs/home/contribute/style-guide/"},{"icon":"fa-bug","label":"Review
+ documentation 
+issues","url":"/docs/home/contribute/review-issues/"},{"icon":"fa-pencil-square-o","label":"Create
+ a documentation pull request 
+(PR)","url":"/docs/contribute/start/"},{"icon":"fa-eye","label":"Stage 
+documentation 
+changes","url":"/docs/home/contribute/stage-documentation-changes/#staging-a-pull-request"}],"id":"docs-contributor","index":2,"intermediate":[{"icon":"fa-plus-circle","label":"Write
+ a new 
+topic","url":"/docs/home/contribute/write-new-topic/"},{"icon":"fa-cloud-download","label":"Stage
+ documentation changes 
+locally","url":"/docs/home/contribute/stage-documentation-changes/#staging-locally-using-docker"},{"icon":"fa-clone","label":"Apply
+ page 
+templates","url":"/docs/home/contribute/page-templates/"},{"icon":"fa-exclamation-circle","label":"Add
+ callout 
+formatting","url":"/docs/home/contribute/style-guide/#callout-formatting"}],"name":"Docs
+ Contributor","short_desc":"A person who writes documentation for the 
+Kubernetes project (e.g. this 
+site)."}},"migrators":{"docker-compose-swarm":{"advanced":[{"label":"b1:
+ advanced stuff","url":"#"},{"label":"b2: advanced 
+stuff","url":"#"},{"label":"b3: advanced 
+stuff","url":"#"}],"foundational":[{"label":"b1: foundational 
+stuff","url":"#"},{"label":"b2: foundational 
+stuff","url":"#"},{"label":"b3: foundational 
+stuff","url":"#"}],"id":"docker-compose-swarm","index":1,"intermediate":[{"label":"b1:
+ intermediate stuff","url":"#"},{"label":"b2: intermediate 
+stuff","url":"#"},{"label":"b3: intermediate 
+stuff","url":"#"}],"name":"Migrating from Docker Compose and 
+Swarm"},"heroku":{"advanced":[{"label":"c1: advanced 
+stuff","url":"#"},{"label":"c2: advanced stuff","url":"#"},{"label":"c3:
+ advanced stuff","url":"#"}],"foundational":[{"label":"c1: foundational 
+stuff","url":"#"},{"label":"c2: foundational 
+stuff","url":"#"},{"label":"c3: foundational 
+stuff","url":"#"}],"id":"heroku","index":2,"intermediate":[{"label":"c1:
+ intermediate stuff","url":"#"},{"label":"c2: intermediate 
+stuff","url":"#"},{"label":"c3: intermediate 
+stuff","url":"#"}],"name":"Migrating from Heroku 
+(PaaS)"},"mesos":{"advanced":[{"label":"d1: advanced 
+stuff","url":"#"},{"label":"d2: advanced stuff","url":"#"},{"label":"d3:
+ advanced stuff","url":"#"}],"foundational":[{"label":"d1: foundational 
+stuff","url":"#"},{"label":"d2: foundational 
+stuff","url":"#"},{"label":"d3: foundational 
+stuff","url":"#"}],"id":"mesos","index":3,"intermediate":[{"label":"d1: 
+intermediate stuff","url":"#"},{"label":"d2: intermediate 
+stuff","url":"#"},{"label":"d3: intermediate 
+stuff","url":"#"}],"name":"Migrating from Apache 
+Mesos"},"vmware-openstack":{"advanced":[{"label":"a1: advanced 
+stuff","url":"#"},{"label":"a2: advanced stuff","url":"#"},{"label":"a3:
+ advanced stuff","url":"#"}],"foundational":[{"label":"a1: foundational 
+stuff","url":"#"},{"label":"a2: foundational 
+stuff","url":"#"},{"label":"a3: foundational 
+stuff","url":"#"}],"id":"vmware-openstack","index":0,"intermediate":[{"label":"a1:
+ intermediate stuff","url":"#"},{"label":"a2: intermediate 
+stuff","url":"#"},{"label":"a3: intermediate 
+stuff","url":"#"}],"name":"Migrating from VMware and/or 
+OpenStack"}},"users":{"app-developer":{"advanced":[{"icon":"fa-sliders","label":"Deploy
+ an application with advanced 
+features","url":"/docs/user-journeys/users/application-developer/advanced"},{"icon":"fa-arrows","label":"Extend
+ the Kubernetes 
+API","url":"/docs/user-journeys/users/application-developer/advanced#section-2"},{"icon":"fa-book","label":"Explore
+ additional 
+resources","url":"/docs/user-journeys/users/application-developer/advanced#section-3"}],"foundational":[{"icon":"fa-television","label":"Get
+ started with a 
+cluster","url":"/docs/user-journeys/users/application-developer/foundational"},{"icon":"fa-retweet","label":"Deploy
+ an 
+application","url":"/docs/user-journeys/users/application-developer/foundational#section-2"},{"icon":"fa-cog","label":"Understand
+ basic Kubernetes 
+architecture","url":"/docs/user-journeys/users/application-developer/foundational#section-3"},{"icon":"fa-book","label":"Explore
+ additional 
+resources","url":"/docs/user-journeys/users/application-developer/foundational#section-4"}],"glossary_id":"application-developer","id":"app-developer","index":0,"intermediate":[{"icon":"fa-cogs","label":"Learn
+ additional workload 
+patterns","url":"/docs/user-journeys/users/application-developer/intermediate"},{"icon":"fa-retweet","label":"Deploy
+ a production-ready 
+workload","url":"/docs/user-journeys/users/application-developer/intermediate#section-2"},{"icon":"fa-scissors","label":"Improve
+ your dev workflow with 
+tooling","url":"/docs/user-journeys/users/application-developer/intermediate#section-3"},{"icon":"fa-book","label":"Explore
+ additional 
+resources","url":"/docs/user-journeys/users/application-developer/intermediate#section-4"}],"name":"Application
+ 
+Developer"},"cluster-operator":{"advanced":[{"icon":"fa-puzzle-piece","label":"Connect
+ to managed services using Service 
+Catalog","url":"/docs/concepts/service-catalog/"},{"icon":"fa-arrows","label":"Extend
+ a Kubernetes 
+cluster","url":"/docs/concepts/overview/extending/"},{"icon":"fa-lock","label":"Create
+ a Pod Security 
+Policy","url":"/docs/concepts/policy/pod-security-policy/"},{"icon":"fa-tachometer","label":"Define
+ a Resource 
+Quota","url":"/docs/concepts/policy/resource-quotas/"}],"foundational":[{"icon":"fa-globe","label":"Get
+ an overview of 
+Kubernetes","url":"/docs/user-journeys/users/cluster-operator/foundational"},{"icon":"fa-cog","label":"Learn
+ about Kubernetes 
+basics","url":"/docs/user-journeys/users/cluster-operator/foundational#section-2"},{"icon":"fa-info-circle","label":"Get
+ information about my 
+cluster","url":"/docs/user-journeys/users/cluster-operator/foundational#section-3"},{"icon":"fa-compass","label":"Explore
+ additional 
+resources","url":"/docs/user-journeys/users/cluster-operator/foundational#section-4"}],"glossary_id":"cluster-operator","id":"cluster-operator","index":1,"intermediate":[{"icon":"fa-sliders","label":"Work
+ with Ingress, Networking, Storage, 
+Workloads","url":"/docs/user-journeys/users/cluster-operator/intermediate"},{"icon":"fa-shield","label":"Implement
+ security best 
+practices","url":"/docs/user-journeys/users/cluster-operator/intermediate#section-2"},{"icon":"fa-heartbeat","label":"Implement
+ custom logging and 
+monitoring","url":"/docs/user-journeys/users/cluster-operator/intermediate#section-3"},{"icon":"fa-book","label":"Additional
+ 
+Resources","url":"/docs/user-journeys/users/cluster-operator/intermediate#section-4"}],"name":"Cluster
+ Operator"}}}
+</div>
+
+<div class="hide">
+
+
+
+
+  
+    <div class="persona-def-data" data-name="code-contributor">
+    
+    
+    
+    A person who develops and contributes code to the Kubernetes open source codebase.
+
+    
+    
+    </div>
+    
+    <div class="persona-def-data" data-name="community-contributor">
+    
+    
+    A person who works to build the Kubernetes community (e.g. by organizing meetups).
+    
+    </div>
+    
+    <div class="persona-def-data" data-name="docs-contributor">
+    
+    
+    A person who writes documentation for the Kubernetes project (e.g. this site).
+    
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+  
+    <div class="persona-def-data" data-name="app-developer">
+    
+    
+    
+    A person who writes an application that runs in a Kubernetes cluster.
+
+    
+    
+    </div>
+    
+    <div class="persona-def-data" data-name="cluster-operator">
+    
+    
+    
+    A person who configures, controls, and monitors clusters.
+
+    
+    
+    </div>
+    
+
+
+
+</div>
+
+<div id="aboutWrapper">
+  <div class="aboutsection" markdown="1">
+    <p>
+      Kubernetes is an open source system for managing containerized 
+applications across multiple hosts, providing basic mechanisms for 
+deployment, maintenance, and scaling of applications.
+      The open source project is hosted by the Cloud Native Computing 
+Foundation (<a href="https://www.cncf.io/about">CNCF</a>).
+    </p>
+    <div class="aboutcolumn" markdown="1">
+      <a href="https://kubernetes.io/docs/setup/release/notes/">Download Current Release</a>
+    </div>
+    <div class="aboutcolumn" markdown="1">
+      <a href="https://kubernetes.io/docs/home/supported-doc-versions/">Supported Doc Versions</a>
+    </div>
+  </div>
+</div>
+
+<div class="paths">
+    <div class="navButton users keepShow">Users</div>
+    <div class="navButton contributors">Contributors</div>
+    <a> <div class="navButton browse">Browse Docs</div></a>
+</div>
+
+<div id="cardWrapper">
+  <div class="display-bar">I AM...</div>
+  <div class="cards" markdown="1">
+  <div class="docsection1" id="persona-definition" style="display: none;">.</div>
+  <div class="card_contributors" style="display: none;"><div class="buttons" data-button="code-contributor">Code Contributor</div><div class="buttons" data-button="community-contributor">Community Contributor</div><div class="buttons" data-button="docs-contributor">Docs Contributor</div></div><div class="card_migrators" style="display: none;"><div class="buttons" data-button="docker-compose-swarm">Migrating from Docker Compose and Swarm</div><div class="buttons" data-button="heroku">Migrating from Heroku (PaaS)</div><div class="buttons" data-button="mesos">Migrating from Apache Mesos</div><div class="buttons" data-button="vmware-openstack">Migrating from VMware and/or OpenStack</div></div><div class="card_users" style="display: block;"><div class="buttons selected" data-button="app-developer">Application Developer</div><div class="buttons" data-button="cluster-operator">Cluster Operator</div></div></div>
+</div>
+
+<div style="text-align: center;" class="applicationDeveloperContainer">
+	<div class="display-bar" id="subTitle">APPLICATION DEVELOPER</div>
+	<div class="levels">
+		<div class="level selected" data-name="foundational">
+			<i class="fa fa-sign-in" aria-hidden="true" style="font-size:50pt !important;padding-top:7% !important;padding-bottom:15% !important"></i>
+			<br>
+			<div class="tabbottom" style="padding-top:5%;padding-bottom:5%">
+				Foundational
+			</div>
+		</div>
+		<div class="level" data-name="intermediate">
+			<i class="fa fa-university" aria-hidden="true" style="font-size:50pt !important;padding-top:7% !important;padding-bottom:15% !important"></i>
+			<br>
+			<div class="tabbottom" style="padding-top:5%;padding-bottom:5%">
+				Intermediate
+			</div>
+		</div>
+		<div class="level" data-name="advanced">
+			<i class="fa fa-magic" aria-hidden="true" style="font-size:50pt !important;padding-top:7% !important;padding-bottom:15% !important"></i>
+			<br>
+			<div class="tabbottom" style="padding-top:5%;padding-bottom:5%">
+				Advanced Topics
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="infobarWrapper" style="visibility: visible;">
+    <div class="infobar">
+        <span style="padding-bottom: 3% ">I want to...</span>
+        <div id="infobarLinks"><a id="infolink1" href="https://kubernetes.io/docs/user-journeys/users/application-developer/foundational"><div class="whitebar"><div class="infoicon"><i class="fa fa-television" aria-hidden="true" style="padding:%;float:left;color:#3399ff"></i></div><div id="info1" class="data">Get started with a cluster</div></div></a><a id="infolink2" href="https://kubernetes.io/docs/user-journeys/users/application-developer/foundational#section-2"><div class="whitebar"><div class="infoicon"><i class="fa fa-retweet" aria-hidden="true" style="padding:%;float:left;color:#3399ff"></i></div><div id="info2" class="data">Deploy an application</div></div></a><a id="infolink3" href="https://kubernetes.io/docs/user-journeys/users/application-developer/foundational#section-3"><div class="whitebar"><div class="infoicon"><i class="fa fa-cog" aria-hidden="true" style="padding:%;float:left;color:#3399ff"></i></div><div id="info3" class="data">Understand basic Kubernetes architecture</div></div></a><a id="infolink4" href="https://kubernetes.io/docs/user-journeys/users/application-developer/foundational#section-4"><div class="whitebar"><div class="infoicon"><i class="fa fa-book" aria-hidden="true" style="padding:%;float:left;color:#3399ff"></i></div><div id="info4" class="data">Explore additional resources</div></div></a></div>
+    </div>
+</div>
+
+    
+    
+<div id="browsedocsWrapper">
+<div class="browseheader" id="browsedocs">
+    <a name="browsedocs">Browse Docs</a>
+  </div>
+<div class="browsedocs">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/home/">Kubernetes Documentation</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/home/supported-doc-versions/">01 - Supported Versions of the Kubernetes Documentation</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/setup/">Setup</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/pick-right-solution/">01 - Picking the Right Solution</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/cluster-large/">02 - Building Large Clusters</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/multiple-zones/">03 - Running in Multiple Zones</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/cri/">04 - CRI installation</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/scratch/">05 - Creating a Custom Cluster from Scratch</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/on-premises-metal/krib/">06 - Installing Kubernetes with Digital Rebar Provision (DRP) via KRIB</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/certificates/">07 - PKI Certificates and Requirements</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/minikube/">08 - Running Kubernetes Locally via Minikube</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/node-conformance/">09 - Validate Node Setup</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/setup/release/">Downloading Kubernetes</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/release/building-from-source/">01 - Building from Source</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/release/notes/">02 - v1.12 Release Notes</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/setup/independent/">Bootstrapping Clusters with kubeadm</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/independent/install-kubeadm/">01 - Installing kubeadm</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/">02 - Creating a single master cluster with kubeadm</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/independent/kubelet-integration/">03 - Configuring each kubelet in your cluster using kubeadm</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/independent/control-plane-flags/">04 - Customizing control plane configuration with kubeadm</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/independent/high-availability/">05 - Creating Highly Available Clusters with kubeadm</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/independent/setup-ha-etcd-with-kubeadm/">06 - Set up a High Availability etcd cluster with kubeadm</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/independent/troubleshooting-kubeadm/">07 - Troubleshooting kubeadm</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/setup/turnkey/">Turnkey Cloud Solutions</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/turnkey/aws/">01 - Running Kubernetes on AWS EC2</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/turnkey/alibaba-cloud/">02 - Running Kubernetes on Alibaba Cloud</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/turnkey/azure/">03 - Running Kubernetes on Azure</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/turnkey/clc/">04 - Running Kubernetes on CenturyLink Cloud</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/turnkey/gce/">05 - Running Kubernetes on Google Compute Engine</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/setup/turnkey/stackpoint/">06 - Running Kubernetes on Multiple Clouds with Stackpoint.io</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/setup/custom-cloud/">Custom Cloud Solutions</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/custom-cloud/coreos/">01 - CoreOS on AWS or GCE</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/custom-cloud/kubespray/">02 - Installing Kubernetes On-premises/Cloud Providers with Kubespray</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/custom-cloud/kops/">03 - Installing Kubernetes on AWS with kops</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/setup/on-premises-vm/">On-Premises VMs</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/on-premises-vm/cloudstack/">01 - Cloudstack</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/on-premises-vm/dcos/">02 - Kubernetes on DC/OS</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/setup/on-premises-vm/ovirt/">03 - oVirt</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/">Concepts</a></h3>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/overview/">Overview</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/">01 - What is Kubernetes?</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/components/">02 - Kubernetes Components</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/kubernetes-api/">03 - The Kubernetes API</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/">Working with Kubernetes Objects</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">01 - Understanding Kubernetes Objects</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">02 - Names</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">03 - Namespaces</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/">04 - Labels and Selectors</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/">05 - Annotations</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/">06 - Field Selectors</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/">07 - Recommended Labels</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/overview/object-management-kubectl/">Object Management Using kubectl</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/">01 - Kubernetes Object Management</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-command/">02 - Managing Kubernetes Objects Using Imperative Commands</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/object-management-kubectl/imperative-config/">03 - Imperative Management of Kubernetes Objects Using Configuration Files</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/overview/object-management-kubectl/declarative-config/">04 - Declarative Management of Kubernetes Objects Using Configuration Files</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/architecture/">Kubernetes Architecture</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/architecture/nodes/">01 - Nodes</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/architecture/master-node-communication/">02 - Master-Node communication</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/architecture/cloud-controller/">03 - Concepts Underlying the Cloud Controller Manager</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/containers/">Containers</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/containers/images/">01 - Images</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/containers/container-environment-variables/">02 - Container Environment Variables</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/containers/runtime-class/">03 - Runtime Class</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/">04 - Container Lifecycle Hooks</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/workloads/">Workloads</a></h3>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/workloads/pods/">Pods</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/">01 - Pod Overview</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod/">02 - Pods</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/">03 - Pod Lifecycle</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">04 - Init Containers</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/pods/podpreset/">05 - Pod Preset</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/pods/disruptions/">06 - Disruptions</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/workloads/controllers/">Controllers</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/">01 - ReplicaSet</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/">02 - ReplicationController</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">03 - Deployments</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/">04 - StatefulSets</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">05 - DaemonSet</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/">06 - Garbage Collection</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/controllers/ttlafterfinished/">07 - TTL Controller for Finished Resources</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/">08 - Jobs - Run to Completion</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/">09 - CronJob</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/services-networking/">Services, Load Balancing, and Networking</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/services-networking/service/">01 - Services</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">02 - DNS for Services and Pods</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/">03 - Connecting Applications with Services</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">04 - Ingress</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/services-networking/network-policies/">05 - Network Policies</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/">06 - Adding entries to Pod /etc/hosts with HostAliases</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/storage/">Storage</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/storage/volumes/">01 - Volumes</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">02 - Persistent Volumes</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/storage/volume-snapshots/">03 - Volume Snapshots</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">04 - Storage Classes</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/storage/volume-snapshot-classes/">05 - Volume Snapshot Classes</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/">06 - Dynamic Volume Provisioning</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/storage/storage-limits/">07 - Node-specific Volume Limits</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/configuration/">Configuration</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/configuration/overview/">01 - Configuration Best Practices</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/">02 - Managing Compute Resources for Containers</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/">03 - Assigning Pods to Nodes</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/">04 - Taints and Tolerations</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/configuration/secret/">05 - Secrets</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">06 - Organizing Cluster Access Using kubeconfig Files</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/">07 - Pod Priority and Preemption</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/configuration/scheduler-perf-tuning/">08 - Scheduler Performance Tuning</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/policy/">Policies</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/policy/resource-quotas/">01 - Resource Quotas</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/policy/pod-security-policy/">02 - Pod Security Policies</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/cluster-administration/">Cluster Administration</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/cluster-administration-overview/">01 - Cluster Administration Overview</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/certificates/">02 - Certificates</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/cloud-providers/">03 - Cloud Providers</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/">04 - Managing Resources</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/networking/">05 - Cluster Networking</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/logging/">06 - Logging Architecture</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/kubelet-garbage-collection/">07 - Configuring kubelet Garbage Collection</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/federation/">08 - Federation</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/proxies/">09 - Proxies in Kubernetes</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/controller-metrics/">10 - Controller manager metrics</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/cluster-administration/addons/">11 - Installing Addons</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/extend-kubernetes/">Extending Kubernetes</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/extend-cluster/">01 - Extending your Kubernetes Cluster</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/service-catalog/">02 - Service Catalog</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/">Extending the Kubernetes API</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/">01 - Extending the Kubernetes API with the aggregation layer</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">02 - Custom Resources</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/">Compute, Storage, and Networking Extensions</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/">01 - Network Plugins</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/">02 - Device Plugins</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/">Tasks</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/extend-kubectl/kubectl-plugins/">01 - Extend kubectl with plugins</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/manage-hugepages/scheduling-hugepages/">02 - Manage HugePages</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/manage-gpus/scheduling-gpus/">03 - Schedule GPUs</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/tools/">Install Tools</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">01 - Install and Set Up kubectl</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/tools/install-minikube/">02 - Install Minikube</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/configure-pod-container/">Configure Pods and Containers</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/">01 - Assign Memory Resources to Containers and Pods</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/">02 - Assign CPU Resources to Containers and Pods</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/">03 - Configure Quality of Service for Pods</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/extended-resource/">04 - Assign Extended Resources to a Container</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/">05 - Configure a Pod to Use a Volume for Storage</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/">06 - Configure a Pod to Use a PersistentVolume for Storage</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-projected-volume-storage/">07 - Configure a Pod to Use a Projected Volume for Storage</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">08 - Configure a Security Context for a Pod or Container</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">09 - Configure Service Accounts for Pods</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/">10 - Pull an Image from a Private Registry</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/">11 - Configure Liveness and Readiness Probes</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/">12 - Assign Pods to Nodes</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/">13 - Configure Pod Initialization</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/attach-handler-lifecycle-event/">14 - Attach Handlers to Container Lifecycle Events</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/">15 - Configure a Pod to Use a ConfigMap</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/share-process-namespace/">16 - Share Process Namespace between Containers in a Pod</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/configure-pod-container/translate-compose-kubernetes/">17 - Translate a Docker Compose File to Kubernetes Resources</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/administer-cluster/">Administer a Cluster</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/">01 - Access Clusters Using the Kubernetes API</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-services/">02 - Access Services Running on Clusters</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/extended-resource-node/">03 - Advertise Extended Resources for a Node</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/dns-horizontal-autoscaling/">04 - Autoscale the DNS Service in a Cluster</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/change-pv-reclaim-policy/">05 - Change the Reclaim Policy of a PersistentVolume</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/change-default-storage-class/">06 - Change the default StorageClass</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/cluster-management/">07 - Cluster Management</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/">08 - Configure Multiple Schedulers</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/">09 - Configure Out Of Resource Handling</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/quota-api-object/">10 - Configure Quotas for API Objects</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/">11 - Control CPU Management Policies on the Node</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/">12 - Customizing DNS Service</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/">13 - Debugging DNS Resolution</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy/">14 - Declare Network Policy</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/developing-cloud-controller-manager/">15 - Developing Cloud Controller Manager</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/">16 - Encrypting Secret Data at Rest</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/guaranteed-scheduling-critical-addon-pods/">17 - Guaranteed Scheduling For Critical Add-On Pods</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/ip-masq-agent/">18 - IP Masquerade Agent User Guide</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/running-cloud-controller/">19 - Kubernetes Cloud Controller Manager</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/limit-storage-consumption/">20 - Limit Storage Consumption</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/namespaces-walkthrough/">21 - Namespaces Walkthrough</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/">22 - Operating etcd clusters for Kubernetes</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/reconfigure-kubelet/">23 - Reconfigure a Node's Kubelet in a Live Cluster</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/">24 - Reserve Compute Resources for System Daemons</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/">25 - Safely Drain a Node while Respecting Application SLOs</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/">26 - Securing a Cluster</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/kubelet-config-file/">27 - Set Kubelet parameters via a config file</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/highly-available-master/">28 - Set up High-Availability Kubernetes Masters</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/namespaces/">29 - Share a Cluster with Namespaces</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/static-pod/">30 - Static Pods</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/storage-object-in-use-protection/">31 - Storage Object in Use Protection</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/coredns/">32 - Using CoreDNS for Service Discovery</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/">33 - Using a KMS provider for data encryption</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/">34 - Using sysctls in a Kubernetes Cluster</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/">Administration with kubeadm</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-ha/">01 - Upgrading kubeadm HA clusters from v1.11 to v1.12</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-11/">02 - Upgrading kubeadm clusters from v1.10 to v1.11</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade-1-12/">03 - Upgrading kubeadm clusters from v1.11 to v1.12</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/">Manage Memory, CPU, and API Resources</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/">01 - Configure Default Memory Requests and Limits for a Namespace</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/">02 - Configure Default CPU Requests and Limits for a Namespace</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-constraint-namespace/">03 - Configure Minimum and Maximum Memory Constraints for a Namespace</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-constraint-namespace/">04 - Configure Minimum and Maximum CPU Constraints for a Namespace</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/quota-memory-cpu-namespace/">05 - Configure Memory and CPU Quotas for a Namespace</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/quota-pod-namespace/">06 - Configure a Pod Quota for a Namespace</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/">Install a Network Policy Provider</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/calico-network-policy/">01 - Use Calico for NetworkPolicy</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/cilium-network-policy/">02 - Use Cilium for NetworkPolicy</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/kube-router-network-policy/">03 - Use Kube-router for NetworkPolicy</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/romana-network-policy/">04 - Romana for NetworkPolicy</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-cluster/network-policy-provider/weave-network-policy/">05 - Weave Net for NetworkPolicy</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/inject-data-application/">Inject Data Into Applications</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">01 - Define a Command and Arguments for a Container</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/">02 - Define Environment Variables for a Container</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/">03 - Expose Pod Information to Containers Through Environment Variables</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/">04 - Expose Pod Information to Containers Through Files</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/">05 - Distribute Credentials Securely Using Secrets</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/inject-data-application/podpreset/">06 - Inject Information into Pods Using a PodPreset</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/run-application/">Run Applications</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/">01 - Run a Stateless Application Using a Deployment</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/">02 - Run a Single-Instance Stateful Application</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/run-replicated-stateful-application/">03 - Run a Replicated Stateful Application</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/">04 - Update API Objects in Place Using kubectl patch</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/scale-stateful-set/">05 - Scale a StatefulSet</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/delete-stateful-set/">06 - Delete a StatefulSet</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/force-delete-stateful-set-pod/">07 - Force Delete StatefulSet Pods</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/">08 - Perform Rolling Update Using a Replication Controller</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">09 - Horizontal Pod Autoscaler</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/">10 - Horizontal Pod Autoscaler Walkthrough</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/run-application/configure-pdb/">11 - Specifying a Disruption Budget for your Application</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/job/">Run Jobs</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/">01 - Running Automated Tasks with a CronJob</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/job/parallel-processing-expansion/">02 - Parallel Processing using Expansions</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/job/coarse-parallel-processing-work-queue/">03 - Coarse Parallel Processing Using a Work Queue</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/job/fine-parallel-processing-work-queue/">04 - Fine Parallel Processing Using a Work Queue</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/access-application-cluster/">Access Applications in a Cluster</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/">01 - Web UI (Dashboard)</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster/">02 - Accessing Clusters</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/">03 - Configure Access to Multiple Clusters</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/">04 - Use Port Forwarding to Access Applications in a Cluster</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/load-balance-access-application-cluster/">05 - Provide Load-Balanced Access to an Application in a Cluster</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/">06 - Use a Service to Access an Application in a Cluster</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/connecting-frontend-backend/">07 - Connect a Front End to a Back End Using a Service</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/">08 - Create an External Load Balancer</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/">09 - Configure Your Cloud Provider's Firewalls</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/list-all-running-container-images/">10 - List All Container Images Running in a Cluster</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/">11 - Communicate Between Containers in the Same Pod Using a Shared Volume</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-application-cluster/configure-dns-cluster/">12 - Configure DNS for a Cluster</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/">Monitor, Log, and Debug</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application-introspection/">01 - Application Introspection and Debugging</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/audit/">02 - Auditing</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/">03 - Core metrics pipeline</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-init-containers/">04 - Debug Init Containers</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-pod-replication-controller/">05 - Debug Pods and ReplicationControllers</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-service/">06 - Debug Services</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-stateful-set/">07 - Debug a StatefulSet</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/crictl/">08 - Debugging Kubernetes nodes with crictl</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/determine-reason-pod-failure/">09 - Determine the Reason for Pod Failure</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/local-debugging/">10 - Developing and debugging services locally</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/events-stackdriver/">11 - Events in Stackdriver</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/get-shell-running-container/">12 - Get a Shell to a Running Container</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/">13 - Logging Using Elasticsearch and Kibana</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/logging-stackdriver/">14 - Logging Using Stackdriver</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/monitor-node-health/">15 - Monitor Node Health</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/">16 - Tools for Monitoring Resources</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/">17 - Troubleshoot Applications</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/">18 - Troubleshoot Clusters</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/">19 - Troubleshooting</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/">Extend Kubernetes</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/configure-aggregation-layer/">01 - Configure the Aggregation Layer</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/setup-extension-api-server/">02 - Setup an Extension API Server</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/http-proxy-access-api/">03 - Use an HTTP Proxy to Access the Kubernetes API</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/">Use Custom Resources</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/">01 - Extend the Kubernetes API with CustomResourceDefinitions</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definition-versioning/">02 - Versions of CustomResourceDefinitions</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/tls/">TLS</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/tls/certificate-rotation/">01 - Certificate Rotation</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/">02 - Manage TLS Certificates in a Cluster</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/federation/">Federation - Run an App on Multiple Clusters</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/federation/federation-service-discovery/">01 - Cross-cluster Service Discovery using Federated Services</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/federation/set-up-cluster-federation-kubefed/">02 - Set up Cluster Federation with Kubefed</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/federation/set-up-coredns-provider-federation/">03 - Set up CoreDNS as DNS provider for Cluster Federation</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/federation/set-up-placement-policies-federation/">04 - Set up placement policies in Federation</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/manage-daemon/">Manage Cluster Daemons</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/manage-daemon/rollback-daemon-set/">01 - Perform a Rollback on a DaemonSet</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/manage-daemon/update-daemon-set/">02 - Perform a Rolling Update on a DaemonSet</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/service-catalog/">Install Service Catalog</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/service-catalog/install-service-catalog-using-helm/">01 - Install Service Catalog using Helm</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/service-catalog/install-service-catalog-using-sc/">02 - Install Service Catalog using SC</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tasks/administer-federation/">Federation - Run an App on Multiple Clusters</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/cluster/">01 - Federated Cluster</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/configmap/">02 - Federated ConfigMap</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/daemonset/">03 - Federated DaemonSet</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/deployment/">04 - Federated Deployment</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/events/">05 - Federated Events</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/hpa/">06 - Federated Horizontal Pod Autoscalers (HPA)</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/ingress/">07 - Federated Ingress</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/job/">08 - Federated Jobs</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/namespaces/">09 - Federated Namespaces</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/replicaset/">10 - Federated ReplicaSets</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tasks/administer-federation/secret/">11 - Federated Secrets</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/getting-started-guides/">Independent Solutions</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/alternatives/">01 - Deprecated Alternatives</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/getting-started-guides/fedora/">Bare Metal</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/fedora/flannel_multi_node_cluster/">01 - Fedora (Multi Node)</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/fedora/fedora_manual_config/">02 - Fedora (Single Node)</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/">Kubernetes on Ubuntu</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/backups/">01 - Backups</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/decommissioning/">02 - Decommissioning</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/glossary/">03 - Glossary and Terminology</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/local/">04 - Local Kubernetes development with LXD</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/logging/">05 - Logging</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/monitoring/">06 - Monitoring</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/networking/">07 - Networking</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/operational-considerations/">08 - Operational Considerations</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/rancher/">09 - Rancher Integration with Ubuntu Kubernetes</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/scaling/">10 - Scaling</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/security/">11 - Security Considerations</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/installation/">12 - Setting up Kubernetes with Juju</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/storage/">13 - Storage</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/troubleshooting/">14 - Troubleshooting</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/upgrades/">15 - Upgrades</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/getting-started-guides/ubuntu/validation/">16 - Validation - End-to-end Testing</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/">Tutorials</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/hello-minikube/">01 - Hello Minikube</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/">Learn Kubernetes Basics</a></h3>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/">Create a Cluster</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-intro/">01 - Using Minikube to Create a Cluster</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/">02 - Interactive Tutorial - Creating a Cluster</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/">Deploy an App</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-intro/">01 - Using kubectl to Create a Deployment</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/deploy-interactive/">02 - Interactive Tutorial - Deploying an App</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/">Explore Your App</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-intro/">01 - Viewing Pods and Nodes</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/explore/explore-interactive/">02 - Interactive Tutorial - Exploring Your App</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/">Expose Your App Publicly</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/">01 - Using a Service to Expose Your App</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-interactive/">02 - Interactive Tutorial - Exposing Your App</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/scale/">Scale Your App</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/scale/scale-intro/">01 - Running Multiple Instances of Your App</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/scale/scale-interactive/">02 - Interactive Tutorial - Scaling Your App</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/update/">Update Your App</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/">01 - Performing a Rolling Update</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-interactive/">02 - Interactive Tutorial - Updating Your App</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/online-training/">Online Training Courses</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/online-training/overview/">01 - Overview of Kubernetes Online Training</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/configuration/">Configuration</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/configuration/configure-redis-using-configmap/">01 - Configuring Redis using a ConfigMap</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/stateless-application/">Stateless Applications</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/stateless-application/expose-external-ip-address/">01 - Exposing an External IP Address to Access an Application in a Cluster</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/stateless-application/guestbook/">02 - Example: Deploying PHP Guestbook application with Redis</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/stateful-application/">Stateful Applications</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/stateful-application/basic-stateful-set/">01 - StatefulSet Basics</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/">02 - Example: Deploying WordPress and MySQL with Persistent Volumes</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/stateful-application/cassandra/">03 - Example: Deploying Cassandra with Stateful Sets</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/">04 - Running ZooKeeper, A Distributed System Coordinator</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/clusters/">Clusters</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/clusters/apparmor/">01 - AppArmor</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/tutorials/services/">Services</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/tutorials/services/source-ip/">01 - Using Source IP</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/">Reference</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/glossary/">01 - Standardized Glossary</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/tools/">02 - Tools</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/issues-security/">Kubernetes Issues and Security</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/issues-security/issues/">01 - Kubernetes Issue Tracker</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/issues-security/security/">02 - Kubernetes Security and Disclosure Information</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/using-api/">Using the Kubernetes API</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/using-api/api-overview/">01 - Kubernetes API Overview</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/using-api/api-concepts/">02 - Kubernetes API Concepts</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/using-api/client-libraries/">03 - Client Libraries</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/using-api/deprecation-policy/">04 - Kubernetes Deprecation Policy</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/access-authn-authz/">Accessing the API</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/controlling-access/">01 - Controlling Access to the Kubernetes API</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/authentication/">02 - Authenticating</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/bootstrap-tokens/">03 - Authenticating with Bootstrap Tokens</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/">04 - Using Admission Controllers</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/">05 - Dynamic Admission Control</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/">06 - Managing Service Accounts</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/authorization/">07 - Authorization Overview</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">08 - Using RBAC Authorization</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/abac/">09 - Using ABAC Authorization</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/node/">10 - Using Node Authorization</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/access-authn-authz/webhook/">11 - Webhook Mode</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/kubernetes-api/">API Reference</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/kubernetes-api/labels-annotations-taints/">01 - Well-Known Labels, Annotations and Taints</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/kubernetes-api/">02 - v1.12</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/federation/">Federation API</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/federation/extensions/v1beta1/definitions/">01 - extensions/v1beta1 Model Definitions</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/federation/extensions/v1beta1/operations/">02 - extensions/v1beta1 Operations</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/federation/v1/definitions/">03 - v1 Model Definitions</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/federation/v1/operations/">04 - v1 Operations</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/setup-tools/">Setup tools reference</a></h3>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/">Kubeadm</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/">01 - Overview of kubeadm</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-init/">02 - kubeadm init</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-join/">03 - kubeadm join</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/">04 - kubeadm upgrade</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-config/">05 - kubeadm config</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-reset/">06 - kubeadm reset</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-token/">07 - kubeadm token</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-version/">08 - kubeadm version</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-alpha/">09 - kubeadm alpha</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubeadm/implementation-details/">10 - Implementation details</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/">kubefed</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed-options/">01 - kubefed options</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed-init/">02 - kubefed init</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed-join/">03 - kubefed join</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed-unjoin/">04 - kubefed unjoin</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed-version/">05 - kubefed version</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed/">06 - </a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed_init/">07 - </a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed_join/">08 - </a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed_options/">09 - </a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed_unjoin/">10 - </a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/setup-tools/kubefed/kubefed_version/">11 - </a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/command-line-tools-reference/">Command line tools reference</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/">01 - Feature Gates</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/">02 - Kubelet authentication/authorization</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-tls-bootstrapping/">03 - TLS bootstrapping</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/cloud-controller-manager/">04 - cloud-controller-manager</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/federation-apiserver/">05 - federation-apiserver</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/federation-controller-manager/">06 - federation-controller-manager</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/">07 - kube-apiserver</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/">08 - kube-controller-manager</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/">09 - kube-proxy</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/">10 - kube-scheduler</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/">11 - kubelet</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/reference/kubectl/">kubectl CLI</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/kubectl/overview/">01 - Overview of kubectl</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/kubectl/jsonpath/">02 - JSONPath Support</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/kubectl/kubectl/">03 - kubectl</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/kubectl/cheatsheet/">04 - kubectl Cheat Sheet</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/kubectl/kubectl-cmds/">05 - kubectl Commands</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/reference/kubectl/conventions/">06 - kubectl Usage Conventions</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/">07 - kubectl for Docker Users</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/contribute/">Contribute to Kubernetes docs</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/start/">01 - Start contributing</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/intermediate/">02 - Intermediate contributing</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/advanced/">03 - Advanced contributing</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/localization/">04 - Localizing Kubernetes Documentation</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/participating/">05 - Participating in SIG Docs</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/contribute/style/">Documentation style overview</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/style/style-guide/">01 - Style guide</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/style/write-new-topic/">02 - Writing a new topic</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/style/page-templates/">03 - Using Page Templates</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/style/content-organization/">04 - Content organization</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/style/hugo-shortcodes/">05 - Custom Hugo Shortcodes</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="browsesection">
+  <div class="docstitle">
+    <h3><a href="https://kubernetes.io/docs/contribute/generate-ref-docs/">Reference docs overview</a></h3>
+  </div>
+  
+  <div class="pages">
+  
+  
+  
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/generate-ref-docs/federation-api/">01 - Generating Reference Documentation for Kubernetes Federation API</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/generate-ref-docs/kubectl/">02 - Generating Reference Documentation for kubectl Commands</a><br>
+    
+      </div>
+    
+  
+    
+    
+      <div class="browsecolumn">
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/generate-ref-docs/kubernetes-api/">03 - Generating Reference Documentation for the Kubernetes API</a><br>
+    
+  
+    
+    
+    
+    <a href="https://kubernetes.io/docs/contribute/generate-ref-docs/kubernetes-components/">04 - Generating Reference Pages for Kubernetes Components and Tools</a><br>
+    
+      </div>
+    
+  
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+        
+        
+
+
+        <div id="pre-footer"> 
+  <hr>
+
+  <div class="issue-button-container">
+    <p><a href=""><img src="_index.gif" alt="Analytics"></a></p>
+    
+    
+    <script type="text/javascript">
+    PDRTJS_settings_8345992 = {
+    "id" : "8345992",
+    "unique_id" : "\/docs\/home\/",
+    "title" : "Kubernetes Documentation",
+    "permalink" : "https:\/\/kubernetes.io\/docs\/home\/"
+    };
+    (function(d,c,j){if(!document.getElementById(j)){var pd=d.createElement(c),s;pd.id=j;pd.src=('https:'==document.location.protocol)?'https://polldaddy.com/js/rating/rating.js':'http://i0.poll.fm/js/rating/rating.js';s=document.getElementsByTagName(c)[0];s.parentNode.insertBefore(pd,s);}}(document,'script','pd-rating-js'));
+    </script>
+    <a href="" onclick="window.open('https://github.com/kubernetes/website/issues/new?title=Issue%20with%20' +
+    'k8s.io'+window.location.pathname)" class="button issue">Create an Issue</a>
+    
+    
+    
+  </div>
+  
+
+  <div id="lastedit" class="lastedit issue-button-container">
+    Page last modified on November 20, 2018 at 5:44 AM PST by
+    <a href="https://github.com/kubernetes/website/commit/59c47128073867c65db23717d1982bd5ed278846/">add feedback widget to bottom of docs (#11037)</a> (<a href="https://github.com/kubernetes/website/commits/master/content/en/docs/home/_index.md">Page History</a>)
+  </div>
+  
+</div>
+
+			</div>
+		</div></section>
+		<footer>
+    <main class="light-text">
+        <nav>
+            
+            
+            
+            <a href="https://kubernetes.io/docs/home/">Home</a>
+            
+            <a href="https://kubernetes.io/blog/">Blog</a>
+            
+            <a href="https://kubernetes.io/partners/">Partners</a>
+            
+            <a href="https://kubernetes.io/community/">Community</a>
+            
+            <a href="https://kubernetes.io/case-studies/">Case Studies</a>
+            
+        </nav>
+        <div class="social">
+            <div>
+                <a href="https://twitter.com/kubernetesio" class="twitter"><span>Twitter</span></a>
+                <a href="https://github.com/kubernetes/kubernetes" class="github"><span>GitHub</span></a>
+                <a href="http://slack.k8s.io/" class="slack"><span>Slack</span></a>
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow"><span>Stack Overflow</span></a>
+                <a href="https://discuss.kubernetes.io/" class="mailing-list"><span>Forum</span></a>
+                <a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar"><span>Events Calendar</span></a>
+            </div>
+            <div>
+                
+                <a href="https://git.k8s.io/community/contributors/guide" class="button">Contribute</a>
+            </div>
+        </div>
+        <div id="miceType" class="center">
+            © 2018 The Kubernetes Authors | Documentation Distributed under <a href="https://git.k8s.io/website/LICENSE" class="light-text">CC BY 4.0</a>
+        </div>
+        <div id="miceType" class="center">
+            Copyright © 2018 The Linux Foundation ®. All rights 
+reserved. The Linux Foundation has registered trademarks and uses 
+trademarks. For a list of trademarks of The Linux Foundation, please see
+ our <a href="https://www.linuxfoundation.org/trademark-usage" class="light-text">Trademark Usage page</a>
+        </div>
+        <div id="miceType" class="center">
+            ICP license: 京ICP备17074266号-3
+        </div>
+    </main>
+</footer>
+
+		<button class="flyout-button" onclick="kub.toggleToc()"></button>
+
+<script>
+
+(function () {
+    window.addEventListener('DOMContentLoaded', init)
+
+        
+        function init() {
+            window.removeEventListener('DOMContentLoaded', init)
+                hideNav()
+        }
+
+    function hideNav(toc){
+        if (!toc) toc = document.querySelector('#docsToc')
+        if (!toc) return
+            var container = toc.querySelector('.container')
+
+                
+                if (container) {
+                    if (container.childElementCount === 0 || toc.querySelectorAll('a.item').length === 1) {
+                        toc.style.display = 'none'
+                            document.getElementById('docsContent').style.width = '100%'
+                    }
+                } else {
+                    requestAnimationFrame(function () {
+                        hideNav(toc)
+                    })
+                }
+    }
+})();
+</script>
+
+
+
+    <script language="application/javascript">
+      
+      (function addHeadingLinks(){
+        var article = document.getElementById('docsContent');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = heading.innerHTML;
+            a.href = '#'+heading.id;
+            a.classList.add('inpage_heading');
+            heading.innerHTML = '';
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+	
+
+<div class="pi-pushmenu" id="primary"><div class="overlay"><div class="sled" style="right: 0px;"><div class="content"><ul><li><a href="https://kubernetes.io/docs/" class="active" id="">Documentation</a></li><li><a href="https://kubernetes.io/blog/" id="">Blog</a></li><li><a href="https://kubernetes.io/partners/" id="">Partners</a></li><li><a href="https://kubernetes.io/community/" id="">Community</a></li><li><a href="https://kubernetes.io/case-studies/" id="">Case Studies</a></li><li><a href="#" id="">
+                    English <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a></li><li><a href="https://kubernetes.io/zh/docs/home/" id="">中文 Chinese</a></li><li><a href="https://kubernetes.io/ko/docs/home/" id="">한국어 Korean</a></li><li><a href="#" id="">
+                    v1.12 <span class="ui-icon ui-icon-carat-1-s"></span>
+                </a></li><li><a href="https://kubernetes.io/" id="">v1.12</a></li><li><a href="https://v1-11.docs.kubernetes.io/" id="">v1.11</a></li><li><a href="https://v1-10.docs.kubernetes.io/" id="">v1.10</a></li><li><a href="https://v1-9.docs.kubernetes.io/" id="">v1.9</a></li><li><a href="https://v1-8.docs.kubernetes.io/" id="">v1.8</a></li><li><a href="https://kubernetes.io/docs/tutorials/hello-minikube/" id="">Get Started</a></li><li><a href="https://kubernetes.io/docs/home/" id="">Documentation</a></li><li><a href="https://kubernetes.io/blog/" id="">Blog</a></li><li><a href="https://twitter.com/kubernetesio" class="twitter" id=""><span>Twitter</span></a></li><li><a href="https://github.com/kubernetes/kubernetes" class="github" id=""><span>GitHub</span></a></li><li><a href="http://slack.k8s.io/" class="slack" id=""><span>Slack Slack</span></a></li><li><a href="https://stackoverflow.com/questions/tagged/kubernetes" class="stack-overflow" id=""><span>Stack Overflow</span></a></li><li><a href="https://discuss.kubernetes.io/" class="mailing-list" id=""><span>Forum</span></a></li><li><a href="https://calendar.google.com/calendar/embed?src=nt2tcnbtbied3l6gi2h29slvc0%40group.calendar.google.com" class="calendar" id=""><span>Events Calendar</span></a></li></ul></div><button class="push-menu-close-button"></button></div></div></div></body></html>

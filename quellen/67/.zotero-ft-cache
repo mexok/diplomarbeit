@@ -1,0 +1,96 @@
+
+Latest Release: 2.1.0
+
+GLEW Logo
+
+Download
+Usage
+Building
+Installation
+Source Generation
+Change Log
+
+GitHub
+Issues
+Pull Requests
+Authors
+Licensing
+
+SourceForge Page
+
+Last Update: 07-31-17
+OpenGL Logo
+GitHub Logo
+Travis Logo
+SourceForge Logo
+	
+The OpenGL Extension Wrangler Library
+
+The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library. GLEW provides efficient run-time mechanisms for determining which OpenGL extensions are supported on the target platform. OpenGL core and extension functionality is exposed in a single header file. GLEW has been tested on a variety of operating systems, including Windows, Linux, Mac OS X, FreeBSD, Irix, and Solaris.
+Downloads
+
+GLEW is distributed as source and precompiled binaries.
+The latest release is 2.1.0 [07-31-17]:
+
+	Source 		ZIP  |  TGZ 	
+	Binaries 		Windows 32-bit and 64-bit 	
+
+An up-to-date copy is also available using git :
+
+    github
+    git clone https://github.com/nigels-com/glew.git glew
+     
+
+Supported Extensions
+
+The latest release contains support for OpenGL 4.6, compatibility and forward-compatible contexts and the following extensions:
+
+    OpenGL extensions
+    WGL extensions
+    GLX extensions 
+
+News
+
+    [07-31-17] GLEW 2.1.0 adds support for OpenGL 4.6, new extensions and minor bug fixes
+    [07-24-16] GLEW 2.0.0 adds support for forward-compatible contexts, adds new extensions, OSMesa and EGL support, MX discontinued and minor bug fixes
+    [08-10-15] GLEW 1.13.0 adds support for new extensions, fixes minor bugs
+    [26-01-15] GLEW 1.12.0 fixes minor bugs and adds new extensions
+    [08-11-14] GLEW 1.11.0 adds support for OpenGL 4.5, new extensions
+    [07-22-13] GLEW 1.10.0 adds support for OpenGL 4.4, new extensions
+    [08-06-12] GLEW 1.9.0 adds support for OpenGL 4.3, new extensions
+    [07-17-12] GLEW 1.8.0 fixes minor bugs and adds new extensions
+    [08-26-11] GLEW 1.7.0 adds support for OpenGL 4.2, new extensions, fixes bugs
+    [04-27-11] GLEW 1.6.0 fixes minor bugs and adds eight new extensions
+    [01-31-11] GLEW 1.5.8 fixes minor bugs and adds two new extensions
+    [11-03-10] GLEW 1.5.7 fixes minor bugs and adds one new extension
+    [09-07-10] GLEW 1.5.6 adds support for OpenGL 4.1, fixes bugs
+    [07-13-10] GLEW 1.5.5 fixes minor bugs and adds new extensions
+    [04-21-10] GLEW 1.5.4 adds support for OpenGL 3.3, OpenGL 4.0 and new extensions, fixes bugs
+    [02-28-10] GLEW 1.5.3 fixes minor bugs and adds three new extensions
+    [12-31-09] GLEW 1.5.2 adds support for OpenGL 3.1, OpenGL 3.2 and new extensions
+    [11-03-08] GLEW 1.5.1 adds support for OpenGL 3.0 and 31 new extensions
+    [12-27-07] GLEW 1.5.0 is released under less restrictive licenses
+    [04-27-07] GLEW 1.4.0 is released
+    [03-08-07] GLEW is included in the NVIDIA OpenGL SDK
+    [03-04-07] GLEW 1.3.6 is released
+    [02-28-07] Repository is migrated to SVN
+    [02-25-07] GLEW is included in the OpenGL SDK
+    [11-21-06] GLEW 1.3.5 adds OpenGL 2.1 and NVIDIA G80 extensions
+    [03-04-06] GLEW 1.3.4 adds support for five new extensions
+    [05-16-05] GLEW 1.3.3 is released
+    [03-16-05] GLEW 1.3.2 adds support for GL_APPLE_pixel_buffer
+    [02-11-05] gljava and sdljava provide a Java binding to OpenGL via GLEW
+    [02-02-05] GLEW 1.3.1 adds support for GL_EXT_framebuffer_object
+    [01-04-05] GLEW 1.3.0 adds core OpenGL 2.0 support plus many enhancements
+    [12-22-04] GLEWpy Python wrapper announced
+    [12-12-04] Mailing lists created on sourceforge
+    [12-06-04] GLEW 1.2.5 adds new extensions and support for FreeBSD
+
+Links
+
+    OpenGL Software Development Kit
+    OpenGL Extension Registry
+    OpenGL Wiki: Extensions
+    NVIDIA OpenGL Extension Specifications
+    Apple OpenGL Extensions Guide
+

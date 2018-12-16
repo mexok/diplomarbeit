@@ -1,0 +1,125 @@
+
+
+    Intro
+    Videos
+    Design
+    Agile
+    Refactoring
+    FAQ
+
+    About Me
+
+    All Sections
+
+    ThoughtWorks
+
+    home
+    topics
+        agile
+        refactoring
+        design
+        noSQL
+        DSL
+        continuous delivery
+        microservices
+    media
+        books
+        video
+    site
+        site introduction
+        about me
+        FAQ
+        content index
+        photos
+        board games
+    catalogs
+        refactoring
+        P of EAA
+        EAA dev
+        DSL
+    feeds
+        twitter
+        rss
+        facebook
+    popular
+        microservices
+        dependency injection
+    ThoughtWorks
+        blogs
+        careers
+        products
+
+Passive View
+
+A screen and components with all application specific behavior extracted into a controller so that the widgets have their state controlled entirely by controller.
+Photo of Martin Fowler
+
+Martin Fowler
+
+18 July 2006
+
+This is part of the Further Enterprise Application Architecture development writing that I was doing in the mid 2000’s. Sadly too many other things have claimed my attention since, so I haven’t had time to work on them further, nor do I see much time in the foreseeable future. As such this material is very much in draft form and I won’t be doing any corrections or updates until I’m able to find time to work on it again.
+
+A perennial problem with building rich client systems is the complication of testing them. Most rich client frameworks were not built with automated testing in mind. Controlling these frameworks programaticly is often very difficult.
+
+A Passive View handles this by reducing the behavior of the UI components to the absolute minimum by using a controller that not just handles responses to user events, but also does all the updating of the view. This allows testing to be focused on the controller with little risk of problems in the view.
+How it Works
+
+This pattern is yet another variation on model-view-controller and model-view-presenter. As with these the UI is split between a view that handles display and a controller that responds to user gestures. The significant change with Passive View is that the view is made completely passive and is no longer responsible for updating itself from the model. As a result all of the view logic is in the controller. As a result, there is no dependencies in either direction between the view and the model.
+
+Figure 1: Unlike most MVC-style configurations, Passive View results in no dependencies between view and model.
+
+Looking at our regular assessment window example, again we see a view/controller split, but this time the controller does all the work in figuring out how the view should display the model. The text field widget receives the user gesture but immediately hands off to the controller, in the classic MVP movement. The controller then updates the model, and then handles the reloading of the view from the model. This load actions involves pulling all the data needed from the model, and using it to update the widgets. This example shows a coarse-grained synchronization, where any change results in a complete reload.
+
+Figure 2: When the actual text is edited, all the UI response is handled by the controller.
+
+Figure 3: Classes for the assessment example.
+
+The primary driver for Passive View is testing, as a result it's often valuable to use of Test Double for the view so that the controller can be tested without needing any interaction with the UI framework. This needs a intermediate Gateway to be setup as in Figure 4 . This is the same technique that you would use for Supervising Controller . As with Supervising Controller I've shown a stub here, but this is also a good opportunity to use a mock.
+
+Figure 4: Setting up the view as a Gateway so that it's easy to substitute the window with a Test Double
+When to Use It
+
+The driving reason to use Passive View is to enhance testability. With the view reduced to a dumb slave of the controller, you run little risk by not testing the view. The controller can run and be tested outside of the UI environment - indeed if you use a Test Double for the view you don't need to even have the UI classes available to you.
+
+Passive View isn't the only way make the view sufficiently humble to help in testing. Presentation Model and Supervising Controller are both reasonable alternatives. The strength that Passive View has over these two is that both of the alternatives require the view to do some of the synchronization work, which results in more untestable behavior than Passive View . Whether this difference is significant or not is a judgment call.
+
+Another advantage that Passive View is a very explicit mechanism. There's very little reliance on Observer mechanisms or declarative mappings. This makes it much easier to read the code to see what is happening - particularly useful if you're trying to debug when things go wrong.
+
+    home
+    topics
+        agile
+        refactoring
+        design
+        noSQL
+        DSL
+        continuous delivery
+        microservices
+    media
+        books
+        video
+    site
+        site introduction
+        about me
+        FAQ
+        content index
+        photos
+        board games
+    catalogs
+        refactoring
+        P of EAA
+        EAA dev
+        DSL
+    feeds
+        twitter
+        rss
+        facebook
+    popular
+        microservices
+        dependency injection
+    ThoughtWorks
+        blogs
+        careers
+        products
+
+© Martin Fowler | Privacy Policy | Disclosures

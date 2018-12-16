@@ -1,0 +1,197 @@
+
+Skip to main content
+Microsoft
+.NET
+.NET
+.NET
+
+    Home
+    APIs
+    .NET Core
+    .NET Framework
+    ASP.NET
+    Xamarin
+    Azure
+    More
+
+    All Microsoft
+            Office
+            Windows
+            Surface
+            Xbox
+            Deals
+            Support
+        Software
+            Windows apps
+            OneDrive
+            Outlook
+            Skype
+            OneNote
+        PCs & Devices
+            PCs & tablets
+            Accessories
+        Entertainment
+            Xbox games
+            PC games
+            Windows digital games
+            Movies & TV
+            Books
+        Business
+            Microsoft Azure
+            Microsoft Dynamics 365
+            Microsoft 365
+            Enterprise
+            Data platform
+            Microsoft Advertising
+        Developer & IT
+            .NET
+            Visual Studio
+            Windows Server
+            Windows Dev Center
+            Docs
+        Other
+            Microsoft Store
+            Microsoft Rewards
+            Free downloads & security
+            Education
+            Store locations
+            Gift cards
+        View all
+
+Search
+
+.NET
+Cancel
+
+    Docs
+    .NET
+    .NET Framework
+    Windows Presentation Foundation
+    Getting Started (WPF)
+
+Exit focus mode
+Contents
+
+    Feedback
+    Edit
+    Share
+        Twitter
+        LinkedIn
+        Facebook
+        Email
+    Dark
+    Sign in
+
+        Profile
+        Sign out
+
+Contents
+In this article
+
+    Where Should I Start?
+    See Also
+
+Getting Started (WPF)
+
+    01/26/2018
+    2 minutes to read
+    Contributors
+        dotnet bot
+        Mike B
+        Maira Wenzel
+        pkulikov
+        Mike Jones
+        all
+
+In this article
+
+    Where Should I Start?
+    See Also
+
+Windows Presentation Foundation (WPF) is a UI framework that creates desktop client applications. The WPF development platform supports a broad set of application development features, including an application model, resources, controls, graphics, layout, data binding, documents, and security. It is a subset of the .NET Framework, so if you have previously built applications with the .NET Framework using ASP.NET or Windows Forms, the programming experience should be familiar. WPF uses the Extensible Application Markup Language (XAML) to provide a declarative model for application programming. This section has topics that introduce and help you get started with WPF.
+Where Should I Start?
+	
+I want to jump right in… 	Walkthrough: My first WPF desktop application
+How do I design the application UI? 	Designing XAML in Visual Studio
+New to .NET? 	Overview of the .NET Framework
+
+.NET Framework Application Essentials
+
+Getting Started with Visual C# and Visual Basic
+Tell me more about WPF… 	Introduction to WPF in Visual Studio
+
+XAML Overview (WPF)
+
+Controls
+
+Data Binding Overview
+Are you a Windows Forms developer? 	Windows Forms Controls and Equivalent WPF Controls
+
+WPF and Windows Forms Interoperation
+See Also
+
+Class Library
+Application Development
+.NET Framework Developer Center
+Feedback
+
+We'd love to hear your thoughts. Choose the type you'd like to provide:
+Product feedback
+Sign in to give documentation feedback
+You may also leave feedback directly on GitHub .
+Content feedback
+You may also leave feedback directly on GitHub .
+
+Our new feedback system is built on GitHub Issues. Read about this change in our blog post .
+Avatar Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.
+Issue Title Leave a comment
+Submit feedback
+
+Loading feedback...
+
+There are no open issues
+
+There are no closed issues
+
+View on GitHub
+English (United States)
+
+    Previous Version Docs
+    Blog
+    Contribute
+    Privacy & Cookies
+    Terms of Use
+    Site Feedback
+    Trademarks
+
+Contents
+Clear Filter
+No results
+
+    Getting Started
+        Introduction to WPF in Visual Studio
+        What's New in WPF Version 4.5
+        Walkthrough: My first WPF desktop application
+        WPF Walkthroughs
+        WPF Community Feedback
+
+Download PDF
+Feedback
+Is this page helpful?
+Yes No
+How can we improve? Submit
+
+Thanks for the feedback!
+
+Comments or suggestions? Tell us here .
+Thanks for the feedback!
+English (United States)
+
+    Previous Version Docs
+    Blog
+    Contribute
+    Privacy & Cookies
+    Terms of Use
+    Site Feedback
+    Trademarks
+

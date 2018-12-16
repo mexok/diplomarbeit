@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<meta content="uft-8" name="charset">
+
+<title>Passive View</title>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+<meta content="summary" name="twitter:card">
+
+<meta content="16665197" name="twitter:site:id">
+
+<meta content="Passive View" property="og:title">
+
+<meta content="https://martinfowler.com/eaaDev/PassiveScreen.html" property="og:url">
+
+<meta content="A screen and components with all application specific behavior extracted into a controller so that the widgets have their state controlled entirely by controller." property="og:description">
+
+<meta content="https://martinfowler.com/logo-sq.png" property="og:image">
+
+<meta content="martinfowler.com" property="og:site_name">
+
+<meta content="article" property="og:type">
+
+<meta content="2006-07-18" property="og:article:modified_time">
+
+<meta content="width=device-width, initial-scale=1" name="viewport">
+
+<link href="eaa-dev.css" rel="stylesheet" type="text/css">
+</head>
+
+<body><div id="banner" style="background-image: url(&quot;/banner.png&quot;); background-repeat: no-repeat">
+ <a href="https://martinfowler.com/">
+    <img class="name-logo" src="mf-name-white.png">
+<!--[if lte IE 6]>
+<img class = 'ie6-name-logo' src = '/mf-name-white-solid.png'/>
+<![endif]-->
+  </a>
+  
+  <div class="search">
+    <!-- SiteSearch Google -->
+    <form method="GET" action="https://www.google.com/search">
+      <input name="ie" value="UTF-8" type="hidden">
+      <input name="oe" value="UTF-8" type="hidden">
+      <input class="field" name="q" size="15" maxlength="255" type="text">
+      <button class="button" type="submit" name="btnG" value=" " title="Search">
+      <input name="domains" value="martinfowler.com" type="hidden">
+      <input name="sitesearch" value="" type="hidden"> 
+      <input name="sitesearch" value="martinfowler.com" type="hidden">
+    
+  </button></form></div>
+
+<div class="menu-button navmenu-button"><a class="icon-bars" href="#navmenu-bottom"></a></div>
+
+<div class="main-navigation"><ul>
+  <li><a href="https://martinfowler.com/intro.html">Intro</a></li>
+  <li><a href="https://martinfowler.com/videos.html">Videos</a></li>
+  <li><a href="https://martinfowler.com/design.html">Design</a></li>
+  <li><a href="https://martinfowler.com/agile.html">Agile</a></li>
+  <li><a href="http://refactoring.com/">Refactoring</a></li>
+  <li><a href="https://martinfowler.com/faq.html">FAQ</a></li>
+  <li>
+    <p><a href="https://martinfowler.com/aboutMe.html">About Me</a></p>
+
+    </li><li class="navmenu-button"><p><a href="#bottom-navmenu">All Sections <span class="icon-bars" title="Menu"></span></a></p></li>
+
+    <li><p>
+      <a href="http://www.thoughtworks.com/" class="tw">ThoughtWorks</a>
+</p></li>
+
+    <li><p>
+  <a href="https://martinfowler.com/feed.atom" title="feed" class="icon-rss">
+  </a>
+ </p></li>
+
+    <li><p>
+  <a href="http://www.twitter.com/martinfowler" title="Twitter stream" class="icon-twitter">
+  </a>
+ </p></li>
+  
+</ul>
+
+</div>
+</div>
+<div class="div" id="top-navmenu">
+<ul class="navmenu">
+<li class="top-line"><a class="link-home" href="https://martinfowler.com/">home</a>  <div class="search">
+    <!-- SiteSearch Google -->
+    <form method="GET" action="https://www.google.com/search">
+      <input name="ie" value="UTF-8" type="hidden">
+      <input name="oe" value="UTF-8" type="hidden">
+      <input class="field" name="q" size="15" maxlength="255" type="text">
+      <button class="button" type="submit" name="btnG" value=" " title="Search">
+      <input name="domains" value="martinfowler.com" type="hidden">
+      <input name="sitesearch" value="" type="hidden"> 
+      <input name="sitesearch" value="martinfowler.com" type="hidden">
+    
+  </button></form></div>
+
+<span class="close" title="close"></span>
+</li>
+
+<li class="group"><span class="group-label">topics</span>
+<ul class="group-contents">
+<li class="item"><a href="https://martinfowler.com/agile.html">agile</a></li>
+
+<li class="item"><a href="http://refactoring.com/">refactoring</a></li>
+
+<li class="item"><a href="https://martinfowler.com/design.html">design</a></li>
+
+<li class="item"><a href="https://martinfowler.com/nosql.html">noSQL</a></li>
+
+<li class="item"><a href="https://martinfowler.com/dsl.html">DSL</a></li>
+
+<li class="item"><a href="https://martinfowler.com/delivery.html">continuous&nbsp;delivery</a></li>
+
+<li class="item"><a href="https://martinfowler.com/microservices">microservices</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">media</span>
+<ul class="group-contents">
+<li class="item"><a href="https://martinfowler.com/books">books</a></li>
+
+<li class="item"><a href="https://martinfowler.com/videos.html">video</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">site</span>
+<ul class="group-contents">
+<li class="item"><a href="https://martinfowler.com/intro.html">site&nbsp;introduction</a></li>
+
+<li class="item"><a href="https://martinfowler.com/aboutMe.html">about&nbsp;me</a></li>
+
+<li class="item"><a href="https://martinfowler.com/faq.html">FAQ</a></li>
+
+<li class="item"><a href="https://martinfowler.com/tags">content&nbsp;index</a></li>
+
+<li class="item"><a href="https://martinfowler.com/photos">photos</a></li>
+
+<li class="item"><a href="https://martinfowler.com/articles/eurogames">board&nbsp;games</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">catalogs</span>
+<ul class="group-contents">
+<li class="item"><a href="http://refactoring.com/catalog">refactoring</a></li>
+
+<li class="item"><a href="https://martinfowler.com/eaaCatalog">P&nbsp;of&nbsp;EAA</a></li>
+
+<li class="item"><a href="https://martinfowler.com/eaaDev">EAA&nbsp;dev</a></li>
+
+<li class="item"><a href="https://martinfowler.com/dslCatalog">DSL</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">feeds</span>
+<ul class="group-contents">
+<li class="item"><a href="http://www.twitter.com/martinfowler">twitter</a></li>
+
+<li class="item"><a href="https://martinfowler.com/feed.atom">rss</a></li>
+
+<li class="item"><a href="https://www.facebook.com/martinFowlerThoughtWorks">facebook</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">popular</span>
+<ul class="group-contents">
+<li class="item"><a href="https://martinfowler.com/articles/microservices.html">microservices</a></li>
+
+<li class="item"><a href="https://martinfowler.com/articles/injection.html">dependency&nbsp;injection</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">ThoughtWorks</span>
+<ul class="group-contents">
+<li class="item"><a href="http://thoughtworks.com/blogs">blogs</a></li>
+
+<li class="item"><a href="http://thoughtworks.com/careers">careers</a></li>
+
+<li class="item"><a href="https://www.thoughtworks.com/products">products</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="content">
+<div class="pattern">
+<h1>Passive View</h1>
+
+<p class="intent">A screen and components with all application specific
+behavior extracted into a controller so that the widgets have their
+state controlled entirely by controller.</p>
+
+<div class="frontMatter">
+<div class="frontLeft">
+<div class="author"><img alt="Photo of Martin Fowler" src="mf.jpg" width="80">
+<p class="name"><a href="https://martinfowler.com/" rel="author">Martin Fowler</a></p>
+</div>
+
+<div class="clear"></div>
+
+<p class="date">18 July 2006</p>
+</div>
+</div>
+
+<div class="eaadev-notice"><p>This is part of the <a href="https://martinfowler.com/eaaDev">Further Enterprise Application Architecture development</a>
+ writing that I was doing in the mid 2000’s. Sadly too many other things
+ have claimed my attention since, so I haven’t had time to work on them 
+further, nor do I see much time in the foreseeable future. As such this 
+material is very much in draft form and I won’t be doing any corrections
+ or updates until I’m able to find time to work on it again.</p>
+
+</div>
+
+<div class="opening">
+<p>A perennial problem with building rich client systems is the
+    complication of testing them. Most rich client frameworks were not
+    built with automated testing in mind. Controlling these frameworks
+    programaticly is often very difficult.</p>
+
+<p>A <span class="self">Passive View</span> handles this by reducing the behavior of the UI components
+    to the absolute minimum by using a controller that not just
+    handles responses to user events, but also does all the updating
+    of the view. This allows testing to be
+    focused on the controller with little risk of
+    problems in the view.</p>
+</div>
+
+<div class="how">
+<h2>How it Works</h2>
+
+<p>This pattern is yet another variation on model-view-controller
+    and model-view-presenter. As with these the UI is split between a
+    view that handles display and a controller that responds to user
+    gestures. The significant change with <span class="self">Passive View</span> is that the view is
+    made completely passive and is no longer responsible for updating
+    itself from the model. As a result all of the view logic is in the
+    controller. As a result, there is no dependencies in either
+    direction between the view and the model.</p>
+
+<div class="figure " id="passiveScreen_deps.gif"><img src="deps.gif">
+<p class="photoCaption">Figure 1: Unlike most MVC-style
+    configurations, <span class="self">Passive View</span> results in no dependencies between view
+    and model.</p>
+</div>
+
+<div class="clear"></div>
+
+<p>Looking at our regular assessment window example, again we see
+    a view/controller split, but this time the controller does all the
+    work in figuring out how the view should display the model. The
+    text field widget receives the user gesture but immediately hands
+    off to the controller, in the classic MVP movement. The controller
+    then updates the model, and then handles the reloading of the view
+    from the model. This load actions involves pulling all the data
+    needed from the model, and using it to update the widgets. This
+    example shows a coarse-grained synchronization, where any change
+    results in a complete reload.</p>
+
+<div class="figure " id="passiveScreen_assess-seq.gif"><img src="assess-seq.gif">
+<p class="photoCaption">Figure 2: When the actual text is
+    edited, all the UI response is handled by the controller.</p>
+</div>
+
+<div class="clear"></div>
+
+<div class="figure " id="passiveScreen_assess-cd.gif"><img src="assess-cd.gif">
+<p class="photoCaption">Figure 3: Classes for the
+    assessment example.</p>
+</div>
+
+<div class="clear"></div>
+
+<p>The primary driver for <span class="self">Passive View</span> is testing, as a result it's
+    often valuable to use of <a href="http://xunitpatterns.com/Test%20Double.html">Test Double</a> for the
+    view so that the controller can be tested without needing any
+    interaction with the UI framework. This needs a intermediate
+    <a href="https://martinfowler.com/eaaCatalog/gateway.html">Gateway</a> to be setup as in <a href="#passiveScreen_asssesIntermed-cd.gif"> Figure 4</a>. This is the
+    same technique that you would use for <a href="https://martinfowler.com/eaaDev/SupervisingPresenter.html">Supervising Controller</a>. As with <a href="https://martinfowler.com/eaaDev/SupervisingPresenter.html">Supervising Controller</a> I've
+    shown a stub here, but this is also a good opportunity to use a mock.</p>
+
+<div class="figure " id="passiveScreen_asssesIntermed-cd.gif"><img src="asssesIntermed-cd.gif">
+<p class="photoCaption">Figure 4: Setting up the view
+    as a <a href="https://martinfowler.com/eaaCatalog/gateway.html">Gateway</a> so that it's easy to substitute
+    the window with a <a href="http://xunitpatterns.com/Test%20Double.html">Test Double</a></p>
+</div>
+
+<div class="clear"></div>
+</div>
+
+<div class="when">
+<h2>When to Use It</h2>
+
+<p>The driving reason to use <span class="self">Passive View</span> is to enhance
+    testability. With the view reduced to a dumb slave of the
+    controller, you run little risk by not testing the view. The
+    controller can run and be tested outside of the UI environment -
+    indeed if you use a <a href="http://xunitpatterns.com/Test%20Double.html">Test Double</a> for the view
+    you don't need to even have the UI classes available to you.</p>
+
+<p><span class="self">Passive View</span> isn't the only way make the view sufficiently humble to
+    help in testing. <a href="https://martinfowler.com/eaaDev/PresentationModel.html">Presentation Model</a> and
+    <a href="https://martinfowler.com/eaaDev/SupervisingPresenter.html">Supervising Controller</a> are both reasonable
+    alternatives. The strength that <span class="self">Passive View</span> has over these two is that
+    both of the alternatives require the view to do some of the
+    synchronization work, which results in more untestable behavior
+    than <span class="self">Passive View</span>. Whether this difference is significant or not is a
+    judgment call.</p>
+
+<p>Another advantage that <span class="self">Passive View</span> is a very explicit
+    mechanism. There's very little reliance on <a href="http://www.amazon.com/exec/obidos/tg/detail/-/0201633612">Observer</a> mechanisms or declarative mappings. This makes
+    it much easier to read the code to see what is happening -
+    particularly useful if you're trying to debug when things go wrong.</p>
+</div>
+</div>
+</div>
+
+<div class="div" id="bottom-navmenu" style="display: none;">
+<ul class="navmenu">
+<li class="top-line"><a class="link-home" href="https://martinfowler.com/">home</a>  <div class="search">
+    <!-- SiteSearch Google -->
+    <form method="GET" action="https://www.google.com/search">
+      <input name="ie" value="UTF-8" type="hidden">
+      <input name="oe" value="UTF-8" type="hidden">
+      <input class="field" name="q" size="15" maxlength="255" type="text">
+      <button class="button" type="submit" name="btnG" value=" " title="Search">
+      <input name="domains" value="martinfowler.com" type="hidden">
+      <input name="sitesearch" value="" type="hidden"> 
+      <input name="sitesearch" value="martinfowler.com" type="hidden">
+    
+  </button></form></div>
+
+<span class="close" title="close"></span>
+</li>
+
+<li class="group"><span class="group-label">topics</span>
+<ul class="group-contents">
+<li class="item"><a href="https://martinfowler.com/agile.html">agile</a></li>
+
+<li class="item"><a href="http://refactoring.com/">refactoring</a></li>
+
+<li class="item"><a href="https://martinfowler.com/design.html">design</a></li>
+
+<li class="item"><a href="https://martinfowler.com/nosql.html">noSQL</a></li>
+
+<li class="item"><a href="https://martinfowler.com/dsl.html">DSL</a></li>
+
+<li class="item"><a href="https://martinfowler.com/delivery.html">continuous&nbsp;delivery</a></li>
+
+<li class="item"><a href="https://martinfowler.com/microservices">microservices</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">media</span>
+<ul class="group-contents">
+<li class="item"><a href="https://martinfowler.com/books">books</a></li>
+
+<li class="item"><a href="https://martinfowler.com/videos.html">video</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">site</span>
+<ul class="group-contents">
+<li class="item"><a href="https://martinfowler.com/intro.html">site&nbsp;introduction</a></li>
+
+<li class="item"><a href="https://martinfowler.com/aboutMe.html">about&nbsp;me</a></li>
+
+<li class="item"><a href="https://martinfowler.com/faq.html">FAQ</a></li>
+
+<li class="item"><a href="https://martinfowler.com/tags">content&nbsp;index</a></li>
+
+<li class="item"><a href="https://martinfowler.com/photos">photos</a></li>
+
+<li class="item"><a href="https://martinfowler.com/articles/eurogames">board&nbsp;games</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">catalogs</span>
+<ul class="group-contents">
+<li class="item"><a href="http://refactoring.com/catalog">refactoring</a></li>
+
+<li class="item"><a href="https://martinfowler.com/eaaCatalog">P&nbsp;of&nbsp;EAA</a></li>
+
+<li class="item"><a href="https://martinfowler.com/eaaDev">EAA&nbsp;dev</a></li>
+
+<li class="item"><a href="https://martinfowler.com/dslCatalog">DSL</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">feeds</span>
+<ul class="group-contents">
+<li class="item"><a href="http://www.twitter.com/martinfowler">twitter</a></li>
+
+<li class="item"><a href="https://martinfowler.com/feed.atom">rss</a></li>
+
+<li class="item"><a href="https://www.facebook.com/martinFowlerThoughtWorks">facebook</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">popular</span>
+<ul class="group-contents">
+<li class="item"><a href="https://martinfowler.com/articles/microservices.html">microservices</a></li>
+
+<li class="item"><a href="https://martinfowler.com/articles/injection.html">dependency&nbsp;injection</a></li>
+</ul>
+</li>
+
+<li class="group"><span class="group-label">ThoughtWorks</span>
+<ul class="group-contents">
+<li class="item"><a href="http://thoughtworks.com/blogs">blogs</a></li>
+
+<li class="item"><a href="http://thoughtworks.com/careers">careers</a></li>
+
+<li class="item"><a href="https://www.thoughtworks.com/products">products</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="footer">
+<div class="tw-logo">
+<a href="http://www.thoughtworks.com/">
+<img src="TW_smb.jpg">
+</a>
+</div>
+<div class="menu-button">
+<div class="icon-bars navmenu-button"></div>
+</div>
+<div class="copyright">
+<p>© Martin Fowler | <a href="http://www.thoughtworks.com/privacy-policy">Privacy Policy</a> | <a href="https://martinfowler.com/aboutMe.html#disclosures">Disclosures</a></p>
+</div>
+</div>
+<!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-17005812-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src="analytics.js"></script>
+<!-- End Google Analytics -->
+
+
+
+<script src="jquery-1.js" type="text/javascript"></script>
+
+<script src="mfcom.js" type="text/javascript"></script>
+
+
+</body></html>

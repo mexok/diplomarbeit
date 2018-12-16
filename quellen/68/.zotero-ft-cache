@@ -1,0 +1,180 @@
+ beam-1 beam-2
+Tools Languages Solutions Support Store
+Find a tool for you
+Whichever technologies you use there's a JetBrains tool to match
+find a tool
+Ides
+AppCode CLion Datalore DataGrip GoLand IntelliJ IDEA PhpStorm PyCharm Rider RubyMine WebStorm
+.NET & Visual Studio
+ReSharper Rider ReSharper C++ dotCover dotMemory dotPeek dotTrace
+Team Tools
+TeamCity Upsource YouTrack Hub
+Education
+Java Edu Kotlin Edu Python Edu Scala Edu
+Toolbox App A control panel for your tools and projects
+Kotlin Programming language
+for JVM & Android MPS Create your own domain-specific language
+C++ Tools Tools for C/C++ development
+for any platform For Business Wide range of tools.
+All major technologies covered
+Game Development Tools for game development
+for any platform DevOps Tools and integrations
+for any infrastructure
+Education Products to learn and teach programming
+JetBrains Store
+Pricing and licensing for businesses and individuals
+visit store
+Customers
+Sales Support Orders, payments Product Support Tech support, docs
+Community
+Resources Newsletters, webinars Education For students and teachers Open Source Projects and support Research Scientific, marketing research
+Company
+About JetBrains Company, people Contacts Offices, partners Press & Logos News, brand assets Careers Jobs, culture
+Search
+CLion
+Coming in 2018.3 What's New Features Docs & Demos Blog & Social Buy
+Download
+A cross-platform IDE for C and C++
+Get free 30 day trial
+CLion 2018.2 is here. Check out what's new
+Take a tour
+Why CLion
+A power tool
+For a power language
+Smart C and C++ editor
+
+Thanks to native C and C++ support, including modern C++ standards, libc++ and Boost, CLion knows your code through and through and takes care of the routine while you focus on the important things.
+Navigation
+
+Instantly navigate to a symbol's declaration or context usages, search through the whole project for a class, file or symbol by its name, find your way through the code base with structure and hierarchical views.
+Code generation
+
+Add class members, override/implement functions, generate constructors/destructors, getters/setters, equality, relational and stream output operators, wrap a block of code with a statement, or generate a declaration from actual usage - all via simple keyboard shortcuts.
+Refactoring
+
+Rename symbols, move members up/down the hierarchy, change function signature, and be sure CLion’s automated refactorings will accurately propagate the appropriate changes throughout your code.
+Watch demo
+On-the-fly
+code analysis
+Code Analysis
+
+With CLion, you can create code that's beautiful and correct at the same time. Potential code issues are identified instantly...
+Code Analysis
+
+...and fixed as you type! Be sure all the proper changes are handled automatically by CLion.
+Code Analysis
+
+CLion also performs Data Flow analysis to find out all the cases of the unreachable code, infinite recursion and more.
+Integrated debugger
+
+Investigate and solve problems with ease through CLion's friendly debugger user interface with GDB or LLDB available as a backend.
+
+Attach to local processes or debug remotely. Check disassembly view when sources are not available.
+Inline variable view
+
+Get the complete view of your project with variable values shown right in the editor as you debug.
+Watches and variables view
+
+Inspect the state of all the variable for a chosen function in the stack frame, or monitor variable/expression changes during the debug session.
+Watch demo
+Evaluate expression
+
+Evaluate result of a function call or some complicated expression when stop at some execution point in the debug session.
+Fully Integrated C/C++ Development Environment
+CMake
+
+Using CMake as a project model, CLion handles your changes in CMake files automatically, using all the information from there during code editing and refactorings.
+Embedded terminal
+
+Run any command without leaving the IDE: locally or remotely using the SSH protocol. Depending on your platform, you can work with a command line prompt, Far, powershell, bash, or other tools.
+The complete experience
+
+Popular VCS supported out of the box include Subversion, Git, GitHub, Mercurial, CVS, Perforce (via plugin), and TFS.
+
+CLion also seamlessly integrates with Google Test, Boost.Test and Catch frameworks, supports Doxygen and Database tools.
+Keyboard-centric approach
+
+To help you focus on code and raise your productivity, CLion has keyboard shortcuts for nearly all its features, actions and commands.
+
+Vim fans are welcome to install the Vim-emulation plugin .
+Discover all features
+New Features
+What’s New in CLion 2018.2
+Experimental Clangd support
+Experimental Clangd support
+
+An experimental clangd -based language engine now complements CLion’s own C++ language engine, helping to highlight code errors and warnings in the editor.
+More project models on board
+More project models on board
+
+Gradle C++ and compilation database formats are now available in addition to the CMake project model support in CLion. Full code insight is provided for both formats.
+Tools: Sanitizers and Databases
+Tools: Sanitizers and Databases
+
+CLion 2018.2 delivers additional tools for more efficient C++ development. This includes Google Sanitizers for detecting memory leaks, undefined behavior, etc., and a set of tools to work with many known databases.
+See What's new
+Testimonials
+What our
+customers say
+
+    Prof. Dr. Rodriguez-Losada,
+    biicode CTO
+    CLion is fantastic, finally the C++ high quality cross-platform IDE with CMake as first class build system we were waiting for. 
+
+    A product that was impressive during the EAP versions. I’m looking forward to seeing where JetBrains will take it from here. Considering the quality of their other products the sky is the limit. 
+
+Tommy Andersen
+Schilling A/S
+
+    @alex_braidwood
+    I would like to take this moment to say, CLion has quickly become my favorite IDE for C/C++. It just works. #jetbrains #CLion 
+
+    Really liking @clion_ide for a new C++ project: lightweight, responsive, useful, good integrations. And most important, great vi emulation. 
+
+Jonathan Dursi
+@ljdursi
+Companies worldwide trust JetBrains IDEs. Join the club !
+Download .exe
+
+    Windows (.exe)
+    Windows (.zip)
+    macOS (.dmg)
+    Linux (.tar.gz)
+
+Free 30-day trial
+C++ Tools
+Check out other C/C++ tools
+from JetBrains
+
+Pick up the right tool for C and C++ development depending on your preferred toolchains and other requirements:
+ReSharper C++
+
+Visual Studio extension for C++ developers
+CLion
+
+Cross-platform IDE for C and C++ developers
+AppCode
+
+IDE for iOS/macOS development
+Learn More
+
+Tell me about new product features as they come out
+
+Thanks for your request!
+@clion_ide on twitter Bug and issue tracker
+Community forum CLion blog
+About JetBrains
+
+    Company
+    Contacts
+    Press & Logos
+    Careers
+
+Follow JetBrains
+
+Copyright © 2000–2018 JetBrains s.r.o. Developed with drive and IntelliJ IDEA
+
+    Privacy & Security
+    |
+    Terms of Use
+

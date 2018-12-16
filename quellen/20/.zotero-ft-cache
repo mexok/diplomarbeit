@@ -1,0 +1,123 @@
+
+mikrocontroller.net
+
+    Home
+    AVR
+        AVR-Tutorial
+        AVR-GCC-Tutorial
+    ARM
+        LPC
+        STM32
+        XMC
+    MSP430
+    PIC
+    FPGA, CPLD & Co.
+        Grundlagen zu FPGAs
+        VHDL & Co.
+        Xilinx ISE
+    DSP
+    Elektronik allgemein
+        SMD Löten
+        Operationsverstärker
+        Oszilloskop
+    Forum
+        µC & Elektronik
+        Analogtechnik
+        FPGA, VHDL & Co.
+        DSP
+        Compiler & IDEs
+        Projekte & Code
+        Markt
+        Platinen
+        Mechanik & Werkzeug
+        HF, Funk & Felder
+        Neu: Fahrzeugelektronik
+        Haus & Smart Home
+        PC-Programmierung
+        PC Hard- & Software
+        Ausbildung & Beruf
+        Offtopic
+        Webseite
+    Artikelübersicht
+    Letzte Änderungen
+
+▶ Dieser Artikel
+
+    Seite
+    Diskussion
+    Quelltext anzeigen
+    Versionsgeschichte
+
+▶ Benutzer
+
+    Anmelden
+
+▶ Suche
+
+ 
+▶ Werkzeuge
+
+    Links auf diese Seite
+    Änderungen an verlinkten Seiten
+    Spezialseiten
+
+	
+Heap-Fragmentierung
+Wechseln zu: Navigation , Suche
+
+Ein Problem, das bei dynamischer Speicherverwaltung auftritt, ist die Heap-Fragmentierung. "Heap" nennt man den Speicherbereich, aus dem dynamische Speicheranforderungen mit malloc bedient werden.
+Inhaltsverzeichnis
+
+    1 Das Problem
+    2 Was tun?
+        2.1 malloc sparsam einsetzen
+        2.2 alloca benutzen
+        2.3 Pooling
+        2.4 Defragmentierung
+
+Das Problem
+
+Angenommen ein Programm reserviert 7 Speicherbereiche unterschiedlicher Größe, dann kann die Speicherbelegung beispielsweise so aussehen (grün: freier Speicher, rot: belegter Speicher):
+
+Speicherfragmentierung1.png
+
+Nun werden einige der Speicherbereiche wieder freigegeben und es ergibt sich das folgende Bild:
+
+Speicherfragmentierung2.png
+
+Rein rechnerisch ist jetzt noch genug Speicher frei um einen Datenblock wie diesen hier unterzubringen:
+
+Speicherfragmentierung3.png
+
+Aber da Speicher nur am Stück reserviert werden kann, schlägt die Speicherreservierung mit malloc für einen Block dieser Größe fehl.
+Was tun?
+malloc sparsam einsetzen
+
+Wenn man malloc einsetzen will, muss man sicherstellen, dass immer genug Speicher vorhanden ist um alle Anforderungen bedienen zu können - bei Programmen, die nur an einer oder zwei Stellen malloc verwenden, ist das oft relativ einfach. Und natürlich sollte man sich fragen, ob man manche Probleme vielleicht doch statt mit malloc auch mit statischen Variablen lösen kann.
+alloca benutzen
+
+Wenn der mit malloc angeforderte Speicher nur für die Dauer einer Funktionsausführung bereitstehen muss, also am Ende der Funktion grundsätzlich wieder freigegeben wird(*), ist alloca eine Alternative. Diese Funktion verhält sich wie malloc, der Speicher wird aber nicht auf dem Heap , sondern auf dem Stack reserviert, und beim Beenden der Funktion automatisch wieder freigegeben.
+
+(*: Da bei typischen Mikrocontroller-Anwendungen die main-Funktion niemals endet, ist alloca auch dort geeignet, sofern der angeforderte Speicherplatz nie mehr freigegeben werden soll.)
+
+Abgesehen davon, dass man nun das Freigeben mit free nicht mehr vergessen kann (z. B. wenn die Funktion mehrere return-Anweisungen hat), besteht nun auch das Problem der Fragmentierung nicht mehr. Dafür muss man nun natürlich für ausreichend Platz auf dem Stack sorgen.
+Pooling
+
+Wenn man Pools von Speicherblöcken in verschiedenen Größen anlegt (z. B. 16 Byte, 32 Byte, 64 Byte) und bei einer Speicheranforderung immer den nächstgrößeren verfügbaren Block zurückgibt, kann man der Fragmentierung etwas entgegenwirken - völlig verhindern wird man sie so allerdings auch nicht(*) und der Speicher wird natürlich nicht mehr optimal ausgenutzt.
+
+(*: Es ist z.B möglich, dass im "16 Byte Pool" noch viele Stücke frei sind - aber nicht zusammenhängend, während ein neues 64 Byte Stück benötigt wird und der betreffende Pool erschöpft ist.)
+Defragmentierung
+
+Eine aufwändige Lösung des Fragmentierungsproblems ist die Implementierung einer Funktion, die den Speicher bei zu starker Fragmentierung aufräumt. Ausgehend von dem Bild oben ergibt sich dann die folgende Speicherbelegung:
+
+Speicherfragmentierung4.png
+
+In der Praxis scheitert die Defragmentierung über eine zentrale Funktion allerdings häufig daran, dass diese Funktion typischerweise nicht weiß, wo überall Zeiger auf die betreffende Blöcke existieren, die im Rahmen der Defragmentierung dann umzusetzen wären.
+
+(Ausweg: Handles statt Zeiger nehmen)
+Abgerufen von „ https://www.mikrocontroller.net/wikisoftware/index.php?title=Heap-Fragmentierung&oldid=44639 “
+Kategorie :
+
+    Speicher und Dateisysteme
+
+Kontakt/Impressum – Datenschutzerklärung – Nutzungsbedingungen – Werbung auf Mikrocontroller.net

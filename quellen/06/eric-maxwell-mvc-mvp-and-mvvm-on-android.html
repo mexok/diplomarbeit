@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MVC vs. MVP vs. MVVM on Android</title>
+<link href="css.css" rel="stylesheet" type="text/css">
+<link href="https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android" rel="canonical">
+<meta name="description" content="A guide to using the MVC, MVP &amp; MVVM patterns in your Android App, examining their strengths and weaknesses.">
+<meta name="google-site-verification" content="V61I6JaPDNM_SLXv4YaUU-madBffKP6UAAy5Brm6crg">
+
+<meta name="twitter:site" content="@realm">
+<meta name="twitter:creator" content="emmax">
+<meta name="twitter:image" content="http://images.ctfassets.net/s72atsk5w5jo/1KOa4aAg9GM0IiQ4gkWCOw/68e1ff3e7822eef153b2f716d8763ebf/Eric_Maxwell_facebook.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="A guide to using the MVC, MVP &amp; MVVM patterns in your Android App, examining their strengths and weaknesses.">
+<meta name="twitter:title" content="MVC vs. MVP vs. MVVM on Android">
+
+<meta property="og:image" content="http://images.ctfassets.net/s72atsk5w5jo/1KOa4aAg9GM0IiQ4gkWCOw/68e1ff3e7822eef153b2f716d8763ebf/Eric_Maxwell_facebook.png">
+<meta property="og:type" content="Article">
+<meta property="og:url" content="http://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/">
+<meta name="og:description" content="A guide to using the MVC, MVP &amp; MVVM patterns in your Android App, examining their strengths and weaknesses.">
+<meta property="og:title" content="MVC vs. MVP vs. MVVM on Android">
+<meta name="application-name" content="Developer videos, articles and tutorials from top conferences, top authors, and community leaders.">
+<meta name="msapplication-TileColor" content="#1C233F">
+<meta name="msapplication-TileImage" content="/assets/favicons/favicon-144x144.png">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://academy.realm.io/assets/favicons/favicon-0b92cc5a5e461d6f56e61708fb9bf561d65e65b4f18a9038c4f174eaa75f8abd.ico">
+<link rel="apple-touch-icon-precomposed" type="image/png" href="https://academy.realm.io/assets/favicons/favicon-57x57-8fab910309f3aae1e407e9dd9c364b2cb1b4c439a0709b7f5e02520157012028.png" sizes="57x57">
+<link rel="apple-touch-icon-precomposed" type="image/png" href="https://academy.realm.io/assets/favicons/favicon-72x72-7c4d3cda83729d015e7b39acb39370d78c389cb10451873c1c7f692a0762260a.png" sizes="72x72">
+<link rel="apple-touch-icon-precomposed" type="image/png" href="https://academy.realm.io/assets/favicons/favicon-114x114-c444f03eb5b60043779eaa076a482a1237b180ac3a0a5ec50402a804c50f9814.png" sizes="114x114">
+<link rel="apple-touch-icon-precomposed" type="image/png" href="https://academy.realm.io/assets/favicons/favicon-120x120-c22b788ca04f74f3b378250f866a39c8858b26f717a829c4f1cd87a4f1ed2d30.png" sizes="120x120">
+<link rel="apple-touch-icon-precomposed" type="image/png" href="https://academy.realm.io/assets/favicons/favicon-144x144-fc2d5bb3b3c6e0e1d1d094f871bfc2b2a491f0053270cbbc5eeac1d4dd17dca6.png" sizes="144x144">
+<link rel="apple-touch-icon-precomposed" type="image/png" href="https://academy.realm.io/assets/favicons/favicon-152x152-6a56403a0aa1bdfeb6c0efb983d77b27ecc4067c9bcbd19f85a71df2c9c3a88e.png" sizes="152x152">
+<link rel="apple-touch-icon-precomposed" type="image/png" href="https://academy.realm.io/images/favicons/favicon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="https://academy.realm.io/assets/favicons/favicon-16x16-b85e948f36ff5911ed132b3d43cca8bdcdbe1ecd0171e9f74a15f48f1f070cf1.png" sizes="16x16">
+<link rel="icon" type="image/png" href="https://academy.realm.io/assets/favicons/favicon-32x32-68ea476d0e0bd62899a2adfdd78221038bd93628d76363a59fec786827e7350e.png" sizes="32x32">
+<link rel="alternate" type="application/rss+xml" title="Realm News" href="https://academy.realm.io/blog/feed.xml">
+
+
+<script type="text/javascript" src="pd.js"></script><script type="text/javascript" async="" src="57c0b3e503f61e6a9600001a.js"></script><script src="584900264991316.js" async=""></script><script async="" src="fbevents.js"></script><script type="text/javascript" async="" src="insight_002.js"></script><script type="text/javascript" async="" src="uwt.js"></script><script type="text/javascript" async="" src="analytics.js"></script><script src="1837.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="insight.js"></script><script async="" src="gtm.js"></script><script type="text/javascript" async="" src="mixpanel-2-latest.js"></script><script src="application-f9d8e5ce8f528d997d58156ff5f8c1d4b0741ac22b367a6a6.js"></script>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="OtXV7WAetawlVw2gsoK2GwNFDOp3G2VWpv7uyo6mEKHIeQRq1LK4B1DQ37nmPq357mKtRkinsYitNzE0WgQ94A==">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-migrate-1.js"></script>
+<script src="bootstrap-e8f48d8c081fd7bf6bcfd5ebd0d6da3e0fa909f66bfaf6c3d06.js"></script>
+
+<link rel="stylesheet" media="screen" href="bootstrap-88e2307061f6d67fbf6979f505a4898eee2de33c8ba661ae08.css">
+<link rel="stylesheet" media="screen" href="site-7fa3d75c8753984fd1f7ebcfd0a632843dce3b765704a3693c12656.css">
+<script src="news-6d26db860121a6cf7063b4fa31ac675fe4c1dec4baf482b42df67bca.js"></script>
+
+<script async="" src="mediaelement.js"></script>
+<script src="home-bfd89ab0c4c27002b24b3722b7cac67bfe16ac4f03f1af34afea9f0e.js"></script>
+<link rel="stylesheet" media="screen" href="academy_post-0de902d41c8d8ca886972bcdaf78bd20845f817f041326f.css">
+
+<script src="slick-4b41e1fc66238a172f7c23b12a6dd6cc76c6e255c3291271e673e28.js"></script>
+<script type="text/javascript" src="userinfo.js"></script>
+<script src="realm-a993eae423c36a9655f9794e60c477eb829c1320621ea70d933fb2f.js"></script>
+
+<script type="text/javascript">
+    piAId = '211132';
+    piCId = '1214';
+
+    (function() {
+        function async_load(){
+            var s = document.createElement('script'); s.type = 'text/javascript';
+            s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+            var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+        }
+        if(window.attachEvent) { window.attachEvent('onload', async_load); }
+        else { window.addEventListener('load', async_load, false); }
+    })();
+</script>
+
+<script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+    0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("449d47e4fac4e6b03a98df14b2aaf5c6");</script>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NDCSRV"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NDCSRV');</script>
+
+
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0066/1837.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<script type="text/javascript" async="" src="tagjs"></script><img src="a" width="1" border="0" height="1"><img src="a" width="1" border="0" height="1"><img src="a" width="1" border="0" height="1"><img src="a" width="1" border="0" height="1"><img src="a" width="1" border="0" height="1"><img src="a" width="1" border="0" height="1"><img src="a" width="1" border="0" height="1"><img src="seg" width="1" border="0" height="1"><script type="text/javascript" src="https://pi.pardot.com/analytics?ver=3&amp;visitor_id=&amp;pi_opt_in=&amp;campaign_id=1214&amp;account_id=211132&amp;title=MVC%20vs.%20MVP%20vs.%20MVVM%20on%20Android&amp;url=https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F&amp;referrer="></script><script type="text/javascript" src="https://www2.realm.io/analytics?conly=true&amp;visitor_id=328539535&amp;pi_opt_in=&amp;campaign_id=1214&amp;account_id=211132&amp;title=MVC%20vs.%20MVP%20vs.%20MVVM%20on%20Android&amp;url=https://academy.realm.io/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/&amp;referrer=&amp;visitor_id_sign=5272872f26abb7d55dd304da9f7b3d5557c6f039012191f75f9639bcbe1de86093f88897c01bcde3880c3ed82576c9a4fb819d69"></script></head>
+<body class="posts eric-maxwell-mvc-mvp-and-mvvm-on-android post news nav_transparent text nav_transparent  desktop banner-open">
+<nav class="navbar navbar-default js-navbar transparent  " role="navigation" id="header">
+
+<div class="row top-banner js-top-banner">
+<span class="col-xs-12 text-center success">
+Success!
+</span>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed visible-xs" data-toggle="modal" data-target="#mobileModal">
+<span>Menu</span>
+</button>
+<a class="navbar-brand" onclick="ga('send', 'event', 'Link', 'navbar-home', 'Nav');" href="http://realm.io/"><img class="logo" src="general_logo_white-3648e786a2551cc3b38a130bab48f3f447315c805.svg" alt="General logo white"></a>
+</div>
+<div class="navbar-collapse collapse no-transition pull-right">
+<ul class="nav nav-pills flex">
+<li id="nav-products">
+<a href="#" class="dropdown-toggle nav-products" data-toggle="dropdown">
+Products
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu" role="menu">
+<li>
+<a href="https://realm.io/products/realm-platform">
+Platform
+</a>
+</li>
+<li>
+<a href="https://realm.io/products/realm-database">
+Database
+</a>
+</li>
+</ul>
+</li>
+<li id="nav-developers">
+<a href="#" class="dropdown-toggle nav-solutions" data-toggle="dropdown">
+Developers
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu" role="menu">
+<li>
+<a class="nav-forums" href="https://forums.realm.io/">
+Forums
+</a>
+</li>
+<li id="nav-academy">
+<a class="nav-academy" href="https://academy.realm.io/">
+Academy
+</a>
+</li>
+<div class="header">
+Docs
+</div>
+<li>
+<a href="https://docs.realm.io/platform/">
+Platform
+</a>
+</li>
+<li>
+<a href="https://realm.io/docs">
+Database
+</a>
+</li>
+</ul>
+</li>
+<li id="nav-pricing">
+<a class="nav-pricing" href="https://realm.io/pricing">
+Pricing
+</a>
+</li>
+<li id="nav-support">
+<a class="nav-support" href="https://realm.io/support">
+Support
+</a>
+</li>
+<li id="nav-company">
+<a href="#" class="dropdown-toggle nav-solutions" data-toggle="dropdown">
+Company
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu" role="menu">
+<li id="nav-blog">
+<a class="nav-blog" href="https://realm.io/blog/">
+Blog
+</a>
+</li>
+<li>
+<a class="nav-press" href="https://academy.realm.io/press">
+Press
+</a>
+</li>
+<li>
+<a class="nav-jobs" href="https://academy.realm.io/jobs">
+Jobs
+</a>
+</li>
+<li>
+<a class="nav-about" href="https://academy.realm.io/about">
+About
+</a>
+</li>
+</ul>
+</li>
+<li id="nav-language">
+<a href="#" class="dropdown-toggle locale-picker" data-toggle="dropdown">
+<i class="fa fa-globe"></i>
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu dropdown-menu-right" role="menu">
+<li>
+<a class="nav-language" href="https://academy.realm.io/jp/">日本語</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/cn/">中文</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/kr/">한국어</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/">English</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class="nav modal fullscreen fadeInUp" id="mobileModal" tabindex="-1" role="dialog" aria-labelledby="MobileMenu" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header flex" style="border:0;">
+<h3 class="modal-title col-xs-10">
+<a class="navbar-brand" onclick="ga('send', 'event', 'Link', 'navbar-home', 'Nav');" href="http://realm.io/"><img class="logo" src="general_logo_white-3648e786a2551cc3b38a130bab48f3f447315c805.svg" alt="General logo white"></a>
+<span class="sr-only">main navigation</span>
+</h3>
+<button type="button" class="close btn btn-link col-xs-2" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close fa-lg" style="color:#fff;"></i></button>
+</div>
+&lt; <h4 class="sub">Products</h4>
+<ul>
+<li>
+<a class="nav-products" href="https://realm.io/products/realm-platform">Platform</a>
+</li>
+<li>
+<a class="nav-products" href="https://realm.io/products/realm-database">Database</a>
+</li>
+<li><a class="nav-products" href="https://realm.io/products/realm-studio">Realm Studio</a></li>
+</ul>
+<a class="nav-pricing" href="https://realm.io/pricing">
+<h4>Pricing</h4>
+</a>
+<a href="https://realm.io/docs/">
+<h4 class="sub">Docs</h4>
+</a>
+<ul>
+<li><a class="nac-docs" href="https://docs.realm.io/platform/">Database</a></li>
+<li>
+<a class="nac-docs" href="https://realm.io/docs/java/latest">Java</a>
+</li>
+<li>
+<a class="nac-docs" href="https://realm.io/docs/objc/latest">Objective‑C</a>
+</li>
+<li>
+<a class="nac-docs" href="https://realm.io/docs/javascript/latest">JavaScript</a>
+</li>
+<li>
+<a class="nac-docs" href="https://realm.io/docs/swift/latest">Swift</a>
+</li>
+<li>
+<a class="nac-docs" href="https://realm.io/docs/dotnet/latest">.NET</a>
+</li>
+</ul>
+<h4 class="sub">Support</h4>
+<ul>
+<li>
+<a href="https://realm.io/support">Overview</a>
+</li>
+<li>
+<a class="nav-forums" href="https://forums.realm.io/">Forums</a>
+</li>
+</ul>
+<h4 class="sub">Language</h4>
+<ul>
+<li>
+<a class="nav-language" href="https://academy.realm.io/jp/">日本語</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/cn/">中文</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/kr/">한국어</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/">English</a>
+</li>
+</ul>
+<a class="nav-blog" href="https://realm.io/blog/">
+<h4>Blog</h4>
+</a>
+<a class="nav-academy" href="https://academy.realm.io/">
+<h4>Academy</h4>
+</a>
+<a href="https://realm.io/trial/self-hosted-standard-plan" class="navbar-trial-btn btn btn-indigo col-xs-12">Free Trial
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="iconmonstr-download-11"></g>
+<path d="M13,6.5 C13,2.910375 10.089625,0 6.5,0 C2.910375,0 0,2.910375 0,6.5 C0,10.089625 2.910375,13 6.5,13 C10.089625,13 13,10.089625 13,6.5 Z M3,6.76923077 L5.33333333,6.76923077 L5.33333333,3 L7.66666667,3 L7.66666667,6.76923077 L10,6.76923077 L6.5,10 L3,6.76923077 Z" id="download" fill="#FFFFFF" fill-rule="nonzero"></path>
+</g>
+</svg>
+</a>
+</div>
+</div>
+</div>
+
+<nav class="navtop navbar navbar-default js-navbar white  " role="navigation" id="header">
+<div class="row banner alert-banner js-banner js-top-banner js-starting-banner" data-position="0" data-id="RealmPlatformdeplo" data-location="any" data-page="any" data-url="https://cloud.realm.io/" data-text="Realm Platform deployment in minutes with Cloud - Register for the Beta" style="display: block;">
+<a href="https://cloud.realm.io/" class="when col-xs-12 js-banner-text-container text-center" style="min-height: 0px;">
+<span class="js-banner-text">Realm Platform deployment in minutes with Cloud - Register for the Beta</span>
+</a>
+<span class="top-bar-close js-top-bar-close">
+<img alt="close" src="close-icon-6da828ff8f21bfdf2e017f29ebf60cea2ed0496364986d708.svg">
+</span>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed visible-xs" data-toggle="modal" data-target="#mobileModal">
+<span>Menu</span>
+</button>
+<a class="navbar-brand" onclick="ga('send', 'event', 'Link', 'navbar-home', 'Nav');" href="http://realm.io/"><img class="logo" src="general_logo-5f99c66de6b61768f9826d1427259a11a6d4be571456681.svg" alt="General logo"></a>
+</div>
+<div class="navbar-collapse collapse no-transition pull-right">
+<ul class="nav nav-pills flex">
+<li id="nav-products">
+<a href="#" class="dropdown-toggle nav-products" data-toggle="dropdown">Products
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu" role="menu">
+<li>
+<a href="https://realm.io/products/realm-platform">Platform</a>
+</li>
+<li>
+<a href="https://realm.io/products/realm-database">Database</a>
+</li>
+</ul>
+</li>
+<li id="nav-developers">
+<a href="#" class="dropdown-toggle nav-solutions" data-toggle="dropdown">Developers
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu" role="menu">
+<li>
+<a class="nav-forums" href="https://forums.realm.io/">Forums</a>
+</li>
+<li id="nav-academy">
+<a class="nav-academy" href="https://academy.realm.io/">Academy</a>
+</li>
+<div class="header">Docs</div>
+<li>
+<a href="https://docs.realm.io/platform/">Platform</a>
+</li>
+<li>
+<a href="https://realm.io/docs">Database</a>
+</li>
+</ul>
+</li>
+<li id="nav-pricing">
+<a class="nav-pricing" href="https://realm.io/pricing">Pricing</a>
+</li>
+<li id="nav-support">
+<a class="nav-support" href="https://realm.io/support">Support</a>
+</li>
+<li id="nav-company">
+<a href="#" class="dropdown-toggle nav-solutions" data-toggle="dropdown">Company
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu" role="menu">
+<li id="nav-blog">
+<a class="nav-blog" href="https://realm.io/blog/">Blog</a>
+</li>
+<li>
+<a class="nav-press" href="https://academy.realm.io/press">Press</a>
+</li>
+<li>
+<a class="nav-jobs" href="https://academy.realm.io/jobs">Jobs</a>
+</li>
+<li>
+<a class="nav-about" href="https://academy.realm.io/about">About</a>
+</li>
+</ul>
+</li>
+<li id="nav-language">
+<a href="#" class="dropdown-toggle locale-picker" data-toggle="dropdown">
+<i class="fa fa-globe"></i>
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu dropdown-menu-right" role="menu">
+<li>
+<a class="nav-language" href="https://academy.realm.io/jp/">日本語</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/cn/">中文</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/kr/">한국어</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/">English</a>
+</li>
+</ul>
+</li>
+<a href="https://realm.io/trial/self-hosted-standard-plan" class="navbar-trial-btn btn btn-indigo">Free Trial
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="iconmonstr-download-11"></g>
+<path d="M13,6.5 C13,2.910375 10.089625,0 6.5,0 C2.910375,0 0,2.910375 0,6.5 C0,10.089625 2.910375,13 6.5,13 C10.089625,13 13,10.089625 13,6.5 Z M3,6.76923077 L5.33333333,6.76923077 L5.33333333,3 L7.66666667,3 L7.66666667,6.76923077 L10,6.76923077 L6.5,10 L3,6.76923077 Z" id="download" fill="#FFFFFF" fill-rule="nonzero"></path>
+</g>
+</svg>
+</a>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+
+<div class="nav modal fullscreen fadeInUp" id="mobileModal" tabindex="-1" role="dialog" aria-labelledby="MobileMenu" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header flex" style="border:0;">
+<h3 class="modal-title col-xs-10">
+<a class="navbar-brand" href="http://realm.io/"><img class="logo" src="general_logo_white-3648e786a2551cc3b38a130bab48f3f447315c805.svg" alt="General logo white"></a>
+<span class="sr-only">main navigation</span>
+</h3>
+<button type="button" class="close btn btn-link col-xs-2" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close fa-lg" style="color:#fff;"></i></button>
+</div>
+<div class="modal-body">
+<h4 class="sub">Products</h4>
+<ul>
+<li>
+<a class="nav-products" href="https://realm.io/products/realm-platform">Platform</a>
+</li>
+ <li>
+<a class="nav-products" href="https://realm.io/products/realm-database">Database</a>
+</li>
+<li><a class="nav-products" href="https://realm.io/products/realm-studio">Realm Studio</a></li>
+</ul>
+<a class="nav-pricing" href="https://realm.io/pricing">
+<h4>Pricing</h4>
+</a>
+<a href="https://realm.io/docs/">
+<h4 class="sub">Docs</h4>
+</a>
+<ul>
+<li><a class="nac-docs" href="https://docs.realm.io/platform/">Database</a></li>
+<li>
+<a class="nac-docs" href="https://realm.io/docs/java/latest">Java</a>
+</li>
+<li>
+<a class="nac-docs" href="https://realm.io/docs/objc/latest">Objective‑C</a>
+</li>
+<li>
+<a class="nac-docs" href="https://realm.io/docs/javascript/latest">JavaScript</a>
+</li>
+<li>
+<a class="nac-docs" href="https://realm.io/docs/swift/latest">Swift</a>
+</li>
+<li>
+<a class="nac-docs" href="https://realm.io/docs/dotnet/latest">.NET</a>
+</li>
+</ul>
+<h4 class="sub">Support</h4>
+<ul>
+<li>
+<a href="https://realm.io/support">Overview</a>
+</li>
+<li>
+<a class="nav-forums" href="https://forums.realm.io/">Forums</a>
+</li>
+</ul>
+<h4 class="sub">Language</h4>
+<ul>
+<li>
+<a class="nav-language" href="https://academy.realm.io/jp/">日本語</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/cn/">中文</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/kr/">한국어</a>
+</li>
+<li>
+<a class="nav-language" href="https://academy.realm.io/">English</a>
+</li>
+</ul>
+<a class="nav-blog" href="https://realm.io/blog/">
+<h4>Blog</h4>
+</a>
+<a class="nav-academy" href="https://academy.realm.io/">
+<h4>Academy</h4>
+</a>
+<a href="https://realm.io/trial/self-hosted-standard-plan" class="navbar-trial-btn btn btn-indigo">Free Trial
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="iconmonstr-download-11"></g>
+<path d="M13,6.5 C13,2.910375 10.089625,0 6.5,0 C2.910375,0 0,2.910375 0,6.5 C0,10.089625 2.910375,13 6.5,13 C10.089625,13 13,10.089625 13,6.5 Z M3,6.76923077 L5.33333333,6.76923077 L5.33333333,3 L7.66666667,3 L7.66666667,6.76923077 L10,6.76923077 L6.5,10 L3,6.76923077 Z" id="download" fill="#FFFFFF" fill-rule="nonzero"></path>
+</g>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+<main id="main">
+<div class="text-post">
+<div class="post-header flex center column" style="background-image: url('//images.ctfassets.net/s72atsk5w5jo/5yDpPtA2iIUcuSMCuGeuEM/6f477c89fb04cc65e58c9478e76092d0/Eric_Maxwell_facebook.png?fm=jpg&amp;fl=progressive');" data-title=" Read">
+<h3 class="title col-xs-12 col-sm-10">MVC vs. MVP vs. MVVM on Android</h3>
+<div class="centered meta post-date">
+<div class="col-xs-12">
+<span class="meta-info">
+by
+<a class="twitter-handle" href="https://twitter.com/emmax">Eric Maxwell</a>
+</span>
+</div>
+<span class="article-date">Jan 26 2017</span>
+</div>
+</div>
+<div id="transcript_bar">
+<ul id="transcript_bar_nav" role="tablist" class="col-xs-12">
+<a class="button return-home flex center col-xs-6 col-sm-3 col-lg-2" href="https://academy.realm.io/">
+<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="14px" height="24px" viewBox="0 0 14 24" version="1.1">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="charcoal-arrow" fill="#1D2340">
+<path d="M1.07867176,12.0003116 C0.945846492,12.3572764 1.02042786,12.7746166 1.30582691,13.0600156 L10.9399844,22.6941731 C11.3292423,23.0834311 11.967481,23.0827839 12.3615338,22.6887311 L12.6887311,22.3615338 C13.0804816,21.9697833 13.0852204,21.3310316 12.6941731,20.9399844 L3.75418874,12 L12.6941731,3.06001565 C13.0834311,2.67075767 13.0827839,2.03251902 12.6887311,1.63846622 L12.3615338,1.3112689 C11.9697833,0.919518443 11.3310316,0.914779637 10.9399844,1.30582691 L1.30582691,10.9399844 C1.02122966,11.2245816 0.945055258,11.6422709 1.07867176,12.0003116 Z" id="Combined-Shape"></path>
+</g>
+</g>
+</svg>
+Return to Academy
+</a>
+<li class="active">
+<a class="button transcript col-xs-6 col-sm-3 col-lg-2 flex center" aria-controls="transcript" role="tab" data-toggle="tab" href="#transcript">
+<svg width="20px" height="24px" viewBox="0 0 20 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M9.362,2 C13.518,2 12,8 12,8 C12,8 18,6.35 18,10.457 L18,22 L2,22 L2,2 L9.362,2 Z M10.189,0 L0,0 L0,24 L20,24 L20,9.614 C20,7.223 13.352,0 10.189,0 Z M15,13 L5,13 L5,12 L15,12 L15,13 Z M15,15 L5,15 L5,16 L15,16 L15,15 Z M12,18 L5,18 L5,19 L12,19 L12,18 Z" id="Shape" fill="#1D2340"></path>
+</g>
+</svg>
+<span class="translation_missing" title="translation missing: en.transcript-bar.article">Article</span>
+</a>
+</li>
+<li>
+<a href="#about-the-author" class="button about-speaker col-xs-6 col-sm-3 col-lg-3 flex center" aria-controls="about" role="tab" data-toggle="tab">
+<div class="author-image">
+<img class="avatar" alt="Eric Maxwell" src="speakingm3.jpg">
+</div>
+About the speaker
+</a>
+</li>
+<ul>
+<div class="info col-xs-6 col-sm-12 col-lg-3 flex">
+<div class="share-bar flex center col-xs-12">
+<ul class="share-button-group flex col-xs-8">
+<li class="twitter">
+<a class="flex center" title="Twitter" target="_blank" onclick="ga('send', 'event', 'Link', 'share-bar-twitter', 'Share Bar');" href="https://twitter.com/intent/tweet?text=MVC%20vs.%20MVP%20vs.%20MVVM%20on%20Android%20https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F%20via%20%40realm">
+<i class="fa fa-twitter"></i>
+</a>
+</li><li class="facebook">
+<a class="flex center" title="Facebook" target="_blank" onclick="ga('send', 'event', 'Link', 'share-bar-facebook', 'Share Bar');" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F&amp;t=MVC%20vs.%20MVP%20vs.%20MVVM%20on%20Android">
+<i class="fa fa-facebook"></i>
+</a>
+</li><li class="linkedin">
+<a class="flex center" title="LinkedIn" target="_blank" onclick="ga('send', 'event', 'Link', 'share-bar-linkedin', 'Share Bar');" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F&amp;title=MVC%20vs.%20MVP%20vs.%20MVVM%20on%20Android">
+<i class="fa fa-linkedin"></i>
+</a>
+</li><li class="email">
+<a class="flex center" title="Email this" target="_blank" onclick="ga('send', 'event', 'Link', 'share-bar-email', 'Share Bar');" href="mailto:?Subject=MVC%20vs.%20MVP%20vs.%20MVVM%20on%20Android&amp;Body=https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F">
+<i class="fa fa-envelope"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</ul>
+</ul>
+</div>
+<div class="container">
+<div class="post">
+<div class="col-xs-12 col-md-10 col-md-offset-1 content">
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane fade in active" id="transcript">
+<div class="row">
+<div class="col-xs-12 content">
+<h3 id="the-mvc-mvp-and-mvvm-smackdown">The MVC, MVP, and MVVM Smackdown</h3>
+<p>The <em><strong>best practices</strong></em> approach for organizing 
+Android applications into logical components has evolved over the last 
+few years. The community has largely moved away from the monolithic 
+Model View Controller (MVC) pattern in favor of more modular, testable 
+patterns.</p>
+<p>Model View Presenter (MVP) &amp; Model View ViewModel (MVVM) are two 
+of the the most widely adopted alternatives, but developers are often 
+divided as to which one better fits with Android. There have been 
+numerous blog posts over the past year or so strongly advocating for one
+ over the other, but often these turn into arguments of opinion over 
+objective criteria. Rather than squabble about which approach is better,
+ this article looks objectively at the value and potential issues with 
+all three approaches so you can make an informed decision for yourself.</p>
+<p><img style="padding-right:10px;padding-left:10px;margin-right:10px" alt="Tic Tac Toe Game" src="tictactoe" width="180" align="right"></p>
+<p>To help us see each pattern in action, we use a simple Tic-Tac-Toe game.</p>
+<p>The remainder of this post steps through the MVC, MVP, and MVVM 
+patterns in order. At the beginning of each section we start with a 
+common definition of the major components and responsibilities and then 
+see how that applies to our game.</p>
+<p>The source code for the demo is available at <a href="https://github.com/ericmaxwell2003/ticTacToe">GitHub repository</a>.
+ To follow along in code, check out the branch for the section you’re 
+reading (e.g. git checkout mvc, git checkout mvp, git checkout mvvm).</p>
+<h3 id="mvc">MVC</h3>
+<p>The model, view, controller approach separates your application at a macro level into 3 sets of responsibilities.</p>
+<h4 id="model">Model</h4>
+<p>The model is the <strong>Data + State + Business logic</strong> of 
+our Tic-Tac-Toe application. It’s the brains of our application so to 
+speak. It is not tied to the view or controller, and because of this, it
+ is reusable in many contexts.</p>
+<h4 id="view">View</h4>
+<p>The view is the <strong>Representation</strong> of the Model. The 
+view has a responsibility to render the User Interface (UI) and 
+communicate to the controller when the user interacts with the 
+application. In MVC architecture, Views are generally pretty “dumb” in 
+that they have no knowledge of the underlying model and no understanding
+ of state or what to do when a user interacts by clicking a button, 
+typing a value, etc. The idea is that the less they know the more 
+loosely coupled they are to the model and therefore the more flexible 
+they are to change.</p>
+<h4 id="controller">Controller</h4>
+<p>The controller is <strong>Glue</strong> that ties the app together. 
+It’s the master controller for what happens in the application. When the
+ View tells the controller that a user clicked a button, the controller 
+decides how to interact with the model accordingly. Based on data 
+changing in the model, the controller may decide to update the state of 
+the view as appropriate. In the case of an Android application, the 
+controller is almost always represented by an Activity or Fragment.</p>
+<div class="sub-bar indigo col-xs-12">
+<div class="contents col-xs-12 flex center">
+<div class="info col-xs-12 col-sm-6 text-left">
+<p class="subtext">Get more development news like this</p>
+</div>
+<div class="flex center col-xs-12 col-sm-6">
+
+<form action="https://go.pardot.com/l/210132/2017-08-10/9dds2?success_location=https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F%3Fw%3D1" method="post" class="validate col-xs-12 col-sm-6">
+<div class="input-group input-group-lg">
+<input name="email" required="" class="required email form-control home-newsletter-email-input" placeholder="Enter your email" type="email">
+<span class="input-group-btn">
+<button type="submit" name="subscribe" class="btn btn-primary btn-subscribe">Subscribe</button>
+</span>
+</div>
+<div style="position: absolute; left: -5000px;"><input name="b_2aab5198c2f56be1004466570_0acdd1c8d5" type="text"></div>
+<div style="position:absolute; left:-9999px; top: -9999px;">
+<label for="pardot_extra_field">Comments</label>
+<input id="pardot_extra_field" name="pardot_extra_field" type="text">
+</div>
+</form>
+</div>
+</div>
+</div>
+<p>Here’s what that looks like at a high level in our Tic Tac Toe app and the classes that play each part.</p>
+<p><img src="MVCsvg" alt="Tic Tac Toe - MVC"></p>
+<p>Let’s examine the controller in more detail.</p>
+<div class="language-java highlighter-rouge">
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TicTacToeActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">Board</span> <span class="n">model</span><span class="o">;</span>
+
+    <span class="cm">/* View Components referenced by the controller */</span>
+    <span class="kd">private</span> <span class="n">ViewGroup</span> <span class="n">buttonGrid</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">View</span> <span class="n">winnerPlayerViewGroup</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">winnerPlayerLabel</span><span class="o">;</span>
+
+    <span class="cm">/**
+     * In onCreate of the Activity we lookup &amp; retain references to view components
+     * and instantiate the model.
+     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">tictactoe</span><span class="o">);</span>
+        <span class="n">winnerPlayerLabel</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">winnerPlayerLabel</span><span class="o">);</span>
+        <span class="n">winnerPlayerViewGroup</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">winnerPlayerViewGroup</span><span class="o">);</span>
+        <span class="n">buttonGrid</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewGroup</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">buttonGrid</span><span class="o">);</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Board</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * Here we inflate and attach our reset button in the menu.
+     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onCreateOptionsMenu</span><span class="o">(</span><span class="n">Menu</span> <span class="n">menu</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">MenuInflater</span> <span class="n">inflater</span> <span class="o">=</span> <span class="n">getMenuInflater</span><span class="o">();</span>
+        <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">menu</span><span class="o">.</span><span class="na">menu_tictactoe</span><span class="o">,</span> <span class="n">menu</span><span class="o">);</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="cm">/**
+     *  We tie the reset() action to the reset tap event.
+     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onOptionsItemSelected</span><span class="o">(</span><span class="n">MenuItem</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">getItemId</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">action_reset</span><span class="o">:</span>
+                <span class="n">reset</span><span class="o">();</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="k">default</span><span class="o">:</span>
+                <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onOptionsItemSelected</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     *  When the view tells us a cell is clicked in the tic tac toe board,
+     *  this method will fire. We update the model and then interrogate it's state
+     *  to decide how to proceed.  If X or O won with this move, update the view
+     *  to display this and otherwise mark the cell that was clicked.
+     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCellClicked</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="n">Button</span> <span class="n">button</span> <span class="o">=</span> <span class="o">(</span><span class="n">Button</span><span class="o">)</span> <span class="n">v</span><span class="o">;</span>
+
+        <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">tag</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">1</span><span class="o">));</span>
+        <span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">tag</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">));</span>
+
+        <span class="n">Player</span> <span class="n">playerThatMoved</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="na">mark</span><span class="o">(</span><span class="n">row</span><span class="o">,</span> <span class="n">col</span><span class="o">);</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">playerThatMoved</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">button</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">playerThatMoved</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">model</span><span class="o">.</span><span class="na">getWinner</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">winnerPlayerLabel</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">playerThatMoved</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+                <span class="n">winnerPlayerViewGroup</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">VISIBLE</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * On reset, we clear the winner label and hide it, then clear out each button.
+     * We also tell the model to reset (restart) it's state.
+     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">reset</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">winnerPlayerViewGroup</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">GONE</span><span class="o">);</span>
+        <span class="n">winnerPlayerLabel</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="na">restart</span><span class="o">();</span>
+
+        <span class="k">for</span><span class="o">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">buttonGrid</span><span class="o">.</span><span class="na">getChildCount</span><span class="o">();</span> <span class="n">i</span><span class="o">++</span> <span class="o">)</span> <span class="o">{</span>
+            <span class="o">((</span><span class="n">Button</span><span class="o">)</span> <span class="n">buttonGrid</span><span class="o">.</span><span class="na">getChildAt</span><span class="o">(</span><span class="n">i</span><span class="o">)).</span><span class="na">setText</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<h4 id="evaluation">Evaluation</h4>
+<p>MVC does a great job of separating the model and view. Certainly the 
+model can be easily tested because it’s not tied to anything and the 
+view has nothing much to test at a unit testing level. The Controller 
+has a few problems however.</p>
+<h4 id="controller-concerns">Controller Concerns</h4>
+<ul>
+<li>
+<em>Testability</em> - The controller is tied so tightly to the Android APIs that it is difficult to unit test.</li>
+<li>
+<em>Modularity &amp; Flexibility</em> - The controllers are tightly 
+coupled to the views. It might as well be an extension of the view. If 
+we change the view, we have to go back and change the controller.</li>
+<li>
+<em>Maintenance</em> - Over time, particularly in applications with <a href="https://martinfowler.com/bliki/AnemicDomainModel.html">anemic models</a>, more and more code starts getting transferred into the controllers, making them bloated and brittle.</li>
+</ul>
+<div class="ad-shiv visible-xs" id="article-ad-banner">
+<div class="article-ad col-xs-12">
+<script type="text/javascript" src="dc.js"></script><title></title>
+<br>
+<style type="text/css">.ad-shiv section{margin: 0 auto;}
+	/* banner A */
+.ad-shiv #bannerA{
+	border: 1px solid #59569E;
+	border-radius: 6px;
+	padding:18px;
+	background: #fafafa;
+}
+.ad-shiv #bannerA .hed{
+	color:#59569E;font-size:28px;display:inline-block;vertical-align: middle;margin:0 15px 0 0;
+}
+.ad-shiv #bannerA .wrap{
+	display:inline-block;margin-top: -3px;
+}
+.ad-shiv #bannerA .btn{
+	box-shadow:none;border:none;vertical-align:middle;border-radius:6px;padding:10px 30px;background:#59569E;color:#fff;font-size:18px;
+}
+@media only screen 
+and (min-width : 630px){
+	.ad-shiv #bannerA .wrap {float: right}
+}
+@media only screen 
+and (max-width : 630px){
+	.ad-shiv #bannerA .wrap {margin-top: 3px}
+}
+	/* banner B */
+	/* NOTE: This style is non-standard and will not work for every user in every browser. There may also be behavior changes in the future. */
+.ad-shiv #bannerB{
+	border: 3px solid ghostWhite;
+	border-radius: 10px;
+	padding:1rem 15px;
+	background: white;
+	color:#39477F;
+	background: linear-gradient(-215deg,#FCC397,#FC9F95,#F77C88,#F25192,#D34CA3,#9A50A5,#59569E,#39477F)repeat fixed;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 2rem;
+}
+@-moz-document url-prefix() {
+	.ad-shiv #bannerB{
+		background-attachment: scroll;
+	}
+}
+</style>
+<section>
+<div data-update="10/04/17/12:30" id="bannerB"><a href="https://go.pardot.com/l/210132/2017-08-10/9drkd">4 Design Patterns for a RESTless Mobile Integration &nbsp;»</a></div>
+</section>
+
+</div>
+</div>
+<p>How can we address this? MVP to the rescue!</p>
+<h3 id="mvp">MVP</h3>
+<p>MVP breaks the controller up so that the natural view/activity 
+coupling can occur without tying it to the rest of the “controller” 
+responsibilities. More on this below, but let’s start again with a 
+common definition of responsibilities as compared to MVC.</p>
+<h4 id="model-1">Model</h4>
+<p>Same as MVC / No change</p>
+<h4 id="view-1">View</h4>
+<p>The only change here is that the Activity/Fragment is now considered 
+part of the view. We stop fighting the natural tendency for them to go 
+hand in hand. Good practice is to have the Activity implement a view 
+interface so that the presenter has an interface to code to. This 
+eliminates coupling it to any specific view and allows simple unit 
+testing with a mock implementation of the view.</p>
+<h4 id="presenter">Presenter</h4>
+<p>This is essentially the controller from MVC except that it is not at 
+all tied to the View, just an interface. This addresses the testability 
+concerns as well as the modularity/flexibility concerns we had with MVC.
+ <em>In fact, MVP purists would argue that the presenter should never have any references to any Android APIs or code.</em></p>
+<p>Let’s again examine what that looks like in our app.</p>
+<p><img src="MVPsvg" alt="Tic Tac Toe - MVP"></p>
+<p>Looking at the Presenter in more detail below, the first thing you’ll
+ notice is how much simpler and clearer the intent of each action is. 
+Rather than telling the view how to display something, it just tells it 
+what to display.</p>
+<div class="language-java highlighter-rouge">
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TicTacToePresenter</span> <span class="kd">implements</span> <span class="n">Presenter</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">TicTacToeView</span> <span class="n">view</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Board</span> <span class="n">model</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">TicTacToePresenter</span><span class="o">(</span><span class="n">TicTacToeView</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">view</span> <span class="o">=</span> <span class="n">view</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">model</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Board</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Here we implement delegate methods for the standard Android Activity Lifecycle.</span>
+    <span class="c1">// These methods are defined in the Presenter interface that we are implementing.</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span> <span class="n">model</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Board</span><span class="o">();</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+
+    <span class="cm">/** 
+     * When the user selects a cell, our presenter only hears about
+     * what was (row, col) pressed, it's up to the view now to determine that from
+     * the Button that was pressed.
+     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onButtonSelected</span><span class="o">(</span><span class="kt">int</span> <span class="n">row</span><span class="o">,</span> <span class="kt">int</span> <span class="n">col</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Player</span> <span class="n">playerThatMoved</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="na">mark</span><span class="o">(</span><span class="n">row</span><span class="o">,</span> <span class="n">col</span><span class="o">);</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">playerThatMoved</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">view</span><span class="o">.</span><span class="na">setButtonText</span><span class="o">(</span><span class="n">row</span><span class="o">,</span> <span class="n">col</span><span class="o">,</span> <span class="n">playerThatMoved</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+            <span class="k">if</span> <span class="o">(</span><span class="n">model</span><span class="o">.</span><span class="na">getWinner</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">view</span><span class="o">.</span><span class="na">showWinner</span><span class="o">(</span><span class="n">playerThatMoved</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     *  When we need to reset, we just dictate what to do.
+     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResetSelected</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">view</span><span class="o">.</span><span class="na">clearWinnerDisplay</span><span class="o">();</span>
+        <span class="n">view</span><span class="o">.</span><span class="na">clearButtons</span><span class="o">();</span>
+        <span class="n">model</span><span class="o">.</span><span class="na">restart</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<p>To make this work without tying the activity to the presenter we 
+create an interface that the Activity implements. In a test, we’ll 
+create a mock based on this interface to test interactions with the view
+ from the presenter.</p>
+<div class="language-java highlighter-rouge">
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">TicTacToeView</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">showWinner</span><span class="o">(</span><span class="n">String</span> <span class="n">winningPlayerDisplayLabel</span><span class="o">);</span>
+    <span class="kt">void</span> <span class="nf">clearWinnerDisplay</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">clearButtons</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">setButtonText</span><span class="o">(</span><span class="kt">int</span> <span class="n">row</span><span class="o">,</span> <span class="kt">int</span> <span class="n">col</span><span class="o">,</span> <span class="n">String</span> <span class="n">text</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<h4 id="evaluation-1">Evaluation</h4>
+<p>This is much cleaner. We can easily unit test the presenter logic 
+because it’s not tied to any Android specific views and APIs and that 
+also allows us to work with any other view as long as the view 
+implements the <em><strong>TicTacToeView</strong></em> interface.</p>
+<h4 id="presenter-concerns">Presenter Concerns</h4>
+<ul>
+<li>
+<em>Maintenance</em> - Presenters, just like Controllers, are prone to 
+collecting additional business logic, sprinkled in, over time. At some 
+point, developers often find themselves with large unwieldy presenters 
+that are difficult to break apart.</li>
+</ul>
+<p>Of course, the careful developer can help to prevent this, by 
+diligently guarding against this temptation as the application changes 
+over time. However, MVVM can help address this by doing less to start.</p>
+<h3 id="mvvm">MVVM</h3>
+<p>MVVM with <a href="https://developer.android.com/topic/libraries/data-binding/index.html">Data Binding on Android</a>
+ has the benefits of easier testing and modularity, while also reducing 
+the amount of glue code that we have to write to connect the view + 
+model.</p>
+<p>Let’s examine the parts of MVVM.</p>
+<h4 id="model-2">Model</h4>
+<p>Same as MVC / No change</p>
+<h4 id="view-2">View</h4>
+<p>The view binds to observable variables and actions exposed by the viewModel in a flexible way. More on that in minute.</p>
+<h4 id="viewmodel">ViewModel</h4>
+<p>The ViewModel is responsible for wrapping the model and preparing 
+observable data needed by the view. It also provides hooks for the view 
+to pass events to the model. The ViewModel is not tied to the view 
+however.</p>
+<p>High level breakdown for Tic Tac Toe.</p>
+<p><img src="MVVMsvg" alt="Tic Tac Toe - MVVM"></p>
+<p>Let’s take a closer look at the some of the moving parts here, starting with the ViewModel.</p>
+<div class="language-java highlighter-rouge">
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TicTacToeViewModel</span> <span class="kd">implements</span> <span class="n">ViewModel</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">Board</span> <span class="n">model</span><span class="o">;</span>
+
+    <span class="cm">/* 
+     * These are observable variables that the viewModel will update as appropriate
+     * The view components are bound directly to these objects and react to changes
+     * immediately, without the ViewModel needing to tell it to do so. They don't
+     * have to be public, they could be private with a public getter method too.
+     */</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">ObservableArrayMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">cells</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObservableArrayMap</span><span class="o">&lt;&gt;();</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">ObservableField</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">winner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObservableField</span><span class="o">&lt;&gt;();</span>
+
+    <span class="kd">public</span> <span class="nf">TicTacToeViewModel</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Board</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="c1">// As with presenter, we implement standard lifecycle methods from the view</span>
+    <span class="c1">// in case we need to do anything with our model during those events.</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span> <span class="o">}</span>
+
+    <span class="cm">/**
+     * An Action, callable by the view.  This action will pass a message to the model
+     * for the cell clicked and then update the observable fields with the current
+     * model state.
+     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClickedCellAt</span><span class="o">(</span><span class="kt">int</span> <span class="n">row</span><span class="o">,</span> <span class="kt">int</span> <span class="n">col</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Player</span> <span class="n">playerThatMoved</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="na">mark</span><span class="o">(</span><span class="n">row</span><span class="o">,</span> <span class="n">col</span><span class="o">);</span>
+        <span class="n">cells</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">""</span> <span class="o">+</span> <span class="n">row</span> <span class="o">+</span> <span class="n">col</span><span class="o">,</span> <span class="n">playerThatMoved</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> 
+                                                     <span class="kc">null</span> <span class="o">:</span> <span class="n">playerThatMoved</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+        <span class="n">winner</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">model</span><span class="o">.</span><span class="na">getWinner</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="n">model</span><span class="o">.</span><span class="na">getWinner</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * An Action, callable by the view.  This action will pass a message to the model
+     * to restart and then clear the observable data in this ViewModel.
+     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResetSelected</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">model</span><span class="o">.</span><span class="na">restart</span><span class="o">();</span>
+        <span class="n">winner</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+        <span class="n">cells</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre>
+</div>
+<p>A couple excerpts from the <a href="https://github.com/ericmaxwell2003/ticTacToe/blob/mvvm/app/src/main/res/layout/tictactoe.xml">view</a> to see how these variables and actions are bound.</p>
+<div class="language-xml highlighter-rouge">
+<pre class="highlight"><code><span class="c">&lt;!-- 
+    With Data Binding, the root element is &lt;layout&gt;.  It contains 2 things.
+    1. &lt;data&gt; - We define variables to which we wish to use in our binding expressions and 
+                import any other classes we may need for reference, like android.view.View.
+    2. &lt;root layout&gt; - This is the visual root layout of our view.  This is the root xml tag in the MVC and MVP view examples.
+--&gt;</span>
+<span class="nt">&lt;layout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- We will reference the TicTacToeViewModel by the name viewModel as we have defined it here. --&gt;</span>
+    <span class="nt">&lt;data&gt;</span>
+        <span class="nt">&lt;import</span> <span class="na">type=</span><span class="s">"android.view.View"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;variable</span> <span class="na">name=</span><span class="s">"viewModel"</span> <span class="na">type=</span><span class="s">"com.acme.tictactoe.viewmodel.TicTacToeViewModel"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;LinearLayout...&gt;</span>
+        <span class="nt">&lt;GridLayout...&gt;</span>
+            <span class="c">&lt;!-- onClick of any cell in the board, the button clicked will invoke the onClickedCellAt method with its row,col --&gt;</span>
+            <span class="c">&lt;!-- The display value comes from the ObservableArrayMap defined in the ViewModel  --&gt;</span>
+            <span class="nt">&lt;Button</span>
+                <span class="na">style=</span><span class="s">"@style/tictactoebutton"</span>
+                <span class="na">android:onClick=</span><span class="s">"@{() -&gt; viewModel.onClickedCellAt(0,0)}"</span>
+                <span class="na">android:text=</span><span class="s">'@{viewModel.cells["00"]}'</span> <span class="nt">/&gt;</span>
+            ...
+            <span class="nt">&lt;Button</span>
+                <span class="na">style=</span><span class="s">"@style/tictactoebutton"</span>
+                <span class="na">android:onClick=</span><span class="s">"@{() -&gt; viewModel.onClickedCellAt(2,2)}"</span>
+                <span class="na">android:text=</span><span class="s">'@{viewModel.cells["22"]}'</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/GridLayout&gt;</span>
+
+        <span class="c">&lt;!-- The visibility of the winner view group is based on whether or not the winner value is null.
+             Caution should be used not to add presentation logic into the view.  However, for this case
+             it makes sense to just set visibility accordingly.  It would be odd for the view to render
+             this section if the value for winner were empty.  --&gt;</span>
+        <span class="nt">&lt;LinearLayout...</span>
+            <span class="na">android:visibility=</span><span class="s">"@{viewModel.winner != null ? View.VISIBLE : View.GONE}"</span>
+            <span class="na">tools:visibility=</span><span class="s">"visible"</span><span class="nt">&gt;</span>
+
+            <span class="c">&lt;!-- The value of the winner label is bound to the viewModel.winner and reacts if that value changes --&gt;</span>
+            <span class="nt">&lt;TextView</span>
+                <span class="err">...</span>
+                <span class="na">android:text=</span><span class="s">"@{viewModel.winner}"</span>
+                <span class="na">tools:text=</span><span class="s">"X"</span> <span class="nt">/&gt;</span>
+            ...
+        <span class="nt">&lt;/LinearLayout&gt;</span>
+    <span class="nt">&lt;/LinearLayout&gt;</span>
+<span class="nt">&lt;/layout&gt;</span>
+</code></pre>
+</div>
+<div class="alert alert-info">
+<p>
+<b>Pro Tip:</b> Make heavy use of the tools attributes. Notice it’s used
+ in the above example for the display value of the winner and the 
+visibility setting. If you don’t set these, it can be hard to see at 
+design time what is going on.
+</p>
+</div>
+<div class="alert alert-info">
+<p>
+A side note about MVVM and Data Binding on Android. This just scratches 
+the surface on what you can do with Data Binding. I highly encourage you
+ to check out the <a href="https://developer.android.com/topic/libraries/data-binding/index.html">Android Data Binding</a>
+ documentation to learn more about this powerful tool. There is also a 
+link at the bottom of this page to the Google Android Architecture 
+Blueprints project page for some more great examples of MVVM &amp; Data 
+Binding.
+</p>
+</div>
+<h4 id="evaluation-2">Evaluation</h4>
+<p>Unit testing is even easier now, because you really have no 
+dependency on the view. When testing, you only need to verify that the 
+observable variables are set appropriately when the model changes. There
+ is no need to mock out the view for testing as there was with the MVP 
+pattern.</p>
+<h4 id="mvvm-concerns">MVVM Concerns</h4>
+<ul>
+<li>
+<em>Maintenance</em> - Since views can bind to both variables and 
+expressions, extraneous presentation logic can creep in over time, 
+effectively adding code to our XML. To avoid this, always get values 
+directly from the ViewModel rather than attempt to compute or derive 
+them in the views binding expression. This way the computation can be 
+unit tested appropriately.</li>
+</ul>
+<h2 id="conclusions">Conclusions</h2>
+<p>Both MVP and MVVM do a better job than MVC in breaking down your app 
+into modular, single purpose components, but they also add more 
+complexity to your app. For a very simple application with only one or 
+two screens, MVC may work just fine. MVVM with data binding is 
+attractive as it follows a more reactive programming model and produces 
+less code.</p>
+<p>So which pattern is best for you? If you’re choosing between MVP and 
+MVVM, a lot of the decision comes down to personal preference, but 
+seeing them in action will help you understand the benefits and 
+tradeoffs.</p>
+<p>If you’re interested in seeing more examples of MVP and MVVM in practice, I’d encourage you check out the <a href="https://github.com/googlesamples/android-architecture">Google Architecture Blueprints</a> project. There are also many blog posts which delve deeper into proper MVP implementation.</p>
+<div class="attribution-container mobile col-xs-12 visible-xs">
+<dov class="about-speaker flex center xs-column">
+<p>About the content</p>
+<div class="mobile-attribution">
+<p>This content has been published here with the express permission of the author.</p>
+</div>
+</dov></div>
+</div>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane fade in" id="about-the-author">
+<div class="case-content">
+<br>
+<div id="author-block" class="col-xs-12 flex">
+<div class="avatar" style="background-image: url(//images.ctfassets.net/s72atsk5w5jo/5x1NkqcojSGyoGmsqaisS0/e91213a09fb1d3220608ec85d8ce7767/speakingm3.png?fm=jpg&amp;fl=progressive&amp;q=75&amp;w=150);"></div>
+<div class="info col-xs-12">
+<h4 class="name">
+Eric Maxwell
+</h4>
+<p>
+</p><p>Eric is an Product Engineer at Realm. He has spent over a decade 
+architecting and developing software for various companies across 
+different industries, including healthcare, insurance, library science, 
+and private aviation. His current focus is training, mentoring, and 
+mobile development. He has developed and taught courses on Java, Android
+ and iOS. When he’s not working, he enjoys time with family, traveling 
+and improv comedy.</p>
+<p></p>
+<div class="col-xs-12 flex links">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="social-bar col-xs-12 flex">
+<div class="share-bar flex center col-xs-12">
+<ul class="share-button-group flex center">
+<div class="light-text">Share</div>
+<li class="twitter">
+<a class="flex center" title="Twitter" target="_blank" onclick="ga('send', 'event', 'Link', 'share-bar-twitter', 'Share Bar');" href="https://twitter.com/intent/tweet?text=MVC%20vs.%20MVP%20vs.%20MVVM%20on%20Android%20https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F%20via%20%40realm">
+<i class="fa fa-twitter"></i>
+</a>
+</li><li class="facebook">
+<a class="flex center" title="Facebook" target="_blank" onclick="ga('send', 'event', 'Link', 'share-bar-facebook', 'Share Bar');" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F&amp;t=MVC%20vs.%20MVP%20vs.%20MVVM%20on%20Android">
+<i class="fa fa-facebook"></i>
+</a>
+</li><li class="linkedin">
+<a class="flex center" title="LinkedIn" target="_blank" onclick="ga('send', 'event', 'Link', 'share-bar-linkedin', 'Share Bar');" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F&amp;title=MVC%20vs.%20MVP%20vs.%20MVVM%20on%20Android">
+<i class="fa fa-linkedin"></i>
+</a>
+</li><li class="email">
+<a class="flex center" title="Email this" target="_blank" onclick="ga('send', 'event', 'Link', 'share-bar-email', 'Share Bar');" href="mailto:?Subject=MVC%20vs.%20MVP%20vs.%20MVVM%20on%20Android&amp;Body=https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F">
+<i class="fa fa-envelope"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a href="https://go.pardot.com/l/210132/2017-08-10/9drkd" class="sub-bar-ad" data-update="10/5/17/16:30" id="bannerB">
+<div class="contents container">
+<div class="row col-md-10 col-md-offset-1">
+<p class="col-xs-9 text-xs-center">4 design patterns for a RESTless mobile integration »</p>
+<span class="ad-bar-close col-xs-3 js-ad-bar-close flex center">
+<img alt="close" src="close-icon-dark-7e641dd849c1b5662a07e0ddd4728400c63f7f477b7a.svg">
+</span>
+</div>
+</div>
+</a>
+</div>
+<div class="related-articles col-xs-12 col-md-10 col-md-offset-1">
+<div class="col-xs-12 text-center hidden-xs">
+<h4>Featured News</h4>
+</div>
+<div class="row">
+<p class="visible-xs featured-text text-center">Featured News</p>
+<div class="col-xs-12 col-sm-4">
+<figure>
+<div class="article col-xs-12 card js-post-toggle">
+<div class="post quick" data-tags="realm growth">
+<div class="article-block flex center column">
+<a class="post quick header-image" data-filter-section="1" onclick="ga('send', 'event', 'Link', 'default-article', 'News');" href="https://academy.realm.io/posts/5g-is-coming-faster-but-what-else-is-needed/">
+<img class="col-xs-12 article-img" src="image.jpg" alt="Image">
+</a> <a class="news-headline col-xs-12 text-left" href="https://academy.realm.io/posts/5g-is-coming-faster-but-what-else-is-needed/">
+5G is coming: Faster – But What Else is Ne...
+</a> <div class="excerpt col-xs-12 text-left">
+<div class="info">
+<span class="meta-info">
+by
+<a class="twitter-handle" href="https://twitter.com/davidhratner">David Ratner</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div class="col-xs-12 col-sm-4">
+<figure>
+<div class="article col-xs-12 card js-post-toggle">
+<div class="post quick" data-tags="realm">
+<div class="article-block flex center column">
+<a class="post quick header-image" data-filter-section="1" onclick="ga('send', 'event', 'Link', 'default-article', 'News');" href="https://academy.realm.io/posts/building-modern-swift-apps-with-realm-database/">
+<img class="col-xs-12 article-img" src="share-image.jpg" alt="Share image">
+</a> <a class="news-headline col-xs-12 text-left" href="https://academy.realm.io/posts/building-modern-swift-apps-with-realm-database/">
+Building Modern Swift Apps with Realm Data...
+</a> <div class="excerpt col-xs-12 text-left">
+<div class="info">
+<span class="meta-info">
+by
+<a class="twitter-handle" href="https://twitter.com/icanzilb">Marin Todorov</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<div class="col-xs-12 col-sm-4">
+<figure>
+<div class="article col-xs-12 card js-post-toggle">
+<div class="post quick" data-tags="architecture android">
+<div class="article-block flex center column">
+<a class="post quick header-image" data-filter-section="1" onclick="ga('send', 'event', 'Link', 'default-article', 'News');" href="https://academy.realm.io/posts/mobilization-2017-jorge-castillo-functional-android-architecture-kotlin/">
+<img class="col-xs-12 article-img" src="mobilization-jorge-castillo-header.jpg" alt="Mobilization jorge castillo header">
+</a> <a class="news-headline col-xs-12 text-left" href="https://academy.realm.io/posts/mobilization-2017-jorge-castillo-functional-android-architecture-kotlin/">
+A Functional Approach to Android Architect...
+</a> <div class="excerpt col-xs-12 text-left">
+<div class="info">
+<span class="meta-info">
+by
+<a class="twitter-handle" href="https://twitter.com/jorgecastillopr">Jorge Castillo</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="col-xs-12 text-center news-button">
+<a class="btn btn-large btn-outline" onclick="ga('send', 'event', 'Link', 'related-article-news-index', 'Post');" href="https://academy.realm.io/">
+See more
+</a></div>
+</div>
+</div>
+
+</main>
+<footer class="footer col-xs-12">
+<div class="grid container">
+<div class="col-xs-12 col-sm-3">
+<ul class="footer-links flex column">
+<p class="footer-header">Products<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="113px" height="91px" viewBox="0 0 113 91" version="1.1">
+
+<title>Triangle</title>
+<desc>Created with Sketch.</desc>
+<defs></defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M48.1213694,86.1397763 L2.07164553,15.4588048 C-0.943169094,10.8314149 0.364081448,4.63618405 4.99147134,1.62136942 C6.61548616,0.563299157 8.5119942,0 10.4502761,0 L102.549724,0 C108.072571,0 112.549724,4.4771525 112.549724,10 C112.549724,11.9382819 111.986425,13.83479 110.928354,15.4588048 L64.8786306,86.1397763 C61.863816,90.7671662 55.6685851,92.0744168 51.0411952,89.0596021 C49.8753855,88.3000594 48.8809121,87.305586 48.1213694,86.1397763 Z" id="Triangle" fill="#1D2340"></path>
+</g>
+</svg>
+</p>
+<ul class="footer-links flex column">
+<li class="light-text"><a href="https://realm.io/products/realm-platform">Realm Platform</a></li>
+<li class="light-text"><a href="https://realm.io/products/realm-database">Realm Database</a></li>
+<li class="light-text"><a href="https://realm.io/products/realm-studio">Realm Studio</a></li>
+</ul>
+<br>
+<p class="footer-header"><a href="https://realm.io/pricing">Pricing</a></p>
+<br>
+<p class="footer-header">Solutions<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="113px" height="91px" viewBox="0 0 113 91" version="1.1">
+
+<title>Triangle</title>
+<desc>Created with Sketch.</desc>
+<defs></defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M48.1213694,86.1397763 L2.07164553,15.4588048 C-0.943169094,10.8314149 0.364081448,4.63618405 4.99147134,1.62136942 C6.61548616,0.563299157 8.5119942,0 10.4502761,0 L102.549724,0 C108.072571,0 112.549724,4.4771525 112.549724,10 C112.549724,11.9382819 111.986425,13.83479 110.928354,15.4588048 L64.8786306,86.1397763 C61.863816,90.7671662 55.6685851,92.0744168 51.0411952,89.0596021 C49.8753855,88.3000594 48.8809121,87.305586 48.1213694,86.1397763 Z" id="Triangle" fill="#1D2340"></path>
+</g>
+</svg>
+</p>
+<li class="light-text">
+<a href="https://realm.io/solutions/realtime-collaboration">Realtime Collaboration</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/solutions/api-mobilization">API Mobilization</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/solutions/offline-first">Offline First</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/addons">Add-ons</a>
+</li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3">
+<ul class="footer-links flex column">
+<a href="https://realm.io/docs"><p class="footer-header">Docs<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="113px" height="91px" viewBox="0 0 113 91" version="1.1">
+
+<title>Triangle</title>
+<desc>Created with Sketch.</desc>
+<defs></defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M48.1213694,86.1397763 L2.07164553,15.4588048 C-0.943169094,10.8314149 0.364081448,4.63618405 4.99147134,1.62136942 C6.61548616,0.563299157 8.5119942,0 10.4502761,0 L102.549724,0 C108.072571,0 112.549724,4.4771525 112.549724,10 C112.549724,11.9382819 111.986425,13.83479 110.928354,15.4588048 L64.8786306,86.1397763 C61.863816,90.7671662 55.6685851,92.0744168 51.0411952,89.0596021 C49.8753855,88.3000594 48.8809121,87.305586 48.1213694,86.1397763 Z" id="Triangle" fill="#1D2340"></path>
+</g>
+</svg>
+</p></a>
+<li class="light-text">
+<a href="https://realm.io/docs/realm-object-server/latest">Realm Platform</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/docs/java/latest">Java</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/docs/swift/latest">Swift</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/docs/objc/latest">Objective‑C</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/docs/javascript/latest">JavaScript</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/docs/dotnet/latest">.NET</a>
+</li>
+<br>
+<a href="https://realm.io/support"><p class="footer-header">Support<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="113px" height="91px" viewBox="0 0 113 91" version="1.1">
+
+<title>Triangle</title>
+<desc>Created with Sketch.</desc>
+<defs></defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M48.1213694,86.1397763 L2.07164553,15.4588048 C-0.943169094,10.8314149 0.364081448,4.63618405 4.99147134,1.62136942 C6.61548616,0.563299157 8.5119942,0 10.4502761,0 L102.549724,0 C108.072571,0 112.549724,4.4771525 112.549724,10 C112.549724,11.9382819 111.986425,13.83479 110.928354,15.4588048 L64.8786306,86.1397763 C61.863816,90.7671662 55.6685851,92.0744168 51.0411952,89.0596021 C49.8753855,88.3000594 48.8809121,87.305586 48.1213694,86.1397763 Z" id="Triangle" fill="#1D2340"></path>
+</g>
+</svg>
+</p></a>
+<li class="light-text">
+<a href="https://realm.io/support" onclick="ga('send', 'event', 'Link', 'news', 'Footer');">Overview</a>
+</li>
+<li class="light-text">
+<a href="https://forums.realm.io/">Forums</a>
+</li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-3 footer-links">
+<p class="footer-header"><a href="https://blog.realm.io/">Blog</a></p>
+<br>
+<p class="footer-header"><a href="https://academy.realm.io/">Academy</a></p>
+<br>
+<p class="footer-header">Communities<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="113px" height="91px" viewBox="0 0 113 91" version="1.1">
+
+<title>Triangle</title>
+<desc>Created with Sketch.</desc>
+<defs></defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M48.1213694,86.1397763 L2.07164553,15.4588048 C-0.943169094,10.8314149 0.364081448,4.63618405 4.99147134,1.62136942 C6.61548616,0.563299157 8.5119942,0 10.4502761,0 L102.549724,0 C108.072571,0 112.549724,4.4771525 112.549724,10 C112.549724,11.9382819 111.986425,13.83479 110.928354,15.4588048 L64.8786306,86.1397763 C61.863816,90.7671662 55.6685851,92.0744168 51.0411952,89.0596021 C49.8753855,88.3000594 48.8809121,87.305586 48.1213694,86.1397763 Z" id="Triangle" fill="#1D2340"></path>
+</g>
+</svg>
+</p>
+<ul class="footer-links flex column">
+<li class="light-text">
+<a href="https://realm.io/communities/java">Java</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/communities/objective-c">Objective‑C</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/communities/react-native">JavaScript</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/communities/swift">Swift</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/communities/xamarin">Xamarin</a>
+</li>
+</ul>
+<br>
+<p class="footer-header"><a href="https://realm.io/realm-report">Realm Report</a></p>
+</div>
+<div class="col-xs-12 col-sm-3">
+<p class="footer-header">Company<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="113px" height="91px" viewBox="0 0 113 91" version="1.1">
+
+<title>Triangle</title>
+<desc>Created with Sketch.</desc>
+<defs></defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M48.1213694,86.1397763 L2.07164553,15.4588048 C-0.943169094,10.8314149 0.364081448,4.63618405 4.99147134,1.62136942 C6.61548616,0.563299157 8.5119942,0 10.4502761,0 L102.549724,0 C108.072571,0 112.549724,4.4771525 112.549724,10 C112.549724,11.9382819 111.986425,13.83479 110.928354,15.4588048 L64.8786306,86.1397763 C61.863816,90.7671662 55.6685851,92.0744168 51.0411952,89.0596021 C49.8753855,88.3000594 48.8809121,87.305586 48.1213694,86.1397763 Z" id="Triangle" fill="#1D2340"></path>
+</g>
+</svg>
+</p>
+<ul class="footer-links flex column">
+<li class="light-text">
+<a href="https://realm.io/about">About</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/customers/">Customers</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/jobs/">Jobs</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/press">Press</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/legal">Legal</a>
+</li>
+<li class="light-text">
+<a href="https://realm.io/contact">Contact</a>
+</li>
+<li class="col-xs-12 footer-sub desktop">
+<button data-toggle="modal" data-target="#subbarBtnFooter" class="btn btn-indigo flex center">
+<svg width="27px" height="20px" viewBox="0 0 27 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="Artboard" fill-rule="nonzero" fill="#FFFFFF">
+<path d="M13.4994368,11 L0,0 L27,0 L13.4994368,11 Z M7,8.96800256 L0,3 L0,17 L7,8.96800256 Z M20,8.96800256 L27,17 L27,3 L20,8.96800256 Z M17.8594924,10 L13.5,13.5431736 L9.1405076,10 L0,20 L27,20 L17.8594924,10 L17.8594924,10 Z" id="Shape"></path>
+</g>
+</g>
+</svg>
+Subscribe
+</button>
+<div id="subbarBtnFooter" class="modal" tabindex="-1" role="dialog" aria-labelledby="sub-news">
+<div class="modal-dialog" role="document">
+<div class="modal-content col-xs-12">
+<div class="modal-header col-xs-12">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body col-xs-12 text-center">
+<div class="col-xs-12">
+<p class="modal-title" id="subTitleText"></p><h3 id="get-the-latest-news-in-your-inbox-every-week">Get the latest news in your inbox every week</h3>
+<p>Subscribe for Realm tutorials, new features, and company announcements</p>
+<p></p>
+<form action="https://go.pardot.com/l/210132/2017-08-09/9ddl8?success_location=https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F%3Fw%3D1" method="post" class="validate">
+<div class="input-group input-group-lg col-xs-12"><input name="email" required="" class="required email home-newsletter-email-input col-sm-12" style="min-height: 46px;" placeholder="Enter your email" type="email">
+<span class="input-group-btn">
+<button type="submit" name="subscribe" style="border-radius:6px;" class="btn btn-indigo btn-subscribe">Subscribe</button>
+</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul class="social footer-links flex center xs-column">
+<li class="social flex center">
+<a class="flex center column col-xs-12" href="https://realm.github.io/" title="GitHub">
+<svg width="25px" height="25px" viewBox="0 0 25 25" class="footer-icon github">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M1,12.5 C1,17.5810833 4.29475,21.8916667 8.86504167,23.4125417 C9.43908333,23.5189167 9.625,23.1624167 9.625,22.8595833 L9.625,20.7186667 C6.42608333,21.4144167 5.76004167,19.3616667 5.76004167,19.3616667 C5.23679167,18.0324583 4.48258333,17.6788333 4.48258333,17.6788333 C3.43895833,16.964875 4.562125,16.9802083 4.562125,16.9802083 C5.71691667,17.0607083 6.3245,18.1656667 6.3245,18.1656667 C7.34991667,19.92325 9.01454167,19.4153333 9.671,19.121125 C9.77354167,18.3784167 10.0715833,17.8705 10.40125,17.5839583 C7.84729167,17.2916667 5.16204167,16.3055417 5.16204167,11.9000833 C5.16204167,10.6437083 5.6115,9.61829167 6.34654167,8.81329167 C6.22770833,8.52291667 5.83383333,7.35279167 6.45866667,5.769625 C6.45866667,5.769625 7.42466667,5.46104167 9.622125,6.948375 C10.53925,6.69345833 11.5225,6.566 12.5,6.56120833 C13.4775,6.566 14.4617083,6.69345833 15.38075,6.948375 C17.5762917,5.46104167 18.540375,5.769625 18.540375,5.769625 C19.1661667,7.35375 18.7722917,8.523875 18.6534583,8.81329167 C19.391375,9.61829167 19.837,10.6446667 19.837,11.9000833 C19.837,16.3170417 17.1469583,17.28975 14.5862917,17.574375 C14.998375,17.930875 15.375,18.6304583 15.375,19.7037917 L15.375,22.8595833 C15.375,23.1652917 15.559,23.5246667 16.142625,23.4115833 C20.7090833,21.8887917 24,17.5791667 24,12.5 C24,6.149125 18.850875,1 12.5,1 C6.15008333,1 1,6.149125 1,12.5 Z" id="GitHub" fill="#1C233F"></path>
+</g>
+</svg>
+</a>
+</li>
+<li class="social flex center">
+<a class="flex center column col-xs-12" href="https://twitter.com/realm" title="Twitter">
+<svg width="25px" height="25px" viewBox="0 0 25 25" class="footer-icon twitter">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M24,5.42915 C23.1537917,5.80155 22.2443333,6.05235 21.2898333,6.1654 C22.2644583,5.58685 23.0129167,4.6701 23.364625,3.5776 C22.45325,4.1134 21.4431667,4.5029 20.3679167,4.71285 C19.5082917,3.8037 18.2806667,3.2356 16.9236667,3.2356 C13.877125,3.2356 11.6384583,6.0533 12.3265417,8.97835 C8.406,8.7836 4.92916667,6.9216 2.601375,4.09155 C1.365125,6.1939 1.96025,8.94415 4.06091667,10.33685 C3.2885,10.31215 2.56016667,10.1022 1.92479167,9.75165 C1.87304167,11.9186 3.43991667,13.9459 5.70925,14.39715 C5.045125,14.57575 4.31775,14.61755 3.57791667,14.47695 C4.17783333,16.33515 5.92008333,17.687 7.98625,17.725 C6.0025,19.26685 3.50316667,19.9556 1,19.663 C3.08820833,20.99015 5.56933333,21.7644 8.2335,21.7644 C16.9945833,21.7644 21.944375,14.42945 21.645375,7.8507 C22.5672917,7.19045 23.3675,6.3668 24,5.42915 L24,5.42915 Z" id="Twitter" fill="#1C233F"></path>
+</g>
+</svg>
+</a>
+</li>
+<li class="social flex center">
+<a class="flex center column col-xs-12" href="https://plus.google.com/+RealmPlatform" title="Google+">
+<svg width="25px" height="25px" viewBox="0 0 25 25" class="footer-icon google-plus">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="iconmonstr-google-plus-4" fill="#1C233F">
+<path d="M12.5,0 C5.596875,0 0,5.596875 0,12.5 C0,19.403125 5.596875,25 12.5,25 C19.403125,25 25,19.403125 25,12.5 C25,5.596875 19.403125,0 12.5,0 L12.5,0 Z M9.46145833,16.753125 C7.109375,16.753125 5.20833333,14.8520833 5.20833333,12.5 C5.20833333,10.1479167 7.109375,8.246875 9.46145833,8.246875 C10.6104167,8.246875 11.5697917,8.665625 12.3104167,9.35833333 L11.1572917,10.4708333 C10.840625,10.1666667 10.2885417,9.81458333 9.46145833,9.81458333 C8.009375,9.81458333 6.825,11.0177083 6.825,12.5010417 C6.825,13.984375 8.01041667,15.1875 9.46145833,15.1875 C11.1447917,15.1875 11.778125,13.9770833 11.8739583,13.3520833 L9.46145833,13.3520833 L9.46145833,11.89375 L13.4770833,11.89375 C13.5145833,12.10625 13.54375,12.31875 13.54375,12.5989583 C13.5447917,15.028125 11.915625,16.753125 9.46145833,16.753125 L9.46145833,16.753125 Z M19.7916667,13.1072917 L17.96875,13.1072917 L17.96875,14.9302083 L16.753125,14.9302083 L16.753125,13.1072917 L14.9302083,13.1072917 L14.9302083,11.8927083 L16.753125,11.8927083 L16.753125,10.0697917 L17.96875,10.0697917 L17.96875,11.8927083 L19.7916667,11.8927083 L19.7916667,13.1072917 L19.7916667,13.1072917 Z" id="Shape"></path>
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li class="social flex center">
+<a class="flex center column col-xs-12" href="https://www.facebook.com/realmplatform/" title="Facebook">
+<svg width="25px" height="25px" viewBox="0 0 25 25" class="footer-icon facebook">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="F_icon" transform="translate(1.000000, 1.000000)" fill="#1C233F">
+<g id="Layer_1">
+<path d="M21.6752355,22.9384595 C22.372695,22.9384595 22.9382819,22.3728726 22.9382819,21.6752355 L22.9382819,1.31535135 C22.9382819,0.617625483 22.3727838,0.0522162162 21.6752355,0.0522162162 L1.31535135,0.0522162162 C0.617625483,0.0522162162 0.0522162162,0.617625483 0.0522162162,1.31535135 L0.0522162162,21.6752355 C0.0522162162,22.3727838 0.61753668,22.9384595 1.31535135,22.9384595 L21.6752355,22.9384595 Z M15.8432703,22.9384595 L15.8432703,14.0756448 L18.8180849,14.0756448 L19.2635212,10.6216486 L15.8432703,10.6216486 L15.8432703,8.41649035 C15.8432703,7.41647876 16.1209575,6.73500386 17.5549498,6.73500386 L19.3839382,6.73420463 L19.3839382,3.64492278 C19.0676216,3.60283012 17.9819151,3.50878764 16.7187799,3.50878764 C14.0817722,3.50878764 12.2764054,5.11843243 12.2764054,8.07442085 L12.2764054,10.6216486 L9.29395367,10.6216486 L9.29395367,14.0756448 L12.2764054,14.0756448 L12.2764054,22.9384595 L15.8432703,22.9384595 Z" id="Combined-Shape"></path>
+</g>
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li class="social flex center">
+<a class="flex center column col-xs-12" href="https://www.linkedin.com/company/realm-inc" title="LinkedIn">
+<svg width="25px" height="24px" viewBox="0 0 25 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="linkedin" fill-rule="nonzero" fill="#1C233F">
+<path d="M5.1875,2.60416667 C5.1875,4.04270833 4.03125,5.20833333 2.60416667,5.20833333 C1.17708333,5.20833333 0.0208333333,4.04270833 0.0208333333,2.60416667 C0.0208333333,1.16666667 1.17708333,0 2.60416667,0 C4.03125,0 5.1875,1.16666667 5.1875,2.60416667 Z M5.20833333,7.29166667 L0,7.29166667 L0,23.9583333 L5.20833333,23.9583333 L5.20833333,7.29166667 Z M13.5229167,7.29166667 L8.34791667,7.29166667 L8.34791667,23.9583333 L13.5239583,23.9583333 L13.5239583,15.209375 C13.5239583,10.3447917 19.8041667,9.946875 19.8041667,15.209375 L19.8041667,23.9583333 L25,23.9583333 L25,13.4052083 C25,5.196875 15.70625,5.49583333 13.5229167,9.53645833 L13.5229167,7.29166667 Z" id="logo"></path>
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li class="social flex center">
+<div class="btn-group dropup">
+<a href="#" data-toggle="dropdown" class="dropdown-toggle flex center column" aria-haspopup="true" aria-expanded="false">
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M6.503,20.752 C6.503,22.546 5.047,24 3.252,24 C1.456,24 4.4408921e-16,22.546 4.4408921e-16,20.752 C4.4408921e-16,18.958 1.456,17.504 3.252,17.504 C5.047,17.505 6.503,18.958 6.503,20.752 Z M0,8.18 L0,12.991 C6.05,13.053 10.96,17.957 11.022,24 L15.839,24 C15.777,15.29 8.721,8.242 0,8.18 Z M0,4.812 C10.58,4.858 19.152,13.406 19.183,24 L24,24 C23.97,10.769 13.245,0.046 0,0 L0,4.812 Z" id="rss" fill="#1D2340" fill-rule="nonzero"></path>
+</g>
+</svg>
+</a>
+<ul class="dropdown-menu dropdown-menu-right" role="menu">
+<li class="col-xs-12">
+<a href="https://blog.realm.io/feed.xml" class="flex rss-link">
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M6.503,20.752 C6.503,22.546 5.047,24 3.252,24 C1.456,24 4.4408921e-16,22.546 4.4408921e-16,20.752 C4.4408921e-16,18.958 1.456,17.504 3.252,17.504 C5.047,17.505 6.503,18.958 6.503,20.752 Z M0,8.18 L0,12.991 C6.05,13.053 10.96,17.957 11.022,24 L15.839,24 C15.777,15.29 8.721,8.242 0,8.18 Z M0,4.812 C10.58,4.858 19.152,13.406 19.183,24 L24,24 C23.97,10.769 13.245,0.046 0,0 L0,4.812 Z" id="rss" fill="#1D2340" fill-rule="nonzero"></path>
+</g>
+</svg>
+<p>Realm Blog</p>
+</a>
+</li>
+<li class="col-xs-12">
+<a href="https://academy.realm.io/feed.xml" class="flex rss-link">
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M6.503,20.752 C6.503,22.546 5.047,24 3.252,24 C1.456,24 4.4408921e-16,22.546 4.4408921e-16,20.752 C4.4408921e-16,18.958 1.456,17.504 3.252,17.504 C5.047,17.505 6.503,18.958 6.503,20.752 Z M0,8.18 L0,12.991 C6.05,13.053 10.96,17.957 11.022,24 L15.839,24 C15.777,15.29 8.721,8.242 0,8.18 Z M0,4.812 C10.58,4.858 19.152,13.406 19.183,24 L24,24 C23.97,10.769 13.245,0.046 0,0 L0,4.812 Z" id="rss" fill="#1D2340" fill-rule="nonzero"></path>
+</g>
+</svg>
+<p>Realm Academy</p>
+</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="col-xs-12 footer-sub mobile">
+<button data-toggle="modal" data-target="#subbarBtnMobileFooter" class="btn btn-indigo flex center col-xs-12">
+<svg width="27px" height="20px" viewBox="0 0 27 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="Artboard" fill-rule="nonzero" fill="#FFFFFF">
+<path d="M13.4994368,11 L0,0 L27,0 L13.4994368,11 Z M7,8.96800256 L0,3 L0,17 L7,8.96800256 Z M20,8.96800256 L27,17 L27,3 L20,8.96800256 Z M17.8594924,10 L13.5,13.5431736 L9.1405076,10 L0,20 L27,20 L17.8594924,10 L17.8594924,10 Z" id="Shape"></path>
+</g>
+</g>
+</svg>
+Subscribe
+</button>
+<div id="subbarBtnMobileFooter" class="modal" tabindex="-1" role="dialog" aria-labelledby="sub-news">
+<div class="modal-dialog" role="document">
+<div class="modal-content col-xs-12">
+<div class="modal-header col-xs-12">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body col-xs-12 text-center">
+<div class="col-xs-12">
+<p class="modal-title" id="subTitleText"></p><h3 id="get-the-latest-news-in-your-inbox-every-week">Get the latest news in your inbox every week</h3>
+<p>Subscribe for Realm tutorials, new features, and company announcements</p>
+<p></p>
+<form action="https://go.pardot.com/l/210132/2017-08-09/9ddl8?success_location=https%3A%2F%2Facademy.realm.io%2Fposts%2Feric-maxwell-mvc-mvp-and-mvvm-on-android%2F%3Fw%3D1" method="post" class="validate">
+<div class="input-group input-group-lg col-xs-12"><input name="email" required="" class="required email home-newsletter-email-input col-sm-12" style="min-height: 46px;" placeholder="Enter your email" type="email">
+<span class="input-group-btn">
+<button type="submit" name="subscribe" style="border-radius:6px;" class="btn btn-indigo btn-subscribe">Subscribe</button>
+</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul class="social footer-links flex col-xs-12 center xs-column">
+<li class="social flex center">
+<a class="flex center column col-xs-12" href="https://realm.github.io/" title="GitHub">
+<svg width="25px" height="25px" viewBox="0 0 25 25" class="footer-icon github">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M1,12.5 C1,17.5810833 4.29475,21.8916667 8.86504167,23.4125417 C9.43908333,23.5189167 9.625,23.1624167 9.625,22.8595833 L9.625,20.7186667 C6.42608333,21.4144167 5.76004167,19.3616667 5.76004167,19.3616667 C5.23679167,18.0324583 4.48258333,17.6788333 4.48258333,17.6788333 C3.43895833,16.964875 4.562125,16.9802083 4.562125,16.9802083 C5.71691667,17.0607083 6.3245,18.1656667 6.3245,18.1656667 C7.34991667,19.92325 9.01454167,19.4153333 9.671,19.121125 C9.77354167,18.3784167 10.0715833,17.8705 10.40125,17.5839583 C7.84729167,17.2916667 5.16204167,16.3055417 5.16204167,11.9000833 C5.16204167,10.6437083 5.6115,9.61829167 6.34654167,8.81329167 C6.22770833,8.52291667 5.83383333,7.35279167 6.45866667,5.769625 C6.45866667,5.769625 7.42466667,5.46104167 9.622125,6.948375 C10.53925,6.69345833 11.5225,6.566 12.5,6.56120833 C13.4775,6.566 14.4617083,6.69345833 15.38075,6.948375 C17.5762917,5.46104167 18.540375,5.769625 18.540375,5.769625 C19.1661667,7.35375 18.7722917,8.523875 18.6534583,8.81329167 C19.391375,9.61829167 19.837,10.6446667 19.837,11.9000833 C19.837,16.3170417 17.1469583,17.28975 14.5862917,17.574375 C14.998375,17.930875 15.375,18.6304583 15.375,19.7037917 L15.375,22.8595833 C15.375,23.1652917 15.559,23.5246667 16.142625,23.4115833 C20.7090833,21.8887917 24,17.5791667 24,12.5 C24,6.149125 18.850875,1 12.5,1 C6.15008333,1 1,6.149125 1,12.5 Z" id="GitHub" fill="#1C233F"></path>
+</g>
+</svg>
+</a>
+</li>
+<li class="social flex center">
+<a class="flex center column col-xs-12" href="https://twitter.com/realm" title="Twitter">
+<svg width="25px" height="25px" viewBox="0 0 25 25" class="footer-icon twitter">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M24,5.42915 C23.1537917,5.80155 22.2443333,6.05235 21.2898333,6.1654 C22.2644583,5.58685 23.0129167,4.6701 23.364625,3.5776 C22.45325,4.1134 21.4431667,4.5029 20.3679167,4.71285 C19.5082917,3.8037 18.2806667,3.2356 16.9236667,3.2356 C13.877125,3.2356 11.6384583,6.0533 12.3265417,8.97835 C8.406,8.7836 4.92916667,6.9216 2.601375,4.09155 C1.365125,6.1939 1.96025,8.94415 4.06091667,10.33685 C3.2885,10.31215 2.56016667,10.1022 1.92479167,9.75165 C1.87304167,11.9186 3.43991667,13.9459 5.70925,14.39715 C5.045125,14.57575 4.31775,14.61755 3.57791667,14.47695 C4.17783333,16.33515 5.92008333,17.687 7.98625,17.725 C6.0025,19.26685 3.50316667,19.9556 1,19.663 C3.08820833,20.99015 5.56933333,21.7644 8.2335,21.7644 C16.9945833,21.7644 21.944375,14.42945 21.645375,7.8507 C22.5672917,7.19045 23.3675,6.3668 24,5.42915 L24,5.42915 Z" id="Twitter" fill="#1C233F"></path>
+</g>
+</svg>
+</a>
+</li>
+<li class="social flex center">
+<a class="flex center column col-xs-12" href="https://plus.google.com/+RealmPlatform" title="Google+">
+<svg width="25px" height="25px" viewBox="0 0 25 25" class="footer-icon google-plus">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="iconmonstr-google-plus-4" fill="#1C233F">
+<path d="M12.5,0 C5.596875,0 0,5.596875 0,12.5 C0,19.403125 5.596875,25 12.5,25 C19.403125,25 25,19.403125 25,12.5 C25,5.596875 19.403125,0 12.5,0 L12.5,0 Z M9.46145833,16.753125 C7.109375,16.753125 5.20833333,14.8520833 5.20833333,12.5 C5.20833333,10.1479167 7.109375,8.246875 9.46145833,8.246875 C10.6104167,8.246875 11.5697917,8.665625 12.3104167,9.35833333 L11.1572917,10.4708333 C10.840625,10.1666667 10.2885417,9.81458333 9.46145833,9.81458333 C8.009375,9.81458333 6.825,11.0177083 6.825,12.5010417 C6.825,13.984375 8.01041667,15.1875 9.46145833,15.1875 C11.1447917,15.1875 11.778125,13.9770833 11.8739583,13.3520833 L9.46145833,13.3520833 L9.46145833,11.89375 L13.4770833,11.89375 C13.5145833,12.10625 13.54375,12.31875 13.54375,12.5989583 C13.5447917,15.028125 11.915625,16.753125 9.46145833,16.753125 L9.46145833,16.753125 Z M19.7916667,13.1072917 L17.96875,13.1072917 L17.96875,14.9302083 L16.753125,14.9302083 L16.753125,13.1072917 L14.9302083,13.1072917 L14.9302083,11.8927083 L16.753125,11.8927083 L16.753125,10.0697917 L17.96875,10.0697917 L17.96875,11.8927083 L19.7916667,11.8927083 L19.7916667,13.1072917 L19.7916667,13.1072917 Z" id="Shape"></path>
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li class="social flex center">
+<a class="flex center column col-xs-12" href="https://www.facebook.com/realmplatform/" title="Facebook">
+<svg width="25px" height="25px" viewBox="0 0 25 25" class="footer-icon facebook">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="F_icon" transform="translate(1.000000, 1.000000)" fill="#1C233F">
+<g id="Layer_1">
+<path d="M21.6752355,22.9384595 C22.372695,22.9384595 22.9382819,22.3728726 22.9382819,21.6752355 L22.9382819,1.31535135 C22.9382819,0.617625483 22.3727838,0.0522162162 21.6752355,0.0522162162 L1.31535135,0.0522162162 C0.617625483,0.0522162162 0.0522162162,0.617625483 0.0522162162,1.31535135 L0.0522162162,21.6752355 C0.0522162162,22.3727838 0.61753668,22.9384595 1.31535135,22.9384595 L21.6752355,22.9384595 Z M15.8432703,22.9384595 L15.8432703,14.0756448 L18.8180849,14.0756448 L19.2635212,10.6216486 L15.8432703,10.6216486 L15.8432703,8.41649035 C15.8432703,7.41647876 16.1209575,6.73500386 17.5549498,6.73500386 L19.3839382,6.73420463 L19.3839382,3.64492278 C19.0676216,3.60283012 17.9819151,3.50878764 16.7187799,3.50878764 C14.0817722,3.50878764 12.2764054,5.11843243 12.2764054,8.07442085 L12.2764054,10.6216486 L9.29395367,10.6216486 L9.29395367,14.0756448 L12.2764054,14.0756448 L12.2764054,22.9384595 L15.8432703,22.9384595 Z" id="Combined-Shape"></path>
+</g>
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li class="social flex center">
+<a class="flex center column col-xs-12" href="https://www.linkedin.com/company/realm-inc" title="LinkedIn">
+<svg width="25px" height="24px" viewBox="0 0 25 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="linkedin" fill-rule="nonzero" fill="#1C233F">
+<path d="M5.1875,2.60416667 C5.1875,4.04270833 4.03125,5.20833333 2.60416667,5.20833333 C1.17708333,5.20833333 0.0208333333,4.04270833 0.0208333333,2.60416667 C0.0208333333,1.16666667 1.17708333,0 2.60416667,0 C4.03125,0 5.1875,1.16666667 5.1875,2.60416667 Z M5.20833333,7.29166667 L0,7.29166667 L0,23.9583333 L5.20833333,23.9583333 L5.20833333,7.29166667 Z M13.5229167,7.29166667 L8.34791667,7.29166667 L8.34791667,23.9583333 L13.5239583,23.9583333 L13.5239583,15.209375 C13.5239583,10.3447917 19.8041667,9.946875 19.8041667,15.209375 L19.8041667,23.9583333 L25,23.9583333 L25,13.4052083 C25,5.196875 15.70625,5.49583333 13.5229167,9.53645833 L13.5229167,7.29166667 Z" id="logo"></path>
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li class="social flex center">
+<div class="btn-group dropup">
+<a href="#" data-toggle="dropdown" class="dropdown-toggle flex center column" aria-haspopup="true" aria-expanded="false">
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M6.503,20.752 C6.503,22.546 5.047,24 3.252,24 C1.456,24 4.4408921e-16,22.546 4.4408921e-16,20.752 C4.4408921e-16,18.958 1.456,17.504 3.252,17.504 C5.047,17.505 6.503,18.958 6.503,20.752 Z M0,8.18 L0,12.991 C6.05,13.053 10.96,17.957 11.022,24 L15.839,24 C15.777,15.29 8.721,8.242 0,8.18 Z M0,4.812 C10.58,4.858 19.152,13.406 19.183,24 L24,24 C23.97,10.769 13.245,0.046 0,0 L0,4.812 Z" id="rss" fill="#1D2340" fill-rule="nonzero"></path>
+</g>
+</svg>
+</a>
+<ul class="dropdown-menu dropdown-menu-right" role="menu">
+<li class="col-xs-12">
+<a href="https://blog.realm.io/feed.xml" class="flex rss-link">
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M6.503,20.752 C6.503,22.546 5.047,24 3.252,24 C1.456,24 4.4408921e-16,22.546 4.4408921e-16,20.752 C4.4408921e-16,18.958 1.456,17.504 3.252,17.504 C5.047,17.505 6.503,18.958 6.503,20.752 Z M0,8.18 L0,12.991 C6.05,13.053 10.96,17.957 11.022,24 L15.839,24 C15.777,15.29 8.721,8.242 0,8.18 Z M0,4.812 C10.58,4.858 19.152,13.406 19.183,24 L24,24 C23.97,10.769 13.245,0.046 0,0 L0,4.812 Z" id="rss" fill="#1D2340" fill-rule="nonzero"></path>
+</g>
+</svg>
+<p>Realm Blog</p>
+</a>
+</li>
+<li class="col-xs-12">
+<a href="https://academy.realm.io/feed.xml" class="flex rss-link">
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<path d="M6.503,20.752 C6.503,22.546 5.047,24 3.252,24 C1.456,24 4.4408921e-16,22.546 4.4408921e-16,20.752 C4.4408921e-16,18.958 1.456,17.504 3.252,17.504 C5.047,17.505 6.503,18.958 6.503,20.752 Z M0,8.18 L0,12.991 C6.05,13.053 10.96,17.957 11.022,24 L15.839,24 C15.777,15.29 8.721,8.242 0,8.18 Z M0,4.812 C10.58,4.858 19.152,13.406 19.183,24 L24,24 C23.97,10.769 13.245,0.046 0,0 L0,4.812 Z" id="rss" fill="#1D2340" fill-rule="nonzero"></path>
+</g>
+</svg>
+<p>Realm Academy</p>
+</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+
+
+<div class="col-xs-12 realm-inc">
+<div class="col-xs-12">
+<div class="row">
+Realm: BUILD BETTER APPS FASTER
+<br>
+© <a href="https://realm.io/">Realm</a>
+2014-2018, all rights reserved.
+</div>
+</div>
+</div>
+</div>
+
+<script src="video-post-823bc1987a0f23106cb790c1cf77d2e3ede2dde2dc11916a64.js"></script>
+
+</footer>
+
+<script>
+        $.ajax({
+            url: '/assets/share-buttons-eaa331c83c390d02f764ead6ec7a90bffa1d8a38e5d3ff8b2636c16ecbfda57b.js',
+            dataType: 'script',
+            cache: true, // otherwise will get fresh copy every page load
+            success: function() {
+                setupShareButtons({
+                    facebook: "MVC vs. MVP vs. MVVM on Android",
+                    twitter: "MVC vs. MVP vs. MVVM on Android LINK via @realm",
+                    hackerNews: "MVC vs. MVP vs. MVVM on Android",
+                    reddit: "MVC vs. MVP vs. MVVM on Android",
+                    linkedin: "MVC vs. MVP vs. MVVM on Android",
+                    email: "MVC vs. MVP vs. MVVM on Android",
+                    pocket: "MVC vs. MVP vs. MVVM on Android",
+                });
+            },
+            error: function() {
+                console.log("Couldn't load share button JS.");
+            }
+        });
+    </script>
+<script>
+        $.ajax({
+            url: '/assets/share-buttons-eaa331c83c390d02f764ead6ec7a90bffa1d8a38e5d3ff8b2636c16ecbfda57b.js',
+            dataType: 'script',
+            cache: true, // otherwise will get fresh copy every page load
+            success: function() {
+                setupShareButtons({
+                    facebook: "MVC vs. MVP vs. MVVM on Android",
+                    twitter: "MVC vs. MVP vs. MVVM on Android LINK via @realm",
+                    hackerNews: "MVC vs. MVP vs. MVVM on Android",
+                    reddit: "MVC vs. MVP vs. MVVM on Android",
+                    linkedin: "MVC vs. MVP vs. MVVM on Android",
+                    email: "MVC vs. MVP vs. MVVM on Android",
+                    pocket: "MVC vs. MVP vs. MVVM on Android",
+                });
+            },
+            error: function() {
+                console.log("Couldn't load share button JS.");
+            }
+        });
+    </script>
+
+<script type="text/javascript"> _linkedin_data_partner_id = "10114";</script><script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})(); </script>
+
+<script>
+$(document).ready(function(){
+  $('form.validate').each(function(index,form) {
+    var action = $(form).attr('action');
+    var component = 'w=1';
+    var combiner = window.location.hash.indexOf('?') ? '?' : '?'
+    var success_location = encodeURIComponent(document.location.href+combiner+component);
+    $(form).attr('action', action+'?success_location='+success_location);
+  });
+  
+  // Add subscribed text when subscribed
+  var url = window.location.href;
+  var msgSubscribed = document.getElementsByClassName('modal-success');
+  if(url.match(/w=(1)/)) {
+    $(msgSubscribed).modal('show');
+  }
+});
+</script>
+<script>
+  $(document).ready(function () {
+    $("#subbarBtnFooter").click(function () {
+      $("#sub-bar-news").modal('show');
+    });
+    
+    $(".modal-backdrop").click(function () {
+      $(this).hide();
+    });
+      
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    $("#subbarBtnMobileFooter").click(function () {
+      $("#sub-bar-news").modal('show');
+    });
+    
+    $(".modal-backdrop").click(function () {
+      $(this).hide();
+    });
+      
+  });
+</script>
+
+<div class="modal fadeIn modal-success" id="proLicense" tabindex="-1" role="dialog" aria-labelledby="proLicense">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body text-center">
+<h3 id="thanks-for-subscribing">Thanks for subscribing</h3>
+<p>You will be receiving an email shortly with details on your subscription</p>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fadeIn modal-failure" id="proLicense" tabindex="-1" role="dialog" aria-labelledby="proLicense">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body text-center">
+<h3 id="oops-something-went-wrong">Oops something went wrong</h3>
+<p>You will not be receiving an email shortly with details on your subscription</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","584900264991316");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=584900264991316&amp;ev=PageView&amp;noscript=1"></noscript>
+
+
+<script type="text/javascript" id="">(function(){window._pa=window._pa||{};var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"==document.location.protocol?"https:":"http:")+"//tag.marinsm.com/serve/57c0b3e503f61e6a9600001a.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script><script type="text/javascript" id="gtm-scroll-tracking">(function(h,l,a){function q(){if(!h.querySelector||!h.body.getBoundingClientRect)return!1;a.dataLayerName=a.dataLayerName||"dataLayer";a.distances=a.distances||{};u();r(l,"scroll",y(u,500))}function v(k,a,f,b,d){var e;for(e=0;e<a.length;e++){var c=parseInt(a[e],10),g="%"!==f?c+d:c/100*b+d;c+=f;g<=b+d&&(k[c]=g)}return k}function w(a,g){var k=parseInt(a,10),b=g/k,d=[],e;for(e=1;e<b+1;e++)d.push(e*k);return d}function u(){var k=x(a.bottom),g=x(a.top);var f=h.body;var b=h.documentElement;f=Math.max(f.scrollHeight,
+f.offsetHeight,b.clientHeight,b.scrollHeight,b.offsetHeight);g&&(f-=g);k&&(f=k-(g||0));f-=5;b=g||0;var d=z()||{},e=[],c=[],m;if(a.distances.percentages&&(a.distances.percentages.each&&(e=e.concat(a.distances.percentages.each)),a.distances.percentages.every))for(m=0;m<a.distances.percentages.every.length;m++)e=w(a.distances.percentages.every[m],100),e=c.concat(e);if(a.distances.pixels&&(a.distances.pixels.each&&(c=c.concat(a.distances.pixels.each)),a.distances.pixels.every))for(m=0;m<a.distances.pixels.every.length;m++){var A=
+w(a.distances.pixels.every[m],f);c=c.concat(A)}d=v(d,e,"%",f,b);f=d=v(d,c,"px",f,b);b=void 0!==l.pageXOffset;d="CSS1Compat"===(h.compatMode||"");b=b?l.pageYOffset:d?h.documentElement.scrollTop:h.body.scrollTop;b=parseInt(b,10);d=parseInt;c="CSS1Compat"===h.compatMode?h.documentElement:h.body;c=c.clientHeight;b+=d(c,10);for(var p in f)if(d=f[p],b>d&&!n[p]&&d<(k||Infinity)&&d>(g||0))if(n[p]=!0,d=p,c=l.GoogleAnalyticsObject,"undefined"===typeof l[a.dataLayerName]||a.forceSyntax)if("function"===typeof l[c]&&
+"function"===typeof l[c].getAll&&2!==a.forceSyntax)l[c]("send","event",a.category,d,a.label,{nonInteraction:1});else"undefined"!==typeof l._gaq&&1!==a.forceSyntax&&l._gaq.push(["_trackEvent",a.category,d,a.label,0,!0]);else l[a.dataLayerName].push({event:"scrollTrackingMobile",attributes:{distance:d,label:a.label}})}function x(a){if("number"===typeof a||parseInt(a,10))return parseInt(a,10);try{var k=1===a.nodeType?a:h.querySelector(a);return t(k)}catch(f){}}function y(a,g){var k,b,d,e=null,c=0,h=
+function(){c=new Date;e=null;d=a.apply(k,b)};return function(){var f=new Date;c||(c=f);var m=g-(f-c);k=this;b=arguments;0>=m?(clearTimeout(e),e=null,c=f,d=a.apply(k,b)):e||(e=setTimeout(h,m));return d}}function r(a,g,f){if(a.addEventListener)a.addEventListener(g,f);else if(a.attachEvent)a.attachEvent("on"+g,function(b){f.call(a,b)});else if("undefined"===typeof a["on"+g]||null===a["on"+g])a["on"+g]=function(b){f.call(a,b)}}function t(a){a=a.getBoundingClientRect().top;var k=void 0!==l.pageYOffset?
+l.pageYOffset:(h.documentElement||h.body.parentNode||h.body).scrollTop;return a+k}var n={};!a.distances.percentages||!a.distances.percentages.every||a.distances.percentages.every instanceof Array||(a.distances.percentages.every=[a.distances.percentages.every]);!a.distances.pixels||!a.distances.pixels.every||a.distances.pixels.every instanceof Array||(a.distances.pixels.every=[a.distances.pixels.every]);var z=function(a){function g(){var d,e,c;f={};if(a.each)for(c=0;c<a.each.length;c++){var b=a.each[c];
+n[b]||(d=h.querySelector(b))&&(f[b]=t(d))}if(a.every)for(c=0;c<a.every.length;c++){b=a.every[c];var g=h.querySelectorAll(b);if(g.length&&!n[b+":"+(g.length-1)])for(e=0;e<g.length;e++){var k=b+":"+e;n[k]||(d=g[e],f[k]=t(d))}}}if(a){var f={},b=0;g();return function(){var a={},e;b++;10<b&&(g(),b=0);for(e in f)a[e]=f[e];return a}}}(a.distances.elements);"loading"!==h.readyState?q():h.addEventListener?r(h,"DOMContentLoaded",q):r(l,"load",q)})(document,window,{forceSyntax:!1,dataLayerName:!1,distances:{percentages:{each:[],
+every:[]},pixels:{each:[],every:[]},elements:{each:[".sub-bar-ad"],every:[]}},top:null,bottom:null,category:"Scroll Tracking",label:google_tag_manager["GTM-NDCSRV"].macro(2)});</script><script type="text/javascript" id="gtm-scroll-tracking">(function(h,l,a){function q(){if(!h.querySelector||!h.body.getBoundingClientRect)return!1;a.dataLayerName=a.dataLayerName||"dataLayer";a.distances=a.distances||{};u();r(l,"scroll",y(u,500))}function v(k,a,f,b,d){var e;for(e=0;e<a.length;e++){var c=parseInt(a[e],10),g="%"!==f?c+d:c/100*b+d;c+=f;g<=b+d&&(k[c]=g)}return k}function w(a,g){var k=parseInt(a,10),b=g/k,d=[],e;for(e=1;e<b+1;e++)d.push(e*k);return d}function u(){var k=x(a.bottom),g=x(a.top);var f=h.body;var b=h.documentElement;f=Math.max(f.scrollHeight,
+f.offsetHeight,b.clientHeight,b.scrollHeight,b.offsetHeight);g&&(f-=g);k&&(f=k-(g||0));f-=5;b=g||0;var d=z()||{},e=[],c=[],m;if(a.distances.percentages&&(a.distances.percentages.each&&(e=e.concat(a.distances.percentages.each)),a.distances.percentages.every))for(m=0;m<a.distances.percentages.every.length;m++)e=w(a.distances.percentages.every[m],100),e=c.concat(e);if(a.distances.pixels&&(a.distances.pixels.each&&(c=c.concat(a.distances.pixels.each)),a.distances.pixels.every))for(m=0;m<a.distances.pixels.every.length;m++){var A=
+w(a.distances.pixels.every[m],f);c=c.concat(A)}d=v(d,e,"%",f,b);f=d=v(d,c,"px",f,b);b=void 0!==l.pageXOffset;d="CSS1Compat"===(h.compatMode||"");b=b?l.pageYOffset:d?h.documentElement.scrollTop:h.body.scrollTop;b=parseInt(b,10);d=parseInt;c="CSS1Compat"===h.compatMode?h.documentElement:h.body;c=c.clientHeight;b+=d(c,10);for(var p in f)if(d=f[p],b>d&&!n[p]&&d<(k||Infinity)&&d>(g||0))if(n[p]=!0,d=p,c=l.GoogleAnalyticsObject,"undefined"===typeof l[a.dataLayerName]||a.forceSyntax)if("function"===typeof l[c]&&
+"function"===typeof l[c].getAll&&2!==a.forceSyntax)l[c]("send","event",a.category,d,a.label,{nonInteraction:1});else"undefined"!==typeof l._gaq&&1!==a.forceSyntax&&l._gaq.push(["_trackEvent",a.category,d,a.label,0,!0]);else l[a.dataLayerName].push({event:"scrollTrackingMobileInline",attributes:{distance:d,label:a.label}})}function x(a){if("number"===typeof a||parseInt(a,10))return parseInt(a,10);try{var k=1===a.nodeType?a:h.querySelector(a);return t(k)}catch(f){}}function y(a,g){var k,b,d,e=null,
+c=0,h=function(){c=new Date;e=null;d=a.apply(k,b)};return function(){var f=new Date;c||(c=f);var m=g-(f-c);k=this;b=arguments;0>=m?(clearTimeout(e),e=null,c=f,d=a.apply(k,b)):e||(e=setTimeout(h,m));return d}}function r(a,g,f){if(a.addEventListener)a.addEventListener(g,f);else if(a.attachEvent)a.attachEvent("on"+g,function(b){f.call(a,b)});else if("undefined"===typeof a["on"+g]||null===a["on"+g])a["on"+g]=function(b){f.call(a,b)}}function t(a){a=a.getBoundingClientRect().top;var k=void 0!==l.pageYOffset?
+l.pageYOffset:(h.documentElement||h.body.parentNode||h.body).scrollTop;return a+k}var n={};!a.distances.percentages||!a.distances.percentages.every||a.distances.percentages.every instanceof Array||(a.distances.percentages.every=[a.distances.percentages.every]);!a.distances.pixels||!a.distances.pixels.every||a.distances.pixels.every instanceof Array||(a.distances.pixels.every=[a.distances.pixels.every]);var z=function(a){function g(){var d,e,c;f={};if(a.each)for(c=0;c<a.each.length;c++){var b=a.each[c];
+n[b]||(d=h.querySelector(b))&&(f[b]=t(d))}if(a.every)for(c=0;c<a.every.length;c++){b=a.every[c];var g=h.querySelectorAll(b);if(g.length&&!n[b+":"+(g.length-1)])for(e=0;e<g.length;e++){var k=b+":"+e;n[k]||(d=g[e],f[k]=t(d))}}}if(a){var f={},b=0;g();return function(){var a={},e;b++;10<b&&(g(),b=0);for(e in f)a[e]=f[e];return a}}}(a.distances.elements);"loading"!==h.readyState?q():h.addEventListener?r(h,"DOMContentLoaded",q):r(l,"load",q)})(document,window,{forceSyntax:!1,dataLayerName:!1,distances:{percentages:{each:[],
+every:[]},pixels:{each:[],every:[]},elements:{each:[".article-ad.col-xs-12"],every:[]}},top:null,bottom:null,category:"Scroll Tracking",label:google_tag_manager["GTM-NDCSRV"].macro(3)});</script><script src="a" type="text/javascript"></script><script src="adsct" type="text/javascript"></script><iframe scrolling="no" allowtransparency="true" src="https://platform.twitter.com/widgets/widget_iframe.c9b0d6e1ef0320c49dc875c581cc9586.html?origin=https%3A%2F%2Facademy.realm.io&amp;settingsEndpoint=https%3A%2F%2Fsyndication.twitter.com%2Fsettings" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe><style id="wistia_16_style" type="text/css" class="wistia_injected_style">
+@font-face {
+font-family: 'WistiaPlayerOverpassNumbers';
+src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAARAQAABAAQRFNJRwAAAAEAAA7oAAAACEdQT1Ow+b/jAAAONAAAAKhHU1VCAAEAAAAADtwAAAAKT1MvMl1sVb8AAAe0AAAAYGNtYXAApwIpAAAIFAAAALJjdnQgAAAAAAAAClQAAAAEZnBnbUM+8IgAAAjIAAABCWdhc3AAGgAjAAAOJAAAABBnbHlmWNZE7QAAARwAAAXMaGVhZIS0XikAAAckAAAANmhoZWEF5gGwAAAHkAAAACRobXR4GNICwAAAB1wAAAA0bG9jYQi0CoYAAAcIAAAAHG1heHAAGQBKAAAG6AAAACBuYW1lGpIbcAAAClgAAAOPcG9zdAAPAKQAAA3oAAAAPHByZXBoUamTAAAJ1AAAAH8ACgBd/wYBmgLuAAMADwAVABkAIwApADUAOQA9AEgAAAUhESEHFTMVIxUzNSM1MzUHFTM1IzUHIzUzBxUzFSMVMzUzNQcVIxUzNQcVMzUzFSM1IxUzNQcVMzUHIzUzBxUzBxUzNSM3MzUBmv7DAT3yQUKmQkKmpkIiISFCQkJkQiGFpmQiIWQhpqamIWRkhUZGpmZGIPoD6EMhJSEhJSGBaCJGRiRhISUhRiE8QiJkejgXL1Bxca1xcVAvZyEvISEvIQAAAAIARv/0AiYCyAAVACUAAAQ3Njc2NTQmJyYjIgcGBwYVFBYXFjMmJyY1NDc2MzIXFhUUBwYjAY87MRgTGRo/flo7LxkTGRs9f1wqIR8pX1oqIR4pXgw9M1tJVkOAMnU9MV1IV0Z/MXQ/X0qCeUxmX0uBfEplAAAAAAEAKAAAAOUCvAAIAAATIwYGIxUzETPlLRBHOXdGArwwJyj9wwAAAAABAEcAAAISAsgAJAAAJSE2Nz4CNzY2NzY1NCYjIgcGBxc2MzIWFRQHBgcHBgYHBhUhAhL+fwszEjIhCDBDG0J0Z1c+OhE+HX9HUTMjUhMrOhhEActDPTARJRYFHjAcRFRbaisoQRxxSzs8NSM2DR0uHFJzAAEAMv/0AggCyAA0AAAENjc2NjU0Jic2NjU0JicmJiMiBwYHFzY3NjMyFhcWFRQGIyMVMzIWFRQHBiMiJicHFhcWMwFJViIiJT83Ki8fHBxMKlM7MRpBFR8rPBkvEidLPyUvS1EwLEg+TxpBGzM6YAwfGxxLK0RiFhdSMCdDGBcaLiZAGS4aJBEQIjk6RUBMQkIlIjxCG0spMAAAAAIAHgAAAiICvAAKAA0AACUzNSMRIwEVIRUzAxEjAbhqair+kAFURkb5vTwBw/4mJb0CQ/62AAAAAQBG//QCLgK8AC0AADYWFxYzMjY3NjY1NCYnJiYjIgYHNyE1IQMXNjc2MzIXFhYVFAYHBgYjIicmJwdTLh1ETjpfIyAiIx8fUy4tVCAoASz+nDk7FykzN0QuFBccGBlEJkIuKiQpPB8MHSkjIVUtMVMfHSEeHfQ//pUSGxIWMRc+IiE+GBgbFxUkMwACADz/9AIEAsgAIQA2AAAENjc2NjU0JicmJiMiBgc2Njc2Njc1BgYHBgYVFBYXFhYzEhcWFRQGBwYjIiYnJiY1NDY3NjYzAVFSHx8jIBwdTCo2UxoIMiUlWzFKhDExNh4dHlc4RS0rFxUsSCE7FRYZGBUVOyMMJB8gVTAnTh4fJCEfLFkoKDsPNxJaPz+RSjpjIyYpAYAtLUgiOhUuGBYVOyEjPBYVGAABACgAAAHLArwADAAANjc2NzUhFSEGBwYHM+ooN4L+XQFTdzMrAkamjsSWLjyXqIq3AAAAAwBG//QCEALIACMALwBCAAAABgcGBhUUFhcGBwYVFBYXFjMyNjc2NjU0Jic2NjU0JicmJiMCJjU0NjMyFhUUBiMCJyY1NDY3NjYzMhcWFhUUBwYjAQJJGxoeMCw1JCMiH0JiMFUfHyJEOS4vHhobSSk5RUc3N0dFOUQrLRYVFToiRC4UFi0rRALIHRkZQiQuThQTNTRCLE0cPCAcHE0sQmcVE04vJEIZGR3+0D8zOkVFOjM//pspK0gfOBYWGC4WOB9IKykAAAACADz/9AIEAsgAIAA0AAASBgcGBhUUFhcWFjMyNjcGBgcGBgcVNjY3NjY1NCYnJiMCJyY1NDc2MzIWFxYWFRQGBwYGI/RUICAkIBwbTCo3VRoGLCMkWDJKfy8uMhwbPG1NLSssLUchOxYWGBgVFTsjAsgjIB9WMClNHh4iIyEtXCgpPA83Elo/PpJKOWMlTv58Ly1IRC4vGRYWOyEjPBYWGQAAAAIAMv/yALAB4wALABcAABI2NTQmIyIGFRQWMxI2NTQmIyIGFRQWM4slJRoaJSUaGiUlGholJRoBZSYZGSYmGRkm/o0mGRkmJhkZJgABAAAADQBJAAoAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAYgBiAJ4AsgDsAToBVgGcAfACCgJuAsAC5gABAAAAARmZfAtXkV8PPPUAAwPoAAAAAE2yzjUAAAAA1Z4zgwAe/wYCLgLuAAAABwACAAAAAAAAAfQAXQAAAAACbABGAU4AKAJYAEcCTgAyAksAHgJ0AEYCSgA8AfMAKAJWAEYCSgA8AOIAMgABAAADtv8GAAACdAAAACgCLgABAAAAAAAAAAAAAAAAAAAADQADAhYBkAAFAAgCigJYAAAASwKKAlgAAAFeABQBMgAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERUxWAEAAIAA6Au7/BgEKA7YA+gAAAAEAAAAAAf8CvAAAACAAAgAAAAMAAAADAAAAigABAAAAAAAcAAMAAQAAAIoABgBuAAAACQAyAAEAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAwAEAAUABgAHAAgACQAKAAsADAAEACgAAAAGAAQAAQACACAAOv//AAAAIAAw////4f/SAAEAAAAAAAAAALAALEAOBQYHDQYJFA4TCxIIERBDsAEVRrAJQ0ZhZEJDRUJDRUJDRUJDRrAMQ0ZhZLASQ2FpQkNGsBBDRmFksBRDYWlCQ7BAUHmxBkBCsQUHQ7BAUHmxB0BCsxAFBRJDsBNDYLAUQ2CwBkNgsAdDYLAgYUJDsBFDUrAHQ7BGUlp5swUFBwdDsEBhQkOwQGFCsRAFQ7ARQ1KwBkOwRlJaebMFBQYGQ7BAYUJDsEBhQrEJBUOwEUNSsBJDsEZSWnmxEhJDsEBhQrEIBUOwEUOwQGFQebIGQAZDYEKzDQ8MCkOwEkOyAQEJQxAUEzpDsAZDsApDEDpDsBRDZbAQQxA6Q7AHQ2WwD0MQOi0AAACxAAAAQrE7AEOwAFB5uP+/QBAAAQAAAwQBAAABAAAEAgIAQ0VCQ2lCQ7AEQ0RDYEJDRUJDsAFDsAJDYWpgQkOwA0NEQ2BCHLEtAEOwAVB5swcFBQBDRUJDsF1QebIJBUBCHLIFCgVDYGlCuP/NswABAABDsAVDRENgQhy4LQAdAAAAAAAAAAASAN4AAQAAAAAAAQAWAAAAAQAAAAAAAgAFABYAAQAAAAAAAwAnABsAAQAAAAAABAAcAEIAAQAAAAAABQAPAF4AAQAAAAAABgAcAG0AAQAAAAAACQAgAIkAAQAAAAAACgA4AKkAAwABBAkAAQA4AOEAAwABBAkAAgAOARkAAwABBAkAAwBOAScAAwABBAkABAA4AXUAAwABBAkABQAeAa0AAwABBAkABgA4AXUAAwABBAkACQBAAcsAAwABBAkACgBwAgsAAwABBAkAEAAsAnsAAwABBAkAEQAKAqdXaXN0aWEtUGxheWVyLU92ZXJwYXNzTGlnaHQxLjEwMDtERUxWO1dpc3RpYS1QbGF5ZXItT3ZlcnBhc3MtTGlnaHRXaXN0aWEtUGxheWVyLU92ZXJwYXNzIExpZ2h0VmVyc2lvbiAxLjAzMTAwV2lzdGlhLVBsYXllci1PdmVycGFzcy1MaWdodERlbHZlIFdpdGhyaW5ndG9uLCBUaG9tYXMgSm9ja2luQ29weXJpZ2h0IChjKSAyMDE0IGJ5IFJlZCBIYXQsIEluYy4gQWxsIHJpZ2h0cyByZXNlcnZlZC4AVwBpAHMAdABpAGEALQBQAGwAYQB5AGUAcgAtAE8AdgBlAHIAcABhAHMAcwAgAEwAaQBnAGgAdABSAGUAZwB1AGwAYQByADEALgAxADAAMAA7AEQARQBMAFYAOwBXAGkAcwB0AGkAYQAtAFAAbABhAHkAZQByAC0ATwB2AGUAcgBwAGEAcwBzAC0ATABpAGcAaAB0AFcAaQBzAHQAaQBhAC0AUABsAGEAeQBlAHIALQBPAHYAZQByAHAAYQBzAHMALQBMAGkAZwBoAHQAVgBlAHIAcwBpAG8AbgAgADEALgAwADMAMQAwADAARABlAGwAdgBlACAAVwBpAHQAaAByAGkAbgBnAHQAbwBuACwAIABUAGgAbwBtAGEAcwAgAEoAbwBjAGsAaQBuAEMAbwBwAHkAcgBpAGcAaAB0ACAAKABjACkAIAAyADAAMQA0ACAAYgB5ACAAUgBlAGQAIABIAGEAdAAsACAASQBuAGMALgAgAEEAbABsACAAcgBpAGcAaAB0AHMAIAByAGUAcwBlAHIAdgBlAGQALgBXAGkAcwB0AGkAYQAtAFAAbABhAHkAZQByAC0ATwB2AGUAcgBwAGEAcwBzAEwAaQBnAGgAdAAAAgAAAAAAAP+FABQAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAwATABQAFQAWABcAGAAZABoAGwAcAB0AAQADAAcACgATAAf//wAPAAEAAAAKAB4ALAABREZMVAAIAAQAAAAA//8AAQAAAAFrZXJuAAgAAAABAAAAAQAEAAIAAAABAAgAAQBmAAQAAAAIABoAIAAmADAAOgBIAFIAYAABAAb/7AABAAb/9gACAAn/9gAL//EAAgAJ//YAC//xAAMABP/7AAn/9gAL//YAAgAJ/+wAC//dAAMABv+6AAj/4gAJACMAAQAJ//YAAgABAAMACgAAAAEAAAAAAAAAAAAAAAAAAQAAAAA=);
+}
+</style></body></html>

@@ -1,0 +1,297 @@
+This site uses cookies for analytics, personalized content and ads. By continuing to browse this site, you agree to this use. Learn more
+Microsoft logo |
+Search MSDN
+Search all blogs
+Search this blog
+Sign in
+Microsoft Gulf Technical Community Microsoft Gulf Technical Community
+
+The communication portal for the Gulf technical audience
+Understanding the basics of MVVM design pattern
+★ ★ ★ ★ ★
+★ ★ ★ ★
+★ ★ ★
+★ ★
+★
+avatar of shamlialive-com Shamlia March 13, 2013 16
+
+    Share
+    0
+    0
+
+This article is dedicated for beginners who would like to know more about Model-View-ViewModel (MVVM) design pattern and why MVVM has to be used.
+Why use MVVM?
+
+In traditional UI development - developer used to create a View using window or user control or page and then write all logical code (Event handling, initialization and data model, etc.) in the code behind and hence they were basically making code as a part of view definition class itself. This approach increased the size of the View class and created a very strong dependency between my UI and data binding logic and business operations. In this situation, no two developers can work simultaneously on the same view and also one developer's changes might break the other code. So everything is in one place is always a bad idea for maintainability, extendibility and testability prospective. So if you look at the big picture, you can feel that all these problems exist because there is a very tight coupling between the following items.
+
+    View (UI)
+    Model (Data displayed in UI)
+    Glue code (Event handling, binding, business logic)
+
+In MVVM the Glue code is View Model. So it basically focuses on separation of concerns to make the implementation of an application structure a lot more simpler to create as well as maintain.
+
+If property values in the ViewModel change, those new values automatically propagate to the view via data binding and via notification. When the user performs some action in the view for example clicking on save button, a command on the ViewModel executes to perform the requested action. In this process, it’s the ViewModel which modifies model data, View never modifies it. The view classes have no idea that the model classes exist, while the ViewModel and model are unaware of the view . In fact, the model doesn’t have any idea about ViewModel and view exists.
+What is MVVM?
+
+The MVVM pattern includes three key parts:
+
+    Model (Business rule, data access, model classes)
+    View (User interface (XAML))
+    ViewModel (Agent or middle man between view and model)
+
+ 
+
+The ViewModel acts as an interface between Model and View. It provides data binding between View and model data as well as handles all UI actions by using command.
+
+The View binds its control value to properties on a ViewModel , which, in turn, exposes data contained in Model objects.
+	mvvm
+A simple representation of MVVM design pattern for a news reader application
+
+news-reader  
+A simple MVVM implementation example in C#
+
+Here is a simple code implementation example in C#:
+Model:
+
+ public  class  Book   
+{
+        public  string  Title { get; set; }
+        public  string  Author { get; set; }
+        public  string  Category { get; set; }
+        public  string  Language { get; set; }
+}
+
+View Model:
+
+ public  class  MainPageViewModel : BindableBase
+   {
+       private  List<Book> books;
+       public  List<Book> Books         
+      { 
+           get
+           {
+            return  books;
+           } 
+           set
+           {
+            SetProperty( ref  books, value );
+           } 
+       public  MainPageViewModel()
+       {
+           Books = new  List<Book>();
+           Books.Add( new  Book
+               {
+                   Title = “Harry Potter”, 
+                   Author = “J. K. Rowling”,
+                   Category = “Young-adult fiction”,
+                   Language = “English”
+               });
+           Books.Add( new  Book
+           {
+                   Title = “Written Lives”, 
+                   Author = “Javier Marias”,
+                   Category = “Biography”,
+                   Language = “Spanish”
+           });
+   }
+}
+
+BindableBase Class:
+
+ public class BindableBase : INotifyPropertyChanged
+    {
+          ///
+        /// Multicast event for property change notifications.
+        ///
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        ///
+        /// Checks if a property already matches a desired value.  Sets the property and
+        /// notifies listeners only when necessary.
+        ///
+        ///Type of the property.
+        ///Reference to a property with both getter and setter.
+        ///Desired value for the property.
+        ///Name of the property used to notify listeners.  This
+        /// value is optional and can be provided automatically when invoked from compilers that
+        /// support CallerMemberName.
+        ///True if the value was changed, false if the existing value matched the
+        /// desired value.
+        protected bool SetProperty(ref T storage, T value, [CallerMemberName] String propertyName = null)
+        {
+            if (object.Equals(storage, value)) return false;
+
+            storage = value;
+            this.OnPropertyChanged(propertyName);
+            return true;
+        }
+
+        ///
+        /// Notifies listeners that a property value has changed.
+        ///
+        ///Name of the property used to notify listeners.  This
+        /// value is optional and can be provided automatically when invoked from compilers
+        /// that support .
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var eventHandler = this.PropertyChanged;
+            if (eventHandler != null)
+            {
+                eventHandler(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+View:
+
+ < TextBlock  x:Name ="bookTitle” HorizontalAlignment=" Left " TextWrapping=" Wrap " 
+
+ Text=" { Binding  Title } "  VerticalAlignment=" Top " /> 
+
+< TextBlock  x:Name ="bookAuthor” HorizontalAlignment=" Left " TextWrapping=" Wrap " 
+
+ Text=" { Binding  Author } " V erticalAlignment=" Top " Margin=" 0 , 142 , 0 , 0 " /> 
+
+< TextBlock  x:Name ="bookCategory” HorizontalAlignment=" Left " TextWrapping=" Wrap " 
+
+ Text=" { Binding  Category } "  VerticalAlignment=" Top " Margin=" 0 , 242 , 0 , 0 " />  
+
+< TextBlock  x:Name ="bookLanguage” HorizontalAlignment=" Left " TextWrapping=" Wrap "  
+
+ Text=" { Binding  Language } "  VerticalAlignment=" Top " Margin=" 0 , 342 , 0 , 0 " />  
+
+  
+
+If property values in the ViewModel change, those new values automatically propagate to the view via data binding and via notification. When the user performs some action in the view for example clicking on save button, a command on the ViewModel executes to perform the requested action. In this process, it’s the ViewModel which modifies Model data, View never modifies it. The View classes have no idea that the Model classes exist, while the ViewModel and model are unaware of the View . In fact, the Model doesn’t have any idea about ViewModel and View exists.
+References:
+
+http://www.codeproject.com/Articles/186705/A-Totally-Simple-Introduction-to-the-MVVM-Concept
+
+http://russelleast.wordpress.com/2008/08/09/overview-of-the-modelview-viewmodel-mvvm-pattern-and-data-binding/
+
+http://msdn.microsoft.com/en-us/magazine/dd419663.aspx
+
+ 
+Tags Beginner MVVM tutorial MVVM basics MVVM design pattern
+Comments (16)
+Cancel reply
+
+You must be logged in to post a comment.
+
+    holder.h@hotmail.com says:
+    March 13, 2013 at 9:59 am
+
+    This post and Jason Dolinger's video ( blog.lab49.com/…/2650 ) have really helped me to wrap my head around MVVM.
+    Log in to Reply
+    Phani Kumar says:
+    March 15, 2013 at 2:12 am
+
+    Your post helped me more… no words to say. Thank You verymuch
+    Log in to Reply
+    Mario Berthely says:
+    August 20, 2013 at 12:55 pm
+
+    How would be an implementation of a CRUD operations using MVVM, EF, WPF and WCF?
+    Log in to Reply
+    Vijay says:
+    October 30, 2013 at 12:21 am
+
+    I am scared about MVVM, since unable to understand MVVM with any article, from this post understand the MVVM easily, Thank you very much.
+    Log in to Reply
+    Ajay says:
+    January 7, 2014 at 4:59 am
+
+    very nice and simple article on mvvm. thanks
+    Log in to Reply
+    DFD says:
+    January 8, 2014 at 10:27 pm
+
+    How does the view know which "Title" to retrieve since you have created 2 books in MainPageViewModel?
+    Log in to Reply
+    Alex says:
+    January 24, 2014 at 7:40 am
+
+    Could you provide the code of your MVVM tutorial. I get some errors. Thanks!
+    Log in to Reply
+    MVVM Rocks says:
+    July 22, 2014 at 9:15 am
+
+    Easy explanation, easy to understand. thanks!
+    Log in to Reply
+    saravanan says:
+    August 1, 2014 at 10:32 pm
+
+    very easy to understand….thank you!
+    Log in to Reply
+    Nitin says:
+    August 26, 2014 at 4:56 am
+
+    The post is good. But I am not clear how should I open a Child Form on button click in MVVM.
+    Log in to Reply
+    WPF Admin says:
+    October 6, 2014 at 8:26 am
+
+    Hi,
+
+    here is the link for implementation of the MVVM pattern in WPF with Example
+
+    wpftutorial.co/WPF-MVVM-Patern
+
+    Thanks
+    Log in to Reply
+    Shiva says:
+    November 4, 2014 at 6:37 am
+
+    Awesome. Simple and cleaner…. thank you very much Shamlia.
+    Log in to Reply
+    Jetx says:
+    December 4, 2014 at 9:46 pm
+
+    How is this any different from MVC? The ViewModel does what the Controller does in MVC, and the other two are the same?
+    Log in to Reply
+    Ignacio Soler says:
+    April 23, 2015 at 2:58 am
+
+    You can find a step by step tutorial here: http://www.learnmvvm.com
+
+    Hope it helps!
+    Log in to Reply
+    Andrea Loubier says:
+    July 8, 2015 at 3:42 pm
+
+    Hi guys, use MVVM for Mailbird – just wanted to share that we launched Unified Inbox Plus.
+
+    Details: http://www.getmailbird.com/mailbird-introduces-unified-inbox
+    Log in to Reply
+    Abdurahman Almatrodi says:
+    July 17, 2015 at 9:41 pm
+
+    Thanks is not enough for you. This is a concise short description for MVVM, better than many ugly long essays.
+    Log in to Reply
+
+Skip to main content
+Follow Us
+Popular Tags
+Microsoft developers Technology Gulf developer community Visual Studio Windows 8 Windows Phone Development applications Academia Azure events Windows Phone 7 Cloud Apps Windows Phone 8 Microsoft Event Windows Azure students Visual Studio 2010
+Archives
+August 2017  (1)
+February 2016  (1)
+January 2016  (1)
+December 2015  (1)
+November 2015  (5)
+October 2015  (5)
+September 2015  (7)
+August 2015  (10)
+July 2015  (6)
+June 2015  (22)
+May 2015  (8)
+All of 2017  (1)
+All of 2016  (2)
+All of 2015  (101)
+All of 2014  (55)
+All of 2013  (139)
+All of 2012  (187)
+All of 2011  (224)
+All of 2010  (59)
+Privacy Terms of Use Trademarks
+© 2018 Microsoft

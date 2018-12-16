@@ -1,0 +1,290 @@
+
+
+    Products
+        Application UIs & Software
+        Application UIs & Software
+
+        Develop cross-platform UIs & applications.
+        Embedded Devices
+        Embedded Devices
+
+        Easily create powerful & connected devices.
+        Solutions
+            Automotive
+            Automation
+            Medical
+            Digital TV & STB
+            Internet of Things
+            Mobile Apps
+        Framework
+            What is Qt
+            Libraries, Tools & IDE
+            UI design technologies
+            Embedded features
+            Reference software stack & SDK
+            Supported platforms
+    Professional Services
+        Qt Professional Services
+        Consultancy Services
+
+        Get expert help for every phase of your product development lifecycle.
+        Partners
+        Partners
+
+        Find Qt partners and local distributors for your technology and services needs.
+        Training
+        Training
+
+        Get in-depth Qt training from expert trainers.
+        Technical Support
+        Technical Support
+
+        Our support team is committed to ensure the success of your project.
+    Resources
+        Licensing Information
+        Licensing Information
+
+        Qt is offered under a dual-licensing plan with open source and commercial options.
+        Whitepapers
+        Whitepapers
+
+        Read about cross-platform development for embedded, desktop and mobile.
+        Webinars
+        Webinars
+
+        On-demand and live webinars presented by The Qt Company & its partners.
+        Events
+        Training & Events
+
+        Join events with The Qt Company & partners.
+    Customers
+        Success Stories
+        Success Stories
+
+        Case stories from companies that have built with Qt & keep building with Qt.
+        Community Showroom
+        Community Showroom
+
+        More showcases of Qt in use straight from the community.
+        Customer Portal
+        Customer Portal
+
+        Create an account or sign in to access exclusive resources.
+    Company
+        The Qt Company
+        The Qt Company
+
+        The company supporting the Qt project.
+        Careers
+        Careers
+
+        Join our vibrant, clever & passionate team.
+        News
+        News
+
+        The Qt Company press releases & updates.
+        Investors
+        Investors
+
+        The Qt Group Plc on Nasdaq Helsinki.
+
+    Developers
+    Blog
+        EN English
+        CN 中文
+        JP 日本語
+    Contact Us Download. Try. Buy.
+
+Contact Us
+
+Contact us
+
+Submit a contact request
+
+Call us
+
+We have Sales offices around the world
+Qt APIs & Libraries, Tools and IDE
+
+Here's a detailed overview of the main bricks that make Qt the fastest, easiest and most fun experience a C++ developer could wish for. Read the technical details to find out more in the documentation what the different elements are and how to use them.
+Contact us
+
+    Qt API and Libraries
+    Qt Development Tools
+    Qt Creator IDE
+    Resources
+
+APIs & Libraries
+
+Developers know and love our APIs and libraries, because they're consitent, comprehensive, well documented and easy to use. Read on to find out what makes them an intuitive crowd favourite.
+Core Internals
+
+All other modules rely on the core module. It also provides a host of other features, such as a “signals and slots” mechanism for seamless object communication, a meta-object and a property system and more.
+Core Internals
+
+Core non-graphical classes used by other modules.
+Technical details
+Data Storage
+
+The SQL module uses driver plugins to communicate with several database APIs. Qt also provides APIs to read, parse and write to XML streams. You can use JSON to represent simple data structures and associative arrays.
+Data Storage
+
+Used for reading and writing text, binary files, and resources.
+Technical details
+Qt Multimedia
+
+Qt Multimedia is an essential module that provides a rich set of QML types and C++ classes to handle multimedia content. It also provides necessary APIs to access the camera and radio functionality. The included Qt Audio Engine provides types for 3D positional audio playback and content management.
+Multimedia
+
+Classes for streaming, audio, video, radio and camera functionality.
+Technical details
+Network and Connectivity
+
+Qt lets you connect and communicate with basically anything and supports a wide range of protocols and networking options, including TCP/IP HTTP, UDP, Serial (RS232), Bluetooth, BLE, NFC and more.
+Network and Connectivity
+
+Classes for web integration, high- and low-level network and inter-process communication
+Technical details
+Location and Positioning
+
+The Qt Location API helps you create viable mapping solutions using the data available from some of the popular location services. The Qt Positioning API gives developers the ability to determine a position by using a variety of possible sources, including satellite, wifi, text file, or more.
+Location and Positioning
+
+Create, interact with maps and pinpoint your position.
+Technical details
+Input methods
+
+Qt provides several modules that let you interact with your device via gestures, (multi-)touch and speech. The latter is especially useful for end-users who are visually challenged.
+Input methods
+
+Alternatives to your standard mouse and keyboard.
+Technical details
+Graphics
+
+Graphics in Qt 5 is primarily done either through the imperative QPainter API, or through Qt’s declarative UI language, Qt Quick, and its scene graph back-end.
+
+Qt uses OpenGL for hardware accelerated and 3D graphics, implemented on all desktop platforms and almost every mobile and embedded platform.
+Graphics
+
+APIs and libraries to support everything from 2D renders to powerful 3D graphics
+Technical details
+Integrating web content
+
+Qt provides the Chromium-based Qt WebEngine module for applications targeting desktop and embedded platforms. For example, a web browser application for Linux platform. It is also possible to combine Qt C++ and QML code with HTML and JavaScript to create web applications.
+Integrating web content
+
+Qt WebEngine module for desktop and embedded device applications
+Technical details
+Language bindings
+
+When C++ isn’t the right tool for the job, different modules let you use alternative languages such as QML, Javascript or Python inside Qt.
+Language bindings
+
+Classes for QML and JavaScript languages and more
+Technical details
+Development Tools
+
+Qt is chock-full of tools designed for developing applications and user interfaces once and deploying them across several desktop and mobile operating systems.
+Building and compiling
+
+Qt supports a lot of different compilers and tools. Not only do they work across different platforms, they also help you to deploy your application on different desktop and embedded devices.
+Building and compiling
+
+A collection of compilers and building tools.
+Technical details
+Testing and maintenance
+
+Integrated debugging, profiling and unit-testing for all desktop mobile and embedded platforms help you identify causes for performance issues, such as slowness and unresponsive interfaces.
+Testing and maintenance
+
+All the tools for diagnosis and repair.
+Technical details
+Design and UI Tools
+
+se QML to craft modern, touch-based user experiences in 2D/3D, recreate the classic desktop feel with Qt Widgets or use HTML5 for dynamic web documents.
+Design and UI Tools
+
+Choose between 2D/3D UIs, Qt Widgets and Web / Hybrid
+Technical details
+Localization and Internationalization
+
+Design adaptable software application for various languages and regions without engineering changes. Adapt internationalized software for a specific region or language by adding locale-specific components and translating text.
+Localization and Internationalization
+
+Address different languages, regions and tech requirements.
+Technical details
+Documentation Tools
+
+Qt Help provides access to help contents programmatically and lets you integrate online help into Qt applications. Qt Assistant supports interactive help and enables you to display customer documentation to users of your Qt applications.
+Documentation Tools
+
+Integrated and interactive documentation.
+Technical details
+Configuration Tools
+
+The Qt Light Configuration Tool is lets you browse and select features to include in the Qt build configuration and will also take care of dependencies between features.
+Configuration Tools
+
+Configure for lightweight or heavy-duty applications.
+Technical details
+Qt Creator IDE – Making software development fast, easy & fun
+
+Qt Creator is a cross platform integrated development environment (IDE) to create C++ and QML applications for multiple desktop, embedded and mobile platforms. It comes with a code editor, and is integrated with tools for designing, coding, testing, deploying and maintaining your software throughout its product lifecycle.
+
+Developers like Qt Creator because it has a simple and intuitive interface, features a code editor with syntax highlighting and auto-completion, drag-and-design UI creation, visual debugging & profiling tools and many other tools to support your project. And if you feel like prototyping - just hit play. Qt Creator is part of Qt and therefore available through the online installer. Just click below. 
+Try Qt for free
+Related Resources
+
+Visit our documentation pages for a deep-dive into nuts and bolts of the Qt APIs and libraries, how to work the Qt tools and how to make the cogs in the Qt Creator IDE turn.
+Library & API Documentation
+
+Overview, use and technical details on the Qt APIs.
+Go to API Documentation
+Tools Documentation
+
+Overview, use and technical details on the Qt tools.
+Go to tools documentation
+Qt Creator IDE Manual
+
+Features and documentation of the Qt Creator IDE.
+Go to the Qt Creator manual
+Get Started with Qt
+
+Open Seat Training is held throughout the world for you to sign up and learn together with other Qt developers. There’s a variety of courses available as open enrollment courses.
+Qt Training
+
+    Download
+        Qt for Device Creation
+        Qt for Application Development
+        Buy Qt
+        Terms & Conditions
+    Resource Center
+        Happy customers
+        Events
+        Educational Programs
+        Licensing
+    Professional Services
+        Qt Support
+        Qt Professional Services
+        Qt Training
+        Partner Directory
+    Developers
+        Documentation
+        Wiki
+        Forums
+        Contribute to Qt
+    Company
+        Investors
+        News
+        Office Locations
+        Contact Us
+
+    Sign In
+    Feedback
+    © 2018 The Qt Company
+
+$h1
+
+$hl
+Loading..
+AddSearch.com - Instant search for your website X

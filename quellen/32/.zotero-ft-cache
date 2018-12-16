@@ -1,0 +1,494 @@
+
+
+    Docs
+    .NET
+    .NET Framework
+    Windows Presentation Foundation
+    Advanced (Windows Presentation Foundation)
+
+Exit focus mode
+Contents
+
+    Feedback
+    Edit
+    Share
+        Twitter
+        LinkedIn
+        Facebook
+        Email
+    Dark
+    Sign in
+
+        Profile
+        Sign out
+
+Contents
+In this article
+
+    XAML Processors and Markup Extensions
+    Basic Markup Extension Syntax
+    XAML-Defined Markup Extensions
+    WPF-Specific Markup Extensions
+    *Extension Classes
+    Escape Sequences and Markup Extensions
+    Nesting Markup Extensions in XAML Usage
+    Markup Extensions and Property Element Syntax
+    See Also
+
+Markup Extensions and WPF XAML
+
+    03/30/2017
+    10 minutes to read
+    Contributors
+        dotnet bot
+        Hernan Martinez
+        Maira Wenzel
+        Erlend
+        Mike Jones
+        all
+
+In this article
+
+    XAML Processors and Markup Extensions
+    Basic Markup Extension Syntax
+    XAML-Defined Markup Extensions
+    WPF-Specific Markup Extensions
+    *Extension Classes
+    Escape Sequences and Markup Extensions
+    Nesting Markup Extensions in XAML Usage
+    Markup Extensions and Property Element Syntax
+    See Also
+
+This topic introduces the concept of markup extensions for XAML, including their syntax rules, purpose, and the class object model that underlies them. Markup extensions are a general feature of the XAML language and of the .NET implementation of XAML services. This topic specifically details markup extensions for use in WPF XAML.
+
+XAML Processors and Markup Extensions
+
+Generally speaking, a XAML parser can either interpret an attribute value as a literal string that can be converted to a primitive, or convert it to an object by some means. One such means is by referencing a type converter; this is documented in the topic TypeConverters and XAML . However, there are scenarios where different behavior is required. For example, a XAML processor can be instructed that a value of an attribute should not result in a new object in the object graph. Instead, the attribute should result in an object graph that makes a reference to an already constructed object in another part of the graph, or a static object. Another scenario is that a XAML processor can be instructed to use a syntax that provides non-default arguments to the constructor of an object. These are the types of scenarios where a markup extension can provide the solution.
+
+Basic Markup Extension Syntax
+
+A markup extension can be implemented to provide values for properties in an attribute usage, properties in a property element usage, or both.
+
+When used to provide an attribute value, the syntax that distinguishes a markup extension sequence to a XAML processor is the presence of the opening and closing curly braces ({ and }). The type of markup extension is then identified by the string token immediately following the opening curly brace.
+
+When used in property element syntax, a markup extension is visually the same as any other element used to provide a property element value: a XAML element declaration that references the markup extension class as an element, enclosed within angle brackets (<>).
+
+XAML-Defined Markup Extensions
+
+Several markup extensions exist that are not specific to the WPF implementation of XAML, but are instead implementations of intrinsics or features of XAML as a language. These markup extensions are implemented in the System.Xaml assembly as part of the general .NET Framework XAML services, and are within the XAML language XAML namespace. In terms of common markup usage, these markup extensions are typically identifiable by the x: prefix in the usage. The MarkupExtension base class (also defined in System.Xaml) provides the pattern that all markup extensions should use in order to be supported in XAML readers and XAML writers, including in WPF XAML.
+
+    x:Type supplies the Type object for the named type. This facility is used most frequently in styles and templates. For details, see x:Type Markup Extension .
+
+    x:Static produces static values. The values come from value-type code entities that are not directly the type of a target property's value, but can be evaluated to that type. For details, see x:Static Markup Extension .
+
+    x:Null specifies null as a value for a property and can be used either for attributes or property element values. For details, see x:Null Markup Extension .
+
+    x:Array provides support for creation of general arrays in XAML syntax, for cases where the collection support provided by WPF base elements and control models is deliberately not used. For details, see x:Array Markup Extension .
+
+Note
+
+The x: prefix is used for the typical XAML namespace mapping of the XAML language intrinsics, in the root element of a XAML file or production. For example, the Visual Studio templates for WPF applications initiate a XAML file using this x: mapping. You could choose a different prefix token in your own XAML namespace mapping, but this documentation will assume the default x: mapping as a means of identifying those entities that are a defined part of the XAML namespace for the XAML language, as opposed to the WPF default namespace or other XAML namespaces not related to a specific framework.
+
+WPF-Specific Markup Extensions
+
+The most common markup extensions used in WPF programming are those that support resource references ( StaticResource and DynamicResource ), and those that support data binding ( Binding ).
+
+    StaticResource provides a value for a property by substituting the value of an already defined resource. A StaticResource evaluation is ultimately made at XAML load time and does not have access to the object graph at run time. For details, see StaticResource Markup Extension .
+
+    DynamicResource provides a value for a property by deferring that value to be a run-time reference to a resource. A dynamic resource reference forces a new lookup each time that such a resource is accessed and has access to the object graph at run time. In order to get this access, DynamicResource concept is supported by dependency properties in the WPF property system, and evaluated expressions. Therefore you can only use DynamicResource for a dependency property target. For details, see DynamicResource Markup Extension .
+
+    Binding provides a data bound value for a property, using the data context that applies to the parent object at run time. This markup extension is relatively complex, because it enables a substantial inline syntax for specifying a data binding. For details, see Binding Markup Extension .
+
+    RelativeSource provides source information for a Binding that can navigate several possible relationships in the run-time object tree. This provides specialized sourcing for bindings that are created in multi-use templates or created in code without full knowledge of the surrounding object tree. For details, see RelativeSource MarkupExtension .
+
+    TemplateBinding enables a control template to use values for templated properties that come from object-model-defined properties of the class that will use the template. In other words, the property within the template definition can access a context that only exists once the template is applied. For details, see TemplateBinding Markup Extension . For more information on the practical use of TemplateBinding , see Styling with ControlTemplates Sample .
+
+    ColorConvertedBitmap supports a relatively advanced imaging scenario. For details, see ColorConvertedBitmap Markup Extension .
+
+    ComponentResourceKey and ThemeDictionary support aspects of resource lookup, particularly for resources and themes that are packaged with custom controls. For more information, see ComponentResourceKey Markup Extension , ThemeDictionary Markup Extension , or Control Authoring Overview .
+
+*Extension Classes
+
+For both the general XAML language and WPF-specific markup extensions, the behavior of each markup extension is identified to a XAML processor through a *Extension class that derives from MarkupExtension , and provides an implementation of the ProvideValue method. This method on each extension provides the object that is returned when the markup extension is evaluated. The returned object is typically evaluated based on the various string tokens that are passed to the markup extension.
+
+For example, the StaticResourceExtension class provides the surface implementation of actual resource lookup so that its ProvideValue implementation returns the object that is requested, with the input of that particular implementation being a string that is used to look up the resource by its x:Key . Much of this implementation detail is unimportant if you are using an existing markup extension.
+
+Some markup extensions do not use string token arguments. This is either because they return a static or consistent value, or because context for what value should be returned is available through one of the services passed through the serviceProvider parameter.
+
+The *Extension naming pattern is for convenience and consistency. It is not necessary in order for a XAML processor to identify that class as support for a markup extension. So long as your codebase includes System.Xaml and uses .NET Framework XAML Services implementations, all that is necessary to be recognized as a XAML markup extension is to derive from MarkupExtension and to support a construction syntax. WPF defines markup extension-enabling classes that do not follow the *Extension naming pattern, for example Binding . Typically the reason for this is that the class supports scenarios beyond pure markup extension support. In the case of Binding , that class supports run-time access to methods and properties of the object for scenarios that have nothing to do with XAML.
+Extension Class Interpretation of Initialization Text
+
+The string tokens following the markup extension name and still within the braces are interpreted by a XAML processor in one of the following ways:
+
+    A comma always represents the separator or delimiter of individual tokens.
+
+    If the individual separated tokens do not contain any equals signs, each token is treated as a constructor argument. Each constructor parameter must be given as the type expected by that signature, and in the proper order expected by that signature.
+
+    Note
+
+    A XAML processor must call the constructor that matches the argument count of the number of pairs. For this reason, if you are implementing a custom markup extension, do not provide multiple constructors with the same argument count. The behavior for how a XAML processor behaves if more than one markup extension constructor path with the same parameter count exists is not defined, but you should anticipate that a XAML processor is permitted to throw an exception on usage if this situation exists in the markup extension type definitions.
+
+    If the individual separated tokens contain equals signs, then a XAML processor first calls the default constructor for the markup extension. Then, each name=value pair is interpreted as a property name that exists on the markup extension, and a value to assign to that property.
+
+    If there is a parallel result between the constructor behavior and the property setting behavior in a markup extension, it does not matter which behavior you use. It is more common usage to use the property = value pairs for markup extensions that have more than one settable property, if only because it makes your markup more intentional and you are less likely to accidentally transpose constructor parameters. (When you specify property=value pairs, those properties may be in any order.) Also, there is no guarantee that a markup extension supplies a constructor parameter that sets every one of its settable properties. For example, Binding is a markup extension, with many properties that are settable through the extension in property = value form, but Binding only supports two constructors: a default constructor, and one that sets an initial path.
+
+    A literal comma cannot be passed to a markup extension without escapement.
+
+Escape Sequences and Markup Extensions
+
+Attribute handling in a XAML processor uses the curly braces as indicators of a markup extension sequence. It is also possible to produce a literal curly brace character attribute value if necessary, by entering an escape sequence using an empty curly brace pair followed by the literal curly brace. See {} Escape Sequence - Markup Extension .
+
+Nesting Markup Extensions in XAML Usage
+
+Nesting of multiple markup extensions is supported, and each markup extension will be evaluated deepest first. For example, consider the following usage:
+
+ <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />  
+
+In this usage, the x:Static statement is evaluated first and returns a string. That string is then used as the argument for DynamicResource .
+Markup Extensions and Property Element Syntax
+
+When used as an object element that fills a property element value, a markup extension class is visually indistinguishable from a typical type-backed object element that can be used in XAML. The practical difference between a typical object element and a markup extension is that the markup extension is either evaluated to a typed value or deferred as an expression. Therefore the mechanisms for any possible type errors of property values for the markup extension will be different, similar to how a late-bound property is treated in other programming models. An ordinary object element will be evaluated for type match against the target property it is setting when the XAML is parsed.
+
+Most markup extensions, when used in object element syntax to fill a property element, would not have content or any further property element syntax within. Thus you would close the object element tag, and provide no child elements. Whenever any object element is encountered by a XAML processor, the constructor for that class is called, which instantiates the object created from the parsed element. A markup extension class is no different: if you want your markup extension to be usable in object element syntax, you must provide a default constructor. Some existing markup extensions have at least one required property value that must be specified for effective initialization. If so, that property value is typically given as a property attribute on the object element. In the XAML Namespace (x:) Language Features and WPF XAML Extensions reference pages, markup extensions that have required properties (and the names of required properties) will be noted. Reference pages will also note if either object element syntax or attribute syntax is disallowed for particular markup extensions. A notable case is x:Array Markup Extension , which cannot support attribute syntax because the contents of that array must be specified within the tagging as content. The array contents are handled as general objects, therefore no default type converter for the attribute is feasible. Also, x:Array Markup Extension requires a type parameter.
+See Also
+
+XAML Overview (WPF)
+XAML Namespace (x:) Language Features
+WPF XAML Extensions
+StaticResource Markup Extension
+Binding Markup Extension
+DynamicResource Markup Extension
+x:Type Markup Extension
+Feedback
+
+We'd love to hear your thoughts. Choose the type you'd like to provide:
+Product feedback
+Sign in to give documentation feedback
+You may also leave feedback directly on GitHub .
+Content feedback
+You may also leave feedback directly on GitHub .
+
+Our new feedback system is built on GitHub Issues. Read about this change in our blog post .
+Avatar Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.
+Issue Title Leave a comment
+Submit feedback
+
+Loading feedback...
+
+There are no open issues
+
+There are no closed issues
+
+View on GitHub
+English (United States)
+
+    Previous Version Docs
+    Blog
+    Contribute
+    Privacy & Cookies
+    Terms of Use
+    Site Feedback
+    Trademarks
+
+Contents
+Clear Filter
+No results
+
+    Advanced
+        WPF Architecture
+        XAML in WPF
+            XAML Overview (WPF)
+            XAML Syntax In Detail
+            Code-Behind and XAML in WPF
+            XAML and Custom Classes for WPF
+            Markup Extensions and WPF XAML
+            XAML Namespaces and Namespace Mapping for WPF XAML
+            WPF XAML Namescopes
+            Inline Styles and Templates
+            Type Converters and XAML
+            WPF XAML Extensions
+                Binding Markup Extension
+                Color Converted Bitmap Markup Extension
+                Component Resource Key Markup Extension
+                Date Time XAML Syntax
+                Dynamic Resource Markup Extension
+                Relative Source Markup Extension
+                Static Resource Markup Extension
+                Template Binding Markup Extension
+                Theme Dictionary Markup Extension
+                Property Path XAML Syntax
+                Presentation Options:Freeze Attribute
+            Markup Compatibility (mc:) Language Features
+                mc:Ignorable Attribute
+                mc:Process Content Attribute
+        Base Elements
+            Base Elements Overview
+            Freezable Objects Overview
+            Alignment, Margins, and Padding Overview
+            How-to Topics
+                Make a UIElement Transparent or Semi-Transparent
+                Animate the Size of a Framework Element
+                Determine Whether a Freezable Is Frozen
+                Handle a Loaded Event
+                Set Margins of Elements and Controls
+                Make a Freezable Read-Only
+                Obtain a Writable Copy of a Read-Only Freezable
+                Flip a UIElement Horizontally or Vertically
+                Use a Thickness Converter Object
+                Handle the Context Menu Opening Event
+        Element Tree and Serialization
+            Trees in WPF
+            Serialization Limitations of Xaml Writer. Save
+            Initialization for Object Elements Not in an Object Tree
+            How-to Topics
+                Find an Element by Its Name
+                Override the Logical Tree
+        Properties
+            Dependency Properties Overview
+            Attached Properties Overview
+            Dependency Property Callbacks and Validation
+            Custom Dependency Properties
+            Dependency Property Metadata
+            Framework Property Metadata
+            Dependency Property Value Precedence
+            Read-Only Dependency Properties
+            Property Value Inheritance
+            Dependency Property Security
+            Safe Constructor Patterns for Dependency Objects
+            Collection-Type Dependency Properties
+            XAML Loading and Dependency Properties
+            How-to Topics
+                Implement a Dependency Property
+                Add an Owner Type for a Dependency Property
+                Register an Attached Property
+                Override Metadata for a Dependency Property
+        Events
+            Routed Events Overview
+            Attached Events Overview
+            Object Lifetime Events
+            Marking Routed Events as Handled, and Class Handling
+            Preview Events
+            Property Change Events
+            Visual Basic and WPF Event Handling
+            Weak Event Patterns
+            How-to Topics
+                Add an Event Handler Using Code
+                Handle a Routed Event
+                Create a Custom Routed Event
+                Find the Source Element in an Event Handler
+                Add Class Handling for a Routed Event
+        Input
+            Input Overview
+            Commanding Overview
+            Focus Overview
+            Styling for Focus in Controls, and Focus Visual Style
+            Walkthrough: Creating Your First Touch Application
+            How-to Topics
+                Enable a Command
+                Change the Cursor Type
+                Change the Color of an Element Using Focus Events
+                Apply a Focus Visual Style to a Control
+                Detect When the Enter Key is Pressed
+                Create a Rollover Effect Using Events
+                Make an Object Follow the Mouse Pointer
+                Create a Routed Command
+                Implement ICommand Source
+                Hook Up a Command to a Control with No Command Support
+                Hook Up a Command to a Control with Command Support
+            Digital Ink
+                Overviews
+                    Getting Started with Ink
+                    Collecting Ink
+                    Handwriting Recognition
+                    Storing Ink
+                    The Ink Object Model: Windows Forms and COM versus WPF
+                    Advanced Ink Handling
+                        Custom Rendering Ink
+                        Intercepting Input from the Stylus
+                        Creating an Ink Input Control
+                        The Ink Threading Model
+                How-to Topics
+                    Select Ink from a Custom Control
+                    Add Custom Data to Ink Data
+                    Erase Ink on a Custom Control
+                    Recognize Application Gestures
+                    Drag and Drop Ink
+                    Data Bind to an Ink Canvas
+                    Analyze Ink with Analysis Hints
+                    Rotate Ink
+                    Disable the Real Time Stylus for WPF Applications
+        Drag and Drop
+            Drag and Drop Overview
+            Data and Data Objects
+            Walkthrough: Enabling Drag and Drop on a User Control
+            How-to Topics
+                Open a File That is Dropped on a Rich Text Box Control
+                Create a Data Object
+                Determine if a Data Format is Present in a Data Object
+                List the Data Formats in a Data Object
+                Retrieve Data in a Particular Data Format
+                Store Multiple Data Formats in a Data Object
+        Resources
+            XAML Resources
+                Resources and Code
+                Merged Resource Dictionaries
+                How-to Topics
+                    Define and Reference a Resource
+                    Use Application Resources
+                    Use System Fonts
+                    Use System Fonts Keys
+                    Use System Parameters
+                    Use System Parameters Keys
+        Documents
+            Documents in WPF
+            Document Serialization and Storage
+            Annotations
+                Annotations Overview
+                Annotations Schema
+            Flow Content
+                Flow Document Overview
+                Text Element Content Model Overview
+                Table Overview
+                How-to Topics
+                    Adjust Spacing Between Paragraphs
+                    Build a Table Programmatically
+                    Change the Flow Direction of Content Programmatically
+                    Change the Text Wrapping Property Programmatically
+                    Define a Table with XAML
+                    Alter the Typography of Text
+                    Enable Text Trimming
+                    Insert an Element Into Text Programmatically
+                    Manipulate Flow Content Elements through the Blocks Property
+                    Manipulate Flow Content Elements through the Inlines Property
+                    Manipulate a Flow Document through the Blocks Property
+                    Manipulate a Table's Columns through the Columns Property
+                    Manipulate a Table's Row Groups through the Row Groups Property
+                    Use Flow Content Elements
+                    Use Flow Document Column-Separating Attributes
+            Typography
+                Typography in WPF
+                Clear Type Overview
+                Clear Type Registry Settings
+                Drawing Formatted Text
+                Advanced Text Formatting
+                Fonts
+                    Open Type Font Features
+                    Packaging Fonts with Applications
+                    Sample Open Type Font Pack
+                    How-to Topics
+                        Enumerate System Fonts
+                        Use the Font Size Converter Class
+                Glyphs
+                    Introduction to the Glyph Run Object and Glyphs Element
+                    How to: Draw Text Using Glyphs
+                How-to Topics
+                    Create a Text Decoration
+                    Specify Whether a Hyperlink is Underlined
+                    Apply Transforms to Text
+                    Apply Animations to Text
+                    Create Text with a Shadow
+                    Create Outlined Text
+                    Draw Text to a Control's Background
+                    Draw Text to a Visual
+                    Use Special Characters in XAML
+            Printing and Print System Management
+                Printing Overview
+                How-to Topics
+                    Invoke a Print Dialog
+                    Clone a Printer
+                    Diagnose Problematic Print Job
+                    Discover Whether a Print Job Can Be Printed At This Time of Day
+                    Enumerate a Subset of Print Queues
+                    Get Print System Object Properties Without Reflection
+                    Programmatically Print XPS Files
+                    Remotely Survey the Status of Printers
+                    Validate and Merge Print Tickets
+        Globalization and Localization
+            WPF Globalization and Localization Overview
+            Globalization for WPF
+            Use Automatic Layout Overview
+            Localization Attributes and Comments
+            Bidirectional Features in WPF Overview
+            How-to Topics
+                Localize an Application
+                Use Automatic Layout to Create a Button
+                Use a Grid for Automatic Layout
+                Use a Resource Dictionary to Manage Localizable String Resources
+                Use Resources in Localizable Applications
+        Layout
+        Migration and Interoperability
+            WPF and Windows Forms Interoperation
+                Windows Forms and WPF Interoperability Input Architecture
+                Layout Considerations for the Windows Forms Host Element
+                Windows Forms Controls and Equivalent WPF Controls
+                Windows Forms and WPF Property Mapping
+                Troubleshooting Hybrid Applications
+                Walkthrough: Hosting a Windows Forms Control in WPF
+                Walkthrough: Hosting a Windows Forms Control in WPF by Using XAML
+                Walkthrough: Hosting a Windows Forms Composite Control in WPF
+                Walkthrough: Hosting an ActiveX Control in WPF
+                How to: Enable Visual Styles in a Hybrid Application
+                Walkthrough: Arranging Windows Forms Controls in WPF
+                Walkthrough: Binding to Data in Hybrid Applications
+                Walkthrough: Hosting a 3-D WPF Composite Control in Windows Forms
+                Walkthrough: Hosting a WPF Composite Control in Windows Forms
+                Walkthrough: Mapping Properties Using the Element Host Control
+                Walkthrough: Mapping Properties Using the Windows Forms Host Element
+                Walkthrough: Localizing a Hybrid Application
+            WPF and Win32 Interoperation
+                Technology Regions Overview
+                Sharing Message Loops Between Win32 and WPF
+                Hosting Win32 Content in WPF
+                Walkthrough: Hosting a Win32 Control in WPF
+                Walkthrough: Hosting WPF Content in Win32
+                Walkthrough: Hosting a WPF Clock in Win32
+            WPF and Direct3D9 Interoperation
+                Performance Considerations for Direct3D9 and WPF Interoperability
+                Walkthrough: Creating Direct3D9 Content for Hosting in WPF
+                Walkthrough: Hosting Direct3D9 Content in WPF
+        Performance
+            Graphics Rendering Tiers
+            Optimizing WPF Application Performance
+                Planning for Application Performance
+                Taking Advantage of Hardware
+                Layout and Design
+                2D Graphics and Imaging
+                Object Behavior
+                Application Resources
+                Text
+                Data Binding
+                Controls
+                Other Performance Recommendations
+                Application Startup Time
+            Walkthrough: Caching Application Data in a WPF Application
+        Threading Model
+        WPF Unmanaged API Reference
+            Activate Function
+            Create IDispatch STAForwarder Function
+            Deactivate Function
+            Forward Translate Accelerator Function
+            Load From History Function
+            Process Unhandled Exception Function
+            Save ToHistory Function
+            Set Fake Active Window Function
+
+Download PDF
+Feedback
+Is this page helpful?
+Yes No
+How can we improve? Submit
+
+Thanks for the feedback!
+
+Comments or suggestions? Tell us here .
+Thanks for the feedback!
+English (United States)
+
+    Previous Version Docs
+    Blog
+    Contribute
+    Privacy & Cookies
+    Terms of Use
+    Site Feedback
+    Trademarks
+

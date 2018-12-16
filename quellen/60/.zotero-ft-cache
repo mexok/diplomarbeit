@@ -1,0 +1,186 @@
+
+CMake
+
+    Kitware is hiring
+    About
+        Overview
+        Participants
+        Licensing
+        Publications
+        Statistics
+        Success
+        News
+    Resources
+        Documentation
+        Mailing Lists
+        Mastering CMake
+        Webinars
+        Services
+    Developer Resources
+        Get Involved
+        Issue Tracker
+        Code Repository
+        Dashboard
+        Wiki
+        Related Software
+    Download
+
+Select Page
+Build with CMake. Build with Confidence.
+
+CMake is an open-source, cross-platform family of tools designed to build, test and package software. CMake is used to control the software compilation process using simple platform and compiler independent configuration files, and generate native makefiles and workspaces that can be used in the compiler environment of your choice. The suite of CMake tools were created by Kitware in response to the need for a powerful, cross-platform build environment for open-source projects such as ITK and VTK.
+
+CMake is part of Kitware’s collection of commercially supported open-source platforms for software development.
+
+Download Latest Release
+
+Visit the download page
+
+Support and Services
+
+Get support or consulting service for CMake
+
+Contact Us
+
+Have a question about a CMake project? We can help
+
+Training Courses
+
+Attend an upcoming CMake training course
+
+Book
+
+Get the latest edition of the Mastering CMake book
+
+Get Involved
+
+Become part of the CMake development community
+Notable Applications Using CMake
+Netflix
+
+“…CMake, CTest, and CDash have proven to be invaluable tools for us to build multiplatform code, track changes, run tests, and improve code quality by performing code coverage and memory leak analysis.”
+Inria
+
+“I am thankful for CMake’s shadow builds feature. For a project like SOFA, which has many optional features and possible option combinations, being able to quickly test a modification on several typical setups on my machine before pushing a significant change to the repository is a very valuable security. This is especially true for a complex project like ours.”
+The HDF Group
+
+“CMake, CTest, and CDash were the tools that we desperately needed. With the help of our user community, we added the CMake build system for all HDF products. We rely on CMake for HDF software being successfully built and tested on platforms that range from supercomputers to Windows desktops and tablets.”
+ReactOS
+
+“…in early 2010 a decision was made to look for a third party solution instead of continuing to expend time and effort maintaining RBuild. CMake was an early favorite and while the transition was not without its bumps, it has allowed the project to not only increase the number of compilers that could be used to build ReactOS, it also set the stage for significantly decreasing build times, making development faster and easier.”
+KDE
+
+“Our working relationship aside, CMake has greatly improved the process of building KDE. Projects using CMake take less time to get started, since there is less time spent fighting with the build system. One KDE developer says, “CMake doesn’t make you want to shoot yourself with a nailgun when building your project anymore.”
+Second Life
+
+“A great technology choice that our community helped us make was moving to CMake, a cross-platform build tool, which makes it much simpler to maintain makefiles for many different platforms.”
+
+    Allegro library
+    Armadillo
+    Avidemux
+    awesome
+    BCI2000
+    Blender
+    BRL-CAD
+    Bullet Physics Engine
+    CGAL
+    Chipmunk physics engine
+    CLion
+    Compiz
+    Conky
+    cURL
+    Deal.II
+    Doomsday Engine
+    Dust Racing 2D
+    Drishti
+    Ettercap
+    Falcon (programming language)
+    FlightGear Flight Simulator
+    GDCM
+    Geant4
+    Gmsh
+    GNU Radio
+    GROMACS
+
+ 
+
+    Hiawatha (web server)
+    Hypertable
+    Hugin
+    iCub robot and YARP
+    IGSTK
+    ITK
+    KDE SC 4
+    KiCad
+    libpng
+    LAPACK
+    LLVM and Clang
+    LMMS
+    Mir
+    MiKTeX
+    MLPACK
+    MuseScore
+    MySQL and MariaDB
+    OGRE
+    OpenCV
+    OpenCog
+    OpenCPN
+    OpenSceneGraph
+    OpenSync
+    Orthanc
+    Point Cloud Library
+    Poppler
+
+ 
+
+    PvPGN
+    QGIS
+    Qt
+    Raw Therapee
+    ReactOS
+    ROOT
+    ROS
+    Ryzom
+    Scribus
+    SDL
+    Second Life
+    SFML
+    Spring RTS
+    SuperTux
+    Synergy
+    Slicer
+    Stellarium
+    Trilinos
+    Vortexje
+    VTK and ParaView
+    VXL
+    zlib
+    PCSX2
+    Zdoom
+    ZeroMQ
+
+ 
+Recent Posts
+CMake 3.13.2 available for download
+
+We are pleased to announce that CMake 3.13.2 is now available for download. Please use the latest release from our download page: https://cmake.org/download/ CMake 3.13.0 … Read More
+CMake 3.13.1 available for download
+
+We are pleased to announce that CMake 3.13.1 is now available for download. Please use the latest release from our download page: https://cmake.org/download/ Thanks for … Read More
+CMake 3.13.0 available for download
+
+I am happy to announce that CMake 3.13.0 is now available for download at: https://cmake.org/download/ Documentation is available at: https://cmake.org/cmake/help/v3.13 Release notes appear below and … Read More
+CMake 3.13.0-rc3 is ready for testing
+
+I am proud to announce the third CMake 3.13 release candidate. https://cmake.org/download/ The first 3.13.0 release candidates included a change to allow generator expressions in … Read More
+CMake 3.12.4 available for download
+
+We are pleased to announce that CMake 3.12.4 is now available for download. Please use the latest release from our download page: https://cmake.org/download/ Thanks for … Read More
+Source: blog.kitware.com
+
+    Facebook
+    Twitter
+    Google
+    RSS
+
+Kitware | What We Do | Open Source | Privacy Notice | Contact

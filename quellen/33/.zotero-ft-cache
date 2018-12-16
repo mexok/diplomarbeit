@@ -1,0 +1,501 @@
+
+Skip to main content
+Microsoft
+.NET
+.NET
+.NET
+
+    Home
+    APIs
+    .NET Core
+    .NET Framework
+    ASP.NET
+    Xamarin
+    Azure
+    More
+
+    All Microsoft
+            Office
+            Windows
+            Surface
+            Xbox
+            Deals
+            Support
+        Software
+            Windows apps
+            OneDrive
+            Outlook
+            Skype
+            OneNote
+        PCs & Devices
+            PCs & tablets
+            Accessories
+        Entertainment
+            Xbox games
+            PC games
+            Windows digital games
+            Movies & TV
+            Books
+        Business
+            Microsoft Azure
+            Microsoft Dynamics 365
+            Microsoft 365
+            Enterprise
+            Data platform
+            Microsoft Advertising
+        Developer & IT
+            .NET
+            Visual Studio
+            Windows Server
+            Windows Dev Center
+            Docs
+        Other
+            Microsoft Store
+            Microsoft Rewards
+            Free downloads & security
+            Education
+            Store locations
+            Gift cards
+        View all
+
+Search
+
+.NET
+Cancel
+
+    Docs
+    .NET
+    .NET Framework
+    Windows Presentation Foundation
+    Advanced (Windows Presentation Foundation)
+
+Exit focus mode
+Contents
+
+    Feedback
+    Edit
+    Share
+        Twitter
+        LinkedIn
+        Facebook
+        Email
+    Dark
+    Sign in
+
+        Profile
+        Sign out
+
+Contents
+In this article
+
+    Prerequisites
+    Code-Behind and the XAML Language
+    Code-behind, Event Handler, and Partial Class Requirements in WPF
+    x:Code
+    Inline Code Limitations
+    See Also
+
+Code-Behind and XAML in WPF
+
+    03/30/2017
+    3 minutes to read
+    Contributors
+        dotnet bot
+        Holger Jeromin
+        Maira Wenzel
+        Erlend
+        Mike Jones
+        all
+
+In this article
+
+    Prerequisites
+    Code-Behind and the XAML Language
+    Code-behind, Event Handler, and Partial Class Requirements in WPF
+    x:Code
+    Inline Code Limitations
+    See Also
+
+Code-behind is a term used to describe the code that is joined with markup-defined objects, when a XAML page is markup-compiled. This topic describes requirements for code-behind as well as an alternative inline code mechanism for code in XAML.
+
+This topic contains the following sections:
+
+    Prerequisites
+
+    Code-Behind and the XAML Language
+
+    Code-behind, Event Handler, and Partial Class Requirements in WPF
+
+    x:Code
+
+    Inline Code Limitations
+
+Prerequisites
+
+This topic assumes that you have read the XAML Overview (WPF) and have some basic knowledge of the CLR and object-oriented programming.
+
+Code-Behind and the XAML Language
+
+The XAML language includes language-level features that make it possible to associate code files with markup files, from the markup file side. Specifically, the XAML language defines the language features x:Class Directive , x:Subclass Directive , and x:ClassModifier Directive . Exactly how the code should be produced, and how to integrate markup and code, is not part of what the XAML language specifies. It is left up to frameworks such as WPF to determine how to integrate the code, how to use XAML in the application and programming models, and the build actions or other support that all this requires.
+
+Code-behind, Event Handler, and Partial Class Requirements in WPF
+
+    The partial class must derive from the type that backs the root element.
+
+    Note that under the default behavior of the markup compile build actions, you can leave the derivation blank in the partial class definition on the code-behind side. The compiled result will assume the page root's backing type to be the basis for the partial class, even if it not specified. However, relying on this behavior is not a best practice.
+
+    The event handlers you write in the code-behind must be instance methods and cannot be static methods. These methods must be defined by the partial class within the CLR namespace identified by x:Class . You cannot qualify the name of an event handler to instruct a XAML processor to look for an event handler for event wiring in a different class scope.
+
+    The handler must match the delegate for the appropriate event in the backing type system.
+
+    For the Microsoft Visual Basic language specifically, you can use the language-specific Handles keyword to associate handlers with instances and events in the handler declaration, instead of attaching handlers with attributes in XAML. However, this technique does have some limitations because the Handles keyword cannot support all of the specific features of the WPF event system, such as certain routed event scenarios or attached events. For details, see Visual Basic and WPF Event Handling .
+
+x:Code
+
+x:Code is a directive element defined in XAML. An x:Code directive element can contain inline programming code. The code that is defined inline can interact with the XAML on the same page. The following example illustrates inline C# code. Notice that the code is inside the x:Code element and that the code must be surrounded by <CDATA[ ... ]]> to escape the contents for XML, so that a XAML processor (interpreting either the XAML schema or the WPF schema) will not try to interpret the contents literally as XML.
+XAML Copy
+
+ < Page xmlns = "http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x = "http://schemas.microsoft.com/winfx/2006/xaml" x:Class = "MyNamespace.MyCanvasCodeInline" > < Button Name = "button1" Click = "Clicked" > Click Me! </ Button > < x:Code > <![CDATA[ void Clicked(object sender, RoutedEventArgs e) { button1.Content = "Hello World"; } ]]> </ x:Code > </ Page >  
+
+Inline Code Limitations
+
+You should consider avoiding or limiting the use of inline code. In terms of architecture and coding philosophy, maintaining a separation between markup and code-behind keeps the designer and developer roles much more distinct. On a more technical level, the code that you write for inline code can be awkward to write, because you are always writing into the XAML generated partial class, and can only use the default XML namespace mappings. Because you cannot add using statements, you must fully qualify many of the API calls that you make. The default WPF mappings include most but not all CLR namespaces that are present in the WPF assemblies; you will have to fully qualify calls to types and members contained within the other CLR namespaces. You also cannot define anything beyond the partial class in the inline code, and all user code entities you reference must exist as a member or variable within the generated partial class. Other language specific programming features, such as macros or #ifdef against global variables or build variables, are also not available. For more information, see x:Code Intrinsic XAML Type .
+See Also
+
+XAML Overview (WPF)
+x:Code Intrinsic XAML Type
+Building a WPF Application
+XAML Syntax In Detail
+Feedback
+
+We'd love to hear your thoughts. Choose the type you'd like to provide:
+Product feedback
+Sign in to give documentation feedback
+You may also leave feedback directly on GitHub .
+Content feedback
+You may also leave feedback directly on GitHub .
+
+Our new feedback system is built on GitHub Issues. Read about this change in our blog post .
+Avatar Liquid error: Can't find the localized string giveDocumentationFeedback for template Conceptual.
+Issue Title Leave a comment
+Submit feedback
+
+Loading feedback...
+
+There are no open issues
+
+There are no closed issues
+
+View on GitHub
+English (United States)
+
+    Previous Version Docs
+    Blog
+    Contribute
+    Privacy & Cookies
+    Terms of Use
+    Site Feedback
+    Trademarks
+
+Contents
+Clear Filter
+No results
+
+    Advanced
+        WPF Architecture
+        XAML in WPF
+            XAML Overview (WPF)
+            XAML Syntax In Detail
+            Code-Behind and XAML in WPF
+            XAML and Custom Classes for WPF
+            Markup Extensions and WPF XAML
+            XAML Namespaces and Namespace Mapping for WPF XAML
+            WPF XAML Namescopes
+            Inline Styles and Templates
+            Type Converters and XAML
+            WPF XAML Extensions
+                Binding Markup Extension
+                Color Converted Bitmap Markup Extension
+                Component Resource Key Markup Extension
+                Date Time XAML Syntax
+                Dynamic Resource Markup Extension
+                Relative Source Markup Extension
+                Static Resource Markup Extension
+                Template Binding Markup Extension
+                Theme Dictionary Markup Extension
+                Property Path XAML Syntax
+                Presentation Options:Freeze Attribute
+            Markup Compatibility (mc:) Language Features
+                mc:Ignorable Attribute
+                mc:Process Content Attribute
+        Base Elements
+            Base Elements Overview
+            Freezable Objects Overview
+            Alignment, Margins, and Padding Overview
+            How-to Topics
+                Make a UIElement Transparent or Semi-Transparent
+                Animate the Size of a Framework Element
+                Determine Whether a Freezable Is Frozen
+                Handle a Loaded Event
+                Set Margins of Elements and Controls
+                Make a Freezable Read-Only
+                Obtain a Writable Copy of a Read-Only Freezable
+                Flip a UIElement Horizontally or Vertically
+                Use a Thickness Converter Object
+                Handle the Context Menu Opening Event
+        Element Tree and Serialization
+            Trees in WPF
+            Serialization Limitations of Xaml Writer. Save
+            Initialization for Object Elements Not in an Object Tree
+            How-to Topics
+                Find an Element by Its Name
+                Override the Logical Tree
+        Properties
+            Dependency Properties Overview
+            Attached Properties Overview
+            Dependency Property Callbacks and Validation
+            Custom Dependency Properties
+            Dependency Property Metadata
+            Framework Property Metadata
+            Dependency Property Value Precedence
+            Read-Only Dependency Properties
+            Property Value Inheritance
+            Dependency Property Security
+            Safe Constructor Patterns for Dependency Objects
+            Collection-Type Dependency Properties
+            XAML Loading and Dependency Properties
+            How-to Topics
+                Implement a Dependency Property
+                Add an Owner Type for a Dependency Property
+                Register an Attached Property
+                Override Metadata for a Dependency Property
+        Events
+            Routed Events Overview
+            Attached Events Overview
+            Object Lifetime Events
+            Marking Routed Events as Handled, and Class Handling
+            Preview Events
+            Property Change Events
+            Visual Basic and WPF Event Handling
+            Weak Event Patterns
+            How-to Topics
+                Add an Event Handler Using Code
+                Handle a Routed Event
+                Create a Custom Routed Event
+                Find the Source Element in an Event Handler
+                Add Class Handling for a Routed Event
+        Input
+            Input Overview
+            Commanding Overview
+            Focus Overview
+            Styling for Focus in Controls, and Focus Visual Style
+            Walkthrough: Creating Your First Touch Application
+            How-to Topics
+                Enable a Command
+                Change the Cursor Type
+                Change the Color of an Element Using Focus Events
+                Apply a Focus Visual Style to a Control
+                Detect When the Enter Key is Pressed
+                Create a Rollover Effect Using Events
+                Make an Object Follow the Mouse Pointer
+                Create a Routed Command
+                Implement ICommand Source
+                Hook Up a Command to a Control with No Command Support
+                Hook Up a Command to a Control with Command Support
+            Digital Ink
+                Overviews
+                    Getting Started with Ink
+                    Collecting Ink
+                    Handwriting Recognition
+                    Storing Ink
+                    The Ink Object Model: Windows Forms and COM versus WPF
+                    Advanced Ink Handling
+                        Custom Rendering Ink
+                        Intercepting Input from the Stylus
+                        Creating an Ink Input Control
+                        The Ink Threading Model
+                How-to Topics
+                    Select Ink from a Custom Control
+                    Add Custom Data to Ink Data
+                    Erase Ink on a Custom Control
+                    Recognize Application Gestures
+                    Drag and Drop Ink
+                    Data Bind to an Ink Canvas
+                    Analyze Ink with Analysis Hints
+                    Rotate Ink
+                    Disable the Real Time Stylus for WPF Applications
+        Drag and Drop
+            Drag and Drop Overview
+            Data and Data Objects
+            Walkthrough: Enabling Drag and Drop on a User Control
+            How-to Topics
+                Open a File That is Dropped on a Rich Text Box Control
+                Create a Data Object
+                Determine if a Data Format is Present in a Data Object
+                List the Data Formats in a Data Object
+                Retrieve Data in a Particular Data Format
+                Store Multiple Data Formats in a Data Object
+        Resources
+            XAML Resources
+                Resources and Code
+                Merged Resource Dictionaries
+                How-to Topics
+                    Define and Reference a Resource
+                    Use Application Resources
+                    Use System Fonts
+                    Use System Fonts Keys
+                    Use System Parameters
+                    Use System Parameters Keys
+        Documents
+            Documents in WPF
+            Document Serialization and Storage
+            Annotations
+                Annotations Overview
+                Annotations Schema
+            Flow Content
+                Flow Document Overview
+                Text Element Content Model Overview
+                Table Overview
+                How-to Topics
+                    Adjust Spacing Between Paragraphs
+                    Build a Table Programmatically
+                    Change the Flow Direction of Content Programmatically
+                    Change the Text Wrapping Property Programmatically
+                    Define a Table with XAML
+                    Alter the Typography of Text
+                    Enable Text Trimming
+                    Insert an Element Into Text Programmatically
+                    Manipulate Flow Content Elements through the Blocks Property
+                    Manipulate Flow Content Elements through the Inlines Property
+                    Manipulate a Flow Document through the Blocks Property
+                    Manipulate a Table's Columns through the Columns Property
+                    Manipulate a Table's Row Groups through the Row Groups Property
+                    Use Flow Content Elements
+                    Use Flow Document Column-Separating Attributes
+            Typography
+                Typography in WPF
+                Clear Type Overview
+                Clear Type Registry Settings
+                Drawing Formatted Text
+                Advanced Text Formatting
+                Fonts
+                    Open Type Font Features
+                    Packaging Fonts with Applications
+                    Sample Open Type Font Pack
+                    How-to Topics
+                        Enumerate System Fonts
+                        Use the Font Size Converter Class
+                Glyphs
+                    Introduction to the Glyph Run Object and Glyphs Element
+                    How to: Draw Text Using Glyphs
+                How-to Topics
+                    Create a Text Decoration
+                    Specify Whether a Hyperlink is Underlined
+                    Apply Transforms to Text
+                    Apply Animations to Text
+                    Create Text with a Shadow
+                    Create Outlined Text
+                    Draw Text to a Control's Background
+                    Draw Text to a Visual
+                    Use Special Characters in XAML
+            Printing and Print System Management
+                Printing Overview
+                How-to Topics
+                    Invoke a Print Dialog
+                    Clone a Printer
+                    Diagnose Problematic Print Job
+                    Discover Whether a Print Job Can Be Printed At This Time of Day
+                    Enumerate a Subset of Print Queues
+                    Get Print System Object Properties Without Reflection
+                    Programmatically Print XPS Files
+                    Remotely Survey the Status of Printers
+                    Validate and Merge Print Tickets
+        Globalization and Localization
+            WPF Globalization and Localization Overview
+            Globalization for WPF
+            Use Automatic Layout Overview
+            Localization Attributes and Comments
+            Bidirectional Features in WPF Overview
+            How-to Topics
+                Localize an Application
+                Use Automatic Layout to Create a Button
+                Use a Grid for Automatic Layout
+                Use a Resource Dictionary to Manage Localizable String Resources
+                Use Resources in Localizable Applications
+        Layout
+        Migration and Interoperability
+            WPF and Windows Forms Interoperation
+                Windows Forms and WPF Interoperability Input Architecture
+                Layout Considerations for the Windows Forms Host Element
+                Windows Forms Controls and Equivalent WPF Controls
+                Windows Forms and WPF Property Mapping
+                Troubleshooting Hybrid Applications
+                Walkthrough: Hosting a Windows Forms Control in WPF
+                Walkthrough: Hosting a Windows Forms Control in WPF by Using XAML
+                Walkthrough: Hosting a Windows Forms Composite Control in WPF
+                Walkthrough: Hosting an ActiveX Control in WPF
+                How to: Enable Visual Styles in a Hybrid Application
+                Walkthrough: Arranging Windows Forms Controls in WPF
+                Walkthrough: Binding to Data in Hybrid Applications
+                Walkthrough: Hosting a 3-D WPF Composite Control in Windows Forms
+                Walkthrough: Hosting a WPF Composite Control in Windows Forms
+                Walkthrough: Mapping Properties Using the Element Host Control
+                Walkthrough: Mapping Properties Using the Windows Forms Host Element
+                Walkthrough: Localizing a Hybrid Application
+            WPF and Win32 Interoperation
+                Technology Regions Overview
+                Sharing Message Loops Between Win32 and WPF
+                Hosting Win32 Content in WPF
+                Walkthrough: Hosting a Win32 Control in WPF
+                Walkthrough: Hosting WPF Content in Win32
+                Walkthrough: Hosting a WPF Clock in Win32
+            WPF and Direct3D9 Interoperation
+                Performance Considerations for Direct3D9 and WPF Interoperability
+                Walkthrough: Creating Direct3D9 Content for Hosting in WPF
+                Walkthrough: Hosting Direct3D9 Content in WPF
+        Performance
+            Graphics Rendering Tiers
+            Optimizing WPF Application Performance
+                Planning for Application Performance
+                Taking Advantage of Hardware
+                Layout and Design
+                2D Graphics and Imaging
+                Object Behavior
+                Application Resources
+                Text
+                Data Binding
+                Controls
+                Other Performance Recommendations
+                Application Startup Time
+            Walkthrough: Caching Application Data in a WPF Application
+        Threading Model
+        WPF Unmanaged API Reference
+            Activate Function
+            Create IDispatch STAForwarder Function
+            Deactivate Function
+            Forward Translate Accelerator Function
+            Load From History Function
+            Process Unhandled Exception Function
+            Save ToHistory Function
+            Set Fake Active Window Function
+
+Download PDF
+Feedback
+Is this page helpful?
+Yes No
+How can we improve? Submit
+
+Thanks for the feedback!
+
+Comments or suggestions? Tell us here .
+Thanks for the feedback!
+English (United States)
+
+    Previous Version Docs
+    Blog
+    Contribute
+    Privacy & Cookies
+    Terms of Use
+    Site Feedback
+    Trademarks
+

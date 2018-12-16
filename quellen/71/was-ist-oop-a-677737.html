@@ -1,0 +1,2372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE]>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+<![endif]-->
+<!--[if !IE]> -->
+<html><!-- <![endif]--><head>
+<title>Was ist OOP?</title>
+<link rel="canonical" href="https://www.dev-insider.de/was-ist-oop-a-677737/">
+<meta name="description" content="Bei der Objektorientierten Programmierung, kurz OOP, werden Daten und Programmcode in übersichtlichen, wiederverwendbaren Modulen – sprich Objekten – gekapselt. Dies reduziert den Programmieraufwand und hilft, Fehler zu vermeiden.">
+<meta name="robots" content="INDEX, FOLLOW">
+<meta itemprop="image" content="https://images.vogel.de/vogelonline/bdb/1341800/1341854/4.jpg">
+<meta property="og:image" content="https://images.vogel.de/vogelonline/bdb/1341800/1341854/44.jpg">
+<meta property="og:image:width" content="300">
+<meta property="og:image:height" content="300">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Was ist OOP?">
+<meta property="og:url" content="https://www.dev-insider.de/was-ist-oop-a-677737/">
+<meta property="og:description" content="Bei der Objektorientierten Programmierung, kurz OOP, werden Daten und Programmcode in übersichtlichen, wiederverwendbaren Modulen – sprich Objekten – gekapselt. Dies reduziert den Programmieraufwand und hilft, Fehler zu vermeiden.">
+<link rel="image_src" href="https://images.vogel.de/vogelonline/bdb/1341800/1341854/4.jpg">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--[if lt IE 9]>
+<script>document.createElement('video');document.createElement('header');document.createElement('section');document.createElement('article');document.createElement('footer');</script>
+<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="CACHE-CONTROL" content="no-cache">
+<meta http-equiv="EXPIRES" content="0">
+<meta http-equiv="content-language" content="de">
+<meta name="language" content="de">
+<meta name="Copyright" content="Vogel Communications Group GmbH &amp; Co. KG">
+<meta name="Audience" content="Alle">
+<meta name="Publisher" content="Vogel Communications Group GmbH &amp; Co. KG">
+<meta name="Author" content="Vogel Communications Group GmbH &amp; Co. KG">
+<meta name="Author-mail" content="info@vogel.de">
+<meta property="fb:app_id" content="429730104068252">
+<meta property="fb:admins" content="100003533317132">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="https://www.dev-insider.de/img/bep30/touch/icon-60x60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.dev-insider.de/img/bep30/touch/icon-76x76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://www.dev-insider.de/img/bep30/touch/icon-120x120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://www.dev-insider.de/img/bep30/touch/icon-152x152.png">
+<link rel="icon" sizes="192x192" href="https://www.dev-insider.de/img/bep30/touch/icon-192x192.png">
+<meta name="application-name" content="Dev-Insider">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-square70x70logo" content="/img/bep30/touch/icon-152x152.png">
+<meta name="msapplication-square150x150logo" content="/img/bep30/touch/icon-152x152.png">
+<meta name="msapplication-wide310x150logo" content="/img/bep30/touch/icon-310x150.png">
+<meta name="msapplication-square310x310logo" content="/img/bep30/touch/icon-310x310.png">
+<script type="text/javascript" async="" src="runtime.js"></script><script src="337772366383480.js" async=""></script><script async="" src="fbevents.js"></script><script async="" src="script.js"></script><script async="" src="gtm.js"></script><script async="" src="analytics.js"></script><script type="text/javascript" async="" src="recaptcha__de.js"></script><script type="text/javascript" src="ruxitagentjs_2fghjqr_10155181109122756.js" data-dtconfig="srms=1,1,,,|featureHash=2fghjqr|md=keywords=a[name='keywords']@content|srad=1|lastModification=1542048131625|dtVersion=10155181109122756|tp=500,50,0,1|rdnt=1|agentUri=/ruxitagentjs_2fghjqr_10155181109122756.js|reportUrl=/rb_bf94784frf|rid=RID_939814644|rpid=1301669572|domain=dev-insider.de"></script><link href="https://www.dev-insider.de/favicon.ico" rel="SHORTCUT ICON">
+<link href="https://www.dev-insider.de/shared/vogelonline/opensearch/opensearch.cfm?pid=14947&amp;name=Dev-Insider&amp;server=http://www.dev-insider.de" title="Dev-Insider" type="application/opensearchdescription+xml" rel="search">
+<link rel="stylesheet" type="text/css" href="libraries_v200818.css">
+<link rel="stylesheet" type="text/css" href="ionicons.css">
+<link rel="stylesheet" type="text/css" href="global_responsive.css">
+<link rel="stylesheet" type="text/css" href="banner_960.css">
+<link rel="stylesheet" type="text/css" href="sizes.css">
+<link rel="stylesheet" type="text/css" href="screen_basic.css">
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css"	href="/shared/vogelonline/css/bep30/ie7.css">
+<![endif]-->
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css"	href="/shared/vogelonline/css/bep30/ie7.css">
+<![endif]-->
+<script type="text/javascript" src="api.js" async="async"></script>
+<script type="text/javascript" src="libraries_v200818.js"></script>
+<script type="text/javascript" src="ads.js"></script><script type="text/javascript" src="tx"></script><style>.cke{visibility:hidden;}</style><script type="text/javascript" src="config.js"></script><link rel="stylesheet" type="text/css" href="editor_gecko.css"><script type="text/javascript" src="de.js"></script><script type="text/javascript" src="styles.js"></script><script type="text/javascript" src="plugin.js"></script><script type="text/javascript" src="plugin_008.js"></script><script type="text/javascript" src="plugin_006.js"></script><script type="text/javascript" src="plugin_005.js"></script><script type="text/javascript" src="plugin_003.js"></script><script type="text/javascript" src="plugin_002.js"></script><script type="text/javascript" src="plugin_007.js"></script><script type="text/javascript" src="plugin_004.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#1d3c78;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><style type="text/css">@font-face{font-family:gsc;src:url(//st.getsitecontrol.com/main/widgets/201809/ec0f75b9ec70a83cbd5546650a951fac/common/fonts/gsc.eot?) format('embedded-opentype');font-weight:400;font-style:normal}@font-face{font-family:gsc;src:url(data:application/octet-stream;base64,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) format('truetype');font-weight:400;font-style:normal}@font-face{font-family:emoji;src:local('Apple Color Emoji'),local('Android Emoji'),local('Segoe UI'),local(EmojiSymbols),local(Symbola);unicode-range:U+1F300-1F5FF,U+1F600-1F64F,U+1F680-1F6FF,U+2600-26FF}@keyframes gscw-bounceInLeft{0%,100%,40%,65%,90%{transition-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate(-3000px,0)}40%{opacity:1;transform:translate(35px,0)}65%{transform:translate(-15px,0)}90%{transform:translate(5px,0)}100%{transform:none}}@keyframes gscw-bounceInRight{0%,100%,40%,65%,90%{transition-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate(3000px,0)}40%{opacity:1;transform:translate(-35px,0)}65%{transform:translate(15px,0)}90%{transform:translate(-5px,0)}100%{transform:none}}@keyframes gscw-bounceInUp{0%,100%,40%,65%,90%{transition-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate(0,700px)}40%{opacity:1;transform:translate(0,-35px)}65%{transform:translate(0,15px)}90%{transform:translate(0,-5px)}100%{transform:none}}@keyframes gscw-bounceInDown{0%,100%,40%,65%,90%{transition-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;transform:translate(0,-700px)}40%{opacity:1;transform:translate(0,35px)}65%{transform:translate(0,-15px)}90%{transform:translate(0,5px)}100%{transform:none}}@keyframes gscw-bounceOutLeft{20%{opacity:1;transform:translate(20px,0)}100%{opacity:0;transform:translate(-2000px,0)}}@keyframes gscw-bounceOutRight{20%{opacity:1;transform:translate(-20px,0)}100%{opacity:0;transform:translate(2000px,0)}}@keyframes gscw-slideOutLeft{100%{transform:translate(-100%,0)}}@keyframes gscw-slideOutRight{100%{transform:translate(100%,0)}}@keyframes gscw-slideInLeft{0%{transform:translate(-100%,0)}100%{transform:none}}@keyframes gscw-slideInRight{0%{transform:translate(100%,0)}100%{transform:none}}@keyframes gscw-fadeIn{0%{opacity:0}100%{opacity:1}}@keyframes gscw-fadeInLeft{0%{opacity:0;transform:translate(-60%,0)}100%{opacity:1;transform:none}}@keyframes gscw-fadeInRight{0%{opacity:0;transform:translate(60%,0)}100%{opacity:1;transform:none}}@keyframes gscw-fadeInUp{0%{opacity:0;transform:translate(0,60%)}100%{opacity:1;transform:none}}@keyframes gscw-fadeInDown{0%{opacity:0;transform:translate(0,-60%)}100%{opacity:1;transform:none}}@keyframes gscw-fadeOut{0%{opacity:1}100%{opacity:0}}@keyframes gscw-zoomIn{0%{opacity:0;transform:scale(.3,.3)}50%{opacity:1}100%{transform:none}}@keyframes gscw-zoomOut{0%{opacity:1}50%{opacity:0;transform:scale(.3,.3)}100%{opacity:0}}@keyframes gscw-swing{0%{opacity:0}20%{transform:rotate3d(0,0,1,15deg)}40%{opacity:1;transform:rotate3d(0,0,1,-10deg)}60%{transform:rotate3d(0,0,1,5deg)}80%{transform:rotate3d(0,0,1,-5deg)}100%{transform:rotate3d(0,0,1,0deg)}}@keyframes gscw-bounceIn{0%{opacity:0;transform:scale(.3,.3)}30%{transform:scale(1.3,1.3)}55%{opacity:1;transform:scale(.8,.8)}72%{transform:scale(1.13,1.13)}87%{transform:scale(.97,.97)}100%{transform:none}}@keyframes gscw-flipTy{0%{transition-timing-function:ease-in;transform:rotateY(180deg) scale(.4,.4)}100%{transform:rotateY(0) scale(1,1)}}@keyframes gscw-flip{0%{transform:rotateY(180deg)}100%{transform:rotateY(0)}}@keyframes gscw-typing{0%,100%,80%{opacity:0;transform:scale(.8)}40%{opacity:1;transform:scale(1)}}@keyframes gscw-notify{0%{transform:scale(.1,.1);opacity:.3}100%{opacity:1;transform:none}}@keyframes gscw-highlight{100%{transform:none}0%,99%{transform:translate(0,0)}20%{transform:translate(-5px,0)}60%{transform:translate(-2.5px,0)}40%{transform:translate(5px,0)}80%{transform:translate(2.5px,0)}}body.g-hou2s{overflow:hidden!important}html.g-1n9sne,html.g-1n9sne>body{overflow:hidden!important}.gvjmbsm{cursor:pointer}body.g-bklipr:before{transition:height .5s cubic-bezier(.455,.03,.515,.955);content:' ';display:block;visibility:hidden;height:0!important;padding:0;margin:0}.gqn0fuo.g-bklipr:before{transition:none!important}body.g-bklipr.gapgcog:before{height:42px!important}body.g-bklipr.g-cvwkv5:before{transition:none!important}w-div{display:block;vertical-align:inherit}.ghkidun,.gsoy0u0{animation-name:gscw-highlight!important;animation-duration:.6s!important;-webkit-font-smoothing:subpixel-antialiased;-ms-transform-origin:left;transform-origin:left}.gs82ayv{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.g-cvwkv5 *{transition:none!important}</style></head><body id="cid_65"><div id="cookie-statement" style="line-height:1.8em;text-align: center;font-size: 0.7em;padding: 8px 1%;background-color:#9a9a9a;;color:#fff;width:98%;z-index: 12999;">				<div style="display: block;padding: 0 15px;">				  <span style="color:#fff">Cookies
+ erleichtern die Bereitstellung unserer Dienste. Mit der Nutzung unserer
+		  Dienste erklären Sie sich damit einverstanden, dass wir Cookies 
+verwenden.</span>				  <a target="_blank" href="https://privacy.vogel.de/datenschutz.html" style="display: inline;margin-left: 0.5em;color: #FFF;cursor: pointer;white-space: nowrap;background-color: #6A6A6A;;padding: 3px 5px;text-decoration: none;border: 1px solid rgb(255, 255, 255);border-radius: 6px;">Weitere Informationen</a>				  <a href="javascript:cookie_note.revokecookies()" id="revoke-cc-bar" style="display: inline;margin-left: 0.5em;color: #FFF;cursor: pointer;white-space: nowrap;padding: 3px 15px;text-decoration: none; border: 1px solid rgb(255, 255, 255);border-radius: 6px;">Widerrufen</a>				  <a href="javascript:cookie_note.hideOnOk()" id="close-cc-bar" style="display: inline;margin-left: 0.5em;color: #FFF;cursor: pointer;white-space: nowrap;background-color: #88bb88;padding: 3px 15px;text-decoration: none; border: 1px solid rgb(255, 255, 255);border-radius: 6px;">OK</a>				  </div></div><style type="text/css" id="cookie-statement-style">#mobile-header {position: relative !important;} #adright.advertising {top: 37px !important;} #whitespace_click {top:40px !important} .sky {position:relative !important} .sky_hs1 {position:relative !important} .sky_hs2 {position:relative !important}</style><div id="adsense" style="visibility: hidden;display: none;">advertisement</div>
+<script type="text/javascript" src="functions.js" async="async"></script>
+<script type="text/javascript" src="iam.js"></script>
+<script type="text/javascript" src="lib.js" async="async"></script>
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+</script>
+<script type="text/javascript">
+	(function() {
+	var useSSL = 'https:' == document.location.protocol;
+	var src = (useSSL ? 'https:' : 'http:') +
+	'//www.googletagservices.com/tag/js/gpt.js';
+	document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+	})();
+</script><script src="gpt.txt"></script>
+<script type="text/javascript">
+if (typeof googletag != "undefined" && typeof googletag.sizeMapping != "undefined")
+{
+	
+			var map_15347_960x250_RX0 = googletag.sizeMapping().addSize([0, 0],[300, 150]).addSize([1025, 0], [960, 250]).build();
+	googletag.defineSlot('/2686/dev-insider.de/DE_dvi_Homepage', [960, 250], 'ban_15347_960x250_RX0').
+		defineSizeMapping(map_15347_960x250_RX0).setCollapseEmptyDiv(true).addService(googletag.companionAds()).addService(googletag.pubads());
+	var map_15347_728x90_468x60_RX1 = googletag.sizeMapping().addSize([0, 0], [1, 1]).addSize([1025, 0], [[728, 90],[468, 60]]).build();
+	googletag.defineSlot('/2686/dev-insider.de/DE_dvi_Homepage', [[728, 90],[468, 60]], 'ban_15347_728x90_468x60_RX1').
+defineSizeMapping(map_15347_728x90_468x60_RX1).setCollapseEmptyDiv(true).addService(googletag.pubads());
+	googletag.defineOutOfPageSlot('/2686/dev-insider.de/DE_dvi_Homepage', 'ban_15347_728x90_oop').addService(googletag.pubads());
+	
+			var map_15347_160x600_RX2 = googletag.sizeMapping().addSize([0, 0], [1, 1]).addSize([1025, 0], [160, 600]).build();
+	googletag.defineSlot('/2686/dev-insider.de/DE_dvi_Homepage', [160, 600], 'ban_15347_160x600_RX2').
+		defineSizeMapping(map_15347_160x600_RX2).setCollapseEmptyDiv(true).addService(googletag.pubads());
+	
+			var map_15347_161x600_RX3 = googletag.sizeMapping().addSize([0, 0], [1, 1]).addSize([1025, 0], [161, 600]).build();
+	googletag.defineSlot('/2686/dev-insider.de/DE_dvi_Homepage', [161, 600], 'ban_15347_161x600_RX3').
+		defineSizeMapping(map_15347_161x600_RX3).setCollapseEmptyDiv(true).addService(googletag.pubads());
+	var map_15347_150x150_150x151_150x152_150x153_150x154_300x250_300x600_RX4 = googletag.sizeMapping().addSize([0, 0], [[150, 150],[150, 151],[150, 152],[150, 153],[150, 154],[300, 250],[300, 600]]).build();
+	googletag.defineSlot('/2686/dev-insider.de/DE_dvi_Homepage', [[150, 150],[150, 151],[150, 152],[150, 153],[150, 154],[300, 250],[300, 600]], 'ban_15347_150x150_150x151_150x152_150x153_150x154_300x250_300x600_RX4').
+		defineSizeMapping(map_15347_150x150_150x151_150x152_150x153_150x154_300x250_300x600_RX4).addService(googletag.pubads());
+	
+			var map_15347_960x600_RX5 = googletag.sizeMapping().addSize([0, 0], [960, 600]).build();
+	googletag.defineSlot('/2686/dev-insider.de/DE_dvi_Homepage', [960, 600], 'ban_15347_960x600_RX5').
+		defineSizeMapping(map_15347_960x600_RX5).addService(googletag.pubads());
+	googletag.pubads().setTargeting('kw', ['wallpaper','Harting_294344','Seica_305247','Siemens_307475','Schurter_300268_NEU','Nabtesco_308398','Hawe_308808','koehler_309388_02','Weidmüller_317909','ORACLE_318062','Köhler_315885','Deltalogic_318396','MesseMuenchen_318934','Deltalogic_318396_neu','321338_AlfredImhof']);
+	googletag.pubads().enableSingleRequest();
+	googletag.pubads().enableSyncRendering();
+	googletag.enableServices();
+}
+</script>
+
+<div id="iqadtileOOP"></div>
+<script>
+dataLayer = [{"ipadress": ""}];
+$.ajax({
+url: "/getip/ajax/",
+dataType: 'json',
+timeout: 700
+}).done(function( response ) {
+if (response.ip != ''){
+dataLayer.ipadress = response.ip;
+}
+});
+</script>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N5DK62"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>if(getCookie('revokecookies') !== 'true'){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5DK62');}</script>
+<div id="ivwcode">
+<!-- start ivw-aufruf szm version="2.0" pid 15347 //-->
+<script type="text/javascript">
+var iam_data = {
+"st":"devinsid",
+"cp":"specials/definitionen",
+"co":"15347",
+"sv":"ke"
+}
+if (typeof iom != "undefined")
+{
+iom.c(iam_data, 1);
+}
+</script>
+<!-- ende ivw-aufruf szm version="2.0" //-->
+</div>
+<script type="text/javascript">
+/* SiteCatalyst Variablen setzen */
+var STR_sc_account="";
+var STR_sc_clientshortcut="";
+STR_sc_account="vsdev-insiderde";
+if(window.location.host.search(/^red\./) >= 0 || window.location.host.search(/^dev\./) >= 0 || window.location.host.search(/^preview\./) >= 0 || window.location.host.search(/^task\./) >= 0)
+{
+STR_sc_account=STR_sc_account + "dev";
+}
+else
+{
+STR_sc_account=STR_sc_account + "prod";
+}
+STR_sc_clientshortcut="dvi";
+STR_sc_linkInternalFilters="javascript:,dev-insider.de";
+STR_sc_cookieDomainPeriods="2";
+STR_sc_fpCookieDomainPeriods="2";
+STR_sc_currencyCode="EUR";
+</script>
+<script type="text/javascript" src="s_code.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+if ($(window).width() >= 520)
+{
+$(".colorbox_imagedetail").colorbox({iframe:true, innerWidth:"20%", innerHeight:"20%", scrolling:false, fastIframe:false});
+}
+else
+{
+$(".colorbox_imagedetail").click(function(e){
+e.preventDefault();
+window.open($(this).find('img').attr('src'), '_blank');
+});
+}
+if ($('#mobile-header').length)
+{
+var INT_headerpos = $('#mobile-header').offset().top;
+var INT_headerheight = $('#mobile-header').height();
+var BOO_mobileheader = $('#mobile-header').is(":visible");
+$(document).on("scroll", function() {
+var BOO_cookiestatement = ($('#cookie-statement').length == 0 || $('#cookie-statement').is(":visible") == false);
+if ($(window).width() > 1024 && BOO_cookiestatement ) {
+if ($(document).scrollTop() > INT_headerpos && !$('#mobile-header').hasClass("small")) {
+$('#mobile-header').addClass("small");
+if (BOO_mobileheader) {
+$("#website").addClass("fixed-header").css("padding-top",INT_headerheight+'px');
+}
+}
+else if ($(document).scrollTop() <= INT_headerpos && $('#mobile-header').hasClass("small")) {
+$('#mobile-header').removeClass("small");
+if (BOO_mobileheader) {
+$("#website").removeClass("fixed-header").css("padding-top",'0px');
+}
+}
+}
+});
+}
+});
+</script>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f3f6ee09a661608" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" style="display: none;" src="https://www.facebook.com/connect/ping?client_id=429730104068252&amp;domain=www.dev-insider.de&amp;origin=1&amp;redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F__Bz3h5RzMx.js%3Fversion%3D43%23cb%3Df316c879a7f1dc%26domain%3Dwww.dev-insider.de%26origin%3Dhttps%253A%252F%252Fwww.dev-insider.de%252Ff20306239b46c42%26relation%3Dparent&amp;response_type=token%2Csigned_request&amp;sdk=joey&amp;version=v2.3" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=43#channel=f20306239b46c42&amp;origin=https%3A%2F%2Fwww.dev-insider.de" frameborder="0"></iframe></div></div></div>
+<script type="text/javascript">
+$(window).load(function () {
+$.ajax({
+url: "//connect.facebook.net/de_DE/sdk.js",
+cache: true,
+dataType: "script",
+success: function(){
+if (typeof(FB) != 'undefined')
+{
+FB.init({
+appId : '429730104068252',
+status : true,
+xfbml : true,
+version	: 'v2.3'
+});
+}
+}
+});
+});
+</script>
+<div id="website">
+<div id="leaderboard">
+<script type="text/javascript">
+$(document).ready(function(){if (typeof removeDFPSync == 'function'){removeDFPSync("ban_15347_728x90_468x60_RX1 img",""); }});
+</script>
+<div id="ban_15347_728x90_468x60_RX1" class=" " style="position:relative;">
+<div id="65_leaderboard">
+<script type="text/javascript">
+if (typeof googletag != "undefined" && typeof googletag.display != "undefined")
+{
+googletag.display('ban_15347_728x90_468x60_RX1');
+}
+</script>
+</div>
+</div>
+<div id="ban_15347_728x90_oop">
+<script type="text/javascript">
+if (typeof googletag != "undefined" && typeof googletag.display != "undefined")
+{
+googletag.display('ban_15347_728x90_oop');
+}
+</script>
+</div>
+</div>
+<div id="skyright">
+<script type="text/javascript">
+$(document).ready(function(){if (typeof removeDFPSync == 'function'){removeDFPSync("ban_15347_160x600_RX2 img",""); }});
+</script>
+<div id="ban_15347_160x600_RX2" class=" " style="position:relative;">
+<div id="65_skyright">
+<script type="text/javascript">
+if (typeof googletag != "undefined" && typeof googletag.display != "undefined")
+{
+googletag.display('ban_15347_160x600_RX2');
+}
+</script>
+</div>
+</div>
+</div>
+<div id="skyleft">
+<script type="text/javascript">
+$(document).ready(function(){if (typeof removeDFPSync == 'function'){removeDFPSync("ban_15347_161x600_RX3 img",""); }});
+</script>
+<div id="ban_15347_161x600_RX3" class=" " style="position:relative;">
+<div id="65_skyleft">
+<script type="text/javascript">
+if (typeof googletag != "undefined" && typeof googletag.display != "undefined")
+{
+googletag.display('ban_15347_161x600_RX3');
+}
+</script>
+</div>
+</div>
+</div>
+<!-- Out of Cache-Include: /modules/header/head/mobilenavi.cfm -->
+<div id="mobile-navi">
+<ul id="service-menu">
+<li class="item-login">
+<a href="https://www.dev-insider.de/login/">
+Login
+</a>
+</li>
+<li class="item-reg">
+<a href="https://www.dev-insider.de/registrierung/">
+Registrierung
+</a>
+</li>
+<li class="item-nl">
+<a href="https://www.dev-insider.de/newsletter/">
+Newsletter
+</a>
+</li>
+</ul>
+<ul id="main-navi">
+<li class="menueitemhome">
+<a href="https://www.dev-insider.de/" target="">Startseite</a>
+</li>
+<li class="gosubnavi menueitem1">
+<a href="https://www.dev-insider.de/software-entwicklung/" target="">
+Software-Entwicklung
+</a>
+</li>
+<li class="mob-submenu">
+<ul>
+<li>
+<a href="https://www.dev-insider.de/software-entwicklung/projektmanagement/" target="">
+Projektmanagement
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/software-entwicklung/coding-und-collaboration/" target="">
+Coding &amp; Collaboration
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/software-entwicklung/agile-entwicklung/" target="">
+Agile Entwicklung
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/software-entwicklung/testing/" target="">
+Testing
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/software-entwicklung/application-security/" target="">
+Application Security
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/software-entwicklung/patching-wartung/" target="">
+Patching &amp; Wartung
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/software-entwicklung/ides-und-programmiersprachen/" target="">
+IDEs &amp; Programmiersprachen
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/software-entwicklung/embedded-software/" target="">
+Embedded Software
+</a>
+</li>
+</ul>
+</li>
+<li class="gosubnavi menueitem2">
+<a href="https://www.dev-insider.de/app-entwicklung/" target="">
+App-Entwicklung
+</a>
+</li>
+<li class="mob-submenu">
+<ul>
+<li>
+<a href="https://www.dev-insider.de/app-entwicklung/web-apps/" target="">
+Web Apps
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/app-entwicklung/mobile-apps/" target="">
+Mobile Apps
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/app-entwicklung/cross-plattform/" target="">
+Cross Plattform
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/app-entwicklung/app-management/" target="">
+App Management
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/app-entwicklung/frameworks-und-sprachen/" target="">
+Frameworks &amp; Sprachen
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/app-entwicklung/standards-und-best-practices/" target="">
+Standards &amp; Best Practices
+</a>
+</li>
+</ul>
+</li>
+<li class="gosubnavi menueitem3">
+<a href="https://www.dev-insider.de/anbindung-und-schnittstellen/" target="">
+Anbindung &amp; Schnittstellen
+</a>
+</li>
+<li class="mob-submenu">
+<ul>
+<li>
+<a href="https://www.dev-insider.de/anbindung-und-schnittstellen/apis/" target="">
+APIs
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/anbindung-und-schnittstellen/betriebssysteme/" target="">
+Betriebssysteme
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/anbindung-und-schnittstellen/datenbanken/" target="">
+Datenbanken
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/anbindung-und-schnittstellen/cloud-tools/" target="">
+Cloud Tools
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/anbindung-und-schnittstellen/microservices/" target="">
+Microservices
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/anbindung-und-schnittstellen/blockchain/" target="">
+Blockchain
+</a>
+</li>
+</ul>
+</li>
+<li class="gosubnavi menueitem4">
+<a href="https://www.dev-insider.de/deployment/" target="">
+Deployment
+</a>
+</li>
+<li class="mob-submenu">
+<ul>
+<li>
+<a href="https://www.dev-insider.de/deployment/installation-und-rollout/" target="">
+Installation &amp; Rollout
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/deployment/versionskontrolle/" target="">
+Versionskontrolle
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/deployment/inventarisierung/" target="">
+Inventarisierung
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/deployment/support/" target="">
+Support
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/deployment/ticketing-and-change-management/" target="">
+Ticketing &amp; Change Management
+</a>
+</li>
+</ul>
+</li>
+<li class="gosubnavi menueitem5">
+<a href="https://www.dev-insider.de/devops/" target="">
+DevOps
+</a>
+</li>
+<li class="mob-submenu">
+<ul>
+<li>
+<a href="https://www.dev-insider.de/devops/log-management-und-monitoring/" target="">
+Logs &amp; Monitoring
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/devops/quellcode-management/" target="">
+Quellcode-Management
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/devops/continuous-delivery-and-integration/" target="">
+Continuous Delivery &amp; Integration
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/devops/container-und-virtualisierung/" target="">
+Container
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/devops/cloud-umgebungen-und-paas/" target="">
+Cloud &amp; PaaS
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/devops/configuration-mangement/" target="">
+Configuration-Management
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/devops/mitarbeiter-management/" target="">
+Mitarbeiter
+</a>
+</li>
+</ul>
+</li>
+<li class="gosubnavi menueitem6">
+<a href="https://www.dev-insider.de/recht-und-vertraege/" target="">
+Recht &amp; Verträge
+</a>
+</li>
+<li class="mob-submenu">
+<ul>
+<li>
+<a href="https://www.dev-insider.de/recht-und-vertraege/smart-contracts/" target="">
+Smart Contracts
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/recht-und-vertraege/software-erstellung/" target="">
+Software-Erstellung
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/recht-und-vertraege/software-pflege/" target="">
+Software-Pflege
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/recht-und-vertraege/service-und-support/" target="">
+Service &amp; Support
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/recht-und-vertraege/slas/" target="">
+SLAs
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/recht-und-vertraege/risk-management/" target="">
+Risk Management
+</a>
+</li>
+<li>
+<a href="https://www.dev-insider.de/recht-und-vertraege/urheber-und-nutzungsrecht/" target="">
+Urheber- &amp; Nutzungsrecht
+</a>
+</li>
+</ul>
+</li>
+<li class=" menueitem7">
+<a href="https://www.dev-insider.de/specials/" target="">
+Specials
+</a>
+</li>
+<li class=" menueitem8">
+<a href="https://www.dev-insider.de/ebooks/" target="">
+eBooks
+</a>
+</li>
+<li class=" menueitem9">
+<a href="https://www.dev-insider.de/cio/" target="">
+CIO
+</a>
+</li>
+<li class=" menueitem10">
+<a href="https://www.dev-insider.de/whitepaper/" target="">
+Whitepaper
+</a>
+</li>
+<li class=" menueitem11">
+<a href="https://www.dev-insider.de/webcasts/" target="">
+Mediathek
+</a>
+</li>
+<li class=" menueitem12">
+<a href="https://www.akademie.vogel-it.com/" target="_blank">
+Akademie
+</a>
+</li>
+<li class=" menueitem13">
+<a href="https://www.dev-insider.de/award/" target="">
+Award
+</a>
+</li>
+<li class=" menueitem14">
+<a href="https://www.dev-insider.de/inhalte/firmen/" target="">
+Anbieter
+</a>
+</li>
+</ul>
+<ul id="footer-navi">
+<li class="footer-impress">
+<a href="https://www.dev-insider.de/index.cfm?pid=14946">Impressum</a>
+</li>
+<li class="footer-media">
+<a href="https://www.dev-insider.de/service/mediadaten/" target="_blank">Media</a>
+</li>
+<li class="footer-privacy">
+<a href="https://privacy.vogel.de/datenschutz.html" target="_blank">Datenschutz</a>
+</li>
+</ul>
+</div>
+<div id="mobile-header">
+<button id="menu"><span>Menü</span></button>
+<button id="searchexpander"><span>Suche</span></button>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#btn_newsletter").click(function(){
+window.location.href = "/newsletter/";
+});
+});
+</script>
+<style>
+#icons_header{
+display:none;
+}
+</style>
+<button id="btn_newsletter">
+<span class="nl_bdi">Newsletter</span>
+</button>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#btn_myaccount").click(function(){
+window.location.href = "/my/profile/";
+});
+});
+</script>
+<style>
+#icons_header{
+display:none;
+}
+</style>
+<button id="btn_myaccount">
+<span class="login_bdi">Mein Account</span>
+</button>
+<a id="mobile-logo" href="https://www.dev-insider.de/"><img src="logo.png" alt="logo"></a>
+<button id="mobile-close"><img src="close_x.png"></button>
+<form method="get" action="/suchergebnis/">
+<input name="keyword" id="mobile-search" type="text">
+<button><span>suchen..</span></button>
+</form>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#menu').click(function(){
+$('body').toggleClass('open');
+});
+$('#searchexpander').click(function(){
+$('#mobile-header').toggleClass('open');
+if ('' != '')
+{
+// Blur-Effekt auf Suchfeld
+$("#mobile-search").bind("focusin", function(a)
+{
+STR_val = $(this).val();
+if ( a.type == "focusin" && ( STR_val == '' || STR_val == '') )
+{
+$(this).val('');
+}
+});
+}
+else
+{
+$('#mobile-search').focus();
+}
+});
+$('#mobile-close').click(function(){
+$('#mobile-header').toggleClass('open');
+});
+$('#mobile-navi li.gosubnavi a,#mobile-navi li.gosubnavi div').click(function(e){
+e.preventDefault();
+$(this).parent('li').next('li.mob-submenu').toggle();
+});
+$("#service-menu .profilelink").click(function(){
+window.location.href= "/my/publicprofile/#crop-avatar";
+});
+});
+</script>
+<div id="wrapper">
+<div class="head_15347 head" id="head_65">
+<div id="head_top">
+<img class="vbm" src="vogel_top.png">
+<div>
+</div>
+<div class="clear"></div>
+</div>
+<div id="head_logo">
+<a href="https://www.dev-insider.de/"><img id="logo" src="logo.png" alt="logo"></a>
+<div id="search">
+<form id="quicksearchform" name="quicksearchform" class="quicksearchform" method="get" action="/suchergebnis/">
+<a href="javascript:void(0);" id="searchbutton" class="searchbutton">
+<span class="button">suchen</span>
+</a>
+<input name="keyword" class="searchfield" id="searchfield" type="text">
+</form>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+// Blur-Effekt auf Suchfeld
+$("#searchfield").bind("focusin focusout", function(a)
+{
+STR_val = $(this).val();
+if ( a.type == "focusin" && ( STR_val == '' || STR_val == '') )
+{
+$(this).val('');
+}
+else if ( a.type == "focusout" && STR_val == '' )
+{
+$(this).val('');
+}
+});
+// Suche auf Button-Klick abschicken
+$(".searchbutton").click(function(e){
+var STR_value = $(this).parent().find(".searchfield").val();
+if (STR_value == "" || STR_value == "" || STR_value == "")
+{
+STR_value = "";
+e.preventDefault();
+}
+else
+{
+// Trim
+$(this).parent().find(".searchfield").val($.trim(STR_value));
+$(this).closest(".quicksearchform").submit();
+}
+});
+});
+</script>
+<div class="clear"></div>
+</div>
+</div>
+<div id="main_menu">
+<ul id="main_nav">
+<li class=" main_nav_first menueitem1">
+<a href="https://www.dev-insider.de/software-entwicklung/" name="Software-Entwicklung" alt="" target="">
+Software-Entwicklung
+</a>
+</li>
+<li class=" menueitem2">
+<a href="https://www.dev-insider.de/app-entwicklung/" name="App-Entwicklung" alt="" target="">
+App-Entwicklung
+</a>
+</li>
+<li class=" menueitem3">
+<a href="https://www.dev-insider.de/anbindung-und-schnittstellen/" name="Anbindung &amp; Schnittstellen" alt="" target="">
+Anbindung &amp; Schnittstellen
+</a>
+</li>
+<li class=" menueitem4">
+<a href="https://www.dev-insider.de/deployment/" name="Deployment" alt="" target="">
+Deployment
+</a>
+</li>
+<li class=" menueitem5">
+<a href="https://www.dev-insider.de/devops/" name="DevOps" alt="" target="">
+DevOps
+</a>
+</li>
+<li class=" main_nav_last menueitem6">
+<a href="https://www.dev-insider.de/recht-und-vertraege/" name="Recht &amp; Verträge" alt="" target="">
+Recht &amp; Verträge
+</a>
+</li>
+</ul>
+</div>
+<div class="clear"></div>
+<div id="breadcrumb_bg">
+<p id="cookietrail">
+<span>Sie befinden sich hier:</span>
+<a class="" href="https://www.dev-insider.de/specials/">Specials</a>
+&gt;
+<a class="" href="https://www.dev-insider.de/specials/definitionen/">Definitionen</a>
+</p>
+<!-- Out of Cache-Include: /modules/header/head/mysiteheader.cfm -->
+<p id="login">
+Sie sind noch nicht angemeldet&nbsp;
+<a href="https://www.dev-insider.de/index.cfm?pid=14948&amp;tab=0&amp;cf=%2Findex%2Ecfm%3Fpid%3D1%26pk%3D677737%26p%3D1&amp;os=CB00C9B42F554BD400BBE1A830BD3FD0" class="colorbox_log">Login</a>
+&nbsp;|&nbsp;
+<a href="https://www.dev-insider.de/index.cfm?pid=14948&amp;tab=1&amp;cf=%2Findex%2Ecfm%3Fpid%3D1%26pk%3D677737%26p%3D1&amp;os=CB00C9B42F554BD400BBE1A830BD3FD0" class="colorbox_reg">Registrierung</a>
+&nbsp;|&nbsp;
+<a href="https://www.dev-insider.de/index.cfm?pid=14939">Newsletter</a>
+</p>
+<!-- Out of Cache-Include: /modules/header/head/usermenue.cfm -->
+</div>
+<div id="resp_container">
+<div class="row3" id="containerobject_439591">
+<div class="teaser_content"><style type="text/css">
+.point_insider {
+height: 24px;
+overflow: hidden;
+width: 170px;
+margin-left: 0 !important;
+}
+.point_insider img {
+right: -185px;
+position: absolute;
+transition: all 0.5s ease-in-out;
+margin-left: 0;
+}
+.point_insider:hover img {
+right: -10px;
+transition: all 0.5s ease-in-out;
+opacity: 1 !important;
+}
+#searchexpander {height:47px}
+#searchexpander {padding-top:12px}
+</style>
+<div class="crosslink_insider" style="width:170px; position:absolute; right:10px; top:60px; margin-left:0;">
+<div class="point_insider" style="position:absolute; left:0; top:0;">
+<a href="https://www.bigdata-insider.de/" target="_blank"><img alt="" outline="0" src="bdi_hover.png" style="border:0 !important;" border="0"></a>
+</div>
+<div class="point_insider" style="position:absolute; left:0; top:27px;">
+<a href="https://www.cloudcomputing-insider.de/" target="_blank"><img alt="" outline="0" src="cci_hover.png" style="border:0 !important;" border="0"></a>
+</div>
+<div class="point_insider" style="position:absolute; left:0; top:54px;">
+<a href="https://www.datacenter-insider.de/" target="_blank"><img alt="" outline="0" src="dtc_hover.png" style="border:0 !important;" border="0"></a>
+</div>
+<!-- <div class="point_insider" style="position:absolute; left:0; top:81px;">
+<a href="https://www.dev-insider.de/" target="_blank"><img alt="" border="0" outline="0" src="/shared/vogelonline/img/bep30/insider_hover/dvi_hover.png" style="border:0 !important;" /></a>
+</div> -->
+<div class="point_insider" style="position:absolute; left:0; top:81px;">
+<a href="https://www.ip-insider.de/" target="_blank"><img alt="" outline="0" src="ipi_hover.png" style="border:0 !important;" border="0"></a>
+</div>
+<div class="point_insider" style="position:absolute; left:0; top:108px;">
+<a href="https://www.security-insider.de/" target="_blank"><img alt="" outline="0" src="sec_hover.png" style="border:0 !important;" border="0"></a>
+</div>
+<div class="point_insider" style="position:absolute; left:0; top:135px;">
+<a href="https://www.storage-insider.de/" target="_blank"><img alt="" outline="0" src="sst_hover.png" style="border:0 !important;" border="0"></a>
+</div>
+</div></div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){if (typeof removeDFPSync == 'function'){removeDFPSync("ban_15347_960x250_RX0 img",""); }});
+</script>
+<div id="ban_15347_960x250_RX0" class=" " style="position:relative;">
+<div id="containerobject_439857">
+<script type="text/javascript">
+if (typeof googletag != "undefined" && typeof googletag.display != "undefined")
+{
+googletag.display('ban_15347_960x250_RX0');
+}
+</script>
+</div>
+</div>
+</div>
+<div id="content_wrap" class="silver-lake">
+<!-- INT_imagestotalgallery:0-->
+<article id="containerobject_439333" class="">
+<header class="page1"><div><h2 class="subhead">Definition „Objektorientierte Programmierung“</h2><h1 class="headline">Was ist OOP?</h1><p id="autor"><time pubdate="pubdate">26.01.18</time> | Autor / Redakteur: LineFeed / <a href="https://www.dev-insider.de/stephan-augsten/">Stephan Augsten</a></p></div><a class="colorbox_imagedetail cboxElement" id="topmessageimageurl" href="https://www.dev-insider.de/index.cfm?pid=14953&amp;pk=1341855&amp;type=article&amp;fk=677737"><div><img id="topmessageimage" src="41.jpg" alt="Objektorientierte Programmierung lebt von Klassen, ihren untergeordneten Objekten und der Vererbung ihrer Attribute." title="Objektorientierte Programmierung lebt von Klassen, ihren untergeordneten Objekten und der Vererbung ihrer Attribute."></div></a></header><div id="topmessageimagetitle" class="bildunterschrift">Objektorientierte Programmierung lebt von Klassen, ihren untergeordneten Objekten und der Vererbung ihrer Attribute.<span class="picsource">
+(© ribkhan - stock.adobe.com)
+</span></div><div class="rolling-prairie" id="page1"><div class="dog-fish">
+<div class="optionen">
+<!-- Socialmedia Leiste -->
+<script type="text/javascript" src="socialprivacy.js"></script>
+<div id="art_socialmedia_65" class="social_media_art">
+<ul id="socialmedia_privacy_area" class="socialmedia_privacy_area responsive">
+<li class="socialmedia" id="xing"><button class="xi" data-social-url="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url=https%3A%2F%2Fwww.dev-insider.de%2Fwas-ist-oop-a-677737%2F%3Fcmp%3Dsm-x-swyn%26utm_source%3Dxing%26utm_medium%3Dsm%26utm_campaign%3Dxing-swyn" data-social-loader="blank"><img title="Artikel teilen auf Xing" src="xing_128.svg"><span></span><span class="sm-text">share me</span></button></li>
+<li class="socialmedia" id="facebook"><button class="fb" data-social-url="//www.facebook.com/share.php?u=https%3A%2F%2Fwww.dev-insider.de%2Fwas-ist-oop-a-677737%2F%3Fcmp%3Dsm-fb-swyn%26utm_source%3Dfacebook%26utm_medium%3Dsm%26utm_campaign%3Dfacebook-swyn&amp;title=Was%20ist%20OOP%3F" data-social-loader="blank"><img title="Artikel teilen auf Facebook" src="facebook_128.svg"><span></span><span class="sm-text">share me</span></button></li>
+<li class="socialmedia" id="twitter"><button class="tw" data-social-url="https://twitter.com/share?url=https%3A%2F%2Fwww.dev-insider.de%2Fwas-ist-oop-a-677737%2F%3Fcmp%3Dsm-tw-swyn%26utm_source%3Dtwitter%26utm_medium%3Dsm%26utm_campaign%3Dtwitter-swyn&amp;text=Was%20ist%20OOP%3F" data-social-loader="blank"><img title="Artikel teilen auf Twitter" src="twitter_128.svg"><span></span><span class="sm-text">tweet me</span></button></li>
+<li class="socialmedia" id="linkedin"><button class="li" data-social-url="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.dev-insider.de%2Fwas-ist-oop-a-677737%2F%3Fcmp%3Dsm-li-swyn%26utm_source%3Dlinkedin%26utm_medium%3Dsm%26utm_campaign%3Dlinkedin-swyn&amp;title=Was%20ist%20OOP%3F" data-social-loader="blank"><img title="Artikel teilen auf LinkedIn" src="linkedin_128.svg"><span></span><span class="sm-text">share me</span></button></li>
+<li class="socialmedia" id="gplus"><button class="gp" data-social-url="https://plus.google.com/share?url=https%3A%2F%2Fwww.dev-insider.de%2Fwas-ist-oop-a-677737%2F%3Fcmp%3Dsm-g-swyn%26utm_source%3Dgplus%26utm_medium%3Dsm%26utm_campaign%3Dgplus-swyn" data-social-loader="blank"><img title="Artikel teilen auf Google+" src="google_128.png"><span></span><span class="sm-text">share me</span></button></li>
+</ul>
+</div>
+<div class="clear"></div>
+<script language="javascript">
+$(document).ready(function() {
+var ARR_sharecountsart_socialmedia_65 = new Array();
+ARR_sharecountsart_socialmedia_65['xing'] = "";
+ARR_sharecountsart_socialmedia_65['facebook'] = "";
+ARR_sharecountsart_socialmedia_65['facebooklike'] = "";
+ARR_sharecountsart_socialmedia_65['twitter'] = "";
+ARR_sharecountsart_socialmedia_65['linkedin'] = "";
+ARR_sharecountsart_socialmedia_65['googleplus'] = "";
+ARR_sharecountsart_socialmedia_65['whatsapp'] = "";
+var ARR_sharetxtart_socialmedia_65 = new Array();
+ARR_sharetxtart_socialmedia_65['xing'] = "share me";
+ARR_sharetxtart_socialmedia_65['facebook'] = "share me";
+ARR_sharetxtart_socialmedia_65['facebooklike'] = "like me";
+ARR_sharetxtart_socialmedia_65['twitter'] = "tweet me";
+ARR_sharetxtart_socialmedia_65['linkedin'] = "share me";
+ARR_sharetxtart_socialmedia_65['googleplus'] = "share me";
+ARR_sharetxtart_socialmedia_65['whatsapp'] = "share me";
+createSocialBar(
+layout = "responsive",
+links = "window",
+privacy = "0",
+sharecounts = ARR_sharecountsart_socialmedia_65,
+sharetxts = ARR_sharetxtart_socialmedia_65,
+url = "https://www.dev-insider.de/was-ist-oop-a-677737/",
+id = "art_socialmedia_65"
+);
+});
+</script>
+<!-- Optionsleiste -->
+<!-- Out of Cache-Include: /modules/bars/dyn_options.cfm -->
+<div id="art_options_65" class="options">
+<ul>
+<li class="option_pdf">
+<a class="" href="https://www.dev-insider.de/index.cfm?pid=14948&amp;st=pdf&amp;iscontent=10&amp;pk=677737&amp;tab=0&amp;cf=%2Findex%2Ecfm%3Fpid%3D1%26pk%3D677737%26p%3D1&amp;os=CB00C9B42F554BD400BBE1A830BD3FD0" rel="nofollow">
+<img alt="PDF" src="pdf.svg">
+<span>PDF</span>
+</a>
+</li>
+<li class="option_recommend">
+<a class="colorbox_recommend" href="javascript:openPopUp('/index.cfm?pid=14944&amp;pk=677737&amp;ct=10');" rel="nofollow">
+<img alt="Weiterempfehlen" src="mail.svg">
+<span>Weiterempfehlen</span>
+</a>
+</li>
+<li class="option_print">
+<a class="colorbox_print" href="javascript:openPopUp('/index.cfm?pid=14942&amp;pk=677737&amp;print=true&amp;printtype=article');" rel="nofollow">
+<img alt="Drucken" src="print.svg">
+<span>Drucken</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="arkansas"><p class="vortext">Bei der 
+Objektorientierten Programmierung, kurz OOP, werden Daten und 
+Programmcode in übersichtlichen, wiederverwendbaren Modulen – sprich 
+Objekten – gekapselt. Dies reduziert den Programmieraufwand und hilft, 
+Fehler zu vermeiden.</p><p>Objektorientierte <a target="_blank" id="nointelliTXT" class="link_article" href="https://www.dev-insider.de/was-ist-programmierung-a-606763/">Programmierung</a> (OOP) bezeichnet ein Programmierparadigma, das heißt ein Grundprinzip, nach dem die Lösung von Aufgaben in einer <a target="_blank" id="nointelliTXT" class="link_article" href="https://www.dev-insider.de/was-ist-eine-programmiersprache-a-577066/">Programmiersprache</a> erfolgt. Für OOP charakteristisch ist die Kapselung von Daten und Code in Objekten.</p><p>Der
+ Zugriff auf die Objekte ist nur über Schnittstellen möglich, die von 
+den Objekten selbst bereitgestellt werden. Diese Abschottung wird durch 
+die jeweilige Programmiersprache im Allgemeinen aber nicht erzwungen, 
+vielmehr steht es dem Entwickler frei, wie er seine Objekte definiert.</p><p>Die
+ klassenbasierten objektorientierten Sprachen bieten darüber hinaus die 
+Möglichkeit, die Struktur der Objekte in abstrakter Form vorzudefinieren
+ und sie an Unterklassen zu vererben. Solch ein Klassenkonzept findet 
+sich gerade bei den populärsten Sprachen, die dem Paradigma OOP folgen.</p><div class="bannerscrollad">
+<script type="text/javascript">
+$(document).ready(function(){if (typeof removeDFPSync == 'function'){removeDFPSync("ban_15347_960x600_RX5 img",""); }});
+</script>
+<div id="ban_15347_960x600_RX5" class="banner row2 " style="position:relative;">
+<div id="65_banner_article_scrollad">
+<script type="text/javascript">
+if (typeof googletag != "undefined" && typeof googletag.display != "undefined")
+{
+googletag.display('ban_15347_960x600_RX5');
+}
+</script>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){if (typeof removeDFPSync == 'function'){removeDFPSync("ban_15347_150x150_150x151_150x152_150x153_150x154_300x250_300x600_RX4 img",""); }});
+</script>
+<div id="ban_15347_150x150_150x151_150x152_150x153_150x154_300x250_300x600_RX4" class="banner bannerl " style="position:relative;">
+<div id="65_banner_article_1">
+<script type="text/javascript">
+if (typeof googletag != "undefined" && typeof googletag.display != "undefined")
+{
+googletag.display('ban_15347_150x150_150x151_150x152_150x153_150x154_300x250_300x600_RX4');
+}
+</script>
+</div>
+</div>
+<h3 class="zwiti">OOP im Kontext gängiger Programmierparadigmen</h3><p>Objektorientierte
+ Programmiersprachen zählen typisch zu den imperativen und prozeduralen 
+Sprachen. Sie führen das Objekt als neuen Grundbaustein ein, der Daten 
+und zugehörigen Programmcode zu einer Einheit zusammenfasst. Diese 
+Objekte lassen sich in gleicher Weise verwenden, wie die Variablen, 
+Prozeduren und Funktionen ähnlicher, nicht objektorientierter Sprachen.</p><p>Die
+ OOP realisiert somit eine Modularisierung und bietet eine höhere 
+Abstraktion als beispielsweise eine rein imperative, prozedurale 
+Programmiersprache. Darüber hinaus besitzt ein Objekt einen Zustand und 
+einen Bezug zu sich selbst. Dieser ist üblicherweise über ein Attribut 
+mit dem Namen "self" oder "this" auswertbar.</p><h3 class="zwiti">Warum OOP – Ideal eines fehlerfreien Programms</h3><p>Durch
+ die Kapselung der Daten sowie des Codes, der sie verändert oder 
+ausgibt, lassen sich die Objekte unabhängig voneinander und von anderen 
+Programmteilen prüfen und testen. Wenn Variablen nur innerhalb des 
+Objekts, in dem sie als Felder oder Attribute definiert sind, durch die 
+dort als Methoden festgelegten Prozeduren veränderbar sind, können 
+andere Programmteile gar keinen Einfluss auf die Funktion des Objekts 
+haben.</p><p>Selbst ein nur lesender Zugriff auf die Daten von außerhalb
+ des Objekts kann voraussetzen, dass die Werte immer den aktuellen, im 
+Objekt gespeicherten Zustand wiedergeben. Dessen Korrektheit kann die 
+OOP dadurch sicherstellen, dass die Eingabedaten bei der Übernahme in 
+das Objekt durch die entsprechenden Methoden geprüft werden. Die 
+korrekte Funktion dieser (im Allgemeinen sehr kurzen) Codesequenzen 
+lässt sich wiederum völlig unabhängig von anderen Programmteilen 
+verifizieren.</p><h3 class="zwiti">Warum OOP – Wiederhol dich nicht!</h3><p>Wie
+ jede Modularisierung erleichtert die objektorientierte Programmierung 
+die Wiederverwendung von Codeblöcken. Das spart Arbeitszeit, vermeidet 
+aber vor allem Copy-and-Paste Fehler, die leicht beim Kopieren und 
+Anpassen von Programmteilen entstehen.</p><p>Die Entwickler von Django, einem Rapid <a target="_blank" id="nointelliTXT" class="link_article" href="https://www.dev-insider.de/was-ist-programmierung-a-606763/">Development</a>
+ Framework für Web-Applikationen (CMS) das in der objektorientierten 
+Skriptsprache Python geschrieben ist, prägten dafür den Slogan „Don't 
+Repeat Yourself“. Dieses Prinzip lässt sich besonders gut mit Hilfe der 
+Vererbung klassenbasierter Sprachen realisieren. Im Gegensatz zum 
+Kopieren von Codeblöcken bleibt bei dieser Art der Wiederverwendung eine
+ bereits verifizierte Korrektheit des Ursprungscodes erhalten.</p><h3 class="zwiti">Die Geschichte der OOP als kurzer Abriss</h3><p>Eine
+ Begrifflichkeit im Sinn der heutigen Vorstellung von Objektorientierter
+ Programmierung tauchte am MIT bereits um das Jahr 1960, im Rahmen der 
+Erforschung Künstlicher Intelligenz und im Zusammenhang mit der 
+Programmiersprache LISP, auf. Mitte der 1960er-Jahre führte Simula 67 
+das Klassenkonzept mitsamt Vererbung und weiteren objektorientierten 
+Features ein. Davon beeinflusst entstand um das Jahr 1970 die Sprache 
+Smalltalk am Xerox PARC, die als erste den Begriff OOP konkret 
+verwendete.</p><h3 class="zwiti">OOP als Erweiterung bestehender Programmiersprachen</h3><p>In
+ den 1990er-Jahren popularisierten objektorientierte Programmiersprachen
+ als Erweiterungen verbreiteter, meist imperativ-prozeduraler Sprachen 
+das Konzept der OOP. Bedeutende Beispiele sind <a target="_blank" id="nointelliTXT" class="link_article" href="https://www.dev-insider.de/was-ist-c-a-581368/">C++</a> und <a target="_blank" id="nointelliTXT" class="link_article" href="https://www.dev-insider.de/was-ist-java-programmierung-a-569186/">Java</a>, beide auf C aufbauend.</p><p>Dieser
+ Ansatz erleichterte es ihnen, sich als neue Sprache in einem bereits 
+unübersehbaren Umfeld zu positionieren. Die bei einem solchen Konzept 
+mögliche Mischung von OOP und einfacher, imperativ-prozeduraler 
+Programmierung birgt aber das Risiko, die oben genannten Vorteile der 
+Objektorientierung zu verlieren.</p><h3 class="zwiti">Ungewöhnliche OOP-Implementationen</h3><p>Bereits
+ bestehende Programmiersprachen wurden ebenfalls durch Features 
+erweitert, die eine OOP ermöglichen. Eine ungewöhnliche, aber zur 
+Sprache passende Umsetzung findet sich in der Skriptsprache <a target="_blank" id="nointelliTXT" class="link_article" href="https://www.dev-insider.de/was-ist-perl-a-583568/">Perl</a>.
+ Diese versteckt das Attribut für den Selbstbezug nicht wie andere 
+Programmiersprachen, sondern behandelt sie wie jedes andere Datenfeld. 
+Das ähnelt einer Armbanduhr mit Glasboden, die das Uhrwerk sichtbar 
+lässt.</p><p>Dagegen zählt die 1985 vorgestellte Programmiersprache 
+Eiffel nicht nur zu den wenigen Vertretern einer reinen OOP, sondern 
+bietet auch noch mehr als eine Programmiersprache. Sie bezeichnet sich 
+besser als eine Methode der <a target="_blank" id="nointelliTXT" class="link_article" href="https://www.dev-insider.de/was-ist-anwendungsentwicklung-a-577058/">Softwareentwicklung</a>.</p></div></div>
+<footer>
+<section>
+<!--Kommentarbox -->
+<!-- Out of Cache-Include: /modules/teasers/forum/dyn_comments.cfm -->
+<script type="text/javascript" src="ckeditor.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<div class="clear"></div>
+<div class="kommentare" id="art_comments_65">
+<div class="comment-loading-init" data-bind="visible: !initialized" style="display: none;">
+<i class="icon ion-load-c spin" style="font-size:96px;"></i>
+<p>Kommentare werden geladen....	</p>
+</div>
+<div class="boxhead_bg">Kommentar zu diesem Artikel</div>
+<div style="display:none">
+<div class="comment-alert" style="margin:10px;">
+<p>Der Kommentar wird durch einen Redakteur geprüft und in Kürze freigeschaltet.</p>
+<input class="commentbutton" value="Ok" onclick="$.colorbox.close()" style="margin-top: 20px;width:125px;" type="button">
+</div>
+</div>
+<form name="commentform" id="commentform" style="position:relative">
+<div class="formoverlay"><i class="icon ion-load-c spin" style="font-size:96px;"></i></div>
+<div class="userinfo" style="height:auto;">
+<p>Anonym mitdiskutieren oder einloggen <a class="button" href="https://www.dev-insider.de/index.cfm?pid=14948&amp;tab=0&amp;cf=%2Findex%2Ecfm%3Fpid%3D1%26pk%3D677737%26p%3D1&amp;os=CB00C9B42F554BD400BBE1A830BD3FD0">Anmelden</a></p>
+<img src="user_default.jpg" alt="Avatar" class="comment-avatar-preview">
+<input name="username" id="username" placeholder="Name eingeben..." type="text">
+<div class="clear"></div>
+</div>
+<textarea name="comment" id="comment" style="height: 100px; width: 100%; visibility: hidden;"></textarea>
+<div class="dsgvo_hint">
+Zur Wahrung unserer Interessen speichern wir zusätzlich zu den o.g. 
+Informationen die IP-Adresse. Dies dient ausschließlich dem Zweck, dass 
+Sie als Urheber des Kommentars identifiziert werden können. Rechtliche 
+Grundlage ist die Wahrung berechtigter Interessen gem. Art 6 Abs 1 lit. 
+f) DSGVO.
+</div>
+<input value="Kommentieren" id="postbutton" type="button">
+</form>
+<form name="commentform-answer" id="commentform-answer" style="display:none">
+<div class="formoverlay"><i class="icon ion-load-c spin" style="font-size:96px;"></i></div>
+<div class="userinfo">
+<img src="user_default.jpg" alt="Avatar" class="comment-avatar-preview">
+<input name="username" id="username-answer" placeholder="Name eingeben..." type="text">
+</div>
+<input name="relatedPost" id="relatedPost" type="hidden">
+<textarea name="comment" id="commentanswertext" style="height:100px; width:100%"></textarea>
+<div class="dsgvo_hint">
+Zur Wahrung unserer Interessen speichern wir zusätzlich zu den o.g. 
+Informationen die IP-Adresse. Dies dient ausschließlich dem Zweck, dass 
+Sie als Urheber des Kommentars identifiziert werden können. Rechtliche 
+Grundlage ist die Wahrung berechtigter Interessen gem. Art 6 Abs 1 lit. 
+f) DSGVO.
+</div>
+<input value="Kommentieren" id="postbutton-answer" type="button">
+</form>
+<div id="comments" data-bind="visible:comments().length &gt; 0" style="display: none;">
+<ol class="comment-list" data-bind="foreach: {data:comments, afterRender:checkOverflow}"></ol>
+</div>
+<div class="comment-more" data-bind="if: hasMore"></div>
+<div id="comment-loading" data-bind="visible: commentsLoading" style="display: none;">
+<i class="icon ion-load-c spin" style="font-size:96px;"></i>
+<p>Kommentare werden geladen....	</p>
+</div>
+<div style="display:none">
+<div id="comment-report-dialog">
+<h2>Kommentar melden</h2>
+<p>Melden Sie diesen Kommentar, wenn dieser nicht den Richtlinien entspricht.</p>
+<form>
+<input name="id" id="comment-report-id" type="hidden">
+<textarea rows="5" id="comment-report-text" name="report_text"></textarea>
+<input class="commentbutton" value="Senden" id="comment-report-send" type="button">
+</form>
+<div class="clear"></div>
+</div>
+</div>
+<div style="display:none">
+<div id="comment-approve-dialog" style="margin:10px;">
+<h2>Kommentar Freigeben</h2>
+<p style="color:red;display:none" id="warning-unregistered-approve">unregistrierter Nutzer</p>
+<form>
+<div id="mailform_approve">
+<p> Der untenstehende Text wird an den Kommentator gesendet, falls dieser eine Email-hinterlegt hat.</p>
+<div class="form-group">
+<label>Betreff</label>
+<input id="comment-approve-subject" name="subject" value="Benachrichtigung zu ihrem Kommentar" style="width: 100%;font-size: 1em;" type="text">
+</div>
+<div class="form-group">
+<label>Text</label>
+<div style="width:100%;height:200px;border:1px solid black;overflow-y: scroll;" id="textdiv_approve" contenteditable="true"></div>
+</div>
+</div>
+<input class="commentbutton" value="Freigeben" id="comment-approve-send" style="margin-top:5px;" type="button">
+</form>
+<div class="clear"></div>
+</div>
+</div>
+<div style="display:none">
+<div id="comment-unapprove-dialog" style="margin:10px;">
+<h2>Freigabe entfernen</h2>
+<p style="color:red;display:none" id="warning-unregistered-unapprove">unregistrierter Nutzer</p>
+<form>
+<div id="mailform_unapprove">
+<p>Der untenstehende Text wird an den Kommentator gesendet, falls dieser eine Email-hinterlegt hat.</p>
+<div class="form-group">
+<label>Betreff</label>
+<input id="comment-unapprove-subject" name="subject" value="Benachrichtigung zu ihrem Kommentar" style="width: 100%;font-size: 1em;" type="text">
+</div>
+<div class="form-group">
+<label>Text</label>
+<div style="width:100%;height:200px;border:1px solid black;overflow-y: scroll;" id="textdiv_unapprove" contenteditable="true"></div>
+</div>
+</div>
+<input class="commentbutton" value="Freigabe entfernen" id="comment-unapprove-send" style="margin-top:5px;" type="button">
+</form>
+<div class="clear"></div>
+</div>
+</div>
+<script>
+var lang ={
+collapse: "Einklappen",
+expand: "Ausklappen"
+}
+var config = {
+sortsetting:'latest',
+sort:'created',
+sortorder:'desc',
+check :'f2dd9304722020cfe75bb1fbab2ebbb8c0070b89',
+STR_token : '',
+BOO_approveByAdmin: true,
+articleid:677737,
+useruuid: '',
+number:15,
+LST_commentlikes:"",
+length:1500,
+BOO_cutoff:false,
+BOO_commentsAllowed:true,
+BOO_admin:false,
+approved:1,
+clientemail:'redaktion@dev-insider.de'
+}
+var comment = {
+approved : false,
+userinfo : {
+useruuid : ""
+},
+articleinfo:{
+pkarticles:677737,
+articlenumber:"45091599",
+articletitle : "Was ist OOP?",
+articlelink:"http://www.dev-insider.de/was-ist-oop-a-677737/"
+},
+clientinfo:{
+client:65,
+clientname:"Dev-Insider"
+},
+contenttype:"comment"
+}
+/*Nur mit Kommentarmodul einsetzbar*/
+/*/uxmodules/teasers/forum/comments.cfm (Auswahl neues Kommentarmodul) */
+/* Config CKE */
+/* Felder die zurückgeliefert werden sollen */
+/* var commentFields = 'pkarticles,approved,articlenumber,id,user,userimagepath,username,useruuid,userlink,created,comment,mod,modmodified,subcomments,likes,dislikes,articletitle,articlelink,relatedComment,modified,mod'; */
+var ckeditorConfig = {
+toolbar: "comment",
+wordcount: {
+/* Whether or not you want to show the Paragraphs Count*/
+showParagraphs: false,
+/* Whether or not you want to show the Word Count*/
+showWordCount: false,
+/* Whether or not you want to show the Char Count*/
+showCharCount: true,
+/* Whether or not you want to count Spaces as Chars*/
+countSpacesAsChars: true,
+/* Whether or not to include Html chars in the Char Count*/
+countHTML: false,
+/* Maximum allowed Word Count, -1 is default for unlimited*/
+maxWordCount: -1,
+/* Maximum allowed Char Count, -1 is default for unlimited */
+maxCharCount: config.length
+},
+startupFocus: false
+};
+/* View Model Kommentar für Knockout EIN KOMMENTAR */
+var CommentViewModel = function (data) {
+var commentMapping = {};
+ko.mapping.fromJS(data, commentMapping, this);
+/* Referenz auf sich selbst anlegen */
+var self = this;
+/*Links bearbeiten
+*
+* Beim initialisieren werden alle Links mit target="_blank" versehen;
+* */
+var commentHtml = $('<div>'+self.comment()+'</div>');
+commentHtml.find('a').each(function(){
+$(this).prop("target",'_blank');
+self.comment(commentHtml.html());
+});
+/* Like Funktion */
+self.like = function (obj) {
+if (!obj.hasClass("inactive")) {
+$.ajax({
+type: "PUT",
+cache: false,
+url: "/api/comments/" + self.id() + "/like/up/",
+data: JSON.stringify({ token: config.STR_token }),
+dataType: "json",
+success: function (data) {
+self.likes(data.likes);
+obj.closest(".comment-actions").find(".like").addClass("inactive");
+},
+failure: function (errMsg) {
+console.log(errMsg);
+}
+});
+}
+};
+/* DisLike Funktion */
+self.dislike = function (obj) {
+if (!obj.hasClass("inactive")) {
+$.ajax({
+type: "PUT",
+cache: false,
+url: "/api/comments/" + self.id() + "/like/down/",
+data: JSON.stringify({ token: config.STR_token }),
+dataType: "json",
+success: function (data) {
+self.dislikes(data.dislikes);
+obj.closest(".comment-actions").find(".like").addClass("inactive");
+},
+failure: function (errMsg) {
+console.log(errMsg);
+}
+});
+}
+};
+/* Bearbeiten Funktion Editor öffnen und mit Content befüllen */
+self.showEdit = function (obj) {
+if (obj.hasClass("active")) {
+$("#commentform-edit").hide();
+$(".kommentare button").removeClass("active");
+}
+else {
+$(".kommentare button").removeClass("active");
+obj.addClass("active");
+$("#commentform-answer").hide();
+if (typeof (CKEDITOR.instances.commentedittext) !== 'undefined') {
+CKEDITOR.instances.commentedittext.destroy();
+};
+CKEDITOR.on('instanceReady', function () {
+getUsers(CKEDITOR.instances.commentedittext);
+});
+obj.closest(".comment-actions").after($("#commentform-edit"));
+$("#commentform-edit").show();
+CKEDITOR.replace('commentedittext', ckeditorConfig);
+CKEDITOR.instances.commentedittext.setData(self.comment());
+CKEDITOR.instances.commentedittext.on('focus', function () {
+$("#cke_commentedittext").removeClass("invalid");
+});
+/**/
+$("#postbutton-edit").off("click");
+$("#postbutton-edit").click(function () {
+var STR_comment = CKEDITOR.instances.commentedittext.getData();
+if ($.trim(STR_comment).length == 0) {
+$("#cke_commentedittext").addClass("invalid");
+}
+if ($.trim(STR_comment).length > 0) {
+$(".kommentare button").removeClass("active");
+$("#commentform-edit").hide();
+self.update();
+}
+});
+}
+};
+self.update = function () {
+$("#commentform-edit").find(".formoverlay").show();
+self.comment(CKEDITOR.instances.commentedittext.getData());
+var parsedComment = "<div>" + self.comment + "</div>";
+var ARR_mentions = [];
+$(parsedComment).find("a.mention").each(function () {
+ARR_mentions.push($(this).prop("rel"));
+});
+$.ajax({
+type: "PUT",
+cache: false,
+url: "/api/comments/" + self.id() + "/",
+data: JSON.stringify({
+data: ko.mapping.toJS(self),
+token: config.STR_token,
+mentions: ARR_mentions,
+sort: config.sort,
+sortorder: config.sortorder,
+check: config.check,
+mod: false,
+usermodified: true
+}),
+dataType: "text",
+contentType: "application/json; charset=utf-8",
+success: function (data) {
+data = jQuery.parseJSON(data);
+$("#commentform-edit").find(".formoverlay").hide();
+if (data.id !== null && typeof (data.id) !== 'undefined') {
+if (config.BOO_approveByAdmin) {
+var $content = $(".comment-alert");
+$.colorbox({
+inline: true,
+href:$content,
+width: "40%",
+overlayClose: true,
+opacity: 0.9
+});
+setTimeout(function () {
+$.colorbox.close();
+}, 10000);
+}
+else {
+self.usermodified(data.usermodified);
+}
+}
+else {
+alert("Kommentar wurde nicht aktualisiert!");
+}
+},
+failure: function (errMsg) {
+alert("Fehler beim aktualisieren!");
+console.log(errMsg);
+}
+});
+};
+/**/
+self.showAnswer = function (obj) {
+if (obj.hasClass("active")) {
+$("#commentform-answer").hide();
+$(".kommentare button").removeClass("active");
+}
+else {
+$(".kommentare button").removeClass("active");
+obj.addClass("active");
+if (typeof (CKEDITOR.instances.commentanswertext) !== 'undefined') {
+CKEDITOR.instances.commentanswertext.destroy();
+};
+CKEDITOR.on('instanceReady', function () {
+getUsers(CKEDITOR.instances.commentanswertext);
+});
+$("#commentform-edit").hide();
+obj.closest(".comment-actions").after($("#commentform-answer"));
+$("#relatedPost").val(self.id());
+$("#commentform-answer").show();
+CKEDITOR.replace('commentanswertext', ckeditorConfig);
+CKEDITOR.instances.commentanswertext.setData("");
+CKEDITOR.instances.commentanswertext.on('focus', function () {
+$("#cke_commentanswertext").removeClass("invalid");
+});
+$("#username-answer").on("focus", function () {
+$("#username-answer").removeClass("invalid");
+});
+}
+};
+self.report = function () {
+/**/
+$("#comment-report-id").val(self.id());
+/**/
+$.colorbox({
+inline: true, href: "#comment-report-dialog", width: "450px", overlayClose: false, onClosed: function () {
+$("#comment-report-id").val("");
+$("#comment-report-text").val("");
+}
+});
+/**/
+$("#comment-report-send").off("click");
+$("#comment-report-send").click(function () {
+var STR_message = $("#comment-report-text").val();
+$.ajax({
+type: "POST",
+cache: false,
+url: "/api/comments/" + self.id() + "/report/",
+data: JSON.stringify({
+data: ko.mapping.toJS(self),
+message: STR_message,
+token: config.STR_token
+}),
+dataType: "json",
+success: function (data) {
+$.colorbox.close();
+},
+failure: function (errMsg) {
+alert("Fehler beim Senden!");
+console.log(errMsg);
+}
+});
+});
+};
+self.approve = function () {
+var txt = "Hallo " + self.userinfo.username() + ",<br/><br/>" +
+"Ihr Kommentar zum Artikel <a href='" + self.articleinfo.articlelink() + "'>" + self.articleinfo.articletitle() + "</a> wurde freigegeben!<br/><br/>" +
+"Vielen Dank für Ihr Engagement auf " + self.clientinfo.clientname() + "<br/><br/>" +
+"Liebe Grüße,<br/>" +
+"das '" + self.clientinfo.clientname() + "' Team";
+$("#textdiv_approve").html(txt);
+/**/
+$.colorbox({
+inline: true, href: "#comment-approve-dialog", width: "450px", transition: "elastic", overlayClose: false, onClosed: function () {
+$("#textdiv_approve").html("");
+}
+});
+if(self.userinfo.useruuid().length > 0){
+$("#warning-unregistered-approve").hide();
+$("#mailform_approve").show();
+$.colorbox.resize();
+}
+else{
+$("#warning-unregistered-approve").show();
+$("#mailform_approve").hide();
+$.colorbox.resize();
+}
+/**/
+$("#comment-approve-send").off("click");
+$("#comment-approve-send").click(function () {
+var STR_message = $("#textdiv_approve").html();
+var STR_subject = $("#comment-approve-subject").val();
+$.ajax({
+type: "POST",
+cache: false,
+url: "/api/comments/" + self.id() + "/approve/",
+data: JSON.stringify({
+message: STR_message,
+subject: STR_subject
+}),
+dataType: "json",
+success: function (data) {
+$.colorbox.close();
+location.reload();
+},
+failure: function (errMsg) {
+alert("Fehler beim Senden!");
+console.log(errMsg);
+}
+});
+});
+};
+self.unapprove = function () {
+var txt = 'Hallo ' + self.userinfo.username() + ', <br/><br/>Ihr Kommentar zum Artikel <a href="' + self.articleinfo.articlelink() + '">' +
+self.articleinfo.articletitle() + '</a> hat leider nicht unseren Richtlinien entsprochen und wurde von unserem Team aktualisiert!<br/><br/>' +
+'Falls Sie Fragen zu unseren Kommentar-Richtlinien haben, schreiben Sie uns einfach eine <a href="mailto: ' + config.clientemail + '">Mail</a><br/><br/>' +
+'Liebe Grüße,<br/> das ' + self.clientinfo.clientname() + ' Team';
+$("#textdiv_unapprove").html(txt);
+/**/
+$.colorbox({
+inline: true, href: "#comment-unapprove-dialog", width: "450px", transition: "elastic", overlayClose: false, onClosed: function () {
+$("#textdiv_unapprove").html("");
+}
+});
+if(self.userinfo.useruuid().length > 0){
+$("#warning-unregistered-unapprove").hide();
+$("#mailform_unapprove").show();
+$.colorbox.resize();
+}
+else{
+$("#warning-unregistered-unapprove").show();
+$("#mailform_unapprove").hide();
+$.colorbox.resize();
+}
+/**/
+$("#comment-unapprove-send").off("click");
+$("#comment-unapprove-send").click(function () {
+var STR_message = $("#textdiv_unapprove").html();
+var STR_subject = $("#comment-unapprove-subject").val();
+$.ajax({
+type: "POST",
+cache: false,
+url: "/api/comments/" + self.id() + "/unapprove/",
+data: JSON.stringify({
+message: STR_message,
+subject: STR_subject
+}),
+dataType: "json",
+success: function (data) {
+$.colorbox.close();
+location.reload();
+},
+failure: function (errMsg) {
+alert("Fehler beim Senden!");
+console.log(errMsg);
+}
+});
+});
+};
+}
+/* View Model KOMMENTARMODUL */
+var ViewModel = function () {
+var self = this;
+self.initialized = ko.observable(false);
+self.commentsLoading = ko.observable(false);
+self.cutoff = config.BOO_cutoff;
+self.commentUsers = null;
+self.commentLikes = config.LST_commentlikes;
+self.loggedUserId = ko.observable(config.useruuid);
+self.from = ko.observable(0);
+self.count = ko.observable(config.number);
+self.totalHits = ko.observable(0);
+self.comments = ko.observableArray([]);
+self.hasMore = ko.observable(false);
+self.hasSubscription = ko.observable(false);
+/* Check ob ein Overflow innerhalb des Contents vorliegt*/
+self.checkOverflow = function (element, index, data) {
+var content = $(element).find(".comment-content").first();
+if (content.prop('scrollHeight') > content.height()) {
+content.addClass("expandable");
+}
+else {
+content.addClass("complete");
+$(element).find(".comment-actions .expander").hide();
+$(element).find(".comment-expand").hide();
+}
+};
+self.addComment = function (STR_id, OBJ_comment) {
+if (STR_id !== null && STR_id.length > 0) {
+/* Subkommentar */
+for (x = 0; x < this.comments().length; x++) {
+if (this.comments()[x].id() == STR_id) {
+/*Subkommentar anhängen*/
+this.comments()[x].subcomments.push(OBJ_comment);
+}
+}
+}
+else {
+if (config.sortsetting.indexOf('oldest') > -1 || config.sortsetting.indexOf('top') > -1) {
+this.comments.push(OBJ_comment);
+}
+else {
+this.comments.unshift(OBJ_comment);
+}
+if (this.comments().length > 0) {
+$("#comments").fadeIn();
+}
+}
+};
+self.getComments = function () {
+self.commentsLoading(true);
+$.ajax({
+type: "GET",
+cache: false,
+url: "/api/comments/article/" + config.articleid + "/",
+data: { token: config.STR_token, sort: config.sort, sortorder: config.sortorder, count: self.count(), from: self.from(), uid: config.useruuid, approved: config.approved },
+dataType: "json",
+success: function (commentsfromserver) {
+/*Ladebilder ausblenden*/
+self.commentsLoading(false);
+self.initialized(true);
+if (commentsfromserver.data.length > 0) {
+for (x = 0; x < commentsfromserver.data.length; x++) {
+for (i = 0; i < commentsfromserver.data[x].subcomments.length; i++) {
+/*
+* Subkommentare
+* initialisieren
+*/
+commentsfromserver.data[x].subcomments[i] = new CommentViewModel(commentsfromserver.data[x].subcomments[i]);
+}
+/* Subkommentare immer alt nach neu sortieren sortieren */
+commentsfromserver.data[x].subcomments.sort(function (a, b) { ; return new Date(a.created()) - new Date(b.created()) });
+/* kommentar initialisieren */
+self.comments.push(new CommentViewModel(commentsfromserver.data[x]));
+}
+self.totalHits(commentsfromserver.metainfo.totalHits);
+self.hasMore(commentsfromserver.metainfo.hasMore);
+self.from(self.from() + commentsfromserver.data.length);
+}
+},
+failure: function (errMsg) {
+self.commentsLoading(false);
+console.log(errMsg);
+}
+});
+};
+self.postComment = function (comment, subscribe, overlay) {
+overlay.show();
+var parsedComment = "<div>" + comment.comment + "</div>";
+var ARR_mentions = [];
+$(parsedComment).find("a.mention").each(function () {
+ARR_mentions.push($(this).prop("rel"));
+});
+$.ajax({
+type: "POST",
+url: "/api/comments/",
+cache: false,
+data: JSON.stringify({
+data: comment,
+mentions: ARR_mentions,
+token: config.STR_token,
+sort: config.sort,
+sortorder: config.sortorder,
+check: config.check
+}),
+dataType: "text",
+contentType: "application/json; charset=utf-8",
+success: function (data) {
+data = jQuery.parseJSON(data);
+overlay.hide();
+$(".kommentare button").removeClass("active");
+if (data.id !== null && typeof (data.id) !== 'undefined') {
+if (config.BOO_approveByAdmin) {
+$(".comment-alert").fadeIn();
+setTimeout(function () {
+$(".comment-alert").fadeOut();
+}, 5000);
+}
+else {
+self.addComment(data.relatedComment, new CommentViewModel(data));
+/*Subscribers benachrichtigen über neue Nachricht */
+self.notifySubscribers();
+}
+/* Subscribe */
+if (subscribe && !self.hasSubscription()) {
+self.subscribe(comment);
+}
+}
+else {
+alert("Kommentar wurde nicht angelegt!");
+}
+},
+failure: function (errMsg) {
+alert("Fehler beim anlegen!");
+console.log(errMsg);
+}
+});
+};
+self.expandContent = function (obj) {
+if (obj.closest('.comment-item').find('.comment-content').hasClass("expandable")) {
+var content = obj.closest('.comment-item').find('.comment-content').first();
+content.toggleClass('expanded');
+if (content.hasClass("expanded")) {
+obj.text(lang.collapse);
+} else {
+obj.text(lang.expand);
+}
+}
+return true;
+};
+self.subscribe = function () {
+$.ajax({
+type: "POST",
+url: "/api/comments/article/" + config.articleid + "/subscribe/",
+cache: false,
+data: JSON.stringify({
+useruuid: config.useruuid,
+token: config.STR_token,
+articleinfo: comment.articleinfo,
+clientinfo: comment.clientinfo
+}),
+dataType: "json",
+success: function (data) {
+if (data.result) {
+self.hasSubscription(true);
+}
+},
+failure: function (errMsg) {
+alert("Fehler beim Abonnnieren!");
+console.log(errMsg);
+}
+});
+}
+self.unsubscribe = function () {
+$.ajax({
+type: "POST",
+url: "/api/comments/article/" + config.articleid + "/unsubscribe/",
+cache: false,
+data: JSON.stringify({
+useruuid: config.useruuid,
+token: config.STR_token
+}),
+dataType: "json",
+success: function (data) {
+if (data.result) {
+self.hasSubscription(false);
+}
+},
+failure: function (errMsg) {
+alert("Fehler beim Senden!");
+console.log(errMsg);
+}
+});
+}
+self.checkSubscription = function () {
+$.ajax({
+type: "GET",
+url: "/api/comments/article/" + config.articleid + "/checksubscription/",
+cache: false,
+data: { useruuid: config.useruuid, token: config.STR_token },
+dataType: "json",
+success: function (data) {
+self.hasSubscription(data.result);
+},
+failure: function (errMsg) {
+alert("Fehler beim Senden!");
+console.log(errMsg);
+}
+});
+};
+self.notifySubscribers = function () {
+$.ajax({
+type: "POST",
+url: "/api/comments/article/" + config.articleid + "/notifysubscribers/",
+cache: false,
+data: JSON.stringify({ token: config.STR_token }),
+dataType: "json",
+success: function () { },
+failure: function (errMsg) {
+console.log(errMsg);
+}
+});
+}
+}
+/*Users mit Null initialisieren, um in getUsers darauf prüfen zu können*/
+var commentUsers = null;
+var getUsers = function (OBJ_ckeditor) {
+/**/
+if (commentUsers != null) {
+OBJ_ckeditor.execCommand('reloadSuggestionBox', commentUsers);
+}
+else {
+$.ajax({
+type: "GET",
+cache: false,
+url: "/api/comments/article/" + config.articleid + "/users/",
+data: { token: config.STR_token },
+dataType: "json",
+success: function (users) {
+commentUsers = users.data;
+OBJ_ckeditor.execCommand('reloadSuggestionBox', commentUsers);
+},
+failure: function (errMsg) {
+console.log(errMsg);
+}
+});
+}
+};
+$(document).ready(function () {
+/* ViewModel initialisieren */
+var viewModel = new ViewModel();
+if (config.BOO_commentsAllowed) {
+/* CKEditor initialisieren */
+/* TriggerKey == @ */
+CKEDITOR.replace('comment', ckeditorConfig);
+CKEDITOR.instances.comment.on('focus', function () {
+$("#cke_comment").removeClass("invalid");
+/* Users laden*/
+getUsers(CKEDITOR.instances.comment);
+});
+CKEDITOR.disableAutoInline = true;
+$("#username").on("focus", function () {
+$("#username").removeClass("invalid");
+});
+$("#comment-report-text").on("focus", function () {
+$("#comment-report-text").removeClass("invalid");
+});
+$("#postbutton").click(function () {
+comment["comment"] = CKEDITOR.instances.comment.getData();
+comment["userinfo"]["username"] = $("#username").val();
+comment["relatedComment"] = "";
+var subscribe = $("#subscribe").prop("checked");
+var valid = true;
+if ($.trim(comment["comment"]).length == 0) {
+$("#cke_comment").addClass("invalid");
+valid = false;
+}
+if ($.trim(comment["userinfo"]["username"]).length == 0) {
+$("#username").addClass("invalid");
+valid = false;
+}
+if (valid) {
+var form = $("#commentform");
+CKEDITOR.instances.comment.setData("");
+var overlay = $("#commentform").find(".formoverlay");
+viewModel.postComment(comment, subscribe, overlay);
+}
+});
+$("#postbutton-answer").click(function () {
+comment["comment"] = CKEDITOR.instances.commentanswertext.getData();
+comment["userinfo"]["username"] = $("#username-answer").val();
+comment["relatedComment"] = $("#relatedPost").val();
+var subscribe = $("#subscribe-answer").prop("checked");
+var valid = true;
+if ($.trim(comment["comment"]).length == 0) {
+$("#cke_commentanswertext").addClass("invalid");
+valid = false;
+}
+if ($.trim(comment["userinfo"]["username"]).length == 0) {
+$("#username-answer").addClass("invalid");
+valid = false;
+}
+if (valid) {
+$("#commentform-answer").hide();
+CKEDITOR.instances.commentanswertext.setData("");
+var overlay = $("#commentform-answer").find(".formoverlay");
+viewModel.postComment(comment, subscribe, overlay);
+}
+});
+}
+/*Data-Binding herstellen*/
+ko.applyBindings(viewModel);
+/*Kommentare laden*/
+viewModel.getComments();
+if (config.useruuid.length > 0) {
+/*Prüfen ob Thread abonniert wurde*/
+viewModel.checkSubscription();
+}
+});
+</script>
+</div>
+<div class="clear"></div>
+</section>
+<script type="text/javascript">
+var STR_trackingauthor = 'linefeed';
+var STR_shorturl = "";
+//Wenn mobile device unter 700 dann wird das inlineimage vergrößert
+if ($("body").width() < 701 )
+{
+$('.inlineimage img').each(function () {
+$(this).attr('src', jQuery(this).attr('src').replace("27.jpg", "18.jpg"));
+$(this).attr('src', jQuery(this).attr('src').replace("4.jpg", "18.jpg"));
+});
+}
+// Inhalt einer Box verstecken
+function foldKasten(STR_box_id)
+{
+// Inhalt ausblenden
+$('#kasten_untermenu' + STR_box_id).slideUp('fast');
+$('#kasten_minimize' + STR_box_id).hide();
+$('#kasten_maximize' + STR_box_id).show();
+$('#kasten_teaser' + STR_box_id).show();
+} // end function foldBox
+// Inhalt einer Box zeigen
+function unfoldKasten(STR_box_id)
+{
+// Inhalt ausblenden
+$('#kasten_untermenu'+ STR_box_id).slideDown('fast');
+$('#kasten_minimize' + STR_box_id).show();
+$('#kasten_maximize' + STR_box_id).hide();
+$('div#kasten_teaser' + STR_box_id).hide();
+} // end function unfoldBox
+$(document).ready(function(){
+if(STR_shorturl.length > 0 && (window.location.search.indexOf('?exclusive') > -1 || window.location.search.indexOf('&exclusive') > -1)){
+window.location.href = STR_shorturl;
+}
+});
+</script>
+</footer>
+</article>
+<div id="container_seokeywords" class="col3">
+<div class="clear"></div>
+<div class="row3 listing" id="containerobject_439768">
+<div class="teaser_titel"><p>Aktuelle Beiträge zu diesem Thema</p></div>
+<div class="teaser_content_abstract_big">
+<div class="teaser_content">
+<a class="img_preview" href="https://www.dev-insider.de/die-python-standardbibliothek-a-726978/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')"><img class="art_list_img" title="Die Python-Standardbibliothek" alt="Die Python-Standardbibliothek" src="44_008.jpg"></a>
+<div class="art_preview teaser_headline">
+<h3><a title="Die Python-Standardbibliothek" href="https://www.dev-insider.de/die-python-standardbibliothek-a-726978/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Python Tutorial, Teil 9</a></h3>
+<h2><a title="Die Python-Standardbibliothek" href="https://www.dev-insider.de/die-python-standardbibliothek-a-726978/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Die Python-Standardbibliothek</a></h2>
+<p>Bevor wir in die objektorientierte Programmierung mit Python 
+einsteigen, sehen wir uns noch einmal die äußerst umfangreiche 
+Python-Standardbibliothek an. Ein paar Module erläutern wir anhand 
+kurzer Beispiele. <a class="read_content" href="https://www.dev-insider.de/die-python-standardbibliothek-a-726978/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">lesen</a></p>
+</div>
+<div class="clear"></div>
+</div>
+<div class="teaser_content">
+<a class="img_preview" href="https://www.dev-insider.de/was-ist-strukturierte-programmierung-a-701581/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')"><img class="art_list_img" title="Was ist strukturierte Programmierung?" alt="Was ist strukturierte Programmierung?" src="44_009.jpg"></a>
+<div class="art_preview teaser_headline">
+<h3><a title="Was ist strukturierte Programmierung?" href="https://www.dev-insider.de/was-ist-strukturierte-programmierung-a-701581/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Definition „Structured Programming“</a></h3>
+<h2><a title="Was ist strukturierte Programmierung?" href="https://www.dev-insider.de/was-ist-strukturierte-programmierung-a-701581/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Was ist strukturierte Programmierung?</a></h2>
+<p>Das Programmierparadigma der strukturierten Programmierung zielt auf 
+verständlichen Code ab. Dies wird beispielsweise dadurch erreicht, dass 
+auf Sprunganweisungen und andere intransparente Bedingungen sowie 
+Abfragen verzichtet wird. <a class="read_content" href="https://www.dev-insider.de/was-ist-strukturierte-programmierung-a-701581/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">lesen</a></p>
+</div>
+<div class="clear"></div>
+</div>
+<div class="teaser_content">
+<a class="img_preview" href="https://www.dev-insider.de/angular-und-angularjs-a-694857/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')"><img class="art_list_img" title="Angular und AngularJS" alt="Angular und AngularJS" src="44.jpg"></a>
+<div class="art_preview teaser_headline">
+<h3><a title="Angular und AngularJS" href="https://www.dev-insider.de/angular-und-angularjs-a-694857/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">JavaScript-Fundamente für Single Page Apps, Teil 3</a></h3>
+<h2><a title="Angular und AngularJS" href="https://www.dev-insider.de/angular-und-angularjs-a-694857/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Angular und AngularJS</a></h2>
+<p>Angular ist von der Philosophie her ein vollständiges Framework und 
+bietet Lösungen für nahezu sämtliche Aufgaben eines 
+Frontent-Entwicklers. So kümmert sich die Open-Source-Software um Dinge 
+wie die Validierung oder die Kommunikation mit dem Backend. <a class="read_content" href="https://www.dev-insider.de/angular-und-angularjs-a-694857/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">lesen</a></p>
+</div>
+<div class="clear"></div>
+</div>
+</div></div>
+<div class="row3 listing" id="containerobject_439768" style="margin-top:-35px;">
+<div class="teaser_content_abstract_big">
+<div class="teaser_content">
+<a class="img_preview" href="https://www.dev-insider.de/objektorientierte-programmierung-mit-c-a-621494/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')"><img class="art_list_img" title="Objektorientierte Programmierung mit C" alt="Objektorientierte Programmierung mit C" src="44_002.jpg"></a>
+<div class="art_preview teaser_headline">
+<h3><a title="Objektorientierte Programmierung mit C" href="https://www.dev-insider.de/objektorientierte-programmierung-mit-c-a-621494/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Softwaretechnik</a></h3>
+<h2><a title="Objektorientierte Programmierung mit C" href="https://www.dev-insider.de/objektorientierte-programmierung-mit-c-a-621494/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Objektorientierte Programmierung mit C</a></h2>
+<p>Obwohl C keine objektorientierte Sprache ist, ist die 
+objektorientierte Programmierung mit ihr möglich. Dieser Artikel 
+beschäftigt sich mit der Umsetzung von UML-Elementen aus dem 
+Klassendiagramm in C-Code. Es wird gezeigt, was möglich ist und wo die 
+Umsetzung mit der Programmiersprache C an ihre Grenzen stößt. <a class="read_content" href="https://www.dev-insider.de/objektorientierte-programmierung-mit-c-a-621494/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">lesen</a></p>
+</div>
+<div class="clear"></div>
+</div>
+<div class="teaser_content">
+<a class="img_preview" href="https://www.dev-insider.de/java-ide-workshop-des-hasso-plattner-instituts-a-601677/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')"><img class="art_list_img" title="Java-IDE-Workshop des Hasso-Plattner-Instituts" alt="Java-IDE-Workshop des Hasso-Plattner-Instituts" src="44_006.jpg"></a>
+<div class="art_preview teaser_headline">
+<h3><a title="Java-IDE-Workshop des Hasso-Plattner-Instituts" href="https://www.dev-insider.de/java-ide-workshop-des-hasso-plattner-instituts-a-601677/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Gratis-Kurs auf openHPI</a></h3>
+<h2><a title="Java-IDE-Workshop des Hasso-Plattner-Instituts" href="https://www.dev-insider.de/java-ide-workshop-des-hasso-plattner-instituts-a-601677/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Java-IDE-Workshop des Hasso-Plattner-Instituts</a></h2>
+<p>„Einführung in eine Java-Programmierumgebung (IDE)“, so lautet der 
+Titel eines kostenfreien Java-Online-Kurs für Fortgeschrittene. Der 
+zweiwöchige Workshop steht im Mai auf der interaktiven Bildungsplattform
+ openHPI des Hasso-Plattner-Instituts bereit. <a class="read_content" href="https://www.dev-insider.de/java-ide-workshop-des-hasso-plattner-instituts-a-601677/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">lesen</a></p>
+</div>
+<div class="clear"></div>
+</div>
+<div class="teaser_content">
+<a class="img_preview" href="https://www.dev-insider.de/ist-c-fuer-echtzeitkritische-anwendungen-sinnvoll-a-598065/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')"><img class="art_list_img" title="Ist C++ für echtzeitkritische Anwendungen sinnvoll?" alt="Ist C++ für echtzeitkritische Anwendungen sinnvoll?" src="44_005.jpg"></a>
+<div class="art_preview teaser_headline">
+<h3><a title="Ist C++ für echtzeitkritische Anwendungen sinnvoll?" href="https://www.dev-insider.de/ist-c-fuer-echtzeitkritische-anwendungen-sinnvoll-a-598065/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Implementierung</a></h3>
+<h2><a title="Ist C++ für echtzeitkritische Anwendungen sinnvoll?" href="https://www.dev-insider.de/ist-c-fuer-echtzeitkritische-anwendungen-sinnvoll-a-598065/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Ist C++ für echtzeitkritische Anwendungen sinnvoll?</a></h2>
+<p>Die Objektorientierte Programmierung in C++ hat unter vielen 
+Embedded-Programmierern den Ruf, gegenüber der Strukturierten 
+Programmierung in C weniger performant zu sein. Hierdurch wird C++ meist
+ von vornherein ausgeschlossen. <a class="read_content" href="https://www.dev-insider.de/ist-c-fuer-echtzeitkritische-anwendungen-sinnvoll-a-598065/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">lesen</a></p>
+</div>
+<div class="clear"></div>
+</div>
+</div></div>
+<div class="row3 listing" id="containerobject_439768" style="margin-top:-35px;">
+<div class="teaser_content_abstract_big">
+<div class="teaser_content">
+<a class="img_preview" href="https://www.dev-insider.de/was-ist-perl-a-583568/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')"><img class="art_list_img" title="Was ist Perl?" alt="Was ist Perl?" src="44_003.jpg"></a>
+<div class="art_preview teaser_headline">
+<h3><a title="Was ist Perl?" href="https://www.dev-insider.de/was-ist-perl-a-583568/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Definition „Perl (Programmiersprache)“</a></h3>
+<h2><a title="Was ist Perl?" href="https://www.dev-insider.de/was-ist-perl-a-583568/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Was ist Perl?</a></h2>
+<p>Perl ist eine Skriptsprache, die polarisiert. Die Programmiersprache 
+hat nämlich ihre Besonderheiten, die dem Fachmann die Arbeit 
+erleichtern, dem Laien aber das Verständnis erschweren können. <a class="read_content" href="https://www.dev-insider.de/was-ist-perl-a-583568/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">lesen</a></p>
+</div>
+<div class="clear"></div>
+</div>
+<div class="teaser_content">
+<a class="img_preview" href="https://www.dev-insider.de/was-ist-eine-programmiersprache-a-577066/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')"><img class="art_list_img" title="Was ist eine Programmiersprache?" alt="Was ist eine Programmiersprache?" src="44_007.jpg"></a>
+<div class="art_preview teaser_headline">
+<h3><a title="Was ist eine Programmiersprache?" href="https://www.dev-insider.de/was-ist-eine-programmiersprache-a-577066/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Definition „Programming Language“</a></h3>
+<h2><a title="Was ist eine Programmiersprache?" href="https://www.dev-insider.de/was-ist-eine-programmiersprache-a-577066/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Was ist eine Programmiersprache?</a></h2>
+<p>Programmiersprachen sind formale Sprachen, mit denen sich 
+Rechenvorschriften formulieren lassen. Diese Vorschriften können dann 
+von einem Computer ausgeführt werden. <a class="read_content" href="https://www.dev-insider.de/was-ist-eine-programmiersprache-a-577066/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">lesen</a></p>
+</div>
+<div class="clear"></div>
+</div>
+<div class="teaser_content">
+<a class="img_preview" href="https://www.dev-insider.de/was-ist-java-programmierung-a-569186/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')"><img class="art_list_img" title="Was ist Java-Programmierung?" alt="Was ist Java-Programmierung?" src="44_004.jpg"></a>
+<div class="art_preview teaser_headline">
+<h3><a title="Was ist Java-Programmierung?" href="https://www.dev-insider.de/was-ist-java-programmierung-a-569186/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Definition „Java (Programmiersprache)“</a></h3>
+<h2><a title="Was ist Java-Programmierung?" href="https://www.dev-insider.de/was-ist-java-programmierung-a-569186/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">Was ist Java-Programmierung?</a></h2>
+<p>Mit der Programmiersprache Java lassen sich plattformunabhängige 
+Anwendungen entwickeln. Nur ein Texteditor, das Java SE Development Kit,
+ kurz JDK, mit Java-Laufzeitumgebung und ein wenig Entwicklungsgeschick 
+werden dafür benötigt. <a class="read_content" href="https://www.dev-insider.de/was-ist-java-programmierung-a-569186/" onclick="s_objectID='15347_containerobject_439768_aktuelle beiträge zu diesem thema';linkTracking('15347_containerobject_439768_aktuelle beiträge zu diesem thema')">lesen</a></p>
+</div>
+<div class="clear"></div>
+</div>
+</div></div>
+<div class="row3 listing" id="containerobject_439768" style="margin-top:-35px;">
+<div class="teaser_content_abstract_big">
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="row3 related" id="containerobject_439334">
+<div class="related">
+<div class="teaser_titel">
+<p>Mehr zum Thema</p>
+</div>
+<div class="teaser_content_noabstract_small">
+<div class="teaser_content">
+<a href="https://www.dev-insider.de/py-basiswissen-und-einstieg-a-684697/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')"><img class="art_list_img" title="Py – Basiswissen und Einstieg" alt="Py – Basiswissen und Einstieg" src="33_005.jpg"></a>
+<img class="arrow_left" src="arrow_left_white.png">
+<div class="teaser_headline">
+<span class="ar_teaser_headline"><a title="Py – Basiswissen und Einstieg" href="https://www.dev-insider.de/py-basiswissen-und-einstieg-a-684697/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')">Python Tutorial, Teil 1</a></span>
+<span class="ar_teaser_title" title="Py – Basiswissen und Einstieg&lt;"><a title="Py – Basiswissen und Einstieg" href="https://www.dev-insider.de/py-basiswissen-und-einstieg-a-684697/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')">Py – Basiswissen und Einstieg</a></span>
+<p><a class="read_content" href="https://www.dev-insider.de/py-basiswissen-und-einstieg-a-684697/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')">mehr...</a></p>
+</div>
+<div class="clear"></div>
+</div>
+<div class="teaser_content">
+<a href="https://www.dev-insider.de/ist-c-fuer-echtzeitkritische-anwendungen-sinnvoll-a-598065/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')"><img class="art_list_img" title="Ist C++ für echtzeitkritische Anwendungen sinnvoll?" alt="Ist C++ für echtzeitkritische Anwendungen sinnvoll?" src="33.jpg"></a>
+<img class="arrow_left" src="arrow_left_white.png">
+<div class="teaser_headline">
+<span class="ar_teaser_headline"><a title="Ist C++ für echtzeitkritische Anwendungen sinnvoll?" href="https://www.dev-insider.de/ist-c-fuer-echtzeitkritische-anwendungen-sinnvoll-a-598065/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')">Implementierung</a></span>
+<span class="ar_teaser_title" title="Ist C++ für echtzeitkritische Anwendungen sinnvoll?&lt;"><a title="Ist C++ für echtzeitkritische Anwendungen sinnvoll?" href="https://www.dev-insider.de/ist-c-fuer-echtzeitkritische-anwendungen-sinnvoll-a-598065/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')">Ist C++ für echtzeitkritische Anwendungen sinnvoll?</a></span>
+<p><a class="read_content" href="https://www.dev-insider.de/ist-c-fuer-echtzeitkritische-anwendungen-sinnvoll-a-598065/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')">mehr...</a></p>
+</div>
+<div class="clear"></div>
+</div>
+<div class="teaser_content">
+<a href="https://www.dev-insider.de/was-ist-c-a-581368/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')"><img class="art_list_img" title="Was ist C++?" alt="Was ist C++?" src="33_003.jpg"></a>
+<img class="arrow_left" src="arrow_left_white.png">
+<div class="teaser_headline">
+<span class="ar_teaser_headline"><a title="Was ist C++?" href="https://www.dev-insider.de/was-ist-c-a-581368/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')">Definition „C++ (Programmiersprache)</a></span>
+<span class="ar_teaser_title" title="Was ist C++?&lt;"><a title="Was ist C++?" href="https://www.dev-insider.de/was-ist-c-a-581368/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')">Was ist C++?</a></span>
+<p><a class="read_content" href="https://www.dev-insider.de/was-ist-c-a-581368/" onclick="s_objectID='15347_containerobject_439334_mehr zum thema';linkTracking('15347_containerobject_439334_mehr zum thema','related','mehr zum thema_related')">mehr...</a></p>
+</div>
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="row3 related" id="containerobject_439336">
+<div class="related">
+<div class="teaser_titel">
+<p> Passende Whitepaper &amp; Webcasts <span> Objektorientierte</span></p>
+</div>
+<div class="teaser_content_noabstract_small">
+<div class="teaser_content">
+<a href="https://www.dev-insider.de/ciobriefing-04-2018-v-39238-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')"><img src="33_002.jpg" alt="CIOBRIEFING 04/2018"></a>
+<div>
+<span class="vc_teaser_headline"><a href="https://www.dev-insider.de/ciobriefing-04-2018-v-39238-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')">Technology-Update für IT-Manager</a></span>
+<span class="vc_teaser_title"><a href="https://www.dev-insider.de/ciobriefing-04-2018-v-39238-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')">CIOBRIEFING 04/2018</a></span>
+<p><a class="read_content" href="https://www.dev-insider.de/ciobriefing-04-2018-v-39238-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')">mehr...</a></p>
+</div>
+<div class="clear">
+</div>
+</div>
+<div class="teaser_content">
+<a href="https://www.dev-insider.de/das-best-of-dev-insider-v-38890-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')"><img src="33_004.jpg" alt="Das BEST OF Dev-Insider"></a>
+<div>
+<span class="vc_teaser_headline"><a href="https://www.dev-insider.de/das-best-of-dev-insider-v-38890-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')">Diese aktuellen Themen bewegen die Dev-Welt</a></span>
+<span class="vc_teaser_title"><a href="https://www.dev-insider.de/das-best-of-dev-insider-v-38890-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')">Das BEST OF Dev-Insider</a></span>
+<p><a class="read_content" href="https://www.dev-insider.de/das-best-of-dev-insider-v-38890-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')">mehr...</a></p>
+</div>
+<div class="clear">
+</div>
+</div>
+<div class="teaser_content">
+<a href="https://www.dev-insider.de/ciobriefing-09-2017-v-38533-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')"><img src="33_006.jpg" alt="CIOBRIEFING 09/2017"></a>
+<div>
+<span class="vc_teaser_headline"><a href="https://www.dev-insider.de/ciobriefing-09-2017-v-38533-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')">Technology-Update für IT-Manager</a></span>
+<span class="vc_teaser_title"><a href="https://www.dev-insider.de/ciobriefing-09-2017-v-38533-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')">CIOBRIEFING 09/2017</a></span>
+<p><a class="read_content" href="https://www.dev-insider.de/ciobriefing-09-2017-v-38533-14931/" onclick="s_objectID='15347_containerobject_439336_ passende whitepaper &amp; webcasts';linkTracking('15347_containerobject_439336_ passende whitepaper &amp; webcasts','related',' passende whitepaper &amp; webcasts_related')">mehr...</a></p>
+</div>
+<div class="clear">
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="teaser_footer">
+<div class="link_webcasts">
+<a href="https://www.dev-insider.de/whitepaper/">Alle Whitepaper</a>
+<a href="https://www.dev-insider.de/videos/">Alle Webcasts</a>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="contentfactory" class="row2">
+<img src="copy.png" alt="copyright">
+<p>
+Dieser Beitrag ist urheberrechtlich geschützt. Sie wollen ihn für Ihre Zwecke verwenden? Infos finden Sie unter
+<a target="_blank" href="http://www.mycontentfactory.de/">www.mycontentfactory.de</a> (ID: 45091599 / Definitionen)
+</p>
+</div>
+<div class="clear"></div>
+</div><!-- FileCached | Identifier:agmm/unique/page/09D270510C130A3ED691DD76F4838176 | Timestamp:{ts '2018-11-13 12:02:36'} | Timespan:0m | Unique: unknown --><!-- Coming out of cache -->
+<div id="footer">
+<div id="footer_social">
+<div class="row3" id="containerobject_439948">
+<div class="teaser_content"><style type="text/css">
+#containerobject_439948{text-align:center;}
+.sm_buttons_footer {margin-left:0 !important;}
+.sm_buttons_footer a { margin-right: 10.8px; margin-bottom: 12px;}
+.sm_buttons_footer .last, .sm_footer_ima .last span {margin-right: 0;}
+.sm_buttons_footer img {margin: 0; float: none; border:0 !important; opacity: 1 !important; transition: all 0.5s;}
+.sm_footer_ima {margin-top: 40px;}
+.sm_footer_ima span {display: block; float: left; text-transform:uppercase; font-weight:300; margin-right: 6px; width: 96px; height: 24px; border: 1px solid #CCC; color: #000; text-align: center; font-size: 16px; padding-top: 2px; padding-bottom:2px;}
+.sm_footer_ima span:hover {background-color: rgba(255,255,255,0.3); color: #000;}</style>
+<div class="sm_buttons_footer"><a href="https://www.dev-insider.de/googleplus/" target="_blank"><img alt="" onmouseout="src='/img/bep30/footer_gplus.png'" onmouseover="src='/img/bep30/footer_gplus_hover.png'" src="footer_gplus.png"></a> <a href="https://www.dev-insider.de/facebook/" target="_blank"><img alt="" onmouseout="src='/img/bep30/footer_facebook.png'" onmouseover="src='/img/bep30/footer_facebook_hover.png'" src="footer_facebook.png"></a> <a href="https://www.dev-insider.de/twitter/" target="_blank"><img alt="" onmouseout="src='/img/bep30/footer_twitter.png'" onmouseover="src='/img/bep30/footer_twitter_hover.png'" src="footer_twitter.png"></a> <a href="https://www.dev-insider.de/xing/" target="_blank"><img alt="" onmouseout="src='/img/bep30/footer_xing.png'" onmouseover="src='/img/bep30/footer_xing_hover.png'" src="footer_xing.png"></a> <a groups="" href="https://www.dev-insider.de/linkedin/" target="_blank"><img alt="" onmouseout="src='/img/bep30/footer_linkedin.png'" onmouseover="src='/img/bep30/footer_linkedin_hover.png'" src="footer_linkedin.png"></a> <a class="last" href="https://www.dev-insider.de/rss/news.xml" target="_blank"><img alt="" onmouseout="src='/img/bep30/footer_rss.png'" onmouseover="src='/img/bep30/footer_rss_hover.png'" src="footer_rss.png"></a></div>
+<p style="font-size:17px !important; margin-top:5px">Oder kontaktieren Sie uns <a href="https://www.dev-insider.de/service/kontakt/">direkt</a></p>
+</div>
+</div>
+<div class="row3" id="containerobject_439590">
+<div class="teaser_content"><script>
+(function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+})(window, document, '_gscq','script','//widgets.getsitecontrol.com/64614/script.js');
+</script></div>
+</div>
+<div class="clear"></div>
+<div id="footer_copy">
+<p>
+Dev-Insider ist eine Marke der Vogel Communications Group. Unser gesamtes Angebot finden Sie
+<a href="https://www.vogel.de/" target="_blank">hier </a>
+</p>
+</div>
+</div>
+<div id="footer_network">
+<p>
+<a href="http://privacy.vogel.de/agb_vit.html" target="_blank">AGB</a> |
+<a href="https://privacy.vogel.de/" target="_blank">EWG</a> |
+<a href="https://www.dev-insider.de/hilfe/" target="_blank">Hilfe</a> |
+<a href="https://customer.vogel.de/" target="_blank">Kundencenter</a> |
+<a href="https://www.dev-insider.de/service/mediadaten/" target="_blank">Media</a> |
+<a href="https://privacy.vogel.de/datenschutz.html" target="_blank">Datenschutz</a> |
+<a href="https://www.dev-insider.de/index.cfm?pid=14946" target="_blank">Impressum</a>
+<br>Copyright © 2018 Vogel Communications Group</p>
+</div>
+<div id="footer_sources">
+Drilling; lmonk72 - Pixabay.com; Angular.io; gemeinfrei; HPI / openHPI; 
+teguhjatipras - Fotolia; Tirza van Dijk - Unsplash.com; JuralMin - 
+Pixabay.com; ribkhan - stock.adobe.com; Drilling / Python; 
+laurentvalentinjospi0 - Pixabay.com; Vogel IT-Medien; Vogel IT;
+</div>
+<!-- START: settings-->
+<!-- START: settings_content_details-->
+<!-- ENDE: settings_content_details-->
+<!-- ENDE: settings-->
+<div id="sitecatalystcode">
+<script language="JavaScript" type="text/javascript">
+//<!--
+/* You may give each page an identifying name, server, and channel on
+the next lines. */
+if(typeof(s) != "undefined")
+{
+s.pageName="dvi:artikel:677737 was ist oop?";
+s.channel="dvi:specials:definitionen";
+s.prop1="specials";
+s.prop2="specials:definitionen";
+s.prop12="726978,701581,694857,621494,601677,598065,583568,577066,569186,684697,598065,581368";
+if ($(window).width() > 1024)
+{
+}
+s.prop15="39238,38890,38533";
+s.prop16="10";
+s.prop17="artikel";
+s.prop18="677737";
+s.prop19="Fachbeitrag";
+s.prop20="augsten:stephan";
+s.prop21="seite 1";
+s.prop29="15347";
+s.prop31="2018_01_26";
+s.prop32="loggedout";
+if(typeof STR_authornames !== 'undefined' && STR_authornames.length && typeof STR_globaluserids !== 'undefined' && STR_globaluserids.length)
+{
+s.prop47 = STR_authornames;
+s.prop48 = STR_globaluserids;
+}
+else if(typeof STR_trackingauthor !== 'undefined' && STR_trackingauthor.length)
+{
+s.prop47 = STR_trackingauthor;
+}
+/* Conversion Variables */
+s.eVar25="loggedout";
+s.eVar32="loggedout";
+/* Hierarchy Variables */
+s.hier1="dvi:specials:definitionen";
+//mboxLoadSCPlugin(s);
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+// var s_code=s.t();
+if(s_code)document.write(s_code)
+//if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+}
+//-->
+</script>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst -->
+</div>
+<!-- Facebook Pixel Code --><script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '337772366383480');
+fbq('track', 'PageView');
+// this line of JS code can be populated by server-side
+// code that has the data needed to segment your audience
+fbq('track', 'ViewContent', {
+themechannel: s.prop2
+});
+</script><noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=337772366383480&ev=PageView&noscript=1"
+/></noscript><!-- End Facebook Pixel Code -->
+<div id="googleuniversalcode">
+<script language="JavaScript" type="text/javascript">
+<!--
+var gaProperty = 'UA-1693445-58';
+// Disable tracking if the opt-out cookie exists.
+var disableStr = 'ga-disable-' + gaProperty;
+if (document.cookie.indexOf(disableStr + '=true') > -1) {
+window[disableStr] = true;
+}
+// Opt-out function
+function gaOptout() {
+document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+window[disableStr] = true;
+}
+var INT_uid = 'loggout';
+var STR_channel = "none";
+var STR_sprop12 = "none";
+var STR_sprop13 = "none";
+var STR_sprop15 = "none";
+var STR_sprop17 = "none";
+var STR_sprop18 = "none";
+var STR_sprop19 = "none";
+var STR_sprop20 = "none";
+var STR_sprop21 = "none";
+var STR_sprop29 = "none";
+var STR_sprop37 = "none";
+var INT_sprop44 = 0;
+var STR_sprop46 = "none";
+var STR_sevar25 = "none";
+var STR_autoren = "none";
+var STR_pagename = "none";
+if(typeof(STR_trackingarticledate) == "undefined"){STR_trackingarticledate = 'none'}
+if(typeof(STR_fkentrytypetracking) == "undefined"){STR_fkentrytypetracking = 'none'}
+if(STR_fkentrytypetracking == '1'){STR_fkentrytypetracking = 'basic';}
+if(STR_fkentrytypetracking == '2'){STR_fkentrytypetracking = 'premium';}
+if(STR_fkentrytypetracking == '3'){STR_fkentrytypetracking = 'business';}
+if(typeof(s.eVar24) != "undefined"){INT_uid = s.eVar24;}
+if(typeof(s.channel) != "undefined"){STR_channel = s.channel.substr(s.channel.indexOf(":")+1);}
+if(typeof(s.prop12) != "undefined"){STR_sprop12 = s.prop12;}
+if(typeof(s.list1) != "undefined"){STR_sprop13 = s.list1;}
+if(typeof(s.prop15) != "undefined"){STR_sprop15 = s.prop15;}
+if(typeof(s.prop17) != "undefined"){STR_sprop17 = s.prop17;}
+if(typeof(s.prop19) != "undefined"){STR_sprop19 = s.prop19;}
+if(typeof(s.prop20) != "undefined"){STR_sprop20 = s.prop20;}
+if(typeof(s.prop21) != "undefined"){STR_sprop21 = s.prop21;}
+if(typeof(s.prop18) != "undefined"){STR_sprop18 = s.prop18;}
+if(typeof(s.prop16) != "undefined" && STR_sprop18 != "none"){STR_sprop18 = s.prop16 + '_' + STR_sprop18;}
+if(typeof(s.prop31) != "undefined"){STR_trackingarticledate = s.prop31;}
+if(typeof(s.prop37) != "undefined"){STR_sprop37 = s.prop37;}
+if(typeof(s.pageName) != "undefined"){STR_pagename = s.pageName;}
+if(typeof(s.prop7) != "undefined" && STR_pagename != "none"){STR_pagename = STR_pagename + '?keyword=' + s.prop7;}
+if(typeof(s.prop44) != "undefined"){INT_sprop44 = s.prop44;}
+if(typeof(s.prop46) != "undefined"){STR_sprop46 = s.prop46;}
+if(typeof(s.eVar25) != "undefined"){STR_sevar25 = s.eVar25;}
+if(typeof STR_authornames_globaluserids !== 'undefined' && STR_authornames_globaluserids.length)
+{
+STR_autoren = STR_authornames_globaluserids;
+}
+else if(typeof(s.prop47) != "undefined")
+{
+STR_autoren = s.prop47;
+}
+var BOO_gaExists = false;
+if(typeof(ga.getByName) != 'undefined' && ga.getByName('t0') != null)
+{
+BOO_gaExists = true;
+}
+if(!BOO_gaExists)
+{
+ga('create', 'UA-1693445-58', 'auto');
+}
+ga('set', 'dimension1', STR_pagename);
+ga('set', 'dimension2', STR_channel);
+ga('set', 'dimension3', STR_sprop17);
+ga('set', 'dimension4', STR_sprop18);
+ga('set', 'dimension5', STR_trackingarticledate);
+ga('set', 'dimension6', INT_uid);
+ga('set', 'dimension7', STR_sprop37);
+ga('set', 'dimension8', STR_sprop20);
+ga('set', 'dimension9', STR_sprop21);
+ga('set', 'dimension10', STR_sprop19);
+ga('set', 'dimension11', STR_sprop12);
+ga('set', 'dimension12', STR_sprop15);
+ga('set', 'dimension13', STR_sprop13);
+ga('set', 'dimension14', STR_fkentrytypetracking);
+ga('set', 'dimension15', STR_autoren);
+ga('set', 'metric1', INT_sprop44);
+if(typeof adt != "undefined" && adt.cmp.isValid())
+{
+ga('set', 'campaignName', adt.cmp.getCampaignCode()); ga('set', 'campaignMedium', adt.cmp.getMedium() ); ga('set','campaignSource', adt.cmp.getSource());
+}
+ga('set', 'anonymizeIp', true);
+ga('require', 'displayfeatures');
+ga('send', 'pageview', STR_pagename);
+// Called when a link to a product is clicked.
+function onProductClick(INT_contenttype,INT_id,STR_titel,INT_position,STR_category)
+{
+var gaProperty = 'UA-1693445-58';
+var BOO_gaExists = false;
+if(typeof(ga.getByName) != 'undefined' && ga.getByName('t0') != null)
+{
+BOO_gaExists = true;
+}
+if(!BOO_gaExists)
+{
+ga('create', 'UA-1693445-58', 'auto');
+}
+// console.log(STR_category);
+// console.log(STR_category.split(":", 1).toString());
+var STR_sprop17 = STR_category.split(":", 1).toString();
+ga('require', 'ec');
+// The product being viewed.
+ga('ec:addProduct', {
+'id': INT_contenttype + "_" + INT_id,
+'name': "paid_" + INT_contenttype + "_" + INT_id,
+'category': STR_category,
+'position': INT_position
+});
+ga('ec:setAction', 'click', {'list': STR_sprop17});
+// Send click with an event, then send user to product page.
+ga('send', 'event', 'UX', 'click', 'Results', {
+});
+}
+function paidcontent(){}
+//if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+// -->
+</script>
+<!--/DO NOT REMOVE/-->
+<!-- End Google Analytics -->
+</div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<script type="text/javascript">
+(function() {
+arr_cookie = new Array(1)
+arr_cookie['lang']= "de";
+document.write('<scr' + 'ipt src="//' + document.location.host + '/shared/cookie_note/cookie_note.js"></scr' + 'ipt>');
+})();
+</script><script src="cookie_note.js"></script>
+
+
+
+
+        
+        
+	
+
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body></html>
+<!-- 135ms -->

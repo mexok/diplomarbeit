@@ -1,0 +1,251 @@
+
+Cookies erleichtern die Bereitstellung unserer Dienste. Mit der Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass wir Cookies verwenden. Weitere Informationen Widerrufen OK
+advertisement
+
+    Login
+    Registrierung
+    Newsletter
+
+    Startseite
+    Software-Entwicklung
+        Projektmanagement
+        Coding & Collaboration
+        Agile Entwicklung
+        Testing
+        Application Security
+        Patching & Wartung
+        IDEs & Programmiersprachen
+        Embedded Software
+    App-Entwicklung
+        Web Apps
+        Mobile Apps
+        Cross Plattform
+        App Management
+        Frameworks & Sprachen
+        Standards & Best Practices
+    Anbindung & Schnittstellen
+        APIs
+        Betriebssysteme
+        Datenbanken
+        Cloud Tools
+        Microservices
+        Blockchain
+    Deployment
+        Installation & Rollout
+        Versionskontrolle
+        Inventarisierung
+        Support
+        Ticketing & Change Management
+    DevOps
+        Logs & Monitoring
+        Quellcode-Management
+        Continuous Delivery & Integration
+        Container
+        Cloud & PaaS
+        Configuration-Management
+        Mitarbeiter
+    Recht & Verträge
+        Smart Contracts
+        Software-Erstellung
+        Software-Pflege
+        Service & Support
+        SLAs
+        Risk Management
+        Urheber- & Nutzungsrecht
+    Specials
+    eBooks
+    CIO
+    Whitepaper
+    Mediathek
+    Akademie
+    Award
+    Anbieter
+
+    Impressum
+    Media
+    Datenschutz
+
+Menü Suche Newsletter Mein Account logo
+suchen..
+logo
+suchen
+
+    Software-Entwicklung
+    App-Entwicklung
+    Anbindung & Schnittstellen
+    Deployment
+    DevOps
+    Recht & Verträge
+
+Sie befinden sich hier: Specials > Definitionen
+
+Sie sind noch nicht angemeldet  Login  |  Registrierung  |  Newsletter
+Definition „Objektorientierte Programmierung“
+Was ist OOP?
+
+26.01.18 | Autor / Redakteur: LineFeed / Stephan Augsten
+Objektorientierte Programmierung lebt von Klassen, ihren untergeordneten Objekten und der Vererbung ihrer Attribute.
+Objektorientierte Programmierung lebt von Klassen, ihren untergeordneten Objekten und der Vererbung ihrer Attribute. (© ribkhan - stock.adobe.com)
+
+    [Artikel teilen auf Xing] share me
+    [Artikel teilen auf Facebook] share me
+    [Artikel teilen auf Twitter] tweet me
+    [Artikel teilen auf LinkedIn] share me
+    [Artikel teilen auf Google+] share me
+
+    PDF PDF
+    Weiterempfehlen Weiterempfehlen
+    Drucken Drucken
+
+Bei der Objektorientierten Programmierung, kurz OOP, werden Daten und Programmcode in übersichtlichen, wiederverwendbaren Modulen – sprich Objekten – gekapselt. Dies reduziert den Programmieraufwand und hilft, Fehler zu vermeiden.
+
+Objektorientierte Programmierung (OOP) bezeichnet ein Programmierparadigma, das heißt ein Grundprinzip, nach dem die Lösung von Aufgaben in einer Programmiersprache erfolgt. Für OOP charakteristisch ist die Kapselung von Daten und Code in Objekten.
+
+Der Zugriff auf die Objekte ist nur über Schnittstellen möglich, die von den Objekten selbst bereitgestellt werden. Diese Abschottung wird durch die jeweilige Programmiersprache im Allgemeinen aber nicht erzwungen, vielmehr steht es dem Entwickler frei, wie er seine Objekte definiert.
+
+Die klassenbasierten objektorientierten Sprachen bieten darüber hinaus die Möglichkeit, die Struktur der Objekte in abstrakter Form vorzudefinieren und sie an Unterklassen zu vererben. Solch ein Klassenkonzept findet sich gerade bei den populärsten Sprachen, die dem Paradigma OOP folgen.
+OOP im Kontext gängiger Programmierparadigmen
+
+Objektorientierte Programmiersprachen zählen typisch zu den imperativen und prozeduralen Sprachen. Sie führen das Objekt als neuen Grundbaustein ein, der Daten und zugehörigen Programmcode zu einer Einheit zusammenfasst. Diese Objekte lassen sich in gleicher Weise verwenden, wie die Variablen, Prozeduren und Funktionen ähnlicher, nicht objektorientierter Sprachen.
+
+Die OOP realisiert somit eine Modularisierung und bietet eine höhere Abstraktion als beispielsweise eine rein imperative, prozedurale Programmiersprache. Darüber hinaus besitzt ein Objekt einen Zustand und einen Bezug zu sich selbst. Dieser ist üblicherweise über ein Attribut mit dem Namen "self" oder "this" auswertbar.
+Warum OOP – Ideal eines fehlerfreien Programms
+
+Durch die Kapselung der Daten sowie des Codes, der sie verändert oder ausgibt, lassen sich die Objekte unabhängig voneinander und von anderen Programmteilen prüfen und testen. Wenn Variablen nur innerhalb des Objekts, in dem sie als Felder oder Attribute definiert sind, durch die dort als Methoden festgelegten Prozeduren veränderbar sind, können andere Programmteile gar keinen Einfluss auf die Funktion des Objekts haben.
+
+Selbst ein nur lesender Zugriff auf die Daten von außerhalb des Objekts kann voraussetzen, dass die Werte immer den aktuellen, im Objekt gespeicherten Zustand wiedergeben. Dessen Korrektheit kann die OOP dadurch sicherstellen, dass die Eingabedaten bei der Übernahme in das Objekt durch die entsprechenden Methoden geprüft werden. Die korrekte Funktion dieser (im Allgemeinen sehr kurzen) Codesequenzen lässt sich wiederum völlig unabhängig von anderen Programmteilen verifizieren.
+Warum OOP – Wiederhol dich nicht!
+
+Wie jede Modularisierung erleichtert die objektorientierte Programmierung die Wiederverwendung von Codeblöcken. Das spart Arbeitszeit, vermeidet aber vor allem Copy-and-Paste Fehler, die leicht beim Kopieren und Anpassen von Programmteilen entstehen.
+
+Die Entwickler von Django, einem Rapid Development Framework für Web-Applikationen (CMS) das in der objektorientierten Skriptsprache Python geschrieben ist, prägten dafür den Slogan „Don't Repeat Yourself“. Dieses Prinzip lässt sich besonders gut mit Hilfe der Vererbung klassenbasierter Sprachen realisieren. Im Gegensatz zum Kopieren von Codeblöcken bleibt bei dieser Art der Wiederverwendung eine bereits verifizierte Korrektheit des Ursprungscodes erhalten.
+Die Geschichte der OOP als kurzer Abriss
+
+Eine Begrifflichkeit im Sinn der heutigen Vorstellung von Objektorientierter Programmierung tauchte am MIT bereits um das Jahr 1960, im Rahmen der Erforschung Künstlicher Intelligenz und im Zusammenhang mit der Programmiersprache LISP, auf. Mitte der 1960er-Jahre führte Simula 67 das Klassenkonzept mitsamt Vererbung und weiteren objektorientierten Features ein. Davon beeinflusst entstand um das Jahr 1970 die Sprache Smalltalk am Xerox PARC, die als erste den Begriff OOP konkret verwendete.
+OOP als Erweiterung bestehender Programmiersprachen
+
+In den 1990er-Jahren popularisierten objektorientierte Programmiersprachen als Erweiterungen verbreiteter, meist imperativ-prozeduraler Sprachen das Konzept der OOP. Bedeutende Beispiele sind C++ und Java , beide auf C aufbauend.
+
+Dieser Ansatz erleichterte es ihnen, sich als neue Sprache in einem bereits unübersehbaren Umfeld zu positionieren. Die bei einem solchen Konzept mögliche Mischung von OOP und einfacher, imperativ-prozeduraler Programmierung birgt aber das Risiko, die oben genannten Vorteile der Objektorientierung zu verlieren.
+Ungewöhnliche OOP-Implementationen
+
+Bereits bestehende Programmiersprachen wurden ebenfalls durch Features erweitert, die eine OOP ermöglichen. Eine ungewöhnliche, aber zur Sprache passende Umsetzung findet sich in der Skriptsprache Perl . Diese versteckt das Attribut für den Selbstbezug nicht wie andere Programmiersprachen, sondern behandelt sie wie jedes andere Datenfeld. Das ähnelt einer Armbanduhr mit Glasboden, die das Uhrwerk sichtbar lässt.
+
+Dagegen zählt die 1985 vorgestellte Programmiersprache Eiffel nicht nur zu den wenigen Vertretern einer reinen OOP, sondern bietet auch noch mehr als eine Programmiersprache. Sie bezeichnet sich besser als eine Methode der Softwareentwicklung .
+
+Kommentare werden geladen....
+Kommentar zu diesem Artikel
+
+Der Kommentar wird durch einen Redakteur geprüft und in Kürze freigeschaltet.
+
+Anonym mitdiskutieren oder einloggen Anmelden
+Avatar
+Zur Wahrung unserer Interessen speichern wir zusätzlich zu den o.g. Informationen die IP-Adresse. Dies dient ausschließlich dem Zweck, dass Sie als Urheber des Kommentars identifiziert werden können. Rechtliche Grundlage ist die Wahrung berechtigter Interessen gem. Art 6 Abs 1 lit. f) DSGVO.
+Avatar
+Zur Wahrung unserer Interessen speichern wir zusätzlich zu den o.g. Informationen die IP-Adresse. Dies dient ausschließlich dem Zweck, dass Sie als Urheber des Kommentars identifiziert werden können. Rechtliche Grundlage ist die Wahrung berechtigter Interessen gem. Art 6 Abs 1 lit. f) DSGVO.
+
+Kommentare werden geladen....
+Kommentar melden
+
+Melden Sie diesen Kommentar, wenn dieser nicht den Richtlinien entspricht.
+Kommentar Freigeben
+
+unregistrierter Nutzer
+
+Der untenstehende Text wird an den Kommentator gesendet, falls dieser eine Email-hinterlegt hat.
+Betreff
+Text
+Freigabe entfernen
+
+unregistrierter Nutzer
+
+Der untenstehende Text wird an den Kommentator gesendet, falls dieser eine Email-hinterlegt hat.
+Betreff
+Text
+
+Aktuelle Beiträge zu diesem Thema
+Die Python-Standardbibliothek
+Python Tutorial, Teil 9
+Die Python-Standardbibliothek
+
+Bevor wir in die objektorientierte Programmierung mit Python einsteigen, sehen wir uns noch einmal die äußerst umfangreiche Python-Standardbibliothek an. Ein paar Module erläutern wir anhand kurzer Beispiele. lesen
+Was ist strukturierte Programmierung?
+Definition „Structured Programming“
+Was ist strukturierte Programmierung?
+
+Das Programmierparadigma der strukturierten Programmierung zielt auf verständlichen Code ab. Dies wird beispielsweise dadurch erreicht, dass auf Sprunganweisungen und andere intransparente Bedingungen sowie Abfragen verzichtet wird. lesen
+Angular und AngularJS
+JavaScript-Fundamente für Single Page Apps, Teil 3
+Angular und AngularJS
+
+Angular ist von der Philosophie her ein vollständiges Framework und bietet Lösungen für nahezu sämtliche Aufgaben eines Frontent-Entwicklers. So kümmert sich die Open-Source-Software um Dinge wie die Validierung oder die Kommunikation mit dem Backend. lesen
+Objektorientierte Programmierung mit C
+Softwaretechnik
+Objektorientierte Programmierung mit C
+
+Obwohl C keine objektorientierte Sprache ist, ist die objektorientierte Programmierung mit ihr möglich. Dieser Artikel beschäftigt sich mit der Umsetzung von UML-Elementen aus dem Klassendiagramm in C-Code. Es wird gezeigt, was möglich ist und wo die Umsetzung mit der Programmiersprache C an ihre Grenzen stößt. lesen
+Java-IDE-Workshop des Hasso-Plattner-Instituts
+Gratis-Kurs auf openHPI
+Java-IDE-Workshop des Hasso-Plattner-Instituts
+
+„Einführung in eine Java-Programmierumgebung (IDE)“, so lautet der Titel eines kostenfreien Java-Online-Kurs für Fortgeschrittene. Der zweiwöchige Workshop steht im Mai auf der interaktiven Bildungsplattform openHPI des Hasso-Plattner-Instituts bereit. lesen
+Ist C++ für echtzeitkritische Anwendungen sinnvoll?
+Implementierung
+Ist C++ für echtzeitkritische Anwendungen sinnvoll?
+
+Die Objektorientierte Programmierung in C++ hat unter vielen Embedded-Programmierern den Ruf, gegenüber der Strukturierten Programmierung in C weniger performant zu sein. Hierdurch wird C++ meist von vornherein ausgeschlossen. lesen
+Was ist Perl?
+Definition „Perl (Programmiersprache)“
+Was ist Perl?
+
+Perl ist eine Skriptsprache, die polarisiert. Die Programmiersprache hat nämlich ihre Besonderheiten, die dem Fachmann die Arbeit erleichtern, dem Laien aber das Verständnis erschweren können. lesen
+Was ist eine Programmiersprache?
+Definition „Programming Language“
+Was ist eine Programmiersprache?
+
+Programmiersprachen sind formale Sprachen, mit denen sich Rechenvorschriften formulieren lassen. Diese Vorschriften können dann von einem Computer ausgeführt werden. lesen
+Was ist Java-Programmierung?
+Definition „Java (Programmiersprache)“
+Was ist Java-Programmierung?
+
+Mit der Programmiersprache Java lassen sich plattformunabhängige Anwendungen entwickeln. Nur ein Texteditor, das Java SE Development Kit, kurz JDK, mit Java-Laufzeitumgebung und ein wenig Entwicklungsgeschick werden dafür benötigt. lesen
+
+Mehr zum Thema
+Py – Basiswissen und Einstieg
+Python Tutorial, Teil 1 Py – Basiswissen und Einstieg
+
+mehr...
+Ist C++ für echtzeitkritische Anwendungen sinnvoll?
+Implementierung Ist C++ für echtzeitkritische Anwendungen sinnvoll?
+
+mehr...
+Was ist C++?
+Definition „C++ (Programmiersprache) Was ist C++?
+
+mehr...
+
+Passende Whitepaper & Webcasts Objektorientierte
+CIOBRIEFING 04/2018
+Technology-Update für IT-Manager CIOBRIEFING 04/2018
+
+mehr...
+Das BEST OF Dev-Insider
+Diese aktuellen Themen bewegen die Dev-Welt Das BEST OF Dev-Insider
+
+mehr...
+CIOBRIEFING 09/2017
+Technology-Update für IT-Manager CIOBRIEFING 09/2017
+
+mehr...
+Alle Whitepaper Alle Webcasts
+copyright
+
+Dieser Beitrag ist urheberrechtlich geschützt. Sie wollen ihn für Ihre Zwecke verwenden? Infos finden Sie unter www.mycontentfactory.de (ID: 45091599 / Definitionen)
+
+Oder kontaktieren Sie uns direkt
+
+Dev-Insider ist eine Marke der Vogel Communications Group. Unser gesamtes Angebot finden Sie hier
+
+AGB | EWG | Hilfe | Kundencenter | Media | Datenschutz | Impressum
+Copyright © 2018 Vogel Communications Group
+Drilling; lmonk72 - Pixabay.com; Angular.io; gemeinfrei; HPI / openHPI; teguhjatipras - Fotolia; Tirza van Dijk - Unsplash.com; JuralMin - Pixabay.com; ribkhan - stock.adobe.com; Drilling / Python; laurentvalentinjospi0 - Pixabay.com; Vogel IT-Medien; Vogel IT;

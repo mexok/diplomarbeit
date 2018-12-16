@@ -1,0 +1,125 @@
+
+
+        Home
+        View
+        Login
+    This page
+        Normal
+        Export PDF
+        Export Word
+        Attachments
+        Page Information
+    Search
+
+
+        About
+        Adoption
+        Amber
+        Build
+        Code Tools
+        Coin
+        Compatibility & Specification Review
+        Compiler
+        Device I/O
+        Graal
+        HotSpot
+        JDK 7u
+        JDK 8
+        JDK 8u
+        JDK Updates
+        Kulla
+        Loom
+        Memory Model Update
+        Mission Control
+        Multi-Language VM
+        Nashorn
+        OpenJFX
+        Port: AArch64
+        Port: BSD
+        Port: MacOSX
+        Port: PowerPC/AIX
+        Port: s390x
+        Portola
+        Quality
+        Shenandoah
+        Sumatra
+        Type Annotations
+        Valhalla
+        ZGC
+
+    Dashboard
+    OpenJFX
+    Main
+
+Main
+Skip to end of metadata
+
+    Created by J. Duke , last modified by Kevin Rushforth on Oct 19, 2018
+
+Go to start of metadata
+
+OpenJFX is an open source, next generation client application platform for desktop and embedded systems for use with the JDK. It is a collaborative effort by many individuals and companies with the goal of producing a modern, efficient, and fully featured toolkit for developing rich client applications. This is the open source project where we develop JavaFX.
+
+OpenJFX is free software, licensed under the GNU General Public License with Classpath Exception , just like the JDK Project. Anybody is welcome to contribute to this project, port it to other platforms or devices, or do anything else that a free software license allows you to do! We welcome patches and involvement from individual contributors or companies. See the Community section of this WIki and the OpenJDK How to Contribute page for details on how you can become a contributor.
+
+The OpenJFX Project is part of the OpenJDK open-source Community. The OpenJDK Bylaws and License govern our work. The OpenJFX project membership can be found on the OpenJDK Census .
+Quick Links
+
+    OpenJFX Community Site
+
+    Download OpenJFX Builds
+
+    Building OpenJFX
+
+    Mailing lists
+        openjfx-dev - Technical discussion related to the OpenJFX Project
+
+        openjfx-discuss - General discussion about OpenFX features and roadmaps
+        openjfx-changes - Mercurial changeset notification for OpenJFX repositories (openjfx/*)
+
+    Report a Bug:
+        http://bugs.java.com
+
+    Browse the Bug Database:
+        http://bugs.openjdk.java.net
+
+    Code Review Policies
+
+    Official Mercurial Repositories
+        http://hg.openjdk.java.net/openjfx/jfx-dev/rt - OpenJFX runtime repo
+        http://hg.openjdk.java.net/openjfx/jfx-dev/tests - OpenJFX tests repo (not currently maintained)
+    Developer sandbox on GitHub:
+        https://github.com/javafxports/openjdk-jfx - GitHub Mirror of openjfx/jfx-dev/rt repo
+
+    OTN JavaFX Forums
+        https://community.oracle.com/community/java/javafx/javafx_2.0_and_later
+
+    JavaFX Documention
+        API Documentation
+        CSS Reference
+        FXML Reference
+        Developer Documentation (out of date)
+
+    Other 
+        FX Experience Blog
+
+
+Overview
+Content Tools
+ThemeBuilder
+
+    No labels
+
+
+Terms of Use • License: GPLv2 • Privacy • Trademarks • Contact Us
+
+Powered by a free Atlassian Confluence Open Source Project License granted to Oracle Corporation. Evaluate Confluence today .
+
+    Adaptavist ThemeBuilder Powered by Atlassian Confluence 6.10.1
+    Adaptavist ThemeBuilder printed.by.atlassian.confluence
+    Report a bug
+    Atlassian News
+
+Atlassian
+Adaptavist ThemeBuilder Engine Atlassian Confluence
+{"serverDuration": 301, "requestCorrelationId": "39ae862ddf7c09d4"} 
