@@ -1,0 +1,14 @@
+4.2 Anforderungen für die Programmierung von graphischen Benutzeroberflächen
+? Erweiterbarkeit mit neuen Elementtypen
+? Wiederverwendbarkeit von erstellten Views in anderen Views
+? Widerspruch zwischen Performance zur Laufzeit und Entwicklerkomfort ? Lösen über interaktiven Modus mgl.?
+? Keinen Quellcode für View-Elemente schreiben (die keine weitere Funktionalität beinhalten)
+? Einbinden von bestehenden Objekten und Variablen möglich
+? Möglichst viele Programmierparadigmen unterstützen ? keine Framework-Strukturen vorgeben, um dynamische Programmierung zu ermöglichen
+- Langlebigkeit des Quellcodes?
+- Vendor Locking [6]
+4.3 Anforderungen für hardwarenahe Programmierung
+- Overhead durch dynamische Allokalisierung von Memory (besonders in Bezug auf Objektorientierung) ? Objektstruktur möglichst flach halten
+- Keine VM (daher kein java)
+- Konflikt zwischen Objektorientierung und Graphikkartenbibliothek, welche als Statemachine arbeitet
+- Kein Garbage-Collector

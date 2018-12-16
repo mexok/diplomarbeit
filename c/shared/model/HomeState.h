@@ -5,6 +5,7 @@
 #ifndef HomeState_h
 #define HomeState_h
 
+#include <stdint.h>
 #include "IAObject.h"
 #include "IANotificationEvent.h"
 #include "IAColor.h"

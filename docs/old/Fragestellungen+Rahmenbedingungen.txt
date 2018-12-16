@@ -1,0 +1,13 @@
+Thema: Moderne Ansätze zur Oberflächengestaltung für hardwarenahe Programmierung
+
+Fragestellungen:
+- Welche populären Möglichkeiten zur Gestaltung von Benutzeroberflächen gibt es? Wie sind diese zu bewerten?
+- Welche Datenbeschreibungssprachen eignen sich für einen gewählten Ansatz?
+- Wie lässt sich die Technologie in einer ausgewählten, hardwarenahen Programmiersprache (Go, C/C++ oder vergleichbar) prototypisch implementieren?
+- Welche Anwendungsfälle kommen für dieses Konzept in Betracht?
+
+Rahmenbedingungen:
+- Die Datenbeschreibungssprache sollte sowohl zu kompilieren, als auch dynamisch neu zu laden, sein. Dies bezweckt, dass die Performance zur Laufzeit bzw. die Komfortabilität während der Entwicklung gewährleistet ist.
+- Die Portabilität der gewählten Programmiersprache muss im größtmöglich realisierbaren Umfang erhalten bleiben.
+
+01.10.2018, 10 Uhr

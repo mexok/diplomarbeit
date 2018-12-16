@@ -1,8 +1,0 @@
-needed cpan modules:
-
-YAML::XS
-
-Installation instruction:
-cpan App::cpanminus
-
-cpanm Module::Name

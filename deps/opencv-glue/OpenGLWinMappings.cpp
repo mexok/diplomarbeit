@@ -26,7 +26,7 @@ static IASize nativeGetSourceSize(void * bitmapRef);
 static void nativeBind(void * bitmapRef);
 static void nativeDestroyBitmapRef(void * bitmapRef);
 
-static const char * assets_dir_name = "C:/diplomarbeit/assets/";
+static const char * assets_dir_name = "../assets/";
 
 
 const char * OpenGLWinMappings_getAssetDirName(){
