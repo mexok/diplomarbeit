@@ -3,6 +3,7 @@
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
+#include <GL/wglew.h>
 #include <stdio.h>
 
 #include <IAOpenGL.h>
@@ -132,9 +133,21 @@ void CreateOpenGLContext(HWND hwnd){
 	nMyPixelFormatID = ChoosePixelFormat(hDC, &pfd);
 	SetPixelFormat(hDC, nMyPixelFormatID, &pfd);
 
-	openGLContextHandle = wglCreateContext(hDC);
-	wglMakeCurrent(hDC, openGLContextHandle);
+    HGLRC tempContext = wglCreateContext(hDC);
+    wglMakeCurrent(hDC, tempContext);
+
 	glewInit();
+
+    GLint attribs[] = {
+        WGL_CONTEXT_MAJOR_VERSION_ARB, 3,
+        WGL_CONTEXT_MINOR_VERSION_ARB, 1,
+        WGL_CONTEXT_FLAGS_ARB, 0,
+        0
+    };
+    openGLContextHandle = wglCreateContextAttribsARB(hDC, 0, attribs);
+    wglMakeCurrent(NULL,NULL);
+    wglDeleteContext(tempContext);
+    wglMakeCurrent(hDC, openGLContextHandle);
 	glEnable(GL_MULTISAMPLE);
 	ReleaseDC(hwnd, hDC);
 }
